@@ -167,25 +167,18 @@ export default function LandingPage() {
         </form>
       </section>
 
-      {/* ── Privacy placeholder */}
-      <section
-        id="privacy"
-        className="container mt-32 text-center px-6 max-w-xl"
-      >
-        <h2 className="text-2xl font-bold mb-4">Privacy&nbsp;Policy</h2>
-        <p className="opacity-80">
-          Full privacy policy coming soon. For now, we only use your e‑mail to
-          notify you about StyleGenius updates.
-        </p>
-      </section>
 
       {/* ── Footer */}
       <footer className="mt-auto py-6 text-center text-xs opacity-60">
         © {new Date().getFullYear()} StyleGenius — affiliate links may earn us a
         commission.
         <div className="mt-2">
-          <a href="#privacy" className="underline mr-3">
+          <a href="/privacy" className="underline mr-3">
             Privacy
+          </a>
+          •
+          <a href="/cookies" className="underline mx-3">
+            Cookies
           </a>
           •
           <a href="mailto:ai@stylegenius.app" className="underline ml-3">
