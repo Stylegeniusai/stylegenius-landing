@@ -1,189 +1,127 @@
-import Image from "next/image";
-
 export default function LandingPage() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-[#1E1D36] to-[#10101A] text-white flex flex-col">
-      {/* ── Navigation */}
-      <header className="container mx-auto px-6 py-4 flex items-center justify-between">
-        <h1 className="text-xl font-bold tracking-wide">
-          <span className="text-[#FF70D9]">Style</span>
-          <span className="text-[#6EC1E4]">Genius</span>
+    <main className="min-h-screen bg-[#F6F6F6] text-[#202033]">
+      {/* Navigation */}
+      <header className="container mx-auto px-6 py-6 flex items-center justify-between">
+        <h1 className="text-2xl font-bold">
+          <span className="bg-gradient-to-r from-[#FF70D9] to-[#6EC1E4] bg-clip-text text-transparent">
+            StyleGenius
+          </span>
         </h1>
         <a
-          href="#waitlist"
-          className="rounded-full bg-gradient-to-r from-[#FF70D9] to-[#6EC1E4] px-4 py-2 text-sm font-semibold shadow-md hover:scale-105 transition"
+          href="#download"
+          className="rounded-[30px] bg-gradient-to-r from-[#FF70D9] to-[#6EC1E4] px-6 py-3 text-white font-semibold text-[15px] shadow-lg hover:scale-105 transition"
         >
-          Join Waitlist →
+          Download App
         </a>
       </header>
 
-      {/* ── Hero */}
-      <section className="container flex flex-col items-center text-center mt-20 px-6">
-        <h2 className="text-5xl md:text-6xl font-extrabold leading-tight max-w-3xl">
-          Unlock&nbsp;<span className="text-[#FF70D9]">your</span>&nbsp;style&nbsp;and always look your best.<br />
-          Get a Personal&nbsp;AI&nbsp;stylist&nbsp;&amp;&nbsp;shopper that guides you towards perfect. 
+      {/* Hero Section */}
+      <section className="container mx-auto px-6 py-20 text-center max-w-4xl">
+        <h2 className="text-[28px] md:text-[32px] font-bold leading-tight mb-6">
+          Finally - a personal stylist who actually knows{" "}
+          <span className="bg-gradient-to-r from-[#FF70D9] to-[#6EC1E4] bg-clip-text text-transparent">
+            YOU
+          </span>
         </h2>
-      
-      </section>
-
-      {/* ── AI Stylist */}
-      <section className="container mt-32 text-center px-6">
-        
-
-        <div className="mt-10 flex gap-8 flex-wrap justify-evenly">
-          {["aistylistchat.png", "aistylistresponse.png"].map((file) => (
-            <div
-              key={file}
-              className="rounded-2xl shadow-xl w-40 md:w-48"
-            >
-              <Image
-                src={`/mockups/${file}`}
-                alt={file}
-                width={520}
-                height={1040}
-                className="object-contain"
-              />
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ── Your colours */}
-      <section className="container mt-32 text-center px-6">
-        <h3 className="text-4xl md:text-5xl font-extrabold mb-8">
-          See your best&nbsp;— and worst&nbsp;— colors
-        </h3>
-        <p className="opacity-80 max-w-2xl mx-auto">
-          One swipe reveals the hues that flatter you the most, and the shades that drain you.
+        <p className="text-[16px] text-[#6D6D7A] mb-8 max-w-2xl mx-auto leading-relaxed">
+          StyleGenius learns your unique style, remembers your wardrobe, and understands your body type to give you perfect outfit advice every single time.
         </p>
-
-        <div className="mt-10 flex gap-8 flex-wrap justify-center">
-          {["bestcolors.png", "worstcolors.png"].map((file) => (
-            <div key={file} className="rounded-2xl shadow-xl w-40 md:w-48">
-              <Image
-                src={`/mockups/${file}`}
-                alt={file}
-                width={520}
-                height={1040}
-                className="object-contain"
-              />
-            </div>
-          ))}
-        </div>
       </section>
 
-      {/* ── Personal shopper */}
-      <section className="container mt-32 grid md:grid-cols-2 gap-14 items-center px-6">
-        <div>
-          <h3 className="text-4xl md:text-5xl font-extrabold mb-8 text-center">
-            Meet your personal shopper
-          </h3>
-          <p className="opacity-80 leading-relaxed text-center">
-            Ask for an outfit, a colour‑match or “something for a beach
-            wedding.” We surf Zalando, ASOS &amp; more — serving links that
-            actually suit <em>you</em>.
-          </p>
-        </div>
-        <div className="flex gap-8 flex-wrap justify-evenly">
-          {["shoppingassistant.png", "shopresult.png", "shopresultmini.png"].map(
-            (file) => (
-              <div
-                key={file}
-                className="rounded-2xl shadow-lg w-36 md:w-44"
-              >
-                <Image
-                  src={`/mockups/${file}`}
-                  alt={file}
-                  width={400}
-                  height={800}
-                  className="object-contain"
-                />
+      {/* Features Grid */}
+      <section className="container mx-auto px-6 py-16">
+        <div className="grid md:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
+          
+          {/* Feature 1 */}
+          <div className="bg-white rounded-[18px] p-8 shadow-lg">
+            <h3 className="text-[24px] font-bold mb-4">
+              Your personal expert who remembers everything
+            </h3>
+            <p className="text-[#6D6D7A] text-[15px] leading-relaxed mb-6">
+              Unlike generic apps, your StyleGenius knows your skin tone, body type, personal style, and every piece in your wardrobe. Ask anything - "what goes with my black jeans?" or "outfit for dinner tonight?" - and get answers tailored specifically to YOU.
+            </p>
+          </div>
+
+          {/* Feature 2 */}
+          <div className="bg-white rounded-[18px] p-8 shadow-lg">
+            <h3 className="text-[24px] font-bold mb-4">
+              The more you use it, the smarter it gets
+            </h3>
+            <p className="text-[#6D6D7A] text-[15px] leading-relaxed mb-6">
+              Your expert learns what you love, what flatters you, and what you already own. No more generic advice that doesn't work for your real life and real closet.
+            </p>
+          </div>
+
+          {/* Feature 3 - Full Width */}
+          <div className="md:col-span-2 bg-white rounded-[18px] p-8 shadow-lg">
+            <h3 className="text-[24px] font-bold mb-6 text-center">
+              Get help with everything
+            </h3>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div>
+                <ul className="text-[#6D6D7A] text-[15px] space-y-3">
+                  <li>• Outfit advice that knows your wardrobe</li>
+                  <li>• Color recommendations for YOUR skin tone</li>
+                  <li>• Style tips for YOUR body type</li>
+                </ul>
               </div>
-            )
-          )}
-        </div>
-      </section>
-
-      {/* ── Smart recommendations */}
-      <section className="container mt-32 grid md:grid-cols-2 gap-14 items-center px-6">
-        <div className="order-2 md:order-1 flex gap-8 flex-wrap justify-evenly">
-          {["preferences.png", "occasion.png", "stylegoal.png"].map((file) => (
-            <div
-              key={file}
-              className="rounded-2xl shadow-lg w-36 md:w-44"
-            >
-              <Image
-                src={`/mockups/${file}`}
-                alt={file}
-                width={360}
-                height={720}
-                className="object-contain"
-              />
+              <div>
+                <ul className="text-[#6D6D7A] text-[15px] space-y-3">
+                  <li>• Shopping suggestions that match what you own</li>
+                  <li>• "What should I wear?" instant answers</li>
+                  <li>• Build outfits from pieces you already have</li>
+                </ul>
+              </div>
             </div>
-          ))}
+          </div>
         </div>
-        <div className="order-1 md:order-2">
-          <h3 className="text-4xl md:text-5xl font-extrabold mb-8 text-center">
-            Recommendations that get <i>you</i>
+      </section>
+
+      {/* Bottom CTA */}
+      <section className="container mx-auto px-6 py-20 text-center">
+        <div className="bg-white rounded-[18px] p-12 shadow-lg max-w-3xl mx-auto">
+          <h3 className="text-[26px] font-bold mb-6">
+            It's like having a best friend who's amazing at style
           </h3>
-          <p className="opacity-80 leading-relaxed text-center">
-            Set your occasion, vibe and body‑type once. Every look, tip and shopping
-            pick is filtered through that lens — zero overwhelm, maximum glow‑up.
+          <p className="text-[#6D6D7A] text-[16px] mb-8 leading-relaxed">
+            Someone who knows your entire closet by heart, and is available 24/7 to help you look incredible.
           </p>
+          
+          <div id="download" className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a
+              href="#"
+              className="rounded-[30px] bg-gradient-to-r from-[#FF70D9] to-[#6EC1E4] px-8 py-4 text-white font-semibold text-[16px] shadow-lg hover:scale-105 transition"
+            >
+              Download for iOS
+            </a>
+            <a
+              href="#"
+              className="rounded-[30px] bg-[#E8E8E8] px-8 py-4 text-[#202033] font-semibold text-[16px] hover:bg-[#ddd] transition"
+            >
+              Download for Android
+            </a>
+          </div>
         </div>
       </section>
 
-      {/* ── Waitlist CTA */}
-      <section
-        id="waitlist"
-        className="container mt-32 mb-36 text-center px-6 max-w-xl"
-      >
-        <h2 className="text-2xl font-bold mb-4">
-          Ready to join the&nbsp;
-          <span className="text-[#6EC1E4]">waitlist</span>?
-        </h2>
-        <p className="opacity-80 mb-8">
-          Launching soon on iOS &amp; Android. Sign up and we’ll ping you the
-          moment StyleGenius drops.
-        </p>
-        <form
-          action="https://formcarry.com/s/your-form-id"
-          method="POST"
-          className="flex flex-col sm:flex-row gap-3 justify-center items-center"
-        >
-          <input
-            name="email"
-            type="email"
-            required
-            placeholder="you@example.com"
-            className="w-full flex-1 rounded-full px-5 py-3 text-black focus:outline-none"
-          />
-          <button
-            type="submit"
-            className="whitespace-nowrap rounded-full bg-gradient-to-r from-[#FF70D9] to-[#6EC1E4] px-6 py-3 font-semibold shadow-md hover:scale-105 transition"
-          >
-            Join Waitlist
-          </button>
-        </form>
-      </section>
-
-
-      {/* ── Footer */}
-      <footer className="mt-auto py-6 text-center text-xs opacity-60">
-        © {new Date().getFullYear()} StyleGenius — affiliate links may earn us a
-        commission.
-        <div className="mt-2">
-          <a href="/privacy" className="underline mr-3">
-            Privacy
-          </a>
-          •
-          <a href="/cookies" className="underline mx-3">
-            Cookies
-          </a>
-          •
-          <a href="mailto:ai@stylegenius.app" className="underline ml-3">
-            ai@stylegenius.app
-          </a>
+      {/* Footer */}
+      <footer className="py-8 text-center text-[12px] text-[#6D6D7A] border-t border-[#E8E8E8]">
+        <div className="container mx-auto px-6">
+          © {new Date().getFullYear()} StyleGenius — affiliate links may earn us a commission.
+          <div className="mt-2">
+            <a href="/privacy" className="underline mr-3 hover:text-[#FF70D9]">
+              Privacy
+            </a>
+            •
+            <a href="/cookies" className="underline mx-3 hover:text-[#FF70D9]">
+              Cookies
+            </a>
+            •
+            <a href="mailto:ai@stylegenius.app" className="underline ml-3 hover:text-[#FF70D9]">
+              ai@stylegenius.app
+            </a>
+          </div>
         </div>
       </footer>
     </main>
