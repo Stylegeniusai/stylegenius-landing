@@ -41,7 +41,7 @@ export default function LandingPage() {
         </div>
 
         {/* Download Buttons */}
-        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
           <a
             href="#"
             className="rounded-[30px] bg-gradient-to-r from-[#FF70D9] to-[#6EC1E4] px-12 py-6 text-white font-semibold text-[20px] shadow-lg hover:scale-105 transition"
@@ -53,6 +53,17 @@ export default function LandingPage() {
             className="rounded-[30px] bg-white border-2 border-[#E8E8E8] px-12 py-6 text-[#202033] font-semibold text-[20px] hover:border-[#FF70D9] transition"
           >
             Download for Android
+          </a>
+        </div>
+
+        {/* Minimal Footer Links */}
+        <div className="text-center text-[12px] text-[#6D6D7A]">
+          <a href="/privacy" className="underline mr-4 hover:text-[#FF70D9]">
+            Privacy Policy
+          </a>
+          •
+          <a href="/cookies" className="underline ml-4 hover:text-[#FF70D9]">
+            Cookie Policy
           </a>
         </div>
       </div>
