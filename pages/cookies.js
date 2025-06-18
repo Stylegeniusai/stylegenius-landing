@@ -50,6 +50,21 @@ export default function CookiePolicy() {
         Questions? Email&nbsp;
         <a href="mailto:ai@stylegenius.app">ai@stylegenius.app</a>.
       </p>
+
+      {/* Footer Links */}
+      <div style={{ textAlign: 'center', marginTop: '3rem', fontSize: '12px', color: '#6D6D7A' }}>
+        <a href="/privacy" style={{ textDecoration: 'underline', marginRight: '12px', color: '#FF70D9' }}>
+          Privacy Policy
+        </a>
+        •
+        <a href="/terms" style={{ textDecoration: 'underline', margin: '0 12px', color: '#FF70D9' }}>
+          Terms of Use
+        </a>
+        •
+        <a href="/support" style={{ textDecoration: 'underline', marginLeft: '12px', color: '#FF70D9' }}>
+          Support
+        </a>
+      </div>
     </main>
   );
 }

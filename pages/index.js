@@ -56,13 +56,21 @@ export default function LandingPage() {
           </a>
         </div>
 
-        {/* Minimal Footer Links */}
+        {/* Footer Links */}
         <div className="text-center text-[12px] text-[#6D6D7A]">
-          <a href="/privacy" className="underline mr-4 hover:text-[#FF70D9]">
+          <a href="/privacy" className="underline mr-3 hover:text-[#FF70D9]">
             Privacy Policy
           </a>
           •
-          <a href="/cookies" className="underline ml-4 hover:text-[#FF70D9]">
+          <a href="/terms" className="underline mx-3 hover:text-[#FF70D9]">
+            Terms of Use
+          </a>
+          •
+          <a href="/support" className="underline mx-3 hover:text-[#FF70D9]">
+            Support
+          </a>
+          •
+          <a href="/cookies" className="underline ml-3 hover:text-[#FF70D9]">
             Cookie Policy
           </a>
         </div>

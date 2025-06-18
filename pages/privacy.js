@@ -75,6 +75,21 @@ export default function PrivacyPolicy() {
       <p>
         Questions? Email&nbsp;<a href="mailto:ai@stylegenius.app">ai@stylegenius.app</a>.
       </p>
+
+      {/* Footer Links */}
+      <div style={{ textAlign: 'center', marginTop: '3rem', fontSize: '12px', color: '#6D6D7A' }}>
+        <a href="/terms" style={{ textDecoration: 'underline', marginRight: '12px', color: '#FF70D9' }}>
+          Terms of Use
+        </a>
+        •
+        <a href="/support" style={{ textDecoration: 'underline', margin: '0 12px', color: '#FF70D9' }}>
+          Support
+        </a>
+        •
+        <a href="/cookies" style={{ textDecoration: 'underline', marginLeft: '12px', color: '#FF70D9' }}>
+          Cookie Policy
+        </a>
+      </div>
     </main>
   );
 }
