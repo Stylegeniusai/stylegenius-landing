@@ -10,9 +10,9 @@ export default function LandingPage() {
         <div className="flex items-center justify-center gap-12 mb-16">
           <div className="text-left">
             <h1 className="text-[56px] md:text-[80px] font-black leading-[1.1] tracking-tight">
-              Your personal shopping
+              Your personal <span className="bg-gradient-to-r from-[#FF70D9] to-[#6EC1E4] bg-clip-text text-transparent">shopping</span>
               <br />
-              & styling assistant
+              & <span className="bg-gradient-to-r from-[#FF70D9] to-[#6EC1E4] bg-clip-text text-transparent">styling</span> assistant
             </h1>
           </div>
           <Image
@@ -44,9 +44,11 @@ export default function LandingPage() {
         <div className="flex flex-col gap-8 justify-center items-center mb-16">
           <a
             href="https://apps.apple.com/app/id6747178892"
-            className="rounded-[40px] bg-gradient-to-r from-[#FF70D9] to-[#6EC1E4] px-16 py-8 text-white font-bold text-[24px] shadow-2xl hover:scale-105 hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-1 border-4 border-white/20"
+            className="rounded-[30px] bg-white border-2 border-transparent bg-gradient-to-r from-[#FF70D9] to-[#6EC1E4] p-[2px] hover:scale-105 transition-transform duration-300"
           >
-            📱 Download for iOS
+            <div className="rounded-[28px] bg-white px-12 py-6 text-[#202033] font-semibold text-[20px]">
+              Download for iOS
+            </div>
           </a>
           <div
             className="rounded-[30px] bg-gray-50 border border-[#E8E8E8] px-8 py-4 text-[#9CA3AF] font-medium text-[16px] cursor-not-allowed opacity-50"
