@@ -9,7 +9,7 @@ export default function LandingPage() {
         {/* Title + Avatar Row */}
         <div className="flex items-center justify-center gap-12 mb-16">
           <div className="text-left">
-            <h1 className="text-[48px] md:text-[64px] font-bold leading-tight">
+            <h1 className="text-[56px] md:text-[80px] font-black leading-[1.1] tracking-tight">
               Your personal shopping
               <br />
               & styling assistant
@@ -25,7 +25,7 @@ export default function LandingPage() {
         </div>
 
         {/* Subtitle */}
-        <p className="text-[24px] text-[#6D6D7A] mb-16 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-[28px] text-[#6D6D7A] mb-20 max-w-3xl mx-auto leading-relaxed font-medium">
           It's like having a best friend who's amazing at style and gives great advice.
         </p>
 
@@ -41,19 +41,18 @@ export default function LandingPage() {
         </div>
 
         {/* Download Buttons */}
-        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
+        <div className="flex flex-col gap-8 justify-center items-center mb-16">
           <a
-            href="#"
-            className="rounded-[30px] bg-gradient-to-r from-[#FF70D9] to-[#6EC1E4] px-12 py-6 text-white font-semibold text-[20px] shadow-lg hover:scale-105 transition"
+            href="https://apps.apple.com/app/id6747178892"
+            className="rounded-[40px] bg-gradient-to-r from-[#FF70D9] to-[#6EC1E4] px-16 py-8 text-white font-bold text-[24px] shadow-2xl hover:scale-105 hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-1 border-4 border-white/20"
           >
-            Download for iOS
+            📱 Download for iOS
           </a>
-          <a
-            href="#"
-            className="rounded-[30px] bg-white border-2 border-[#E8E8E8] px-12 py-6 text-[#202033] font-semibold text-[20px] hover:border-[#FF70D9] transition"
+          <div
+            className="rounded-[30px] bg-gray-50 border border-[#E8E8E8] px-8 py-4 text-[#9CA3AF] font-medium text-[16px] cursor-not-allowed opacity-50"
           >
-            Download for Android
-          </a>
+            Android - Coming Soon
+          </div>
         </div>
 
         {/* Footer Links */}
