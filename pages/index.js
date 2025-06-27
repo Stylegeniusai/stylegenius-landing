@@ -25,9 +25,9 @@ export default function LandingPage() {
   return (
     <main className="min-h-screen bg-[#F6F6F6] text-[#202033]">
       {/* New Hero Section - Don't Be Dumb */}
-      <div className="min-h-screen px-6 pt-40">
+      <div className="min-h-screen flex flex-col justify-center px-6">
         <div className="text-center max-w-4xl mx-auto">
-          <h1 className="mb-40">
+          <h1 className="mb-64">
             <span className="block text-[72px] md:text-[100px] font-black leading-[0.9]">
               Don't Be Dumb
             </span>
@@ -49,15 +49,17 @@ export default function LandingPage() {
       </div>
 
       {/* Shopping and Styling Image Section */}
-      <div className="py-48 px-6 mb-80">
-        <div className="max-w-6xl mx-auto">
-          <Image
-            src="/shoppingandstyling.png"
-            alt="StyleGenius Features"
-            width={1200}
-            height={600}
-            className="w-full h-auto rounded-2xl shadow-2xl animate-fade-in"
-          />
+      <div className="py-48 px-6">
+        <div className="mb-96">
+          <div className="max-w-6xl mx-auto">
+            <Image
+              src="/shoppingandstyling.png"
+              alt="StyleGenius Features"
+              width={1200}
+              height={600}
+              className="w-full h-auto rounded-2xl shadow-2xl animate-fade-in"
+            />
+          </div>
         </div>
       </div>
 
