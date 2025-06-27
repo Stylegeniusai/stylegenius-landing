@@ -1,24 +1,45 @@
 import Image from "next/image";
 
 export default function LandingPage() {
+  // Add CSS for animations
+  if (typeof window !== 'undefined') {
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes gradient {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.8; }
+      }
+      @keyframes fade-in {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-gradient {
+        animation: gradient 3s ease-in-out infinite;
+      }
+      .animate-fade-in {
+        animation: fade-in 1s ease-out;
+      }
+    `;
+    document.head.appendChild(style);
+  }
   return (
     <main className="min-h-screen bg-[#F6F6F6] text-[#202033]">
       {/* New Hero Section - Don't Be Dumb */}
       <div className="min-h-screen flex items-center justify-center px-6">
         <div className="text-center max-w-4xl mx-auto">
-          <h1 className="mb-8">
-            <span className="block text-[56px] md:text-[80px] font-black leading-none">
+          <h1 className="mb-12">
+            <span className="block text-[72px] md:text-[100px] font-black leading-[0.9]">
               Don't Be Dumb
             </span>
-            <span className="block text-[56px] md:text-[80px] font-black leading-none mt-4">
-              Be a <span className="bg-gradient-to-r from-[#FF70D9] to-[#6EC1E4] bg-clip-text text-transparent">StyleGenius</span>
+            <span className="block text-[72px] md:text-[100px] font-black leading-[0.9] mt-6">
+              Be a <span className="bg-gradient-to-r from-[#FF70D9] to-[#6EC1E4] bg-clip-text text-transparent animate-gradient">StyleGenius</span>
             </span>
           </h1>
           
           {/* First CTA */}
           <a
             href="https://apps.apple.com/app/id6747178892"
-            className="inline-block rounded-[30px] bg-white border-2 border-transparent bg-gradient-to-r from-[#FF70D9] to-[#6EC1E4] p-[2px] hover:scale-105 transition-transform duration-300"
+            className="inline-block rounded-[30px] bg-white border-2 border-transparent bg-gradient-to-r from-[#FF70D9] to-[#6EC1E4] p-[2px] hover:scale-105 transition-all duration-300 hover:shadow-2xl"
           >
             <div className="rounded-[28px] bg-white px-12 py-6 text-[#202033] font-semibold text-[20px]">
               Download for iOS
@@ -28,20 +49,20 @@ export default function LandingPage() {
       </div>
 
       {/* Shopping and Styling Image Section */}
-      <div className="py-20 px-6">
+      <div className="py-32 px-6">
         <div className="max-w-6xl mx-auto">
           <Image
             src="/shoppingandstyling.png"
             alt="StyleGenius Features"
             width={1200}
             height={600}
-            className="w-full h-auto"
+            className="w-full h-auto rounded-2xl shadow-2xl animate-fade-in"
           />
         </div>
       </div>
 
       {/* Original Hero Section - Now Second */}
-      <div className="py-20 px-6">
+      <div className="py-32 px-6">
         <div className="container mx-auto text-center max-w-4xl">
           
           {/* Title + Avatar Row */}
