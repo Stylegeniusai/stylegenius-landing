@@ -25,9 +25,9 @@ export default function LandingPage() {
   return (
     <main className="min-h-screen bg-[#F6F6F6] text-[#202033]">
       {/* New Hero Section - Don't Be Dumb */}
-      <div className="min-h-screen flex items-center justify-center px-6">
+      <div className="min-h-screen px-6 pt-40">
         <div className="text-center max-w-4xl mx-auto">
-          <h1 className="mb-48">
+          <h1 className="mb-40">
             <span className="block text-[72px] md:text-[100px] font-black leading-[0.9]">
               Don't Be Dumb
             </span>
@@ -68,7 +68,7 @@ export default function LandingPage() {
           {/* Title + Avatar Row */}
           <div className="flex items-center justify-center gap-12 mb-16">
             <div className="text-left">
-              <h2 className="text-[56px] md:text-[80px] font-black leading-[1.1] tracking-tight">
+              <h2 className="text-[72px] md:text-[100px] font-black leading-[0.9] tracking-tight">
                 Your personal <span className="bg-gradient-to-r from-[#FF70D9] to-[#6EC1E4] bg-clip-text text-transparent">shopping</span>
                 <br />
                 & <span className="bg-gradient-to-r from-[#FF70D9] to-[#6EC1E4] bg-clip-text text-transparent">styling</span> assistant
