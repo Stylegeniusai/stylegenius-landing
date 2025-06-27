@@ -27,7 +27,7 @@ export default function LandingPage() {
       {/* New Hero Section - Don't Be Dumb */}
       <div className="min-h-screen flex items-center justify-center px-6">
         <div className="text-center max-w-4xl mx-auto">
-          <h1 className="mb-12">
+          <h1 className="mb-24">
             <span className="block text-[72px] md:text-[100px] font-black leading-[0.9]">
               Don't Be Dumb
             </span>
@@ -62,7 +62,7 @@ export default function LandingPage() {
       </div>
 
       {/* Original Hero Section - Now Second */}
-      <div className="py-32 px-6">
+      <div className="py-40 px-6">
         <div className="container mx-auto text-center max-w-4xl">
           
           {/* Title + Avatar Row */}
@@ -84,9 +84,13 @@ export default function LandingPage() {
           </div>
 
           {/* Subtitle */}
-          <p className="text-[28px] text-[#6D6D7A] mb-20 max-w-3xl mx-auto leading-relaxed font-medium">
-            It's like having a best friend who's amazing at style and gives great advice.
-          </p>
+          <div className="mb-20 max-w-3xl mx-auto">
+            <p className="text-[32px] text-[#6D6D7A] leading-relaxed font-medium italic relative">
+              <span className="text-[48px] text-[#FF70D9] absolute -left-8 -top-2">"</span>
+              It's like having a best friend who's amazing at style and gives great advice.
+              <span className="text-[48px] text-[#6EC1E4] absolute -right-8 -bottom-2">"</span>
+            </p>
+          </div>
 
           {/* Phone Screenshot - Coming up from bottom */}
           <div className="mb-16 overflow-hidden">
