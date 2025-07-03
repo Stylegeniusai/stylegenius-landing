@@ -52,25 +52,18 @@ const AppShowcase = () => {
               </div>
             </div>
             <div className="bg-white rounded-3xl shadow-2xl p-8">
-              <div className="grid grid-cols-3 gap-6 h-[500px]">
-                <div className="w-full h-full rounded-2xl overflow-hidden">
+              <div className="space-y-4">
+                <div className="w-full h-64 rounded-2xl overflow-hidden">
                   <img 
                     src="/styleaishopping.png" 
                     alt="StyleGenius App Shopping" 
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="w-full h-full rounded-2xl overflow-hidden">
+                <div className="w-full h-64 rounded-2xl overflow-hidden">
                   <img 
-                    src="/coloranalysisshopping.png" 
+                    src="/coloranalysisshoppingai.png" 
                     alt="StyleGenius Color Analysis" 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="w-full h-full rounded-2xl overflow-hidden">
-                  <img 
-                    src="/mainavatar.png" 
-                    alt="StyleGenius Avatar" 
                     className="w-full h-full object-cover"
                   />
                 </div>
