@@ -52,18 +52,25 @@ const AppShowcase = () => {
               </div>
             </div>
             <div className="bg-white rounded-3xl shadow-2xl p-8">
-              <div className="space-y-4">
-                <div className="w-64 h-44 mx-auto rounded-2xl overflow-hidden">
+              <div className="grid grid-cols-3 gap-6 h-[500px]">
+                <div className="w-full h-full rounded-2xl overflow-hidden">
                   <img 
                     src="/styleaishopping.png" 
                     alt="StyleGenius App Shopping" 
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="w-64 h-44 mx-auto rounded-2xl overflow-hidden">
+                <div className="w-full h-full rounded-2xl overflow-hidden">
                   <img 
                     src="/coloranalysisshopping.png" 
                     alt="StyleGenius Color Analysis" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="w-full h-full rounded-2xl overflow-hidden">
+                  <img 
+                    src="/mainavatar.png" 
+                    alt="StyleGenius Avatar" 
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -77,11 +84,11 @@ const AppShowcase = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1">
               <div className="bg-white rounded-3xl shadow-2xl p-8 text-center">
-                <div className="w-full h-64 rounded-2xl overflow-hidden">
+                <div className="w-full h-[500px] rounded-2xl overflow-hidden">
                   <img 
                     src="/browserextensionstylegenius.png" 
                     alt="StyleGenius Browser Extension" 
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain"
                   />
                 </div>
               </div>
