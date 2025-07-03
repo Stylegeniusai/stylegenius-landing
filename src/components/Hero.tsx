@@ -1,5 +1,6 @@
 
-import { Button } from "@/components/ui/button";
+import React from "react";
+import { Button } from "./ui/button";
 import { ArrowDown } from "lucide-react";
 
 const Hero = () => {
@@ -19,7 +20,12 @@ const Hero = () => {
           <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6">
             Meet Your Personal
             <span 
-              className="block bg-gradient-to-r from-pink-400 to-blue-400 bg-clip-text text-transparent"
+              className="block bg-clip-text text-transparent"
+              style={{
+                background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent'
+              }}
             >
               StyleGenius
             </span>
@@ -49,15 +55,17 @@ const Hero = () => {
           
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button 
-              size="lg" 
-              className="px-8 py-4 text-lg font-semibold text-white shadow-lg hover:shadow-xl transition-all duration-300"
-              style={{
-                background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)'
-              }}
-            >
-              Download for iOS
-            </Button>
+            <a href="https://apps.apple.com/app/id6747178892" target="_blank" rel="noopener noreferrer">
+              <Button 
+                size="lg" 
+                className="px-8 py-4 text-lg font-semibold text-white shadow-lg hover:shadow-xl transition-all duration-300"
+                style={{
+                  background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)'
+                }}
+              >
+                Download for iOS
+              </Button>
+            </a>
             <Button 
               size="lg" 
               variant="outline"

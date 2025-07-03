@@ -1,22 +1,46 @@
 
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Card, CardContent } from "@/components/ui/card";
-import { useToast } from "@/hooks/use-toast";
+import React, { useState } from "react";
+import { Button } from "./ui/button";
+import { Input } from "./ui/input";
+import { Card, CardContent } from "./ui/card";
+import { useToast } from "../hooks/use-toast";
+import { supabase } from "../lib/supabase";
 
 const DownloadSection = () => {
   const [email, setEmail] = useState("");
   const { toast } = useToast();
 
-  const handleAndroidSignup = (e: React.FormEvent) => {
+  const handleAndroidSignup = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) {
-      toast({
-        title: "Thanks for joining!",
-        description: "We'll notify you when StyleGenius for Android is ready.",
-      });
+    if (!email) return;
+
+    try {
+      const { error } = await supabase
+        .from('android_waitlist')
+        .insert([{ email }]);
+
+      if (error) {
+        if (error.code === '23505') { // Unique constraint violation
+          toast({
+            title: "Already registered!",
+            description: "You're already on our Android waitlist.",
+          });
+        } else {
+          throw error;
+        }
+      } else {
+        toast({
+          title: "Thanks for joining!",
+          description: "We'll notify you when StyleGenius for Android is ready.",
+        });
+      }
       setEmail("");
+    } catch (error) {
+      console.error('Error adding to waitlist:', error);
+      toast({
+        title: "Error",
+        description: "Something went wrong. Please try again.",
+      });
     }
   };
 
@@ -36,7 +60,12 @@ const DownloadSection = () => {
           {/* iOS Download */}
           <Card className="border-0 shadow-xl">
             <CardContent className="p-8 text-center">
-              <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-pink-400 to-blue-400 rounded-2xl flex items-center justify-center text-white text-3xl">
+              <div 
+                className="w-20 h-20 mx-auto mb-6 rounded-2xl flex items-center justify-center text-white text-3xl"
+                style={{
+                  background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)'
+                }}
+              >
                 📱
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">
@@ -45,15 +74,17 @@ const DownloadSection = () => {
               <p className="text-gray-600 mb-6">
                 Get StyleGenius on your iPhone and start your style transformation today
               </p>
-              <Button 
-                size="lg"
-                className="w-full text-lg py-4 text-white shadow-lg hover:shadow-xl transition-all duration-300"
-                style={{
-                  background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)'
-                }}
-              >
-                Download for iOS
-              </Button>
+              <a href="https://apps.apple.com/app/id6747178892" target="_blank" rel="noopener noreferrer">
+                <Button 
+                  size="lg"
+                  className="w-full text-lg py-4 text-white shadow-lg hover:shadow-xl transition-all duration-300"
+                  style={{
+                    background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)'
+                  }}
+                >
+                  Download for iOS
+                </Button>
+              </a>
               <p className="text-sm text-gray-500 mt-4">
                 Free download • iOS 14.0 or later
               </p>
@@ -63,7 +94,12 @@ const DownloadSection = () => {
           {/* Android Waitlist */}
           <Card className="border-0 shadow-xl">
             <CardContent className="p-8 text-center">
-              <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-blue-400 to-pink-400 rounded-2xl flex items-center justify-center text-white text-3xl">
+              <div 
+                className="w-20 h-20 mx-auto mb-6 rounded-2xl flex items-center justify-center text-white text-3xl"
+                style={{
+                  background: 'linear-gradient(45deg, #6EC1E4, #FF70D9)'
+                }}
+              >
                 🤖
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">
