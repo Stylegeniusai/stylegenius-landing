@@ -15,9 +15,11 @@ const Hero = () => {
       />
       
       <div className="container mx-auto px-4 z-10">
-        <div className="text-center max-w-4xl mx-auto">
-          {/* Main Heading */}
-          <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6">
+        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-screen py-20">
+          {/* Left Column - Text Content */}
+          <div className="text-center lg:text-left">
+            {/* Main Heading */}
+            <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6">
             Meet Your Personal
             <span 
               className="block bg-clip-text text-transparent"

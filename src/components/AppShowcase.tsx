@@ -1,4 +1,6 @@
 
+import React from "react";
+
 const AppShowcase = () => {
   return (
     <section className="py-20 bg-gray-50">
@@ -21,37 +23,50 @@ const AppShowcase = () => {
               </h3>
               <div className="space-y-4">
                 <div className="flex items-start gap-4">
-                  <div className="w-8 h-8 rounded-full bg-gradient-to-r from-pink-400 to-blue-400 flex items-center justify-center text-white font-bold text-sm">
+                  <div className="w-8 h-8 rounded-full flex items-center justify-center text-white font-bold text-sm" style={{background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)'}}>
                     1
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900">Upload Your Wardrobe</h4>
-                    <p className="text-gray-600">Take photos of your clothes and let StyleGenius learn your style</p>
+                    <h4 className="font-semibold text-gray-900">Skintone Analysis & Personality</h4>
+                    <p className="text-gray-600">Discover your perfect colors and style personality with AI-powered analysis</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="w-8 h-8 rounded-full bg-gradient-to-r from-pink-400 to-blue-400 flex items-center justify-center text-white font-bold text-sm">
+                  <div className="w-8 h-8 rounded-full flex items-center justify-center text-white font-bold text-sm" style={{background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)'}}>
                     2
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900">Get Personalized Outfits</h4>
-                    <p className="text-gray-600">Receive outfit suggestions tailored to your style and colors</p>
+                    <h4 className="font-semibold text-gray-900">Tinder-Swipe to Fill Your Wardrobe</h4>
+                    <p className="text-gray-600">Effortlessly organize your clothes with fun swipe gestures and smart categorization</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="w-8 h-8 rounded-full bg-gradient-to-r from-pink-400 to-blue-400 flex items-center justify-center text-white font-bold text-sm">
+                  <div className="w-8 h-8 rounded-full flex items-center justify-center text-white font-bold text-sm" style={{background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)'}}>
                     3
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900">Chat with Your Genius</h4>
-                    <p className="text-gray-600">Ask questions and get expert styling advice anytime</p>
+                    <h4 className="font-semibold text-gray-900">Elevate Your Style, Confidence & Life</h4>
+                    <p className="text-gray-600">Transform how you dress and feel with personalized styling that boosts your confidence</p>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="bg-white rounded-3xl shadow-2xl p-8 text-center">
-              <div className="w-64 h-96 mx-auto bg-gradient-to-b from-gray-100 to-gray-200 rounded-2xl flex items-center justify-center">
-                <span className="text-gray-500 text-lg">📱 App Screenshot</span>
+            <div className="bg-white rounded-3xl shadow-2xl p-8">
+              <div className="space-y-4">
+                <div className="w-64 h-44 mx-auto rounded-2xl overflow-hidden">
+                  <img 
+                    src="/styleaishopping.png" 
+                    alt="StyleGenius App Shopping" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="w-64 h-44 mx-auto rounded-2xl overflow-hidden">
+                  <img 
+                    src="/coloranalysisshopping.png" 
+                    alt="StyleGenius Color Analysis" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -62,8 +77,12 @@ const AppShowcase = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1">
               <div className="bg-white rounded-3xl shadow-2xl p-8 text-center">
-                <div className="w-full h-64 bg-gradient-to-b from-gray-100 to-gray-200 rounded-2xl flex items-center justify-center">
-                  <span className="text-gray-500 text-lg">🌐 Browser Extension</span>
+                <div className="w-full h-64 rounded-2xl overflow-hidden">
+                  <img 
+                    src="/browserextensionstylegenius.png" 
+                    alt="StyleGenius Browser Extension" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
             </div>
@@ -73,7 +92,7 @@ const AppShowcase = () => {
               </h3>
               <div className="space-y-4">
                 <div className="flex items-start gap-4">
-                  <div className="w-8 h-8 rounded-full bg-gradient-to-r from-blue-400 to-pink-400 flex items-center justify-center text-white font-bold text-sm">
+                  <div className="w-8 h-8 rounded-full flex items-center justify-center text-white font-bold text-sm" style={{background: 'linear-gradient(45deg, #6EC1E4, #FF70D9)'}}>
                     1
                   </div>
                   <div>
@@ -82,7 +101,7 @@ const AppShowcase = () => {
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="w-8 h-8 rounded-full bg-gradient-to-r from-blue-400 to-pink-400 flex items-center justify-center text-white font-bold text-sm">
+                  <div className="w-8 h-8 rounded-full flex items-center justify-center text-white font-bold text-sm" style={{background: 'linear-gradient(45deg, #6EC1E4, #FF70D9)'}}>
                     2
                   </div>
                   <div>
@@ -91,7 +110,7 @@ const AppShowcase = () => {
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="w-8 h-8 rounded-full bg-gradient-to-r from-blue-400 to-pink-400 flex items-center justify-center text-white font-bold text-sm">
+                  <div className="w-8 h-8 rounded-full flex items-center justify-center text-white font-bold text-sm" style={{background: 'linear-gradient(45deg, #6EC1E4, #FF70D9)'}}>
                     3
                   </div>
                   <div>
