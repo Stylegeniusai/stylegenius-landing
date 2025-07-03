@@ -82,6 +82,21 @@ const Hero = () => {
             <ArrowDown className="mx-auto text-gray-400" size={32} />
           </div>
         </div>
+        
+        {/* Right Column - Avatar Image */}
+        <div className="text-center lg:text-right">
+          <div className="relative">
+            <img 
+              src="/mainavatar.png" 
+              alt="StyleGenius Avatar" 
+              className="w-80 h-80 mx-auto rounded-full shadow-2xl animate-pulse"
+              style={{
+                filter: 'drop-shadow(0 0 20px rgba(255, 112, 217, 0.3))'
+              }}
+            />
+          </div>
+        </div>
+      </div>
       </div>
     </section>
   );
