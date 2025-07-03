@@ -53,18 +53,18 @@ const AppShowcase = () => {
             </div>
             <div className="bg-white rounded-3xl shadow-2xl p-8">
               <div className="space-y-4">
-                <div className="w-full h-64 rounded-2xl overflow-hidden">
+                <div className="w-full max-w-sm mx-auto h-64 rounded-2xl overflow-hidden">
                   <img 
                     src="/styleaishopping.png" 
                     alt="StyleGenius App Shopping" 
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain"
                   />
                 </div>
-                <div className="w-full h-64 rounded-2xl overflow-hidden">
+                <div className="w-full max-w-sm mx-auto h-64 rounded-2xl overflow-hidden">
                   <img 
                     src="/coloranalysisshoppingai.png" 
                     alt="StyleGenius Color Analysis" 
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain"
                   />
                 </div>
               </div>
@@ -77,13 +77,24 @@ const AppShowcase = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1">
               <div className="bg-white rounded-3xl shadow-2xl p-8 text-center">
-                <div className="w-full h-[500px] rounded-2xl overflow-hidden">
+                <div className="w-full h-[400px] lg:h-[500px] rounded-2xl overflow-hidden">
                   <img 
                     src="/browserextensionstylegenius.png" 
                     alt="StyleGenius Browser Extension" 
                     className="w-full h-full object-contain"
                   />
                 </div>
+                <a 
+                  href="https://chrome.google.com/webstore" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center mt-6 px-8 py-4 text-lg font-semibold text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+                  style={{
+                    background: 'linear-gradient(45deg, #6EC1E4, #FF70D9)'
+                  }}
+                >
+                  Download Extension
+                </a>
               </div>
             </div>
             <div className="order-1 lg:order-2">
