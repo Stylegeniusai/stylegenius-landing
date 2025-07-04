@@ -1,5 +1,5 @@
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "./ui/button";
 import { ArrowDown } from "lucide-react";
 import {
@@ -17,7 +17,26 @@ const Hero = () => {
   const [isWaitlistOpen, setIsWaitlistOpen] = useState(false);
   const [email, setEmail] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [currentReview, setCurrentReview] = useState(0);
   const { toast } = useToast();
+
+  const reviews = [
+    {
+      text: "Love having a friend and expert always ready to talk to about style, clothes, outfits and shopping",
+      author: "iOS User"
+    },
+    {
+      text: "StyleGenius has totally changed how I get dressed. It saves me so much time! It feels like having a personal stylist in your pocket - love it!",
+      author: "App Store Review"
+    }
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentReview((prev) => (prev + 1) % reviews.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
 
   const handleWaitlistSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -89,17 +108,21 @@ const Hero = () => {
             Your personal styling and shopping assistant that elevates your style, confidence and life.
           </p>
           
-          {/* Review */}
+          {/* Review Carousel */}
           <div className="mb-10 max-w-2xl mx-auto">
             <div className="flex text-yellow-400 text-lg justify-center mb-3">
               ⭐⭐⭐⭐⭐
             </div>
-            <p className="text-gray-600 italic text-lg mb-2">
-              "Love having a friend and expert always ready to talk to about style, clothes, outfits and shopping"
-            </p>
-            <p className="text-gray-500 text-sm">
-              — iOS User
-            </p>
+            <div className="relative h-20 flex items-center">
+              <div className="transition-all duration-500 ease-in-out">
+                <p className="text-gray-700 font-semibold text-lg mb-2 text-center">
+                  "{reviews[currentReview].text}"
+                </p>
+                <p className="text-gray-500 text-sm text-center">
+                  — {reviews[currentReview].author}
+                </p>
+              </div>
+            </div>
           </div>
           
           {/* Value Props - Updated with new terms */}
