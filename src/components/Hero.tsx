@@ -110,18 +110,16 @@ const Hero = () => {
           
           {/* Review Carousel */}
           <div className="mb-10 max-w-2xl mx-auto">
-            <div className="flex text-yellow-400 text-lg justify-center mb-3">
+            <div className="flex text-yellow-400 text-lg justify-center mb-4">
               ⭐⭐⭐⭐⭐
             </div>
-            <div className="relative h-20 flex items-center">
-              <div className="transition-all duration-500 ease-in-out">
-                <p className="text-gray-700 font-semibold text-lg mb-2 text-center">
-                  "{reviews[currentReview].text}"
-                </p>
-                <p className="text-gray-500 text-sm text-center">
-                  — {reviews[currentReview].author}
-                </p>
-              </div>
+            <div className="transition-all duration-500 ease-in-out min-h-[120px] flex flex-col justify-center">
+              <p className="text-gray-700 font-semibold text-lg mb-3 text-center">
+                "{reviews[currentReview].text}"
+              </p>
+              <p className="text-gray-500 text-sm text-center">
+                — {reviews[currentReview].author}
+              </p>
             </div>
           </div>
           
