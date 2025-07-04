@@ -85,9 +85,33 @@ const Hero = () => {
           </div>
           
           {/* Subheading */}
-          <p className="text-xl md:text-2xl text-gray-600 mb-10 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed max-w-3xl mx-auto">
             Your personal styling and shopping assistant that elevates your style, confidence and life.
           </p>
+          
+          {/* Social Proof & Review */}
+          <div className="mb-10">
+            {/* App Store Rating */}
+            <div className="flex items-center justify-center gap-2 mb-4">
+              <div className="flex text-yellow-400 text-lg">
+                ⭐⭐⭐⭐⭐
+              </div>
+              <span className="text-gray-600 font-medium">4.8/5 • 10K+ Users • #1 Style App</span>
+            </div>
+            
+            {/* Featured Review */}
+            <div className="max-w-2xl mx-auto bg-white rounded-2xl p-6 shadow-lg border">
+              <div className="flex text-yellow-400 text-sm mb-2">
+                ⭐⭐⭐⭐⭐
+              </div>
+              <p className="text-gray-700 italic mb-3">
+                "Love having a friend and expert always ready to talk to about style, clothes, outfits and shopping"
+              </p>
+              <div className="text-sm text-gray-500">
+                — App Store Review
+              </div>
+            </div>
+          </div>
           
           {/* Value Props - Updated with new terms */}
           <div className="flex flex-wrap justify-center gap-3 mb-12">
