@@ -52,19 +52,19 @@ const AppShowcase = () => {
               </div>
             </div>
             <div className="bg-white rounded-3xl shadow-2xl p-8">
-              <div className="space-y-4">
-                <div className="w-full max-w-sm mx-auto h-64 rounded-2xl overflow-hidden">
+              <div className="space-y-6">
+                <div className="w-full h-80 md:h-96 rounded-2xl overflow-hidden">
                   <img 
                     src="/styleaishopping.png" 
                     alt="StyleGenius App Shopping" 
-                    className="w-full h-full object-contain"
+                    className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="w-full max-w-sm mx-auto h-64 rounded-2xl overflow-hidden">
+                <div className="w-full h-80 md:h-96 rounded-2xl overflow-hidden">
                   <img 
                     src="/coloranalysisshoppingai.png" 
                     alt="StyleGenius Color Analysis" 
-                    className="w-full h-full object-contain"
+                    className="w-full h-full object-cover"
                   />
                 </div>
               </div>
@@ -77,7 +77,7 @@ const AppShowcase = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1">
               <div className="bg-white rounded-3xl shadow-2xl p-8 text-center">
-                <div className="w-full h-[400px] lg:h-[500px] rounded-2xl overflow-hidden">
+                <div className="w-full h-[500px] md:h-[600px] rounded-2xl overflow-hidden">
                   <img 
                     src="/browserextensionstylegenius.png" 
                     alt="StyleGenius Browser Extension" 
@@ -85,7 +85,7 @@ const AppShowcase = () => {
                   />
                 </div>
                 <a 
-                  href="https://chrome.google.com/webstore" 
+                  href="https://chromewebstore.google.com/search/StyleGenius%20%E2%80%93%20Your%20Personal%20Styling%20and%20Shopping%20Assistant" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center mt-6 px-8 py-4 text-lg font-semibold text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300"

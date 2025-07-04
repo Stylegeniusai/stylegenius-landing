@@ -15,43 +15,56 @@ const Hero = () => {
       />
       
       <div className="container mx-auto px-4 z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-screen py-20">
-          {/* Left Column - Text Content */}
-          <div className="text-center lg:text-left">
-            {/* Main Heading */}
-            <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6">
-            Meet Your Personal
-            <span 
-              className="block bg-clip-text text-transparent"
+        <div className="text-center min-h-screen flex flex-col justify-center py-20">
+          {/* Main Heading with Avatar on same line */}
+          <div className="flex items-center justify-center gap-6 mb-12">
+            <h1 className="text-5xl md:text-7xl font-bold text-gray-900 text-left">
+              Meet Your Personal<br/>
+              <span 
+                className="bg-clip-text text-transparent"
+                style={{
+                  background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent'
+                }}
+              >
+                StyleGenius
+              </span>
+            </h1>
+            <img 
+              src="/mainavatar.png" 
+              alt="StyleGenius Avatar" 
+              className="w-32 h-32 md:w-40 md:h-40 rounded-full shadow-2xl hover:scale-110 transition-transform duration-300"
               style={{
-                background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent'
+                filter: 'drop-shadow(0 0 20px rgba(255, 112, 217, 0.3))'
               }}
-            >
-              StyleGenius
-            </span>
-          </h1>
+            />
+          </div>
           
           {/* Subheading */}
-          <p className="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed">
-            Your AI styling assistant that helps you create amazing outfits, find your perfect colors, 
-            and shop smarter. Available in your phone and browser.
+          <p className="text-xl md:text-2xl text-gray-600 mb-10 leading-relaxed max-w-3xl mx-auto">
+            Your personal styling and shopping assistant that elevates your style, confidence and life.
           </p>
           
-          {/* Value Props */}
-          <div className="flex flex-wrap justify-center gap-4 mb-10">
+          {/* Value Props - Updated with new terms */}
+          <div className="flex flex-wrap justify-center gap-3 mb-12">
             <span className="px-4 py-2 bg-white rounded-full text-gray-700 shadow-sm border">
-              🎨 Color Analysis
+              🎨 Skintone Analysis
             </span>
             <span className="px-4 py-2 bg-white rounded-full text-gray-700 shadow-sm border">
-              👗 Outfit Creation
+              👗 Style Items
             </span>
             <span className="px-4 py-2 bg-white rounded-full text-gray-700 shadow-sm border">
               🛍️ Smart Shopping
             </span>
             <span className="px-4 py-2 bg-white rounded-full text-gray-700 shadow-sm border">
-              💬 Expert Advice
+              ✨ Outfit Creation
+            </span>
+            <span className="px-4 py-2 bg-white rounded-full text-gray-700 shadow-sm border">
+              📸 Fit Checks
+            </span>
+            <span className="px-4 py-2 bg-white rounded-full text-gray-700 shadow-sm border">
+              💬 Your Style Expert
             </span>
           </div>
           
@@ -82,21 +95,6 @@ const Hero = () => {
             <ArrowDown className="mx-auto text-gray-400" size={32} />
           </div>
         </div>
-        
-        {/* Right Column - Avatar Image */}
-        <div className="text-center lg:text-right">
-          <div className="relative">
-            <img 
-              src="/mainavatar.png" 
-              alt="StyleGenius Avatar" 
-              className="w-80 h-80 mx-auto rounded-full shadow-2xl animate-pulse"
-              style={{
-                filter: 'drop-shadow(0 0 20px rgba(255, 112, 217, 0.3))'
-              }}
-            />
-          </div>
-        </div>
-      </div>
       </div>
     </section>
   );
