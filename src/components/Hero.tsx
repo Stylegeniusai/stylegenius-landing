@@ -59,9 +59,9 @@ const Hero = () => {
       
       <div className="container mx-auto px-4 z-10">
         <div className="text-center min-h-screen flex flex-col justify-center py-20">
-          {/* Main Heading with Avatar on same line */}
-          <div className="flex items-center justify-center gap-6 mb-12">
-            <h1 className="text-5xl md:text-7xl font-bold text-gray-900 text-left">
+          {/* Main Heading with Avatar - vertical on mobile, horizontal on desktop */}
+          <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-12">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 text-center md:text-left">
               Meet Your Personal<br/>
               <span 
                 className="bg-clip-text text-transparent"
@@ -77,7 +77,7 @@ const Hero = () => {
             <img 
               src="/mainavatar.png" 
               alt="StyleGenius Avatar" 
-              className="w-32 h-32 md:w-40 md:h-40 rounded-full shadow-2xl hover:scale-110 transition-transform duration-300"
+              className="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-full shadow-2xl hover:scale-110 transition-transform duration-300"
               style={{
                 filter: 'drop-shadow(0 0 20px rgba(255, 112, 217, 0.3))'
               }}
