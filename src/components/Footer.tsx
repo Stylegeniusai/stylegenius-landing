@@ -19,8 +19,7 @@ const Footer = () => {
             </span>
           </h3>
           <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
-            Your personal styling assistant helping girls aged 15-30 discover their perfect style, 
-            create amazing outfits, and shop smarter.
+            Your personal styling and shopping assistant that elevates your style, confidence and life.
           </p>
           
           <div className="flex flex-wrap justify-center gap-4 sm:gap-6 mb-8">
@@ -46,7 +45,7 @@ const Footer = () => {
           
           <div className="border-t border-gray-800 pt-8">
             <p className="text-gray-500">
-              © 2024 StyleGenius. All rights reserved.
+              © 2025 StyleGenius. All rights reserved.
             </p>
           </div>
         </div>
