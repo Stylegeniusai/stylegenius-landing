@@ -1,9 +1,52 @@
 
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "./ui/button";
 import { ArrowDown } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "./ui/dialog";
+import { Input } from "./ui/input";
+import { useToast } from "../hooks/use-toast";
+import { supabase } from "../lib/supabase";
 
 const Hero = () => {
+  const [isWaitlistOpen, setIsWaitlistOpen] = useState(false);
+  const [email, setEmail] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const { toast } = useToast();
+
+  const handleWaitlistSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsLoading(true);
+
+    try {
+      const { error } = await supabase
+        .from('android_waitlist')
+        .insert([{ email }]);
+
+      if (error) throw error;
+
+      toast({
+        title: "Success!",
+        description: "You've been added to the Android waitlist.",
+      });
+      setIsWaitlistOpen(false);
+      setEmail("");
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Something went wrong. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Gradient Background */}
@@ -85,6 +128,7 @@ const Hero = () => {
               size="lg" 
               variant="outline"
               className="px-8 py-4 text-lg font-semibold border-2 hover:bg-gray-50"
+              onClick={() => setIsWaitlistOpen(true)}
             >
               Join Android Waitlist
             </Button>
@@ -96,6 +140,38 @@ const Hero = () => {
           </div>
         </div>
       </div>
+
+      {/* Android Waitlist Dialog */}
+      <Dialog open={isWaitlistOpen} onOpenChange={setIsWaitlistOpen}>
+        <DialogContent className="sm:max-w-[425px]">
+          <DialogHeader>
+            <DialogTitle>Join Android Waitlist</DialogTitle>
+            <DialogDescription>
+              Be the first to know when StyleGenius launches on Android!
+            </DialogDescription>
+          </DialogHeader>
+          <form onSubmit={handleWaitlistSubmit} className="space-y-4">
+            <Input
+              type="email"
+              placeholder="Enter your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              className="w-full"
+            />
+            <Button 
+              type="submit" 
+              className="w-full"
+              disabled={isLoading}
+              style={{
+                background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)'
+              }}
+            >
+              {isLoading ? "Joining..." : "Join Waitlist"}
+            </Button>
+          </form>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
