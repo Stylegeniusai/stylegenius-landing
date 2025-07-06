@@ -114,7 +114,7 @@ const Premium = () => {
         <div className="text-center mb-16">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6">
             Invest in your style,<br/>
-            <span 
+            confidence and <span 
               className="bg-clip-text text-transparent"
               style={{
                 background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)',
@@ -122,7 +122,7 @@ const Premium = () => {
                 WebkitTextFillColor: 'transparent'
               }}
             >
-              confidence and life
+              life
             </span>
             <img 
               src="/mainavatar.png" 
