@@ -62,8 +62,8 @@ const Premium = () => {
           quantity: 1,
         }],
         mode: 'subscription',
-        successUrl: `${window.location.origin}/premium?success=true`,
-        cancelUrl: `${window.location.origin}/premium?canceled=true`,
+        successUrl: `https://stylegenius.app/premium?success=true`,
+        cancelUrl: `https://stylegenius.app/premium?canceled=true`,
         customerEmail: undefined, // Let Stripe collect email
       });
 
