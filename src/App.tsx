@@ -11,6 +11,7 @@ import Terms from "./pages/terms";
 import Cookies from "./pages/cookies";
 import Support from "./pages/support";
 import DataDeletion from "./pages/data-deletion";
+import Premium from "./pages/premium";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,7 @@ const App = () => (
           <Route path="/cookies" element={<Cookies />} />
           <Route path="/support" element={<Support />} />
           <Route path="/data-deletion" element={<DataDeletion />} />
+          <Route path="/premium" element={<Premium />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
