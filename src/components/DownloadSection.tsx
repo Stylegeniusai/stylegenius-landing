@@ -137,14 +137,6 @@ const DownloadSection = () => {
         <div className="text-center mt-16">
           <div className="flex justify-center items-center gap-8 flex-wrap">
             <div className="text-center">
-              <div className="text-3xl font-bold text-gray-900">10K+</div>
-              <div className="text-gray-600">Happy Users</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-gray-900">50K+</div>
-              <div className="text-gray-600">Outfits Created</div>
-            </div>
-            <div className="text-center">
               <div className="text-3xl font-bold text-gray-900">4.9★</div>
               <div className="text-gray-600">App Store Rating</div>
             </div>
