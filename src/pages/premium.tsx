@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "../components/ui/button";
 import { Card, CardContent } from "../components/ui/card";
 import { Check } from "lucide-react";
@@ -7,6 +7,25 @@ import { loadStripe } from "../lib/stripe";
 const Premium = () => {
   const [selectedPlan, setSelectedPlan] = useState("annual");
   const [isLoading, setIsLoading] = useState(false);
+  const [currentReview, setCurrentReview] = useState(0);
+
+  const reviews = [
+    {
+      text: "Love having a friend and expert always ready to talk to about style, clothes, outfits and shopping",
+      author: "iOS User"
+    },
+    {
+      text: "StyleGenius has totally changed how I get dressed. It saves me so much time! It feels like having a personal stylist in your pocket - love it!",
+      author: "App Store Review"
+    }
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentReview((prev) => (prev + 1) % reviews.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
 
   const features = [
     "See what colors make you shine (and which to avoid)",
@@ -136,8 +155,13 @@ const Premium = () => {
             <div className="flex text-yellow-400 text-xl justify-center mb-3">
               ⭐⭐⭐⭐⭐
             </div>
-            <p className="text-gray-600 italic text-lg">
-              "Love having someone to always talk to about style!"
+            <div className="min-h-[60px] flex items-center justify-center">
+              <p className="text-gray-600 italic text-lg text-center max-w-2xl transition-opacity duration-500">
+                "{reviews[currentReview].text}"
+              </p>
+            </div>
+            <p className="text-gray-500 text-sm mt-2">
+              — {reviews[currentReview].author}
             </p>
           </div>
         </div>
