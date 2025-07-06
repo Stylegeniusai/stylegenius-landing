@@ -10,6 +10,8 @@ export const STRIPE_PRICE_IDS = {
 
 // Load Stripe.js
 export const loadStripe = async () => {
+  console.log('Loading Stripe with key:', STRIPE_PUBLISHABLE_KEY ? 'Key exists' : 'No key found');
+  
   if (!window.Stripe) {
     const script = document.createElement('script');
     script.src = 'https://js.stripe.com/v3/';
@@ -19,6 +21,10 @@ export const loadStripe = async () => {
     await new Promise((resolve) => {
       script.onload = resolve;
     });
+  }
+  
+  if (!STRIPE_PUBLISHABLE_KEY) {
+    throw new Error('Stripe publishable key not found');
   }
   
   return window.Stripe(STRIPE_PUBLISHABLE_KEY);

@@ -48,23 +48,27 @@ const Premium = () => {
     setIsLoading(true);
     
     try {
-      const stripe = await loadStripe();
       const selectedPlanData = plans.find(plan => plan.id === selectedPlan);
       
-      if (!stripe || !selectedPlanData) {
-        throw new Error('Unable to load Stripe or find selected plan');
+      if (!selectedPlanData) {
+        throw new Error('Unable to find selected plan');
       }
 
-      // Create Stripe Checkout session
+      // Create checkout session on backend (for now, direct redirect)
+      const stripe = await loadStripe();
+      if (!stripe) {
+        throw new Error('Stripe failed to load');
+      }
+
+      // For now, use direct checkout with price ID
       const { error } = await stripe.redirectToCheckout({
         lineItems: [{
           price: selectedPlanData.stripePriceId,
           quantity: 1,
         }],
         mode: 'subscription',
-        successUrl: `https://stylegenius.app/premium?success=true`,
-        cancelUrl: `https://stylegenius.app/premium?canceled=true`,
-        customerEmail: undefined, // Let Stripe collect email
+        successUrl: `${window.location.origin}/premium?success=true`,
+        cancelUrl: `${window.location.origin}/premium?canceled=true`,
       });
 
       if (error) {
@@ -108,9 +112,18 @@ const Premium = () => {
       {/* Hero Section */}
       <div className="container mx-auto px-4 py-20">
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-            Invest in a personal assistant<br/>
-            <span className="text-4xl md:text-6xl">that knows you</span>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6">
+            Invest in your style,<br/>
+            <span 
+              className="bg-clip-text text-transparent"
+              style={{
+                background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent'
+              }}
+            >
+              confidence and life
+            </span>
             <img 
               src="/mainavatar.png" 
               alt="StyleGenius" 
