@@ -10,7 +10,10 @@ export const STRIPE_PRICE_IDS = {
 
 // Load Stripe.js
 export const loadStripe = async () => {
-  console.log('Loading Stripe with key:', STRIPE_PUBLISHABLE_KEY ? 'Key exists' : 'No key found');
+  console.log('Environment check:');
+  console.log('VITE_STRIPE_PUBLISHABLE_KEY:', import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY);
+  console.log('All env vars:', import.meta.env);
+  console.log('STRIPE_PUBLISHABLE_KEY value:', STRIPE_PUBLISHABLE_KEY);
   
   if (!window.Stripe) {
     const script = document.createElement('script');
@@ -24,7 +27,7 @@ export const loadStripe = async () => {
   }
   
   if (!STRIPE_PUBLISHABLE_KEY) {
-    throw new Error('Stripe publishable key not found');
+    throw new Error('Stripe publishable key not found. Check environment variables.');
   }
   
   return window.Stripe(STRIPE_PUBLISHABLE_KEY);
