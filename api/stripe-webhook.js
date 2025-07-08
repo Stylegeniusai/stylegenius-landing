@@ -16,8 +16,15 @@ export default async function handler(req, res) {
   let event
 
   try {
+    // Get raw body for signature verification
+    const chunks = []
+    for await (const chunk of req) {
+      chunks.push(chunk)
+    }
+    const rawBody = Buffer.concat(chunks)
+    
     // Verify webhook signature
-    event = stripe.webhooks.constructEvent(req.body, sig, endpointSecret)
+    event = stripe.webhooks.constructEvent(rawBody, sig, endpointSecret)
   } catch (err) {
     console.error('Webhook signature verification failed:', err.message)
     return res.status(400).json({ message: 'Webhook signature verification failed' })
@@ -97,8 +104,6 @@ export default async function handler(req, res) {
 // Disable body parsing to get raw body for webhook verification
 export const config = {
   api: {
-    bodyParser: {
-      sizeLimit: '1mb',
-    },
+    bodyParser: false,
   },
 }
