@@ -12,25 +12,25 @@ module.exports = async function handler(req, res) {
     return res.status(405).json({ message: 'Method not allowed' })
   }
 
-  const sig = req.headers['stripe-signature']!
-  let event: Stripe.Event
+  const sig = req.headers['stripe-signature']
+  let event
 
   try {
     // Verify webhook signature
     event = stripe.webhooks.constructEvent(req.body, sig, endpointSecret)
-  } catch (err: any) {
+  } catch (err) {
     console.error('Webhook signature verification failed:', err.message)
     return res.status(400).json({ message: 'Webhook signature verification failed' })
   }
 
   // Handle successful payment
   if (event.type === 'invoice.payment_succeeded') {
-    const invoice = event.data.object as Stripe.Invoice
+    const invoice = event.data.object
     
     try {
       // Get customer email from Stripe
-      const customer = await stripe.customers.retrieve(invoice.customer as string)
-      const email = (customer as Stripe.Customer).email
+      const customer = await stripe.customers.retrieve(invoice.customer)
+      const email = customer.email
 
       if (!email) {
         console.error('No email found for customer:', invoice.customer)
@@ -59,12 +59,12 @@ module.exports = async function handler(req, res) {
 
   // Handle subscription cancellation
   if (event.type === 'customer.subscription.deleted') {
-    const subscription = event.data.object as Stripe.Subscription
+    const subscription = event.data.object
     
     try {
       // Get customer email from Stripe
-      const customer = await stripe.customers.retrieve(subscription.customer as string)
-      const email = (customer as Stripe.Customer).email
+      const customer = await stripe.customers.retrieve(subscription.customer)
+      const email = customer.email
 
       if (!email) {
         console.error('No email found for customer:', subscription.customer)
