@@ -1,11 +1,11 @@
 import Stripe from 'stripe'
 import { supabaseAdmin } from '../lib/supabase-admin'
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: '2024-06-20',
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || '', {
+  apiVersion: '2025-06-30.basil',
 })
 
-const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET!
+const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET || ''
 
 export default async function handler(req: any, res: any) {
   if (req.method !== 'POST') {
