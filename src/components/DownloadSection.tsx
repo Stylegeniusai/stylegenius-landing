@@ -49,7 +49,7 @@ const DownloadSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Ready to Transform Your Style?
+            Ready to elevate your confidence and life?
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Join thousands of girls who've already discovered their perfect style with StyleGenius
