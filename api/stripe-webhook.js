@@ -1,5 +1,5 @@
-const Stripe = require('stripe')
-const { supabaseAdmin } = require('../lib/supabase-admin')
+import Stripe from 'stripe'
+import { supabaseAdmin } from '../lib/supabase-admin.js'
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || '', {
   apiVersion: '2025-06-30.basil',
@@ -7,7 +7,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || '', {
 
 const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET || ''
 
-module.exports = async function handler(req, res) {
+export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ message: 'Method not allowed' })
   }
