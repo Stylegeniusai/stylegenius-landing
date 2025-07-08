@@ -4,6 +4,7 @@ import { supabaseAdmin } from '../lib/supabase-admin.js'
 // Debug environment variables
 console.log('STRIPE_SECRET_KEY length:', process.env.STRIPE_SECRET_KEY?.length)
 console.log('STRIPE_SECRET_KEY starts with sk_:', process.env.STRIPE_SECRET_KEY?.startsWith('sk_'))
+console.log('SUPABASE_SERVICE_KEY length:', process.env.SUPABASE_SERVICE_KEY?.length)
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || '', {
   apiVersion: '2025-06-30.basil',
