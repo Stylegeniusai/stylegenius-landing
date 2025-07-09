@@ -24,7 +24,7 @@ const Success = () => {
         // We don't need Stripe on frontend for this
 
         // Call our edge function to process the payment
-        const response = await fetch(`${import.meta.env.VITE_SUPABASE_URL}/functions/v1/process-premium-payment`, {
+        const response = await fetch(`${import.meta.env.VITE_SUPABASE_URL}/functions/v1/process-premium-payment--`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
