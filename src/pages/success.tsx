@@ -21,11 +21,7 @@ const Success = () => {
           return;
         }
 
-        // Get Stripe session details
-        const stripe = await import('../lib/stripe').then(m => m.loadStripe());
-        if (!stripe) {
-          throw new Error('Failed to load Stripe');
-        }
+        // We don't need Stripe on frontend for this
 
         // Call our edge function to process the payment
         const response = await fetch(`${import.meta.env.VITE_SUPABASE_URL}/functions/v1/process-premium-payment`, {
