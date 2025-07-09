@@ -86,7 +86,7 @@ const Premium = () => {
           quantity: 1,
         }],
         mode: 'subscription',
-        successUrl: `${window.location.origin}/premium?success=true`,
+        successUrl: `${window.location.origin}/success?session_id={CHECKOUT_SESSION_ID}`,
         cancelUrl: `${window.location.origin}/premium?canceled=true`,
       });
 
