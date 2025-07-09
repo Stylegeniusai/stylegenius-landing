@@ -105,7 +105,7 @@ const Hero = () => {
           
           {/* Subheading */}
           <p className="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed max-w-3xl mx-auto">
-            Your personal styling and shopping assistant that elevates your style, confidence and life.
+            A style Expert in your pocket that elevates your style, confidence and life.
           </p>
           
           {/* Review Carousel */}
