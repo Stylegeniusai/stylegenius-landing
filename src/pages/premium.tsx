@@ -227,19 +227,19 @@ const Premium = () => {
             ))}
           </div>
 
-          {/* Checkout Button */}
+          {/* Download App Button */}
           <div className="text-center mb-8">
-            <Button
-              onClick={handleCheckout}
-              disabled={isLoading}
-              size="lg"
-              className="px-12 py-4 text-xl font-semibold text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
-              style={{
-                background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)'
-              }}
-            >
-              {isLoading ? "Processing..." : "CONTINUE WITH PREMIUM"}
-            </Button>
+            <a href="https://apps.apple.com/app/id6747178892" target="_blank" rel="noopener noreferrer">
+              <Button
+                size="lg"
+                className="px-12 py-4 text-xl font-semibold text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+                style={{
+                  background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)'
+                }}
+              >
+                DOWNLOAD APP TO UPGRADE
+              </Button>
+            </a>
           </div>
 
           {/* Fine Print */}
