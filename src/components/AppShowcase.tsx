@@ -3,22 +3,28 @@ import React, { useState, useEffect } from "react";
 
 const AppShowcase = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
   
   const mobileScreenshots = [
     { src: "/StylegeniusHomescreen.png", alt: "StyleGenius Home Screen" },
+    { src: "/styleai.png", alt: "Style AI Assistant" },
     { src: "/Skintoneanalysisseason.png", alt: "Skintone Analysis" },
     { src: "/Skintoneseasoncolors.png", alt: "Season Colors" },
     { src: "/Smartshoppingai.png", alt: "Smart Shopping AI" },
-    { src: "/FitcheckAistyleassistant.png", alt: "Fit Check AI" },
-    { src: "/Styleassistant.png", alt: "Style Assistant" }
+    { src: "/shoppingitems.png", alt: "Shopping Items" },
+    { src: "/aioutfit.png", alt: "AI Outfit Creation" },
+    { src: "/fitcheckai.png", alt: "Fit Check AI" },
+    { src: "/stylingadviceai.png", alt: "Styling Advice AI" }
   ];
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % mobileScreenshots.length);
-    }, 2000);
-    return () => clearInterval(timer);
-  }, []);
+    if (!isPaused) {
+      const timer = setInterval(() => {
+        setCurrentSlide((prev) => (prev + 1) % mobileScreenshots.length);
+      }, 4000); // Increased to 4 seconds
+      return () => clearInterval(timer);
+    }
+  }, [isPaused]);
   return (
     <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
@@ -70,7 +76,11 @@ const AppShowcase = () => {
             </div>
             <div className="bg-white rounded-3xl shadow-2xl p-4 md:p-8">
               {/* Mobile Carousel */}
-              <div className="relative">
+              <div 
+                className="relative"
+                onMouseEnter={() => setIsPaused(true)}
+                onMouseLeave={() => setIsPaused(false)}
+              >
                 <div className="overflow-hidden rounded-2xl">
                   <div 
                     className="flex transition-transform duration-500 ease-in-out"
