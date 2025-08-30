@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { Button } from "./ui/button";
 import { ArrowDown } from "lucide-react";
@@ -78,29 +77,13 @@ const Hero = () => {
       
       <div className="container mx-auto px-4 z-10">
         <div className="text-center min-h-screen flex flex-col justify-center py-20">
-          {/* Top Section - Smart Shopping etc - Compact on mobile */}
-          <div className="mb-8">
-            <div className="flex flex-col sm:flex-row items-center justify-center text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold gap-2 sm:gap-6 mb-6">
-              <span><span style={{ color: '#FF70D9' }}>Smart</span> Shopping</span>
-              <span className="hidden sm:block text-gray-400">•</span>
-              <span><span style={{ color: '#6EC1E4' }}>Smart</span> Beauty</span>
-              <span className="hidden sm:block text-gray-400">•</span>
-              <span><span className="bg-gradient-to-r from-purple-500 to-purple-600 bg-clip-text text-transparent">Smart</span> Styling</span>
-            </div>
-            
-            {/* Visual connection */}
-            <div className="flex justify-center mb-8">
-              <div className="w-24 h-px bg-gradient-to-r from-pink-400 via-purple-400 to-cyan-400"></div>
-            </div>
-          </div>
-
-          {/* Main Section - StyleGenius + Avatar horizontal on mobile */}
+          {/* 1. StyleGenius + Avatar + Kollage */}
           <div className="mb-8">
             <div className="flex flex-col lg:flex-row items-center justify-center max-w-7xl mx-auto gap-6 lg:gap-4">
               
-              {/* StyleGenius + Avatar - horizontal on mobile */}
               <div className="text-center lg:text-left lg:flex-1 lg:pl-52">
-                <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-6">
+                {/* StyleGenius + Avatar BREDVID på mobil */}
+                <div className="flex flex-row items-center justify-center lg:justify-start gap-4 mb-4">
                   <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold">
                     <span 
                       className="bg-clip-text text-transparent"
@@ -122,14 +105,18 @@ const Hero = () => {
                     }}
                   />
                 </div>
-                <p className="text-lg sm:text-xl md:text-2xl text-gray-700 font-medium leading-relaxed max-w-lg mx-auto lg:mx-0">
-                  Your personal beauty & style expert,<br/>
-                  always at your side.
-                </p>
+                
+                {/* Underrubrik - only on desktop */}
+                <div className="hidden lg:block mb-8">
+                  <p className="text-lg sm:text-xl md:text-2xl text-gray-700 font-medium leading-relaxed max-w-lg mx-auto lg:mx-0">
+                    Your personal beauty, shopping & style expert,<br/>
+                    always at your side.
+                  </p>
+                </div>
               </div>
               
-              {/* Right Side - Collage - smaller on mobile */}
-              <div className="lg:flex-shrink-0 mt-8 lg:mt-0">
+              {/* Kollage - desktop */}
+              <div className="lg:flex-shrink-0 hidden lg:block">
                 <div className="relative group">
                   <img 
                     src="/smartshoppingsmartbeautysmartstyling.png" 
@@ -140,42 +127,89 @@ const Hero = () => {
               </div>
             </div>
           </div>
-          
-          {/* Review Carousel */}
-          <div className="mb-10 max-w-2xl mx-auto">
-            <div className="flex text-yellow-400 text-lg justify-center mb-4">
-              ⭐⭐⭐⭐⭐
+
+          {/* 2. Smart Shopping/Beauty/Styling */}
+          <div className="mb-8">
+            {/* Mobile: 2 top, 1 bottom. Desktop: horizontal with separators */}
+            <div className="mb-6 max-w-4xl mx-auto">
+              {/* Mobile grid layout */}
+              <div className="grid grid-cols-2 gap-3 mb-3 lg:hidden text-lg sm:text-xl font-bold">
+                <span className="text-center">
+                  <span style={{ color: '#FF70D9' }}>Smart</span> Shopping
+                </span>
+                <span className="text-center">
+                  <span style={{ color: '#6EC1E4' }}>Smart</span> Beauty
+                </span>
+              </div>
+              <div className="text-center lg:hidden">
+                <span className="text-lg sm:text-xl font-bold">
+                  <span className="bg-gradient-to-r from-purple-500 to-purple-600 bg-clip-text text-transparent">Smart</span> Styling
+                </span>
+              </div>
+              
+              {/* Desktop flex layout */}
+              <div className="hidden lg:flex lg:items-center lg:justify-center lg:text-4xl font-bold lg:gap-6">
+                <span className="text-center">
+                  <span style={{ color: '#FF70D9' }}>Smart</span> Shopping
+                </span>
+                <span className="text-gray-400">•</span>
+                <span className="text-center">
+                  <span style={{ color: '#6EC1E4' }}>Smart</span> Beauty
+                </span>
+                <span className="text-gray-400">•</span>
+                <span className="text-center">
+                  <span className="bg-gradient-to-r from-purple-500 to-purple-600 bg-clip-text text-transparent">Smart</span> Styling
+                </span>
+              </div>
             </div>
-            <div className="transition-all duration-500 ease-in-out min-h-[120px] flex flex-col justify-center">
-              <p className="text-gray-700 font-semibold text-lg mb-3 text-center">
-                "{reviews[currentReview].text}"
-              </p>
-              <p className="text-gray-500 text-sm text-center">
-                — {reviews[currentReview].author}
-              </p>
+            
+            {/* Visual connection */}
+            <div className="flex justify-center mb-6">
+              <div className="w-24 h-px bg-gradient-to-r from-pink-400 via-purple-400 to-cyan-400"></div>
             </div>
           </div>
-          
-          {/* Value Props - Emotional benefits */}
-          <div className="flex flex-wrap justify-center gap-4 mb-12 max-w-5xl mx-auto">
-            <span className="px-5 py-3 bg-white rounded-full text-gray-700 shadow-md border font-medium hover:shadow-lg transition-shadow duration-300">
-              💪 Better Confidence
-            </span>
-            <span className="px-5 py-3 bg-white rounded-full text-gray-700 shadow-md border font-medium hover:shadow-lg transition-shadow duration-300">
-              💰 Save Money
-            </span>
-            <span className="px-5 py-3 bg-white rounded-full text-gray-700 shadow-md border font-medium hover:shadow-lg transition-shadow duration-300">
-              ✨ Look Your Best
-            </span>
-            <span className="px-5 py-3 bg-white rounded-full text-gray-700 shadow-md border font-medium hover:shadow-lg transition-shadow duration-300">
-              🛍️ Smart Shopping
-            </span>
-            <span className="px-5 py-3 bg-white rounded-full text-gray-700 shadow-md border font-medium hover:shadow-lg transition-shadow duration-300">
-              💄 Perfect Colors
-            </span>
-            <span className="px-5 py-3 bg-white rounded-full text-gray-700 shadow-md border font-medium hover:shadow-lg transition-shadow duration-300">
-              💬 Always There
-            </span>
+
+          {/* 3. Collage on mobile (moved here) */}
+          <div className="mb-8 lg:hidden">
+            <div className="relative group max-w-xs mx-auto">
+              <img 
+                src="/smartshoppingsmartbeautysmartstyling.png" 
+                alt="StyleGenius App Features" 
+                className="w-full h-auto group-hover:scale-105 transition-transform duration-300 drop-shadow-xl"
+              />
+            </div>
+          </div>
+
+          {/* Underrubrik under kollage - bara mobil */}
+          <div className="mb-8 lg:hidden">
+            <p className="text-lg sm:text-xl text-gray-700 font-medium leading-relaxed max-w-lg mx-auto text-center">
+              Your personal beauty, shopping & style expert,<br/>
+              always at your side.
+            </p>
+          </div>
+
+          {/* 5. Value Props - 3x2 grid on mobile, flex on desktop */}
+          <div className="mb-12 max-w-4xl mx-auto">
+            <div className="grid grid-cols-3 grid-rows-2 gap-3 lg:flex lg:flex-wrap lg:justify-center lg:gap-4">
+              <span className="px-2 py-2 lg:px-5 lg:py-3 bg-white rounded-full text-gray-700 shadow-md border font-medium hover:shadow-lg transition-shadow duration-300 text-xs lg:text-base text-center">
+                💪 Better Confidence
+              </span>
+              <span className="px-2 py-2 lg:px-5 lg:py-3 bg-white rounded-full text-gray-700 shadow-md border font-medium hover:shadow-lg transition-shadow duration-300 text-xs lg:text-base text-center">
+                💰 Save<br className="lg:hidden"/>Money
+              </span>
+              <span className="px-2 py-2 lg:px-5 lg:py-3 bg-white rounded-full text-gray-700 shadow-md border font-medium hover:shadow-lg transition-shadow duration-300 text-xs lg:text-base text-center">
+                ✨ Look Your Best
+              </span>
+              <span className="px-2 py-2 lg:px-5 lg:py-3 bg-white rounded-full text-gray-700 shadow-md border font-medium hover:shadow-lg transition-shadow duration-300 text-xs lg:text-base text-center">
+                🛍️ Smart Shopping
+              </span>
+              <span className="px-2 py-2 lg:px-5 lg:py-3 bg-white rounded-full text-gray-700 shadow-md border font-medium hover:shadow-lg transition-shadow duration-300 text-xs lg:text-base text-center">
+                💄 Perfect Colors
+              </span>
+              <span className="px-2 py-2 lg:px-5 lg:py-3 bg-white rounded-full text-gray-700 shadow-md border font-medium hover:shadow-lg transition-shadow duration-300 text-xs lg:text-base text-center">
+                💬 Always There
+              </span>
+            </div>
           </div>
           
           {/* CTA Buttons - iOS, Android, Browser Extension */}
@@ -214,6 +248,21 @@ const Hero = () => {
                 🌐 Browser Extension
               </Button>
             </a>
+          </div>
+          
+          {/* Review Carousel - after CTA */}
+          <div className="mb-10 max-w-2xl mx-auto">
+            <div className="flex text-yellow-400 text-lg justify-center mb-4">
+              ⭐⭐⭐⭐⭐
+            </div>
+            <div className="transition-all duration-500 ease-in-out min-h-[120px] flex flex-col justify-center">
+              <p className="text-gray-700 font-semibold text-lg mb-3 text-center">
+                "{reviews[currentReview].text}"
+              </p>
+              <p className="text-gray-500 text-sm text-center">
+                — {reviews[currentReview].author}
+              </p>
+            </div>
           </div>
           
           {/* Scroll Indicator */}
