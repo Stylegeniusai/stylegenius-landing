@@ -3,40 +3,22 @@ import React from "react";
 const AppFeatures = () => {
   const features = [
     {
-      title: "Shop smarter with STYLEGENIUS",
-      subtitle: "Personalized advice, insights and price tracking on your favorite sites.",
-      image: "/placeholder.svg", // Replace with your Canva image
+      title: "Smart Shopping",
+      subtitle: "Save money with price tracking, buy only what you will wear and suits you perfectly",
+      image: "/shopsmarter.png",
       gradient: "from-pink-500 to-purple-600"
     },
     {
-      title: "Better CONFIDENCE Save MONEY",
-      subtitle: "Look your BEST",
-      image: "/placeholder.svg", // Replace with your Canva image
+      title: "Smart Beauty", 
+      subtitle: "Get personalized help with makeup, colors both while shopping and getting ready",
+      image: "/confidentgirl.png",
       gradient: "from-purple-500 to-blue-500"
     },
     {
-      title: "Smart BEAUTY Smart SHOPPING Smart STYLING", 
-      subtitle: "Your personalized makeup look, style advice & more",
-      image: "/placeholder.svg", // Replace with your Canva image
+      title: "Smart Styling",
+      subtitle: "Get outfit help, styling tips, your best colors and someone to always talk to",
+      image: "/savemoney.png",
       gradient: "from-blue-500 to-cyan-500"
-    },
-    {
-      title: "SAVE MONEY WITH PRICE TRACKING",
-      subtitle: "Save items from different shops & sites in one place",
-      image: "/placeholder.svg", // Replace with your Canva image
-      gradient: "from-cyan-500 to-teal-500"
-    },
-    {
-      title: "Makeup, Clothing, Colors",
-      subtitle: "There's NO DUMB QUESTIONS",
-      image: "/placeholder.svg", // Replace with your Canva image
-      gradient: "from-teal-500 to-green-500"
-    },
-    {
-      title: "Insights on products, tailored for you",
-      subtitle: "Your personal Beauty, Shopping & Styling Assistant",
-      image: "/placeholder.svg", // Replace with your Canva image
-      gradient: "from-green-500 to-pink-500"
     }
   ];
 
@@ -45,41 +27,40 @@ const AppFeatures = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Everything you need to 
+            See what 
             <span className="bg-gradient-to-r from-pink-500 to-cyan-500 bg-clip-text text-transparent">
-              {" "}style smarter
+              StyleGenius
             </span>
+            {" "}can do
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            From AI-powered style advice to smart shopping tools - all in one powerful app
+            Your personal beauty, style and shopping expert in action
           </p>
         </div>
 
-        {/* 3x2 Grid of Features */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        {/* 1x3 Row of Features */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 max-w-6xl mx-auto">
           {features.map((feature, index) => (
             <div 
               key={index}
-              className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100"
+              className="group text-center"
             >
-              {/* Image Container */}
-              <div className="relative h-64 bg-gray-50 overflow-hidden">
-                <div 
-                  className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-10`}
-                />
+              {/* Image Container - Preserving organic shapes */}
+              <div className="relative mb-8 flex justify-center">
                 <img 
                   src={feature.image}
                   alt={feature.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="max-w-full h-auto group-hover:scale-105 transition-transform duration-300"
+                  style={{ maxHeight: '300px' }}
                 />
               </div>
               
               {/* Content */}
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-3 leading-tight">
+              <div className="space-y-3">
+                <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
                   {feature.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-lg text-gray-600 font-medium">
                   {feature.subtitle}
                 </p>
               </div>

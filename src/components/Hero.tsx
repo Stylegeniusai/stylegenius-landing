@@ -138,25 +138,25 @@ const Hero = () => {
             </div>
           </div>
           
-          {/* Value Props - Updated from app store */}
-          <div className="flex flex-wrap justify-center gap-4 mb-12 max-w-4xl mx-auto">
+          {/* Value Props - Emotional benefits */}
+          <div className="flex flex-wrap justify-center gap-4 mb-12 max-w-5xl mx-auto">
             <span className="px-5 py-3 bg-white rounded-full text-gray-700 shadow-md border font-medium hover:shadow-lg transition-shadow duration-300">
-              🎨 Skintone Analysis
+              💪 Better Confidence
             </span>
             <span className="px-5 py-3 bg-white rounded-full text-gray-700 shadow-md border font-medium hover:shadow-lg transition-shadow duration-300">
-              👗 Style Items
+              💰 Save Money
+            </span>
+            <span className="px-5 py-3 bg-white rounded-full text-gray-700 shadow-md border font-medium hover:shadow-lg transition-shadow duration-300">
+              ✨ Look Your Best
             </span>
             <span className="px-5 py-3 bg-white rounded-full text-gray-700 shadow-md border font-medium hover:shadow-lg transition-shadow duration-300">
               🛍️ Smart Shopping
             </span>
             <span className="px-5 py-3 bg-white rounded-full text-gray-700 shadow-md border font-medium hover:shadow-lg transition-shadow duration-300">
-              ✨ Outfit Creation
+              💄 Perfect Colors
             </span>
             <span className="px-5 py-3 bg-white rounded-full text-gray-700 shadow-md border font-medium hover:shadow-lg transition-shadow duration-300">
-              📸 Fit Checks
-            </span>
-            <span className="px-5 py-3 bg-white rounded-full text-gray-700 shadow-md border font-medium hover:shadow-lg transition-shadow duration-300">
-              💬 Your Style Expert
+              💬 Always There
             </span>
           </div>
           
