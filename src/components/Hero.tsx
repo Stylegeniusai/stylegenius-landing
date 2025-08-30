@@ -78,10 +78,25 @@ const Hero = () => {
       
       <div className="container mx-auto px-4 z-10">
         <div className="text-center min-h-screen flex flex-col justify-center py-20">
-          {/* Main Heading with Avatar - vertical on mobile, horizontal on desktop */}
-          <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-12">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 text-center md:text-left">
-              Meet Your Personal<br/>
+          {/* Smart Shopping • Smart Beauty • Smart Styling tagline - LARGER */}
+          <div className="mb-10">
+            <div className="flex flex-col sm:flex-row items-center justify-center text-2xl md:text-3xl lg:text-4xl font-bold gap-3 sm:gap-6 mb-8">
+              <span className="bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent">Smart Shopping</span>
+              <span className="hidden sm:block text-gray-400">•</span>
+              <span className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">Smart Beauty</span>
+              <span className="hidden sm:block text-gray-400">•</span>
+              <span className="bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">Smart Styling</span>
+            </div>
+            
+            {/* Visual connection */}
+            <div className="flex justify-center mb-8">
+              <div className="w-24 h-px bg-gradient-to-r from-pink-400 via-purple-400 to-cyan-400"></div>
+            </div>
+          </div>
+
+          {/* Main Heading with Avatar */}
+          <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-12">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center md:text-left">
               <span 
                 className="bg-clip-text text-transparent"
                 style={{
@@ -96,16 +111,16 @@ const Hero = () => {
             <img 
               src="/mainavatar.png" 
               alt="StyleGenius Avatar" 
-              className="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-full shadow-2xl hover:scale-110 transition-transform duration-300"
+              className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-full shadow-2xl hover:scale-110 transition-transform duration-300"
               style={{
-                filter: 'drop-shadow(0 0 20px rgba(255, 112, 217, 0.3))'
+                filter: 'drop-shadow(0 0 30px rgba(255, 112, 217, 0.5))'
               }}
             />
           </div>
           
-          {/* Subheading */}
-          <p className="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed max-w-3xl mx-auto">
-            A Style Expert in your pocket that elevates your style, confidence and life.
+          {/* Subheading - Better copy for target audience */}
+          <p className="text-2xl md:text-3xl text-gray-700 font-medium mb-12 leading-relaxed max-w-4xl mx-auto">
+            Your personal beauty, style & shopping expert, always at your side.
           </p>
           
           {/* Review Carousel */}
@@ -123,49 +138,64 @@ const Hero = () => {
             </div>
           </div>
           
-          {/* Value Props - Updated with new terms */}
-          <div className="flex flex-wrap justify-center gap-3 mb-12">
-            <span className="px-4 py-2 bg-white rounded-full text-gray-700 shadow-sm border">
+          {/* Value Props - Updated from app store */}
+          <div className="flex flex-wrap justify-center gap-4 mb-12 max-w-4xl mx-auto">
+            <span className="px-5 py-3 bg-white rounded-full text-gray-700 shadow-md border font-medium hover:shadow-lg transition-shadow duration-300">
               🎨 Skintone Analysis
             </span>
-            <span className="px-4 py-2 bg-white rounded-full text-gray-700 shadow-sm border">
+            <span className="px-5 py-3 bg-white rounded-full text-gray-700 shadow-md border font-medium hover:shadow-lg transition-shadow duration-300">
               👗 Style Items
             </span>
-            <span className="px-4 py-2 bg-white rounded-full text-gray-700 shadow-sm border">
+            <span className="px-5 py-3 bg-white rounded-full text-gray-700 shadow-md border font-medium hover:shadow-lg transition-shadow duration-300">
               🛍️ Smart Shopping
             </span>
-            <span className="px-4 py-2 bg-white rounded-full text-gray-700 shadow-sm border">
+            <span className="px-5 py-3 bg-white rounded-full text-gray-700 shadow-md border font-medium hover:shadow-lg transition-shadow duration-300">
               ✨ Outfit Creation
             </span>
-            <span className="px-4 py-2 bg-white rounded-full text-gray-700 shadow-sm border">
+            <span className="px-5 py-3 bg-white rounded-full text-gray-700 shadow-md border font-medium hover:shadow-lg transition-shadow duration-300">
               📸 Fit Checks
             </span>
-            <span className="px-4 py-2 bg-white rounded-full text-gray-700 shadow-sm border">
+            <span className="px-5 py-3 bg-white rounded-full text-gray-700 shadow-md border font-medium hover:shadow-lg transition-shadow duration-300">
               💬 Your Style Expert
             </span>
           </div>
           
-          {/* CTA Buttons */}
+          {/* CTA Buttons - iOS, Android, Browser Extension */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <a href="https://apps.apple.com/app/id6747178892" target="_blank" rel="noopener noreferrer">
               <Button 
                 size="lg" 
-                className="px-8 py-4 text-lg font-semibold text-white shadow-lg hover:shadow-xl transition-all duration-300"
+                className="w-full sm:w-auto px-8 py-4 text-lg font-semibold text-white shadow-lg hover:shadow-xl transition-all duration-300"
                 style={{
                   background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)'
                 }}
               >
-                Download for iOS
+                📱 Download iOS App
               </Button>
             </a>
+            
             <Button 
               size="lg" 
               variant="outline"
-              className="px-8 py-4 text-lg font-semibold border-2 hover:bg-gray-50"
+              className="w-full sm:w-auto px-8 py-4 text-lg font-semibold border-2 border-gray-300 hover:bg-gray-50 transition-all duration-300"
               onClick={() => setIsWaitlistOpen(true)}
             >
-              Join Android Waitlist
+              🤖 Join Android Waitlist
             </Button>
+            
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              <Button 
+                size="lg" 
+                variant="outline"
+                className="w-full sm:w-auto px-8 py-4 text-lg font-semibold border-2 hover:bg-blue-50 transition-all duration-300"
+                style={{
+                  borderColor: '#6EC1E4',
+                  color: '#6EC1E4'
+                }}
+              >
+                🌐 Browser Extension
+              </Button>
+            </a>
           </div>
           
           {/* Scroll Indicator */}
