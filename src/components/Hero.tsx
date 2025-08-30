@@ -78,55 +78,9 @@ const Hero = () => {
       
       <div className="container mx-auto px-4 z-10">
         <div className="text-center min-h-screen flex flex-col justify-center py-20">
-          {/* StyleGenius + Collage Layout */}
-          <div className="mb-12">
-            <div className="flex flex-col lg:flex-row items-start justify-center max-w-7xl mx-auto gap-8">
-              {/* Left Side - StyleGenius Title + Subtitle */}
-              <div className="text-center lg:text-left lg:flex-1 lg:pl-52">
-                <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-8xl font-bold mb-12">
-                  <span 
-                    className="bg-clip-text text-transparent"
-                    style={{
-                      background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)',
-                      WebkitBackgroundClip: 'text',
-                      WebkitTextFillColor: 'transparent'
-                    }}
-                  >
-                    StyleGenius
-                  </span>
-                </h1>
-                <p className="text-xl md:text-2xl text-gray-700 font-medium leading-relaxed max-w-lg mb-12">
-                  Your personal beauty, style &<br/>
-                  shopping expert, always at your side.
-                </p>
-              </div>
-              
-              {/* Right Side - Collage with Avatar */}
-              <div className="lg:flex-shrink-0">
-                <div className="relative group">
-                  <img 
-                    src="/smartshoppingsmartbeautysmartstyling.png" 
-                    alt="StyleGenius App Features" 
-                    className="w-full max-w-sm h-auto group-hover:scale-105 transition-transform duration-300 drop-shadow-xl"
-                  />
-                  {/* Avatar floating over collage */}
-                  <img 
-                    src="/mainavatar.png" 
-                    alt="StyleGenius Avatar" 
-                    className="absolute -top-3 -right-3 w-16 h-16 sm:w-20 sm:h-20 rounded-full shadow-2xl hover:scale-110 transition-transform duration-300 z-10"
-                    style={{
-                      filter: 'drop-shadow(0 0 20px rgba(255, 112, 217, 0.5))'
-                    }}
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-          {/* Smart Shopping • Smart Beauty • Smart Styling - Centered Below */}
-          <div className="mb-12">
-            <div className="flex flex-col sm:flex-row items-center justify-center text-2xl md:text-3xl lg:text-4xl font-bold gap-3 sm:gap-6 mb-8">
+          {/* Top Section - Smart Shopping etc - Compact on mobile */}
+          <div className="mb-8">
+            <div className="flex flex-col sm:flex-row items-center justify-center text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold gap-2 sm:gap-6 mb-6">
               <span><span style={{ color: '#FF70D9' }}>Smart</span> Shopping</span>
               <span className="hidden sm:block text-gray-400">•</span>
               <span><span style={{ color: '#6EC1E4' }}>Smart</span> Beauty</span>
@@ -135,8 +89,55 @@ const Hero = () => {
             </div>
             
             {/* Visual connection */}
-            <div className="flex justify-center">
+            <div className="flex justify-center mb-8">
               <div className="w-24 h-px bg-gradient-to-r from-pink-400 via-purple-400 to-cyan-400"></div>
+            </div>
+          </div>
+
+          {/* Main Section - StyleGenius + Avatar horizontal on mobile */}
+          <div className="mb-8">
+            <div className="flex flex-col lg:flex-row items-center justify-center max-w-7xl mx-auto gap-6 lg:gap-4">
+              
+              {/* StyleGenius + Avatar - horizontal on mobile */}
+              <div className="text-center lg:text-left lg:flex-1 lg:pl-52">
+                <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-6">
+                  <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold">
+                    <span 
+                      className="bg-clip-text text-transparent"
+                      style={{
+                        background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)',
+                        WebkitBackgroundClip: 'text',
+                        WebkitTextFillColor: 'transparent'
+                      }}
+                    >
+                      StyleGenius
+                    </span>
+                  </h1>
+                  <img 
+                    src="/mainavatar.png" 
+                    alt="StyleGenius Avatar" 
+                    className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 rounded-full shadow-2xl hover:scale-110 transition-transform duration-300"
+                    style={{
+                      filter: 'drop-shadow(0 0 20px rgba(255, 112, 217, 0.5))'
+                    }}
+                  />
+                </div>
+                <p className="text-lg sm:text-xl md:text-2xl text-gray-700 font-medium leading-relaxed max-w-lg mx-auto lg:mx-0">
+                  Your personal beauty & style expert,<br/>
+                  always at your side.
+                </p>
+              </div>
+              
+              {/* Right Side - Collage - smaller on mobile */}
+              <div className="lg:flex-shrink-0 mt-8 lg:mt-0">
+                <div className="relative group">
+                  <img 
+                    src="/smartshoppingsmartbeautysmartstyling.png" 
+                    alt="StyleGenius App Features" 
+                    className="w-full max-w-xs sm:max-w-sm h-auto group-hover:scale-105 transition-transform duration-300 drop-shadow-xl"
+                  />
+                </div>
+              </div>
             </div>
           </div>
           
