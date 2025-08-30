@@ -1,6 +1,7 @@
 
 import Hero from "@/components/Hero";
 import AppFeatures from "@/components/AppFeatures";
+import AppInAction from "@/components/AppInAction";
 import StyleGeniusEverywhere from "@/components/StyleGeniusEverywhere";
 import Features from "@/components/Features";
 import AppShowcase from "@/components/AppShowcase";
@@ -12,6 +13,7 @@ const Index = () => {
     <div className="min-h-screen bg-gray-50">
       <Hero />
       <AppFeatures />
+      <AppInAction />
       <StyleGeniusEverywhere />
       <Features />
       <AppShowcase />
