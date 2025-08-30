@@ -1,11 +1,35 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const AppInAction = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
+    <section ref={sectionRef} className="py-20 bg-gradient-to-br from-gray-50 to-white overflow-hidden">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className={`text-center mb-16 transition-all duration-[2000ms] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">
             <span 
               className="bg-clip-text text-transparent"
@@ -29,19 +53,21 @@ const AppInAction = () => {
           {/* Row 1: Shopping iPhone + Shopping features */}
           <div className="grid grid-cols-5 gap-8 mb-12 items-center">
             {/* Shopping iPhone */}
-            <div className="col-span-2 animate-fade-in-up">
-              <div className="hover:scale-105 transition-transform duration-300">
+            <div className={`col-span-2 transition-all duration-[2500ms] ease-out ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'}`}>
+              <div className={`hover:scale-110 transition-transform duration-700 ${isVisible ? 'animate-float' : ''}`}>
                 <img 
                   src="/smartshoppingapp.png" 
                   alt="Smart Shopping App" 
-                  className="w-full h-auto max-h-[600px] object-contain drop-shadow-2xl"
+                  className="w-full h-auto max-h-[600px] object-contain drop-shadow-2xl animate-pulse-glow rounded-3xl"
                 />
               </div>
             </div>
 
             {/* Shopping related features */}
             <div className="col-span-3 grid grid-cols-2 gap-6">
-              <div className="rounded-2xl overflow-hidden hover:scale-105 transition-all duration-300 bg-white shadow-lg group animate-fade-in delay-100">
+              <div className={`rounded-2xl overflow-hidden hover:scale-105 hover:shadow-2xl transition-all duration-500 bg-white shadow-lg group ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+              }`} style={{ transitionDelay: isVisible ? '1200ms' : '0ms' }}>
                 <img 
                   src="/smartshoppingbodytype.png" 
                   alt="Body Type Match" 
@@ -52,7 +78,9 @@ const AppInAction = () => {
                   <p className="text-xs text-gray-600">Never buy anything that doesn't suit you again</p>
                 </div>
               </div>
-              <div className="rounded-2xl overflow-hidden hover:scale-105 transition-all duration-300 bg-white shadow-lg group animate-fade-in delay-200">
+              <div className={`rounded-2xl overflow-hidden hover:scale-105 hover:shadow-2xl transition-all duration-500 bg-white shadow-lg group ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+              }`} style={{ transitionDelay: isVisible ? '900ms' : '0ms' }}>
                 <img 
                   src="/makeupassistantai.png" 
                   alt="Makeup Assistant" 
@@ -63,7 +91,9 @@ const AppInAction = () => {
                   <p className="text-xs text-gray-600">Get makeup tips for your skin & face - always glowing</p>
                 </div>
               </div>
-              <div className="rounded-2xl overflow-hidden hover:scale-105 transition-all duration-300 bg-white shadow-lg group animate-fade-in delay-300">
+              <div className={`rounded-2xl overflow-hidden hover:scale-105 hover:shadow-2xl transition-all duration-500 bg-white shadow-lg group ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+              }`} style={{ transitionDelay: isVisible ? '1200ms' : '0ms' }}>
                 <img 
                   src="/pricetrackingbrowserextension.png" 
                   alt="Price Tracking" 
@@ -74,7 +104,9 @@ const AppInAction = () => {
                   <p className="text-xs text-gray-600">Save thousands - get alerts when your favorites go on sale</p>
                 </div>
               </div>
-              <div className="rounded-2xl overflow-hidden hover:scale-105 transition-all duration-300 bg-white shadow-lg group animate-fade-in delay-400">
+              <div className={`rounded-2xl overflow-hidden hover:scale-105 hover:shadow-2xl transition-all duration-500 bg-white shadow-lg group ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+              }`} style={{ transitionDelay: isVisible ? '1500ms' : '0ms' }}>
                 <img 
                   src="/smartmakeupshopping.png" 
                   alt="Smart Makeup Shopping" 
@@ -91,8 +123,10 @@ const AppInAction = () => {
           {/* Row 2: Chat features + Chat iPhone */}
           <div className="grid grid-cols-5 gap-8 items-center">
             {/* Chat feature */}
-            <div className="col-span-3 animate-fade-in delay-500">
-              <div className="rounded-2xl overflow-hidden hover:scale-105 transition-all duration-300 bg-white shadow-lg">
+            <div className={`col-span-3 transition-all duration-[2000ms] ease-out ${
+              isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'
+            }`} style={{ transitionDelay: isVisible ? '1800ms' : '0ms' }}>
+              <div className="rounded-2xl overflow-hidden hover:scale-105 hover:shadow-2xl transition-all duration-500 bg-white shadow-lg">
                 <img 
                   src="/shoppingassistantaiapp.png" 
                   alt="How Can I Help?" 
@@ -106,12 +140,14 @@ const AppInAction = () => {
             </div>
 
             {/* Chat iPhone */}
-            <div className="col-span-2 animate-fade-in-up delay-600">
-              <div className="hover:scale-105 transition-transform duration-300">
+            <div className={`col-span-2 transition-all duration-[2500ms] ease-out ${
+              isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'
+            }`} style={{ transitionDelay: isVisible ? '2100ms' : '0ms' }}>
+              <div className={`hover:scale-110 transition-transform duration-700 ${isVisible ? 'animate-float' : ''}`} style={{ animationDelay: '2.5s' }}>
                 <img 
                   src="/stylingassistantchatai.png" 
                   alt="Styling Assistant Chat AI" 
-                  className="w-full h-auto max-h-[600px] object-contain drop-shadow-2xl"
+                  className="w-full h-auto max-h-[600px] object-contain drop-shadow-2xl animate-pulse-glow rounded-3xl"
                 />
               </div>
             </div>
