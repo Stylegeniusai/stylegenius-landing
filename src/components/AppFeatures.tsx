@@ -27,8 +27,15 @@ const AppFeatures = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            See what 
-            <span className="bg-gradient-to-r from-pink-500 to-cyan-500 bg-clip-text text-transparent">
+            See what{" "}
+            <span 
+              className="bg-clip-text text-transparent"
+              style={{
+                background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent'
+              }}
+            >
               StyleGenius
             </span>
             {" "}can do
@@ -58,7 +65,21 @@ const AppFeatures = () => {
               {/* Content */}
               <div className="space-y-3">
                 <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
-                  {feature.title}
+                  {index === 0 && (
+                    <>
+                      <span style={{ color: '#FF70D9' }}>Smart</span> Shopping
+                    </>
+                  )}
+                  {index === 1 && (
+                    <>
+                      <span style={{ color: '#6EC1E4' }}>Smart</span> Beauty
+                    </>
+                  )}
+                  {index === 2 && (
+                    <>
+                      <span className="bg-gradient-to-r from-purple-500 to-purple-600 bg-clip-text text-transparent">Smart</span> Styling
+                    </>
+                  )}
                 </h3>
                 <p className="text-lg text-gray-600 font-medium">
                   {feature.subtitle}
