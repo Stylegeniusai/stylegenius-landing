@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Button } from "./ui/button";
 import { ArrowDown } from "lucide-react";
 import {
@@ -17,6 +17,8 @@ const Hero = () => {
   const [email, setEmail] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [currentReview, setCurrentReview] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
   const { toast } = useToast();
 
   const reviews = [
@@ -35,6 +37,27 @@ const Hero = () => {
       setCurrentReview((prev) => (prev + 1) % reviews.length);
     }, 4000);
     return () => clearInterval(timer);
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
   }, []);
 
   const handleWaitlistSubmit = async (e: React.FormEvent) => {
@@ -66,7 +89,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section ref={sectionRef} className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Gradient Background */}
       <div 
         className="absolute inset-0 opacity-10"
@@ -133,7 +156,9 @@ const Hero = () => {
             {/* Mobile: 2 top, 1 bottom. Desktop: horizontal with separators */}
             <div className="mb-6 max-w-4xl mx-auto">
               {/* Mobile grid layout */}
-              <div className="grid grid-cols-2 gap-3 mb-3 lg:hidden text-lg sm:text-xl font-bold">
+              <div className={`grid grid-cols-2 gap-3 mb-3 lg:hidden text-lg sm:text-xl font-bold transition-all duration-1000 ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
+              }`} style={{ transitionDelay: isVisible ? '800ms' : '0ms' }}>
                 <span className="text-center">
                   <span style={{ color: '#FF70D9' }}>Smart</span> Shopping
                 </span>
@@ -141,23 +166,37 @@ const Hero = () => {
                   <span style={{ color: '#6EC1E4' }}>Smart</span> Beauty
                 </span>
               </div>
-              <div className="text-center lg:hidden">
+              <div className={`text-center lg:hidden transition-all duration-1000 ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
+              }`} style={{ transitionDelay: isVisible ? '1000ms' : '0ms' }}>
                 <span className="text-lg sm:text-xl font-bold">
                   <span className="bg-gradient-to-r from-purple-500 to-purple-600 bg-clip-text text-transparent">Smart</span> Styling
                 </span>
               </div>
               
               {/* Desktop flex layout */}
-              <div className="hidden lg:flex lg:items-center lg:justify-center lg:text-4xl font-bold lg:gap-6">
-                <span className="text-center">
+              <div className={`hidden lg:flex lg:items-center lg:justify-center lg:text-4xl font-bold lg:gap-6 transition-all duration-1500 ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
+              }`} style={{ transitionDelay: isVisible ? '800ms' : '0ms' }}>
+                <span className={`text-center transition-all duration-700 ${
+                  isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-5'
+                }`} style={{ transitionDelay: isVisible ? '900ms' : '0ms' }}>
                   <span style={{ color: '#FF70D9' }}>Smart</span> Shopping
                 </span>
-                <span className="text-gray-400">•</span>
-                <span className="text-center">
+                <span className={`text-gray-400 transition-all duration-500 ${
+                  isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-0'
+                }`} style={{ transitionDelay: isVisible ? '1100ms' : '0ms' }}>•</span>
+                <span className={`text-center transition-all duration-700 ${
+                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
+                }`} style={{ transitionDelay: isVisible ? '1300ms' : '0ms' }}>
                   <span style={{ color: '#6EC1E4' }}>Smart</span> Beauty
                 </span>
-                <span className="text-gray-400">•</span>
-                <span className="text-center">
+                <span className={`text-gray-400 transition-all duration-500 ${
+                  isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-0'
+                }`} style={{ transitionDelay: isVisible ? '1500ms' : '0ms' }}>•</span>
+                <span className={`text-center transition-all duration-700 ${
+                  isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-5'
+                }`} style={{ transitionDelay: isVisible ? '1700ms' : '0ms' }}>
                   <span className="bg-gradient-to-r from-purple-500 to-purple-600 bg-clip-text text-transparent">Smart</span> Styling
                 </span>
               </div>
