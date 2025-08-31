@@ -50,21 +50,32 @@ const AppInAction = () => {
 
         {/* Desktop Layout */}
         <div className="hidden lg:block">
-          {/* Row 1: Shopping iPhone + Shopping features */}
-          <div className="grid grid-cols-5 gap-8 mb-12 items-center">
+          {/* Row 1: Shopping iPhone + Kollage + Shopping features */}
+          <div className="grid grid-cols-6 gap-6 mb-12 items-center">
             {/* Shopping iPhone */}
             <div className={`col-span-2 transition-all duration-[2500ms] ease-out ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'}`}>
               <div className={`hover:scale-110 transition-transform duration-700 ${isVisible ? 'animate-float' : ''}`}>
                 <img 
                   src="/smartshoppingapp.png" 
                   alt="Smart Shopping App" 
-                  className="w-full h-auto max-h-[600px] object-contain drop-shadow-2xl animate-pulse-glow rounded-3xl"
+                  className="w-full h-auto max-h-[500px] object-contain drop-shadow-2xl animate-pulse-glow rounded-3xl"
+                />
+              </div>
+            </div>
+
+            {/* Kollage */}
+            <div className={`col-span-2 transition-all duration-[2000ms] ease-out ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`} style={{ transitionDelay: isVisible ? '400ms' : '0ms' }}>
+              <div className="hover:scale-105 transition-transform duration-500">
+                <img 
+                  src="/smartshoppingsmartbeautysmartstyling.png" 
+                  alt="StyleGenius App Features" 
+                  className="w-full h-auto max-h-[400px] object-contain drop-shadow-xl"
                 />
               </div>
             </div>
 
             {/* Shopping related features */}
-            <div className="col-span-3 grid grid-cols-2 gap-6">
+            <div className="col-span-2 grid grid-cols-2 gap-4">
               <div className={`rounded-2xl overflow-hidden hover:scale-105 hover:shadow-2xl transition-all duration-500 bg-white shadow-lg group ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`} style={{ transitionDelay: isVisible ? '1200ms' : '0ms' }}>
