@@ -107,7 +107,7 @@ const Hero = () => {
         className="absolute inset-0 z-0 hidden lg:block"
         style={{
           backgroundImage: 'url("/hero-girl.jpg")',
-          backgroundPosition: 'right center',
+          backgroundPosition: '80% center',
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
           opacity: 0.3
@@ -127,35 +127,33 @@ const Hero = () => {
           {/* 1. StyleGenius + Avatar */}
           <div className="mb-8 lg:mb-24">
             {/* StyleGenius + Avatar BREDVID på mobil */}
-            <div className="flex flex-row items-center justify-center gap-4 mb-8">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold">
-                <span 
-                  className="bg-clip-text text-transparent"
-                  style={{
-                    background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent'
-                  }}
-                >
-                  StyleGenius
-                </span>
-              </h1>
-              <img 
-                src="/mainavatar.png" 
-                alt="StyleGenius Avatar" 
-                className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 rounded-full shadow-2xl hover:scale-110 transition-transform duration-300"
-                style={{
-                  filter: 'drop-shadow(0 0 20px rgba(255, 112, 217, 0.5))'
-                }}
-              />
-            </div>
-            
-            {/* Underrubrik - alla enheter */}
             <div className="mb-12">
-              <p className="text-lg sm:text-xl md:text-2xl text-gray-700 font-medium leading-relaxed max-w-lg mx-auto text-center">
-                Your personal beauty, shopping & style expert,<br/>
-                always at your side.
-              </p>
+              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-left inline-block">
+                <div className="text-gray-900">Why Be Dumb?</div>
+                <div className="h-1 bg-gradient-to-r from-pink-400 via-purple-400 to-cyan-400 my-4" style={{ width: '70%' }}></div>
+                <div className="flex items-center gap-4">
+                  <span>Use{" "}
+                    <span 
+                      className="bg-clip-text text-transparent"
+                      style={{
+                        background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)',
+                        WebkitBackgroundClip: 'text',
+                        WebkitTextFillColor: 'transparent'
+                      }}
+                    >
+                      StyleGenius
+                    </span>
+                  </span>
+                  <img 
+                    src="/mainavatar.png" 
+                    alt="StyleGenius Avatar" 
+                    className="w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 lg:w-36 lg:h-36 rounded-full shadow-2xl hover:scale-110 transition-transform duration-300"
+                    style={{
+                      filter: 'drop-shadow(0 0 20px rgba(255, 112, 217, 0.5))'
+                    }}
+                  />
+                </div>
+              </h1>
             </div>
           </div>
 
