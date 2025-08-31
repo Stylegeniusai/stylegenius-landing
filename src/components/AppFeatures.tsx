@@ -90,8 +90,20 @@ const AppFeatures = () => {
                       </span>
                       {" "}- buy only what suits you perfectly
                     </>
+                  ) : index === 1 ? (
+                    <>
+                      Get personalized help with makeup, colors{" "}
+                      <span className="font-bold" style={{ color: '#6EC1E4' }}>
+                        while shopping and getting ready
+                      </span>
+                    </>
                   ) : (
-                    feature.subtitle
+                    <>
+                      Get outfit help, styling tips, your best colors and{" "}
+                      <span className="font-bold bg-gradient-to-r from-purple-500 to-purple-600 bg-clip-text text-transparent">
+                        always someone to talk to that knows you and what looks best
+                      </span>
+                    </>
                   )}
                 </p>
               </div>
@@ -102,7 +114,12 @@ const AppFeatures = () => {
         {/* CTA at bottom */}
         <div className="text-center mt-16">
           <a href="https://apps.apple.com/app/id6747178892" target="_blank" rel="noopener noreferrer">
-            <button className="px-8 py-4 bg-gradient-to-r from-pink-500 to-cyan-500 text-white font-semibold text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+            <button 
+              className="px-8 py-4 text-white font-semibold text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+              style={{
+                background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)'
+              }}
+            >
               Try StyleGenius Now
             </button>
           </a>

@@ -60,26 +60,12 @@ const StyleGeniusEverywhere = () => {
             <h3 className="text-2xl font-bold text-gray-900 mb-8">
               📱 StyleGenius Mobile App
             </h3>
-            <div className="relative mx-auto" style={{ maxWidth: '300px' }}>
-              {/* iPhone Mockup Frame */}
-              <div className="bg-black rounded-[3rem] p-2 shadow-2xl">
-                <div className="bg-white rounded-[2.5rem] overflow-hidden">
-                  {/* Status Bar */}
-                  <div className="bg-black h-8 rounded-t-[2.5rem] flex items-center justify-center">
-                    <div className="w-20 h-1 bg-white rounded-full"></div>
-                  </div>
-                  {/* App Content */}
-                  <div className="h-96 bg-gray-100 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="w-16 h-16 bg-gradient-to-r from-pink-400 to-purple-400 rounded-full mx-auto mb-4 flex items-center justify-center">
-                        <span className="text-white text-2xl">📱</span>
-                      </div>
-                      <p className="text-gray-600 text-sm">Mobile App Screenshot</p>
-                      <p className="text-gray-500 text-xs">Placeholder</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div className="flex justify-center">
+              <img 
+                src="/appstylegeniuseverywhere.png" 
+                alt="StyleGenius Mobile App" 
+                className="max-w-full h-auto max-h-[500px] object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-300"
+              />
             </div>
           </div>
 
@@ -99,36 +85,23 @@ const StyleGeniusEverywhere = () => {
                     <div className="w-3 h-3 bg-green-400 rounded-full"></div>
                   </div>
                   <div className="flex-1 bg-white rounded px-3 py-1 mx-4 text-sm text-gray-500">
-                    shopping-website.com
+                    zalando.co.uk
                   </div>
+                  {/* StyleGenius Extension Icon */}
+                  <img 
+                    src="/mainavatar.png" 
+                    alt="StyleGenius Extension" 
+                    className="w-6 h-6 rounded-full shadow-md hover:scale-110 transition-transform duration-200"
+                  />
                 </div>
                 
-                {/* Browser Content */}
-                <div className="h-64 bg-gray-100 flex items-center justify-center relative">
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full mx-auto mb-4 flex items-center justify-center">
-                      <span className="text-white text-2xl">🌐</span>
-                    </div>
-                    <p className="text-gray-600 text-sm">Browser Extension Screenshot</p>
-                    <p className="text-gray-500 text-xs">Placeholder</p>
-                  </div>
-                  
-                  {/* StyleGenius Extension Popup */}
-                  <div className="absolute top-4 right-4 bg-white rounded-xl shadow-lg p-4 w-48 border">
-                    <div className="flex items-center gap-2 mb-2">
-                      <img src="/mainavatar.png" alt="StyleGenius" className="w-5 h-5 rounded-full" />
-                      <span className="font-semibold text-xs">StyleGenius</span>
-                    </div>
-                    <p className="text-xs text-gray-600 mb-2">💡 Perfect for your style!</p>
-                    <div className="flex gap-1">
-                      <button className="px-2 py-1 bg-gradient-to-r from-pink-400 to-purple-400 text-white text-xs rounded">
-                        Save
-                      </button>
-                      <button className="px-2 py-1 border text-xs rounded">
-                        Alert
-                      </button>
-                    </div>
-                  </div>
+                {/* Browser Content with real screenshot */}
+                <div className="overflow-hidden">
+                  <img 
+                    src="/browserextensionsmartshopping.jpg" 
+                    alt="StyleGenius Browser Extension" 
+                    className="w-full h-auto object-contain hover:scale-105 transition-transform duration-300"
+                  />
                 </div>
               </div>
             </div>
