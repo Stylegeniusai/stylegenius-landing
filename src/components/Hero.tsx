@@ -130,7 +130,17 @@ const Hero = () => {
             <div className="mb-12">
               <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-left inline-block">
                 <div className="text-gray-900">Why Be Dumb?</div>
-                <div className="h-1 bg-gradient-to-r from-pink-400 via-purple-400 to-cyan-400 my-4" style={{ width: '70%' }}></div>
+                <div className="flex items-center gap-4 mb-2">
+                  <div className="h-1 bg-gradient-to-r from-pink-400 via-purple-400 to-cyan-400 flex-grow" style={{ maxWidth: '70%' }}></div>
+                  <img 
+                    src="/mainavatar.png" 
+                    alt="StyleGenius Avatar" 
+                    className="w-16 h-16 sm:hidden rounded-full shadow-2xl"
+                    style={{
+                      filter: 'drop-shadow(0 0 20px rgba(255, 112, 217, 0.5))'
+                    }}
+                  />
+                </div>
                 <div className="flex items-center gap-4">
                   <span>Use{" "}
                     <span 
@@ -147,7 +157,7 @@ const Hero = () => {
                   <img 
                     src="/mainavatar.png" 
                     alt="StyleGenius Avatar" 
-                    className="w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 lg:w-36 lg:h-36 rounded-full shadow-2xl hover:scale-110 transition-transform duration-300"
+                    className="hidden sm:block w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 lg:w-36 lg:h-36 rounded-full shadow-2xl hover:scale-110 transition-transform duration-300"
                     style={{
                       filter: 'drop-shadow(0 0 20px rgba(255, 112, 217, 0.5))'
                     }}
@@ -283,7 +293,7 @@ const Hero = () => {
             <div className="flex text-yellow-400 text-lg justify-center mb-4">
               ⭐⭐⭐⭐⭐
             </div>
-            <div className="transition-all duration-500 ease-in-out min-h-[120px] flex flex-col justify-center">
+            <div className="transition-all duration-500 ease-in-out h-[140px] flex flex-col justify-center">
               <p className="text-gray-700 font-semibold text-lg mb-3 text-center">
                 "{reviews[currentReview].text}"
               </p>

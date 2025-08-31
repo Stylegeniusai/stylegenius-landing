@@ -44,7 +44,7 @@ const AppInAction = () => {
             in Action
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            See how our AI transforms your style journey
+            Transform how you shop, dress and feel confident
           </p>
         </div>
 
