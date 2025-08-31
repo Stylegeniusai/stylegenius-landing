@@ -4,7 +4,7 @@ const AppFeatures = () => {
   const features = [
     {
       title: "Smart Shopping",
-      subtitle: "Save money with price tracking, buy only what you will wear and suits you perfectly",
+      subtitle: "Save money with price tracking on your favorite sites - buy only what suits you perfectly",
       image: "/shopsmarter.png",
       gradient: "from-pink-500 to-purple-600"
     },
@@ -82,7 +82,17 @@ const AppFeatures = () => {
                   )}
                 </h3>
                 <p className="text-lg text-gray-600 font-medium">
-                  {feature.subtitle}
+                  {index === 0 ? (
+                    <>
+                      Save money with price tracking on{" "}
+                      <span className="font-bold" style={{ color: '#FF70D9' }}>
+                        your favorite sites
+                      </span>
+                      {" "}- buy only what suits you perfectly
+                    </>
+                  ) : (
+                    feature.subtitle
+                  )}
                 </p>
               </div>
             </div>

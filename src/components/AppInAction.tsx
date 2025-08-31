@@ -50,15 +50,15 @@ const AppInAction = () => {
 
         {/* Desktop Layout */}
         <div className="hidden lg:block">
-          {/* Row 1: Shopping iPhone + Kollage + Shopping features */}
-          <div className="grid grid-cols-6 gap-6 mb-12 items-center">
+          {/* Row 1: Shopping iPhone + Kollage */}
+          <div className="grid grid-cols-3 gap-8 mb-16 items-center">
             {/* Shopping iPhone */}
-            <div className={`col-span-2 transition-all duration-[2500ms] ease-out ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'}`}>
+            <div className={`col-span-1 transition-all duration-[2500ms] ease-out ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'}`}>
               <div className={`hover:scale-110 transition-transform duration-700 ${isVisible ? 'animate-float' : ''}`}>
                 <img 
                   src="/smartshoppingapp.png" 
                   alt="Smart Shopping App" 
-                  className="w-full h-auto max-h-[500px] object-contain drop-shadow-2xl animate-pulse-glow rounded-3xl"
+                  className="w-full h-auto max-h-[600px] object-contain drop-shadow-2xl animate-pulse-glow rounded-3xl"
                 />
               </div>
             </div>
@@ -69,39 +69,16 @@ const AppInAction = () => {
                 <img 
                   src="/smartshoppingsmartbeautysmartstyling.png" 
                   alt="StyleGenius App Features" 
-                  className="w-full h-auto max-h-[400px] object-contain drop-shadow-xl"
+                  className="w-full h-auto max-h-[500px] object-contain drop-shadow-xl"
                 />
               </div>
             </div>
+          </div>
 
-            {/* Shopping related features */}
-            <div className="col-span-2 grid grid-cols-2 gap-4">
-              <div className={`rounded-2xl overflow-hidden hover:scale-105 hover:shadow-2xl transition-all duration-500 bg-white shadow-lg group ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-              }`} style={{ transitionDelay: isVisible ? '1200ms' : '0ms' }}>
-                <img 
-                  src="/smartshoppingbodytype.png" 
-                  alt="Body Type Match" 
-                  className="w-full h-[200px] object-contain p-4"
-                />
-                <div className="px-4 pb-3">
-                  <h4 className="font-semibold text-sm">Smart Body Match</h4>
-                  <p className="text-xs text-gray-600">Never buy anything that doesn't suit you again</p>
-                </div>
-              </div>
-              <div className={`rounded-2xl overflow-hidden hover:scale-105 hover:shadow-2xl transition-all duration-500 bg-white shadow-lg group ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-              }`} style={{ transitionDelay: isVisible ? '900ms' : '0ms' }}>
-                <img 
-                  src="/makeupassistantai.png" 
-                  alt="Makeup Assistant" 
-                  className="w-full h-[200px] object-contain p-4"
-                />
-                <div className="px-4 pb-3">
-                  <h4 className="font-semibold text-sm">Personalized Makeup</h4>
-                  <p className="text-xs text-gray-600">Get makeup tips for your skin & face - always glowing</p>
-                </div>
-              </div>
+          {/* Row 2: Features (som INTE finns i kollaget) + Chat iPhone */}
+          <div className="grid grid-cols-5 gap-8 items-center">
+            {/* Features som inte är i kollaget */}
+            <div className="col-span-3 grid grid-cols-2 gap-6">
               <div className={`rounded-2xl overflow-hidden hover:scale-105 hover:shadow-2xl transition-all duration-500 bg-white shadow-lg group ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`} style={{ transitionDelay: isVisible ? '1200ms' : '0ms' }}>
@@ -119,33 +96,13 @@ const AppInAction = () => {
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`} style={{ transitionDelay: isVisible ? '1500ms' : '0ms' }}>
                 <img 
-                  src="/smartmakeupshopping.png" 
-                  alt="Smart Makeup Shopping" 
+                  src="/shoppingassistantaiapp.png" 
+                  alt="AI Style Expert" 
                   className="w-full h-[200px] object-contain p-4"
                 />
                 <div className="px-4 pb-3">
-                  <h4 className="font-semibold text-sm">Curated Beauty Picks</h4>
-                  <p className="text-xs text-gray-600">Stop wasting money on wrong shades & formulas</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Row 2: Chat features + Chat iPhone */}
-          <div className="grid grid-cols-5 gap-8 items-center">
-            {/* Chat feature */}
-            <div className={`col-span-3 transition-all duration-[2000ms] ease-out ${
-              isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'
-            }`} style={{ transitionDelay: isVisible ? '1800ms' : '0ms' }}>
-              <div className="rounded-2xl overflow-hidden hover:scale-105 hover:shadow-2xl transition-all duration-500 bg-white shadow-lg">
-                <img 
-                  src="/shoppingassistantaiapp.png" 
-                  alt="How Can I Help?" 
-                  className="w-full h-[280px] object-contain p-6"
-                />
-                <div className="px-6 pb-4">
-                  <h4 className="font-semibold">Your 24/7 Style Expert</h4>
-                  <p className="text-sm text-gray-600">From "what to wear" to "where to buy" - get instant answers that save you time & money</p>
+                  <h4 className="font-semibold text-sm">Your 24/7 Style Expert</h4>
+                  <p className="text-xs text-gray-600">From "what to wear" to "where to buy" - instant answers</p>
                 </div>
               </div>
             </div>
@@ -153,7 +110,7 @@ const AppInAction = () => {
             {/* Chat iPhone */}
             <div className={`col-span-2 transition-all duration-[2500ms] ease-out ${
               isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'
-            }`} style={{ transitionDelay: isVisible ? '2100ms' : '0ms' }}>
+            }`} style={{ transitionDelay: isVisible ? '1800ms' : '0ms' }}>
               <div className={`hover:scale-110 transition-transform duration-700 ${isVisible ? 'animate-float' : ''}`} style={{ animationDelay: '2.5s' }}>
                 <img 
                   src="/stylingassistantchatai.png" 
@@ -167,36 +124,7 @@ const AppInAction = () => {
 
         {/* Mobile Layout */}
         <div className="lg:hidden space-y-6">
-          {/* Large iPhone mockup 1 */}
-          <div className="flex justify-center">
-            <div className="w-72 hover:scale-105 transition-transform duration-300">
-              <img 
-                src="/stylingassistantchatai.png" 
-                alt="Styling Assistant Chat AI" 
-                className="w-full h-auto drop-shadow-2xl"
-              />
-            </div>
-          </div>
-
-          {/* 2 smaller features side by side */}
-          <div className="grid grid-cols-2 gap-4">
-            <div className="rounded-xl overflow-hidden bg-white shadow-md">
-              <img 
-                src="/makeupassistantai.png" 
-                alt="Makeup Assistant AI" 
-                className="w-full h-32 object-contain p-2"
-              />
-            </div>
-            <div className="rounded-xl overflow-hidden bg-white shadow-md">
-              <img 
-                src="/shoppingassistantaiapp.png" 
-                alt="Shopping Assistant AI App" 
-                className="w-full h-32 object-contain p-2"
-              />
-            </div>
-          </div>
-
-          {/* Large iPhone mockup 2 */}
+          {/* Shopping iPhone */}
           <div className="flex justify-center">
             <div className="w-72 hover:scale-105 transition-transform duration-300">
               <img 
@@ -207,30 +135,43 @@ const AppInAction = () => {
             </div>
           </div>
 
-          {/* 3 smaller features */}
-          <div className="space-y-4">
-            <div className="rounded-xl overflow-hidden bg-white shadow-md">
+          {/* Kollage */}
+          <div className="flex justify-center">
+            <div className="w-80 hover:scale-105 transition-transform duration-300">
               <img 
-                src="/smartmakeupshopping.png" 
-                alt="Smart Makeup Shopping" 
-                className="w-full h-32 object-contain p-3"
+                src="/smartshoppingsmartbeautysmartstyling.png" 
+                alt="StyleGenius App Features" 
+                className="w-full h-auto drop-shadow-xl"
               />
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="rounded-xl overflow-hidden bg-white shadow-md">
-                <img 
-                  src="/smartshoppingbodytype.png" 
-                  alt="Smart Shopping Body Type" 
-                  className="w-full h-32 object-contain p-2"
-                />
-              </div>
-              <div className="rounded-xl overflow-hidden bg-white shadow-md">
-                <img 
-                  src="/pricetrackingbrowserextension.png" 
-                  alt="Price Tracking Browser Extension" 
-                  className="w-full h-32 object-contain p-2"
-                />
-              </div>
+          </div>
+
+          {/* Chat iPhone */}
+          <div className="flex justify-center">
+            <div className="w-72 hover:scale-105 transition-transform duration-300">
+              <img 
+                src="/stylingassistantchatai.png" 
+                alt="Styling Assistant Chat AI" 
+                className="w-full h-auto drop-shadow-2xl"
+              />
+            </div>
+          </div>
+
+          {/* Extra features */}
+          <div className="grid grid-cols-2 gap-4">
+            <div className="rounded-xl overflow-hidden bg-white shadow-md">
+              <img 
+                src="/pricetrackingbrowserextension.png" 
+                alt="Price Tracking" 
+                className="w-full h-32 object-contain p-2"
+              />
+            </div>
+            <div className="rounded-xl overflow-hidden bg-white shadow-md">
+              <img 
+                src="/shoppingassistantaiapp.png" 
+                alt="AI Style Expert" 
+                className="w-full h-32 object-contain p-2"
+              />
             </div>
           </div>
         </div>
