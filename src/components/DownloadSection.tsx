@@ -56,7 +56,7 @@ const DownloadSection = () => {
           </p>
         </div>
         
-        <div className="grid lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {/* iOS Download */}
           <Card className="border-0 shadow-xl">
             <CardContent className="p-8 text-center">
@@ -77,7 +77,7 @@ const DownloadSection = () => {
               <a href="https://apps.apple.com/app/id6747178892" target="_blank" rel="noopener noreferrer">
                 <Button 
                   size="lg"
-                  className="w-full text-lg py-4 text-white shadow-lg hover:shadow-xl transition-all duration-300"
+                  className="w-full text-lg py-4 text-white shadow-lg hover:shadow-xl transition-all duration-300 rounded-full"
                   style={{
                     background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)'
                   }}
@@ -121,13 +121,49 @@ const DownloadSection = () => {
                   type="submit"
                   size="lg"
                   variant="outline"
-                  className="w-full text-lg py-4 border-2 hover:bg-gray-50"
+                  className="w-full text-lg py-4 border-2 hover:bg-gray-50 rounded-full"
                 >
                   Join Android Waitlist
                 </Button>
               </form>
               <p className="text-sm text-gray-500 mt-4">
                 Get early access • No spam, we promise
+              </p>
+            </CardContent>
+          </Card>
+          
+          {/* Browser Extension */}
+          <Card className="border-0 shadow-xl">
+            <CardContent className="p-8 text-center">
+              <div 
+                className="w-20 h-20 mx-auto mb-6 rounded-2xl flex items-center justify-center text-white text-3xl"
+                style={{
+                  background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)'
+                }}
+              >
+                🌐
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                Browser Extension
+              </h3>
+              <p className="text-gray-600 mb-6">
+                Shop smarter on any website with price tracking and instant style advice
+              </p>
+              <a href="#" target="_blank" rel="noopener noreferrer">
+                <Button 
+                  size="lg"
+                  variant="outline"
+                  className="w-full text-lg py-4 border-2 hover:bg-blue-50 transition-all duration-300 rounded-full"
+                  style={{
+                    borderColor: '#6EC1E4',
+                    color: '#6EC1E4'
+                  }}
+                >
+                  Add to Browser
+                </Button>
+              </a>
+              <p className="text-sm text-gray-500 mt-4">
+                Chrome • Safari • Edge • Firefox
               </p>
             </CardContent>
           </Card>

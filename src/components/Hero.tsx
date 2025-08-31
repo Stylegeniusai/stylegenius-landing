@@ -231,7 +231,7 @@ const Hero = () => {
             <a href="https://apps.apple.com/app/id6747178892" target="_blank" rel="noopener noreferrer">
               <Button 
                 size="lg" 
-                className="w-full sm:w-auto px-8 py-4 text-lg font-semibold text-white shadow-lg hover:shadow-xl transition-all duration-300"
+                className="w-full sm:w-auto px-8 py-4 text-lg font-semibold text-white shadow-lg hover:shadow-xl transition-all duration-300 rounded-full"
                 style={{
                   background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)'
                 }}
@@ -243,7 +243,7 @@ const Hero = () => {
             <Button 
               size="lg" 
               variant="outline"
-              className="w-full sm:w-auto px-8 py-4 text-lg font-semibold border-2 border-gray-300 hover:bg-gray-50 transition-all duration-300"
+              className="w-full sm:w-auto px-8 py-4 text-lg font-semibold border-2 border-gray-300 hover:bg-gray-50 transition-all duration-300 rounded-full"
               onClick={() => setIsWaitlistOpen(true)}
             >
               🤖 Join Android Waitlist
@@ -253,7 +253,7 @@ const Hero = () => {
               <Button 
                 size="lg" 
                 variant="outline"
-                className="w-full sm:w-auto px-8 py-4 text-lg font-semibold border-2 hover:bg-blue-50 transition-all duration-300"
+                className="w-full sm:w-auto px-8 py-4 text-lg font-semibold border-2 hover:bg-blue-50 transition-all duration-300 rounded-full"
                 style={{
                   borderColor: '#6EC1E4',
                   color: '#6EC1E4'
