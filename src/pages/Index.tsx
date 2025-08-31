@@ -4,8 +4,7 @@ import AppFeatures from "@/components/AppFeatures";
 import AppInAction from "@/components/AppInAction";
 import StyleGeniusEverywhere from "@/components/StyleGeniusEverywhere";
 import HowItWorks from "@/components/HowItWorks";
-import Features from "@/components/Features";
-import AppShowcase from "@/components/AppShowcase";
+import Reviews from "@/components/Reviews";
 import DownloadSection from "@/components/DownloadSection";
 import Footer from "@/components/Footer";
 
@@ -17,8 +16,7 @@ const Index = () => {
       <AppInAction />
       <StyleGeniusEverywhere />
       <HowItWorks />
-      <Features />
-      <AppShowcase />
+      <Reviews />
       <DownloadSection />
       <Footer />
     </div>
