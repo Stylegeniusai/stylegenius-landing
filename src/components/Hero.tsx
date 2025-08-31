@@ -144,11 +144,12 @@ const Hero = () => {
                 <div className="flex items-center gap-4">
                   <span>Use{" "}
                     <span 
-                      className="bg-clip-text text-transparent"
+                      className="bg-clip-text text-transparent font-black"
                       style={{
                         background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)',
                         WebkitBackgroundClip: 'text',
-                        WebkitTextFillColor: 'transparent'
+                        WebkitTextFillColor: 'transparent',
+                        filter: 'drop-shadow(2px 2px 4px rgba(0,0,0,0.5))'
                       }}
                     >
                       StyleGenius

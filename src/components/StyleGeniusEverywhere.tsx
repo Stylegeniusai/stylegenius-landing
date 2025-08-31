@@ -136,7 +136,7 @@ const StyleGeniusEverywhere = () => {
             <a href="https://apps.apple.com/app/id6747178892" target="_blank" rel="noopener noreferrer">
               <Button 
                 size="lg" 
-                className="px-8 py-4 text-lg font-semibold text-white shadow-lg hover:shadow-xl transition-all duration-300"
+                className="px-8 py-4 text-lg font-semibold text-white shadow-lg hover:shadow-xl transition-all duration-300 rounded-full"
                 style={{
                   background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)'
                 }}
@@ -149,7 +149,7 @@ const StyleGeniusEverywhere = () => {
               <Button 
                 size="lg" 
                 variant="outline"
-                className="px-8 py-4 text-lg font-semibold border-2 hover:bg-blue-50 transition-all duration-300"
+                className="px-8 py-4 text-lg font-semibold border-2 hover:bg-blue-50 transition-all duration-300 rounded-full"
                 style={{
                   borderColor: '#6EC1E4',
                   color: '#6EC1E4'
@@ -161,7 +161,7 @@ const StyleGeniusEverywhere = () => {
           </div>
           
           <p className="text-gray-500 text-sm">
-            Available on iOS, Android (coming soon), Chrome, Safari & Edge
+            Available on iOS, Android (coming soon), Chrome
           </p>
         </div>
       </div>

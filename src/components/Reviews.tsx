@@ -50,7 +50,7 @@ const Reviews = () => {
             <span className="text-lg font-semibold text-gray-700">4.9/5</span>
           </div>
           <p className="text-lg text-gray-600">
-            Join thousands of women who've transformed their style
+            See what early users are saying
           </p>
         </div>
 
@@ -85,22 +85,10 @@ const Reviews = () => {
         </div>
 
         {/* Social Proof Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto text-center">
-          <div className="bg-white rounded-xl p-4 shadow-md">
-            <div className="text-2xl md:text-3xl font-bold text-pink-600 mb-1">4.9★</div>
-            <div className="text-sm text-gray-600">App Store Rating</div>
-          </div>
-          <div className="bg-white rounded-xl p-4 shadow-md">
-            <div className="text-2xl md:text-3xl font-bold text-purple-600 mb-1">10k+</div>
-            <div className="text-sm text-gray-600">Happy Users</div>
-          </div>
-          <div className="bg-white rounded-xl p-4 shadow-md">
-            <div className="text-2xl md:text-3xl font-bold text-blue-600 mb-1">500k+</div>
-            <div className="text-sm text-gray-600">Outfits Created</div>
-          </div>
-          <div className="bg-white rounded-xl p-4 shadow-md">
-            <div className="text-2xl md:text-3xl font-bold text-cyan-600 mb-1">$2M+</div>
-            <div className="text-sm text-gray-600">Money Saved</div>
+        <div className="flex justify-center">
+          <div className="bg-white rounded-xl p-6 shadow-md">
+            <div className="text-3xl md:text-4xl font-bold text-pink-600 mb-2">4.9★</div>
+            <div className="text-base text-gray-600">App Store Rating</div>
           </div>
         </div>
       </div>
