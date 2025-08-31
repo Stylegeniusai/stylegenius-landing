@@ -389,21 +389,21 @@ const WhatColorsSuitMe = () => {
                 Get personalized color analysis, outfit suggestions, and smart shopping tips with StyleGenius!
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="https://apps.apple.com/app/id6747178892" target="_blank" rel="noopener noreferrer">
+                <a href="https://apps.apple.com/app/id6747178892" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
                   <Button 
                     size="lg"
-                    className="px-8 py-4 rounded-full text-white font-semibold text-lg"
+                    className="w-full sm:w-auto px-8 py-4 rounded-full text-white font-semibold text-lg"
                     style={{
                       background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)'
                     }}
                   >
-                    📱 Download StyleGenius App
+                    📱 Download App
                   </Button>
                 </a>
                 <Button 
                   size="lg"
                   variant="outline" 
-                  className="px-8 py-4 rounded-full font-semibold text-lg border-2 border-pink-300 hover:bg-pink-50"
+                  className="w-full sm:w-auto px-8 py-4 rounded-full font-semibold text-lg border-2 border-pink-300 hover:bg-pink-50"
                 >
                   🌐 Add Browser Extension
                 </Button>

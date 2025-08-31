@@ -14,6 +14,7 @@ import DataDeletion from "./pages/data-deletion";
 import Premium from "./pages/premium";
 import Success from "./pages/success";
 import WhatColorsSuitMe from "./pages/WhatColorsSuitMe";
+import WhatBodyTypeSuitsMe from "./pages/WhatBodyTypeSuitsMe";
 
 const queryClient = new QueryClient();
 
@@ -26,6 +27,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/what-colors-suit-me" element={<WhatColorsSuitMe />} />
+          <Route path="/what-body-type-suits-me" element={<WhatBodyTypeSuitsMe />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/cookies" element={<Cookies />} />
