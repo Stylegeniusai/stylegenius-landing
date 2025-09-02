@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Button } from "./ui/button";
-import { ArrowDown } from "lucide-react";
+import { getAppStoreUrl, getDownloadButtonText } from "../utils/deviceDetection";
 import {
   Dialog,
   DialogContent,
@@ -18,6 +18,8 @@ const Hero = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [currentReview, setCurrentReview] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
+  const [appStoreUrl, setAppStoreUrl] = useState('');
+  const [buttonText, setButtonText] = useState('📱 Download App');
   const sectionRef = useRef<HTMLDivElement>(null);
   const { toast } = useToast();
 
@@ -31,6 +33,11 @@ const Hero = () => {
       author: "App Store Review"
     }
   ];
+
+  useEffect(() => {
+    setAppStoreUrl(getAppStoreUrl());
+    setButtonText(getDownloadButtonText());
+  }, []);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -89,87 +96,55 @@ const Hero = () => {
   };
 
   return (
-    <section ref={sectionRef} className="relative min-h-screen lg:min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Hero Girl Background - Mobile */}
-      <div 
-        className="absolute inset-0 z-0 lg:hidden"
-        style={{
-          backgroundImage: 'url("/hero-girl-mobile.jpg")',
-          backgroundPosition: 'center center',
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
-          opacity: 0.4
-        }}
-      />
-      
-      {/* Hero Girl Background - Desktop */}
-      <div 
-        className="absolute inset-0 z-0 hidden lg:block"
-        style={{
-          backgroundImage: 'url("/hero-girl.jpg")',
-          backgroundPosition: '80% center',
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
-          opacity: 0.3
-        }}
-      />
-      
-      {/* Gradient Overlay */}
-      <div 
-        className="absolute inset-0 opacity-20 z-[1]"
-        style={{
-          background: 'linear-gradient(135deg, rgba(255,112,217,0.3), rgba(110,193,228,0.3))'
-        }}
-      />
-      
+    <section ref={sectionRef} className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gray-50">
       <div className="container mx-auto px-4 z-10">
-        <div className="text-center flex flex-col justify-center py-12 lg:py-20 lg:min-h-screen">
-          {/* 1. StyleGenius + Avatar */}
-          <div className="mb-8 lg:mb-24">
-            {/* StyleGenius + Avatar BREDVID på mobil */}
-            <div className="mb-12">
-              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-left inline-block">
-                <div className="text-gray-900">Why Be Dumb?</div>
-                <div className="flex items-center gap-4 mb-2">
-                  <div className="h-1 bg-gradient-to-r from-pink-400 via-purple-400 to-cyan-400 flex-grow" style={{ maxWidth: '70%' }}></div>
-                  <img 
-                    src="/mainavatar.png" 
-                    alt="StyleGenius Avatar" 
-                    className="w-16 h-16 sm:hidden rounded-full shadow-2xl"
-                    style={{
-                      filter: 'drop-shadow(0 0 20px rgba(255, 112, 217, 0.5))'
-                    }}
-                  />
+        <div className="grid lg:grid-cols-[3fr_2fr] gap-0 items-center py-8 lg:py-12 justify-center max-w-6xl mx-auto">
+          {/* Left side - Text content */}
+          <div className="text-center lg:text-left order-2 lg:order-1">
+            <div className="mx-auto lg:mx-0 lg:pl-16">
+              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-8">
+                <div className="text-gray-900 mb-2">Why Be Dumb?</div>
+                <div className="h-1 bg-gradient-to-r from-pink-400 via-purple-400 to-cyan-400 mb-6" style={{ width: '400px' }}></div>
+                <div>
+                  Use
                 </div>
-                <div className="flex items-center gap-4">
-                  <span>Use{" "}
-                    <span 
-                      className="bg-clip-text text-transparent font-black"
-                      style={{
-                        background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)',
-                        WebkitBackgroundClip: 'text',
-                        WebkitTextFillColor: 'transparent',
-                        filter: 'drop-shadow(2px 2px 4px rgba(0,0,0,0.5))'
-                      }}
-                    >
-                      StyleGenius
-                    </span>
-                  </span>
-                  <img 
-                    src="/mainavatar.png" 
-                    alt="StyleGenius Avatar" 
-                    className="hidden sm:block w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 lg:w-36 lg:h-36 rounded-full shadow-2xl hover:scale-110 transition-transform duration-300"
+                <div>
+                  <span 
+                    className="bg-clip-text text-transparent font-black"
                     style={{
-                      filter: 'drop-shadow(0 0 20px rgba(255, 112, 217, 0.5))'
+                      background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)',
+                      WebkitBackgroundClip: 'text',
+                      WebkitTextFillColor: 'transparent',
+                      filter: 'drop-shadow(2px 2px 4px rgba(0,0,0,0.5))'
                     }}
-                  />
+                  >
+                    StyleGenius
+                  </span>
                 </div>
               </h1>
             </div>
           </div>
-
-          {/* 2. Smart Shopping/Beauty/Styling */}
-          <div className="mb-8 lg:mb-24">
+          
+          {/* Right side - Hero image */}
+          <div className="order-1 lg:order-2 flex justify-start items-center -ml-4">
+            {/* Desktop blob */}
+            <img 
+              src="/hero-girl-desktop.png" 
+              alt="Happy StyleGenius user" 
+              className="hidden lg:block w-auto h-auto max-w-[400px]"
+            />
+            {/* Mobile blob */}
+            <img 
+              src="/hero-girl-mobile.png" 
+              alt="Happy StyleGenius user" 
+              className="lg:hidden w-auto h-auto max-w-[250px]"
+            />
+          </div>
+        </div>
+        
+        {/* Content below hero - centered */}
+        <div className="text-center pb-16">{/* Smart features */}
+          <div className="mb-8 lg:mb-16 mt-12 lg:mt-16 text-center lg:text-center">
             {/* Mobile: 2 top, 1 bottom. Desktop: horizontal with separators */}
             <div className="mb-6 max-w-4xl mx-auto">
               {/* Mobile grid layout */}
@@ -224,12 +199,13 @@ const Hero = () => {
               <div className="w-24 h-px bg-gradient-to-r from-pink-400 via-purple-400 to-cyan-400"></div>
             </div>
           </div>
+          </div>
 
 
 
           {/* CTA Buttons - iOS, Android, Browser Extension */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-            <a href="https://apps.apple.com/app/id6747178892" target="_blank" rel="noopener noreferrer">
+            <a href={appStoreUrl} target="_blank" rel="noopener noreferrer">
               <Button 
                 size="lg" 
                 className="w-full sm:w-auto px-8 py-4 text-lg font-semibold text-white shadow-lg hover:shadow-xl transition-all duration-300 rounded-full"
@@ -237,20 +213,12 @@ const Hero = () => {
                   background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)'
                 }}
               >
-                📱 Download iOS App
+                {buttonText}
               </Button>
             </a>
             
-            <Button 
-              size="lg" 
-              variant="outline"
-              className="w-full sm:w-auto px-8 py-4 text-lg font-semibold border-2 border-gray-300 hover:bg-gray-50 transition-all duration-300 rounded-full"
-              onClick={() => setIsWaitlistOpen(true)}
-            >
-              🤖 Join Android Waitlist
-            </Button>
             
-            <a href="#" target="_blank" rel="noopener noreferrer">
+            <a href="https://chromewebstore.google.com/detail/stylegenius-smart-shopping/nlkjogjlcljcfolmloeedefnhbkmmihb" target="_blank" rel="noopener noreferrer">
               <Button 
                 size="lg" 
                 variant="outline"
@@ -302,46 +270,9 @@ const Hero = () => {
                 — {reviews[currentReview].author}
               </p>
             </div>
-          </div>
-          
-          {/* Scroll Indicator */}
-          <div className="animate-bounce">
-            <ArrowDown className="mx-auto text-gray-400" size={32} />
-          </div>
         </div>
       </div>
 
-      {/* Android Waitlist Dialog */}
-      <Dialog open={isWaitlistOpen} onOpenChange={setIsWaitlistOpen}>
-        <DialogContent className="sm:max-w-[425px]">
-          <DialogHeader>
-            <DialogTitle>Join Android Waitlist</DialogTitle>
-            <DialogDescription>
-              Be the first to know when StyleGenius launches on Android!
-            </DialogDescription>
-          </DialogHeader>
-          <form onSubmit={handleWaitlistSubmit} className="space-y-4">
-            <Input
-              type="email"
-              placeholder="Enter your email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              className="w-full"
-            />
-            <Button 
-              type="submit" 
-              className="w-full"
-              disabled={isLoading}
-              style={{
-                background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)'
-              }}
-            >
-              {isLoading ? "Joining..." : "Join Waitlist"}
-            </Button>
-          </form>
-        </DialogContent>
-      </Dialog>
     </section>
   );
 };

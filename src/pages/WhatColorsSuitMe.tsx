@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import { Button } from "../components/ui/button";
+import { getAppStoreUrl, getDownloadButtonText } from "../utils/deviceDetection";
 
 const WhatColorsSuitMe = () => {
+  const [appStoreUrl, setAppStoreUrl] = useState('');
+  const [buttonText, setButtonText] = useState('📱 Download App');
+
+  useEffect(() => {
+    setAppStoreUrl(getAppStoreUrl());
+    setButtonText(getDownloadButtonText());
+  }, []);
   const skinToneGuides = [
     {
       name: "Fair & Porcelain Skin",
@@ -389,7 +397,7 @@ const WhatColorsSuitMe = () => {
                 Get personalized color analysis, outfit suggestions, and smart shopping tips with StyleGenius!
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="https://apps.apple.com/app/id6747178892" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+                <a href={appStoreUrl} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
                   <Button 
                     size="lg"
                     className="w-full sm:w-auto px-8 py-4 rounded-full text-white font-semibold text-lg"
@@ -397,7 +405,7 @@ const WhatColorsSuitMe = () => {
                       background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)'
                     }}
                   >
-                    📱 Download App
+                    {buttonText}
                   </Button>
                 </a>
                 <Button 
