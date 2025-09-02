@@ -142,11 +142,11 @@ const Hero = () => {
           </div>
         </div>
         
-        {/* Content below hero - centered */}
-        <div className="text-center pb-16">{/* Smart features */}
-          <div className="mb-8 lg:mb-16 mt-12 lg:mt-16 text-center lg:text-center">
-            {/* Mobile: 2 top, 1 bottom. Desktop: horizontal with separators */}
-            <div className="mb-6 max-w-4xl mx-auto">
+        {/* Content below hero - matching hero width */}
+        <div className="pb-16">
+          <div className="grid lg:grid-cols-[3fr_2fr] gap-0 items-center max-w-6xl mx-auto mb-8 lg:mb-16 mt-12 lg:mt-16">
+            {/* Smart features spanning hero width */}
+            <div className="col-span-2 mb-6">
               {/* Mobile grid layout */}
               <div className={`grid grid-cols-2 gap-3 mb-3 lg:hidden text-lg sm:text-xl font-bold transition-all duration-1000 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
@@ -167,7 +167,7 @@ const Hero = () => {
               </div>
               
               {/* Desktop flex layout */}
-              <div className={`hidden lg:flex lg:items-center lg:justify-center lg:text-4xl font-bold lg:gap-6 transition-all duration-1500 ${
+              <div className={`hidden lg:flex lg:items-center lg:justify-between lg:text-4xl font-bold max-w-5xl mx-auto px-8 transition-all duration-1500 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
               }`} style={{ transitionDelay: isVisible ? '800ms' : '0ms' }}>
                 <span className={`text-center transition-all duration-700 ${
