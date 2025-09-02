@@ -144,25 +144,25 @@ const Hero = () => {
         
         {/* Content below hero - matching hero width */}
         <div className="pb-16">
-          <div className="grid lg:grid-cols-[3fr_2fr] gap-0 items-center max-w-6xl mx-auto mb-8 lg:mb-16 mt-12 lg:mt-16">
+          <div className="grid lg:grid-cols-[3fr_2fr] gap-0 items-center max-w-6xl mx-auto mt-6 lg:mt-8">
             {/* Smart features spanning hero width */}
-            <div className="col-span-2 mb-6">
+            <div className="col-span-2">
               {/* Mobile grid layout */}
-              <div className={`grid grid-cols-2 gap-3 mb-3 lg:hidden text-lg sm:text-xl font-bold transition-all duration-1000 ${
+              <div className={`grid grid-cols-2 gap-3 lg:hidden text-lg sm:text-xl font-bold transition-all duration-1000 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
               }`} style={{ transitionDelay: isVisible ? '800ms' : '0ms' }}>
                 <span className="text-center">
                   <span style={{ color: '#FF70D9' }}>Smart</span> Shopping
                 </span>
                 <span className="text-center">
-                  <span style={{ color: '#6EC1E4' }}>Smart</span> Beauty
+                  <span style={{ color: '#9333EA' }}>Smart</span> Beauty
                 </span>
               </div>
               <div className={`text-center lg:hidden transition-all duration-1000 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
               }`} style={{ transitionDelay: isVisible ? '1000ms' : '0ms' }}>
                 <span className="text-lg sm:text-xl font-bold">
-                  <span className="bg-gradient-to-r from-purple-500 to-purple-600 bg-clip-text text-transparent">Smart</span> Styling
+                  <span style={{ color: '#6EC1E4' }}>Smart</span> Styling
                 </span>
               </div>
               
@@ -181,7 +181,7 @@ const Hero = () => {
                 <span className={`text-center transition-all duration-700 ${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
                 }`} style={{ transitionDelay: isVisible ? '1300ms' : '0ms' }}>
-                  <span style={{ color: '#6EC1E4' }}>Smart</span> Beauty
+                  <span style={{ color: '#9333EA' }}>Smart</span> Beauty
                 </span>
                 <span className={`text-gray-400 transition-all duration-500 ${
                   isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-0'
@@ -189,22 +189,15 @@ const Hero = () => {
                 <span className={`text-center transition-all duration-700 ${
                   isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-5'
                 }`} style={{ transitionDelay: isVisible ? '1700ms' : '0ms' }}>
-                  <span className="bg-gradient-to-r from-purple-500 to-purple-600 bg-clip-text text-transparent">Smart</span> Styling
+                  <span style={{ color: '#6EC1E4' }}>Smart</span> Styling
                 </span>
               </div>
             </div>
-            
-            {/* Visual connection */}
-            <div className="flex justify-center mb-6">
-              <div className="w-24 h-px bg-gradient-to-r from-pink-400 via-purple-400 to-cyan-400"></div>
-            </div>
           </div>
           </div>
-
-
 
           {/* CTA Buttons - iOS, Android, Browser Extension */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <a href={appStoreUrl} target="_blank" rel="noopener noreferrer">
               <Button 
                 size="lg" 
@@ -228,49 +221,60 @@ const Hero = () => {
                   color: '#6EC1E4'
                 }}
               >
-                🌐 Browser Extension
+                💻 For Computer
               </Button>
             </a>
           </div>
           
-          {/* 5. Value Props - 3x2 grid on mobile, flex on desktop */}
-          <div className="mb-12 max-w-4xl mx-auto">
-            <div className="grid grid-cols-3 grid-rows-2 gap-3 lg:flex lg:flex-wrap lg:justify-center lg:gap-4">
-              <span className="px-2 py-2 lg:px-5 lg:py-3 bg-white rounded-full text-gray-700 shadow-md border font-medium hover:shadow-lg transition-shadow duration-300 text-xs lg:text-base text-center">
-                💪 Better Confidence
-              </span>
-              <span className="px-2 py-2 lg:px-5 lg:py-3 bg-white rounded-full text-gray-700 shadow-md border font-medium hover:shadow-lg transition-shadow duration-300 text-xs lg:text-base text-center">
-                💰 Save<br className="lg:hidden"/>Money
-              </span>
-              <span className="px-2 py-2 lg:px-5 lg:py-3 bg-white rounded-full text-gray-700 shadow-md border font-medium hover:shadow-lg transition-shadow duration-300 text-xs lg:text-base text-center">
-                ✨ Look Your Best
-              </span>
-              <span className="px-2 py-2 lg:px-5 lg:py-3 bg-white rounded-full text-gray-700 shadow-md border font-medium hover:shadow-lg transition-shadow duration-300 text-xs lg:text-base text-center">
-                🛍️ Smart Shopping
-              </span>
-              <span className="px-2 py-2 lg:px-5 lg:py-3 bg-white rounded-full text-gray-700 shadow-md border font-medium hover:shadow-lg transition-shadow duration-300 text-xs lg:text-base text-center">
-                💄 Perfect Colors
-              </span>
-              <span className="px-2 py-2 lg:px-5 lg:py-3 bg-white rounded-full text-gray-700 shadow-md border font-medium hover:shadow-lg transition-shadow duration-300 text-xs lg:text-base text-center">
-                💬 Always There
-              </span>
+          {/* Pills and Review side by side */}
+          <div className="grid lg:grid-cols-2 gap-8 mb-12 max-w-6xl mx-auto">
+            {/* Left side - Value Props Pills */}
+            <div className="relative bg-gradient-to-br from-pink-50 to-purple-50 rounded-2xl p-6 shadow-xl border-2 border-transparent bg-clip-padding">
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 p-0.5">
+                <div className="bg-gradient-to-br from-pink-50 to-purple-50 rounded-2xl h-full w-full"></div>
+              </div>
+              <div className="relative grid grid-cols-2 gap-3 lg:gap-4">
+                <span className="px-3 py-2 bg-white/70 rounded-full text-gray-700 shadow-md border font-medium text-sm text-center hover:bg-white transition-all duration-200">
+                  💪 Better Confidence
+                </span>
+                <span className="px-3 py-2 bg-white/70 rounded-full text-gray-700 shadow-md border font-medium text-sm text-center hover:bg-white transition-all duration-200">
+                  💰 Save Money
+                </span>
+                <span className="px-3 py-2 bg-white/70 rounded-full text-gray-700 shadow-md border font-medium text-sm text-center hover:bg-white transition-all duration-200">
+                  ✨ Look Your Best
+                </span>
+                <span className="px-3 py-2 bg-white/70 rounded-full text-gray-700 shadow-md border font-medium text-sm text-center hover:bg-white transition-all duration-200">
+                  🛍️ Smart Shopping
+                </span>
+                <span className="px-3 py-2 bg-white/70 rounded-full text-gray-700 shadow-md border font-medium text-sm text-center hover:bg-white transition-all duration-200">
+                  💄 Perfect Colors
+                </span>
+                <span className="px-3 py-2 bg-white/70 rounded-full text-gray-700 shadow-md border font-medium text-sm text-center hover:bg-white transition-all duration-200">
+                  💬 Always There
+                </span>
+              </div>
+            </div>
+            
+            {/* Right side - Review */}
+            <div className="relative bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-6 shadow-xl border-2 border-transparent bg-clip-padding flex flex-col justify-center">
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-400 to-cyan-400 p-0.5">
+                <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl h-full w-full"></div>
+              </div>
+              <div className="relative">
+              <div className="flex text-yellow-400 text-lg justify-center mb-4">
+                ⭐⭐⭐⭐⭐
+              </div>
+              <div className="flex flex-col justify-center">
+                <p className="text-gray-700 font-semibold text-lg mb-3 text-center">
+                  "{reviews[currentReview].text}"
+                </p>
+                <p className="text-gray-500 text-sm text-center">
+                  — {reviews[currentReview].author}
+                </p>
+              </div>
+              </div>
             </div>
           </div>
-          
-          {/* Review Carousel - after CTA */}
-          <div className="mb-10 max-w-2xl mx-auto">
-            <div className="flex text-yellow-400 text-lg justify-center mb-4">
-              ⭐⭐⭐⭐⭐
-            </div>
-            <div className="transition-all duration-500 ease-in-out h-[140px] flex flex-col justify-center">
-              <p className="text-gray-700 font-semibold text-lg mb-3 text-center">
-                "{reviews[currentReview].text}"
-              </p>
-              <p className="text-gray-500 text-sm text-center">
-                — {reviews[currentReview].author}
-              </p>
-            </div>
-        </div>
       </div>
 
     </section>
