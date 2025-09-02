@@ -100,11 +100,11 @@ const Hero = () => {
       <div className="container mx-auto px-4 z-10">
         <div className="grid lg:grid-cols-[3fr_2fr] gap-0 items-center py-8 lg:py-12 justify-center max-w-6xl mx-auto">
           {/* Left side - Text content */}
-          <div className="text-center lg:text-left order-2 lg:order-1">
+          <div className="text-left lg:text-left order-1 lg:order-1">
             <div className="mx-auto lg:mx-0 lg:pl-16">
-              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-8">
+              <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-8">
                 <div className="text-gray-900 mb-2">Why Be Dumb?</div>
-                <div className="h-1 bg-gradient-to-r from-pink-400 via-purple-400 to-cyan-400 mb-6" style={{ width: '400px' }}></div>
+                <div className="h-1 bg-gradient-to-r from-pink-400 via-purple-400 to-cyan-400 mb-6 mx-auto lg:mx-0" style={{ width: 'min(320px, calc(100vw - 2rem))' }}></div>
                 <div>
                   Use
                 </div>
@@ -114,8 +114,7 @@ const Hero = () => {
                     style={{
                       background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)',
                       WebkitBackgroundClip: 'text',
-                      WebkitTextFillColor: 'transparent',
-                      filter: 'drop-shadow(2px 2px 4px rgba(0,0,0,0.5))'
+                      WebkitTextFillColor: 'transparent'
                     }}
                   >
                     StyleGenius
@@ -126,7 +125,7 @@ const Hero = () => {
           </div>
           
           {/* Right side - Hero image */}
-          <div className="order-1 lg:order-2 flex justify-start items-center -ml-4">
+          <div className="order-2 lg:order-2 flex justify-center lg:justify-start items-center lg:-ml-4">
             {/* Desktop blob */}
             <img 
               src="/hero-girl-desktop.png" 

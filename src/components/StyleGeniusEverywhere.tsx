@@ -161,7 +161,7 @@ const StyleGeniusEverywhere = () => {
           </div>
           
           <p className="text-gray-500 text-sm">
-            Available on iOS, Android (coming soon), Chrome
+            Available on iOS, Android, Chrome
           </p>
         </div>
       </div>

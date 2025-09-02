@@ -1,48 +1,18 @@
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "./ui/button";
-import { Input } from "./ui/input";
 import { Card, CardContent } from "./ui/card";
-import { useToast } from "../hooks/use-toast";
-import { supabase } from "../lib/supabase";
+import { getAppStoreUrl, getDownloadButtonText } from "../utils/deviceDetection";
 
 const DownloadSection = () => {
-  const [email, setEmail] = useState("");
-  const { toast } = useToast();
+  const [appStoreUrl, setAppStoreUrl] = useState('');
+  const [buttonText, setButtonText] = useState('');
 
-  const handleAndroidSignup = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email) return;
+  useEffect(() => {
+    setAppStoreUrl(getAppStoreUrl());
+    setButtonText(getDownloadButtonText());
+  }, []);
 
-    try {
-      const { error } = await supabase
-        .from('android_waitlist')
-        .insert([{ email }]);
-
-      if (error) {
-        if (error.code === '23505') { // Unique constraint violation
-          toast({
-            title: "Already registered!",
-            description: "You're already on our Android waitlist.",
-          });
-        } else {
-          throw error;
-        }
-      } else {
-        toast({
-          title: "Thanks for joining!",
-          description: "We'll notify you when StyleGenius for Android is ready.",
-        });
-      }
-      setEmail("");
-    } catch (error) {
-      console.error('Error adding to waitlist:', error);
-      toast({
-        title: "Error",
-        description: "Something went wrong. Please try again.",
-      });
-    }
-  };
 
   return (
     <section className="py-20 bg-white">
@@ -56,8 +26,8 @@ const DownloadSection = () => {
           </p>
         </div>
         
-        <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {/* iOS Download */}
+        <div className="grid lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          {/* Download App */}
           <Card className="border-0 shadow-xl">
             <CardContent className="p-8 text-center">
               <div 
@@ -69,12 +39,12 @@ const DownloadSection = () => {
                 📱
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Download Now for iOS
+                Download App
               </h3>
               <p className="text-gray-600 mb-6">
-                Get StyleGenius on your iPhone and start your style transformation today
+                Get StyleGenius on your phone and start your style transformation today
               </p>
-              <a href="https://apps.apple.com/app/id6747178892" target="_blank" rel="noopener noreferrer">
+              <a href={appStoreUrl} target="_blank" rel="noopener noreferrer">
                 <Button 
                   size="lg"
                   className="w-full text-lg py-4 text-white shadow-lg hover:shadow-xl transition-all duration-300 rounded-full"
@@ -82,57 +52,16 @@ const DownloadSection = () => {
                     background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)'
                   }}
                 >
-                  Download for iOS
+                  {buttonText}
                 </Button>
               </a>
               <p className="text-sm text-gray-500 mt-4">
-                Free download • iOS 14.0 or later
+                Free download • Available on iOS & Android
               </p>
             </CardContent>
           </Card>
           
-          {/* Android Waitlist */}
-          <Card className="border-0 shadow-xl">
-            <CardContent className="p-8 text-center">
-              <div 
-                className="w-20 h-20 mx-auto mb-6 rounded-2xl flex items-center justify-center text-white text-3xl"
-                style={{
-                  background: 'linear-gradient(45deg, #6EC1E4, #FF70D9)'
-                }}
-              >
-                🤖
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Coming Soon to Android
-              </h3>
-              <p className="text-gray-600 mb-6">
-                Be the first to know when StyleGenius launches on Android
-              </p>
-              <form onSubmit={handleAndroidSignup} className="space-y-4">
-                <Input
-                  type="email"
-                  placeholder="Enter your email address"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                  className="text-center"
-                />
-                <Button 
-                  type="submit"
-                  size="lg"
-                  variant="outline"
-                  className="w-full text-lg py-4 border-2 hover:bg-gray-50 rounded-full"
-                >
-                  Join Android Waitlist
-                </Button>
-              </form>
-              <p className="text-sm text-gray-500 mt-4">
-                Get early access • No spam, we promise
-              </p>
-            </CardContent>
-          </Card>
-          
-          {/* Browser Extension */}
+          {/* For Computer */}
           <Card className="border-0 shadow-xl">
             <CardContent className="p-8 text-center">
               <div 
@@ -141,15 +70,15 @@ const DownloadSection = () => {
                   background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)'
                 }}
               >
-                🌐
+                💻
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Browser Extension
+                For Computer
               </h3>
               <p className="text-gray-600 mb-6">
                 Shop smarter on any website with price tracking and instant style advice
               </p>
-              <a href="#" target="_blank" rel="noopener noreferrer">
+              <a href="https://chromewebstore.google.com/detail/stylegenius-smart-shopping/nlkjogjlcljcfolmloeedefnhbkmmihb" target="_blank" rel="noopener noreferrer">
                 <Button 
                   size="lg"
                   variant="outline"
@@ -163,7 +92,7 @@ const DownloadSection = () => {
                 </Button>
               </a>
               <p className="text-sm text-gray-500 mt-4">
-                Chrome • Safari • Edge • Firefox
+                Chrome
               </p>
             </CardContent>
           </Card>
