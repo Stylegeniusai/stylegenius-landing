@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "./ui/button";
+import { getAppStoreUrl, getDownloadButtonText } from "../utils/deviceDetection";
 
 const StyleGeniusEverywhere = () => {
+  const [appStoreUrl, setAppStoreUrl] = useState('');
+  const [buttonText, setButtonText] = useState('');
+
+  useEffect(() => {
+    setAppStoreUrl(getAppStoreUrl());
+    setButtonText(getDownloadButtonText());
+  }, []);
+
   const features = [
     {
       icon: "🔄",
@@ -133,30 +142,26 @@ const StyleGeniusEverywhere = () => {
         {/* CTA Section */}
         <div className="text-center">
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-4">
-            <a href="https://apps.apple.com/app/id6747178892" target="_blank" rel="noopener noreferrer">
-              <Button 
-                size="lg" 
-                className="px-8 py-4 text-lg font-semibold text-white shadow-lg hover:shadow-xl transition-all duration-300 rounded-full"
+            <a href={appStoreUrl} target="_blank" rel="noopener noreferrer">
+              <button 
+                className="px-8 py-4 text-white font-semibold text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
                 style={{
                   background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)'
                 }}
               >
-                📱 Download Mobile App
-              </Button>
+                {buttonText}
+              </button>
             </a>
             
-            <a href="#" target="_blank" rel="noopener noreferrer">
-              <Button 
-                size="lg" 
-                variant="outline"
-                className="px-8 py-4 text-lg font-semibold border-2 hover:bg-blue-50 transition-all duration-300 rounded-full"
+            <a href="https://chromewebstore.google.com/detail/stylegenius-smart-shopping/nlkjogjlcljcfolmloeedefnhbkmmihb" target="_blank" rel="noopener noreferrer">
+              <button 
+                className="px-8 py-4 text-white font-semibold text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
                 style={{
-                  borderColor: '#6EC1E4',
-                  color: '#6EC1E4'
+                  background: '#6EC1E4'
                 }}
               >
                 🌐 Add Browser Extension
-              </Button>
+              </button>
             </a>
           </div>
           

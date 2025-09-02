@@ -198,30 +198,26 @@ const Hero = () => {
           {/* CTA Buttons - iOS, Android, Browser Extension */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <a href={appStoreUrl} target="_blank" rel="noopener noreferrer">
-              <Button 
-                size="lg" 
-                className="w-full sm:w-auto px-8 py-4 text-lg font-semibold text-white shadow-lg hover:shadow-xl transition-all duration-300 rounded-full"
+              <button 
+                className="w-full sm:w-auto px-8 py-4 text-white font-semibold text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
                 style={{
                   background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)'
                 }}
               >
                 {buttonText}
-              </Button>
+              </button>
             </a>
             
             
             <a href="https://chromewebstore.google.com/detail/stylegenius-smart-shopping/nlkjogjlcljcfolmloeedefnhbkmmihb" target="_blank" rel="noopener noreferrer">
-              <Button 
-                size="lg" 
-                variant="outline"
-                className="w-full sm:w-auto px-8 py-4 text-lg font-semibold border-2 hover:bg-blue-50 transition-all duration-300 rounded-full"
+              <button 
+                className="w-full sm:w-auto px-8 py-4 text-white font-semibold text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
                 style={{
-                  borderColor: '#6EC1E4',
-                  color: '#6EC1E4'
+                  background: '#6EC1E4'
                 }}
               >
                 💻 For Computer
-              </Button>
+              </button>
             </a>
           </div>
           

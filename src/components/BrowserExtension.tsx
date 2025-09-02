@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "./ui/button";
+import { getAppStoreUrl, getDownloadButtonText } from "../utils/deviceDetection";
 
 const BrowserExtension = () => {
+  const [appStoreUrl, setAppStoreUrl] = useState('');
+  const [buttonText, setButtonText] = useState('');
+
+  useEffect(() => {
+    setAppStoreUrl(getAppStoreUrl());
+    setButtonText(getDownloadButtonText());
+  }, []);
+
   return (
     <section className="py-20 bg-gradient-to-br from-blue-50 to-cyan-50">
       <div className="container mx-auto px-4">
@@ -113,7 +122,7 @@ const BrowserExtension = () => {
             <a href="#" target="_blank" rel="noopener noreferrer">
               <Button 
                 size="lg" 
-                className="px-8 py-4 text-lg font-semibold text-white shadow-lg hover:shadow-xl transition-all duration-300"
+                className="px-12 py-6 text-xl font-semibold text-white shadow-lg hover:shadow-xl transition-all duration-300"
                 style={{
                   background: 'linear-gradient(45deg, #3B82F6, #06B6D4)'
                 }}
@@ -121,17 +130,17 @@ const BrowserExtension = () => {
                 🌐 Add Chrome Extension
               </Button>
             </a>
-            <a href="https://apps.apple.com/app/id6747178892" target="_blank" rel="noopener noreferrer">
+            <a href={appStoreUrl} target="_blank" rel="noopener noreferrer">
               <Button 
                 size="lg" 
                 variant="outline"
-                className="px-8 py-4 text-lg font-semibold border-2 hover:bg-blue-50 transition-all duration-300"
+                className="px-12 py-6 text-xl font-semibold border-2 hover:bg-blue-50 transition-all duration-300"
                 style={{
                   borderColor: '#06B6D4',
                   color: '#06B6D4'
                 }}
               >
-                📱 Download Mobile App
+                {buttonText}
               </Button>
             </a>
           </div>

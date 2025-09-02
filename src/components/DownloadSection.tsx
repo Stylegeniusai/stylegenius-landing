@@ -45,15 +45,14 @@ const DownloadSection = () => {
                 Get StyleGenius on your phone and start your style transformation today
               </p>
               <a href={appStoreUrl} target="_blank" rel="noopener noreferrer">
-                <Button 
-                  size="lg"
-                  className="w-full text-lg py-4 text-white shadow-lg hover:shadow-xl transition-all duration-300 rounded-full"
+                <button 
+                  className="w-full px-8 py-4 text-white font-semibold text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
                   style={{
                     background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)'
                   }}
                 >
                   {buttonText}
-                </Button>
+                </button>
               </a>
               <p className="text-sm text-gray-500 mt-4">
                 Free download • Available on iOS & Android
@@ -79,17 +78,14 @@ const DownloadSection = () => {
                 Shop smarter on any website with price tracking and instant style advice
               </p>
               <a href="https://chromewebstore.google.com/detail/stylegenius-smart-shopping/nlkjogjlcljcfolmloeedefnhbkmmihb" target="_blank" rel="noopener noreferrer">
-                <Button 
-                  size="lg"
-                  variant="outline"
-                  className="w-full text-lg py-4 border-2 hover:bg-blue-50 transition-all duration-300 rounded-full"
+                <button 
+                  className="w-full px-8 py-4 text-white font-semibold text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
                   style={{
-                    borderColor: '#6EC1E4',
-                    color: '#6EC1E4'
+                    background: '#6EC1E4'
                   }}
                 >
                   Add to Browser
-                </Button>
+                </button>
               </a>
               <p className="text-sm text-gray-500 mt-4">
                 Chrome
