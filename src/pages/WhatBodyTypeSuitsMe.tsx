@@ -364,23 +364,25 @@ const WhatBodyTypeSuitsMe = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href={appStoreUrl} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
-                  <Button 
-                    size="lg"
-                    className="w-full sm:w-auto px-8 py-4 rounded-full text-white font-semibold text-lg"
+                  <button 
+                    className="w-full sm:w-auto px-8 py-4 text-white font-semibold text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
                     style={{
                       background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)'
                     }}
                   >
                     {buttonText}
-                  </Button>
+                  </button>
                 </a>
-                <Button 
-                  size="lg"
-                  variant="outline" 
-                  className="w-full sm:w-auto px-8 py-4 rounded-full font-semibold text-lg border-2 border-pink-300 hover:bg-pink-50"
-                >
-                  🌐 Add Browser Extension
-                </Button>
+                <a href="https://chromewebstore.google.com/detail/stylegenius-smart-shopping/nlkjogjlcljcfolmloeedefnhbkmmihb" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+                  <button 
+                    className="w-full sm:w-auto px-8 py-4 text-white font-semibold text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                    style={{
+                      background: '#6EC1E4'
+                    }}
+                  >
+                    💻 For Computer
+                  </button>
+                </a>
               </div>
             </div>
           </div>
