@@ -20,115 +20,268 @@ const Terms = () => {
           </h1>
           
           <div className="bg-white rounded-lg shadow-lg p-8 space-y-8">
+            <div className="space-y-2 mb-8">
+              <p className="text-lg font-semibold text-gray-800"><strong>Effective Date:</strong> October 1, 2025</p>
+              <p className="text-lg font-semibold text-gray-800"><strong>Last Updated:</strong> October 1, 2025</p>
+            </div>
             <section>
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">What StyleGenius Does</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">1. Service Overview</h2>
               <div className="space-y-4 text-gray-600 leading-relaxed">
-                <p>StyleGenius is an AI-powered styling service that provides:</p>
+                <p>StyleGenius is an AI-powered shopping assistant that helps users make informed purchasing decisions through:</p>
                 <ul className="list-disc pl-6 space-y-2">
-                  <li><strong>AI styling recommendations:</strong> Personalized outfit suggestions based on your style and colors</li>
-                  <li><strong>Digital wardrobe:</strong> Organize and manage your clothing collection</li>
-                  <li><strong>Color analysis:</strong> AI-powered analysis to find your perfect colors</li>
-                  <li><strong>Shopping integration:</strong> Smart shopping recommendations through browser extension</li>
-                  <li><strong>Genius Club:</strong> Premium features including advanced AI styling and exclusive content</li>
+                  <li><strong>Product Analysis:</strong> AI-driven analysis of product information when YOU request it</li>
+                  <li><strong>Price Tracking:</strong> Monitoring price changes on products you choose to save</li>
+                  <li><strong>Style Recommendations:</strong> Personalized fashion advice based on your preferences</li>
+                  <li><strong>Wardrobe Management:</strong> Tools to organize and match your clothing items</li>
+                  <li><strong>Data Extraction:</strong> Processing publicly available product information for your personal use</li>
                 </ul>
               </div>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">User Responsibilities</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">2. User-Initiated Data Processing</h2>
+              <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-4">
+                <p className="font-semibold text-gray-800"><strong>Key Principle:</strong> StyleGenius operates ONLY when you actively choose to use our features. We never automatically scrape websites or collect data without your direct action.</p>
+              </div>
               <div className="space-y-4 text-gray-600 leading-relaxed">
-                <p>By using StyleGenius, you agree to:</p>
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">2.1 How Data Processing Works</h3>
                 <ul className="list-disc pl-6 space-y-2">
-                  <li><strong>Provide accurate information:</strong> Upload genuine photos and honest style preferences</li>
-                  <li><strong>Use appropriately:</strong> Don't upload inappropriate, offensive, or copyrighted images</li>
-                  <li><strong>Respect others:</strong> Don't share other people's photos without permission</li>
-                  <li><strong>Follow laws:</strong> Use StyleGenius in compliance with all applicable laws</li>
-                  <li><strong>Secure your account:</strong> Keep your login credentials private and secure</li>
-                  <li><strong>Age requirement:</strong> You must be 13 or older to use StyleGenius</li>
+                  <li><span className="bg-blue-100 px-2 py-1 rounded">Manual Activation:</span> All data extraction occurs when YOU click buttons like "Analyze Product," "Save Item," or "Track Price"</li>
+                  <li><span className="bg-blue-100 px-2 py-1 rounded">Public Information Only:</span> We process only publicly available information (prices, descriptions, images, availability)</li>
+                  <li><span className="bg-blue-100 px-2 py-1 rounded">Personal Use Focus:</span> Analysis is performed solely for your individual shopping decisions</li>
+                  <li><span className="bg-blue-100 px-2 py-1 rounded">No Bulk Scraping:</span> We do not perform automated, large-scale data collection</li>
+                </ul>
+                <h3 className="text-xl font-semibold text-gray-800 mb-2 mt-6">2.2 Types of Data We Process</h3>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li>Product titles, descriptions, and specifications</li>
+                  <li>Pricing information and availability status</li>
+                  <li>Product images for analysis purposes</li>
+                  <li>Website metadata relevant to shopping decisions</li>
+                  <li>User-provided preferences and wardrobe information</li>
                 </ul>
               </div>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">Our Liability Limitations</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">3. Legal Compliance and User Responsibilities</h2>
               <div className="space-y-4 text-gray-600 leading-relaxed">
-                <p>StyleGenius provides AI recommendations for entertainment and inspiration purposes:</p>
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">3.1 Website Terms of Service</h3>
+                <p>By using StyleGenius, you acknowledge and agree that:</p>
                 <ul className="list-disc pl-6 space-y-2">
-                  <li><strong>No guarantees:</strong> AI recommendations are suggestions, not guaranteed outcomes</li>
-                  <li><strong>Personal decisions:</strong> You are responsible for your fashion and purchasing choices</li>
-                  <li><strong>Technical issues:</strong> We strive for 99% uptime but cannot guarantee uninterrupted service</li>
-                  <li><strong>Third-party links:</strong> Not responsible for external shopping sites or their policies</li>
-                  <li><strong>Data loss:</strong> While we protect your data, you should backup important information</li>
+                  <li>You are responsible for complying with the terms of service of websites you visit</li>
+                  <li>StyleGenius does not encourage or endorse violation of website policies</li>
+                  <li>You will not use our service to access restricted or protected content</li>
+                  <li>You understand that some websites may prohibit data extraction in their terms</li>
+                </ul>
+
+                <h3 className="text-xl font-semibold text-gray-800 mb-2 mt-6">3.2 Robots.txt and Technical Restrictions</h3>
+                <p>StyleGenius implements technical measures to ensure respectful data collection:</p>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li><strong>Rate Limiting:</strong> Maximum 1 request per 3 seconds per domain to prevent server overload</li>
+                  <li><strong>Robots.txt Awareness:</strong> While browser-based actions aren't bound by robots.txt, we encourage ethical use</li>
+                  <li><strong>User-Agent Identification:</strong> Our extension identifies itself appropriately in requests</li>
+                  <li><strong>Request Throttling:</strong> Automatic delays between requests to minimize server impact</li>
+                  <li><strong>Timeout Limits:</strong> Requests timeout after 10 seconds to prevent hanging connections</li>
+                  <li><strong>Error Handling:</strong> Graceful handling of 403, 429, and other restriction responses</li>
+                </ul>
+
+                <h3 className="text-xl font-semibold text-gray-800 mb-2 mt-6">3.3 Prohibited Scraping Activities</h3>
+                <div className="bg-red-50 border-l-4 border-red-400 p-4">
+                  <p className="font-semibold text-gray-800 mb-2">Users must NOT use StyleGenius to:</p>
+                  <ul className="list-disc pl-6 space-y-2">
+                    <li>Bypass login requirements, paywalls, or access restrictions</li>
+                    <li>Scrape personal data, contact information, or private user content</li>
+                    <li>Overwhelm websites with excessive automated requests</li>
+                    <li>Violate website terms that explicitly prohibit automated access</li>
+                    <li>Access or scrape content behind authentication barriers</li>
+                    <li>Collect data for competitive intelligence or commercial resale</li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">4. Commercial Use and Data Rights</h2>
+              <div className="space-y-4 text-gray-600 leading-relaxed">
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">4.1 Personal Use Only</h3>
+                <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4">
+                  <p className="font-semibold text-gray-800 mb-2">StyleGenius is designed for personal shopping assistance only. Users may not:</p>
+                  <ul className="list-disc pl-6 space-y-2">
+                    <li>Resell or redistribute extracted data</li>
+                    <li>Use our service for commercial data mining</li>
+                    <li>Create competing services using our extracted data</li>
+                    <li>Share analyzed product data with third parties for commercial purposes</li>
+                  </ul>
+                </div>
+
+                <h3 className="text-xl font-semibold text-gray-800 mb-2 mt-6">4.2 Intellectual Property</h3>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li>Product images and descriptions remain the property of their original owners</li>
+                  <li>StyleGenius AI analysis and recommendations are our intellectual property</li>
+                  <li>Users retain ownership of their personal preferences and wardrobe data</li>
                 </ul>
               </div>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">Payments & Genius Club</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">5. Data Storage and Privacy</h2>
               <div className="space-y-4 text-gray-600 leading-relaxed">
-                <p>Premium subscription terms:</p>
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">5.1 What We Store</h3>
                 <ul className="list-disc pl-6 space-y-2">
-                  <li><strong>Genius Club pricing:</strong> Monthly/yearly subscriptions as displayed in-app</li>
-                  <li><strong>Auto-renewal:</strong> Subscriptions automatically renew unless cancelled</li>
-                  <li><strong>Cancellation:</strong> Cancel anytime through App Store/Google Play or app settings</li>
-                  <li><strong>Refunds:</strong> Follow App Store/Google Play refund policies</li>
-                  <li><strong>Feature access:</strong> Premium features available only during active subscription</li>
-                  <li><strong>Price changes:</strong> We'll notify you 30 days before any price increases</li>
+                  <li><strong>User Profile:</strong> Style preferences, measurements, and wardrobe items you add</li>
+                  <li><strong>Saved Products:</strong> Items you choose to save for future reference</li>
+                  <li><strong>Analysis History:</strong> Results of product analyses you request</li>
+                  <li><strong>Price Alerts:</strong> Information needed to monitor prices you've chosen to track</li>
+                </ul>
+
+                <h3 className="text-xl font-semibold text-gray-800 mb-2 mt-6">5.2 Data Retention</h3>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li>Saved items and preferences: Stored until you delete them</li>
+                  <li>Analysis results: Temporarily stored to improve service quality</li>
+                  <li>Price tracking data: Maintained while alerts are active</li>
+                  <li>Account data: Deleted when you close your account</li>
                 </ul>
               </div>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">Account Termination</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">6. Service Limitations and Disclaimers</h2>
               <div className="space-y-4 text-gray-600 leading-relaxed">
-                <p>Accounts may be terminated for:</p>
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">6.1 Accuracy of Information</h3>
                 <ul className="list-disc pl-6 space-y-2">
-                  <li><strong>Terms violation:</strong> Breaking these terms or community guidelines</li>
-                  <li><strong>Inappropriate content:</strong> Uploading offensive or illegal material</li>
-                  <li><strong>Abuse:</strong> Attempting to hack, spam, or misuse the service</li>
-                  <li><strong>User request:</strong> You can delete your account anytime</li>
-                  <li><strong>Data retention:</strong> Account data deleted within 30 days of termination</li>
+                  <li>Product prices and availability can change rapidly</li>
+                  <li>We cannot guarantee 100% accuracy of extracted information</li>
+                  <li>Users should verify important details on retailer websites</li>
+                  <li>Price tracking may have delays or interruptions</li>
+                </ul>
+
+                <h3 className="text-xl font-semibold text-gray-800 mb-2 mt-6">6.2 Service Availability</h3>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li>StyleGenius is provided "as is" without warranties</li>
+                  <li>We may temporarily suspend service for maintenance</li>
+                  <li>Some websites may block or limit our functionality</li>
+                  <li>Browser updates may affect extension compatibility</li>
                 </ul>
               </div>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">Intellectual Property</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">7. Prohibited Uses</h2>
               <div className="space-y-4 text-gray-600 leading-relaxed">
-                <p>Rights and ownership:</p>
+                <p>Users may not use StyleGenius to:</p>
                 <ul className="list-disc pl-6 space-y-2">
-                  <li><strong>StyleGenius AI:</strong> Our AI models, algorithms, and app design are our property</li>
-                  <li><strong>Your images:</strong> You retain ownership of photos you upload</li>
-                  <li><strong>Usage license:</strong> You grant us license to process your images for styling services</li>
-                  <li><strong>Recommendations:</strong> AI-generated styling advice becomes your property</li>
-                  <li><strong>Trademarks:</strong> StyleGenius name and logo are our registered trademarks</li>
-                  <li><strong>Copyright:</strong> Don't upload copyrighted images without permission</li>
+                  <li>Violate any applicable laws or regulations</li>
+                  <li>Circumvent website security measures or paywalls</li>
+                  <li>Access private or protected user data</li>
+                  <li>Impersonate other users or entities</li>
+                  <li>Interfere with or disrupt our service or third-party websites</li>
+                  <li>Use the service for fraudulent or deceptive purposes</li>
+                  <li>Extract data for training competing AI models</li>
                 </ul>
               </div>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">Changes to Terms</h2>
-              <p className="text-gray-600 leading-relaxed">
-                We may update these terms occasionally. Significant changes will be communicated through the app 
-                or email. Continued use after changes means you accept the updated terms.
-              </p>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">8. Account Termination</h2>
+              <div className="space-y-4 text-gray-600 leading-relaxed">
+                <p>We may suspend or terminate your account if you:</p>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li>Violate these Terms of Service</li>
+                  <li>Use the service in ways that harm StyleGenius or third parties</li>
+                  <li>Engage in prohibited activities</li>
+                  <li>Fail to comply with website terms of service after warning</li>
+                </ul>
+              </div>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">Contact</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">9. Limitation of Liability</h2>
               <div className="space-y-4 text-gray-600 leading-relaxed">
-                <p>Questions about these terms?</p>
+                <p>StyleGenius and its operators shall not be liable for:</p>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li>Inaccurate product information or pricing</li>
+                  <li>Missed deals or price changes</li>
+                  <li>Website blocking or restricting our service</li>
+                  <li>Any disputes between users and retailers</li>
+                  <li>Consequential or indirect damages arising from service use</li>
+                </ul>
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">10. Changes to Terms</h2>
+              <div className="space-y-4 text-gray-600 leading-relaxed">
+                <p>We may update these Terms of Service periodically. Users will be notified of significant changes through:</p>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li>In-app notifications</li>
+                  <li>Email notifications to registered users</li>
+                  <li>Updates to this page with revised effective dates</li>
+                </ul>
+                <p>Continued use of StyleGenius after changes constitutes acceptance of new terms.</p>
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">11. Governing Law and Dispute Resolution</h2>
+              <div className="space-y-4 text-gray-600 leading-relaxed">
+                <p>These Terms of Service are governed by and interpreted under:</p>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li><strong>Jurisdiction:</strong> Swedish law (where StyleGenius is operated)</li>
+                  <li><strong>EU Regulations:</strong> GDPR, Digital Services Act, and applicable EU directives</li>
+                  <li><strong>Dispute Resolution:</strong> Initial disputes resolved through good-faith negotiation</li>
+                  <li><strong>Mediation:</strong> Unresolved disputes subject to binding arbitration in Stockholm, Sweden</li>
+                  <li><strong>Consumer Rights:</strong> EU consumer protection laws remain in full effect</li>
+                  <li><strong>Class Actions:</strong> Users retain rights to participate in class action lawsuits where legally permitted</li>
+                </ul>
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">12. Compliance and Enforcement</h2>
+              <div className="space-y-4 text-gray-600 leading-relaxed">
+                <p>StyleGenius reserves the right to:</p>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li><strong>Monitor Usage:</strong> Review extension usage patterns for Terms violations</li>
+                  <li><strong>Issue Warnings:</strong> Notify users of potential Terms violations before account restrictions</li>
+                  <li><strong>Temporary Suspension:</strong> Suspend service for investigation of serious violations</li>
+                  <li><strong>Permanent Termination:</strong> Close accounts for repeated or severe Terms violations</li>
+                  <li><strong>Legal Cooperation:</strong> Cooperate with law enforcement and website owners regarding misuse</li>
+                  <li><strong>Appeal Process:</strong> Users may appeal account actions through legal@stylegenius.app</li>
+                </ul>
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">13. Contact Information</h2>
+              <div className="space-y-4 text-gray-600 leading-relaxed">
+                <p>For questions about these Terms of Service or our data practices, please contact us at:</p>
                 <ul className="list-none space-y-2">
-                  <li><strong>Email:</strong> ai@stylegenius.app</li>
-                  <li><strong>Subject:</strong> "Terms Question"</li>
+                  <li><strong>Legal inquiries:</strong> legal@stylegenius.app</li>
+                  <li><strong>Technical support:</strong> ai@stylegenius.app</li>
+                  <li><strong>Privacy matters:</strong> privacy@stylegenius.app</li>
+                  <li><strong>Website:</strong> https://stylegenius.app/legal</li>
+                  <li><strong>Response time:</strong> Legal inquiries answered within 5 business days</li>
                 </ul>
               </div>
             </section>
 
-            <div className="text-sm text-gray-500 pt-8 border-t">
-              <p>Last updated: December 2024</p>
-              <p>These terms are effective immediately and apply to all StyleGenius users.</p>
+            <section>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">14. Company Information</h2>
+              <div className="space-y-4 text-gray-600 leading-relaxed">
+                <p>These Terms of Service are between you and:</p>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li><strong>Company Name:</strong> GoMotion AB</li>
+                  <li><strong>Trading Name:</strong> StyleGenius</li>
+                  <li><strong>Business Type:</strong> Swedish Limited Company (Aktiebolag)</li>
+                  <li><strong>Registration:</strong> Registered in Sweden</li>
+                  <li><strong>Service Provider:</strong> GoMotion AB operates StyleGenius services</li>
+                </ul>
+              </div>
+            </section>
+
+            <div className="text-center bg-gray-50 rounded-lg p-6 mt-8">
+              <p className="text-lg font-bold text-gray-900">StyleGenius - Your Personal AI Shopping Assistant</p>
+              <p className="text-gray-600">Operated by GoMotion AB • Making smarter shopping decisions through user-controlled, ethical data analysis</p>
             </div>
           </div>
         </div>
