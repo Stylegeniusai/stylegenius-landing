@@ -77,7 +77,7 @@ const DownloadSection = () => {
               <p className="text-gray-600 mb-6">
                 Shop smarter on any website with price tracking and instant style advice
               </p>
-              <a href="https://chromewebstore.google.com/detail/stylegenius-smart-shopping/nlkjogjlcljcfolmloeedefnhbkmmihb" target="_blank" rel="noopener noreferrer">
+              <a href="https://chromewebstore.google.com/detail/stylegenius-%E2%80%93-your-person/bggndhefooccenjglglakcfgifgdpbmn" target="_blank" rel="noopener noreferrer">
                 <button 
                   className="w-full px-8 py-4 text-white font-semibold text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
                   style={{

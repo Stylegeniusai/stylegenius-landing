@@ -154,7 +154,7 @@ const AppShowcase = () => {
                   />
                 </div>
                 <a 
-                  href="https://chromewebstore.google.com/search/StyleGenius%20%E2%80%93%20Your%20Personal%20Styling%20and%20Shopping%20Assistant" 
+                  href="https://chromewebstore.google.com/detail/stylegenius-%E2%80%93-your-person/bggndhefooccenjglglakcfgifgdpbmn" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center mt-6 px-8 py-4 text-lg font-semibold text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
