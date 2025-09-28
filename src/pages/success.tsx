@@ -2,88 +2,56 @@ import React, { useEffect, useState } from "react";
 import { Check, Mail, Sparkles } from "lucide-react";
 import { Button } from "../components/ui/button";
 import { Card, CardContent } from "../components/ui/card";
+import { Avatar, AvatarImage, AvatarFallback } from "../components/ui/avatar";
 
 const Success = () => {
-  const [isProcessing, setIsProcessing] = useState(true);
-  const [email, setEmail] = useState<string>("");
-  const [error, setError] = useState<string>("");
+  const [showConfetti, setShowConfetti] = useState(false);
 
   useEffect(() => {
-    const processSuccess = async () => {
-      try {
-        // Get session_id from URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const sessionId = urlParams.get('session_id');
-        
-        if (!sessionId) {
-          setError("No session found");
-          setIsProcessing(false);
-          return;
-        }
-
-        // We don't need Stripe on frontend for this
-
-        // Call our edge function to process the payment
-        const response = await fetch(`${import.meta.env.VITE_SUPABASE_URL}/functions/v1/process-premium-payment--`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`
-          },
-          body: JSON.stringify({
-            sessionId: sessionId
-          })
-        });
-
-        const result = await response.json();
-        
-        if (result.email) {
-          setEmail(result.email);
-        } else {
-          setError("Failed to process payment");
-        }
-
-      } catch (err) {
-        console.error('Error processing success:', err);
-        setError("Something went wrong");
-      } finally {
-        setIsProcessing(false);
-      }
-    };
-
-    processSuccess();
+    // Trigger confetti animation
+    setShowConfetti(true);
+    const timer = setTimeout(() => setShowConfetti(false), 3000);
+    return () => clearTimeout(timer);
   }, []);
 
-  if (isProcessing) {
-    return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin w-8 h-8 border-4 border-pink-400 border-t-transparent rounded-full mx-auto mb-4"></div>
-          <p className="text-gray-600">Processing your premium upgrade...</p>
-        </div>
-      </div>
-    );
-  }
-
-  if (error) {
-    return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="text-center">
-          <p className="text-red-600 mb-4">{error}</p>
-          <Button onClick={() => window.location.href = '/'}>Go Home</Button>
-        </div>
-      </div>
-    );
-  }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50 relative overflow-hidden">
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-10 left-10 w-32 h-32 bg-pink-300 rounded-full opacity-20 animate-pulse"></div>
+        <div className="absolute top-32 right-20 w-24 h-24 bg-blue-300 rounded-full opacity-20 animate-bounce"></div>
+        <div className="absolute bottom-20 left-1/4 w-40 h-40 bg-purple-300 rounded-full opacity-15 animate-pulse delay-300"></div>
+        <div className="absolute bottom-32 right-1/3 w-28 h-28 bg-pink-400 rounded-full opacity-20 animate-bounce delay-500"></div>
+      </div>
+
+      {/* Confetti Effect */}
+      {showConfetti && (
+        <div className="absolute inset-0 pointer-events-none">
+          {[...Array(20)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute animate-bounce"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 2}s`,
+                animationDuration: `${2 + Math.random() * 2}s`
+              }}
+            >
+              <div className={`w-2 h-2 rounded-full ${
+                ['bg-pink-400', 'bg-blue-400', 'bg-purple-400', 'bg-yellow-400', 'bg-green-400'][Math.floor(Math.random() * 5)]
+              }`}></div>
+            </div>
+          ))}
+        </div>
+      )}
       {/* Header */}
-      <div className="bg-white border-b">
+      <div className="bg-white/80 backdrop-blur-sm border-b border-white/20 relative z-10">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <h1 className="text-2xl font-bold">
-              <span 
+              <span
                 className="bg-clip-text text-transparent"
                 style={{
                   background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)',
@@ -94,7 +62,7 @@ const Success = () => {
                 StyleGenius
               </span>
             </h1>
-            <a href="/" className="text-gray-600 hover:text-gray-900">
+            <a href="/" className="text-gray-600 hover:text-gray-900 transition-colors">
               ← Back to home
             </a>
           </div>
@@ -102,29 +70,37 @@ const Success = () => {
       </div>
 
       {/* Success Content */}
-      <div className="container mx-auto px-4 py-20">
+      <div className="container mx-auto px-4 py-20 relative z-10">
         <div className="max-w-2xl mx-auto text-center">
           
           {/* Success Icon */}
           <div className="mb-8">
-            <div 
-              className="w-24 h-24 mx-auto rounded-full flex items-center justify-center text-white mb-6"
-              style={{
-                background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)'
-              }}
-            >
-              <Check className="w-12 h-12" />
+            <div className="relative mx-auto w-32 h-32 mb-6">
+              <Avatar className="w-32 h-32 border-4 border-white shadow-2xl transform hover:scale-110 transition-transform duration-300">
+                <AvatarImage src="/mainavatar.png" alt="StyleGenius Avatar" />
+                <AvatarFallback>SG</AvatarFallback>
+              </Avatar>
+              <div
+                className="absolute -bottom-2 -right-2 w-12 h-12 rounded-full flex items-center justify-center text-white shadow-lg"
+                style={{
+                  background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)',
+                }}
+              >
+                <Check className="w-6 h-6" />
+              </div>
             </div>
-            <div className="flex justify-center mb-4">
-              <Sparkles className="w-8 h-8 text-yellow-400 animate-pulse" />
+            <div className="flex justify-center mb-4 space-x-2">
+              <Sparkles className="w-8 h-8 text-yellow-400 animate-bounce" />
+              <Sparkles className="w-6 h-6 text-pink-400 animate-bounce delay-100" />
+              <Sparkles className="w-8 h-8 text-blue-400 animate-bounce delay-200" />
             </div>
           </div>
 
           {/* Main Message */}
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Welcome to the 
-            <span 
-              className="bg-clip-text text-transparent block"
+          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+            Welcome to the
+            <span
+              className="bg-clip-text text-transparent block mt-2"
               style={{
                 background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)',
                 WebkitBackgroundClip: 'text',
@@ -135,16 +111,20 @@ const Success = () => {
             </span>
           </h1>
 
-          <p className="text-xl text-gray-600 mb-8">
-            🎉 You're officially StyleGenius Pro! Your premium features are now active.
+          <p className="text-xl md:text-2xl text-gray-700 mb-8 font-medium">
+            🎉 You're officially StyleGenius Pro!
+          </p>
+
+          <p className="text-lg text-gray-600 mb-12">
+            Your premium features are now active and ready to use
           </p>
 
           {/* Email Confirmation Card */}
-          <Card className="mb-8 border-2" style={{ borderColor: '#6EC1E4' }}>
+          <Card className="mb-8 border-2 backdrop-blur-sm bg-white/80" style={{ borderColor: '#6EC1E4' }}>
             <CardContent className="p-8">
               <div className="flex items-center justify-center mb-4">
-                <div 
-                  className="w-12 h-12 rounded-full flex items-center justify-center text-white mr-4"
+                <div
+                  className="w-12 h-12 rounded-full flex items-center justify-center text-white mr-4 shadow-lg"
                   style={{
                     background: 'linear-gradient(45deg, #6EC1E4, #FF70D9)'
                   }}
@@ -154,7 +134,7 @@ const Success = () => {
                 <div className="text-left">
                   <h3 className="text-lg font-semibold text-gray-900">Check your email!</h3>
                   <p className="text-gray-600">
-                    We've sent your welcome guide to {email}
+                    We've sent your welcome guide and instructions
                   </p>
                 </div>
               </div>
@@ -165,7 +145,7 @@ const Success = () => {
           </Card>
 
           {/* Next Steps */}
-          <div className="bg-white rounded-2xl p-8 shadow-lg mb-8">
+          <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg mb-8 border border-white/20">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">What's next?</h2>
             <div className="grid md:grid-cols-2 gap-6 text-left">
               <div className="flex items-start gap-3">
