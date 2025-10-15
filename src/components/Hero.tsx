@@ -11,6 +11,7 @@ import {
 import { Input } from "./ui/input";
 import { useToast } from "../hooks/use-toast";
 import { supabase } from "../lib/supabase";
+import { trackDownloadClick, trackBrowserExtensionClick } from "../utils/analytics";
 
 const Hero = () => {
   const [isWaitlistOpen, setIsWaitlistOpen] = useState(false);
@@ -197,8 +198,8 @@ const Hero = () => {
 
           {/* CTA Buttons - iOS, Android, Browser Extension */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <a href={appStoreUrl} target="_blank" rel="noopener noreferrer">
-              <button 
+            <a href={appStoreUrl} target="_blank" rel="noopener noreferrer" onClick={() => trackDownloadClick('hero_download_button')}>
+              <button
                 className="w-full sm:w-auto px-8 py-4 text-white font-semibold text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
                 style={{
                   background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)'
@@ -207,10 +208,10 @@ const Hero = () => {
                 {buttonText}
               </button>
             </a>
-            
-            
-            <a href="https://chromewebstore.google.com/detail/stylegenius-%E2%80%93-your-person/bggndhefooccenjglglakcfgifgdpbmn" target="_blank" rel="noopener noreferrer">
-              <button 
+
+
+            <a href="https://chromewebstore.google.com/detail/stylegenius-%E2%80%93-your-person/bggndhefooccenjglglakcfgifgdpbmn" target="_blank" rel="noopener noreferrer" onClick={() => trackBrowserExtensionClick()}>
+              <button
                 className="w-full sm:w-auto px-8 py-4 text-white font-semibold text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
                 style={{
                   background: '#6EC1E4'

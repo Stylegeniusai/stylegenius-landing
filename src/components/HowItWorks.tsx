@@ -1,4 +1,5 @@
 import React from "react";
+import { trackDownloadClick } from "../utils/analytics";
 
 const HowItWorks = () => {
   const steps = [
@@ -88,8 +89,8 @@ const HowItWorks = () => {
 
         {/* CTA */}
         <div className="text-center mt-12">
-          <a href="https://apps.apple.com/app/id6747178892" target="_blank" rel="noopener noreferrer">
-            <button 
+          <a href="https://apps.apple.com/app/id6747178892" target="_blank" rel="noopener noreferrer" onClick={() => trackDownloadClick('how_it_works_section')}>
+            <button
               className="px-8 py-4 text-white font-semibold text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
               style={{
                 background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)'

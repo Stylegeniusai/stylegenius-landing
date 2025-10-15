@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Button } from "./ui/button";
 import { Card, CardContent } from "./ui/card";
 import { getAppStoreUrl, getDownloadButtonText } from "../utils/deviceDetection";
+import { trackDownloadClick, trackBrowserExtensionClick } from "../utils/analytics";
 
 const DownloadSection = () => {
   const [appStoreUrl, setAppStoreUrl] = useState('');
@@ -44,8 +45,8 @@ const DownloadSection = () => {
               <p className="text-gray-600 mb-6">
                 Get StyleGenius on your phone and start your style transformation today
               </p>
-              <a href={appStoreUrl} target="_blank" rel="noopener noreferrer">
-                <button 
+              <a href={appStoreUrl} target="_blank" rel="noopener noreferrer" onClick={() => trackDownloadClick('download_section_app')}>
+                <button
                   className="w-full px-8 py-4 text-white font-semibold text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
                   style={{
                     background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)'
@@ -77,8 +78,8 @@ const DownloadSection = () => {
               <p className="text-gray-600 mb-6">
                 Shop smarter on any website with price tracking and instant style advice
               </p>
-              <a href="https://chromewebstore.google.com/detail/stylegenius-%E2%80%93-your-person/bggndhefooccenjglglakcfgifgdpbmn" target="_blank" rel="noopener noreferrer">
-                <button 
+              <a href="https://chromewebstore.google.com/detail/stylegenius-%E2%80%93-your-person/bggndhefooccenjglglakcfgifgdpbmn" target="_blank" rel="noopener noreferrer" onClick={() => trackBrowserExtensionClick()}>
+                <button
                   className="w-full px-8 py-4 text-white font-semibold text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
                   style={{
                     background: '#6EC1E4'
