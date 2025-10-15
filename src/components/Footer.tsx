@@ -45,7 +45,7 @@ const Footer = () => {
           
           <div className="border-t border-gray-800 pt-8">
             <p className="text-gray-500">
-              © 2025 StyleGenius. All rights reserved.
+              © 2025 GoMotion AB. All rights reserved.
             </p>
           </div>
         </div>

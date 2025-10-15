@@ -135,6 +135,7 @@ const Cookies = () => {
             <div className="text-sm text-gray-500 pt-8 border-t">
               <p>Last updated: December 2024</p>
               <p>This Cookie Policy applies to all StyleGenius web services and browser extension.</p>
+              <p className="mt-2">StyleGenius is operated by GoMotion AB.</p>
             </div>
           </div>
         </div>
