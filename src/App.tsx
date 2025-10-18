@@ -15,6 +15,7 @@ import Premium from "./pages/premium";
 import Success from "./pages/success";
 import WhatColorsSuitMe from "./pages/WhatColorsSuitMe";
 import WhatBodyTypeSuitsMe from "./pages/WhatBodyTypeSuitsMe";
+import Download from "./pages/Download";
 
 const queryClient = new QueryClient();
 
@@ -26,6 +27,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/download" element={<Download />} />
           <Route path="/what-colors-suit-me" element={<WhatColorsSuitMe />} />
           <Route path="/what-body-type-suits-me" element={<WhatBodyTypeSuitsMe />} />
           <Route path="/privacy" element={<Privacy />} />
