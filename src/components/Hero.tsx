@@ -97,107 +97,100 @@ const Hero = () => {
   };
 
   return (
-    <section ref={sectionRef} className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gray-50">
+    <section ref={sectionRef} className="relative min-h-screen flex items-start justify-center overflow-hidden bg-gray-50">
+      {/* Marble texture overlay */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: 'url(/marble-texture.png)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          opacity: 0.3
+        }}
+      />
       <div className="container mx-auto px-4 z-10">
-        <div className="grid lg:grid-cols-[3fr_2fr] gap-0 items-center py-8 lg:py-12 justify-center max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-[3fr_2fr] gap-0 items-start justify-center max-w-6xl mx-auto">
           {/* Left side - Text content */}
           <div className="text-left lg:text-left order-1 lg:order-1">
-            <div className="mx-auto lg:mx-0 lg:pl-16">
-              <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-8">
-                <div className="text-gray-900 mb-2">Why Be Dumb?</div>
-                <div className="h-1 bg-gradient-to-r from-pink-400 via-purple-400 to-cyan-400 mb-6 mx-auto lg:mx-0" style={{ width: 'min(320px, calc(100vw - 2rem))' }}></div>
-                <div>
-                  Use
-                </div>
-                <div>
-                  <span 
-                    className="bg-clip-text text-transparent font-black"
-                    style={{
-                      background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)',
-                      WebkitBackgroundClip: 'text',
-                      WebkitTextFillColor: 'transparent'
-                    }}
-                  >
-                    StyleGenius
-                  </span>
-                </div>
-              </h1>
-            </div>
-          </div>
-          
-          {/* Right side - Hero image */}
-          <div className="order-2 lg:order-2 flex justify-center lg:justify-start items-center lg:-ml-4">
-            {/* Desktop blob */}
-            <img 
-              src="/hero-girl-desktop.png" 
-              alt="Happy StyleGenius user" 
-              className="hidden lg:block w-auto h-auto max-w-[400px]"
-            />
-            {/* Mobile blob */}
-            <img 
-              src="/hero-girl-mobile.png" 
-              alt="Happy StyleGenius user" 
-              className="lg:hidden w-auto h-auto max-w-[250px]"
-            />
-          </div>
-        </div>
-        
-        {/* Content below hero - matching hero width */}
-        <div className="pb-16">
-          <div className="grid lg:grid-cols-[3fr_2fr] gap-0 items-center max-w-6xl mx-auto mt-6 lg:mt-8">
-            {/* Smart features spanning hero width */}
-            <div className="col-span-2">
-              {/* Mobile grid layout */}
-              <div className={`grid grid-cols-2 gap-3 lg:hidden text-lg sm:text-xl font-bold transition-all duration-1000 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
-              }`} style={{ transitionDelay: isVisible ? '800ms' : '0ms' }}>
-                <span className="text-center">
-                  <span style={{ color: '#FF70D9' }}>Smart</span> Shopping
-                </span>
-                <span className="text-center">
-                  <span style={{ color: '#9333EA' }}>Smart</span> Beauty
-                </span>
-              </div>
-              <div className={`text-center lg:hidden transition-all duration-1000 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
-              }`} style={{ transitionDelay: isVisible ? '1000ms' : '0ms' }}>
-                <span className="text-lg sm:text-xl font-bold">
-                  <span style={{ color: '#6EC1E4' }}>Smart</span> Styling
-                </span>
-              </div>
-              
-              {/* Desktop flex layout */}
-              <div className={`hidden lg:flex lg:items-center lg:justify-between lg:text-4xl font-bold max-w-5xl mx-auto px-8 transition-all duration-1500 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
-              }`} style={{ transitionDelay: isVisible ? '800ms' : '0ms' }}>
-                <span className={`text-center transition-all duration-700 ${
-                  isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-5'
-                }`} style={{ transitionDelay: isVisible ? '900ms' : '0ms' }}>
-                  <span style={{ color: '#FF70D9' }}>Smart</span> Shopping
-                </span>
-                <span className={`text-gray-400 transition-all duration-500 ${
-                  isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-0'
-                }`} style={{ transitionDelay: isVisible ? '1100ms' : '0ms' }}>•</span>
-                <span className={`text-center transition-all duration-700 ${
-                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
-                }`} style={{ transitionDelay: isVisible ? '1300ms' : '0ms' }}>
-                  <span style={{ color: '#9333EA' }}>Smart</span> Beauty
-                </span>
-                <span className={`text-gray-400 transition-all duration-500 ${
-                  isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-0'
-                }`} style={{ transitionDelay: isVisible ? '1500ms' : '0ms' }}>•</span>
-                <span className={`text-center transition-all duration-700 ${
-                  isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-5'
-                }`} style={{ transitionDelay: isVisible ? '1700ms' : '0ms' }}>
-                  <span style={{ color: '#6EC1E4' }}>Smart</span> Styling
-                </span>
+            <div className="mx-auto lg:mx-0 lg:pl-16 hero-outer-wrapper">
+              <style>
+                {`
+                  .hero-outer-wrapper {
+                    padding-top: 48px;
+                  }
+                  @media (min-width: 1024px) {
+                    .hero-outer-wrapper {
+                      padding-top: 96px;
+                    }
+                  }
+                `}
+              </style>
+              <div className="hero-text-container">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 lg:mb-24 text-center lg:text-left" style={{ textShadow: '0 2px 8px rgba(0, 0, 0, 0.1)' }}>
+                  <div style={{ color: '#1a1f36' }}>
+                    Discover Your Perfect{" "}
+                    <span
+                      className="bg-clip-text text-transparent"
+                      style={{
+                        background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)',
+                        WebkitBackgroundClip: 'text',
+                        WebkitTextFillColor: 'transparent'
+                      }}
+                    >
+                      Style.
+                    </span>
+                  </div>
+                </h1>
+
+                {/* Desktop subheadline */}
+                <p className="hidden lg:block text-xl sm:text-2xl md:text-3xl font-semibold mb-12" style={{ color: '#4a5568', textShadow: '0 2px 6px rgba(0, 0, 0, 0.08)' }}>
+                  Your personal stylist when shopping,<br />styling outfits or getting ready
+                </p>
               </div>
             </div>
-          </div>
           </div>
 
-          {/* CTA Buttons - iOS, Android, Browser Extension */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+          {/* Right side - Hero image */}
+          <div className="order-2 lg:order-2 flex justify-center lg:justify-start items-start lg:-ml-4 pt-4 lg:pt-12 relative">
+            {/* Before/After transformation image */}
+            <img
+              src="/aistylisthero.png"
+              alt="Style transformation - before and after"
+              className="w-full h-auto max-w-[280px] sm:max-w-[350px] lg:max-w-[450px]"
+            />
+
+            {/* Rating badge - floating over image */}
+            <div className="absolute left-1/2 bottom-[15%] -translate-x-1/2 z-20">
+              <img
+                src="/high-rated-styling-app.png"
+                alt="4.9 Rating"
+                className="w-auto h-[100px] sm:h-[120px] lg:h-[140px] drop-shadow-2xl hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Subheadline - mobile only, after image */}
+        <div className="lg:hidden mx-auto px-4 mt-6">
+          <p className="text-xl sm:text-2xl font-semibold mb-8 text-center" style={{ color: '#4a5568', textShadow: '0 2px 6px rgba(0, 0, 0, 0.08)' }}>
+            Your{" "}
+            <span
+              className="bg-clip-text text-transparent"
+              style={{
+                background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent'
+              }}
+            >
+              Personal
+            </span>
+            {" "}AI Stylist for Smart Shopping, Beauty & Styling
+          </p>
+        </div>
+
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 mt-0 lg:mt-16">
             <a href={appStoreUrl} target="_blank" rel="noopener noreferrer" onClick={() => trackDownloadClick('hero_download_button')}>
               <button
                 className="w-full sm:w-auto px-8 py-4 text-white font-semibold text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
@@ -209,7 +202,6 @@ const Hero = () => {
               </button>
             </a>
 
-
             <a href="https://chromewebstore.google.com/detail/stylegenius-%E2%80%93-your-person/bggndhefooccenjglglakcfgifgdpbmn" target="_blank" rel="noopener noreferrer" onClick={() => trackBrowserExtensionClick()}>
               <button
                 className="w-full sm:w-auto px-8 py-4 text-white font-semibold text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
@@ -217,57 +209,50 @@ const Hero = () => {
                   background: '#6EC1E4'
                 }}
               >
-                💻 For Computer
+                💻 For Your Browser
               </button>
             </a>
           </div>
-          
-          {/* Pills and Review side by side */}
-          <div className="grid lg:grid-cols-2 gap-8 mb-12 max-w-6xl mx-auto">
-            {/* Left side - Value Props Pills */}
-            <div className="relative bg-gradient-to-br from-pink-50 to-purple-50 rounded-2xl p-6 shadow-xl border-2 border-transparent bg-clip-padding">
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 p-0.5">
-                <div className="bg-gradient-to-br from-pink-50 to-purple-50 rounded-2xl h-full w-full"></div>
-              </div>
-              <div className="relative grid grid-cols-2 gap-3 lg:gap-4">
-                <span className="px-3 py-2 bg-white/70 rounded-full text-gray-700 shadow-md border font-medium text-sm text-center hover:bg-white transition-all duration-200">
-                  💪 Better Confidence
-                </span>
-                <span className="px-3 py-2 bg-white/70 rounded-full text-gray-700 shadow-md border font-medium text-sm text-center hover:bg-white transition-all duration-200">
-                  💰 Save Money
-                </span>
-                <span className="px-3 py-2 bg-white/70 rounded-full text-gray-700 shadow-md border font-medium text-sm text-center hover:bg-white transition-all duration-200">
-                  ✨ Look Your Best
-                </span>
-                <span className="px-3 py-2 bg-white/70 rounded-full text-gray-700 shadow-md border font-medium text-sm text-center hover:bg-white transition-all duration-200">
-                  🛍️ Smart Shopping
-                </span>
-                <span className="px-3 py-2 bg-white/70 rounded-full text-gray-700 shadow-md border font-medium text-sm text-center hover:bg-white transition-all duration-200">
-                  💄 Perfect Colors
-                </span>
-                <span className="px-3 py-2 bg-white/70 rounded-full text-gray-700 shadow-md border font-medium text-sm text-center hover:bg-white transition-all duration-200">
-                  💬 Always There
-                </span>
-              </div>
-            </div>
-            
-            {/* Right side - Review */}
-            <div className="relative bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-6 shadow-xl border-2 border-transparent bg-clip-padding flex flex-col justify-center">
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-400 to-cyan-400 p-0.5">
-                <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl h-full w-full"></div>
+
+          {/* Reviews side by side */}
+          <div className="grid lg:grid-cols-2 gap-4 lg:gap-8 mb-8 lg:mb-12 max-w-6xl mx-auto">
+            {/* Left review */}
+            <div className="relative bg-gradient-to-br from-pink-50 to-purple-50 rounded-xl lg:rounded-2xl p-3 lg:p-6 shadow-md lg:shadow-xl border-2 border-transparent bg-clip-padding flex flex-col justify-center">
+              <div className="absolute inset-0 rounded-xl lg:rounded-2xl bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 p-0.5">
+                <div className="bg-gradient-to-br from-pink-50 to-purple-50 rounded-xl lg:rounded-2xl h-full w-full"></div>
               </div>
               <div className="relative">
-              <div className="flex text-yellow-400 text-lg justify-center mb-4">
-                ⭐⭐⭐⭐⭐
+                <div className="flex text-yellow-400 text-sm lg:text-lg justify-center mb-2 lg:mb-4">
+                  ⭐⭐⭐⭐⭐
+                </div>
+                <div className="flex flex-col justify-center">
+                  <p className="text-gray-700 font-medium lg:font-semibold text-xs lg:text-lg mb-2 lg:mb-3 text-center leading-tight lg:leading-normal">
+                    "{reviews[0].text}"
+                  </p>
+                  <p className="text-gray-500 text-[10px] lg:text-sm text-center">
+                    — {reviews[0].author}
+                  </p>
+                </div>
               </div>
-              <div className="flex flex-col justify-center">
-                <p className="text-gray-700 font-semibold text-lg mb-3 text-center">
-                  "{reviews[currentReview].text}"
-                </p>
-                <p className="text-gray-500 text-sm text-center">
-                  — {reviews[currentReview].author}
-                </p>
+            </div>
+
+            {/* Right review */}
+            <div className="relative bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl lg:rounded-2xl p-3 lg:p-6 shadow-md lg:shadow-xl border-2 border-transparent bg-clip-padding flex flex-col justify-center">
+              <div className="absolute inset-0 rounded-xl lg:rounded-2xl bg-gradient-to-r from-blue-400 to-cyan-400 p-0.5">
+                <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl lg:rounded-2xl h-full w-full"></div>
               </div>
+              <div className="relative">
+                <div className="flex text-yellow-400 text-sm lg:text-lg justify-center mb-2 lg:mb-4">
+                  ⭐⭐⭐⭐⭐
+                </div>
+                <div className="flex flex-col justify-center">
+                  <p className="text-gray-700 font-medium lg:font-semibold text-xs lg:text-lg mb-2 lg:mb-3 text-center leading-tight lg:leading-normal">
+                    "{reviews[1].text}"
+                  </p>
+                  <p className="text-gray-500 text-[10px] lg:text-sm text-center">
+                    — {reviews[1].author}
+                  </p>
+                </div>
               </div>
             </div>
           </div>

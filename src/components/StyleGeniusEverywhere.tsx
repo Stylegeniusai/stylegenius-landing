@@ -141,10 +141,10 @@ const StyleGeniusEverywhere = () => {
 
         {/* CTA Section */}
         <div className="text-center">
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-4">
-            <a href={appStoreUrl} target="_blank" rel="noopener noreferrer">
-              <button 
-                className="px-8 py-4 text-white font-semibold text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-4 max-w-2xl mx-auto">
+            <a href={appStoreUrl} target="_blank" rel="noopener noreferrer" className="flex-1">
+              <button
+                className="w-full px-8 py-4 text-white font-semibold text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
                 style={{
                   background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)'
                 }}
@@ -152,10 +152,10 @@ const StyleGeniusEverywhere = () => {
                 {buttonText}
               </button>
             </a>
-            
-            <a href="https://chromewebstore.google.com/detail/stylegenius-%E2%80%93-your-person/bggndhefooccenjglglakcfgifgdpbmn" target="_blank" rel="noopener noreferrer">
-              <button 
-                className="px-8 py-4 text-white font-semibold text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+
+            <a href="https://chromewebstore.google.com/detail/stylegenius-%E2%80%93-your-person/bggndhefooccenjglglakcfgifgdpbmn" target="_blank" rel="noopener noreferrer" className="flex-1">
+              <button
+                className="w-full px-8 py-4 text-white font-semibold text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
                 style={{
                   background: '#6EC1E4'
                 }}
@@ -164,7 +164,7 @@ const StyleGeniusEverywhere = () => {
               </button>
             </a>
           </div>
-          
+
           <p className="text-gray-500 text-sm">
             Available on iOS, Android, Chrome
           </p>
