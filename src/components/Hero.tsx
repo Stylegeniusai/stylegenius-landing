@@ -151,21 +151,23 @@ const Hero = () => {
           </div>
 
           {/* Right side - Hero image */}
-          <div className="order-2 lg:order-2 flex justify-center lg:justify-start items-start lg:-ml-4 pt-4 lg:pt-12 relative">
-            {/* Before/After transformation image */}
-            <img
-              src="/aistylisthero.png"
-              alt="Style transformation - before and after"
-              className="w-full h-auto max-w-[280px] sm:max-w-[350px] lg:max-w-[450px]"
-            />
-
-            {/* Rating badge - floating over image */}
-            <div className="absolute left-1/2 lg:left-[45%] bottom-[15%] -translate-x-1/2 z-20">
+          <div className="order-2 lg:order-2 flex justify-center lg:justify-start items-start lg:-ml-4 pt-4 lg:pt-12">
+            <div className="relative">
+              {/* Before/After transformation image */}
               <img
-                src="/high-rated-styling-app.png"
-                alt="4.9 Rating"
-                className="w-auto h-[100px] sm:h-[120px] lg:h-[140px] drop-shadow-2xl hover:scale-105 transition-transform duration-300"
+                src="/aistylisthero.png"
+                alt="Style transformation - before and after"
+                className="w-full h-auto max-w-[280px] sm:max-w-[350px] lg:max-w-[450px]"
               />
+
+              {/* Rating badge - floating over image */}
+              <div className="absolute left-1/2 bottom-[15%] -translate-x-1/2 z-20">
+                <img
+                  src="/high-rated-styling-app.png"
+                  alt="4.9 Rating"
+                  className="w-auto h-[100px] sm:h-[120px] lg:h-[140px] drop-shadow-2xl hover:scale-105 transition-transform duration-300"
+                />
+              </div>
             </div>
           </div>
         </div>
