@@ -160,7 +160,7 @@ const Hero = () => {
             />
 
             {/* Rating badge - floating over image */}
-            <div className="absolute left-1/2 bottom-[15%] -translate-x-1/2 z-20">
+            <div className="absolute left-1/2 lg:left-[60%] bottom-[15%] -translate-x-1/2 z-20">
               <img
                 src="/high-rated-styling-app.png"
                 alt="4.9 Rating"
