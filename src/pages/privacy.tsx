@@ -22,7 +22,7 @@ const Privacy = () => {
           <div className="bg-white rounded-lg shadow-lg p-8 space-y-8">
             <div className="space-y-2 mb-8">
               <p className="text-lg font-semibold text-gray-800"><strong>Effective Date:</strong> October 1, 2025</p>
-              <p className="text-lg font-semibold text-gray-800"><strong>Last Updated:</strong> October 1, 2025</p>
+              <p className="text-lg font-semibold text-gray-800"><strong>Last Updated:</strong> November 24, 2025</p>
             </div>
 
             <section>
@@ -65,6 +65,66 @@ const Privacy = () => {
                 </ul>
                 <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mt-4">
                   <p className="font-semibold text-gray-800">We NEVER sell your personal data or images to third parties.</p>
+                </div>
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">AI Services & Data Processing</h2>
+              <div className="space-y-4 text-gray-600 leading-relaxed">
+                <p>StyleGenius uses third-party AI services to provide styling recommendations:</p>
+
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">Data Sent to AI Providers</h3>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li><strong>Photos & Selfies:</strong> Images you upload for color analysis, makeup recommendations, or outfit feedback are sent to AI services (such as Google Gemini, OpenAI) for processing</li>
+                  <li><strong>Body Information:</strong> Height, body type selections, and measurements you provide</li>
+                  <li><strong>Style Preferences:</strong> Your indicated style preferences, favorite colors, and fashion goals</li>
+                  <li><strong>Skin Tone Data:</strong> Skin tone selections and analysis results</li>
+                  <li><strong>Wardrobe Items:</strong> Photos and descriptions of clothing items in your wardrobe</li>
+                </ul>
+
+                <h3 className="text-xl font-semibold text-gray-800 mb-2 mt-6">How AI Providers Handle Your Data</h3>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li><strong>Processing Purpose:</strong> Data is sent solely to generate styling recommendations and analysis</li>
+                  <li><strong>No Permanent Storage:</strong> According to our agreements, AI providers process data temporarily and do not retain it for training purposes</li>
+                  <li><strong>No Facial Recognition:</strong> We do not use AI for facial recognition or biometric identification</li>
+                  <li><strong>Provider Policies:</strong> AI providers have their own privacy policies that govern how they handle data during processing</li>
+                </ul>
+
+                <div className="bg-blue-50 border-l-4 border-blue-400 p-4 mt-4">
+                  <p className="font-semibold text-gray-800">By using StyleGenius AI features, you consent to your data being processed by our third-party AI providers for the purpose of generating personalized styling recommendations.</p>
+                </div>
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">Marketing & Communications</h2>
+              <div className="space-y-4 text-gray-600 leading-relaxed">
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">How We Use Your Email</h3>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li><strong>Transactional Emails:</strong> Account confirmations, password resets, subscription receipts, and important service updates</li>
+                  <li><strong>Marketing Emails:</strong> Style tips, new feature announcements, promotions, and personalized recommendations (with your consent)</li>
+                  <li><strong>Price Alerts:</strong> Notifications when items you're tracking drop in price</li>
+                  <li><strong>Service Updates:</strong> Important changes to our terms, privacy policy, or service functionality</li>
+                </ul>
+
+                <h3 className="text-xl font-semibold text-gray-800 mb-2 mt-6">Your Marketing Choices</h3>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li><strong>Opt-In Required:</strong> Marketing communications require your explicit consent</li>
+                  <li><strong>Easy Unsubscribe:</strong> Every marketing email includes an unsubscribe link</li>
+                  <li><strong>Manage Preferences:</strong> Control your communication preferences in app settings</li>
+                  <li><strong>No Third-Party Marketing:</strong> We do not share your email with third parties for their marketing purposes</li>
+                </ul>
+
+                <h3 className="text-xl font-semibold text-gray-800 mb-2 mt-6">Data Used for Personalization</h3>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li><strong>Style Profile:</strong> We may use your style preferences to send relevant product recommendations</li>
+                  <li><strong>Usage Patterns:</strong> Your app usage helps us send more relevant tips and suggestions</li>
+                  <li><strong>Purchase History:</strong> Subscription status affects what communications you receive</li>
+                </ul>
+
+                <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mt-4">
+                  <p className="font-semibold text-gray-800">You can opt out of marketing communications at any time without affecting your access to StyleGenius services.</p>
                 </div>
               </div>
             </section>
@@ -122,8 +182,32 @@ const Privacy = () => {
                   <li><strong>Essential cookies:</strong> Required for app login and core functionality</li>
                   <li><strong>Analytics cookies:</strong> Anonymous usage statistics to improve the app</li>
                   <li><strong>Preference cookies:</strong> Remember your styling preferences and settings</li>
-                  <li><strong>No advertising cookies:</strong> We don't use cookies for advertising or marketing</li>
+                  <li><strong>No advertising cookies:</strong> We don't use cookies for advertising or retargeting</li>
                 </ul>
+
+                <h3 className="text-xl font-semibold text-gray-800 mb-2 mt-6">Google Analytics</h3>
+                <p>We use Google Analytics to understand how users interact with StyleGenius on our website and in the mobile app:</p>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li><strong>What We Track:</strong> Page views (website), screen views (app), feature usage, button clicks, session duration, and general user flow</li>
+                  <li><strong>In-App Events:</strong> We track anonymous events like "makeup analysis started", "wardrobe item added", "outfit created" (but NOT the actual content of photos or items)</li>
+                  <li><strong>Data Collected:</strong> Anonymous usage data, device type, OS version, browser type, app version, approximate location (country/city level)</li>
+                  <li><strong>IP Anonymization:</strong> IP addresses are anonymized before being stored by Google</li>
+                  <li><strong>No Personal Data:</strong> We do not send personal information (name, email, photos, selfies, wardrobe images, body measurements) to Google Analytics</li>
+                  <li><strong>Data Retention:</strong> Analytics data is retained for 14 months, then automatically deleted</li>
+                  <li><strong>Google's Role:</strong> Google acts as a data processor and may process data on servers outside the EU</li>
+                </ul>
+
+                <h3 className="text-xl font-semibold text-gray-800 mb-2 mt-6">Your Tracking Choices</h3>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li><strong>In-App Consent:</strong> You can manage analytics consent in app settings</li>
+                  <li><strong>Browser Controls:</strong> You can block cookies through your browser settings</li>
+                  <li><strong>Google Opt-Out:</strong> Install the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer" className="text-pink-500 underline">Google Analytics Opt-out Browser Add-on</a></li>
+                  <li><strong>Do Not Track:</strong> We respect browser "Do Not Track" signals where technically feasible</li>
+                </ul>
+
+                <div className="bg-blue-50 border-l-4 border-blue-400 p-4 mt-4">
+                  <p className="font-semibold text-gray-800">For more information about how Google processes data, see <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-pink-500 underline">Google's Privacy Policy</a>.</p>
+                </div>
               </div>
             </section>
 

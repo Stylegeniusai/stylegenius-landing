@@ -22,7 +22,7 @@ const Terms = () => {
           <div className="bg-white rounded-lg shadow-lg p-8 space-y-8">
             <div className="space-y-2 mb-8">
               <p className="text-lg font-semibold text-gray-800"><strong>Effective Date:</strong> October 1, 2025</p>
-              <p className="text-lg font-semibold text-gray-800"><strong>Last Updated:</strong> October 1, 2025</p>
+              <p className="text-lg font-semibold text-gray-800"><strong>Last Updated:</strong> November 24, 2025</p>
             </div>
             <section>
               <h2 className="text-2xl font-bold text-gray-900 mb-4">1. Service Overview</h2>
@@ -39,7 +39,74 @@ const Terms = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">2. User-Initiated Data Processing</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">2. AI-Powered Features & Limitations</h2>
+              <div className="space-y-4 text-gray-600 leading-relaxed">
+                <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-4">
+                  <p className="font-semibold text-gray-800"><strong>Important:</strong> StyleGenius uses artificial intelligence to provide styling recommendations. AI technology has inherent limitations and may not always provide perfect or accurate advice.</p>
+                </div>
+
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">2.1 AI Disclaimer</h3>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li><strong>Not Professional Advice:</strong> StyleGenius AI recommendations are for informational and entertainment purposes only. They do not constitute professional fashion, beauty, dermatological, or medical advice.</li>
+                  <li><strong>AI Limitations:</strong> Our AI may make mistakes, provide inaccurate color analysis, suggest unflattering styles, or give recommendations that don't suit your personal preferences or body type.</li>
+                  <li><strong>No Guarantees:</strong> We do not guarantee that following our recommendations will result in improved appearance, confidence, or satisfaction with purchases.</li>
+                  <li><strong>Subjective Nature:</strong> Fashion and style are subjective. AI recommendations are based on general principles and may not align with your personal taste or cultural preferences.</li>
+                  <li><strong>Use Your Judgment:</strong> Always use your own judgment when making purchasing decisions or styling choices based on our recommendations.</li>
+                </ul>
+
+                <h3 className="text-xl font-semibold text-gray-800 mb-2 mt-6">2.2 Third-Party AI Services</h3>
+                <p>StyleGenius utilizes third-party AI services to power our features:</p>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li><strong>AI Providers:</strong> We use services such as Google Gemini, OpenAI, and similar AI platforms to process styling requests</li>
+                  <li><strong>Data Sent to AI:</strong> When you use AI features, relevant information (such as photos, body measurements, style preferences, skin tone selections) is sent to these third-party AI services</li>
+                  <li><strong>No Control Over AI Processing:</strong> While we select reputable AI providers, we cannot control or guarantee how these services process your data internally</li>
+                  <li><strong>AI Provider Terms:</strong> Your use of StyleGenius features is also subject to the terms and privacy policies of our AI providers</li>
+                </ul>
+
+                <h3 className="text-xl font-semibold text-gray-800 mb-2 mt-6">2.3 Photo & Image Analysis</h3>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li><strong>Selfies & Photos:</strong> When you upload selfies or photos for color analysis, makeup recommendations, or outfit feedback, these images are sent to AI services for processing</li>
+                  <li><strong>User-Provided Information:</strong> You provide information such as height, body type, skin tone, and style preferences which are used to personalize recommendations</li>
+                  <li><strong>No Facial Recognition:</strong> We do not use facial recognition technology to identify individuals. Photo analysis is used solely for styling and color recommendations</li>
+                  <li><strong>Temporary Processing:</strong> Photos sent for AI analysis are processed temporarily and not permanently stored by AI providers according to their data policies</li>
+                </ul>
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">3. Subscriptions & Pricing</h2>
+              <div className="space-y-4 text-gray-600 leading-relaxed">
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">3.1 Genius Club Subscription</h3>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li><strong>Premium Features:</strong> Genius Club provides access to premium features including unlimited AI styling advice, advanced color analysis, and priority support</li>
+                  <li><strong>Billing Cycle:</strong> Subscriptions are billed on a recurring basis (monthly or annually) depending on your chosen plan</li>
+                  <li><strong>Auto-Renewal:</strong> Subscriptions automatically renew unless cancelled at least 24 hours before the end of the current billing period</li>
+                  <li><strong>Cancellation:</strong> You may cancel your subscription at any time through your App Store or Google Play account settings</li>
+                </ul>
+
+                <h3 className="text-xl font-semibold text-gray-800 mb-2 mt-6">3.2 Price Changes</h3>
+                <div className="bg-blue-50 border-l-4 border-blue-400 p-4">
+                  <p className="font-semibold text-gray-800 mb-2">StyleGenius reserves the right to modify subscription prices at any time.</p>
+                </div>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li><strong>Notice Period:</strong> We will provide at least 30 days advance notice of any price increases via email and/or in-app notification</li>
+                  <li><strong>Current Subscribers:</strong> Price changes will take effect at your next billing cycle after the notice period</li>
+                  <li><strong>Right to Cancel:</strong> If you do not agree with a price change, you may cancel your subscription before the new price takes effect</li>
+                  <li><strong>Reasons for Changes:</strong> Prices may change due to increased operational costs, new features, market conditions, or changes in third-party service fees (such as AI provider costs)</li>
+                  <li><strong>Promotional Pricing:</strong> Promotional or introductory prices are temporary and will revert to standard pricing after the promotional period</li>
+                </ul>
+
+                <h3 className="text-xl font-semibold text-gray-800 mb-2 mt-6">3.3 Refunds</h3>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li><strong>App Store Purchases:</strong> Refunds for iOS subscriptions are handled by Apple according to their refund policy</li>
+                  <li><strong>Google Play Purchases:</strong> Refunds for Android subscriptions are handled by Google according to their refund policy</li>
+                  <li><strong>No Partial Refunds:</strong> We generally do not provide partial refunds for unused portions of a subscription period</li>
+                </ul>
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">4. User-Initiated Data Processing</h2>
               <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-4">
                 <p className="font-semibold text-gray-800"><strong>Key Principle:</strong> StyleGenius operates ONLY when you actively choose to use our features. We never automatically scrape websites or collect data without your direct action.</p>
               </div>
