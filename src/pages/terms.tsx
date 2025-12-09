@@ -65,9 +65,11 @@ const Terms = () => {
 
                 <h3 className="text-xl font-semibold text-gray-800 mb-2 mt-6">2.3 Photo & Image Analysis</h3>
                 <ul className="list-disc pl-6 space-y-2">
-                  <li><strong>Selfies & Photos:</strong> When you upload selfies or photos for color analysis, makeup recommendations, or outfit feedback, these images are sent to AI services for processing</li>
+                  <li><strong>Selfies & Body Photos:</strong> When you upload selfies or full-body photos, these images are sent to AI services for processing to provide personalized styling features</li>
+                  <li><strong>How We Use Your Photos:</strong> Your images may be used for color analysis, body type assessment, virtual try-on previews, makeup look generation, and personalized outfit recommendations</li>
+                  <li><strong>AI-Generated Content:</strong> We use your photos to generate visual content such as virtual try-on images showing how clothes might look on you, and makeup looks applied to your selfie</li>
                   <li><strong>User-Provided Information:</strong> You provide information such as height, body type, skin tone, and style preferences which are used to personalize recommendations</li>
-                  <li><strong>No Facial Recognition:</strong> We do not use facial recognition technology to identify individuals. Photo analysis is used solely for styling and color recommendations</li>
+                  <li><strong>No Facial Recognition:</strong> We do not use facial recognition technology to identify individuals. Photo analysis is used solely for styling and visual features</li>
                   <li><strong>Temporary Processing:</strong> Photos sent for AI analysis are processed temporarily and not permanently stored by AI providers according to their data policies</li>
                 </ul>
               </div>
@@ -201,7 +203,18 @@ const Terms = () => {
                   <li><strong>Price Alerts:</strong> Information needed to monitor prices you've chosen to track</li>
                 </ul>
 
-                <h3 className="text-xl font-semibold text-gray-800 mb-2 mt-6">5.2 Data Retention</h3>
+                <h3 className="text-xl font-semibold text-gray-800 mb-2 mt-6">5.2 Usage Analytics</h3>
+                <p>To improve our service and understand how users interact with StyleGenius, we collect:</p>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li><strong>Feature Usage:</strong> Which features you use, buttons you click, and screens you visit within the app</li>
+                  <li><strong>Session Data:</strong> How often you use the app, session duration, and general usage patterns</li>
+                  <li><strong>Interaction Data:</strong> What you test, try on, or analyze (e.g., clothing categories, color preferences, style choices)</li>
+                  <li><strong>Device Information:</strong> Device type, operating system, and app version for compatibility purposes</li>
+                  <li><strong>Error Logs:</strong> Technical errors and crashes to help us fix bugs and improve stability</li>
+                </ul>
+                <p className="mt-2">This data helps us understand what features are popular, identify problems, and make StyleGenius better for everyone. Analytics data is used in aggregate and is not sold to third parties.</p>
+
+                <h3 className="text-xl font-semibold text-gray-800 mb-2 mt-6">5.3 Data Retention</h3>
                 <ul className="list-disc pl-6 space-y-2">
                   <li>Saved items and preferences: Stored until you delete them</li>
                   <li>Analysis results: Temporarily stored to improve service quality</li>
