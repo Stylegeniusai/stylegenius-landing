@@ -212,7 +212,7 @@ const Terms = () => {
                   <li><strong>Device Information:</strong> Device type, operating system, and app version for compatibility purposes</li>
                   <li><strong>Error Logs:</strong> Technical errors and crashes to help us fix bugs and improve stability</li>
                 </ul>
-                <p className="mt-2">This data helps us understand what features are popular, identify problems, and make StyleGenius better for everyone. Analytics data is used in aggregate and is not sold to third parties.</p>
+                <p className="mt-2">This data helps us understand what features are popular, identify problems, and make StyleGenius better for everyone. Analytics data may be shared with third parties in anonymized or aggregate form for research, analytics, or business purposes.</p>
 
                 <h3 className="text-xl font-semibold text-gray-800 mb-2 mt-6">5.3 Data Retention</h3>
                 <ul className="list-disc pl-6 space-y-2">
