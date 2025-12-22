@@ -89,7 +89,7 @@ const ExtensionLanding = () => {
 
       {/* Main headline + CTA */}
       <section className="px-4 pt-8 pb-10 text-center">
-        <h1 className="text-3xl lg:text-5xl font-bold text-gray-900 mb-2 mx-auto leading-tight">
+        <h1 className="text-3xl lg:text-5xl font-bold text-gray-900 mb-8 mx-auto leading-tight">
           Stop guessing. Save money.<br />
           <span
             className="bg-clip-text text-transparent"
@@ -102,9 +102,6 @@ const ExtensionLanding = () => {
             Look your best.
           </span>
         </h1>
-        <p className="text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto mb-10">
-          Install once. Works everywhere you shop.
-        </p>
 
         <button
           onClick={() => handleCTAClick('hero')}
@@ -115,6 +112,10 @@ const ExtensionLanding = () => {
         >
           Add to Chrome — Free
         </button>
+
+        <p className="text-sm text-gray-500 mt-4">
+          Install once. Works everywhere you shop.
+        </p>
 
       </section>
 
