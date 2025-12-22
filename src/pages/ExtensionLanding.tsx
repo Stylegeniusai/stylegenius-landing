@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Check } from "lucide-react";
 
 // Track page view with UTM parameters for ads
@@ -42,21 +42,26 @@ const ExtensionLanding = () => {
 
   const features = [
     {
-      title: "Try It On Virtually",
+      valueProp: "Stop Guessing",
+      title: "Virtual Try-On",
+      subtitle: "In Any Store",
       description: "See exactly how clothes look on you before buying. No more guessing, no more returns.",
       image: "/onboarding-try-on.png",
       bgGradient: "from-pink-50 to-rose-50",
     },
     {
-      title: "All Your Favorites in One Place",
-      titleHighlight: "+ Price Tracking",
-      description: "Save items from any store. Track prices automatically. Get notified when anything drops.",
+      valueProp: "Save Money",
+      title: "Save & Track Prices",
+      subtitle: "From Any Store",
+      description: "Save items from anywhere. Track prices automatically. Get notified when anything drops.",
       image: "/onboarding-price.png",
       bgGradient: "from-blue-50 to-cyan-50",
     },
     {
-      title: "Know What Actually Suits You",
-      description: "Instant analysis for your skin tone and body type. Stop buying things that don't work.",
+      valueProp: "Look Your Best",
+      title: "Instant Style Analysis",
+      subtitle: "On Any Item",
+      description: "Know if it suits your skin tone and body type before you buy. No more regret purchases.",
       image: "/onboarding-style.png",
       bgGradient: "from-purple-50 to-violet-50",
     },
@@ -84,11 +89,21 @@ const ExtensionLanding = () => {
 
       {/* Main headline + CTA */}
       <section className="px-4 pt-8 pb-10 text-center">
-        <h1 className="text-3xl lg:text-5xl font-bold text-gray-900 mb-2 max-w-3xl mx-auto leading-tight">
-          Shop smarter. Buy less crap.
+        <h1 className="text-3xl lg:text-5xl font-bold text-gray-900 mb-2 mx-auto leading-tight">
+          Stop guessing. Save money.<br />
+          <span
+            className="bg-clip-text text-transparent"
+            style={{
+              background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent'
+            }}
+          >
+            Look your best.
+          </span>
         </h1>
         <p className="text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto mb-10">
-          The browser extension that helps you only buy what actually works for you.
+          Install once. Works everywhere you shop.
         </p>
 
         <button
@@ -100,6 +115,7 @@ const ExtensionLanding = () => {
         >
           Add to Chrome — Free
         </button>
+
       </section>
 
       {/* 3 Features - The main show */}
@@ -109,32 +125,35 @@ const ExtensionLanding = () => {
             {features.map((feature, index) => (
               <div
                 key={index}
-                className={`bg-gradient-to-b ${feature.bgGradient} rounded-2xl p-5 border border-gray-100 shadow-sm hover:shadow-lg transition-shadow`}
+                className="relative rounded-2xl p-[2px] shadow-sm hover:shadow-lg transition-all animate-fade-up"
+                style={{
+                  animationDelay: `${index * 150}ms`,
+                  background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)'
+                }}
               >
+              <div className={`bg-gradient-to-b ${feature.bgGradient} rounded-2xl p-5 h-full`}>
                 {/* Feature title */}
-                <h2 className="text-xl lg:text-2xl font-bold text-gray-900 mb-3 text-center">
+                <h2 className="text-xl lg:text-2xl font-bold text-gray-900 text-center">
                   {feature.title}
-                  {feature.titleHighlight && (
-                    <span
-                      className="bg-clip-text text-transparent ml-1"
-                      style={{
-                        background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)',
-                        WebkitBackgroundClip: 'text',
-                        WebkitTextFillColor: 'transparent'
-                      }}
-                    >
-                      {feature.titleHighlight}
-                    </span>
-                  )}
                 </h2>
+                <p
+                  className="text-xl lg:text-2xl font-bold mb-3 text-center bg-clip-text text-transparent"
+                  style={{
+                    background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent'
+                  }}
+                >
+                  {feature.subtitle}
+                </p>
 
                 {/* Feature image - tall format */}
-                <div className="relative mx-auto mb-3 w-full max-w-[180px]">
-                  <div className="aspect-[9/14] rounded-2xl overflow-hidden shadow-lg">
+                <div className="relative mx-auto mb-5 w-full max-w-[260px]">
+                  <div className="aspect-[9/16] rounded-2xl overflow-hidden shadow-lg">
                     <img
                       src={feature.image}
                       alt={feature.title}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-contain"
                     />
                   </div>
                 </div>
@@ -144,6 +163,7 @@ const ExtensionLanding = () => {
                   {feature.description}
                 </p>
               </div>
+              </div>
             ))}
           </div>
         </div>
@@ -151,7 +171,7 @@ const ExtensionLanding = () => {
 
       {/* CTA Section */}
       <section className="px-4 py-12 bg-white border-t border-gray-100">
-        <div className="max-w-2xl mx-auto text-center">
+        <div className="max-w-4xl mx-auto text-center">
           <button
             onClick={() => handleCTAClick('main_cta')}
             className="inline-flex items-center gap-3 px-10 py-5 text-white font-bold text-xl rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
@@ -163,10 +183,10 @@ const ExtensionLanding = () => {
           </button>
 
           {/* Trust signals */}
-          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mt-6 text-sm text-gray-500">
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mt-6 mb-10 text-sm text-gray-500">
             <div className="flex items-center gap-1">
               <Check className="w-4 h-4 text-green-500" />
-              <span>100% Free</span>
+              <span>Free to start</span>
             </div>
             <div className="flex items-center gap-1">
               <Check className="w-4 h-4 text-green-500" />
@@ -174,8 +194,32 @@ const ExtensionLanding = () => {
             </div>
             <div className="flex items-center gap-1">
               <Check className="w-4 h-4 text-green-500" />
-              <span>No account needed</span>
+              <span>4.9★ rated</span>
             </div>
+          </div>
+
+          {/* Browser mockup */}
+          <div className="rounded-xl shadow-2xl overflow-hidden max-w-3xl mx-auto">
+            <div className="bg-gray-100 px-3 py-2 flex items-center gap-2">
+              <div className="flex gap-1.5">
+                <div className="w-2.5 h-2.5 bg-red-400 rounded-full"></div>
+                <div className="w-2.5 h-2.5 bg-yellow-400 rounded-full"></div>
+                <div className="w-2.5 h-2.5 bg-green-400 rounded-full"></div>
+              </div>
+              <div className="flex-1 bg-white rounded px-2 py-0.5 mx-3 text-xs text-gray-500">
+                hm.com
+              </div>
+              <img
+                src="/mainavatar.png"
+                alt="StyleGenius Extension"
+                className="w-5 h-5 rounded-full shadow-md"
+              />
+            </div>
+            <img
+              src="/browser-desktop-new.png"
+              alt="StyleGenius working in your browser"
+              className="w-full h-auto block bg-white"
+            />
           </div>
         </div>
       </section>
