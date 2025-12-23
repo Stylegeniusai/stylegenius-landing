@@ -84,16 +84,26 @@
     }
 
     .hero h1 {
-      font-size: 2rem;
-      font-weight: 700;
+      font-size: 2.5rem;
+      font-weight: 800;
       color: var(--gray-900);
-      margin-bottom: 32px;
-      line-height: 1.2;
+      margin-bottom: 24px;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @media (min-width: 768px) {
+      .hero h1 {
+        font-size: 4rem;
+      }
     }
 
     @media (min-width: 1024px) {
       .hero h1 {
-        font-size: 3rem;
+        font-size: 5rem;
       }
     }
 
@@ -126,6 +136,13 @@
       background: var(--gradient);
       color: white;
       box-shadow: 0 4px 20px rgba(255, 112, 217, 0.3);
+    }
+
+    .hero-tagline {
+      font-size: 1.125rem;
+      color: var(--gray-600);
+      margin-bottom: 32px;
+      font-weight: 500;
     }
 
     .hero-subtext {
@@ -496,9 +513,10 @@
   <!-- Hero -->
   <section class="hero">
     <h1>
-      Stop guessing. Save money.<br>
-      <span class="gradient">Look your best.</span>
+      Stop Guessing<br>
+      <span class="gradient">What Suits You</span>
     </h1>
+    <p class="hero-tagline">Save money · Fewer returns · Look amazing</p>
 
     <a href="https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn" class="btn btn-primary" target="_blank">
       Add to Chrome — Free

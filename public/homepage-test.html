@@ -684,14 +684,16 @@
       max-width: 280px;
       margin: 0 auto 24px;
       aspect-ratio: 9/16;
-      background: linear-gradient(135deg, #fdf2f8 0%, #eff6ff 100%);
       border-radius: 24px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--gray-400);
-      font-size: 0.875rem;
-      border: 2px dashed var(--gray-300);
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    }
+
+    .app-feature-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 24px;
     }
 
     .app-feature h3 {
@@ -708,6 +710,33 @@
 
     .app-feature p {
       color: var(--gray-600);
+    }
+
+    .ai-stylist-section {
+      margin-top: 60px;
+      margin-bottom: 60px;
+      text-align: center;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .ai-stylist-content h3 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .ai-stylist-content h3 .gradient {
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .ai-stylist-content p {
+      font-size: 1.125rem;
+      color: var(--gray-600);
+      line-height: 1.7;
     }
 
     .app-cta {
@@ -1133,26 +1162,34 @@
       <div class="app-features-grid">
         <div class="app-feature">
           <div class="app-feature-image">
-            [Styling/Outfits Image Placeholder]
+            <img src="/app-outfitbuilder.png" alt="Outfit Builder">
           </div>
-          <h3>AI <span class="gradient">Styling</span></h3>
-          <p>Get personalized outfit recommendations and styling advice</p>
+          <h3>Build & Try <span class="gradient">Outfits</span></h3>
+          <p>Plan your wardrobe, build outfits, and try them on — never wonder what to wear</p>
         </div>
 
         <div class="app-feature">
           <div class="app-feature-image">
-            [Profile Image Placeholder]
+            <img src="/app-virtualtryon.png" alt="Virtual Try-On">
           </div>
-          <h3>Your <span class="gradient">Profile</span></h3>
-          <p>Discover your best colors, body type, and personal style</p>
+          <h3>Shop <span class="gradient">Smart</span></h3>
+          <p>Try on clothes in any store, track prices, save items — shop with confidence</p>
         </div>
 
         <div class="app-feature">
           <div class="app-feature-image">
-            [Shopping Image Placeholder]
+            <img src="/app-coloranalysis.png" alt="Color Analysis">
           </div>
-          <h3>Smart <span class="gradient">Shopping</span></h3>
-          <p>Save items, track prices, and shop smarter across all stores</p>
+          <h3>Your Style <span class="gradient">Profile</span></h3>
+          <p>Discover your best colors, body type tips, and what styles suit you</p>
+        </div>
+      </div>
+
+      <!-- AI Stylist Text Section -->
+      <div class="ai-stylist-section">
+        <div class="ai-stylist-content">
+          <h3>Your AI Stylist, <span class="gradient">Always Available</span></h3>
+          <p>Chat with your personal stylist anytime. Ask about outfits, get advice on what to wear, learn what suits your body and colors. Like having a fashion-expert friend in your pocket.</p>
         </div>
       </div>
 
@@ -1160,7 +1197,7 @@
         <a href="#" class="btn btn-primary" id="app-download-btn">
           Download on App Store
         </a>
-        <p class="app-cta-subtitle">Free download - Available on iOS & Android</p>
+        <p class="app-cta-subtitle">Free download — Available on iOS & Android</p>
       </div>
     </div>
   </section>
