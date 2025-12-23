@@ -434,6 +434,57 @@
       }
     }
 
+    /* Trust Section */
+    .trust-section {
+      padding: 40px 0 60px;
+      background: white;
+    }
+
+    .trust-reviews {
+      display: flex;
+      gap: 32px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .trust-review {
+      text-align: center;
+      max-width: 400px;
+    }
+
+    .trust-stars {
+      color: #eab308;
+      font-size: 1.25rem;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .trust-review p {
+      font-size: 1rem;
+      color: var(--gray-700);
+      font-style: italic;
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+
+    .trust-author {
+      font-size: 0.875rem;
+      color: var(--gray-500);
+    }
+
+    .trust-stores {
+      text-align: center;
+    }
+
+    .trust-stores-label {
+      font-size: 0.875rem;
+      color: var(--gray-500);
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
     /* Browser Features Section */
     .browser-features {
       padding: 80px 0;
@@ -971,6 +1022,59 @@
     </div>
   </section>
 
+  <!-- Trust Section: Stores + Reviews -->
+  <section class="trust-section">
+    <div class="container">
+      <!-- Reviews -->
+      <div class="trust-reviews">
+        <div class="trust-review">
+          <span class="trust-stars">★★★★★</span>
+          <p>"Love having a friend and expert always ready to talk to about style, clothes, outfits and shopping"</p>
+          <span class="trust-author">— iOS User</span>
+        </div>
+        <div class="trust-review">
+          <span class="trust-stars">★★★★★</span>
+          <p>"Finally stopped buying stuff that looked nothing like I imagined. This thing actually works."</p>
+          <span class="trust-author">— Chrome Web Store</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Store Marquee -->
+    <div class="trust-stores">
+      <p class="trust-stores-label">Works on 1000+ stores</p>
+      <div class="store-marquee">
+        <div class="store-marquee-track">
+          <span class="store-logo">H&M</span>
+          <span class="store-logo">ZARA</span>
+          <span class="store-logo">ASOS</span>
+          <span class="store-logo">Zalando</span>
+          <span class="store-logo">Mango</span>
+          <span class="store-logo">& Other Stories</span>
+          <span class="store-logo">NA-KD</span>
+          <span class="store-logo">Boozt</span>
+          <span class="store-logo">About You</span>
+          <span class="store-logo">Massimo Dutti</span>
+          <span class="store-logo">COS</span>
+          <span class="store-logo">Arket</span>
+          <!-- Duplicate for seamless loop -->
+          <span class="store-logo">H&M</span>
+          <span class="store-logo">ZARA</span>
+          <span class="store-logo">ASOS</span>
+          <span class="store-logo">Zalando</span>
+          <span class="store-logo">Mango</span>
+          <span class="store-logo">& Other Stories</span>
+          <span class="store-logo">NA-KD</span>
+          <span class="store-logo">Boozt</span>
+          <span class="store-logo">About You</span>
+          <span class="store-logo">Massimo Dutti</span>
+          <span class="store-logo">COS</span>
+          <span class="store-logo">Arket</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Browser Features -->
   <section class="browser-features">
     <div class="container">
@@ -1013,42 +1117,6 @@
         <a href="https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn" class="btn btn-primary" target="_blank">
           Add to Chrome - Free
         </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Works Everywhere -->
-  <section class="works-everywhere">
-    <div class="container">
-      <h2>Works on 1000+ Stores</h2>
-    </div>
-    <div class="store-marquee">
-      <div class="store-marquee-track">
-        <span class="store-logo">H&M</span>
-        <span class="store-logo">ZARA</span>
-        <span class="store-logo">ASOS</span>
-        <span class="store-logo">Zalando</span>
-        <span class="store-logo">Mango</span>
-        <span class="store-logo">& Other Stories</span>
-        <span class="store-logo">NA-KD</span>
-        <span class="store-logo">Boozt</span>
-        <span class="store-logo">About You</span>
-        <span class="store-logo">Massimo Dutti</span>
-        <span class="store-logo">COS</span>
-        <span class="store-logo">Arket</span>
-        <!-- Duplicate for seamless loop -->
-        <span class="store-logo">H&M</span>
-        <span class="store-logo">ZARA</span>
-        <span class="store-logo">ASOS</span>
-        <span class="store-logo">Zalando</span>
-        <span class="store-logo">Mango</span>
-        <span class="store-logo">& Other Stories</span>
-        <span class="store-logo">NA-KD</span>
-        <span class="store-logo">Boozt</span>
-        <span class="store-logo">About You</span>
-        <span class="store-logo">Massimo Dutti</span>
-        <span class="store-logo">COS</span>
-        <span class="store-logo">Arket</span>
       </div>
     </div>
   </section>

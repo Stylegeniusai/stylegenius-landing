@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StyleGenius Browser Extension</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #f9fafb;
+      color: #1a1f36;
+      line-height: 1.5;
+    }
+
+    :root {
+      --pink: #FF70D9;
+      --blue: #6EC1E4;
+      --gradient: linear-gradient(45deg, #FF70D9, #6EC1E4);
+      --gray-50: #f9fafb;
+      --gray-100: #f3f4f6;
+      --gray-200: #e5e7eb;
+      --gray-400: #9ca3af;
+      --gray-500: #6b7280;
+      --gray-600: #4b5563;
+      --gray-700: #374151;
+      --gray-900: #111827;
+    }
+
+    /* Header */
+    header {
+      padding: 16px;
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .logo span {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--gray-900);
+    }
+
+    .header-rating {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.875rem;
+      color: var(--gray-500);
+    }
+
+    .header-rating .stars {
+      color: #eab308;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 32px 16px 40px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 32px;
+      line-height: 1.2;
+    }
+
+    @media (min-width: 1024px) {
+      .hero h1 {
+        font-size: 3rem;
+      }
+    }
+
+    .hero h1 .gradient {
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 32px;
+      font-size: 1.125rem;
+      font-weight: 700;
+      border-radius: 50px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+    }
+
+    .btn-primary {
+      background: var(--gradient);
+      color: white;
+      box-shadow: 0 4px 20px rgba(255, 112, 217, 0.3);
+    }
+
+    .hero-subtext {
+      font-size: 0.875rem;
+      color: var(--gray-500);
+      margin-top: 16px;
+    }
+
+    /* Features */
+    .features {
+      padding: 0 16px 24px;
+    }
+
+    .features-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    @media (min-width: 768px) {
+      .features-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+    }
+
+    .feature-card {
+      position: relative;
+      border-radius: 16px;
+      padding: 2px;
+      background: var(--gradient);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: box-shadow 0.3s;
+    }
+
+    .feature-card:hover {
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    }
+
+    .feature-card-inner {
+      border-radius: 14px;
+      padding: 20px;
+      height: 100%;
+    }
+
+    .feature-card:nth-child(1) .feature-card-inner {
+      background: linear-gradient(to bottom, #fdf2f8, #fce7f3);
+    }
+
+    .feature-card:nth-child(2) .feature-card-inner {
+      background: linear-gradient(to bottom, #eff6ff, #dbeafe);
+    }
+
+    .feature-card:nth-child(3) .feature-card-inner {
+      background: linear-gradient(to bottom, #f5f3ff, #ede9fe);
+    }
+
+    .feature-card h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      text-align: center;
+    }
+
+    @media (min-width: 1024px) {
+      .feature-card h2 {
+        font-size: 1.5rem;
+      }
+    }
+
+    .feature-card .subtitle {
+      font-size: 1.25rem;
+      font-weight: 700;
+      text-align: center;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 12px;
+    }
+
+    @media (min-width: 1024px) {
+      .feature-card .subtitle {
+        font-size: 1.5rem;
+      }
+    }
+
+    .feature-image-wrapper {
+      position: relative;
+      max-width: 260px;
+      margin: 0 auto 20px;
+    }
+
+    .feature-image-wrapper .aspect {
+      aspect-ratio: 9/16;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    }
+
+    .feature-image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .feature-card p {
+      text-align: center;
+      color: var(--gray-600);
+      line-height: 1.6;
+    }
+
+    /* Store Marquee */
+    .stores-section {
+      padding: 40px 0;
+      background: var(--gray-50);
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .stores-label {
+      font-size: 0.875rem;
+      color: var(--gray-500);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 20px;
+    }
+
+    .store-marquee {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .store-marquee-track {
+      display: flex;
+      gap: 48px;
+      animation: marquee 30s linear infinite;
+      width: max-content;
+    }
+
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .store-logo {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--gray-400);
+      white-space: nowrap;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      padding: 48px 16px;
+      background: white;
+      border-top: 1px solid var(--gray-100);
+    }
+
+    .cta-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .trust-signals {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      margin-top: 24px;
+      margin-bottom: 40px;
+      font-size: 0.875rem;
+      color: var(--gray-500);
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .trust-item .check {
+      color: #22c55e;
+      font-weight: bold;
+    }
+
+    /* Browser Mockup */
+    .browser-mockup {
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+      overflow: hidden;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .browser-bar {
+      background: var(--gray-100);
+      padding: 8px 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .browser-dots {
+      display: flex;
+      gap: 6px;
+    }
+
+    .browser-dots span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    .browser-dots span:nth-child(1) { background: #f87171; }
+    .browser-dots span:nth-child(2) { background: #fbbf24; }
+    .browser-dots span:nth-child(3) { background: #4ade80; }
+
+    .browser-url {
+      flex: 1;
+      background: white;
+      border-radius: 4px;
+      padding: 4px 8px;
+      margin: 0 12px;
+      font-size: 0.75rem;
+      color: var(--gray-500);
+    }
+
+    .browser-ext-icon {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .browser-mockup img.screenshot {
+      width: 100%;
+      height: auto;
+      display: block;
+      background: white;
+    }
+
+    /* Testimonial */
+    .testimonial {
+      padding: 40px 16px;
+      background: var(--gray-50);
+    }
+
+    .testimonial-inner {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .testimonial .stars {
+      color: #eab308;
+      font-size: 1.125rem;
+      margin-bottom: 12px;
+    }
+
+    .testimonial p {
+      font-size: 1.125rem;
+      color: var(--gray-700);
+      font-style: italic;
+      margin-bottom: 12px;
+    }
+
+    .testimonial .author {
+      font-size: 0.875rem;
+      color: var(--gray-500);
+    }
+
+    /* Footer */
+    footer {
+      padding: 24px 16px;
+      background: white;
+      border-top: 1px solid var(--gray-100);
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    @media (min-width: 640px) {
+      .footer-inner {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.875rem;
+      color: var(--gray-500);
+    }
+
+    .footer-logo img {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-links a {
+      font-size: 0.875rem;
+      color: var(--gray-500);
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      color: var(--gray-700);
+    }
+
+    /* Animations */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fade-up {
+      animation: fadeUp 0.6s ease-out forwards;
+      opacity: 0;
+    }
+
+    .delay-1 { animation-delay: 0.15s; }
+    .delay-2 { animation-delay: 0.3s; }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-inner">
+      <div class="logo">
+        <img src="/mainavatar.png" alt="StyleGenius">
+        <span>StyleGenius</span>
+      </div>
+      <div class="header-rating">
+        <span class="stars">★★★★★</span>
+        <span>4.5 on Chrome Store</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>
+      Stop guessing. Save money.<br>
+      <span class="gradient">Look your best.</span>
+    </h1>
+
+    <a href="https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn" class="btn btn-primary" target="_blank">
+      Add to Chrome — Free
+    </a>
+
+    <p class="hero-subtext">Install once. Works everywhere you shop.</p>
+  </section>
+
+  <!-- Features -->
+  <section class="features">
+    <div class="features-inner">
+      <div class="features-grid">
+        <div class="feature-card animate-fade-up">
+          <div class="feature-card-inner">
+            <h2>Virtual Try-On</h2>
+            <p class="subtitle">In Any Store</p>
+            <div class="feature-image-wrapper">
+              <div class="aspect">
+                <img src="/onboarding-try-on.png" alt="Virtual Try-On">
+              </div>
+            </div>
+            <p>See exactly how clothes look on you before buying. No more guessing, no more returns.</p>
+          </div>
+        </div>
+
+        <div class="feature-card animate-fade-up delay-1">
+          <div class="feature-card-inner">
+            <h2>Save & Track Prices</h2>
+            <p class="subtitle">From Any Store</p>
+            <div class="feature-image-wrapper">
+              <div class="aspect">
+                <img src="/onboarding-price.png" alt="Price Tracking">
+              </div>
+            </div>
+            <p>Save items from anywhere. Track prices automatically. Get notified when anything drops.</p>
+          </div>
+        </div>
+
+        <div class="feature-card animate-fade-up delay-2">
+          <div class="feature-card-inner">
+            <h2>Instant Style Analysis</h2>
+            <p class="subtitle">On Any Item</p>
+            <div class="feature-image-wrapper">
+              <div class="aspect">
+                <img src="/onboarding-style.png" alt="Style Analysis">
+              </div>
+            </div>
+            <p>Know if it suits your skin tone and body type before you buy. No more regret purchases.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Store Marquee -->
+  <section class="stores-section">
+    <p class="stores-label">Works on 1000+ stores</p>
+    <div class="store-marquee">
+      <div class="store-marquee-track">
+        <span class="store-logo">H&M</span>
+        <span class="store-logo">ZARA</span>
+        <span class="store-logo">ASOS</span>
+        <span class="store-logo">Zalando</span>
+        <span class="store-logo">Mango</span>
+        <span class="store-logo">& Other Stories</span>
+        <span class="store-logo">NA-KD</span>
+        <span class="store-logo">Boozt</span>
+        <span class="store-logo">About You</span>
+        <span class="store-logo">Massimo Dutti</span>
+        <span class="store-logo">COS</span>
+        <span class="store-logo">Arket</span>
+        <!-- Duplicate for seamless loop -->
+        <span class="store-logo">H&M</span>
+        <span class="store-logo">ZARA</span>
+        <span class="store-logo">ASOS</span>
+        <span class="store-logo">Zalando</span>
+        <span class="store-logo">Mango</span>
+        <span class="store-logo">& Other Stories</span>
+        <span class="store-logo">NA-KD</span>
+        <span class="store-logo">Boozt</span>
+        <span class="store-logo">About You</span>
+        <span class="store-logo">Massimo Dutti</span>
+        <span class="store-logo">COS</span>
+        <span class="store-logo">Arket</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-inner">
+      <a href="https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn" class="btn btn-primary" target="_blank">
+        Add to Chrome — Free
+      </a>
+
+      <div class="trust-signals">
+        <div class="trust-item">
+          <span class="check">✓</span>
+          <span>Free to start</span>
+        </div>
+        <div class="trust-item">
+          <span class="check">✓</span>
+          <span>Works on 1000+ stores</span>
+        </div>
+        <div class="trust-item">
+          <span class="check">✓</span>
+          <span>4.5★ rated</span>
+        </div>
+      </div>
+
+      <!-- Browser Mockup -->
+      <div class="browser-mockup">
+        <div class="browser-bar">
+          <div class="browser-dots">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="browser-url">hm.com</div>
+          <img src="/mainavatar.png" alt="Extension" class="browser-ext-icon">
+        </div>
+        <img src="/browser-desktop-new.png" alt="StyleGenius in browser" class="screenshot">
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial -->
+  <section class="testimonial">
+    <div class="testimonial-inner">
+      <div class="stars">★★★★★</div>
+      <p>"Finally stopped buying stuff that looked nothing like I imagined. This thing actually works."</p>
+      <span class="author">— Chrome Web Store Review</span>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <img src="/mainavatar.png" alt="">
+        <span>StyleGenius by GoMotion AB</span>
+      </div>
+      <div class="footer-links">
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="/support">Support</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
