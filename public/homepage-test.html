@@ -530,26 +530,56 @@
       line-height: 1.6;
     }
 
-    /* Works Everywhere */
-    .works-everywhere {
-      padding: 80px 0;
-      background: var(--gray-50);
+    .section-cta {
       text-align: center;
+      margin-top: 48px;
     }
 
-    .store-logos {
+    /* Section intro text */
+    .section-intro {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--pink);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 12px;
+    }
+
+    /* Works Everywhere */
+    .works-everywhere {
+      padding: 60px 0;
+      background: var(--gray-50);
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .works-everywhere h2 {
+      margin-bottom: 32px;
+    }
+
+    .store-marquee {
+      width: 100%;
+      overflow: hidden;
+      margin-top: 24px;
+    }
+
+    .store-marquee-track {
       display: flex;
-      justify-content: center;
-      gap: 40px;
-      flex-wrap: wrap;
-      margin-top: 40px;
-      opacity: 0.6;
+      gap: 48px;
+      animation: marquee 30s linear infinite;
+      width: max-content;
+    }
+
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
 
     .store-logo {
-      font-size: 1.5rem;
+      font-size: 1.25rem;
       font-weight: 600;
-      color: var(--gray-500);
+      color: var(--gray-400);
+      white-space: nowrap;
     }
 
     /* App Section */
@@ -945,9 +975,9 @@
   <section class="browser-features">
     <div class="container">
       <div class="section-header">
-        <span class="section-label">Browser Extension</span>
-        <h2>Everything You Need When Shopping Online</h2>
-        <p>Three powerful features that work on any store</p>
+        <p class="section-intro">For your browser</p>
+        <h2>Your Shopping Companion</h2>
+        <p>Always with you when shopping online. Works on any store.</p>
       </div>
 
       <div class="features-grid">
@@ -978,6 +1008,12 @@
           </div>
         </div>
       </div>
+
+      <div class="section-cta">
+        <a href="https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn" class="btn btn-primary" target="_blank">
+          Add to Chrome - Free
+        </a>
+      </div>
     </div>
   </section>
 
@@ -985,14 +1021,34 @@
   <section class="works-everywhere">
     <div class="container">
       <h2>Works on 1000+ Stores</h2>
-      <p style="color: var(--gray-600); margin-top: 8px;">H&M, Zara, ASOS, Zalando, and everywhere else you shop</p>
-      <div class="store-logos">
+    </div>
+    <div class="store-marquee">
+      <div class="store-marquee-track">
         <span class="store-logo">H&M</span>
         <span class="store-logo">ZARA</span>
         <span class="store-logo">ASOS</span>
         <span class="store-logo">Zalando</span>
         <span class="store-logo">Mango</span>
         <span class="store-logo">& Other Stories</span>
+        <span class="store-logo">NA-KD</span>
+        <span class="store-logo">Boozt</span>
+        <span class="store-logo">About You</span>
+        <span class="store-logo">Massimo Dutti</span>
+        <span class="store-logo">COS</span>
+        <span class="store-logo">Arket</span>
+        <!-- Duplicate for seamless loop -->
+        <span class="store-logo">H&M</span>
+        <span class="store-logo">ZARA</span>
+        <span class="store-logo">ASOS</span>
+        <span class="store-logo">Zalando</span>
+        <span class="store-logo">Mango</span>
+        <span class="store-logo">& Other Stories</span>
+        <span class="store-logo">NA-KD</span>
+        <span class="store-logo">Boozt</span>
+        <span class="store-logo">About You</span>
+        <span class="store-logo">Massimo Dutti</span>
+        <span class="store-logo">COS</span>
+        <span class="store-logo">Arket</span>
       </div>
     </div>
   </section>
@@ -1001,9 +1057,9 @@
   <section class="app-section" id="app">
     <div class="container">
       <div class="app-header">
-        <span class="section-label">Mobile App</span>
-        <h2>Take StyleGenius <span class="gradient">Everywhere</span></h2>
-        <p style="color: var(--gray-600); font-size: 1.125rem;">Your personal AI stylist in your pocket</p>
+        <p class="section-intro">For your phone</p>
+        <h2>Your Personal <span class="gradient">AI Stylist</span></h2>
+        <p style="color: var(--gray-600); font-size: 1.125rem;">Style advice, outfit planning, and more — in your pocket</p>
       </div>
 
       <div class="app-features-grid">
