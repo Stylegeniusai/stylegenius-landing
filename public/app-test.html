@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StyleGenius App | Virtual Try-On & Style Analysis on Your Phone | Download Free</title>
+  <meta name="description" content="Get StyleGenius on your phone. Virtual try-on, outfit builder, color analysis, and style recommendations. Available on iOS and Android. Download free.">
+  <meta name="keywords" content="stylegenius app, virtual try on app, outfit builder app, color analysis app, fashion app, style app">
+  <link rel="canonical" href="https://stylegenius.app/app">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="StyleGenius App | Your Personal Stylist on the Go">
+  <meta property="og:description" content="Virtual try-on, outfit builder, and color analysis in your pocket. Download free on iOS & Android.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/app-virtualtryon.png">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      background: #f9fafb;
+      color: #111827;
+      line-height: 1.6;
+    }
+
+    :root {
+      --pink: #FF70D9;
+      --blue: #6EC1E4;
+      --gradient: linear-gradient(45deg, #FF70D9, #6EC1E4);
+      --gray-50: #f9fafb;
+      --gray-100: #f3f4f6;
+      --gray-200: #e5e7eb;
+      --gray-300: #d1d5db;
+      --gray-400: #9ca3af;
+      --gray-500: #6b7280;
+      --gray-600: #4b5563;
+      --gray-700: #374151;
+      --gray-900: #111827;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header */
+    header {
+      background: white;
+      border-bottom: 1px solid var(--gray-200);
+      padding: 16px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .logo img {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+    }
+
+    .logo span {
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
+
+    .header-cta {
+      background: var(--gradient);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .header-cta:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 20px rgba(255, 112, 217, 0.3);
+    }
+
+    /* Hero */
+    .hero {
+      padding: 60px 0 80px;
+      text-align: center;
+      background: linear-gradient(180deg, white 0%, var(--gray-50) 100%);
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: linear-gradient(45deg, rgba(255,112,217,0.1), rgba(110,193,228,0.1));
+      border: 1px solid rgba(255,112,217,0.2);
+      padding: 8px 16px;
+      border-radius: 50px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--pink);
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 24px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero h1 .gradient {
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 1.25rem;
+      color: var(--gray-600);
+      max-width: 600px;
+      margin: 0 auto 48px;
+    }
+
+    /* Feature Cards Grid */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+
+    .feature-card {
+      background: white;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+    }
+
+    .feature-image {
+      width: 100%;
+      aspect-ratio: 9/16;
+      overflow: hidden;
+    }
+
+    .feature-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .feature-info {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .feature-info h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: var(--gray-900);
+    }
+
+    .feature-info h3 .gradient {
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .feature-info p {
+      font-size: 0.9rem;
+      color: var(--gray-500);
+    }
+
+    /* Download Buttons */
+    .download-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: #1a1a1a;
+      color: white;
+      padding: 14px 28px;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .download-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    }
+
+    .download-btn .store-icon {
+      font-size: 1.75rem;
+    }
+
+    .download-btn .store-text {
+      text-align: left;
+    }
+
+    .download-btn .store-text small {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 400;
+      opacity: 0.8;
+    }
+
+    .download-btn .store-text span {
+      display: block;
+      font-size: 1.1rem;
+    }
+
+    .download-note {
+      margin-top: 16px;
+      font-size: 0.875rem;
+      color: var(--gray-500);
+    }
+
+    /* Footer */
+    footer {
+      padding: 40px 0;
+      background: var(--gray-50);
+      border-top: 1px solid var(--gray-200);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.875rem;
+      color: var(--gray-500);
+    }
+
+    .footer-logo img {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-links a {
+      color: var(--gray-500);
+      text-decoration: none;
+      font-size: 0.875rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--gray-700);
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.25rem;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+        max-width: 320px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+      }
+
+      .download-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container header-inner">
+      <a href="/" class="logo">
+        <img src="/mainavatar.png" alt="StyleGenius">
+        <span>StyleGenius</span>
+      </a>
+      <a href="#download" class="header-cta">
+        Download App
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <span class="hero-badge">Mobile App</span>
+      <h1>
+        Your Personal Stylist<br>
+        <span class="gradient">In Your Pocket</span>
+      </h1>
+      <p class="hero-subtitle">
+        Virtual try-on, outfit builder, and color analysis - all the styling tools you need, anywhere you go.
+      </p>
+
+      <!-- Feature Cards -->
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-image">
+            <img src="/app-virtualtryon.png" alt="Virtual Try-On">
+          </div>
+          <div class="feature-info">
+            <h3><span class="gradient">Virtual Try-On</span></h3>
+            <p>See how outfits look on you</p>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-image">
+            <img src="/app-outfitbuilder.png" alt="Outfit Builder">
+          </div>
+          <div class="feature-info">
+            <h3><span class="gradient">Outfit Builder</span></h3>
+            <p>Create perfect combinations</p>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-image">
+            <img src="/app-coloranalysis.png" alt="Color Analysis">
+          </div>
+          <div class="feature-info">
+            <h3><span class="gradient">Color Analysis</span></h3>
+            <p>Find your perfect palette</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Download Buttons -->
+      <div class="download-buttons" id="download">
+        <a href="https://apps.apple.com/app/id6747178892" class="download-btn">
+          <span class="store-icon"></span>
+          <span class="store-text">
+            <small>Download on the</small>
+            <span>App Store</span>
+          </span>
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=app.stylegenius&pcampaignid=web_share" class="download-btn">
+          <span class="store-icon">▶</span>
+          <span class="store-text">
+            <small>Get it on</small>
+            <span>Google Play</span>
+          </span>
+        </a>
+      </div>
+      <p class="download-note">Free download - Available on iOS & Android</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-logo">
+        <img src="/mainavatar.png" alt="">
+        <span>StyleGenius by GoMotion AB</span>
+      </div>
+      <div class="footer-links">
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="/support">Support</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Structured Data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "StyleGenius",
+    "operatingSystem": "iOS, Android",
+    "applicationCategory": "LifestyleApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "ratingCount": "150"
+    },
+    "description": "Virtual try-on, outfit builder, and color analysis. Your personal stylist in your pocket."
+  }
+  </script>
+</body>
+</html>

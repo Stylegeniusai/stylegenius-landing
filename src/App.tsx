@@ -19,6 +19,8 @@ import Download from "./pages/Download";
 import ExtensionLanding from "./pages/ExtensionLanding";
 import VirtualTryOn from "./pages/VirtualTryOn";
 import PriceTracking from "./pages/PriceTracking";
+import StyleAnalysis from "./pages/StyleAnalysis";
+import MobileApp from "./pages/MobileApp";
 
 const queryClient = new QueryClient();
 
@@ -34,6 +36,8 @@ const App = () => (
           <Route path="/extension" element={<ExtensionLanding />} />
           <Route path="/virtual-try-on" element={<VirtualTryOn />} />
           <Route path="/price-tracking" element={<PriceTracking />} />
+          <Route path="/style-analysis" element={<StyleAnalysis />} />
+          <Route path="/app" element={<MobileApp />} />
           <Route path="/what-colors-suit-me" element={<WhatColorsSuitMe />} />
           <Route path="/what-body-type-suits-me" element={<WhatBodyTypeSuitsMe />} />
           <Route path="/privacy" element={<Privacy />} />

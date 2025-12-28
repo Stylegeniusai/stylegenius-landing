@@ -217,6 +217,69 @@
       white-space: nowrap;
     }
 
+    /* Simple 3 Steps */
+    .simple-steps {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 48px;
+      flex-wrap: wrap;
+    }
+
+    .simple-step {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: white;
+      padding: 16px 24px;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+
+    .step-emoji {
+      font-size: 1.75rem;
+    }
+
+    .step-text {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--gray-700);
+    }
+
+    .step-num {
+      color: var(--pink);
+    }
+
+    .step-arrow {
+      font-size: 1.5rem;
+      color: var(--gray-300);
+      font-weight: 300;
+    }
+
+    /* CTA Section */
+    .hero-cta-section {
+      margin-top: 48px;
+      text-align: center;
+    }
+
+    .cta-note {
+      margin-top: 12px;
+      font-size: 0.875rem;
+      color: var(--gray-500);
+    }
+
+    @media (max-width: 768px) {
+      .simple-steps {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .step-arrow {
+        transform: rotate(90deg);
+      }
+    }
+
     /* Hero Browser Mockup with Model Carousel */
     .hero-visual {
       margin-top: 0;
@@ -631,199 +694,6 @@
       }
     }
 
-    /* How it works */
-    .how-it-works {
-      padding: 100px 0;
-      background: white;
-    }
-
-    .section-header {
-      text-align: center;
-      margin-bottom: 60px;
-    }
-
-    .section-header h2 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 16px;
-    }
-
-    .section-header p {
-      font-size: 1.125rem;
-      color: var(--gray-600);
-    }
-
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 40px;
-    }
-
-    .step {
-      text-align: center;
-    }
-
-    .step-number {
-      width: 48px;
-      height: 48px;
-      background: var(--gradient);
-      color: white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.25rem;
-      font-weight: 700;
-      margin: 0 auto 20px;
-    }
-
-    .step-image {
-      width: 100%;
-      max-width: 280px;
-      aspect-ratio: 9/16;
-      object-fit: contain;
-      border-radius: 20px;
-      margin: 0 auto 20px;
-      display: block;
-    }
-
-    .step h3 {
-      font-size: 1.25rem;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-
-    .step p {
-      color: var(--gray-600);
-      font-size: 1rem;
-    }
-
-    /* Benefits */
-    .benefits {
-      padding: 100px 0;
-      background: var(--gray-50);
-    }
-
-    .benefits-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .benefit-card {
-      background: white;
-      border-radius: 16px;
-      padding: 32px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-    }
-
-    .benefit-icon {
-      font-size: 2rem;
-      margin-bottom: 16px;
-    }
-
-    .benefit-card h3 {
-      font-size: 1.25rem;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-
-    .benefit-card p {
-      color: var(--gray-600);
-    }
-
-    /* Stores */
-    .stores {
-      padding: 80px 0;
-      background: white;
-      text-align: center;
-    }
-
-    .stores h2 {
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 16px;
-    }
-
-    .stores p {
-      color: var(--gray-600);
-      margin-bottom: 40px;
-    }
-
-    .store-marquee {
-      width: 100%;
-      overflow: hidden;
-    }
-
-    .store-marquee-track {
-      display: flex;
-      gap: 48px;
-      animation: marquee 30s linear infinite;
-      width: max-content;
-    }
-
-    @keyframes marquee {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-
-    .store-logo {
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: var(--gray-400);
-      white-space: nowrap;
-    }
-
-    /* FAQ */
-    .faq {
-      padding: 100px 0;
-      background: var(--gray-50);
-    }
-
-    .faq-list {
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    .faq-item {
-      background: white;
-      border-radius: 12px;
-      padding: 24px;
-      margin-bottom: 16px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    }
-
-    .faq-item h3 {
-      font-size: 1.125rem;
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
-
-    .faq-item p {
-      color: var(--gray-600);
-    }
-
-    /* Final CTA */
-    .final-cta {
-      padding: 100px 0;
-      background: white;
-      text-align: center;
-    }
-
-    .final-cta h2 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 16px;
-    }
-
-    .final-cta > .container > p {
-      font-size: 1.125rem;
-      color: var(--gray-600);
-      margin-bottom: 40px;
-    }
-
     /* Footer */
     footer {
       padding: 40px 0;
@@ -870,20 +740,6 @@
     @media (max-width: 768px) {
       .hero h1 {
         font-size: 2.25rem;
-      }
-
-      .steps {
-        grid-template-columns: 1fr;
-        gap: 48px;
-      }
-
-      .benefits-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-trust {
-        flex-direction: column;
-        gap: 12px;
       }
 
       .footer-inner {
@@ -1030,164 +886,36 @@
         </div>
       </div>
 
-      <!-- Text content AFTER -->
-      <div class="hero-text">
-        <span class="hero-badge">Virtual Try-On Technology</span>
-        <h1>
-          See How Clothes Look<br>
-          <span class="gradient">On You Before Buying</span>
-        </h1>
-        <p class="hero-subtitle">
-          Try on any clothing item virtually while shopping online. No more guessing, no more returns. Works on H&M, Zara, ASOS and 1000+ stores.
-        </p>
+      <!-- Simple 3 Steps -->
+      <div class="simple-steps">
+        <div class="simple-step">
+          <div class="step-emoji">📸</div>
+          <div class="step-text">
+            <span class="step-num">1.</span> Upload a body photo
+          </div>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="simple-step">
+          <div class="step-emoji">🛒</div>
+          <div class="step-text">
+            <span class="step-num">2.</span> Browse any store
+          </div>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="simple-step">
+          <div class="step-emoji">🛋️</div>
+          <div class="step-text">
+            <span class="step-num">3.</span> Try on from your couch
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="hero-cta-section">
         <a href="https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn" class="hero-cta" target="_blank">
-          Try Virtual Try-On Free
+          Add to Chrome - Free
         </a>
-        <div class="hero-trust">
-          <span>&#10003; Free to use</span>
-          <span>&#10003; Works instantly</span>
-          <span>&#10003; 1000+ stores supported</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- How it works -->
-  <section class="how-it-works">
-    <div class="container">
-      <div class="section-header">
-        <h2>How Virtual Try-On Works</h2>
-        <p>Three simple steps to see any outfit on yourself</p>
-      </div>
-      <div class="steps">
-        <div class="step">
-          <div class="step-number">1</div>
-          <img src="/onboarding-try-on.png" alt="Upload your photo" class="step-image">
-          <h3>Upload Your Photo</h3>
-          <p>Take a quick selfie or upload an existing photo. Your image stays private and secure.</p>
-        </div>
-        <div class="step">
-          <div class="step-number">2</div>
-          <img src="/onboarding-style.png" alt="Browse any store" class="step-image">
-          <h3>Browse Any Store</h3>
-          <p>Shop normally on your favorite stores. StyleGenius works in the background.</p>
-        </div>
-        <div class="step">
-          <div class="step-number">3</div>
-          <img src="/hero-virtualtryon.png" alt="See it on you" class="step-image">
-          <h3>See It On You</h3>
-          <p>Click "Try On" on any item to instantly see how it looks on your body.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Benefits -->
-  <section class="benefits">
-    <div class="container">
-      <div class="section-header">
-        <h2>Why Use Virtual Try-On?</h2>
-        <p>Stop wasting money on clothes that don't fit or flatter</p>
-      </div>
-      <div class="benefits-grid">
-        <div class="benefit-card">
-          <div class="benefit-icon">&#128176;</div>
-          <h3>Save Money</h3>
-          <p>Stop buying clothes that look different than expected. Know exactly what you're getting before checkout.</p>
-        </div>
-        <div class="benefit-card">
-          <div class="benefit-icon">&#128666;</div>
-          <h3>Fewer Returns</h3>
-          <p>Reduce the hassle of returns. See fit, style, and color on your body before ordering.</p>
-        </div>
-        <div class="benefit-card">
-          <div class="benefit-icon">&#9203;</div>
-          <h3>Shop Faster</h3>
-          <p>Make confident decisions quickly. No more endless scrolling and second-guessing.</p>
-        </div>
-        <div class="benefit-card">
-          <div class="benefit-icon">&#127919;</div>
-          <h3>Better Style Choices</h3>
-          <p>Discover what actually suits you. Our AI helps you find your most flattering pieces.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Stores -->
-  <section class="stores">
-    <div class="container">
-      <h2>Works On All Your Favorite Stores</h2>
-      <p>Virtual try-on available on 1000+ online fashion retailers</p>
-    </div>
-    <div class="store-marquee">
-      <div class="store-marquee-track">
-        <span class="store-logo">H&M</span>
-        <span class="store-logo">ZARA</span>
-        <span class="store-logo">ASOS</span>
-        <span class="store-logo">Zalando</span>
-        <span class="store-logo">Mango</span>
-        <span class="store-logo">& Other Stories</span>
-        <span class="store-logo">NA-KD</span>
-        <span class="store-logo">Boozt</span>
-        <span class="store-logo">About You</span>
-        <span class="store-logo">Massimo Dutti</span>
-        <span class="store-logo">COS</span>
-        <span class="store-logo">Arket</span>
-        <span class="store-logo">H&M</span>
-        <span class="store-logo">ZARA</span>
-        <span class="store-logo">ASOS</span>
-        <span class="store-logo">Zalando</span>
-        <span class="store-logo">Mango</span>
-        <span class="store-logo">& Other Stories</span>
-        <span class="store-logo">NA-KD</span>
-        <span class="store-logo">Boozt</span>
-        <span class="store-logo">About You</span>
-        <span class="store-logo">Massimo Dutti</span>
-        <span class="store-logo">COS</span>
-        <span class="store-logo">Arket</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="faq">
-    <div class="container">
-      <div class="section-header">
-        <h2>Frequently Asked Questions</h2>
-      </div>
-      <div class="faq-list">
-        <div class="faq-item">
-          <h3>How accurate is the virtual try-on?</h3>
-          <p>Our AI technology provides highly realistic results. While it's not 100% perfect, it gives you a very good idea of how clothes will look on your body shape and skin tone.</p>
-        </div>
-        <div class="faq-item">
-          <h3>Is my photo safe?</h3>
-          <p>Yes, your privacy is our priority. Photos are processed securely and you control your data. We never share your images with third parties.</p>
-        </div>
-        <div class="faq-item">
-          <h3>Does it work on all clothing items?</h3>
-          <p>Virtual try-on works best with tops, dresses, jackets, and most upper-body clothing. We're constantly improving support for more item types.</p>
-        </div>
-        <div class="faq-item">
-          <h3>Is it really free?</h3>
-          <p>Yes! You can try on clothes for free. We offer a premium subscription for unlimited try-ons and extra features, but the basic functionality is free.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Final CTA -->
-  <section class="final-cta">
-    <div class="container">
-      <h2>Ready to Try Clothes Virtually?</h2>
-      <p>Join thousands of smart shoppers who never buy the wrong clothes again</p>
-      <a href="https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn" class="hero-cta" target="_blank">
-        Add to Chrome - Free
-      </a>
-      <div class="hero-trust" style="margin-top: 24px;">
-        <span>&#9733;&#9733;&#9733;&#9733;&#9733; 4.9 rating</span>
-        <span>&#10003; No credit card required</span>
+        <p class="cta-note">No account needed. Works instantly.</p>
       </div>
     </div>
   </section>

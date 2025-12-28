@@ -1,0 +1,1381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StyleGenius - Virtual Try-On & Price Tracking for Online Shopping</title>
+  <meta name="description" content="Try on clothes virtually before you buy. Track prices across 1500+ stores. Your AI shopping companion for smarter fashion decisions.">
+  <link rel="icon" type="image/png" href="/mainavatar.png">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="StyleGenius - Virtual Try-On & Price Tracking">
+  <meta property="og:description" content="Try on clothes virtually. Track prices. Find your perfect colors. The smart way to shop fashion online.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/hero-virtualtryon.png">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      background: #f9fafb;
+      color: #111827;
+      line-height: 1.6;
+    }
+
+    :root {
+      --pink: #FF70D9;
+      --blue: #6EC1E4;
+      --gradient: linear-gradient(45deg, #FF70D9, #6EC1E4);
+      --green: #10b981;
+      --gray-50: #f9fafb;
+      --gray-100: #f3f4f6;
+      --gray-200: #e5e7eb;
+      --gray-300: #d1d5db;
+      --gray-400: #9ca3af;
+      --gray-500: #6b7280;
+      --gray-600: #4b5563;
+      --gray-700: #374151;
+      --gray-900: #111827;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header */
+    header {
+      background: white;
+      border-bottom: 1px solid var(--gray-200);
+      padding: 16px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .logo img {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+    }
+
+    .logo span {
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
+
+    .header-cta {
+      background: var(--gradient);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .header-cta:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 20px rgba(255, 112, 217, 0.3);
+    }
+
+    /* Hero */
+    .hero {
+      padding: 60px 0 80px;
+      text-align: center;
+      background: linear-gradient(180deg, white 0%, var(--gray-50) 100%);
+    }
+
+    /* Browser Mockup */
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .browser-mockup {
+      position: relative;
+      width: 750px;
+      max-width: 90vw;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+      overflow: visible;
+    }
+
+    .browser-toolbar {
+      background: #f1f3f4;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .browser-dots {
+      display: flex;
+      gap: 6px;
+    }
+
+    .browser-dots span {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+
+    .browser-dots span:nth-child(1) { background: #ff5f57; }
+    .browser-dots span:nth-child(2) { background: #ffbd2e; }
+    .browser-dots span:nth-child(3) { background: #28ca42; }
+
+    .browser-url {
+      flex: 1;
+      background: white;
+      border-radius: 6px;
+      padding: 8px 12px;
+      font-size: 0.8rem;
+      color: var(--gray-600);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .browser-url .store-name {
+      font-weight: 600;
+      color: var(--gray-700);
+    }
+
+    .browser-extension-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+    }
+
+    .browser-content {
+      display: flex;
+      height: 480px;
+      background: linear-gradient(180deg, #fdf2f8 0%, #fce7f3 100%);
+      position: relative;
+    }
+
+    /* Left side - Product */
+    .product-side {
+      width: 40%;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: white;
+      border-right: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .product-image-container {
+      width: 100%;
+      max-width: 180px;
+      aspect-ratio: 3/4;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      position: relative;
+    }
+
+    .product-image-container img.product-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    .product-image-container img.product-img.active {
+      opacity: 1;
+    }
+
+    .product-tag {
+      font-size: 0.7rem;
+      color: var(--gray-500);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 4px;
+    }
+
+    .product-name {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 4px;
+      text-align: center;
+    }
+
+    .product-price {
+      font-size: 1rem;
+      font-weight: 700;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Right side - Model carousel */
+    .model-side {
+      width: 60%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .model-carousel {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+
+    .model-carousel img {
+      position: absolute;
+      bottom: 0;
+      height: 100%;
+      width: auto;
+      object-fit: contain;
+      opacity: 0;
+      transform: translateX(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .model-carousel img.active {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .store-badge {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      background: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--gray-700);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      z-index: 5;
+    }
+
+    /* Extension Popup */
+    .extension-popup-container {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 20;
+    }
+
+    .extension-popup {
+      position: absolute;
+      bottom: 60px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: white;
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+      min-width: 220px;
+    }
+
+    .extension-popup::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      margin-left: -8px;
+      width: 16px;
+      height: 16px;
+      background: white;
+      transform: rotate(45deg);
+      box-shadow: 4px 4px 8px rgba(0,0,0,0.05);
+    }
+
+    .popup-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--gray-100);
+    }
+
+    .popup-header img {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+    }
+
+    .popup-header span {
+      font-weight: 700;
+      font-size: 0.875rem;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .popup-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .popup-btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: none;
+      background: transparent;
+      color: var(--gray-700);
+      text-align: left;
+    }
+
+    .popup-btn:hover {
+      background: var(--gray-50);
+    }
+
+    .popup-btn.primary {
+      background: var(--gradient);
+      color: white;
+    }
+
+    .popup-btn.primary:hover {
+      transform: scale(1.02);
+      box-shadow: 0 4px 15px rgba(255, 112, 217, 0.3);
+    }
+
+    .popup-btn .btn-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      background: rgba(255,112,217,0.1);
+    }
+
+    .popup-btn.primary .btn-icon {
+      background: rgba(255,255,255,0.2);
+    }
+
+    .extension-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--gradient);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(255, 112, 217, 0.4);
+      cursor: pointer;
+      position: relative;
+    }
+
+    .extension-icon img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+    }
+
+    .extension-icon::after {
+      content: '';
+      position: absolute;
+      top: -4px;
+      right: -4px;
+      width: 14px;
+      height: 14px;
+      background: #10b981;
+      border-radius: 50%;
+      border: 2px solid white;
+    }
+
+    /* Price Alert Popup - hanging outside browser (top right) */
+    .price-alert-popup {
+      position: absolute;
+      top: 60px;
+      right: -140px;
+      background: white;
+      border-radius: 14px;
+      padding: 14px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+      width: 200px;
+      animation: slideIn 0.4s ease;
+      z-index: 20;
+    }
+
+    @media (max-width: 900px) {
+      .price-alert-popup {
+        display: none;
+      }
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .alert-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .alert-icon {
+      width: 28px;
+      height: 28px;
+      background: linear-gradient(135deg, var(--green), #34d399);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+    }
+
+    .alert-title {
+      font-weight: 700;
+      font-size: 0.8rem;
+      color: var(--green);
+    }
+
+    .alert-product {
+      display: flex;
+      gap: 10px;
+      padding: 10px;
+      background: var(--gray-50);
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .alert-product img {
+      width: 40px;
+      height: 50px;
+      border-radius: 6px;
+      object-fit: cover;
+    }
+
+    .alert-product-info { flex: 1; }
+
+    .alert-product-name {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--gray-700);
+      margin-bottom: 2px;
+    }
+
+    .alert-prices {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .alert-old-price {
+      font-size: 0.7rem;
+      color: var(--gray-400);
+      text-decoration: line-through;
+    }
+
+    .alert-new-price {
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: var(--green);
+    }
+
+    .alert-btn {
+      width: 100%;
+      background: var(--green);
+      color: white;
+      border: none;
+      padding: 8px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.75rem;
+      cursor: pointer;
+    }
+
+    /* Rolling stores */
+    .hero-stores {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .stores-label {
+      font-size: 0.875rem;
+      color: var(--gray-500);
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+
+    .hero-store-marquee {
+      width: 100%;
+      overflow: hidden;
+      mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    }
+
+    .hero-store-track {
+      display: flex;
+      gap: 40px;
+      animation: heroMarquee 25s linear infinite;
+      width: max-content;
+    }
+
+    @keyframes heroMarquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .hero-store-logo {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--gray-400);
+      white-space: nowrap;
+    }
+
+    /* Feature Links */
+    .feature-links {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 48px;
+      flex-wrap: wrap;
+    }
+
+    .feature-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: white;
+      padding: 14px 24px;
+      border-radius: 14px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      text-decoration: none;
+      color: var(--gray-700);
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.2s;
+    }
+
+    .feature-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    }
+
+    .feature-link .icon {
+      font-size: 1.25rem;
+    }
+
+    /* CTA Section */
+    .hero-cta-section {
+      margin-top: 48px;
+      text-align: center;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gradient);
+      color: white;
+      padding: 18px 36px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.125rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(255, 112, 217, 0.3);
+    }
+
+    .hero-cta:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 30px rgba(255, 112, 217, 0.4);
+    }
+
+    .cta-note {
+      margin-top: 12px;
+      font-size: 0.875rem;
+      color: var(--gray-500);
+    }
+
+    /* Footer */
+    footer {
+      padding: 40px 0;
+      background: var(--gray-50);
+      border-top: 1px solid var(--gray-200);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.875rem;
+      color: var(--gray-500);
+    }
+
+    .footer-logo img {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-links a {
+      color: var(--gray-500);
+      text-decoration: none;
+      font-size: 0.875rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--gray-700);
+    }
+
+    @media (max-width: 768px) {
+      .browser-mockup { width: 100%; }
+      .browser-content { flex-direction: column; height: auto; }
+      .product-side { width: 100%; border-right: none; border-bottom: 1px solid rgba(0,0,0,0.05); }
+      .model-side { width: 100%; height: 350px; }
+      .price-alert-popup { display: none; }
+      .feature-links { flex-direction: column; align-items: center; }
+      .footer-inner { flex-direction: column; gap: 20px; text-align: center; }
+    }
+
+    /* Feature Sections */
+    .feature-section {
+      padding: 80px 0;
+    }
+
+    .feature-section:nth-child(even) {
+      background: white;
+    }
+
+    .section-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .section-grid.reverse {
+      direction: rtl;
+    }
+
+    .section-grid.reverse > * {
+      direction: ltr;
+    }
+
+    .section-content {
+      max-width: 480px;
+    }
+
+    .section-badge {
+      display: inline-block;
+      background: linear-gradient(45deg, rgba(255,112,217,0.1), rgba(110,193,228,0.1));
+      border: 1px solid rgba(255,112,217,0.2);
+      padding: 6px 14px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--pink);
+      margin-bottom: 16px;
+    }
+
+    .section-content h2 {
+      font-size: 2.25rem;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+
+    .section-content h2 .gradient {
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .section-content p {
+      font-size: 1.1rem;
+      color: var(--gray-600);
+      margin-bottom: 24px;
+      line-height: 1.7;
+    }
+
+    .section-features {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .section-feature {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.95rem;
+      color: var(--gray-700);
+    }
+
+    .section-feature .check {
+      width: 24px;
+      height: 24px;
+      background: linear-gradient(45deg, rgba(255,112,217,0.1), rgba(110,193,228,0.1));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      color: var(--pink);
+    }
+
+    .section-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gradient);
+      color: white;
+      padding: 14px 28px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .section-cta:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 30px rgba(255, 112, 217, 0.3);
+    }
+
+    .section-cta.secondary {
+      background: white;
+      border: 2px solid var(--gray-200);
+      color: var(--gray-700);
+    }
+
+    .section-cta.secondary:hover {
+      border-color: var(--pink);
+      box-shadow: 0 8px 30px rgba(255, 112, 217, 0.15);
+    }
+
+    /* Section visuals */
+    .section-visual {
+      position: relative;
+    }
+
+    .section-visual img {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+    }
+
+    .section-visual.phone img {
+      max-width: 280px;
+      margin: 0 auto;
+      display: block;
+      border-radius: 36px;
+    }
+
+    /* Mini cards grid */
+    .mini-cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .mini-card {
+      background: white;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      text-align: center;
+    }
+
+    .mini-card .icon {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .mini-card h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+      color: var(--gray-900);
+    }
+
+    .mini-card p {
+      font-size: 0.8rem;
+      color: var(--gray-500);
+      margin: 0;
+    }
+
+    /* App section */
+    .app-section {
+      background: linear-gradient(180deg, var(--gray-50) 0%, white 100%);
+      padding: 80px 0;
+      text-align: center;
+    }
+
+    .app-section h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .app-section h2 .gradient {
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .app-section .subtitle {
+      font-size: 1.1rem;
+      color: var(--gray-600);
+      margin-bottom: 40px;
+    }
+
+    .app-preview {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+
+    .app-card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+      width: 200px;
+      transition: transform 0.3s;
+    }
+
+    .app-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .app-card img {
+      width: 100%;
+      aspect-ratio: 9/16;
+      object-fit: cover;
+    }
+
+    .app-card-info {
+      padding: 16px;
+      text-align: center;
+    }
+
+    .app-card-info h4 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 4px;
+    }
+
+    .app-card-info p {
+      font-size: 0.8rem;
+      color: var(--gray-500);
+      margin: 0;
+    }
+
+    .app-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .app-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #1a1a1a;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.2s;
+    }
+
+    .app-btn:hover {
+      transform: scale(1.05);
+    }
+
+    .app-btn .store-text {
+      text-align: left;
+    }
+
+    .app-btn .store-text small {
+      display: block;
+      font-size: 0.65rem;
+      font-weight: 400;
+      opacity: 0.8;
+    }
+
+    .app-btn .store-text span {
+      font-size: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .section-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .section-grid.reverse {
+        direction: ltr;
+      }
+      .section-content {
+        text-align: center;
+        max-width: 100%;
+      }
+      .section-content h2 {
+        font-size: 1.75rem;
+      }
+      .mini-cards {
+        grid-template-columns: 1fr;
+      }
+      .app-card {
+        width: 160px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container header-inner">
+      <a href="/" class="logo">
+        <img src="/mainavatar.png" alt="StyleGenius">
+        <span>StyleGenius</span>
+      </a>
+      <a href="https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn" class="header-cta" target="_blank">
+        Add to Chrome - Free
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <!-- Browser Mockup with EVERYTHING -->
+      <div class="hero-visual">
+        <div class="browser-mockup">
+          <div class="browser-toolbar">
+            <div class="browser-dots">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="browser-url">
+              <span class="store-name" id="url-store">hm.com</span>
+              <span>/product/cardigan</span>
+            </div>
+            <img src="/mainavatar.png" alt="StyleGenius" class="browser-extension-icon">
+          </div>
+          <div class="browser-content">
+            <!-- Left: Product -->
+            <div class="product-side">
+              <div class="product-image-container">
+                <img src="/vto-product1.png" alt="Product" class="product-img active" id="product-img-1">
+                <img src="/vto-product2.png" alt="Product" class="product-img" id="product-img-2">
+                <img src="/vto-product3.png" alt="Product" class="product-img" id="product-img-3">
+                <img src="/vto-product4.png" alt="Product" class="product-img" id="product-img-4">
+                <img src="/vto-product5.png" alt="Product" class="product-img" id="product-img-5">
+              </div>
+              <div class="product-tag">New Arrival</div>
+              <div class="product-name" id="product-name">Cozy Knit Cardigan</div>
+              <div class="product-price" id="product-price">$49.99</div>
+            </div>
+
+            <!-- Extension Popup (center bottom) with Price Alert underneath -->
+            <div class="extension-popup-container">
+              <div class="extension-popup">
+                <div class="popup-header">
+                  <img src="/mainavatar.png" alt="StyleGenius">
+                  <span>StyleGenius</span>
+                </div>
+                <div class="popup-buttons">
+                  <button class="popup-btn primary">
+                    <span class="btn-icon">👗</span>
+                    Try On
+                  </button>
+                  <button class="popup-btn">
+                    <span class="btn-icon">💰</span>
+                    Save & Track Price
+                  </button>
+                  <button class="popup-btn">
+                    <span class="btn-icon">✨</span>
+                    Color & Body Match
+                  </button>
+                </div>
+              </div>
+              <div class="extension-icon">
+                <img src="/mainavatar.png" alt="StyleGenius">
+              </div>
+            </div>
+
+            <!-- Right: Model -->
+            <div class="model-side">
+              <div class="store-badge" id="store-badge">H&M</div>
+              <div class="model-carousel">
+                <img src="/vto-model1.png" alt="Virtual try-on" class="active" data-store="H&M" data-url="hm.com" data-product="Cozy Knit Cardigan" data-price="$49.99">
+                <img src="/vto-model2.png" alt="Virtual try-on" data-store="ZARA" data-url="zara.com" data-product="Floral Print Dress" data-price="$89.90">
+                <img src="/vto-model3.png" alt="Virtual try-on" data-store="ASOS" data-url="asos.com" data-product="Green Knitted Dress" data-price="$65.00">
+                <img src="/vto-model4.png" alt="Virtual try-on" data-store="Mango" data-url="mango.com" data-product="Denim Shirt Dress" data-price="$79.99">
+                <img src="/vto-model5.png" alt="Virtual try-on" data-store="NA-KD" data-url="na-kd.com" data-product="Yellow Summer Dress" data-price="$59.00">
+              </div>
+            </div>
+          </div>
+          <!-- Price Alert under browser toolbar icon (top right) -->
+          <div class="price-alert-popup">
+            <div class="alert-header">
+              <div class="alert-icon">🔔</div>
+              <div class="alert-title">Price Drop!</div>
+            </div>
+            <div class="alert-product">
+              <img src="/vto-product2.png" alt="Dress">
+              <div class="alert-product-info">
+                <div class="alert-product-name">Floral Dress</div>
+                <div class="alert-prices">
+                  <span class="alert-old-price">$89.90</span>
+                  <span class="alert-new-price">$62.93</span>
+                </div>
+              </div>
+            </div>
+            <button class="alert-btn">Save $26.97 →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rolling stores -->
+      <div class="hero-stores">
+        <p class="stores-label">Works on 1500+ stores</p>
+        <div class="hero-store-marquee">
+          <div class="hero-store-track">
+            <span class="hero-store-logo">H&M</span>
+            <span class="hero-store-logo">ZARA</span>
+            <span class="hero-store-logo">ASOS</span>
+            <span class="hero-store-logo">Zalando</span>
+            <span class="hero-store-logo">Mango</span>
+            <span class="hero-store-logo">& Other Stories</span>
+            <span class="hero-store-logo">NA-KD</span>
+            <span class="hero-store-logo">Boozt</span>
+            <span class="hero-store-logo">About You</span>
+            <span class="hero-store-logo">Massimo Dutti</span>
+            <span class="hero-store-logo">COS</span>
+            <span class="hero-store-logo">Arket</span>
+            <span class="hero-store-logo">H&M</span>
+            <span class="hero-store-logo">ZARA</span>
+            <span class="hero-store-logo">ASOS</span>
+            <span class="hero-store-logo">Zalando</span>
+            <span class="hero-store-logo">Mango</span>
+            <span class="hero-store-logo">& Other Stories</span>
+            <span class="hero-store-logo">NA-KD</span>
+            <span class="hero-store-logo">Boozt</span>
+            <span class="hero-store-logo">About You</span>
+            <span class="hero-store-logo">Massimo Dutti</span>
+            <span class="hero-store-logo">COS</span>
+            <span class="hero-store-logo">Arket</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature Links -->
+      <div class="feature-links">
+        <a href="/virtual-try-on" class="feature-link">
+          <span class="icon">👗</span>
+          Virtual Try-On
+        </a>
+        <a href="/price-tracking" class="feature-link">
+          <span class="icon">💰</span>
+          Price Tracking
+        </a>
+        <a href="/style-analysis" class="feature-link">
+          <span class="icon">✨</span>
+          Color & Body Match
+        </a>
+        <a href="/app" class="feature-link">
+          <span class="icon">📱</span>
+          Mobile App
+        </a>
+      </div>
+
+      <!-- CTA -->
+      <div class="hero-cta-section">
+        <a href="https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn" class="hero-cta" target="_blank">
+          Add to Chrome - Free
+        </a>
+        <p class="cta-note">No account needed. Works instantly on any store.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Virtual Try-On Section -->
+  <section class="feature-section">
+    <div class="container">
+      <div class="section-grid">
+        <div class="section-content">
+          <span class="section-badge">Virtual Try-On</span>
+          <h2>See How Clothes<br><span class="gradient">Look on You</span></h2>
+          <p>Upload your photo once, then try on any item from any store instantly. No more guessing if it fits your style - see exactly how you'll look before buying.</p>
+          <div class="section-features">
+            <div class="section-feature">
+              <span class="check">✓</span>
+              Works on 1500+ stores worldwide
+            </div>
+            <div class="section-feature">
+              <span class="check">✓</span>
+              Realistic AI-powered results
+            </div>
+            <div class="section-feature">
+              <span class="check">✓</span>
+              Try unlimited items for free
+            </div>
+          </div>
+          <a href="/virtual-try-on" class="section-cta">
+            Learn More →
+          </a>
+        </div>
+        <div class="section-visual">
+          <img src="/hero-virtualtryon.png" alt="Virtual Try-On Demo">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Price Tracking Section -->
+  <section class="feature-section">
+    <div class="container">
+      <div class="section-grid reverse">
+        <div class="section-content">
+          <span class="section-badge">Price Tracking</span>
+          <h2>Never Miss a<br><span class="gradient">Price Drop</span></h2>
+          <p>Save items to your universal wishlist and get instant alerts when prices drop. Track prices across all stores in one place - never overpay again.</p>
+          <div class="section-features">
+            <div class="section-feature">
+              <span class="check">✓</span>
+              Universal wishlist across all stores
+            </div>
+            <div class="section-feature">
+              <span class="check">✓</span>
+              Instant price drop notifications
+            </div>
+            <div class="section-feature">
+              <span class="check">✓</span>
+              Price history charts
+            </div>
+          </div>
+          <a href="/price-tracking" class="section-cta">
+            Learn More →
+          </a>
+        </div>
+        <div class="section-visual">
+          <img src="/onboarding-price.png" alt="Price Tracking Demo">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Style Analysis Section -->
+  <section class="feature-section">
+    <div class="container">
+      <div class="section-grid">
+        <div class="section-content">
+          <span class="section-badge">Style Analysis</span>
+          <h2>Find Your<br><span class="gradient">Perfect Colors</span></h2>
+          <p>Discover which colors complement your skin tone and which cuts flatter your body type. Get personalized recommendations while you shop.</p>
+          <div class="section-features">
+            <div class="section-feature">
+              <span class="check">✓</span>
+              Skin tone color matching
+            </div>
+            <div class="section-feature">
+              <span class="check">✓</span>
+              Body type analysis
+            </div>
+            <div class="section-feature">
+              <span class="check">✓</span>
+              Real-time product recommendations
+            </div>
+          </div>
+          <a href="/style-analysis" class="section-cta">
+            Learn More →
+          </a>
+        </div>
+        <div class="section-visual">
+          <img src="/hero-styleanalysis.png" alt="Style Analysis Demo">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- App Section -->
+  <section class="app-section">
+    <div class="container">
+      <h2>Take StyleGenius<br><span class="gradient">On the Go</span></h2>
+      <p class="subtitle">All the same features in your pocket. Available on iOS and Android.</p>
+
+      <div class="app-preview">
+        <div class="app-card">
+          <img src="/app-virtualtryon.png" alt="Virtual Try-On">
+          <div class="app-card-info">
+            <h4>Virtual Try-On</h4>
+            <p>Try on anywhere</p>
+          </div>
+        </div>
+        <div class="app-card">
+          <img src="/app-coloranalysis.png" alt="Color Analysis">
+          <div class="app-card-info">
+            <h4>Color Analysis</h4>
+            <p>Find your palette</p>
+          </div>
+        </div>
+        <div class="app-card">
+          <img src="/app-outfitbuilder.png" alt="Outfit Builder">
+          <div class="app-card-info">
+            <h4>Outfit Builder</h4>
+            <p>Create combinations</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="app-buttons">
+        <a href="https://apps.apple.com/app/id6747178892" class="app-btn">
+          <span></span>
+          <span class="store-text">
+            <small>Download on the</small>
+            <span>App Store</span>
+          </span>
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=app.stylegenius&pcampaignid=web_share" class="app-btn">
+          <span>▶</span>
+          <span class="store-text">
+            <small>Get it on</small>
+            <span>Google Play</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-logo">
+        <img src="/mainavatar.png" alt="">
+        <span>StyleGenius by GoMotion AB</span>
+      </div>
+      <div class="footer-links">
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="/support">Support</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Carousel Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const modelImages = document.querySelectorAll('.model-carousel img');
+      const productImages = document.querySelectorAll('.product-img');
+      const storeBadge = document.getElementById('store-badge');
+      const urlStore = document.getElementById('url-store');
+      const productName = document.getElementById('product-name');
+      const productPrice = document.getElementById('product-price');
+      let currentIndex = 0;
+
+      function showNext() {
+        modelImages[currentIndex].classList.remove('active');
+        productImages[currentIndex].classList.remove('active');
+
+        currentIndex = (currentIndex + 1) % modelImages.length;
+
+        modelImages[currentIndex].classList.add('active');
+        productImages[currentIndex].classList.add('active');
+
+        const currentImg = modelImages[currentIndex];
+        storeBadge.textContent = currentImg.getAttribute('data-store');
+        urlStore.textContent = currentImg.getAttribute('data-url');
+        productName.textContent = currentImg.getAttribute('data-product');
+        productPrice.textContent = currentImg.getAttribute('data-price');
+      }
+
+      setInterval(showNext, 2500);
+    });
+  </script>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "StyleGenius",
+    "applicationCategory": "BrowserApplication",
+    "operatingSystem": "Chrome",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "ratingCount": "150"
+    },
+    "description": "Virtual try-on, price tracking, and style analysis for online fashion shopping."
+  }
+  </script>
+</body>
+</html>
