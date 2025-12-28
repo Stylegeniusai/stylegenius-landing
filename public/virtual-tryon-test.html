@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Virtual Try-On for Clothes Online | Try Before You Buy | StyleGenius</title>
+  <meta name="description" content="Try on clothes virtually before you buy. See exactly how any outfit looks on you in any online store. Free browser extension - works on H&M, Zara, ASOS & 1000+ stores.">
+  <meta name="keywords" content="virtual try on, try on clothes online, virtual fitting room, online clothes fitting, see how clothes look on me">
+  <link rel="canonical" href="https://stylegenius.app/virtual-try-on">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Virtual Try-On for Clothes Online | StyleGenius">
+  <meta property="og:description" content="Try on clothes virtually before you buy. Works on 1000+ online stores.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/hero-virtualtryon.png">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      background: #f9fafb;
+      color: #111827;
+      line-height: 1.6;
+    }
+
+    :root {
+      --pink: #FF70D9;
+      --blue: #6EC1E4;
+      --gradient: linear-gradient(45deg, #FF70D9, #6EC1E4);
+      --gray-50: #f9fafb;
+      --gray-100: #f3f4f6;
+      --gray-200: #e5e7eb;
+      --gray-400: #9ca3af;
+      --gray-500: #6b7280;
+      --gray-600: #4b5563;
+      --gray-700: #374151;
+      --gray-900: #111827;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header */
+    header {
+      background: white;
+      border-bottom: 1px solid var(--gray-200);
+      padding: 16px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .logo img {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+    }
+
+    .logo span {
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
+
+    .header-cta {
+      background: var(--gradient);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .header-cta:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 20px rgba(255, 112, 217, 0.3);
+    }
+
+    /* Hero */
+    .hero {
+      padding: 80px 0;
+      text-align: center;
+      background: linear-gradient(180deg, white 0%, var(--gray-50) 100%);
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: linear-gradient(45deg, rgba(255,112,217,0.1), rgba(110,193,228,0.1));
+      border: 1px solid rgba(255,112,217,0.2);
+      padding: 8px 16px;
+      border-radius: 50px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--pink);
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 24px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero h1 .gradient {
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 1.25rem;
+      color: var(--gray-600);
+      max-width: 600px;
+      margin: 0 auto 40px;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gradient);
+      color: white;
+      padding: 18px 36px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.125rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(255, 112, 217, 0.3);
+    }
+
+    .hero-cta:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 30px rgba(255, 112, 217, 0.4);
+    }
+
+    .hero-trust {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      margin-top: 32px;
+      font-size: 0.875rem;
+      color: var(--gray-500);
+    }
+
+    .hero-trust span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hero-text {
+      margin-top: 60px;
+    }
+
+    /* Hero Browser Mockup with Model Carousel */
+    .hero-visual {
+      margin-top: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .browser-mockup {
+      position: relative;
+      width: 700px;
+      max-width: 90vw;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+      overflow: hidden;
+    }
+
+    .browser-toolbar {
+      background: #f1f3f4;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .browser-dots {
+      display: flex;
+      gap: 6px;
+    }
+
+    .browser-dots span {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+
+    .browser-dots span:nth-child(1) { background: #ff5f57; }
+    .browser-dots span:nth-child(2) { background: #ffbd2e; }
+    .browser-dots span:nth-child(3) { background: #28ca42; }
+
+    .browser-url {
+      flex: 1;
+      background: white;
+      border-radius: 6px;
+      padding: 8px 12px;
+      font-size: 0.8rem;
+      color: var(--gray-600);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .browser-url .store-name {
+      font-weight: 600;
+      color: var(--gray-700);
+    }
+
+    .browser-extension-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+    }
+
+    .browser-content {
+      display: flex;
+      height: 450px;
+      background: linear-gradient(180deg, #fdf2f8 0%, #fce7f3 100%);
+    }
+
+    /* Left side - Product info */
+    .product-side {
+      width: 45%;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-right: 1px solid rgba(0,0,0,0.05);
+      background: white;
+    }
+
+    .product-image-container {
+      width: 100%;
+      max-width: 200px;
+      aspect-ratio: 3/4;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      position: relative;
+    }
+
+    .product-image-container img.product-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    .product-image-container img.product-img.active {
+      opacity: 1;
+    }
+
+    .product-tag {
+      font-size: 0.7rem;
+      color: var(--gray-500);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 4px;
+    }
+
+    .product-name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 4px;
+      text-align: center;
+    }
+
+    .product-price {
+      font-size: 1.125rem;
+      font-weight: 700;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 16px;
+    }
+
+    .tryon-button {
+      background: var(--gradient);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      box-shadow: 0 4px 15px rgba(255, 112, 217, 0.4);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      width: fit-content;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .tryon-button:hover {
+      transform: scale(1.05);
+    }
+
+    .tryon-button::before {
+      content: "✨";
+    }
+
+    /* Arrow between product and model */
+    .try-arrow {
+      position: absolute;
+      top: 50%;
+      right: -30px;
+      transform: translateY(-50%);
+      font-size: 2rem;
+      color: var(--pink);
+      z-index: 10;
+    }
+
+    /* Right side - Model carousel */
+    .model-side {
+      width: 55%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .model-carousel {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+
+    .model-carousel img {
+      position: absolute;
+      bottom: 0;
+      height: 100%;
+      width: auto;
+      object-fit: contain;
+      opacity: 0;
+      transform: translateX(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .model-carousel img.active {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* Store badge overlay */
+    .store-badge {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--gray-700);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      z-index: 5;
+    }
+
+    /* Floating store indicators */
+    .floating-stores {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .floating-stores.left {
+      left: -120px;
+    }
+
+    .floating-stores.right {
+      right: -120px;
+    }
+
+    .floating-store {
+      background: white;
+      padding: 10px 16px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.875rem;
+      color: var(--gray-600);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      opacity: 0.6;
+      transition: all 0.3s ease;
+    }
+
+    .floating-store.highlight {
+      opacity: 1;
+      transform: scale(1.05);
+      box-shadow: 0 4px 20px rgba(255, 112, 217, 0.25);
+      border: 2px solid var(--pink);
+      color: var(--pink);
+    }
+
+    @media (max-width: 900px) {
+      .floating-stores {
+        display: none;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .browser-mockup {
+        width: 100%;
+      }
+
+      .browser-content {
+        flex-direction: column;
+        height: auto;
+      }
+
+      .product-side {
+        width: 100%;
+        padding: 20px;
+        border-right: none;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+      }
+
+      .model-side {
+        width: 100%;
+        height: 350px;
+      }
+    }
+
+    /* How it works */
+    .how-it-works {
+      padding: 100px 0;
+      background: white;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-header h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .section-header p {
+      font-size: 1.125rem;
+      color: var(--gray-600);
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+
+    .step {
+      text-align: center;
+    }
+
+    .step-number {
+      width: 48px;
+      height: 48px;
+      background: var(--gradient);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin: 0 auto 20px;
+    }
+
+    .step-image {
+      width: 100%;
+      max-width: 280px;
+      aspect-ratio: 9/16;
+      object-fit: contain;
+      border-radius: 20px;
+      margin: 0 auto 20px;
+      display: block;
+    }
+
+    .step h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .step p {
+      color: var(--gray-600);
+      font-size: 1rem;
+    }
+
+    /* Benefits */
+    .benefits {
+      padding: 100px 0;
+      background: var(--gray-50);
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .benefit-card {
+      background: white;
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    }
+
+    .benefit-icon {
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+
+    .benefit-card h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .benefit-card p {
+      color: var(--gray-600);
+    }
+
+    /* Stores */
+    .stores {
+      padding: 80px 0;
+      background: white;
+      text-align: center;
+    }
+
+    .stores h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .stores p {
+      color: var(--gray-600);
+      margin-bottom: 40px;
+    }
+
+    .store-marquee {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .store-marquee-track {
+      display: flex;
+      gap: 48px;
+      animation: marquee 30s linear infinite;
+      width: max-content;
+    }
+
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .store-logo {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--gray-400);
+      white-space: nowrap;
+    }
+
+    /* FAQ */
+    .faq {
+      padding: 100px 0;
+      background: var(--gray-50);
+    }
+
+    .faq-list {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      background: white;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .faq-item h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .faq-item p {
+      color: var(--gray-600);
+    }
+
+    /* Final CTA */
+    .final-cta {
+      padding: 100px 0;
+      background: white;
+      text-align: center;
+    }
+
+    .final-cta h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .final-cta > .container > p {
+      font-size: 1.125rem;
+      color: var(--gray-600);
+      margin-bottom: 40px;
+    }
+
+    /* Footer */
+    footer {
+      padding: 40px 0;
+      background: var(--gray-50);
+      border-top: 1px solid var(--gray-200);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.875rem;
+      color: var(--gray-500);
+    }
+
+    .footer-logo img {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-links a {
+      color: var(--gray-500);
+      text-decoration: none;
+      font-size: 0.875rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--gray-700);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.25rem;
+      }
+
+      .steps {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .benefits-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-trust {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container header-inner">
+      <a href="/" class="logo">
+        <img src="/mainavatar.png" alt="StyleGenius">
+        <span>StyleGenius</span>
+      </a>
+      <a href="https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn" class="header-cta" target="_blank">
+        Add to Chrome - Free
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <!-- Browser Mockup FIRST -->
+      <div class="hero-visual">
+        <!-- Floating stores left -->
+        <div class="floating-stores left">
+          <div class="floating-store" data-store="0">H&M</div>
+          <div class="floating-store" data-store="1">ZARA</div>
+          <div class="floating-store" data-store="2">ASOS</div>
+        </div>
+
+        <!-- Browser mockup -->
+        <div class="browser-mockup">
+          <div class="browser-toolbar">
+            <div class="browser-dots">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="browser-url">
+              <span class="store-name" id="url-store">hm.com</span>
+              <span>/product/floral-dress</span>
+            </div>
+            <img src="/mainavatar.png" alt="StyleGenius" class="browser-extension-icon">
+          </div>
+          <div class="browser-content">
+            <div class="product-side">
+              <div class="product-image-container">
+                <!-- Product images carousel -->
+                <img src="/vto-product1.png" alt="Product" class="product-img active" id="product-img-1">
+                <img src="/vto-product2.png" alt="Product" class="product-img" id="product-img-2">
+                <img src="/vto-product3.png" alt="Product" class="product-img" id="product-img-3">
+                <img src="/vto-product4.png" alt="Product" class="product-img" id="product-img-4">
+                <img src="/vto-product5.png" alt="Product" class="product-img" id="product-img-5">
+                <span class="try-arrow">→</span>
+              </div>
+              <div class="product-tag">New Arrival</div>
+              <div class="product-name" id="product-name">Cozy Knit Cardigan</div>
+              <div class="product-price" id="product-price">$49.99</div>
+              <div class="tryon-button">Try On</div>
+            </div>
+            <div class="model-side">
+              <div class="store-badge" id="store-badge">H&M</div>
+              <div class="model-carousel">
+                <img src="/vto-model1.png" alt="Virtual try-on cardigan" class="active" data-store="H&M" data-url="hm.com" data-product="Cozy Knit Cardigan" data-price="$49.99">
+                <img src="/vto-model2.png" alt="Virtual try-on flower dress" data-store="ZARA" data-url="zara.com" data-product="Floral Print Dress" data-price="$89.90">
+                <img src="/vto-model3.png" alt="Virtual try-on green knitted dress" data-store="ASOS" data-url="asos.com" data-product="Green Knitted Dress" data-price="$65.00">
+                <img src="/vto-model4.png" alt="Virtual try-on denim shirt dress" data-store="Mango" data-url="mango.com" data-product="Denim Shirt Dress" data-price="$79.99">
+                <img src="/vto-model5.png" alt="Virtual try-on yellow dress" data-store="NA-KD" data-url="na-kd.com" data-product="Yellow Summer Dress" data-price="$59.00">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating stores right -->
+        <div class="floating-stores right">
+          <div class="floating-store" data-store="3">Mango</div>
+          <div class="floating-store" data-store="4">NA-KD</div>
+          <div class="floating-store">Zalando</div>
+        </div>
+      </div>
+
+      <!-- Text content AFTER -->
+      <div class="hero-text">
+        <span class="hero-badge">Virtual Try-On Technology</span>
+        <h1>
+          See How Clothes Look<br>
+          <span class="gradient">On You Before Buying</span>
+        </h1>
+        <p class="hero-subtitle">
+          Try on any clothing item virtually while shopping online. No more guessing, no more returns. Works on H&M, Zara, ASOS and 1000+ stores.
+        </p>
+        <a href="https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn" class="hero-cta" target="_blank">
+          Try Virtual Try-On Free
+        </a>
+        <div class="hero-trust">
+          <span>&#10003; Free to use</span>
+          <span>&#10003; Works instantly</span>
+          <span>&#10003; 1000+ stores supported</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <h2>How Virtual Try-On Works</h2>
+        <p>Three simple steps to see any outfit on yourself</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <img src="/onboarding-try-on.png" alt="Upload your photo" class="step-image">
+          <h3>Upload Your Photo</h3>
+          <p>Take a quick selfie or upload an existing photo. Your image stays private and secure.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <img src="/onboarding-style.png" alt="Browse any store" class="step-image">
+          <h3>Browse Any Store</h3>
+          <p>Shop normally on your favorite stores. StyleGenius works in the background.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <img src="/hero-virtualtryon.png" alt="See it on you" class="step-image">
+          <h3>See It On You</h3>
+          <p>Click "Try On" on any item to instantly see how it looks on your body.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section class="benefits">
+    <div class="container">
+      <div class="section-header">
+        <h2>Why Use Virtual Try-On?</h2>
+        <p>Stop wasting money on clothes that don't fit or flatter</p>
+      </div>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">&#128176;</div>
+          <h3>Save Money</h3>
+          <p>Stop buying clothes that look different than expected. Know exactly what you're getting before checkout.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">&#128666;</div>
+          <h3>Fewer Returns</h3>
+          <p>Reduce the hassle of returns. See fit, style, and color on your body before ordering.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">&#9203;</div>
+          <h3>Shop Faster</h3>
+          <p>Make confident decisions quickly. No more endless scrolling and second-guessing.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">&#127919;</div>
+          <h3>Better Style Choices</h3>
+          <p>Discover what actually suits you. Our AI helps you find your most flattering pieces.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stores -->
+  <section class="stores">
+    <div class="container">
+      <h2>Works On All Your Favorite Stores</h2>
+      <p>Virtual try-on available on 1000+ online fashion retailers</p>
+    </div>
+    <div class="store-marquee">
+      <div class="store-marquee-track">
+        <span class="store-logo">H&M</span>
+        <span class="store-logo">ZARA</span>
+        <span class="store-logo">ASOS</span>
+        <span class="store-logo">Zalando</span>
+        <span class="store-logo">Mango</span>
+        <span class="store-logo">& Other Stories</span>
+        <span class="store-logo">NA-KD</span>
+        <span class="store-logo">Boozt</span>
+        <span class="store-logo">About You</span>
+        <span class="store-logo">Massimo Dutti</span>
+        <span class="store-logo">COS</span>
+        <span class="store-logo">Arket</span>
+        <span class="store-logo">H&M</span>
+        <span class="store-logo">ZARA</span>
+        <span class="store-logo">ASOS</span>
+        <span class="store-logo">Zalando</span>
+        <span class="store-logo">Mango</span>
+        <span class="store-logo">& Other Stories</span>
+        <span class="store-logo">NA-KD</span>
+        <span class="store-logo">Boozt</span>
+        <span class="store-logo">About You</span>
+        <span class="store-logo">Massimo Dutti</span>
+        <span class="store-logo">COS</span>
+        <span class="store-logo">Arket</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="container">
+      <div class="section-header">
+        <h2>Frequently Asked Questions</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3>How accurate is the virtual try-on?</h3>
+          <p>Our AI technology provides highly realistic results. While it's not 100% perfect, it gives you a very good idea of how clothes will look on your body shape and skin tone.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Is my photo safe?</h3>
+          <p>Yes, your privacy is our priority. Photos are processed securely and you control your data. We never share your images with third parties.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Does it work on all clothing items?</h3>
+          <p>Virtual try-on works best with tops, dresses, jackets, and most upper-body clothing. We're constantly improving support for more item types.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Is it really free?</h3>
+          <p>Yes! You can try on clothes for free. We offer a premium subscription for unlimited try-ons and extra features, but the basic functionality is free.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="final-cta">
+    <div class="container">
+      <h2>Ready to Try Clothes Virtually?</h2>
+      <p>Join thousands of smart shoppers who never buy the wrong clothes again</p>
+      <a href="https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn" class="hero-cta" target="_blank">
+        Add to Chrome - Free
+      </a>
+      <div class="hero-trust" style="margin-top: 24px;">
+        <span>&#9733;&#9733;&#9733;&#9733;&#9733; 4.9 rating</span>
+        <span>&#10003; No credit card required</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-logo">
+        <img src="/mainavatar.png" alt="">
+        <span>StyleGenius by GoMotion AB</span>
+      </div>
+      <div class="footer-links">
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="/support">Support</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Model Carousel Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const modelImages = document.querySelectorAll('.model-carousel img');
+      const productImages = document.querySelectorAll('.product-img');
+      const storeBadge = document.getElementById('store-badge');
+      const urlStore = document.getElementById('url-store');
+      const productName = document.getElementById('product-name');
+      const productPrice = document.getElementById('product-price');
+      const floatingStores = document.querySelectorAll('.floating-store[data-store]');
+      let currentIndex = 0;
+
+      function showNext() {
+        // Remove active from current model
+        modelImages[currentIndex].classList.remove('active');
+
+        // Remove active from current product
+        productImages[currentIndex].classList.remove('active');
+
+        // Update floating store highlight
+        floatingStores.forEach(store => store.classList.remove('highlight'));
+
+        // Move to next
+        currentIndex = (currentIndex + 1) % modelImages.length;
+
+        // Add active to new model
+        modelImages[currentIndex].classList.add('active');
+
+        // Add active to new product
+        productImages[currentIndex].classList.add('active');
+
+        // Get data from current image
+        const currentImg = modelImages[currentIndex];
+        const storeName = currentImg.getAttribute('data-store');
+        const storeUrl = currentImg.getAttribute('data-url');
+        const product = currentImg.getAttribute('data-product');
+        const price = currentImg.getAttribute('data-price');
+
+        // Update store badge
+        storeBadge.textContent = storeName;
+
+        // Update URL bar
+        if (urlStore) urlStore.textContent = storeUrl;
+
+        // Update product name
+        if (productName) productName.textContent = product;
+
+        // Update price
+        if (productPrice) productPrice.textContent = price;
+
+        // Highlight matching floating store
+        floatingStores.forEach(store => {
+          if (store.getAttribute('data-store') == currentIndex) {
+            store.classList.add('highlight');
+          }
+        });
+      }
+
+      // Auto-rotate every 2.5 seconds
+      setInterval(showNext, 2500);
+
+      // Highlight first floating store
+      if (floatingStores[0]) {
+        floatingStores[0].classList.add('highlight');
+      }
+    });
+  </script>
+
+  <!-- Structured Data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "StyleGenius Virtual Try-On",
+    "applicationCategory": "BrowserApplication",
+    "operatingSystem": "Chrome",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "ratingCount": "150"
+    },
+    "description": "Try on clothes virtually before you buy. See exactly how any outfit looks on you in any online store."
+  }
+  </script>
+</body>
+</html>

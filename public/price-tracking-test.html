@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fashion Price Tracker | Track Clothing Prices Across 1000+ Stores | StyleGenius</title>
+  <meta name="description" content="Track prices on clothes across H&M, Zara, ASOS, Zalando & 1000+ fashion stores. Get instant alerts when prices drop. Never miss a sale again. Free browser extension.">
+  <meta name="keywords" content="price tracker clothes, fashion price tracker, clothing price alert, track clothing prices, price drop alert fashion">
+  <link rel="canonical" href="https://stylegenius.app/price-tracking">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Fashion Price Tracker | Track Prices on 1000+ Stores">
+  <meta property="og:description" content="Track prices on clothes and get alerts when they drop. Works on H&M, Zara, ASOS & 1000+ stores.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/hero-pricetracking.png">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      background: #f9fafb;
+      color: #111827;
+      line-height: 1.6;
+    }
+
+    :root {
+      --pink: #FF70D9;
+      --blue: #6EC1E4;
+      --gradient: linear-gradient(45deg, #FF70D9, #6EC1E4);
+      --gray-50: #f9fafb;
+      --gray-100: #f3f4f6;
+      --gray-200: #e5e7eb;
+      --gray-400: #9ca3af;
+      --gray-500: #6b7280;
+      --gray-600: #4b5563;
+      --gray-700: #374151;
+      --gray-900: #111827;
+      --green: #10b981;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header */
+    header {
+      background: white;
+      border-bottom: 1px solid var(--gray-200);
+      padding: 16px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .logo img {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+    }
+
+    .logo span {
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
+
+    .header-cta {
+      background: var(--gradient);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .header-cta:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 20px rgba(255, 112, 217, 0.3);
+    }
+
+    /* Hero */
+    .hero {
+      padding: 80px 0;
+      text-align: center;
+      background: linear-gradient(180deg, white 0%, var(--gray-50) 100%);
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: linear-gradient(45deg, rgba(16,185,129,0.1), rgba(110,193,228,0.1));
+      border: 1px solid rgba(16,185,129,0.2);
+      padding: 8px 16px;
+      border-radius: 50px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--green);
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 24px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero h1 .gradient {
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 1.25rem;
+      color: var(--gray-600);
+      max-width: 600px;
+      margin: 0 auto 40px;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gradient);
+      color: white;
+      padding: 18px 36px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.125rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(255, 112, 217, 0.3);
+    }
+
+    .hero-cta:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 30px rgba(255, 112, 217, 0.4);
+    }
+
+    .hero-trust {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      margin-top: 32px;
+      font-size: 0.875rem;
+      color: var(--gray-500);
+    }
+
+    .hero-trust span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Hero Image */
+    .hero-image {
+      margin-top: 60px;
+      position: relative;
+    }
+
+    .hero-image img {
+      max-width: 320px;
+      border-radius: 24px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    }
+
+    /* Stats */
+    .stats {
+      padding: 60px 0;
+      background: white;
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      text-align: center;
+    }
+
+    .stat-item h3 {
+      font-size: 3rem;
+      font-weight: 800;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 8px;
+    }
+
+    .stat-item p {
+      color: var(--gray-600);
+      font-size: 1rem;
+    }
+
+    /* How it works */
+    .how-it-works {
+      padding: 100px 0;
+      background: var(--gray-50);
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-header h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .section-header p {
+      font-size: 1.125rem;
+      color: var(--gray-600);
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+
+    .step {
+      text-align: center;
+      background: white;
+      border-radius: 20px;
+      padding: 32px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    }
+
+    .step-number {
+      width: 48px;
+      height: 48px;
+      background: var(--gradient);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin: 0 auto 20px;
+    }
+
+    .step-icon {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .step h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .step p {
+      color: var(--gray-600);
+      font-size: 1rem;
+    }
+
+    /* Features */
+    .features {
+      padding: 100px 0;
+      background: white;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .feature-content h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .feature-content h2 .gradient {
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .feature-content p {
+      color: var(--gray-600);
+      font-size: 1.125rem;
+      margin-bottom: 24px;
+    }
+
+    .feature-list {
+      list-style: none;
+    }
+
+    .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 16px;
+      color: var(--gray-700);
+    }
+
+    .feature-list li::before {
+      content: "&#10003;";
+      color: var(--green);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .feature-image img {
+      max-width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+    }
+
+    /* Stores */
+    .stores {
+      padding: 80px 0;
+      background: var(--gray-50);
+      text-align: center;
+    }
+
+    .stores h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .stores p {
+      color: var(--gray-600);
+      margin-bottom: 40px;
+    }
+
+    .store-marquee {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .store-marquee-track {
+      display: flex;
+      gap: 48px;
+      animation: marquee 30s linear infinite;
+      width: max-content;
+    }
+
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .store-logo {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--gray-400);
+      white-space: nowrap;
+    }
+
+    /* Testimonials */
+    .testimonials {
+      padding: 100px 0;
+      background: white;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .testimonial-card {
+      background: var(--gray-50);
+      border-radius: 16px;
+      padding: 32px;
+    }
+
+    .testimonial-stars {
+      color: #eab308;
+      font-size: 1.25rem;
+      margin-bottom: 16px;
+    }
+
+    .testimonial-text {
+      font-size: 1.125rem;
+      color: var(--gray-700);
+      margin-bottom: 16px;
+      font-style: italic;
+    }
+
+    .testimonial-author {
+      font-size: 0.875rem;
+      color: var(--gray-500);
+    }
+
+    /* FAQ */
+    .faq {
+      padding: 100px 0;
+      background: var(--gray-50);
+    }
+
+    .faq-list {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      background: white;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .faq-item h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .faq-item p {
+      color: var(--gray-600);
+    }
+
+    /* Final CTA */
+    .final-cta {
+      padding: 100px 0;
+      background: white;
+      text-align: center;
+    }
+
+    .final-cta h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .final-cta > .container > p {
+      font-size: 1.125rem;
+      color: var(--gray-600);
+      margin-bottom: 40px;
+    }
+
+    /* Footer */
+    footer {
+      padding: 40px 0;
+      background: var(--gray-50);
+      border-top: 1px solid var(--gray-200);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.875rem;
+      color: var(--gray-500);
+    }
+
+    .footer-logo img {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-links a {
+      color: var(--gray-500);
+      text-decoration: none;
+      font-size: 0.875rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--gray-700);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.25rem;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .steps {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .feature-image {
+        order: -1;
+      }
+
+      .testimonial-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-trust {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container header-inner">
+      <a href="/" class="logo">
+        <img src="/mainavatar.png" alt="StyleGenius">
+        <span>StyleGenius</span>
+      </a>
+      <a href="https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn" class="header-cta" target="_blank">
+        Add to Chrome - Free
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <span class="hero-badge">Price Tracking Technology</span>
+      <h1>
+        Never Pay Full Price<br>
+        <span class="gradient">For Fashion Again</span>
+      </h1>
+      <p class="hero-subtitle">
+        Track prices on any clothing item across 1000+ stores. Get instant alerts when prices drop. Save hundreds on your favorite fashion pieces.
+      </p>
+      <a href="https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn" class="hero-cta" target="_blank">
+        Start Tracking Prices Free
+      </a>
+      <div class="hero-trust">
+        <span>&#10003; 100% Free</span>
+        <span>&#10003; Instant alerts</span>
+        <span>&#10003; 1000+ stores</span>
+      </div>
+      <div class="hero-image">
+        <img src="/hero-pricetracking.png" alt="Price Tracking Demo - Track clothing prices">
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <h3>1000+</h3>
+          <p>Fashion stores supported</p>
+        </div>
+        <div class="stat-item">
+          <h3>30%</h3>
+          <p>Average savings per item</p>
+        </div>
+        <div class="stat-item">
+          <h3>24/7</h3>
+          <p>Automatic price monitoring</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <h2>How Price Tracking Works</h2>
+        <p>Three simple steps to never miss a deal</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-icon">&#128269;</div>
+          <h3>Browse & Save</h3>
+          <p>Shop normally and click "Save" on any item you like. Works on any fashion website.</p>
+        </div>
+        <div class="step">
+          <div class="step-icon">&#128200;</div>
+          <h3>We Track Prices</h3>
+          <p>StyleGenius monitors prices 24/7 across all your saved items automatically.</p>
+        </div>
+        <div class="step">
+          <div class="step-icon">&#128276;</div>
+          <h3>Get Alerted</h3>
+          <p>Receive instant notifications when prices drop. Buy at the perfect moment.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features">
+    <div class="container">
+      <div class="features-grid">
+        <div class="feature-content">
+          <h2>Save Items From <span class="gradient">Any Store</span></h2>
+          <p>No more bookmarking pages or keeping lists. Save items from any fashion store with one click and manage them all in one place.</p>
+          <ul class="feature-list">
+            <li>Works on H&M, Zara, ASOS, Zalando & 1000+ more</li>
+            <li>Save unlimited items</li>
+            <li>Organize with collections</li>
+            <li>Access your wishlist anywhere</li>
+          </ul>
+        </div>
+        <div class="feature-image">
+          <img src="/onboarding-price.png" alt="Save items from any store">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stores -->
+  <section class="stores">
+    <div class="container">
+      <h2>Track Prices On All Major Fashion Stores</h2>
+      <p>Works automatically on your favorite retailers</p>
+    </div>
+    <div class="store-marquee">
+      <div class="store-marquee-track">
+        <span class="store-logo">H&M</span>
+        <span class="store-logo">ZARA</span>
+        <span class="store-logo">ASOS</span>
+        <span class="store-logo">Zalando</span>
+        <span class="store-logo">Mango</span>
+        <span class="store-logo">& Other Stories</span>
+        <span class="store-logo">NA-KD</span>
+        <span class="store-logo">Boozt</span>
+        <span class="store-logo">About You</span>
+        <span class="store-logo">Massimo Dutti</span>
+        <span class="store-logo">COS</span>
+        <span class="store-logo">Arket</span>
+        <span class="store-logo">H&M</span>
+        <span class="store-logo">ZARA</span>
+        <span class="store-logo">ASOS</span>
+        <span class="store-logo">Zalando</span>
+        <span class="store-logo">Mango</span>
+        <span class="store-logo">& Other Stories</span>
+        <span class="store-logo">NA-KD</span>
+        <span class="store-logo">Boozt</span>
+        <span class="store-logo">About You</span>
+        <span class="store-logo">Massimo Dutti</span>
+        <span class="store-logo">COS</span>
+        <span class="store-logo">Arket</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <h2>What Users Say</h2>
+      </div>
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">"Saved over $200 last month just by waiting for price drops. This extension pays for itself!"</p>
+          <p class="testimonial-author">— Chrome Web Store Review</p>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">"Finally a price tracker that works on fashion sites. Other trackers only work on Amazon."</p>
+          <p class="testimonial-author">— Chrome Web Store Review</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="container">
+      <div class="section-header">
+        <h2>Frequently Asked Questions</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3>How often are prices checked?</h3>
+          <p>We check prices multiple times per day to ensure you never miss a price drop. Most items are checked every few hours.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How do I get notified?</h3>
+          <p>You'll receive browser notifications and can also check your StyleGenius dashboard for all price changes. Email notifications coming soon.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Does it work on sale items?</h3>
+          <p>Yes! We track both regular prices and sale prices. You'll be notified if an item goes on sale or if the sale price drops even further.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Is there a limit to how many items I can track?</h3>
+          <p>Free users can track up to 50 items. Premium subscribers get unlimited tracking plus extra features.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="final-cta">
+    <div class="container">
+      <h2>Start Saving on Fashion Today</h2>
+      <p>Join smart shoppers who never pay full price</p>
+      <a href="https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn" class="hero-cta" target="_blank">
+        Add to Chrome - Free
+      </a>
+      <div class="hero-trust" style="margin-top: 24px;">
+        <span>&#9733;&#9733;&#9733;&#9733;&#9733; 4.9 rating</span>
+        <span>&#10003; No credit card required</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-logo">
+        <img src="/mainavatar.png" alt="">
+        <span>StyleGenius by GoMotion AB</span>
+      </div>
+      <div class="footer-links">
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="/support">Support</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Structured Data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "StyleGenius Price Tracker",
+    "applicationCategory": "BrowserApplication",
+    "operatingSystem": "Chrome",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "ratingCount": "150"
+    },
+    "description": "Track prices on clothes across 1000+ fashion stores. Get instant alerts when prices drop."
+  }
+  </script>
+</body>
+</html>
