@@ -178,6 +178,45 @@
       margin-top: 60px;
     }
 
+    /* Hero stores rolling */
+    .hero-stores {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .stores-label {
+      font-size: 0.875rem;
+      color: var(--gray-500);
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+
+    .hero-store-marquee {
+      width: 100%;
+      overflow: hidden;
+      mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    }
+
+    .hero-store-track {
+      display: flex;
+      gap: 40px;
+      animation: heroMarquee 25s linear infinite;
+      width: max-content;
+    }
+
+    @keyframes heroMarquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .hero-store-logo {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--gray-400);
+      white-space: nowrap;
+    }
+
     /* Hero Browser Mockup with Model Carousel */
     .hero-visual {
       margin-top: 0;
@@ -248,6 +287,7 @@
       display: flex;
       height: 450px;
       background: linear-gradient(180deg, #fdf2f8 0%, #fce7f3 100%);
+      position: relative;
     }
 
     /* Left side - Product info */
@@ -313,28 +353,155 @@
       margin-bottom: 16px;
     }
 
-    .tryon-button {
+    /* Extension popup simulation */
+    .extension-popup-container {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 20;
+    }
+
+    .extension-icon {
+      width: 48px;
+      height: 48px;
       background: var(--gradient);
-      color: white;
-      padding: 12px 24px;
-      border-radius: 30px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      box-shadow: 0 4px 15px rgba(255, 112, 217, 0.4);
-      display: inline-flex;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(255, 112, 217, 0.4);
+      cursor: pointer;
+      position: relative;
+    }
+
+    .extension-icon img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+    }
+
+    .extension-icon::after {
+      content: '';
+      position: absolute;
+      top: -4px;
+      right: -4px;
+      width: 14px;
+      height: 14px;
+      background: #10b981;
+      border-radius: 50%;
+      border: 2px solid white;
+    }
+
+    .extension-popup {
+      position: absolute;
+      bottom: 60px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: white;
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+      min-width: 200px;
+      animation: popupIn 0.3s ease;
+    }
+
+    @keyframes popupIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .extension-popup::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      margin-left: -8px;
+      width: 16px;
+      height: 16px;
+      background: white;
+      transform: rotate(45deg);
+      box-shadow: 4px 4px 8px rgba(0,0,0,0.05);
+    }
+
+    .popup-header {
+      display: flex;
       align-items: center;
       gap: 8px;
-      width: fit-content;
+      margin-bottom: 12px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--gray-100);
+    }
+
+    .popup-header img {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+    }
+
+    .popup-header span {
+      font-weight: 700;
+      font-size: 0.875rem;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .popup-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .popup-btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      font-weight: 600;
       cursor: pointer;
-      transition: transform 0.2s;
+      transition: all 0.2s;
+      border: none;
+      background: transparent;
+      color: var(--gray-700);
+      text-align: left;
     }
 
-    .tryon-button:hover {
-      transform: scale(1.05);
+    .popup-btn:hover {
+      background: var(--gray-50);
     }
 
-    .tryon-button::before {
-      content: "✨";
+    .popup-btn.primary {
+      background: var(--gradient);
+      color: white;
+    }
+
+    .popup-btn.primary:hover {
+      transform: scale(1.02);
+      box-shadow: 0 4px 15px rgba(255, 112, 217, 0.3);
+    }
+
+    .popup-btn .btn-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      background: rgba(255,112,217,0.1);
+    }
+
+    .popup-btn.primary .btn-icon {
+      background: rgba(255,255,255,0.2);
     }
 
     /* Arrow between product and model */
@@ -781,8 +948,34 @@
               <div class="product-tag">New Arrival</div>
               <div class="product-name" id="product-name">Cozy Knit Cardigan</div>
               <div class="product-price" id="product-price">$49.99</div>
-              <div class="tryon-button">Try On</div>
             </div>
+            <!-- Extension Popup Simulation - centered in browser -->
+            <div class="extension-popup-container">
+              <div class="extension-popup">
+                <div class="popup-header">
+                  <img src="/mainavatar.png" alt="StyleGenius">
+                  <span>StyleGenius</span>
+                </div>
+                <div class="popup-buttons">
+                  <button class="popup-btn primary">
+                    <span class="btn-icon">👗</span>
+                    Try On
+                  </button>
+                  <button class="popup-btn">
+                    <span class="btn-icon">💰</span>
+                    Save & Track Price
+                  </button>
+                  <button class="popup-btn">
+                    <span class="btn-icon">✨</span>
+                    Color & Body Match
+                  </button>
+                </div>
+              </div>
+              <div class="extension-icon">
+                <img src="/mainavatar.png" alt="StyleGenius">
+              </div>
+            </div>
+
             <div class="model-side">
               <div class="store-badge" id="store-badge">H&M</div>
               <div class="model-carousel">
@@ -801,6 +994,39 @@
           <div class="floating-store" data-store="3">Mango</div>
           <div class="floating-store" data-store="4">NA-KD</div>
           <div class="floating-store">Zalando</div>
+        </div>
+      </div>
+
+      <!-- Rolling stores under browser -->
+      <div class="hero-stores">
+        <p class="stores-label">Works on 1500+ stores</p>
+        <div class="hero-store-marquee">
+          <div class="hero-store-track">
+            <span class="hero-store-logo">H&M</span>
+            <span class="hero-store-logo">ZARA</span>
+            <span class="hero-store-logo">ASOS</span>
+            <span class="hero-store-logo">Zalando</span>
+            <span class="hero-store-logo">Mango</span>
+            <span class="hero-store-logo">& Other Stories</span>
+            <span class="hero-store-logo">NA-KD</span>
+            <span class="hero-store-logo">Boozt</span>
+            <span class="hero-store-logo">About You</span>
+            <span class="hero-store-logo">Massimo Dutti</span>
+            <span class="hero-store-logo">COS</span>
+            <span class="hero-store-logo">Arket</span>
+            <span class="hero-store-logo">H&M</span>
+            <span class="hero-store-logo">ZARA</span>
+            <span class="hero-store-logo">ASOS</span>
+            <span class="hero-store-logo">Zalando</span>
+            <span class="hero-store-logo">Mango</span>
+            <span class="hero-store-logo">& Other Stories</span>
+            <span class="hero-store-logo">NA-KD</span>
+            <span class="hero-store-logo">Boozt</span>
+            <span class="hero-store-logo">About You</span>
+            <span class="hero-store-logo">Massimo Dutti</span>
+            <span class="hero-store-logo">COS</span>
+            <span class="hero-store-logo">Arket</span>
+          </div>
         </div>
       </div>
 
