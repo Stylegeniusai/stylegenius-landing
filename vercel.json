@@ -4,7 +4,20 @@
   "outputDirectory": "dist",
   "devCommand": "npm run dev",
   "installCommand": "npm install",
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+  "routes": [
+    { "src": "/home.html", "dest": "/home.html" },
+    { "src": "/extension.html", "dest": "/extension.html" },
+    { "src": "/virtual-try-on.html", "dest": "/virtual-try-on.html" },
+    { "src": "/price-tracking.html", "dest": "/price-tracking.html" },
+    { "src": "/style-analysis.html", "dest": "/style-analysis.html" },
+    { "src": "/app.html", "dest": "/app.html" },
+    { "src": "/", "dest": "/home.html" },
+    { "src": "/extension", "dest": "/extension.html" },
+    { "src": "/virtual-try-on", "dest": "/virtual-try-on.html" },
+    { "src": "/price-tracking", "dest": "/price-tracking.html" },
+    { "src": "/style-analysis", "dest": "/style-analysis.html" },
+    { "src": "/app", "dest": "/app.html" },
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "dest": "/index.html" }
   ]
 }
