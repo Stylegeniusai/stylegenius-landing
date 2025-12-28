@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T3CWCMVP4T"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-T3CWCMVP4T');
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>StyleGenius App | Virtual Try-On & Style Analysis on Your Phone | Download Free</title>
@@ -65,6 +74,35 @@
       justify-content: space-between;
     }
 
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .header-nav a {
+      color: var(--gray-600);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+
+    .header-nav a:hover {
+      color: var(--gray-900);
+    }
+
+    .header-nav a.active {
+      color: var(--pink);
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      .header-nav {
+        display: none;
+      }
+    }
+
     .logo {
       display: flex;
       align-items: center;
@@ -98,6 +136,113 @@
     .header-cta:hover {
       transform: scale(1.05);
       box-shadow: 0 4px 20px rgba(255, 112, 217, 0.3);
+    }
+
+    /* Hamburger Menu */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 8px;
+      z-index: 1001;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--gray-700);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    .nav-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 999;
+    }
+
+    .nav-overlay.active {
+      display: block;
+    }
+
+    .nav-menu {
+      display: none;
+      position: fixed;
+      top: 0;
+      right: -300px;
+      width: 280px;
+      height: 100vh;
+      background: white;
+      box-shadow: -4px 0 20px rgba(0,0,0,0.1);
+      z-index: 1000;
+      padding: 80px 24px 24px;
+      transition: right 0.3s ease;
+    }
+
+    .nav-menu.active {
+      right: 0;
+    }
+
+    .nav-menu a {
+      display: block;
+      padding: 16px 0;
+      color: var(--gray-700);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      border-bottom: 1px solid var(--gray-100);
+      transition: color 0.2s;
+    }
+
+    .nav-menu a:hover {
+      color: var(--pink);
+    }
+
+    .nav-menu a.active {
+      color: var(--pink);
+    }
+
+    .nav-menu .nav-cta {
+      display: block;
+      background: var(--gradient);
+      color: white;
+      padding: 14px 24px;
+      border-radius: 50px;
+      text-align: center;
+      margin-top: 24px;
+      font-weight: 700;
+      border: none;
+    }
+
+    @media (max-width: 768px) {
+      .hamburger {
+        display: flex;
+      }
+      .nav-menu {
+        display: block;
+      }
+      .header-cta {
+        display: none;
+      }
     }
 
     /* Hero */
@@ -412,44 +557,73 @@
 
     /* Footer */
     footer {
-      padding: 40px 0;
-      background: var(--gray-50);
-      border-top: 1px solid var(--gray-200);
+      padding: 60px 0 30px;
+      background: var(--gray-900);
+      color: white;
     }
 
-    .footer-inner {
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-brand {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
+      flex-direction: column;
+      gap: 12px;
     }
 
-    .footer-logo {
+    .footer-brand .brand-logo {
       display: flex;
       align-items: center;
-      gap: 8px;
-      font-size: 0.875rem;
-      color: var(--gray-500);
+      gap: 10px;
     }
 
-    .footer-logo img {
-      width: 20px;
-      height: 20px;
+    .footer-brand .brand-logo img {
+      width: 36px;
+      height: 36px;
       border-radius: 50%;
     }
 
-    .footer-links {
-      display: flex;
-      gap: 24px;
+    .footer-brand .brand-logo span {
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
+
+    .footer-brand p {
+      color: var(--gray-400);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .footer-links h4 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: white;
     }
 
     .footer-links a {
-      color: var(--gray-500);
+      display: block;
+      color: var(--gray-400);
       text-decoration: none;
       font-size: 0.875rem;
+      margin-bottom: 10px;
+      transition: color 0.2s;
     }
 
     .footer-links a:hover {
-      color: var(--gray-700);
+      color: white;
+    }
+
+    .footer-bottom {
+      padding-top: 30px;
+      border-top: 1px solid var(--gray-700);
+      text-align: center;
+      color: var(--gray-500);
+      font-size: 0.85rem;
     }
 
     /* Responsive */
@@ -470,10 +644,12 @@
       .feature-phone {
         width: 180px;
       }
-      .footer-inner {
-        flex-direction: column;
-        gap: 20px;
-        text-align: center;
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+      }
+      .footer-brand {
+        grid-column: 1 / -1;
       }
       .download-buttons {
         flex-direction: column;
@@ -489,15 +665,49 @@
   <!-- Header -->
   <header>
     <div class="container header-inner">
-      <a href="/" class="logo">
+      <a href="/index.html" class="logo">
         <img src="/mainavatar.png" alt="StyleGenius">
         <span>StyleGenius</span>
       </a>
+      <nav class="header-nav">
+        <a href="/index.html">Home</a>
+        <a href="/virtual-try-on.html">Virtual Try-On</a>
+        <a href="/price-tracking.html">Price Tracking</a>
+        <a href="/style-analysis.html">Style Analysis</a>
+        <a href="/app.html" class="active">App</a>
+      </nav>
       <a href="#download" class="header-cta">
         Download App
       </a>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
   </header>
+
+  <!-- Mobile Navigation -->
+  <div class="nav-overlay" onclick="toggleMenu()"></div>
+  <nav class="nav-menu">
+    <a href="/index.html">Home</a>
+    <a href="/virtual-try-on.html">Virtual Try-On</a>
+    <a href="/price-tracking.html">Price Tracking</a>
+    <a href="/style-analysis.html">Style Analysis</a>
+    <a href="/app.html" class="active">App</a>
+    <a href="#download" class="nav-cta">
+      Download App
+    </a>
+  </nav>
+
+  <script>
+    function toggleMenu() {
+      document.querySelector('.hamburger').classList.toggle('active');
+      document.querySelector('.nav-menu').classList.toggle('active');
+      document.querySelector('.nav-overlay').classList.toggle('active');
+      document.body.style.overflow = document.querySelector('.nav-menu').classList.contains('active') ? 'hidden' : '';
+    }
+  </script>
 
   <!-- Hero -->
   <section class="hero">
@@ -688,15 +898,35 @@
 
   <!-- Footer -->
   <footer>
-    <div class="container footer-inner">
-      <div class="footer-logo">
-        <img src="/mainavatar.png" alt="">
-        <span>StyleGenius by GoMotion AB</span>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-logo">
+            <img src="/mainavatar.png" alt="StyleGenius">
+            <span>StyleGenius</span>
+          </div>
+          <p>Your smart shopping assistant. Try on clothes virtually, track prices, and discover your perfect style.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Product</h4>
+          <a href="/virtual-try-on.html">Virtual Try-On</a>
+          <a href="/price-tracking.html">Price Tracking</a>
+          <a href="/style-analysis.html">Style Analysis</a>
+          <a href="/app.html">App</a>
+        </div>
+        <div class="footer-links">
+          <h4>Resources</h4>
+          <a href="/blog">Blog</a>
+          <a href="/support">Support</a>
+        </div>
+        <div class="footer-links">
+          <h4>Company</h4>
+          <a href="/privacy">Privacy</a>
+          <a href="/terms">Terms</a>
+        </div>
       </div>
-      <div class="footer-links">
-        <a href="/privacy">Privacy</a>
-        <a href="/terms">Terms</a>
-        <a href="/support">Support</a>
+      <div class="footer-bottom">
+        <span>&copy; 2024 StyleGenius by GoMotion AB</span>
       </div>
     </div>
   </footer>
