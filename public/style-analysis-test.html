@@ -108,6 +108,40 @@
       background: linear-gradient(180deg, white 0%, var(--gray-50) 100%);
     }
 
+    .hero-header {
+      margin-bottom: 40px;
+    }
+
+    .hero-header h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-header h1 .gradient {
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 1.15rem;
+      color: var(--gray-600);
+      margin: 0 auto;
+    }
+
+    @media (max-width: 768px) {
+      .hero-header h1 {
+        font-size: 1.75rem;
+        white-space: nowrap;
+      }
+      .hero-subtitle {
+        font-size: 0.95rem;
+      }
+    }
+
     /* Browser Mockup */
     .hero-visual {
       display: flex;
@@ -679,6 +713,12 @@
   <!-- Hero -->
   <section class="hero">
     <div class="container">
+      <!-- Hero Header -->
+      <div class="hero-header">
+        <h1>Stop Guessing <span class="gradient">What Suits You</span></h1>
+        <p class="hero-subtitle">Discover your perfect colors and find clothes that flatter your body type.</p>
+      </div>
+
       <!-- Browser Mockup with Style Analysis -->
       <div class="hero-visual">
         <div class="browser-mockup">

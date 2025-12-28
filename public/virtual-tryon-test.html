@@ -101,9 +101,43 @@
 
     /* Hero */
     .hero {
-      padding: 80px 0;
+      padding: 60px 0 80px;
       text-align: center;
       background: linear-gradient(180deg, white 0%, var(--gray-50) 100%);
+    }
+
+    .hero-header {
+      margin-bottom: 40px;
+    }
+
+    .hero-header h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-header h1 .gradient {
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 1.15rem;
+      color: var(--gray-600);
+      margin: 0 auto;
+    }
+
+    @media (max-width: 768px) {
+      .hero-header h1 {
+        font-size: 1.75rem;
+        white-space: nowrap;
+      }
+      .hero-subtitle {
+        font-size: 0.95rem;
+      }
     }
 
     .hero-badge {
@@ -767,6 +801,12 @@
   <!-- Hero -->
   <section class="hero">
     <div class="container">
+      <!-- Hero Header -->
+      <div class="hero-header">
+        <h1>Try Before <span class="gradient">You Buy</span></h1>
+        <p class="hero-subtitle">See how any outfit looks on you before purchasing. Works on 1500+ stores.</p>
+      </div>
+
       <!-- Browser Mockup FIRST -->
       <div class="hero-visual">
         <!-- Floating stores left -->
@@ -915,7 +955,6 @@
         <a href="https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn" class="hero-cta" target="_blank">
           Add to Chrome - Free
         </a>
-        <p class="cta-note">No account needed. Works instantly.</p>
       </div>
     </div>
   </section>

@@ -107,6 +107,40 @@
       background: linear-gradient(180deg, white 0%, var(--gray-50) 100%);
     }
 
+    .hero-header {
+      margin-bottom: 40px;
+    }
+
+    .hero-header h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-header h1 .gradient {
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 1.15rem;
+      color: var(--gray-600);
+      margin: 0 auto;
+    }
+
+    @media (max-width: 768px) {
+      .hero-header h1 {
+        font-size: 1.75rem;
+        white-space: nowrap;
+      }
+      .hero-subtitle {
+        font-size: 0.95rem;
+      }
+    }
+
     /* Browser Mockup */
     .hero-visual {
       display: flex;
@@ -442,6 +476,19 @@
       z-index: 20;
     }
 
+    /* Arrow pointing to toolbar icon */
+    .price-alert-popup::before {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: 30px;
+      width: 16px;
+      height: 16px;
+      background: white;
+      transform: rotate(45deg);
+      box-shadow: -2px -2px 4px rgba(0,0,0,0.05);
+    }
+
     @media (max-width: 900px) {
       .price-alert-popup {
         display: none;
@@ -463,7 +510,7 @@
     .alert-icon {
       width: 28px;
       height: 28px;
-      background: linear-gradient(135deg, var(--green), #34d399);
+      background: var(--gradient);
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -473,8 +520,10 @@
 
     .alert-title {
       font-weight: 700;
-      font-size: 0.8rem;
-      color: var(--green);
+      font-size: 0.9rem;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .alert-product {
@@ -517,12 +566,12 @@
     .alert-new-price {
       font-size: 0.8rem;
       font-weight: 800;
-      color: var(--green);
+      color: var(--pink);
     }
 
     .alert-btn {
       width: 100%;
-      background: var(--green);
+      background: var(--gradient);
       color: white;
       border: none;
       padding: 8px;
@@ -1009,6 +1058,12 @@
   <!-- Hero -->
   <section class="hero">
     <div class="container">
+      <!-- Hero Header -->
+      <div class="hero-header">
+        <h1>The Genius Way <span class="gradient">to Shop</span></h1>
+        <p class="hero-subtitle">Virtual try-on, price tracking & style analysis on 1500+ fashion stores.</p>
+      </div>
+
       <!-- Browser Mockup with EVERYTHING -->
       <div class="hero-visual">
         <div class="browser-mockup">
@@ -1157,8 +1212,7 @@
         <a href="https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn" class="hero-cta" target="_blank">
           Add to Chrome - Free
         </a>
-        <p class="cta-note">No account needed. Works instantly on any store.</p>
-      </div>
+              </div>
     </div>
   </section>
 
