@@ -1,0 +1,1431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T3CWCMVP4T"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-T3CWCMVP4T');
+
+    // Track page view with UTM parameters for ads
+    function trackAdsPageView() {
+      const urlParams = new URLSearchParams(window.location.search);
+      gtag('event', 'ads_landing_view', {
+        event_category: 'ads',
+        utm_source: urlParams.get('utm_source') || 'direct',
+        utm_medium: urlParams.get('utm_medium') || 'none',
+        utm_campaign: urlParams.get('utm_campaign') || 'none',
+        utm_content: urlParams.get('utm_content') || 'none',
+      });
+    }
+
+    // Track CTA click with source
+    function trackExtensionCTA(location) {
+      const urlParams = new URLSearchParams(window.location.search);
+      gtag('event', 'extension_cta_click', {
+        event_category: 'conversion',
+        event_label: location,
+        utm_source: urlParams.get('utm_source') || 'direct',
+        utm_campaign: urlParams.get('utm_campaign') || 'none',
+      });
+    }
+
+    // Track on page load
+    document.addEventListener('DOMContentLoaded', trackAdsPageView);
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StyleGenius Browser Extension | Virtual Try-On & Price Tracking | Free Download</title>
+  <meta name="description" content="Add StyleGenius to Chrome for free. Try on clothes virtually, track prices, and get style analysis on 1500+ fashion stores.">
+  <meta name="keywords" content="stylegenius extension, virtual try on extension, price tracker extension, chrome extension fashion, browser extension shopping">
+  <link rel="canonical" href="https://stylegenius.app/extension">
+  <link rel="icon" type="image/png" href="/mainavatar.png">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="StyleGenius Browser Extension | Free Download">
+  <meta property="og:description" content="Try on clothes virtually, track prices, and find your perfect colors. Free Chrome extension.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/browser-desktop-new.png">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      background: #f9fafb;
+      color: #111827;
+      line-height: 1.6;
+    }
+
+    :root {
+      --pink: #FF70D9;
+      --blue: #6EC1E4;
+      --gradient: linear-gradient(45deg, #FF70D9, #6EC1E4);
+      --green: #10b981;
+      --gray-50: #f9fafb;
+      --gray-100: #f3f4f6;
+      --gray-200: #e5e7eb;
+      --gray-300: #d1d5db;
+      --gray-400: #9ca3af;
+      --gray-500: #6b7280;
+      --gray-600: #4b5563;
+      --gray-700: #374151;
+      --gray-900: #111827;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header */
+    header {
+      background: white;
+      border-bottom: 1px solid var(--gray-200);
+      padding: 16px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .header-rating {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.875rem;
+      color: var(--gray-500);
+    }
+
+    .header-rating .stars {
+      color: #eab308;
+    }
+
+    .header-cta {
+      background: var(--gradient);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .header-cta:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 20px rgba(255, 112, 217, 0.3);
+    }
+
+    @media (max-width: 600px) {
+      .header-rating {
+        display: none;
+      }
+      .header-cta {
+        padding: 8px 16px;
+        font-size: 0.8rem;
+      }
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .logo img {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+    }
+
+    .logo span {
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 60px 0 80px;
+      text-align: center;
+      background: linear-gradient(180deg, white 0%, var(--gray-50) 100%);
+    }
+
+    .hero-header {
+      margin-bottom: 40px;
+    }
+
+    .hero-header h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-header h1 .gradient {
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 1.15rem;
+      color: var(--gray-600);
+      margin: 0 auto;
+    }
+
+    @media (max-width: 768px) {
+      .hero-header h1 {
+        font-size: 2rem;
+      }
+      .hero-subtitle {
+        font-size: 0.95rem;
+      }
+    }
+
+    /* Hero Rating */
+    .hero-rating {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .rating-stars {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .rating-stars .stars {
+      color: #fbbf24;
+      font-size: 1rem;
+      letter-spacing: 2px;
+    }
+
+    .rating-stars .rating-text {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--gray-700);
+    }
+
+    .rating-users {
+      font-size: 0.85rem;
+      color: var(--gray-500);
+    }
+
+    .rating-divider {
+      width: 1px;
+      height: 16px;
+      background: var(--gray-300);
+    }
+
+    /* Browser Mockup */
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .browser-mockup {
+      position: relative;
+      width: 750px;
+      max-width: 90vw;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+      overflow: visible;
+    }
+
+    .browser-toolbar {
+      background: #f1f3f4;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .browser-dots {
+      display: flex;
+      gap: 6px;
+    }
+
+    .browser-dots span {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+
+    .browser-dots span:nth-child(1) { background: #ff5f57; }
+    .browser-dots span:nth-child(2) { background: #ffbd2e; }
+    .browser-dots span:nth-child(3) { background: #28ca42; }
+
+    .browser-url {
+      flex: 1;
+      background: white;
+      border-radius: 6px;
+      padding: 8px 12px;
+      font-size: 0.8rem;
+      color: var(--gray-600);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .browser-url .store-name {
+      font-weight: 600;
+      color: var(--gray-700);
+    }
+
+    .browser-extension-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+    }
+
+    .browser-content {
+      display: flex;
+      height: 480px;
+      background: linear-gradient(180deg, #fdf2f8 0%, #fce7f3 100%);
+      position: relative;
+    }
+
+    /* Left side - Product */
+    .product-side {
+      width: 40%;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: white;
+      border-right: 1px solid rgba(0,0,0,0.05);
+      position: relative;
+    }
+
+    .product-image-container {
+      width: 100%;
+      max-width: 180px;
+      aspect-ratio: 3/4;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      position: relative;
+    }
+
+    .product-image-container img.product-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    .product-image-container img.product-img.active {
+      opacity: 1;
+    }
+
+    .product-tag {
+      font-size: 0.7rem;
+      color: var(--gray-500);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 4px;
+    }
+
+    .product-name {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 4px;
+      text-align: center;
+    }
+
+    .product-price {
+      font-size: 1rem;
+      font-weight: 700;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Right side - Model */
+    .model-side {
+      width: 60%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .model-carousel {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+
+    .model-carousel img {
+      position: absolute;
+      bottom: 0;
+      height: 100%;
+      width: auto;
+      object-fit: contain;
+      opacity: 0;
+      transform: translateX(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .model-carousel img.active {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .store-badge {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      background: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--gray-700);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      z-index: 5;
+    }
+
+    /* Extension Popup */
+    .extension-popup-container {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 20;
+    }
+
+    .extension-popup {
+      position: absolute;
+      bottom: 60px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: white;
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+      min-width: 220px;
+    }
+
+    .extension-popup::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      margin-left: -8px;
+      width: 16px;
+      height: 16px;
+      background: white;
+      transform: rotate(45deg);
+      box-shadow: 4px 4px 8px rgba(0,0,0,0.05);
+    }
+
+    .popup-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--gray-100);
+    }
+
+    .popup-header img {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+    }
+
+    .popup-header span {
+      font-weight: 700;
+      font-size: 0.875rem;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .popup-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .popup-btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: none;
+      background: transparent;
+      color: var(--gray-700);
+      text-align: left;
+    }
+
+    .popup-btn:hover {
+      background: var(--gray-50);
+    }
+
+    .popup-btn.primary {
+      background: var(--gradient);
+      color: white;
+    }
+
+    .popup-btn.primary:hover {
+      transform: scale(1.02);
+      box-shadow: 0 4px 15px rgba(255, 112, 217, 0.3);
+    }
+
+    .popup-btn .btn-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      background: rgba(255,112,217,0.1);
+    }
+
+    .popup-btn.primary .btn-icon {
+      background: rgba(255,255,255,0.2);
+    }
+
+    .extension-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--gradient);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(255, 112, 217, 0.4);
+      cursor: pointer;
+      position: relative;
+    }
+
+    .extension-icon img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+    }
+
+    .extension-icon::after {
+      content: '';
+      position: absolute;
+      top: -4px;
+      right: -4px;
+      width: 14px;
+      height: 14px;
+      background: #10b981;
+      border-radius: 50%;
+      border: 2px solid white;
+    }
+
+    /* Price Alert Popup */
+    .price-alert-popup {
+      position: absolute;
+      top: 60px;
+      right: -140px;
+      background: white;
+      border-radius: 14px;
+      padding: 14px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+      width: 200px;
+      animation: slideIn 0.4s ease;
+      z-index: 20;
+    }
+
+    .price-alert-popup::before {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: 30px;
+      width: 16px;
+      height: 16px;
+      background: white;
+      transform: rotate(45deg);
+      box-shadow: -2px -2px 4px rgba(0,0,0,0.05);
+    }
+
+    @media (max-width: 900px) {
+      .price-alert-popup {
+        display: none;
+      }
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .alert-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .alert-icon {
+      width: 28px;
+      height: 28px;
+      background: var(--gradient);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+    }
+
+    .alert-title {
+      font-weight: 700;
+      font-size: 0.9rem;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .alert-product {
+      display: flex;
+      gap: 10px;
+      padding: 10px;
+      background: var(--gray-50);
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .alert-product img {
+      width: 40px;
+      height: 50px;
+      border-radius: 6px;
+      object-fit: cover;
+    }
+
+    .alert-product-info { flex: 1; }
+
+    .alert-store-badge {
+      display: inline-block;
+      font-size: 0.6rem;
+      font-weight: 700;
+      color: var(--gray-500);
+      background: var(--gray-100);
+      padding: 2px 6px;
+      border-radius: 4px;
+      margin-bottom: 3px;
+    }
+
+    .alert-product-name {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--gray-700);
+      margin-bottom: 2px;
+    }
+
+    .alert-prices {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .alert-old-price {
+      font-size: 0.7rem;
+      color: var(--gray-400);
+      text-decoration: line-through;
+    }
+
+    .alert-new-price {
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: var(--pink);
+    }
+
+    .alert-btn {
+      width: 100%;
+      background: var(--gradient);
+      color: white;
+      border: none;
+      padding: 8px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.75rem;
+      cursor: pointer;
+    }
+
+    /* Rolling stores */
+    .hero-stores {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .stores-label {
+      font-size: 0.875rem;
+      color: var(--gray-500);
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+
+    .hero-store-marquee {
+      width: 100%;
+      overflow: hidden;
+      mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    }
+
+    .hero-store-track {
+      display: flex;
+      gap: 40px;
+      animation: heroMarquee 25s linear infinite;
+      width: max-content;
+    }
+
+    @keyframes heroMarquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .hero-store-logo {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--gray-400);
+      white-space: nowrap;
+    }
+
+    /* Feature Links */
+    .feature-links {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 48px;
+      flex-wrap: wrap;
+    }
+
+    .feature-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: white;
+      padding: 14px 24px;
+      border-radius: 14px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      text-decoration: none;
+      color: var(--gray-700);
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.2s;
+    }
+
+    .feature-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    }
+
+    .feature-link .icon {
+      font-size: 1.25rem;
+    }
+
+    /* CTA Section */
+    .hero-cta-section {
+      margin-top: 48px;
+      text-align: center;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gradient);
+      color: white;
+      padding: 18px 36px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.125rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(255, 112, 217, 0.3);
+    }
+
+    .hero-cta:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 30px rgba(255, 112, 217, 0.4);
+    }
+
+    .cta-note {
+      margin-top: 12px;
+      font-size: 0.875rem;
+      color: var(--gray-500);
+    }
+
+    /* Feature Cards Section */
+    .features-section {
+      padding: 80px 0;
+      background: white;
+    }
+
+    .features-section h2 {
+      text-align: center;
+      font-size: 2.25rem;
+      font-weight: 800;
+      margin-bottom: 48px;
+    }
+
+    .features-section h2 .gradient {
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    @media (max-width: 768px) {
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .feature-card {
+      position: relative;
+      border-radius: 20px;
+      padding: 2px;
+      background: var(--gradient);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      transition: all 0.3s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+    }
+
+    .feature-card-inner {
+      border-radius: 18px;
+      padding: 28px 24px;
+      height: 100%;
+    }
+
+    .feature-card:nth-child(1) .feature-card-inner {
+      background: linear-gradient(to bottom, #fdf2f8, #fce7f3);
+    }
+
+    .feature-card:nth-child(2) .feature-card-inner {
+      background: linear-gradient(to bottom, #eff6ff, #dbeafe);
+    }
+
+    .feature-card:nth-child(3) .feature-card-inner {
+      background: linear-gradient(to bottom, #f5f3ff, #ede9fe);
+    }
+
+    .feature-card h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      text-align: center;
+      margin-bottom: 4px;
+    }
+
+    .feature-card .subtitle {
+      font-size: 1.25rem;
+      font-weight: 700;
+      text-align: center;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 16px;
+    }
+
+    .feature-image-wrapper {
+      position: relative;
+      max-width: 220px;
+      margin: 0 auto 20px;
+    }
+
+    .feature-image-wrapper .aspect {
+      aspect-ratio: 9/16;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    }
+
+    .feature-image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .feature-card p {
+      text-align: center;
+      color: var(--gray-600);
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    /* Footer */
+    footer {
+      padding: 60px 0 30px;
+      background: var(--gray-900);
+      color: white;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-brand .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .footer-brand .brand-logo img {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+    }
+
+    .footer-brand .brand-logo span {
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
+
+    .footer-brand p {
+      color: var(--gray-400);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .footer-links h4 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: white;
+    }
+
+    .footer-links a {
+      display: block;
+      color: var(--gray-400);
+      text-decoration: none;
+      font-size: 0.875rem;
+      margin-bottom: 10px;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      padding-top: 30px;
+      border-top: 1px solid var(--gray-700);
+      text-align: center;
+      color: var(--gray-500);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 768px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+      }
+      .footer-brand {
+        grid-column: 1 / -1;
+      }
+      .browser-mockup { width: 100%; }
+      .browser-content { flex-direction: column; height: auto; }
+      .product-side { width: 100%; border-right: none; border-bottom: 1px solid rgba(0,0,0,0.05); }
+      .model-side { width: 100%; height: 350px; }
+      .feature-links { flex-direction: column; align-items: center; }
+    }
+
+    /* Animations */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fade-up {
+      animation: fadeUp 0.6s ease-out forwards;
+      opacity: 0;
+    }
+
+    .delay-1 { animation-delay: 0.15s; }
+    .delay-2 { animation-delay: 0.3s; }
+
+    /* Testimonial */
+    .testimonial {
+      padding: 60px 0;
+      background: var(--gray-50);
+    }
+
+    .testimonial-inner {
+      max-width: 700px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .review-pic {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    }
+
+    .review-content {
+      flex: 1;
+    }
+
+    .testimonial .stars {
+      color: #eab308;
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+    }
+
+    .testimonial p {
+      font-size: 1.25rem;
+      color: var(--gray-700);
+      font-style: italic;
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
+
+    .testimonial .author {
+      font-size: 0.9rem;
+      color: var(--gray-500);
+      font-weight: 600;
+    }
+
+    @media (max-width: 600px) {
+      .testimonial-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    /* Final CTA */
+    .final-cta {
+      padding: 60px 0;
+      background: white;
+      text-align: center;
+    }
+
+    .trust-signals {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.875rem;
+      color: var(--gray-500);
+    }
+
+    .trust-item .check {
+      color: #22c55e;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container header-inner">
+      <div class="logo">
+        <img src="/mainavatar.png" alt="StyleGenius">
+        <span>StyleGenius</span>
+      </div>
+      <div class="header-right">
+        <div class="header-rating">
+          <span class="stars">★★★★★</span>
+          <span>4.9 on Chrome Store</span>
+        </div>
+        <a href="https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn" class="header-cta" target="_blank" onclick="trackExtensionCTA('header')">
+          Add to Chrome - Free
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <!-- Hero Header -->
+      <div class="hero-header">
+        <h1>The Genius Way <span class="gradient">to Shop</span></h1>
+        <p class="hero-subtitle">Virtual try-on, price tracking & style analysis on 1500+ fashion stores.</p>
+        <div class="hero-rating">
+          <div class="rating-stars">
+            <span class="stars">⭐⭐⭐⭐⭐</span>
+            <span class="rating-text">4.9/5</span>
+          </div>
+          <div class="rating-divider"></div>
+          <div class="rating-users">Chrome Web Store</div>
+        </div>
+      </div>
+
+      <!-- Browser Mockup with EVERYTHING -->
+      <div class="hero-visual">
+        <div class="browser-mockup">
+          <div class="browser-toolbar">
+            <div class="browser-dots">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="browser-url">
+              <span class="store-name" id="url-store">hm.com</span>
+              <span>/product/cardigan</span>
+            </div>
+            <img src="/mainavatar.png" alt="StyleGenius" class="browser-extension-icon">
+          </div>
+          <div class="browser-content">
+            <!-- Left: Product -->
+            <div class="product-side">
+              <div class="store-badge" id="store-badge">H&M</div>
+              <div class="product-image-container">
+                <img src="/vto-product1.png" alt="Product" class="product-img active" id="product-img-1">
+                <img src="/vto-product2.png" alt="Product" class="product-img" id="product-img-2">
+                <img src="/vto-product3.png" alt="Product" class="product-img" id="product-img-3">
+                <img src="/vto-product4.png" alt="Product" class="product-img" id="product-img-4">
+                <img src="/vto-product5.png" alt="Product" class="product-img" id="product-img-5">
+              </div>
+              <div class="product-tag">New Arrival</div>
+              <div class="product-name" id="product-name">Cozy Knit Cardigan</div>
+              <div class="product-price" id="product-price">$49.99</div>
+            </div>
+
+            <!-- Extension Popup (center bottom) -->
+            <div class="extension-popup-container">
+              <div class="extension-popup">
+                <div class="popup-header">
+                  <img src="/mainavatar.png" alt="StyleGenius">
+                  <span>StyleGenius</span>
+                </div>
+                <div class="popup-buttons">
+                  <button class="popup-btn primary">
+                    <span class="btn-icon">👗</span>
+                    Try On
+                  </button>
+                  <button class="popup-btn">
+                    <span class="btn-icon">💰</span>
+                    Save & Track Price
+                  </button>
+                  <button class="popup-btn">
+                    <span class="btn-icon">✨</span>
+                    Color & Body Match
+                  </button>
+                </div>
+              </div>
+              <div class="extension-icon">
+                <img src="/mainavatar.png" alt="StyleGenius">
+              </div>
+            </div>
+
+            <!-- Right: Model -->
+            <div class="model-side">
+              <div class="model-carousel">
+                <img src="/vto-model1.png" alt="Virtual try-on" class="active" data-store="H&M" data-url="hm.com" data-product="Cozy Knit Cardigan" data-price="$49.99">
+                <img src="/vto-model2.png" alt="Virtual try-on" data-store="ZARA" data-url="zara.com" data-product="Floral Print Dress" data-price="$89.90">
+                <img src="/vto-model3.png" alt="Virtual try-on" data-store="ASOS" data-url="asos.com" data-product="Green Knitted Dress" data-price="$65.00">
+                <img src="/vto-model4.png" alt="Virtual try-on" data-store="Mango" data-url="mango.com" data-product="Denim Shirt Dress" data-price="$79.99">
+                <img src="/vto-model5.png" alt="Virtual try-on" data-store="NA-KD" data-url="na-kd.com" data-product="Yellow Summer Dress" data-price="$59.00">
+              </div>
+            </div>
+          </div>
+          <!-- Price Alert (top right) -->
+          <div class="price-alert-popup">
+            <div class="alert-header">
+              <div class="alert-icon">🔔</div>
+              <div class="alert-title">Price Drop!</div>
+            </div>
+            <div class="alert-product">
+              <img src="/vto-product2.png" alt="Dress">
+              <div class="alert-product-info">
+                <div class="alert-store-badge">ZARA</div>
+                <div class="alert-product-name">Floral Dress</div>
+                <div class="alert-prices">
+                  <span class="alert-old-price">$89.90</span>
+                  <span class="alert-new-price">$62.93</span>
+                </div>
+              </div>
+            </div>
+            <button class="alert-btn">Save $26.97 →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rolling stores -->
+      <div class="hero-stores">
+        <p class="stores-label">Works on 1500+ stores</p>
+        <div class="hero-store-marquee">
+          <div class="hero-store-track">
+            <span class="hero-store-logo">H&M</span>
+            <span class="hero-store-logo">ZARA</span>
+            <span class="hero-store-logo">ASOS</span>
+            <span class="hero-store-logo">Zalando</span>
+            <span class="hero-store-logo">Mango</span>
+            <span class="hero-store-logo">& Other Stories</span>
+            <span class="hero-store-logo">NA-KD</span>
+            <span class="hero-store-logo">Boozt</span>
+            <span class="hero-store-logo">About You</span>
+            <span class="hero-store-logo">Massimo Dutti</span>
+            <span class="hero-store-logo">COS</span>
+            <span class="hero-store-logo">Arket</span>
+            <span class="hero-store-logo">H&M</span>
+            <span class="hero-store-logo">ZARA</span>
+            <span class="hero-store-logo">ASOS</span>
+            <span class="hero-store-logo">Zalando</span>
+            <span class="hero-store-logo">Mango</span>
+            <span class="hero-store-logo">& Other Stories</span>
+            <span class="hero-store-logo">NA-KD</span>
+            <span class="hero-store-logo">Boozt</span>
+            <span class="hero-store-logo">About You</span>
+            <span class="hero-store-logo">Massimo Dutti</span>
+            <span class="hero-store-logo">COS</span>
+            <span class="hero-store-logo">Arket</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature Links -->
+      <div class="feature-links">
+        <a href="/virtual-try-on.html" class="feature-link">
+          <span class="icon">👗</span>
+          Virtual Try-On
+        </a>
+        <a href="/price-tracking.html" class="feature-link">
+          <span class="icon">💰</span>
+          Price Tracking
+        </a>
+        <a href="/style-analysis.html" class="feature-link">
+          <span class="icon">✨</span>
+          Color & Body Match
+        </a>
+      </div>
+
+      <!-- CTA -->
+      <div class="hero-cta-section">
+        <a href="https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn" class="hero-cta" target="_blank" onclick="trackExtensionCTA('hero')">
+          Add to Chrome - Free
+        </a>
+        <p class="cta-note">Install once. Works everywhere you shop.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature Cards -->
+  <section class="features-section">
+    <div class="container">
+      <h2>Everything You Need <span class="gradient">To Shop Smarter</span></h2>
+      <div class="features-grid">
+        <div class="feature-card animate-fade-up">
+          <div class="feature-card-inner">
+            <h3>Virtual Try-On</h3>
+            <p class="subtitle">In Any Store</p>
+            <div class="feature-image-wrapper">
+              <div class="aspect">
+                <img src="/onboarding-try-on.png" alt="Virtual Try-On">
+              </div>
+            </div>
+            <p>See exactly how clothes look on you before buying. No more guessing, no more returns.</p>
+          </div>
+        </div>
+
+        <div class="feature-card animate-fade-up delay-1">
+          <div class="feature-card-inner">
+            <h3>Save & Track Prices</h3>
+            <p class="subtitle">From Any Store</p>
+            <div class="feature-image-wrapper">
+              <div class="aspect">
+                <img src="/onboarding-price.png" alt="Price Tracking">
+              </div>
+            </div>
+            <p>Save items from anywhere. Track prices automatically. Get notified when anything drops.</p>
+          </div>
+        </div>
+
+        <div class="feature-card animate-fade-up delay-2">
+          <div class="feature-card-inner">
+            <h3>Instant Style Analysis</h3>
+            <p class="subtitle">On Any Item</p>
+            <div class="feature-image-wrapper">
+              <div class="aspect">
+                <img src="/onboarding-style.png" alt="Style Analysis">
+              </div>
+            </div>
+            <p>Know if it suits your skin tone and body type before you buy. No more regret purchases.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial -->
+  <section class="testimonial">
+    <div class="container">
+      <div class="testimonial-inner">
+        <img src="/review-pic.jpg" alt="Jessika" class="review-pic">
+        <div class="review-content">
+          <div class="stars">★★★★★</div>
+          <p>"Tried shopping without StyleGenius. It just wasn't the same."</p>
+          <span class="author">— Jessika</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="final-cta">
+    <div class="container">
+      <a href="https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn" class="hero-cta" target="_blank" onclick="trackExtensionCTA('bottom')">
+        Add to Chrome - Free
+      </a>
+      <div class="trust-signals">
+        <div class="trust-item"><span class="check">✓</span> Free to start</div>
+        <div class="trust-item"><span class="check">✓</span> Works on 1000+ stores</div>
+        <div class="trust-item"><span class="check">✓</span> 4.9★ rated</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-logo">
+            <img src="/mainavatar.png" alt="StyleGenius">
+            <span>StyleGenius</span>
+          </div>
+          <p>Your smart shopping assistant. Try on clothes virtually, track prices, and discover your perfect style.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Product</h4>
+          <a href="/virtual-try-on.html">Virtual Try-On</a>
+          <a href="/price-tracking.html">Price Tracking</a>
+          <a href="/style-analysis.html">Style Analysis</a>
+          <a href="/app.html">App</a>
+        </div>
+        <div class="footer-links">
+          <h4>Resources</h4>
+          <a href="/blog">Blog</a>
+          <a href="/support">Support</a>
+        </div>
+        <div class="footer-links">
+          <h4>Company</h4>
+          <a href="/privacy">Privacy</a>
+          <a href="/terms">Terms</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2024 StyleGenius by GoMotion AB</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Carousel Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const modelImages = document.querySelectorAll('.model-carousel img');
+      const productImages = document.querySelectorAll('.product-img');
+      const storeBadge = document.getElementById('store-badge');
+      const urlStore = document.getElementById('url-store');
+      const productName = document.getElementById('product-name');
+      const productPrice = document.getElementById('product-price');
+      let currentIndex = 0;
+
+      function switchSlide() {
+        // Remove active from all
+        modelImages.forEach(img => img.classList.remove('active'));
+        productImages.forEach(img => img.classList.remove('active'));
+
+        // Move to next
+        currentIndex = (currentIndex + 1) % modelImages.length;
+
+        // Add active to current
+        modelImages[currentIndex].classList.add('active');
+        productImages[currentIndex].classList.add('active');
+
+        // Update text from data attributes
+        const activeModel = modelImages[currentIndex];
+        storeBadge.textContent = activeModel.dataset.store;
+        urlStore.textContent = activeModel.dataset.url;
+        productName.textContent = activeModel.dataset.product;
+        productPrice.textContent = activeModel.dataset.price;
+      }
+
+      // Auto-advance every 3 seconds
+      setInterval(switchSlide, 3000);
+    });
+  </script>
+</body>
+</html>
