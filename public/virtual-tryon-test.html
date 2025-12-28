@@ -661,50 +661,6 @@
       z-index: 5;
     }
 
-    /* Floating store indicators */
-    .floating-stores {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .floating-stores.left {
-      left: -120px;
-    }
-
-    .floating-stores.right {
-      right: -120px;
-    }
-
-    .floating-store {
-      background: white;
-      padding: 10px 16px;
-      border-radius: 10px;
-      font-weight: 600;
-      font-size: 0.875rem;
-      color: var(--gray-600);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-      opacity: 0.6;
-      transition: all 0.3s ease;
-    }
-
-    .floating-store.highlight {
-      opacity: 1;
-      transform: scale(1.05);
-      box-shadow: 0 4px 20px rgba(255, 112, 217, 0.25);
-      border: 2px solid var(--pink);
-      color: var(--pink);
-    }
-
-    @media (max-width: 900px) {
-      .floating-stores {
-        display: none;
-      }
-    }
-
     @media (max-width: 768px) {
       .browser-mockup {
         width: 100%;
@@ -782,6 +738,205 @@
         text-align: center;
       }
     }
+
+    /* Info Section */
+    .info-section {
+      padding: 80px 0;
+      background: white;
+    }
+
+    .info-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .info-header h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .info-header h2 .gradient {
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .info-header p {
+      font-size: 1.1rem;
+      color: var(--gray-600);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-bottom: 60px;
+    }
+
+    .benefit-card {
+      background: var(--gray-50);
+      border-radius: 20px;
+      padding: 32px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+    }
+
+    .benefit-icon {
+      width: 64px;
+      height: 64px;
+      background: var(--gradient);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin: 0 auto 20px;
+    }
+
+    .benefit-card h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--gray-900);
+    }
+
+    .benefit-card p {
+      font-size: 0.95rem;
+      color: var(--gray-600);
+      line-height: 1.6;
+    }
+
+    /* Stats Row */
+    .stats-row {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      padding: 40px 0;
+      border-top: 1px solid var(--gray-200);
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 800;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 8px;
+    }
+
+    .stat-label {
+      font-size: 0.95rem;
+      color: var(--gray-600);
+      font-weight: 500;
+    }
+
+    /* How it works detailed */
+    .how-section {
+      padding: 80px 0;
+      background: var(--gray-50);
+    }
+
+    .how-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .how-header h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .how-header h2 .gradient {
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .how-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+
+    .how-step {
+      text-align: center;
+    }
+
+    .how-step-number {
+      width: 48px;
+      height: 48px;
+      background: var(--gradient);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: white;
+      margin: 0 auto 20px;
+    }
+
+    .how-step-image {
+      width: 100%;
+      max-width: 200px;
+      height: 180px;
+      background: white;
+      border-radius: 16px;
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    .how-step h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--gray-900);
+    }
+
+    .how-step p {
+      font-size: 0.9rem;
+      color: var(--gray-600);
+    }
+
+    @media (max-width: 768px) {
+      .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .stats-row {
+        flex-direction: column;
+        gap: 32px;
+      }
+
+      .how-steps {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .info-header h2,
+      .how-header h2 {
+        font-size: 1.75rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -807,16 +962,8 @@
         <p class="hero-subtitle">See how any outfit looks on you before purchasing. Works on 1500+ stores.</p>
       </div>
 
-      <!-- Browser Mockup FIRST -->
+      <!-- Browser Mockup -->
       <div class="hero-visual">
-        <!-- Floating stores left -->
-        <div class="floating-stores left">
-          <div class="floating-store" data-store="0">H&M</div>
-          <div class="floating-store" data-store="1">ZARA</div>
-          <div class="floating-store" data-store="2">ASOS</div>
-        </div>
-
-        <!-- Browser mockup -->
         <div class="browser-mockup">
           <div class="browser-toolbar">
             <div class="browser-dots">
@@ -832,6 +979,7 @@
           </div>
           <div class="browser-content">
             <div class="product-side">
+              <div class="store-badge" id="store-badge">H&M</div>
               <div class="product-image-container">
                 <!-- Product images carousel -->
                 <img src="/vto-product1.png" alt="Product" class="product-img active" id="product-img-1">
@@ -873,7 +1021,6 @@
             </div>
 
             <div class="model-side">
-              <div class="store-badge" id="store-badge">H&M</div>
               <div class="model-carousel">
                 <img src="/vto-model1.png" alt="Virtual try-on cardigan" class="active" data-store="H&M" data-url="hm.com" data-product="Cozy Knit Cardigan" data-price="$49.99">
                 <img src="/vto-model2.png" alt="Virtual try-on flower dress" data-store="ZARA" data-url="zara.com" data-product="Floral Print Dress" data-price="$89.90">
@@ -883,13 +1030,6 @@
               </div>
             </div>
           </div>
-        </div>
-
-        <!-- Floating stores right -->
-        <div class="floating-stores right">
-          <div class="floating-store" data-store="3">Mango</div>
-          <div class="floating-store" data-store="4">NA-KD</div>
-          <div class="floating-store">Zalando</div>
         </div>
       </div>
 
@@ -959,6 +1099,92 @@
     </div>
   </section>
 
+  <!-- Info Section: Benefits -->
+  <section class="info-section">
+    <div class="container">
+      <div class="info-header">
+        <h2>Why <span class="gradient">Virtual Try-On</span>?</h2>
+        <p>Online shopping has one big problem - you can't try before you buy. Until now.</p>
+      </div>
+
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">📦</div>
+          <h3>Fewer Returns</h3>
+          <p>See exactly how clothes look on your body before ordering. No more surprises when the package arrives.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">💸</div>
+          <h3>Save Money</h3>
+          <p>Stop wasting money on clothes that don't fit or look wrong. Shop smarter, not harder.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">⏱️</div>
+          <h3>Save Time</h3>
+          <p>No more ordering multiple sizes or waiting for returns. Find your perfect fit instantly.</p>
+        </div>
+      </div>
+
+      <div class="stats-row">
+        <div class="stat-item">
+          <div class="stat-number">70%</div>
+          <div class="stat-label">Fewer returns</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">1500+</div>
+          <div class="stat-label">Supported stores</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Free to use</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How Section -->
+  <section class="how-section">
+    <div class="container">
+      <div class="how-header">
+        <h2>How <span class="gradient">It Works</span></h2>
+      </div>
+
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-number">1</div>
+          <div class="how-step-image">📸</div>
+          <h3>Upload Your Photo</h3>
+          <p>Take a full-body photo or use one from your gallery. Your photos stay private and secure.</p>
+        </div>
+        <div class="how-step">
+          <div class="how-step-number">2</div>
+          <div class="how-step-image">🛒</div>
+          <h3>Browse Any Store</h3>
+          <p>Shop on any of our 1500+ supported stores. Click the StyleGenius icon when you find something you like.</p>
+        </div>
+        <div class="how-step">
+          <div class="how-step-number">3</div>
+          <div class="how-step-image">✨</div>
+          <h3>See Yourself Wearing It</h3>
+          <p>Our AI generates a realistic preview of you wearing the item. Decide with confidence.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="info-section" style="padding-bottom: 100px;">
+    <div class="container" style="text-align: center;">
+      <div class="info-header">
+        <h2>Ready to <span class="gradient">Try It On</span>?</h2>
+        <p>Join thousands of smart shoppers who never buy the wrong size again.</p>
+      </div>
+      <a href="https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn" class="hero-cta" target="_blank">
+        Add to Chrome - Free
+      </a>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer>
     <div class="container footer-inner">
@@ -983,7 +1209,6 @@
       const urlStore = document.getElementById('url-store');
       const productName = document.getElementById('product-name');
       const productPrice = document.getElementById('product-price');
-      const floatingStores = document.querySelectorAll('.floating-store[data-store]');
       let currentIndex = 0;
 
       function showNext() {
@@ -992,9 +1217,6 @@
 
         // Remove active from current product
         productImages[currentIndex].classList.remove('active');
-
-        // Update floating store highlight
-        floatingStores.forEach(store => store.classList.remove('highlight'));
 
         // Move to next
         currentIndex = (currentIndex + 1) % modelImages.length;
@@ -1023,22 +1245,10 @@
 
         // Update price
         if (productPrice) productPrice.textContent = price;
-
-        // Highlight matching floating store
-        floatingStores.forEach(store => {
-          if (store.getAttribute('data-store') == currentIndex) {
-            store.classList.add('highlight');
-          }
-        });
       }
 
       // Auto-rotate every 2.5 seconds
       setInterval(showNext, 2500);
-
-      // Highlight first floating store
-      if (floatingStores[0]) {
-        floatingStores[0].classList.add('highlight');
-      }
     });
   </script>
 

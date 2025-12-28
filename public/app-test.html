@@ -107,96 +107,134 @@
       background: linear-gradient(180deg, white 0%, var(--gray-50) 100%);
     }
 
-    .hero-badge {
-      display: inline-block;
-      background: linear-gradient(45deg, rgba(255,112,217,0.1), rgba(110,193,228,0.1));
-      border: 1px solid rgba(255,112,217,0.2);
-      padding: 8px 16px;
-      border-radius: 50px;
-      font-size: 0.875rem;
-      font-weight: 600;
-      color: var(--pink);
-      margin-bottom: 24px;
+    .hero-header {
+      margin-bottom: 48px;
     }
 
-    .hero h1 {
-      font-size: 3rem;
+    .hero-header h1 {
+      font-size: 3.5rem;
       font-weight: 800;
       line-height: 1.1;
-      margin-bottom: 24px;
+      margin-bottom: 16px;
       letter-spacing: -0.02em;
     }
 
-    .hero h1 .gradient {
+    .hero-header h1 .gradient {
       background: var(--gradient);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
     .hero-subtitle {
-      font-size: 1.25rem;
+      font-size: 1.15rem;
       color: var(--gray-600);
-      max-width: 600px;
-      margin: 0 auto 48px;
+      margin: 0 auto;
     }
 
-    /* Feature Cards Grid */
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+    /* Phone Mockup */
+    .hero-visual {
+      display: flex;
+      justify-content: center;
       margin-bottom: 48px;
     }
 
-    .feature-card {
+    .phone-mockup {
+      position: relative;
+      width: 280px;
+      background: #1a1a1a;
+      border-radius: 44px;
+      padding: 12px;
+      box-shadow: 0 40px 80px rgba(0,0,0,0.3);
+    }
+
+    .phone-notch {
+      position: absolute;
+      top: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 28px;
+      background: #1a1a1a;
+      border-radius: 20px;
+      z-index: 10;
+    }
+
+    .phone-screen {
       background: white;
-      border-radius: 24px;
+      border-radius: 36px;
       overflow: hidden;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-      transition: transform 0.3s, box-shadow 0.3s;
+      aspect-ratio: 9/19;
+      position: relative;
     }
 
-    .feature-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+    .phone-carousel {
+      display: flex;
+      height: 100%;
+      transition: transform 0.5s ease;
     }
 
-    .feature-image {
-      width: 100%;
-      aspect-ratio: 9/16;
-      overflow: hidden;
-    }
-
-    .feature-image img {
+    .phone-carousel img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      flex-shrink: 0;
     }
 
-    .feature-info {
-      padding: 20px;
-      text-align: center;
+    /* Carousel dots */
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 20px;
     }
 
-    .feature-info h3 {
-      font-size: 1.1rem;
-      font-weight: 700;
-      margin-bottom: 6px;
-      color: var(--gray-900);
+    .carousel-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gray-300);
+      cursor: pointer;
+      transition: all 0.3s;
     }
 
-    .feature-info h3 .gradient {
+    .carousel-dot.active {
       background: var(--gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      width: 24px;
+      border-radius: 4px;
     }
 
-    .feature-info p {
-      font-size: 0.9rem;
+    /* Feature labels */
+    .feature-labels {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 24px;
+      flex-wrap: wrap;
+    }
+
+    .feature-label {
+      padding: 8px 16px;
+      background: white;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
       color: var(--gray-500);
+      cursor: pointer;
+      transition: all 0.3s;
+      border: 2px solid transparent;
+    }
+
+    .feature-label.active {
+      background: linear-gradient(45deg, rgba(255,112,217,0.1), rgba(110,193,228,0.1));
+      color: var(--pink);
+      border-color: rgba(255,112,217,0.3);
     }
 
     /* Download Buttons */
+    .download-section {
+      margin-top: 48px;
+    }
+
     .download-buttons {
       display: flex;
       justify-content: center;
@@ -243,10 +281,133 @@
       font-size: 1.1rem;
     }
 
-    .download-note {
-      margin-top: 16px;
-      font-size: 0.875rem;
-      color: var(--gray-500);
+    /* Feature Sections */
+    .feature-section {
+      padding: 80px 0;
+      background: white;
+    }
+
+    .feature-section.alt {
+      background: var(--gray-50);
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .feature-grid.reverse {
+      direction: rtl;
+    }
+
+    .feature-grid.reverse > * {
+      direction: ltr;
+    }
+
+    .feature-content h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--gray-900);
+      margin-bottom: 8px;
+    }
+
+    .feature-content h2 .gradient {
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .feature-tag {
+      display: inline-block;
+      background: linear-gradient(45deg, rgba(255,112,217,0.1), rgba(110,193,228,0.1));
+      border: 1px solid rgba(255,112,217,0.2);
+      padding: 6px 14px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--pink);
+      margin-bottom: 16px;
+    }
+
+    .feature-text {
+      font-size: 1rem;
+      color: var(--gray-600);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .feature-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 12px;
+      color: var(--gray-700);
+      font-size: 0.95rem;
+    }
+
+    .feature-list li::before {
+      content: "✓";
+      color: var(--pink);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .feature-visual {
+      display: flex;
+      justify-content: center;
+    }
+
+    .feature-phone {
+      width: 220px;
+      background: #1a1a1a;
+      border-radius: 36px;
+      padding: 10px;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.25);
+    }
+
+    .feature-phone-screen {
+      background: white;
+      border-radius: 28px;
+      overflow: hidden;
+      aspect-ratio: 9/19;
+    }
+
+    .feature-phone-screen img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Final CTA */
+    .final-cta {
+      padding: 80px 0;
+      background: linear-gradient(180deg, var(--gray-50) 0%, white 100%);
+      text-align: center;
+    }
+
+    .final-cta h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .final-cta h2 .gradient {
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .final-cta p {
+      font-size: 1.1rem;
+      color: var(--gray-600);
+      margin-bottom: 32px;
     }
 
     /* Footer */
@@ -291,27 +452,35 @@
       color: var(--gray-700);
     }
 
+    /* Responsive */
     @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2.25rem;
+      .hero-header h1 {
+        font-size: 2rem;
       }
-
-      .features-grid {
+      .feature-grid {
         grid-template-columns: 1fr;
-        max-width: 320px;
-        margin-left: auto;
-        margin-right: auto;
+        gap: 40px;
       }
-
+      .feature-grid.reverse {
+        direction: ltr;
+      }
+      .feature-visual {
+        order: -1;
+      }
+      .feature-phone {
+        width: 180px;
+      }
       .footer-inner {
         flex-direction: column;
         gap: 20px;
         text-align: center;
       }
-
       .download-buttons {
         flex-direction: column;
         align-items: center;
+      }
+      .final-cta h2 {
+        font-size: 1.75rem;
       }
     }
   </style>
@@ -333,50 +502,172 @@
   <!-- Hero -->
   <section class="hero">
     <div class="container">
-      <span class="hero-badge">Mobile App</span>
-      <h1>
-        Your Personal Stylist<br>
-        <span class="gradient">In Your Pocket</span>
-      </h1>
-      <p class="hero-subtitle">
-        Virtual try-on, outfit builder, and color analysis - all the styling tools you need, anywhere you go.
-      </p>
+      <div class="hero-header">
+        <h1>Your Stylist <span class="gradient">In Your Pocket</span></h1>
+        <p class="hero-subtitle">Build outfits, try on clothes & discover your perfect colors - anywhere, anytime.</p>
+      </div>
 
-      <!-- Feature Cards -->
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-image">
-            <img src="/app-virtualtryon.png" alt="Virtual Try-On">
-          </div>
-          <div class="feature-info">
-            <h3><span class="gradient">Virtual Try-On</span></h3>
-            <p>See how outfits look on you</p>
-          </div>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-image">
-            <img src="/app-outfitbuilder.png" alt="Outfit Builder">
-          </div>
-          <div class="feature-info">
-            <h3><span class="gradient">Outfit Builder</span></h3>
-            <p>Create perfect combinations</p>
-          </div>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-image">
-            <img src="/app-coloranalysis.png" alt="Color Analysis">
-          </div>
-          <div class="feature-info">
-            <h3><span class="gradient">Color Analysis</span></h3>
-            <p>Find your perfect palette</p>
+      <!-- Phone Mockup with Carousel -->
+      <div class="hero-visual">
+        <div class="phone-mockup">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="phone-carousel" id="phoneCarousel">
+              <img src="/app-outfitbuilder.png" alt="Outfit Builder">
+              <img src="/app-virtualtryon.png" alt="Virtual Try-On">
+              <img src="/app-coloranalysis.png" alt="Color Analysis">
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- Download Buttons -->
-      <div class="download-buttons" id="download">
+      <!-- Carousel Controls -->
+      <div class="carousel-dots">
+        <div class="carousel-dot active" data-index="0"></div>
+        <div class="carousel-dot" data-index="1"></div>
+        <div class="carousel-dot" data-index="2"></div>
+      </div>
+
+      <!-- Feature Labels -->
+      <div class="feature-labels">
+        <div class="feature-label active" data-index="0">Outfit Builder</div>
+        <div class="feature-label" data-index="1">Virtual Try-On</div>
+        <div class="feature-label" data-index="2">Color Analysis</div>
+      </div>
+
+      <!-- Download -->
+      <div class="download-section" id="download">
+        <div class="download-buttons">
+          <a href="https://apps.apple.com/app/id6747178892" class="download-btn">
+            <span class="store-icon"></span>
+            <span class="store-text">
+              <small>Download on the</small>
+              <span>App Store</span>
+            </span>
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=app.stylegenius&pcampaignid=web_share" class="download-btn">
+            <span class="store-icon">▶</span>
+            <span class="store-text">
+              <small>Get it on</small>
+              <span>Google Play</span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Outfit Builder Section -->
+  <section class="feature-section">
+    <div class="container">
+      <div class="feature-grid">
+        <div class="feature-content">
+          <span class="feature-tag">Outfit Builder</span>
+          <h2>Build Outfits <span class="gradient">From Your Bed</span></h2>
+          <p class="feature-text">Plan tomorrow's outfit tonight. Mix and match pieces from your wardrobe, saved items, and store favorites - all without getting up.</p>
+          <ul class="feature-list">
+            <li>Combine items from different stores</li>
+            <li>Save outfit ideas for later</li>
+            <li>Get AI suggestions for combinations</li>
+            <li>Share looks with friends</li>
+          </ul>
+        </div>
+        <div class="feature-visual">
+          <div class="feature-phone">
+            <div class="feature-phone-screen">
+              <img src="/app-outfitbuilder.png" alt="Outfit Builder">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Virtual Try-On Section -->
+  <section class="feature-section alt">
+    <div class="container">
+      <div class="feature-grid reverse">
+        <div class="feature-content">
+          <span class="feature-tag">Virtual Try-On</span>
+          <h2>Try On Clothes <span class="gradient">Anywhere</span></h2>
+          <p class="feature-text">See how clothes look on you before buying - whether you're on the couch, on the bus, or in line for coffee.</p>
+          <ul class="feature-list">
+            <li>Works with photos from any angle</li>
+            <li>Try items from 1500+ stores</li>
+            <li>Realistic AI-powered results</li>
+            <li>Save and compare try-ons</li>
+          </ul>
+        </div>
+        <div class="feature-visual">
+          <div class="feature-phone">
+            <div class="feature-phone-screen">
+              <img src="/app-virtualtryon.png" alt="Virtual Try-On">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Color Analysis Section -->
+  <section class="feature-section">
+    <div class="container">
+      <div class="feature-grid">
+        <div class="feature-content">
+          <span class="feature-tag">Color Analysis</span>
+          <h2>Find Your <span class="gradient">Perfect Colors</span></h2>
+          <p class="feature-text">Discover which colors make you glow. Our AI analyzes your skin tone and tells you exactly what shades to look for.</p>
+          <ul class="feature-list">
+            <li>Personal color season analysis</li>
+            <li>Color match ratings on products</li>
+            <li>Curated color palette for you</li>
+            <li>Stop buying the wrong colors</li>
+          </ul>
+        </div>
+        <div class="feature-visual">
+          <div class="feature-phone">
+            <div class="feature-phone-screen">
+              <img src="/app-coloranalysis.png" alt="Color Analysis">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Style Profile Section -->
+  <section class="feature-section alt">
+    <div class="container">
+      <div class="feature-grid reverse">
+        <div class="feature-content">
+          <span class="feature-tag">Style Profile</span>
+          <h2>Your Personal <span class="gradient">Style DNA</span></h2>
+          <p class="feature-text">Build your style profile once, get personalized recommendations forever. The more you use it, the smarter it gets.</p>
+          <ul class="feature-list">
+            <li>Body type analysis</li>
+            <li>Style preference learning</li>
+            <li>Personalized recommendations</li>
+            <li>Syncs with browser extension</li>
+          </ul>
+        </div>
+        <div class="feature-visual">
+          <div class="feature-phone">
+            <div class="feature-phone-screen">
+              <!-- Placeholder - use actual image when available -->
+              <img src="/onboarding-style.png" alt="Style Profile">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="final-cta">
+    <div class="container">
+      <h2>Get StyleGenius <span class="gradient">Free</span></h2>
+      <p>Available on iOS and Android. No subscription required.</p>
+      <div class="download-buttons">
         <a href="https://apps.apple.com/app/id6747178892" class="download-btn">
           <span class="store-icon"></span>
           <span class="store-text">
@@ -392,7 +683,6 @@
           </span>
         </a>
       </div>
-      <p class="download-note">Free download - Available on iOS & Android</p>
     </div>
   </section>
 
@@ -411,7 +701,49 @@
     </div>
   </footer>
 
-  <!-- Structured Data for SEO -->
+  <!-- Carousel Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const carousel = document.getElementById('phoneCarousel');
+      const dots = document.querySelectorAll('.carousel-dot');
+      const labels = document.querySelectorAll('.feature-label');
+      let currentIndex = 0;
+      const totalSlides = 3;
+
+      function goToSlide(index) {
+        currentIndex = index;
+        carousel.style.transform = `translateX(-${index * 100}%)`;
+
+        dots.forEach((dot, i) => {
+          dot.classList.toggle('active', i === index);
+        });
+
+        labels.forEach((label, i) => {
+          label.classList.toggle('active', i === index);
+        });
+      }
+
+      // Auto-advance
+      setInterval(() => {
+        goToSlide((currentIndex + 1) % totalSlides);
+      }, 3000);
+
+      // Click handlers
+      dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+          goToSlide(parseInt(dot.dataset.index));
+        });
+      });
+
+      labels.forEach(label => {
+        label.addEventListener('click', () => {
+          goToSlide(parseInt(label.dataset.index));
+        });
+      });
+    });
+  </script>
+
+  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
