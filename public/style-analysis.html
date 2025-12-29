@@ -107,20 +107,28 @@
     .logo {
       display: flex;
       align-items: center;
-      gap: 10px;
       text-decoration: none;
-      color: inherit;
+      color: #561269;
     }
 
-    .logo img {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-    }
-
-    .logo span {
+    .logo-text {
       font-weight: 700;
       font-size: 1.25rem;
+    }
+
+    .logo-i {
+      position: relative;
+      display: inline-block;
+    }
+
+    .logo-icon {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      position: absolute;
+      top: 2px;
+      left: 50%;
+      transform: translateX(-50%);
     }
 
     .header-cta {
@@ -251,6 +259,57 @@
       padding: 60px 0 80px;
       text-align: center;
       background: linear-gradient(180deg, white 0%, var(--gray-50) 100%);
+      position: relative;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('/marble-texture.png') center/cover;
+      opacity: 0.3;
+      pointer-events: none;
+    }
+
+    .hero > .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Gradient blobs */
+    .hero-blob {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.35;
+    }
+
+    .hero-blob-1 {
+      width: 95px;
+      height: 95px;
+      background: linear-gradient(180deg, #A8D4F0 0%, #F0B4E4 100%);
+      top: 10%;
+      right: 8%;
+    }
+
+    .hero-blob-2 {
+      width: 115px;
+      height: 115px;
+      background: linear-gradient(180deg, #F0B4E4 0%, #A8D4F0 100%);
+      bottom: 20%;
+      left: 5%;
+    }
+
+    .hero-blob-3 {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(180deg, #A8D4F0 0%, #F0B4E4 100%);
+      top: 25%;
+      left: 3%;
     }
 
     .hero-header {
@@ -263,6 +322,8 @@
       line-height: 1.1;
       margin-bottom: 16px;
       letter-spacing: -0.02em;
+      color: #561269;
+      text-shadow: 0 2px 4px rgba(86, 18, 105, 0.15);
     }
 
     .hero-header h1 .gradient {
@@ -940,8 +1001,7 @@
   <header>
     <div class="container header-inner">
       <a href="/" class="logo">
-        <img src="/mainavatar.png" alt="StyleGenius">
-        <span>StyleGenius</span>
+        <span class="logo-text">StyleGen<span class="logo-i"><img src="/mainavatar.png" alt="" class="logo-icon">ı</span>us</span>
       </a>
       <nav class="header-nav">
         <a href="/">Home</a>
@@ -985,6 +1045,9 @@
 
   <!-- Hero -->
   <section class="hero">
+    <div class="hero-blob hero-blob-1"></div>
+    <div class="hero-blob hero-blob-2"></div>
+    <div class="hero-blob hero-blob-3"></div>
     <div class="container">
       <!-- Hero Header -->
       <div class="hero-header">
