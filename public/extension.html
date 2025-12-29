@@ -478,7 +478,7 @@
     .style-match-overlay {
       position: absolute;
       top: 50%;
-      right: 20px;
+      right: 15px;
       transform: translateY(-50%);
       display: flex;
       flex-direction: column;
@@ -494,82 +494,95 @@
     }
 
     .style-match-card {
+      position: relative;
+      background: linear-gradient(135deg, #FF70D9, #6EC1E4);
+      border-radius: 20px;
+      padding: 2px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .style-match-card-inner {
       background: white;
-      border-radius: 12px;
-      padding: 12px 16px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      border-radius: 18px;
       display: flex;
       align-items: center;
       gap: 12px;
-      min-width: 160px;
+      padding: 12px 16px;
     }
 
     .style-match-icon {
       width: 36px;
       height: 36px;
+      background: linear-gradient(135deg, #fce7f3, #f3e8ff);
       border-radius: 50%;
-      background: linear-gradient(135deg, #8B5CF6, #EC4899);
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
     }
 
-    .style-match-icon svg {
-      width: 20px;
-      height: 20px;
-      fill: white;
+    .style-match-icon img {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
     }
 
     .style-match-info {
       display: flex;
       flex-direction: column;
-      gap: 2px;
+      gap: 4px;
     }
 
     .style-match-title {
-      font-size: 0.75rem;
-      color: var(--gray-500);
-      font-weight: 500;
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--gray-900);
     }
 
     .style-match-badge {
-      font-size: 0.875rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4px 16px;
+      border-radius: 20px;
+      font-size: 0.8rem;
       font-weight: 700;
-      padding: 2px 10px;
-      border-radius: 12px;
-      display: inline-block;
       width: fit-content;
     }
 
     .style-match-badge.great {
-      background: #D1FAE5;
-      color: #059669;
+      background: #10b981;
+      color: white;
     }
 
     .style-match-badge.good {
-      background: #DBEAFE;
-      color: #2563EB;
+      background: #60a5fa;
+      color: white;
     }
 
     @media (max-width: 768px) {
       .style-match-overlay {
-        right: 10px;
+        right: 8px;
         gap: 8px;
       }
-      .style-match-card {
+      .style-match-card-inner {
         padding: 8px 12px;
-        min-width: 130px;
+        gap: 8px;
       }
       .style-match-icon {
         width: 28px;
         height: 28px;
       }
+      .style-match-icon img {
+        width: 18px;
+        height: 18px;
+      }
       .style-match-title {
-        font-size: 0.65rem;
+        font-size: 0.7rem;
       }
       .style-match-badge {
-        font-size: 0.75rem;
+        font-size: 0.65rem;
+        padding: 3px 10px;
       }
     }
 
@@ -1333,7 +1346,7 @@
                   <span>StyleGenius</span>
                 </div>
                 <div class="popup-buttons">
-                  <button class="popup-btn primary">
+                  <button class="popup-btn primary" id="btn-try-on">
                     <span class="btn-icon">👗</span>
                     Try On
                   </button>
@@ -1341,7 +1354,7 @@
                     <span class="btn-icon">💰</span>
                     Save & Track Price
                   </button>
-                  <button class="popup-btn">
+                  <button class="popup-btn" id="btn-color-match">
                     <span class="btn-icon">✨</span>
                     Color & Body Match
                   </button>
@@ -1365,21 +1378,25 @@
               <!-- Style Match Cards (shown on slide 2) -->
               <div class="style-match-overlay" id="style-match-overlay">
                 <div class="style-match-card">
-                  <div class="style-match-icon">
-                    <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M12 14c-4 0-7 2-7 4v2h14v-2c0-2-3-4-7-4z"/></svg>
-                  </div>
-                  <div class="style-match-info">
-                    <div class="style-match-title">Skin Tone Match</div>
-                    <div class="style-match-badge great">Great</div>
+                  <div class="style-match-card-inner">
+                    <div class="style-match-icon">
+                      <img src="/mainavatar.png" alt="">
+                    </div>
+                    <div class="style-match-info">
+                      <div class="style-match-title">Skin Tone Match</div>
+                      <div class="style-match-badge great">Great</div>
+                    </div>
                   </div>
                 </div>
                 <div class="style-match-card">
-                  <div class="style-match-icon">
-                    <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M12 14c-4 0-7 2-7 4v2h14v-2c0-2-3-4-7-4z"/></svg>
-                  </div>
-                  <div class="style-match-info">
-                    <div class="style-match-title">Body Type Match</div>
-                    <div class="style-match-badge good">Good</div>
+                  <div class="style-match-card-inner">
+                    <div class="style-match-icon">
+                      <img src="/mainavatar.png" alt="">
+                    </div>
+                    <div class="style-match-info">
+                      <div class="style-match-title">Body Type Match</div>
+                      <div class="style-match-badge good">Good</div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1586,6 +1603,8 @@
       const productName = document.getElementById('product-name');
       const productPrice = document.getElementById('product-price');
       const styleMatchOverlay = document.getElementById('style-match-overlay');
+      const btnTryOn = document.getElementById('btn-try-on');
+      const btnColorMatch = document.getElementById('btn-color-match');
       let currentIndex = 0;
 
       function switchSlide() {
@@ -1607,11 +1626,15 @@
         productName.textContent = activeModel.dataset.product;
         productPrice.textContent = activeModel.dataset.price;
 
-        // Show/hide style match overlay based on data-show-match
+        // Show/hide style match overlay and toggle button highlight
         if (activeModel.dataset.showMatch === 'true') {
           styleMatchOverlay.classList.add('active');
+          btnTryOn.classList.remove('primary');
+          btnColorMatch.classList.add('primary');
         } else {
           styleMatchOverlay.classList.remove('active');
+          btnTryOn.classList.add('primary');
+          btnColorMatch.classList.remove('primary');
         }
       }
 
