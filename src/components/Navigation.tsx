@@ -10,8 +10,7 @@ const Navigation = () => {
 
   const menuItems = [
     { name: "Home", href: "/" },
-    { name: "What Colors Suit Me?", href: "/what-colors-suit-me" },
-    { name: "Body Type Style Guide", href: "/what-body-type-suits-me" },
+    { name: "Blog", href: "/blog" },
     { name: "Browser Extension", href: "/extension" },
     { name: "Download App", href: "https://apps.apple.com/app/id6747178892", external: true }
   ];

@@ -19,6 +19,7 @@ import Premium from "./pages/premium";
 import Success from "./pages/success";
 import WhatColorsSuitMe from "./pages/WhatColorsSuitMe";
 import WhatBodyTypeSuitsMe from "./pages/WhatBodyTypeSuitsMe";
+import Blog from "./pages/Blog";
 import Download from "./pages/Download";
 
 const queryClient = new QueryClient();
@@ -37,6 +38,7 @@ const App = () => (
           <Route path="/price-tracking" element={<PriceTracking />} />
           <Route path="/style-analysis" element={<StyleAnalysis />} />
           <Route path="/app" element={<MobileApp />} />
+          <Route path="/blog" element={<Blog />} />
           <Route path="/what-colors-suit-me" element={<WhatColorsSuitMe />} />
           <Route path="/what-body-type-suits-me" element={<WhatBodyTypeSuitsMe />} />
           <Route path="/privacy" element={<Privacy />} />

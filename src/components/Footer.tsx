@@ -23,6 +23,9 @@ const Footer = () => {
           </p>
           
           <div className="flex flex-wrap justify-center gap-4 sm:gap-6 mb-8">
+            <a href="/blog" className="text-gray-400 hover:text-pink-400 transition-colors">
+              Blog
+            </a>
             <a href="/privacy" className="text-gray-400 hover:text-white transition-colors">
               Privacy Policy
             </a>
