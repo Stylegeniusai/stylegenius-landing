@@ -22,23 +22,21 @@ const Navigation = () => {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
-            <div className="flex items-center gap-2">
-              <img 
-                src="/mainavatar.png" 
-                alt="StyleGenius" 
-                className="w-8 h-8 rounded-full"
-              />
-              <span 
-                className="text-xl font-bold bg-clip-text text-transparent"
-                style={{
-                  background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent'
-                }}
-              >
-                StyleGenius
+            <a href="/" className="flex items-center" style={{ color: '#561269', textDecoration: 'none' }}>
+              <span className="text-xl font-bold">
+                StyleGen
+                <span className="relative inline-block">
+                  <img
+                    src="/mainavatar.png"
+                    alt=""
+                    className="absolute w-[10px] h-[10px] rounded-full"
+                    style={{ top: '2px', left: '50%', transform: 'translateX(-50%)' }}
+                  />
+                  ı
+                </span>
+                us
               </span>
-            </div>
+            </a>
 
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center space-x-8">

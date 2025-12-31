@@ -6,17 +6,18 @@ const Footer = () => {
     <footer className="bg-gray-900 text-white py-12">
       <div className="container mx-auto px-4">
         <div className="text-center">
-          <h3 className="text-2xl font-bold mb-4">
-            <span 
-              className="bg-clip-text text-transparent"
-              style={{
-                background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent'
-              }}
-            >
-              StyleGenius
+          <h3 className="text-2xl font-bold mb-4" style={{ color: '#561269' }}>
+            StyleGen
+            <span className="relative inline-block">
+              <img
+                src="/mainavatar.png"
+                alt=""
+                className="absolute w-[10px] h-[10px] rounded-full"
+                style={{ top: '2px', left: '50%', transform: 'translateX(-50%)' }}
+              />
+              ı
             </span>
+            us
           </h3>
           <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
             Your personal styling and shopping assistant that elevates your style, confidence and life.
