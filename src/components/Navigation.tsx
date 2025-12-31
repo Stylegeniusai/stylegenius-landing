@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
+import Logo from "./Logo";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,21 +23,7 @@ const Navigation = () => {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
-            <a href="/" className="flex items-center" style={{ color: '#561269', textDecoration: 'none' }}>
-              <span className="text-xl font-bold">
-                StyleGen
-                <span className="relative inline-block">
-                  <img
-                    src="/mainavatar.png"
-                    alt=""
-                    className="absolute w-[10px] h-[10px] rounded-full"
-                    style={{ top: '2px', left: '50%', transform: 'translateX(-50%)' }}
-                  />
-                  ı
-                </span>
-                us
-              </span>
-            </a>
+            <Logo variant="header" />
 
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center space-x-8">
