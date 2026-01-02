@@ -1169,8 +1169,37 @@
       .browser-mockup { width: 100%; }
       .browser-content { flex-direction: column; height: auto; }
       .product-side { width: 100%; border-right: none; border-bottom: 1px solid rgba(0,0,0,0.05); }
-      .model-side { width: 100%; height: 350px; }
+      .model-side { width: 100%; height: 420px; }
       .feature-links { flex-direction: column; align-items: center; }
+
+      /* Mobile: Move popup outside browser mockup */
+      .extension-popup-container {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        transform: none;
+        margin: -60px auto 0;
+        z-index: 30;
+      }
+      .extension-popup {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        transform: none;
+        margin: 0 auto 16px;
+      }
+      .extension-popup::after {
+        display: none;
+      }
+      .extension-icon {
+        margin: 0 auto;
+      }
+      .model-carousel img {
+        height: 90%;
+      }
+      .price-alert-popup {
+        display: none;
+      }
     }
 
     /* Animations */

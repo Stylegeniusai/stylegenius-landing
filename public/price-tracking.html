@@ -1104,9 +1104,17 @@
       }
 
       .price-alert-popup {
+        position: relative;
+        top: auto;
+        right: auto;
+        margin: 20px auto 0;
+        width: calc(100% - 40px);
+        max-width: 300px;
+        animation: none;
+      }
+
+      .price-alert-popup::before {
         display: none;
-        margin: 16px;
-        width: calc(100% - 32px);
       }
 
       .footer-inner {
