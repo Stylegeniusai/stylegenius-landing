@@ -36,6 +36,14 @@
     document.addEventListener('DOMContentLoaded', trackAdsPageView);
   </script>
 
+  <!-- Reddit Pixel -->
+  <script>
+  !function(w,d){if(!w.rdt){var p=w.rdt=function(){p.sendEvent?p.sendEvent.apply(p,arguments):p.callQueue.push(arguments)};p.callQueue=[];var t=d.createElement("script");t.src="https://www.redditstatic.com/ads/pixel.js",t.async=!0;var s=d.getElementsByTagName("script")[0];s.parentNode.insertBefore(t,s)}}(window,document);
+  rdt('init','a2_htv0i83491hu');
+  rdt('track', 'PageVisit');
+  </script>
+  <!-- End Reddit Pixel -->
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>StyleGenius Browser Extension | Virtual Try-On & Price Tracking | Free Download</title>
@@ -1280,7 +1288,7 @@
           <span class="stars">★★★★★</span>
           <span>4.9 on Chrome Store</span>
         </div>
-        <a href="https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn" class="header-cta" target="_blank" onclick="trackExtensionCTA('header')">
+        <a href="https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn" class="header-cta" target="_blank" onclick="trackExtensionCTA('header'); rdt('track', 'Lead');">
           Add to Chrome - Free
         </a>
       </div>
@@ -1475,7 +1483,7 @@
 
       <!-- CTA -->
       <div class="hero-cta-section">
-        <a href="https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn" class="hero-cta" target="_blank" onclick="trackExtensionCTA('hero')">
+        <a href="https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn" class="hero-cta" target="_blank" onclick="trackExtensionCTA('hero'); rdt('track', 'Lead');">
           Add to Chrome - Free
         </a>
         <p class="cta-note">Install once. Works everywhere you shop.</p>
@@ -1547,7 +1555,7 @@
   <!-- Final CTA -->
   <section class="final-cta">
     <div class="container">
-      <a href="https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn" class="hero-cta" target="_blank" onclick="trackExtensionCTA('bottom')">
+      <a href="https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn" class="hero-cta" target="_blank" onclick="trackExtensionCTA('bottom'); rdt('track', 'Lead');">
         Add to Chrome - Free
       </a>
       <div class="trust-signals">
