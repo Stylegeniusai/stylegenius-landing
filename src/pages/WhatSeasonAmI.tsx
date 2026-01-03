@@ -2,6 +2,8 @@ import React from "react";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 
+const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog";
+
 const WhatSeasonAmI = () => {
   const seasons = [
     {
@@ -86,6 +88,13 @@ const WhatSeasonAmI = () => {
             <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed">
               Discover your seasonal color palette and unlock the colors that make you glow. The complete guide to Spring, Summer, Autumn, and Winter color analysis.
             </p>
+          </div>
+          <div className="max-w-2xl mx-auto mt-8">
+            <img
+              src={`${BLOG_IMAGE_BASE}/what-season-am-i-hero.png`}
+              alt="Seasonal color analysis guide"
+              className="w-full rounded-2xl shadow-xl"
+            />
           </div>
         </div>
       </section>

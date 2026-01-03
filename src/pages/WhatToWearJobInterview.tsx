@@ -2,6 +2,8 @@ import React from "react";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 
+const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog";
+
 const WhatToWearJobInterview = () => {
   return (
     <div className="min-h-screen bg-gray-50">
@@ -19,6 +21,13 @@ const WhatToWearJobInterview = () => {
             <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed">
               Make the perfect first impression - outfit ideas for every industry from corporate to creative.
             </p>
+          </div>
+          <div className="max-w-2xl mx-auto mt-8">
+            <img
+              src={`${BLOG_IMAGE_BASE}/job-interview-hero.png`}
+              alt="What to wear to job interview guide"
+              className="w-full rounded-2xl shadow-xl"
+            />
           </div>
         </div>
       </section>

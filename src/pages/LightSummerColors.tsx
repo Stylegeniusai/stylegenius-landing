@@ -2,6 +2,8 @@ import React from "react";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 
+const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog";
+
 const LightSummerColors = () => {
   return (
     <div className="min-h-screen bg-gray-50">
@@ -20,6 +22,13 @@ const LightSummerColors = () => {
             <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed">
               The complete guide to Light Summer colors - soft, delicate, and airy shades for naturally fair, cool-toned beauty.
             </p>
+          </div>
+          <div className="max-w-2xl mx-auto mt-8">
+            <img
+              src={`${BLOG_IMAGE_BASE}/light-summer-hero.png`}
+              alt="Light Summer color palette guide"
+              className="w-full rounded-2xl shadow-xl"
+            />
           </div>
         </div>
       </section>

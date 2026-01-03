@@ -2,6 +2,8 @@ import React from "react";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 
+const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog";
+
 const BestColorsForPaleSkin = () => {
   return (
     <div className="min-h-screen bg-gray-50">
@@ -27,6 +29,13 @@ const BestColorsForPaleSkin = () => {
             <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed">
               Find the perfect colors that make fair and pale skin glow - from soft pastels to rich jewel tones based on your undertone.
             </p>
+          </div>
+          <div className="max-w-2xl mx-auto mt-8">
+            <img
+              src={`${BLOG_IMAGE_BASE}/pale-skin-hero.png`}
+              alt="Best colors for pale skin guide"
+              className="w-full rounded-2xl shadow-xl"
+            />
           </div>
         </div>
       </section>

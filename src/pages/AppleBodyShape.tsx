@@ -2,6 +2,9 @@ import React from "react";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 
+const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog";
+const BODYTYPE_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/bodytype";
+
 const AppleBodyShape = () => {
   return (
     <div className="min-h-screen bg-gray-50">
@@ -30,6 +33,14 @@ const AppleBodyShape = () => {
             <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed">
               The complete guide to dressing your apple shape - learn how to highlight your assets and create a balanced silhouette.
             </p>
+          </div>
+          {/* Hero Image */}
+          <div className="max-w-2xl mx-auto mt-8">
+            <img
+              src={`${BLOG_IMAGE_BASE}/apple-hero.png`}
+              alt="Apple body shape fashion guide"
+              className="w-full rounded-2xl shadow-xl"
+            />
           </div>
         </div>
       </section>
@@ -76,10 +87,36 @@ const AppleBodyShape = () => {
         </div>
       </article>
 
-      {/* What to Wear */}
+      {/* What to Wear - with Images */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4 max-w-4xl">
           <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Best Styles for Apple Shape</h2>
+
+          {/* Style Tips with Images */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            {[
+              { name: "A-Line Everything", image: `${BODYTYPE_IMAGE_BASE}/round/a-line-everything.png` },
+              { name: "Bootcut Jeans", image: `${BODYTYPE_IMAGE_BASE}/round/bootcut-jeans.png` },
+              { name: "Empire Waist Dresses", image: `${BODYTYPE_IMAGE_BASE}/round/empire-waist-dresses.png` },
+              { name: "Flowy Fabrics", image: `${BODYTYPE_IMAGE_BASE}/round/flowy-fabrics.png` },
+              { name: "Layered Outfits", image: `${BODYTYPE_IMAGE_BASE}/round/layered-outfits.png` },
+              { name: "V-Neck Everything", image: `${BODYTYPE_IMAGE_BASE}/round/v-neck-everything.png` },
+              { name: "Wrap Tops", image: `${BODYTYPE_IMAGE_BASE}/round/wrap-tops.png` },
+              { name: "Structured Jackets", image: `${BODYTYPE_IMAGE_BASE}/round/structured-jackets.png` },
+              { name: "Statement Necklaces", image: `${BODYTYPE_IMAGE_BASE}/round/statement-necklaces.png` },
+            ].map((item) => (
+              <div key={item.name} className="bg-white rounded-2xl overflow-hidden shadow-lg">
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  className="w-full aspect-square object-cover"
+                />
+                <div className="p-4">
+                  <h4 className="font-semibold text-gray-900 text-center">{item.name}</h4>
+                </div>
+              </div>
+            ))}
+          </div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div className="bg-white rounded-2xl p-6 shadow-lg">

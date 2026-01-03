@@ -2,6 +2,8 @@ import React from "react";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 
+const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog";
+
 const SoftAutumnColors = () => {
   const colorPalette = {
     best: [
@@ -61,6 +63,13 @@ const SoftAutumnColors = () => {
             <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed">
               The complete guide to Soft Autumn colors - the muted, warm, and earthy palette that creates a naturally elegant look.
             </p>
+          </div>
+          <div className="max-w-2xl mx-auto mt-8">
+            <img
+              src={`${BLOG_IMAGE_BASE}/soft-autumn-hero.png`}
+              alt="Soft Autumn color palette guide"
+              className="w-full rounded-2xl shadow-xl"
+            />
           </div>
         </div>
       </section>

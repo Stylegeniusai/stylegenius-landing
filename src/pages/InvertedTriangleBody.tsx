@@ -2,11 +2,15 @@ import React from "react";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 
+const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog";
+const BODYTYPE_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/bodytype";
+
 const InvertedTriangleBody = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <Navigation />
 
+      {/* Hero Section */}
       <section className="py-16 lg:py-24 bg-gradient-to-br from-pink-50 to-purple-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
@@ -20,6 +24,14 @@ const InvertedTriangleBody = () => {
             <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed">
               The complete guide to dressing the inverted triangle shape - balance broad shoulders with the right silhouettes.
             </p>
+          </div>
+          {/* Hero Image */}
+          <div className="max-w-2xl mx-auto mt-8">
+            <img
+              src={`${BLOG_IMAGE_BASE}/inverted-triangle-hero.png`}
+              alt="Inverted triangle body type fashion guide"
+              className="w-full rounded-2xl shadow-xl"
+            />
           </div>
         </div>
       </section>
@@ -83,6 +95,38 @@ const InvertedTriangleBody = () => {
           </div>
         </div>
       </article>
+
+      {/* Style Tips with Images */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Best Styles for Inverted Triangle</h2>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            {[
+              { name: "A-Line Skirts", image: `${BODYTYPE_IMAGE_BASE}/invertedtriangle/a-line-skirts.png` },
+              { name: "Bootcut Jeans", image: `${BODYTYPE_IMAGE_BASE}/invertedtriangle/bootcut-jeans.png` },
+              { name: "Dark Tops, Bright Bottoms", image: `${BODYTYPE_IMAGE_BASE}/invertedtriangle/dark-tops--bright-bottoms.png` },
+              { name: "Flared Pants", image: `${BODYTYPE_IMAGE_BASE}/invertedtriangle/flared-pants.png` },
+              { name: "Hip Detailing", image: `${BODYTYPE_IMAGE_BASE}/invertedtriangle/hip-detailing.png` },
+              { name: "V-Necklines", image: `${BODYTYPE_IMAGE_BASE}/invertedtriangle/v-necklines.png` },
+              { name: "Wide-Leg Pants", image: `${BODYTYPE_IMAGE_BASE}/invertedtriangle/wide-leg-pants.png` },
+              { name: "Wrap Dresses", image: `${BODYTYPE_IMAGE_BASE}/invertedtriangle/wrap-dresses.png` },
+              { name: "Printed Bottoms", image: `${BODYTYPE_IMAGE_BASE}/invertedtriangle/printed-bottoms.png` },
+            ].map((tip) => (
+              <div key={tip.name} className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                <img
+                  src={tip.image}
+                  alt={`${tip.name} for inverted triangle body`}
+                  className="w-full h-48 object-cover"
+                />
+                <div className="p-4">
+                  <h4 className="font-semibold text-gray-900 text-center">{tip.name}</h4>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <section className="py-16 bg-gradient-to-br from-pink-50 to-purple-50">
         <div className="container mx-auto px-4">

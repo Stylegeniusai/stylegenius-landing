@@ -2,6 +2,8 @@ import React from "react";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 
+const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog";
+
 const WeddingGuestOutfits = () => {
   return (
     <div className="min-h-screen bg-gray-50">
@@ -19,6 +21,13 @@ const WeddingGuestOutfits = () => {
             <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed">
               What to wear to a wedding - outfit ideas for every season, dress code, and venue.
             </p>
+          </div>
+          <div className="max-w-2xl mx-auto mt-8">
+            <img
+              src={`${BLOG_IMAGE_BASE}/wedding-guest-hero.png`}
+              alt="Wedding guest outfit ideas"
+              className="w-full rounded-2xl shadow-xl"
+            />
           </div>
         </div>
       </section>

@@ -2,6 +2,8 @@ import React from "react";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 
+const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog";
+
 const OldMoneyAesthetic = () => {
   return (
     <div className="min-h-screen bg-gray-50">
@@ -30,6 +32,13 @@ const OldMoneyAesthetic = () => {
             <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed">
               The complete guide to old money style - timeless elegance, quiet luxury, and understated sophistication that never goes out of fashion.
             </p>
+          </div>
+          <div className="max-w-2xl mx-auto mt-8">
+            <img
+              src={`${BLOG_IMAGE_BASE}/old-money-hero.png`}
+              alt="Old money aesthetic guide"
+              className="w-full rounded-2xl shadow-xl"
+            />
           </div>
         </div>
       </section>

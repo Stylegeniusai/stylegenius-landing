@@ -2,96 +2,98 @@ import React from "react";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 
+const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog";
+
 const blogPosts = [
   // Color Analysis
   {
     title: "What Season Am I? Color Analysis Guide",
     description: "Discover your color season with our complete guide to seasonal color analysis - find out if you're a Spring, Summer, Autumn, or Winter.",
-    image: "/blog/what-season-am-i.jpg",
+    image: `${BLOG_IMAGE_BASE}/what-season-hero.png`,
     href: "/what-season-am-i",
     category: "Color Analysis"
   },
   {
     title: "Soft Autumn Color Palette",
     description: "The complete guide to Soft Autumn colors - muted, warm, and earthy shades that make your natural coloring glow.",
-    image: "/blog/soft-autumn-colors.jpg",
+    image: `${BLOG_IMAGE_BASE}/soft-autumn-hero.png`,
     href: "/soft-autumn-colors",
     category: "Color Analysis"
   },
   {
     title: "Dark Winter Color Palette",
     description: "Discover the bold, cool, and dramatic colors that flatter Dark Winter coloring.",
-    image: "/blog/dark-winter-colors.jpg",
+    image: `${BLOG_IMAGE_BASE}/dark-winter-hero.png`,
     href: "/dark-winter-colors",
     category: "Color Analysis"
   },
   {
     title: "Deep Winter Color Palette",
     description: "The complete guide to Deep Winter colors - dramatic, bold, and high-contrast shades for striking beauty.",
-    image: "/blog/deep-winter-colors.jpg",
+    image: `${BLOG_IMAGE_BASE}/deep-winter-hero.png`,
     href: "/deep-winter-colors",
     category: "Color Analysis"
   },
   {
     title: "Soft Summer Color Palette",
     description: "Soft, muted, and cool colors that make Soft Summer coloring look effortlessly elegant.",
-    image: "/blog/soft-summer-colors.jpg",
+    image: `${BLOG_IMAGE_BASE}/soft-summer-hero.png`,
     href: "/soft-summer-colors",
     category: "Color Analysis"
   },
   {
     title: "Light Summer Color Palette",
     description: "Delicate, airy shades for naturally fair, cool-toned beauty.",
-    image: "/blog/light-summer-colors.jpg",
+    image: `${BLOG_IMAGE_BASE}/light-summer-hero.png`,
     href: "/light-summer-colors",
     category: "Color Analysis"
   },
   {
     title: "Bright Spring Color Palette",
     description: "Vibrant, clear, and warm colors that make Bright Spring coloring radiate.",
-    image: "/blog/bright-spring-colors.jpg",
+    image: `${BLOG_IMAGE_BASE}/bright-spring-hero.png`,
     href: "/bright-spring-colors",
     category: "Color Analysis"
   },
   {
     title: "True Autumn Color Palette",
     description: "Rich, warm, and saturated colors perfect for True Autumn coloring.",
-    image: "/blog/true-autumn-colors.jpg",
+    image: `${BLOG_IMAGE_BASE}/true-autumn-hero.png`,
     href: "/true-autumn-colors",
     category: "Color Analysis"
   },
   {
     title: "Warm vs Cool Undertones",
     description: "Learn how to determine your undertone and why it matters for choosing flattering colors.",
-    image: "/blog/warm-vs-cool-undertones.jpg",
+    image: `${BLOG_IMAGE_BASE}/undertones-hero.png`,
     href: "/warm-vs-cool-undertones",
     category: "Color Analysis"
   },
   {
     title: "Best Colors for Pale Skin",
     description: "Find the most flattering colors for fair and pale skin tones.",
-    image: "/blog/best-colors-pale-skin.jpg",
+    image: `${BLOG_IMAGE_BASE}/pale-skin-hero.png`,
     href: "/best-colors-for-pale-skin",
     category: "Color Analysis"
   },
   {
     title: "Best Colors for Olive Skin",
     description: "Discover which colors complement olive skin tones beautifully.",
-    image: "/blog/best-colors-olive-skin.jpg",
+    image: `${BLOG_IMAGE_BASE}/olive-skin-hero.png`,
     href: "/best-colors-for-olive-skin",
     category: "Color Analysis"
   },
   {
     title: "Best Colors for Dark Skin",
     description: "The ultimate guide to colors that look stunning on dark skin tones.",
-    image: "/blog/best-colors-dark-skin.jpg",
+    image: `${BLOG_IMAGE_BASE}/dark-skin-hero.png`,
     href: "/best-colors-for-dark-skin",
     category: "Color Analysis"
   },
   {
     title: "What Colors Suit Me?",
     description: "The complete guide to finding your perfect color palette based on your skin tone and undertones.",
-    image: "/what-colors-suit-me-skin-tone-guide.jpg",
+    image: `${BLOG_IMAGE_BASE}/what-season-hero.png`,
     href: "/what-colors-suit-me",
     category: "Color Analysis"
   },
@@ -99,56 +101,56 @@ const blogPosts = [
   {
     title: "Kibbe Body Types Explained",
     description: "The complete guide to all 13 Kibbe body types - discover your unique body ID and how to dress for it.",
-    image: "/blog/kibbe-body-types.jpg",
+    image: `${BLOG_IMAGE_BASE}/kibbe-hero.png`,
     href: "/kibbe-body-types",
     category: "Body Type"
   },
   {
     title: "Hourglass Body Type Guide",
     description: "How to dress the hourglass figure - styles that celebrate your balanced proportions.",
-    image: "/blog/hourglass-body-type.jpg",
+    image: `${BLOG_IMAGE_BASE}/hourglass-hero.png`,
     href: "/hourglass-body-type",
     category: "Body Type"
   },
   {
     title: "Pear Body Shape Guide",
     description: "The best styles, cuts, and silhouettes for pear-shaped bodies.",
-    image: "/blog/pear-body-shape.jpg",
+    image: `${BLOG_IMAGE_BASE}/pear-hero.png`,
     href: "/pear-body-shape",
     category: "Body Type"
   },
   {
     title: "Apple Body Shape Guide",
     description: "Flattering styles and tips for dressing the apple body shape.",
-    image: "/blog/apple-body-shape.jpg",
+    image: `${BLOG_IMAGE_BASE}/apple-hero.png`,
     href: "/apple-body-shape",
     category: "Body Type"
   },
   {
     title: "Rectangle Body Type Guide",
     description: "Create curves and dimension with the right styles for rectangular body shapes.",
-    image: "/blog/rectangle-body-type.jpg",
+    image: `${BLOG_IMAGE_BASE}/rectangle-hero.png`,
     href: "/rectangle-body-type",
     category: "Body Type"
   },
   {
     title: "Inverted Triangle Body Type",
     description: "Balance broad shoulders with the right silhouettes for inverted triangle shapes.",
-    image: "/blog/inverted-triangle-body.jpg",
+    image: `${BLOG_IMAGE_BASE}/inverted-triangle-hero.png`,
     href: "/inverted-triangle-body",
     category: "Body Type"
   },
   {
     title: "Best Jeans for Your Body Type",
     description: "Find the perfect jeans for your body shape - from high-rise to bootcut.",
-    image: "/blog/best-jeans-body-type.jpg",
+    image: `${BLOG_IMAGE_BASE}/jeans-hero.png`,
     href: "/best-jeans-for-body-type",
     category: "Body Type"
   },
   {
     title: "Body Type Style Guide",
     description: "Discover the most flattering outfits and styling tips for your unique body shape.",
-    image: "/body-type-style-guide-different-shapes.jpg",
+    image: `${BLOG_IMAGE_BASE}/hourglass-hero.png`,
     href: "/what-body-type-suits-me",
     category: "Body Type"
   },
@@ -156,35 +158,35 @@ const blogPosts = [
   {
     title: "Clean Girl Aesthetic",
     description: "Master the effortless, minimal, and polished Clean Girl look that's taking over social media.",
-    image: "/blog/clean-girl-aesthetic.jpg",
+    image: `${BLOG_IMAGE_BASE}/clean-girl-hero.png`,
     href: "/clean-girl-aesthetic",
     category: "Fashion Aesthetic"
   },
   {
     title: "Old Money Aesthetic",
     description: "The complete guide to achieving timeless, inherited elegance style.",
-    image: "/blog/old-money-aesthetic.jpg",
+    image: `${BLOG_IMAGE_BASE}/old-money-hero.png`,
     href: "/old-money-aesthetic",
     category: "Fashion Aesthetic"
   },
   {
     title: "Quiet Luxury Style Guide",
     description: "Understated elegance that whispers wealth rather than shouts it.",
-    image: "/blog/quiet-luxury-style.jpg",
+    image: `${BLOG_IMAGE_BASE}/quiet-luxury-hero.png`,
     href: "/quiet-luxury-style",
     category: "Fashion Aesthetic"
   },
   {
     title: "Office Siren Aesthetic",
     description: "The viral TikTok trend combining corporate polish with seductive elegance.",
-    image: "/blog/office-siren-aesthetic.jpg",
+    image: `${BLOG_IMAGE_BASE}/office-siren-hero.png`,
     href: "/office-siren-aesthetic",
     category: "Fashion Aesthetic"
   },
   {
     title: "Coquette Aesthetic",
     description: "Feminine, flirty, and romantic style inspired by bows, lace, and all things girly.",
-    image: "/blog/coquette-aesthetic.jpg",
+    image: `${BLOG_IMAGE_BASE}/coquette-hero.png`,
     href: "/coquette-aesthetic",
     category: "Fashion Aesthetic"
   },
@@ -192,28 +194,28 @@ const blogPosts = [
   {
     title: "How to Find Your Personal Style",
     description: "A step-by-step guide to discovering your unique fashion identity.",
-    image: "/blog/find-your-personal-style.jpg",
+    image: `${BLOG_IMAGE_BASE}/personal-style-hero.png`,
     href: "/find-your-personal-style",
     category: "Style Guide"
   },
   {
     title: "How to Build a Capsule Wardrobe",
     description: "Create a versatile wardrobe with fewer pieces that work harder for you.",
-    image: "/blog/capsule-wardrobe.jpg",
+    image: `${BLOG_IMAGE_BASE}/capsule-hero.png`,
     href: "/capsule-wardrobe",
     category: "Style Guide"
   },
   {
     title: "What to Wear to a Job Interview",
     description: "Professional outfit ideas for every industry and interview type.",
-    image: "/blog/job-interview-outfits.jpg",
+    image: `${BLOG_IMAGE_BASE}/interview-hero.png`,
     href: "/what-to-wear-job-interview",
     category: "Style Guide"
   },
   {
     title: "Wedding Guest Outfit Ideas",
     description: "What to wear to weddings - from beach ceremonies to black tie events.",
-    image: "/blog/wedding-guest-outfits.jpg",
+    image: `${BLOG_IMAGE_BASE}/wedding-guest-hero.png`,
     href: "/wedding-guest-outfits",
     category: "Style Guide"
   },
@@ -221,14 +223,14 @@ const blogPosts = [
   {
     title: "Virtual Try-On Guide 2025",
     description: "Everything you need to know about virtual try-on technology and how to shop online confidently.",
-    image: "/blog/virtual-try-on-guide.jpg",
+    image: `${BLOG_IMAGE_BASE}/virtual-tryon-hero.png`,
     href: "/virtual-try-on-guide",
     category: "Shopping Tech"
   },
   {
     title: "Spring 2025 Fashion Trends",
     description: "The biggest fashion trends for Spring 2025 - from runway to real life.",
-    image: "/blog/spring-2025-trends.jpg",
+    image: `${BLOG_IMAGE_BASE}/spring-2025-hero.png`,
     href: "/spring-2025-fashion-trends",
     category: "Fashion Trends"
   }

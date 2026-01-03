@@ -2,6 +2,8 @@ import React from "react";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 
+const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog";
+
 const Spring2025FashionTrends = () => {
   return (
     <div className="min-h-screen bg-gray-50">
@@ -20,6 +22,13 @@ const Spring2025FashionTrends = () => {
             <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed">
               The biggest fashion trends for Spring 2025 - from runway to real life, here's what to wear this season.
             </p>
+          </div>
+          <div className="max-w-2xl mx-auto mt-8">
+            <img
+              src={`${BLOG_IMAGE_BASE}/spring-2025-hero.png`}
+              alt="Spring 2025 fashion trends"
+              className="w-full rounded-2xl shadow-xl"
+            />
           </div>
         </div>
       </section>

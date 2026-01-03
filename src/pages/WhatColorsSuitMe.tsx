@@ -4,6 +4,8 @@ import Footer from "../components/Footer";
 import { Button } from "../components/ui/button";
 import { getAppStoreUrl, getDownloadButtonText } from "../utils/deviceDetection";
 
+const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog";
+
 const WhatColorsSuitMe = () => {
   const [appStoreUrl, setAppStoreUrl] = useState('');
   const [buttonText, setButtonText] = useState('📱 Download App');
@@ -79,8 +81,8 @@ const WhatColorsSuitMe = () => {
               </p>
             </div>
             <div className="relative">
-              <img 
-                src="/what-colors-suit-me-skin-tone-guide.jpg" 
+              <img
+                src={`${BLOG_IMAGE_BASE}/what-colors-suit-me-hero.png`}
                 alt="What colors suit me - diverse women in complementary colors"
                 className="w-full h-auto rounded-2xl shadow-2xl"
               />

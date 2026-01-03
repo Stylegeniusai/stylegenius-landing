@@ -2,6 +2,8 @@ import React from "react";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 
+const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog";
+
 const BestColorsForDarkSkin = () => {
   return (
     <div className="min-h-screen bg-gray-50">
@@ -19,6 +21,13 @@ const BestColorsForDarkSkin = () => {
             <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed">
               Discover colors that make deep and dark skin tones radiate - from bold brights to rich jewel tones.
             </p>
+          </div>
+          <div className="max-w-2xl mx-auto mt-8">
+            <img
+              src={`${BLOG_IMAGE_BASE}/dark-skin-hero.png`}
+              alt="Best colors for dark skin guide"
+              className="w-full rounded-2xl shadow-xl"
+            />
           </div>
         </div>
       </section>

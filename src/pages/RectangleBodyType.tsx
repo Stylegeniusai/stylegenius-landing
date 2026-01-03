@@ -2,6 +2,9 @@ import React from "react";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 
+const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog";
+const BODYTYPE_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/bodytype";
+
 const RectangleBodyType = () => {
   return (
     <div className="min-h-screen bg-gray-50">
@@ -30,6 +33,14 @@ const RectangleBodyType = () => {
             <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed">
               The complete guide to dressing your rectangle shape - learn how to create curves and define your waist.
             </p>
+          </div>
+          {/* Hero Image */}
+          <div className="max-w-2xl mx-auto mt-8">
+            <img
+              src={`${BLOG_IMAGE_BASE}/rectangle-hero.png`}
+              alt="Rectangle body type fashion guide"
+              className="w-full rounded-2xl shadow-xl"
+            />
           </div>
         </div>
       </section>
@@ -76,10 +87,36 @@ const RectangleBodyType = () => {
         </div>
       </article>
 
-      {/* What to Wear */}
+      {/* What to Wear - with Images */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4 max-w-4xl">
           <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Best Styles for Rectangle Shape</h2>
+
+          {/* Style Tips with Images */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            {[
+              { name: "A-Line Skirts", image: `${BODYTYPE_IMAGE_BASE}/rectangle/a-line-skirts.png` },
+              { name: "Belted Dresses", image: `${BODYTYPE_IMAGE_BASE}/rectangle/belted-dresses.png` },
+              { name: "Color Blocking", image: `${BODYTYPE_IMAGE_BASE}/rectangle/color-blocking.png` },
+              { name: "Crop Tops with High Waist", image: `${BODYTYPE_IMAGE_BASE}/rectangle/crop-tops-with-high-waist.png` },
+              { name: "Peplum Tops", image: `${BODYTYPE_IMAGE_BASE}/rectangle/peplum-tops.png` },
+              { name: "Ruffled Tops", image: `${BODYTYPE_IMAGE_BASE}/rectangle/ruffled-tops.png` },
+              { name: "Textured Fabrics", image: `${BODYTYPE_IMAGE_BASE}/rectangle/textured-fabrics.png` },
+              { name: "Tiered Skirts", image: `${BODYTYPE_IMAGE_BASE}/rectangle/tiered-skirts.png` },
+              { name: "Wrap Styles", image: `${BODYTYPE_IMAGE_BASE}/rectangle/wrap-styles.png` },
+            ].map((item) => (
+              <div key={item.name} className="bg-white rounded-2xl overflow-hidden shadow-lg">
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  className="w-full aspect-square object-cover"
+                />
+                <div className="p-4">
+                  <h4 className="font-semibold text-gray-900 text-center">{item.name}</h4>
+                </div>
+              </div>
+            ))}
+          </div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div className="bg-white rounded-2xl p-6 shadow-lg">

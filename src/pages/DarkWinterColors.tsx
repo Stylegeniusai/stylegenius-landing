@@ -2,6 +2,8 @@ import React from "react";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 
+const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog";
+
 const DarkWinterColors = () => {
   const colorPalette = {
     best: [
@@ -61,6 +63,13 @@ const DarkWinterColors = () => {
             <p className="text-xl md:text-2xl text-gray-200 mb-8 leading-relaxed">
               The complete guide to Dark Winter colors - rich, deep, and dramatic hues for high-contrast, cool-neutral coloring.
             </p>
+          </div>
+          <div className="max-w-2xl mx-auto mt-8">
+            <img
+              src={`${BLOG_IMAGE_BASE}/dark-winter-hero.png`}
+              alt="Dark Winter color palette guide"
+              className="w-full rounded-2xl shadow-xl"
+            />
           </div>
         </div>
       </section>

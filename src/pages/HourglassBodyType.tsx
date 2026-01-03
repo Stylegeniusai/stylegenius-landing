@@ -2,6 +2,9 @@ import React from "react";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 
+const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog";
+const BODYTYPE_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/bodytype";
+
 const HourglassBodyType = () => {
   return (
     <div className="min-h-screen bg-gray-50">
@@ -30,6 +33,14 @@ const HourglassBodyType = () => {
             <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed">
               The complete guide to dressing your hourglass figure - learn what silhouettes, cuts, and styles will flatter your curves.
             </p>
+          </div>
+          {/* Hero Image */}
+          <div className="max-w-2xl mx-auto mt-8">
+            <img
+              src={`${BLOG_IMAGE_BASE}/hourglass-hero.png`}
+              alt="Hourglass body type fashion guide"
+              className="w-full rounded-2xl shadow-xl"
+            />
           </div>
         </div>
       </section>
@@ -76,10 +87,36 @@ const HourglassBodyType = () => {
         </div>
       </article>
 
-      {/* What to Wear */}
+      {/* What to Wear - with Images */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4 max-w-4xl">
           <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Best Styles for Hourglass</h2>
+
+          {/* Style Tips with Images */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            {[
+              { name: "Wrap Dresses", image: `${BODYTYPE_IMAGE_BASE}/hourglass/wrap-dresses.png` },
+              { name: "Bodycon Dresses", image: `${BODYTYPE_IMAGE_BASE}/hourglass/bodycon-dresses.png` },
+              { name: "High-Waisted Everything", image: `${BODYTYPE_IMAGE_BASE}/hourglass/high-waisted-everything.png` },
+              { name: "Belted Coats", image: `${BODYTYPE_IMAGE_BASE}/hourglass/belted-coats.png` },
+              { name: "Fitted Tops", image: `${BODYTYPE_IMAGE_BASE}/hourglass/fitted-tops.png` },
+              { name: "Pencil Skirts", image: `${BODYTYPE_IMAGE_BASE}/hourglass/pencil-skirts.png` },
+              { name: "V-Necks & Scoop Necks", image: `${BODYTYPE_IMAGE_BASE}/hourglass/v-necks--scoop-necks.png` },
+              { name: "Tailored Blazers", image: `${BODYTYPE_IMAGE_BASE}/hourglass/tailored-blazers.png` },
+              { name: "Soft Draped Fabrics", image: `${BODYTYPE_IMAGE_BASE}/hourglass/soft--draped-fabrics.png` },
+            ].map((item) => (
+              <div key={item.name} className="bg-white rounded-2xl overflow-hidden shadow-lg">
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  className="w-full aspect-square object-cover"
+                />
+                <div className="p-4">
+                  <h4 className="font-semibold text-gray-900 text-center">{item.name}</h4>
+                </div>
+              </div>
+            ))}
+          </div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div className="bg-white rounded-2xl p-6 shadow-lg">
