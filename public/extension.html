@@ -1273,6 +1273,37 @@
       }
     }
 
+    /* Floating CTA */
+    .floating-cta {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--gradient);
+      color: white;
+      padding: 16px 28px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      box-shadow: 0 8px 30px rgba(255, 112, 217, 0.4);
+      z-index: 999;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .floating-cta:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 40px rgba(255, 112, 217, 0.5);
+    }
+
+    @media (max-width: 600px) {
+      .floating-cta {
+        bottom: 16px;
+        right: 16px;
+        padding: 14px 22px;
+        font-size: 0.9rem;
+      }
+    }
+
     /* Animations */
     @keyframes fadeUp {
       from {
@@ -1377,6 +1408,11 @@
   </style>
 </head>
 <body>
+  <!-- Floating CTA -->
+  <a href="https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn" class="floating-cta" target="_blank" onclick="trackExtensionCTA('floating'); rdt('track', 'Lead');">
+    Add to Chrome — It's Free
+  </a>
+
   <!-- Header -->
   <header>
     <div class="container header-inner">
