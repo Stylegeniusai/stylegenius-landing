@@ -1,6 +1,8 @@
 import React from "react";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
+import SEO from "../components/SEO";
+import { Link } from "react-router-dom";
 
 const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog";
 
@@ -38,6 +40,25 @@ const BrightSpringColors = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEO
+        title="Bright Spring Colors: Complete Palette Guide 2025"
+        description="Discover the perfect bright spring color palette. Learn which vibrant, warm colors flatter bright spring skin tones and build a stunning wardrobe."
+        keywords="bright spring colors, bright spring palette, spring color analysis, vibrant warm colors, bright spring celebrity, bright spring wardrobe"
+        canonicalUrl="/bright-spring-colors"
+        ogImage="/bright-spring-hero.png"
+        ogType="article"
+        article={{
+          publishedTime: "2024-11-04",
+          modifiedTime: "2025-01-01",
+          section: "Color Analysis",
+          tags: ["bright spring", "color analysis", "seasonal colors", "warm colors"]
+        }}
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Blog", url: "/blog" },
+          { name: "Bright Spring Colors", url: "/bright-spring-colors" }
+        ]}
+      />
       <Navigation />
 
       {/* Hero Section */}

@@ -1,12 +1,33 @@
 import React from "react";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
+import SEO from "../components/SEO";
+import { Link } from "react-router-dom";
 
 const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog";
 
 const BestColorsForPaleSkin = () => {
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEO
+        title="Best Colors for Pale Skin: Complete Guide 2025"
+        description="Discover the most flattering colors for pale skin. Learn which shades make fair skin glow and which colors to avoid for your best look."
+        keywords="best colors for pale skin, colors for fair skin, pale skin fashion, light skin tone colors, fair complexion colors, what colors suit pale skin"
+        canonicalUrl="/best-colors-for-pale-skin"
+        ogImage="/pale-skin-hero.png"
+        ogType="article"
+        article={{
+          publishedTime: "2024-11-18",
+          modifiedTime: "2025-01-01",
+          section: "Color Analysis",
+          tags: ["pale skin", "fair skin", "color guide", "skin tone"]
+        }}
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Blog", url: "/blog" },
+          { name: "Best Colors for Pale Skin", url: "/best-colors-for-pale-skin" }
+        ]}
+      />
       <Navigation />
 
       {/* Hero Section */}

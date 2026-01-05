@@ -1,6 +1,7 @@
 import React from "react";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
+import SEO from "../components/SEO";
 import { Link } from "react-router-dom";
 
 const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog";
@@ -8,6 +9,25 @@ const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/obj
 const OfficeSirenAesthetic = () => {
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEO
+        title="Office Siren Aesthetic: Complete Style Guide 2025"
+        description="Master the office siren aesthetic with our complete guide. Learn how to dress powerful and seductive for the workplace with this viral TikTok trend."
+        keywords="office siren aesthetic, office siren style, corporate fashion, power dressing, workwear aesthetic, sexy office wear, professional style"
+        canonicalUrl="/office-siren-aesthetic"
+        ogImage="/office-siren-hero.png"
+        ogType="article"
+        article={{
+          publishedTime: "2024-10-30",
+          modifiedTime: "2025-01-01",
+          section: "Fashion Aesthetics",
+          tags: ["office siren", "aesthetic", "workwear", "power dressing"]
+        }}
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Blog", url: "/blog" },
+          { name: "Office Siren Aesthetic", url: "/office-siren-aesthetic" }
+        ]}
+      />
       <Navigation />
 
       {/* Hero Section */}

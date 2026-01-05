@@ -1,6 +1,7 @@
 import React from "react";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
+import SEO from "../components/SEO";
 import { Link } from "react-router-dom";
 
 const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog";
@@ -8,6 +9,25 @@ const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/obj
 const BestColorsForOliveSkin = () => {
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEO
+        title="Best Colors for Olive Skin: Complete Guide 2025"
+        description="Discover the most flattering colors for olive skin. Learn which shades complement your warm-toned complexion and make your skin glow."
+        keywords="best colors for olive skin, olive skin tone colors, Mediterranean skin colors, warm olive undertone, what colors suit olive skin"
+        canonicalUrl="/best-colors-for-olive-skin"
+        ogImage="/olive-skin-hero.png"
+        ogType="article"
+        article={{
+          publishedTime: "2024-11-19",
+          modifiedTime: "2025-01-01",
+          section: "Color Analysis",
+          tags: ["olive skin", "Mediterranean", "color guide", "skin tone"]
+        }}
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Blog", url: "/blog" },
+          { name: "Best Colors for Olive Skin", url: "/best-colors-for-olive-skin" }
+        ]}
+      />
       <Navigation />
 
       {/* Hero Section */}

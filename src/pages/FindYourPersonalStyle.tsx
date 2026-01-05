@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
+import SEO from "../components/SEO";
 
 const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog";
 
@@ -135,6 +136,26 @@ const FindYourPersonalStyle = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEO
+        title="How to Find Your Personal Style: Complete Guide 2025"
+        description="Discover your unique personal style with our comprehensive guide. Learn about style archetypes, common mistakes, and how to build a wardrobe you love."
+        keywords="find your personal style, personal style quiz, style archetypes, fashion identity, wardrobe personality, style guide, fashion tips"
+        canonicalUrl="/find-your-personal-style"
+        ogImage="/personal-style-hero.png"
+        ogType="article"
+        article={{
+          publishedTime: "2024-10-18",
+          modifiedTime: "2025-01-01",
+          section: "Style Guides",
+          tags: ["personal style", "style guide", "fashion identity", "wardrobe tips"]
+        }}
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Blog", url: "/blog" },
+          { name: "Find Your Personal Style", url: "/find-your-personal-style" }
+        ]}
+        faq={faqItems.map(item => ({ question: item.question, answer: item.answer }))}
+      />
       <Navigation />
 
       {/* Hero Section */}

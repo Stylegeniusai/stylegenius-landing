@@ -1,6 +1,8 @@
 import React from "react";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
+import SEO from "../components/SEO";
+import { Link } from "react-router-dom";
 
 const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog";
 const BODYTYPE_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/bodytype";
@@ -8,6 +10,25 @@ const BODYTYPE_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1
 const InvertedTriangleBody = () => {
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEO
+        title="Inverted Triangle Body: Complete Style Guide 2025"
+        description="Discover how to dress your inverted triangle body shape. Learn the best clothing styles, fits, and fashion tips to balance your proportions."
+        keywords="inverted triangle body, inverted triangle shape, broad shoulders, how to dress inverted triangle, V-shape body, top heavy body type"
+        canonicalUrl="/inverted-triangle-body"
+        ogImage="/inverted-triangle-hero.png"
+        ogType="article"
+        article={{
+          publishedTime: "2024-11-17",
+          modifiedTime: "2025-01-01",
+          section: "Body Type",
+          tags: ["inverted triangle", "body type", "style guide", "fashion tips"]
+        }}
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Blog", url: "/blog" },
+          { name: "Inverted Triangle Body", url: "/inverted-triangle-body" }
+        ]}
+      />
       <Navigation />
 
       {/* Hero Section */}

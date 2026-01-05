@@ -1,6 +1,7 @@
 import React from "react";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
+import SEO from "../components/SEO";
 import { Link } from "react-router-dom";
 
 const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog";
@@ -8,6 +9,25 @@ const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/obj
 const WhatToWearJobInterview = () => {
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEO
+        title="What to Wear to a Job Interview: Complete Guide 2025"
+        description="Nail your job interview outfit with our complete guide. Learn what to wear for corporate, creative, and casual interviews to make the best first impression."
+        keywords="what to wear job interview, interview outfit, professional interview attire, job interview dress code, interview clothing, first impression outfit"
+        canonicalUrl="/what-to-wear-job-interview"
+        ogImage="/job-interview-hero.png"
+        ogType="article"
+        article={{
+          publishedTime: "2024-11-25",
+          modifiedTime: "2025-01-01",
+          section: "Style Guides",
+          tags: ["job interview", "professional style", "career", "first impression"]
+        }}
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Blog", url: "/blog" },
+          { name: "What to Wear Job Interview", url: "/what-to-wear-job-interview" }
+        ]}
+      />
       <Navigation />
 
       {/* Hero Section */}

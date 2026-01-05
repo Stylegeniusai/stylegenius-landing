@@ -1,12 +1,33 @@
 import React from "react";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
+import SEO from "../components/SEO";
+import { Link } from "react-router-dom";
 
 const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog";
 
 const OldMoneyAesthetic = () => {
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEO
+        title="Old Money Aesthetic: Complete Style Guide 2025"
+        description="Master the old money aesthetic with our complete guide. Learn about timeless elegance, classic pieces, and how to dress with quiet sophistication."
+        keywords="old money aesthetic, old money style, timeless elegance, classic fashion, preppy style, quiet luxury, inheritance style, wealthy aesthetic"
+        canonicalUrl="/old-money-aesthetic"
+        ogImage="/old-money-hero.png"
+        ogType="article"
+        article={{
+          publishedTime: "2024-10-25",
+          modifiedTime: "2025-01-01",
+          section: "Fashion Aesthetics",
+          tags: ["old money", "aesthetic", "timeless fashion", "classic style"]
+        }}
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Blog", url: "/blog" },
+          { name: "Old Money Aesthetic", url: "/old-money-aesthetic" }
+        ]}
+      />
       <Navigation />
 
       {/* Hero Section */}

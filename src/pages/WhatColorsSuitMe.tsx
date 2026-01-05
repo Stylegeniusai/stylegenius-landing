@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
+import SEO from "../components/SEO";
 import { Button } from "../components/ui/button";
 import { getAppStoreUrl, getDownloadButtonText } from "../utils/deviceDetection";
+import { Link } from "react-router-dom";
 
 const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog";
 
@@ -56,8 +58,27 @@ const WhatColorsSuitMe = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEO
+        title="What Colors Suit Me? Find Your Perfect Palette 2025"
+        description="Discover which colors flatter your skin tone. Our comprehensive guide helps you find the perfect colors for your complexion - from fair to deep skin tones."
+        keywords="what colors suit me, colors for my skin tone, best colors for complexion, color analysis, skin tone colors, flattering colors"
+        canonicalUrl="/what-colors-suit-me"
+        ogImage="/what-colors-suit-me-hero.png"
+        ogType="article"
+        article={{
+          publishedTime: "2024-10-08",
+          modifiedTime: "2025-01-01",
+          section: "Color Analysis",
+          tags: ["color analysis", "skin tone", "flattering colors", "personal styling"]
+        }}
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Blog", url: "/blog" },
+          { name: "What Colors Suit Me", url: "/what-colors-suit-me" }
+        ]}
+      />
       <Navigation />
-      
+
       {/* Hero Section */}
       <section className="py-16 lg:py-24 bg-gradient-to-br from-pink-50 to-purple-50 relative overflow-hidden">
         <div className="container mx-auto px-4">

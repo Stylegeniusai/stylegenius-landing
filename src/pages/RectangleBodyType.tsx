@@ -1,6 +1,8 @@
 import React from "react";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
+import SEO from "../components/SEO";
+import { Link } from "react-router-dom";
 
 const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog";
 const BODYTYPE_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/bodytype";
@@ -8,6 +10,25 @@ const BODYTYPE_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1
 const RectangleBodyType = () => {
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEO
+        title="Rectangle Body Type: Complete Style Guide 2025"
+        description="Discover how to dress your rectangle body shape. Learn the best clothing styles, fits, and fashion tips to create curves and flatter your athletic figure."
+        keywords="rectangle body type, rectangle body shape, how to dress rectangle shape, athletic body type, straight body shape, rectangle figure fashion"
+        canonicalUrl="/rectangle-body-type"
+        ogImage="/rectangle-body-hero.png"
+        ogType="article"
+        article={{
+          publishedTime: "2024-11-16",
+          modifiedTime: "2025-01-01",
+          section: "Body Type",
+          tags: ["rectangle", "body type", "style guide", "fashion tips"]
+        }}
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Blog", url: "/blog" },
+          { name: "Rectangle Body Type", url: "/rectangle-body-type" }
+        ]}
+      />
       <Navigation />
 
       {/* Hero Section */}

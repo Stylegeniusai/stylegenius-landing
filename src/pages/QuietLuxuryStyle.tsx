@@ -2,12 +2,32 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
+import SEO from "../components/SEO";
 
 const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog";
 
 const QuietLuxuryStyle = () => {
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEO
+        title="Quiet Luxury Style Guide: Stealth Wealth Fashion 2025"
+        description="Master quiet luxury fashion with our complete guide. Learn the art of understated elegance, stealth wealth dressing, and how to build a timeless wardrobe."
+        keywords="quiet luxury, stealth wealth, old money style, understated fashion, minimalist luxury, quiet luxury brands, capsule wardrobe, timeless style"
+        canonicalUrl="/quiet-luxury-style"
+        ogImage="/quiet-luxury-hero.png"
+        ogType="article"
+        article={{
+          publishedTime: "2024-10-20",
+          modifiedTime: "2025-01-01",
+          section: "Fashion Aesthetics",
+          tags: ["quiet luxury", "stealth wealth", "minimalist fashion", "timeless style"]
+        }}
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Blog", url: "/blog" },
+          { name: "Quiet Luxury Style", url: "/quiet-luxury-style" }
+        ]}
+      />
       <Navigation />
 
       {/* Hero Section */}

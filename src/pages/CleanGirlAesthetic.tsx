@@ -1,12 +1,33 @@
 import React from "react";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
+import SEO from "../components/SEO";
+import { Link } from "react-router-dom";
 
 const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog";
 
 const CleanGirlAesthetic = () => {
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEO
+        title="Clean Girl Aesthetic: Complete Style & Beauty Guide 2025"
+        description="Master the clean girl aesthetic with our complete guide. Learn the minimalist approach to beauty, skincare, and fashion that's taken over TikTok and Instagram."
+        keywords="clean girl aesthetic, clean girl makeup, minimalist style, no makeup makeup, slick back bun, gold hoops, natural beauty, effortless style"
+        canonicalUrl="/clean-girl-aesthetic"
+        ogImage="/clean-girl-hero.png"
+        ogType="article"
+        article={{
+          publishedTime: "2024-10-28",
+          modifiedTime: "2025-01-01",
+          section: "Fashion Aesthetics",
+          tags: ["clean girl", "aesthetic", "minimalist", "natural beauty"]
+        }}
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Blog", url: "/blog" },
+          { name: "Clean Girl Aesthetic", url: "/clean-girl-aesthetic" }
+        ]}
+      />
       <Navigation />
 
       {/* Hero Section */}

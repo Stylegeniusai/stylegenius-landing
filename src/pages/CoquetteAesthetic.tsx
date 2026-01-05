@@ -1,6 +1,7 @@
 import React from "react";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
+import SEO from "../components/SEO";
 import { Link } from "react-router-dom";
 
 const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog";
@@ -8,6 +9,31 @@ const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/obj
 const CoquetteAesthetic = () => {
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEO
+        title="Coquette Aesthetic: The Complete Style Guide 2025"
+        description="Master the coquette aesthetic with our complete guide. Learn about bows, lace, ballet-inspired pieces, and how to style this viral TikTok trend for any occasion."
+        keywords="coquette aesthetic, coquette style, coquette fashion, bow aesthetic, feminine style, ballet core, romantic fashion, pink aesthetic, lace fashion"
+        canonicalUrl="/coquette-aesthetic"
+        ogImage="/coquette-hero.png"
+        ogType="article"
+        article={{
+          publishedTime: "2024-11-01",
+          modifiedTime: "2025-01-01",
+          section: "Fashion Aesthetics",
+          tags: ["coquette", "aesthetic", "feminine fashion", "TikTok trends", "bows"]
+        }}
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Blog", url: "/blog" },
+          { name: "Coquette Aesthetic", url: "/coquette-aesthetic" }
+        ]}
+        faq={[
+          { question: "What is the coquette aesthetic?", answer: "The coquette aesthetic is a hyper-feminine fashion trend characterized by bows, ribbons, lace, soft pink tones, and vintage-inspired pieces that celebrate romantic, flirty femininity." },
+          { question: "Is coquette appropriate for work?", answer: "Yes! Choose subtle touches like a blouse with a small bow, pearl jewelry, or ballet flats. Stick to neutral colors and professional silhouettes with romantic details." },
+          { question: "Can I wear coquette if I don't like pink?", answer: "Absolutely! Try dark coquette with black, burgundy, and red, or go for cream, white, and baby blue. The aesthetic is about femininity and romantic details, not specifically pink." },
+          { question: "What body types suit coquette?", answer: "Every body type can embrace coquette! The aesthetic is about embracing femininity, not fitting a specific shape. Choose pieces that flatter your figure." }
+        ]}
+      />
       <Navigation />
 
       {/* Hero Section */}

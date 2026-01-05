@@ -1,6 +1,8 @@
 import React from "react";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
+import SEO from "../components/SEO";
+import { Link } from "react-router-dom";
 
 const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog";
 const BODYTYPE_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/bodytype";
@@ -8,6 +10,25 @@ const BODYTYPE_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1
 const PearBodyShape = () => {
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEO
+        title="Pear Body Shape: Complete Style Guide 2025"
+        description="Discover how to dress your pear body shape. Learn the best clothing styles, fits, and fashion tips to balance your proportions and flatter your figure."
+        keywords="pear body shape, pear shaped body, how to dress pear shape, pear figure fashion, bottom heavy body type, pear body style tips"
+        canonicalUrl="/pear-body-shape"
+        ogImage="/pear-body-hero.png"
+        ogType="article"
+        article={{
+          publishedTime: "2024-11-12",
+          modifiedTime: "2025-01-01",
+          section: "Body Type",
+          tags: ["pear shape", "body type", "style guide", "fashion tips"]
+        }}
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Blog", url: "/blog" },
+          { name: "Pear Body Shape", url: "/pear-body-shape" }
+        ]}
+      />
       <Navigation />
 
       {/* Hero Section */}

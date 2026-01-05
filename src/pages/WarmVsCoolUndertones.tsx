@@ -1,10 +1,31 @@
 import React from "react";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
+import SEO from "../components/SEO";
+import { Link } from "react-router-dom";
 
 const WarmVsCoolUndertones = () => {
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEO
+        title="Warm vs Cool Undertones: How to Find Yours 2025"
+        description="Learn how to determine if you have warm or cool undertones. Our complete guide helps you identify your skin's undertone for better color choices in fashion and makeup."
+        keywords="warm vs cool undertones, skin undertone test, how to find undertone, warm undertone, cool undertone, neutral undertone, vein test"
+        canonicalUrl="/warm-vs-cool-undertones"
+        ogImage="/undertones-hero.png"
+        ogType="article"
+        article={{
+          publishedTime: "2024-10-12",
+          modifiedTime: "2025-01-01",
+          section: "Color Analysis",
+          tags: ["undertones", "color analysis", "skin tone", "warm cool neutral"]
+        }}
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Blog", url: "/blog" },
+          { name: "Warm vs Cool Undertones", url: "/warm-vs-cool-undertones" }
+        ]}
+      />
       <Navigation />
 
       {/* Hero Section */}

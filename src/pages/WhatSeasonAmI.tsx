@@ -1,6 +1,8 @@
 import React from "react";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
+import SEO from "../components/SEO";
+import { Link } from "react-router-dom";
 
 const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog";
 
@@ -66,6 +68,31 @@ const WhatSeasonAmI = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEO
+        title="What Season Am I? Complete Color Analysis Guide 2025"
+        description="Discover your seasonal color palette with our comprehensive guide. Learn if you're Spring, Summer, Autumn, or Winter and find the colors that make you glow."
+        keywords="what season am i, color analysis, seasonal color analysis, spring summer autumn winter colors, skin undertone, color palette, personal color analysis"
+        canonicalUrl="/what-season-am-i"
+        ogImage="/what-season-am-i-hero.png"
+        ogType="article"
+        article={{
+          publishedTime: "2024-10-15",
+          modifiedTime: "2025-01-01",
+          section: "Color Analysis",
+          tags: ["color analysis", "seasonal colors", "skin undertone", "personal styling"]
+        }}
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Blog", url: "/blog" },
+          { name: "What Season Am I?", url: "/what-season-am-i" }
+        ]}
+        faq={[
+          { question: "What are the 4 color seasons?", answer: "The 4 color seasons are Spring, Summer, Autumn, and Winter. Each season is determined by your skin's undertone (warm or cool) and your overall contrast level (light or deep)." },
+          { question: "How do I find my color season?", answer: "Look at your vein color (blue/purple = cool, green = warm), test gold vs silver jewelry, and assess your natural contrast level between hair, skin, and eyes." },
+          { question: "What colors suit warm undertones?", answer: "Warm undertones (Spring and Autumn) look best in earth tones, warm reds, oranges, yellows, olive greens, and gold jewelry." },
+          { question: "What colors suit cool undertones?", answer: "Cool undertones (Summer and Winter) look best in blues, purples, pinks, cool reds, emerald green, and silver jewelry." }
+        ]}
+      />
       <Navigation />
 
       {/* Hero Section */}

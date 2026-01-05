@@ -1,6 +1,7 @@
 import React from "react";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
+import SEO from "../components/SEO";
 import { Link } from "react-router-dom";
 
 const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog";
@@ -8,6 +9,25 @@ const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/obj
 const BestColorsForDarkSkin = () => {
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEO
+        title="Best Colors for Dark Skin: Complete Guide 2025"
+        description="Discover the most flattering colors for dark skin. Learn which bold and vibrant shades make deep skin tones look absolutely stunning."
+        keywords="best colors for dark skin, colors for deep skin tone, dark skin fashion, melanin rich skin colors, what colors suit dark skin"
+        canonicalUrl="/best-colors-for-dark-skin"
+        ogImage="/dark-skin-hero.png"
+        ogType="article"
+        article={{
+          publishedTime: "2024-11-20",
+          modifiedTime: "2025-01-01",
+          section: "Color Analysis",
+          tags: ["dark skin", "deep skin tone", "color guide", "melanin"]
+        }}
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Blog", url: "/blog" },
+          { name: "Best Colors for Dark Skin", url: "/best-colors-for-dark-skin" }
+        ]}
+      />
       <Navigation />
 
       {/* Hero Section */}

@@ -1,6 +1,8 @@
 import React from "react";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
+import SEO from "../components/SEO";
+import { Link } from "react-router-dom";
 
 const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog";
 
@@ -38,6 +40,25 @@ const SoftSummerColors = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEO
+        title="Soft Summer Colors: Complete Palette Guide 2025"
+        description="Discover the perfect soft summer color palette. Learn which muted, cool colors flatter soft summer skin tones and how to build a cohesive wardrobe."
+        keywords="soft summer colors, soft summer palette, summer color analysis, muted cool colors, soft summer celebrity, soft summer wardrobe"
+        canonicalUrl="/soft-summer-colors"
+        ogImage="/soft-summer-hero.png"
+        ogType="article"
+        article={{
+          publishedTime: "2024-11-06",
+          modifiedTime: "2025-01-01",
+          section: "Color Analysis",
+          tags: ["soft summer", "color analysis", "seasonal colors", "cool colors"]
+        }}
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Blog", url: "/blog" },
+          { name: "Soft Summer Colors", url: "/soft-summer-colors" }
+        ]}
+      />
       <Navigation />
 
       {/* Hero Section */}

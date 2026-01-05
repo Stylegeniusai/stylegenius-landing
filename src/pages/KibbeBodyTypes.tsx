@@ -1,6 +1,8 @@
 import React from "react";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
+import SEO from "../components/SEO";
+import { Link } from "react-router-dom";
 
 const KibbeBodyTypes = () => {
   const kibbeTypes = [
@@ -125,6 +127,30 @@ const KibbeBodyTypes = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEO
+        title="Kibbe Body Types: Complete Guide to All 13 Types 2025"
+        description="Discover your Kibbe body type with our comprehensive guide. Learn about all 13 Kibbe types, from Dramatic to Romantic, and find your most flattering styles."
+        keywords="kibbe body types, kibbe quiz, kibbe dramatic, kibbe romantic, kibbe natural, kibbe gamine, kibbe classic, body type analysis, david kibbe"
+        canonicalUrl="/kibbe-body-types"
+        ogImage="/kibbe-hero.png"
+        ogType="article"
+        article={{
+          publishedTime: "2024-10-10",
+          modifiedTime: "2025-01-01",
+          section: "Body Type",
+          tags: ["kibbe", "body types", "style analysis", "personal styling"]
+        }}
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Blog", url: "/blog" },
+          { name: "Kibbe Body Types", url: "/kibbe-body-types" }
+        ]}
+        faq={[
+          { question: "What are Kibbe body types?", answer: "Kibbe body types are a system created by David Kibbe that categorizes bodies into 13 types based on yin (soft, curved) and yang (sharp, angular) balance. Each type has specific style recommendations." },
+          { question: "How do I find my Kibbe body type?", answer: "Look at your bone structure, body flesh, and facial features. Consider your height, shoulder width, and overall silhouette. Many people take the Kibbe quiz or consult with a stylist." },
+          { question: "What is the most common Kibbe type?", answer: "Soft Natural and Soft Classic are considered among the most common Kibbe types, as they represent moderate, balanced features with some softness." }
+        ]}
+      />
       <Navigation />
 
       {/* Hero Section */}

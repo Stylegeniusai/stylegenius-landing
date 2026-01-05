@@ -1,6 +1,8 @@
 import React from "react";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
+import SEO from "../components/SEO";
+import { Link } from "react-router-dom";
 
 const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog";
 
@@ -38,6 +40,25 @@ const DarkWinterColors = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEO
+        title="Dark Winter Colors: Complete Palette Guide 2025"
+        description="Discover the perfect dark winter color palette. Learn which bold, cool colors flatter dark winter skin tones and how to build a stunning wardrobe."
+        keywords="dark winter colors, dark winter palette, winter color analysis, cool deep colors, dark winter celebrities, dark winter wardrobe"
+        canonicalUrl="/dark-winter-colors"
+        ogImage="/dark-winter-hero.png"
+        ogType="article"
+        article={{
+          publishedTime: "2024-11-08",
+          modifiedTime: "2025-01-01",
+          section: "Color Analysis",
+          tags: ["dark winter", "color analysis", "seasonal colors", "cool colors"]
+        }}
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Blog", url: "/blog" },
+          { name: "Dark Winter Colors", url: "/dark-winter-colors" }
+        ]}
+      />
       <Navigation />
 
       {/* Hero Section */}

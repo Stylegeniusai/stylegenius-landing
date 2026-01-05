@@ -1,6 +1,8 @@
 import React from "react";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
+import SEO from "../components/SEO";
+import { Link } from "react-router-dom";
 
 const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog";
 const BODYTYPE_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/bodytype";
@@ -8,6 +10,25 @@ const BODYTYPE_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1
 const HourglassBodyType = () => {
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEO
+        title="Hourglass Body Type: Complete Style Guide 2025"
+        description="Discover how to dress your hourglass figure. Learn the best clothing styles, fits, and fashion tips to flatter your balanced proportions and defined waist."
+        keywords="hourglass body type, hourglass figure, how to dress hourglass, hourglass body shape, curvy fashion, waist emphasis, hourglass style tips"
+        canonicalUrl="/hourglass-body-type"
+        ogImage="/hourglass-hero.png"
+        ogType="article"
+        article={{
+          publishedTime: "2024-11-10",
+          modifiedTime: "2025-01-01",
+          section: "Body Type",
+          tags: ["hourglass", "body type", "style guide", "curvy fashion"]
+        }}
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Blog", url: "/blog" },
+          { name: "Hourglass Body Type", url: "/hourglass-body-type" }
+        ]}
+      />
       <Navigation />
 
       {/* Hero Section */}

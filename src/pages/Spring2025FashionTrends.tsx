@@ -1,12 +1,33 @@
 import React from "react";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
+import SEO from "../components/SEO";
+import { Link } from "react-router-dom";
 
 const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog";
 
 const Spring2025FashionTrends = () => {
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEO
+        title="Spring 2025 Fashion Trends: What to Wear This Season"
+        description="Discover the hottest spring 2025 fashion trends. From runway to real life - learn about the colors, styles, and pieces you need for the new season."
+        keywords="spring 2025 fashion trends, spring fashion, spring outfit ideas, 2025 style trends, seasonal fashion, runway trends"
+        canonicalUrl="/spring-2025-fashion-trends"
+        ogImage="/spring-2025-trends-hero.png"
+        ogType="article"
+        article={{
+          publishedTime: "2024-12-15",
+          modifiedTime: "2025-01-01",
+          section: "Fashion Trends",
+          tags: ["spring 2025", "fashion trends", "seasonal style", "runway"]
+        }}
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Blog", url: "/blog" },
+          { name: "Spring 2025 Fashion Trends", url: "/spring-2025-fashion-trends" }
+        ]}
+      />
       <Navigation />
 
       <section className="py-16 lg:py-24 bg-gradient-to-br from-green-100 to-yellow-100">

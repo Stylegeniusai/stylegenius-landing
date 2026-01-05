@@ -1,12 +1,33 @@
 import React from "react";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
+import SEO from "../components/SEO";
+import { Link } from "react-router-dom";
 
 const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog";
 
 const CapsuleWardrobe = () => {
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEO
+        title="How to Build a Capsule Wardrobe: Complete Guide 2025"
+        description="Learn how to create a minimalist capsule wardrobe with versatile pieces you love. Our guide covers essential items, color coordination, and styling tips."
+        keywords="capsule wardrobe, minimalist wardrobe, wardrobe essentials, capsule closet, minimalist fashion, wardrobe basics, mix and match outfits"
+        canonicalUrl="/capsule-wardrobe"
+        ogImage="/capsule-wardrobe-hero.png"
+        ogType="article"
+        article={{
+          publishedTime: "2024-11-15",
+          modifiedTime: "2025-01-01",
+          section: "Style Guides",
+          tags: ["capsule wardrobe", "minimalist", "wardrobe basics", "style guide"]
+        }}
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Blog", url: "/blog" },
+          { name: "Capsule Wardrobe", url: "/capsule-wardrobe" }
+        ]}
+      />
       <Navigation />
 
       {/* Hero Section */}

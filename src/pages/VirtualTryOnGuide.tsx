@@ -1,12 +1,33 @@
 import React from "react";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
+import SEO from "../components/SEO";
+import { Link } from "react-router-dom";
 
 const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog";
 
 const VirtualTryOnGuide = () => {
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEO
+        title="Virtual Try-On Guide: How AI is Changing Online Shopping 2025"
+        description="Discover how virtual try-on technology works and how it can transform your online shopping experience. Learn about AI-powered fitting rooms and AR fashion."
+        keywords="virtual try-on, AI fashion, online shopping technology, AR clothing, virtual fitting room, try before you buy, digital fashion"
+        canonicalUrl="/virtual-try-on-guide"
+        ogImage="/virtual-try-on-hero.png"
+        ogType="article"
+        article={{
+          publishedTime: "2024-12-01",
+          modifiedTime: "2025-01-01",
+          section: "Technology",
+          tags: ["virtual try-on", "AI", "shopping technology", "fashion tech"]
+        }}
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Blog", url: "/blog" },
+          { name: "Virtual Try-On Guide", url: "/virtual-try-on-guide" }
+        ]}
+      />
       <Navigation />
 
       <section className="py-16 lg:py-24 bg-gradient-to-br from-purple-100 to-pink-100">

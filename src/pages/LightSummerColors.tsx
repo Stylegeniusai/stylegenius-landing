@@ -1,12 +1,33 @@
 import React from "react";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
+import SEO from "../components/SEO";
+import { Link } from "react-router-dom";
 
 const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog";
 
 const LightSummerColors = () => {
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEO
+        title="Light Summer Colors: Complete Palette Guide 2025"
+        description="Discover the perfect light summer color palette. Learn which soft, cool colors flatter light summer skin tones and how to build a beautiful wardrobe."
+        keywords="light summer colors, light summer palette, summer color analysis, soft cool colors, light summer celebrity, light summer wardrobe"
+        canonicalUrl="/light-summer-colors"
+        ogImage="/light-summer-hero.png"
+        ogType="article"
+        article={{
+          publishedTime: "2024-11-07",
+          modifiedTime: "2025-01-01",
+          section: "Color Analysis",
+          tags: ["light summer", "color analysis", "seasonal colors", "cool colors"]
+        }}
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Blog", url: "/blog" },
+          { name: "Light Summer Colors", url: "/light-summer-colors" }
+        ]}
+      />
       <Navigation />
 
       <section className="py-16 lg:py-24 bg-gradient-to-br from-sky-100 to-rose-100">

@@ -2,12 +2,32 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
+import SEO from "../components/SEO";
 
 const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog";
 
 const WeddingGuestOutfits = () => {
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEO
+        title="Wedding Guest Outfits: Complete Guide for Every Dress Code 2025"
+        description="Find the perfect wedding guest outfit with our complete guide. Learn what to wear for every dress code, season, and venue - from black tie to casual."
+        keywords="wedding guest outfit, wedding guest dress, what to wear to wedding, wedding dress code, cocktail attire, black tie optional, semi formal wedding"
+        canonicalUrl="/wedding-guest-outfits"
+        ogImage="/wedding-guest-hero.png"
+        ogType="article"
+        article={{
+          publishedTime: "2024-11-20",
+          modifiedTime: "2025-01-01",
+          section: "Style Guides",
+          tags: ["wedding guest", "outfit ideas", "dress code", "formal wear"]
+        }}
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Blog", url: "/blog" },
+          { name: "Wedding Guest Outfits", url: "/wedding-guest-outfits" }
+        ]}
+      />
       <Navigation />
 
       {/* Hero Section */}

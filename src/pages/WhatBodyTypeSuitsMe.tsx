@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
+import SEO from "../components/SEO";
 import { Button } from "../components/ui/button";
 import { getAppStoreUrl, getDownloadButtonText } from "../utils/deviceDetection";
+import { Link } from "react-router-dom";
 
 const WhatBodyTypeSuitsMe = () => {
   const [appStoreUrl, setAppStoreUrl] = useState('');
@@ -82,8 +84,27 @@ const WhatBodyTypeSuitsMe = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEO
+        title="What Clothes Suit My Body Type? Complete Guide 2025"
+        description="Find out which clothes flatter your body type. Our comprehensive guide helps you dress for pear, apple, hourglass, rectangle, and inverted triangle shapes."
+        keywords="what clothes suit my body, body type fashion, dress for your body shape, pear body clothes, hourglass outfits, body shape guide"
+        canonicalUrl="/what-body-type-suits-me"
+        ogImage="/what-body-type-suits-me-hero.png"
+        ogType="article"
+        article={{
+          publishedTime: "2024-10-05",
+          modifiedTime: "2025-01-01",
+          section: "Body Type",
+          tags: ["body type", "fashion guide", "style tips", "body shape"]
+        }}
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Blog", url: "/blog" },
+          { name: "What Body Type Suits Me", url: "/what-body-type-suits-me" }
+        ]}
+      />
       <Navigation />
-      
+
       {/* Hero Section */}
       <section className="py-16 lg:py-24 bg-gradient-to-br from-pink-50 to-purple-50 relative overflow-hidden">
         <div className="container mx-auto px-4">

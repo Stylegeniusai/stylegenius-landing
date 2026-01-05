@@ -1,10 +1,31 @@
 import React from "react";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
+import SEO from "../components/SEO";
+import { Link } from "react-router-dom";
 
 const BestJeansForBodyType = () => {
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEO
+        title="Best Jeans for Your Body Type: Complete Guide 2025"
+        description="Find the perfect jeans for your body shape. Our guide covers the best denim styles for pear, apple, hourglass, rectangle, and inverted triangle figures."
+        keywords="best jeans for body type, jeans for pear shape, jeans for hourglass, high waisted jeans, bootcut jeans, skinny jeans body type"
+        canonicalUrl="/best-jeans-for-body-type"
+        ogImage="/jeans-guide-hero.png"
+        ogType="article"
+        article={{
+          publishedTime: "2024-11-22",
+          modifiedTime: "2025-01-01",
+          section: "Body Type",
+          tags: ["jeans", "denim", "body type", "shopping guide"]
+        }}
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Blog", url: "/blog" },
+          { name: "Best Jeans for Body Type", url: "/best-jeans-for-body-type" }
+        ]}
+      />
       <Navigation />
 
       <section className="py-16 lg:py-24 bg-gradient-to-br from-blue-100 to-indigo-100">
