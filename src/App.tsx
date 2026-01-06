@@ -61,6 +61,11 @@ import WeddingGuestOutfits from "./pages/WeddingGuestOutfits";
 // Blog posts - Technology & Trends
 import VirtualTryOnGuide from "./pages/VirtualTryOnGuide";
 import Spring2025FashionTrends from "./pages/Spring2025FashionTrends";
+import AIFashionShopping from "./pages/AIFashionShopping";
+import OnlineDressingRoom from "./pages/OnlineDressingRoom";
+import SmartShoppingTools from "./pages/SmartShoppingTools";
+import DoesThisSuitMe from "./pages/DoesThisSuitMe";
+import FutureOnlineShopping from "./pages/FutureOnlineShopping";
 
 const queryClient = new QueryClient();
 
@@ -121,6 +126,11 @@ const App = () => (
           {/* Blog posts - Technology & Trends */}
           <Route path="/virtual-try-on-guide" element={<VirtualTryOnGuide />} />
           <Route path="/spring-2025-fashion-trends" element={<Spring2025FashionTrends />} />
+          <Route path="/ai-fashion-shopping" element={<AIFashionShopping />} />
+          <Route path="/online-dressing-room" element={<OnlineDressingRoom />} />
+          <Route path="/smart-shopping-tools" element={<SmartShoppingTools />} />
+          <Route path="/does-this-suit-me" element={<DoesThisSuitMe />} />
+          <Route path="/future-online-shopping" element={<FutureOnlineShopping />} />
 
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />

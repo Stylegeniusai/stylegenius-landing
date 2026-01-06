@@ -222,7 +222,7 @@ const blogPosts = [
   },
   // Technology & Trends
   {
-    title: "Virtual Try-On Guide 2025",
+    title: "Virtual Try-On Guide 2026",
     description: "Everything you need to know about virtual try-on technology and how to shop online confidently.",
     image: `${BLOG_IMAGE_BASE}/virtual-tryon-hero.png`,
     href: "/virtual-try-on-guide",
@@ -234,6 +234,41 @@ const blogPosts = [
     image: `${BLOG_IMAGE_BASE}/spring-2025-hero.png`,
     href: "/spring-2025-fashion-trends",
     category: "Fashion Trends"
+  },
+  {
+    title: "AI Fashion Shopping: How Smart Tech is Changing Everything",
+    description: "Discover how AI is revolutionizing fashion shopping - from body type matching to personalized recommendations.",
+    image: `${BLOG_IMAGE_BASE}/ai-fashion-hero.png`,
+    href: "/ai-fashion-shopping",
+    category: "Shopping Tech"
+  },
+  {
+    title: "Online Dressing Room: Try Clothes Virtually",
+    description: "How virtual fitting rooms work and why they're changing online shopping forever.",
+    image: `${BLOG_IMAGE_BASE}/dressing-room-hero.png`,
+    href: "/online-dressing-room",
+    category: "Shopping Tech"
+  },
+  {
+    title: "Smart Shopping: Price Tracking & Universal Wishlist",
+    description: "Master price tracking, sale alerts, and universal wishlists. Save money and never miss a deal.",
+    image: `${BLOG_IMAGE_BASE}/smart-shopping-hero.png`,
+    href: "/smart-shopping-tools",
+    category: "Shopping Tech"
+  },
+  {
+    title: "Does This Suit Me? AI Style Matching Explained",
+    description: "How AI tells you if clothes flatter your body type and skin tone before you buy.",
+    image: `${BLOG_IMAGE_BASE}/style-match-hero.png`,
+    href: "/does-this-suit-me",
+    category: "Shopping Tech"
+  },
+  {
+    title: "Future of Online Shopping 2026",
+    description: "AI stylists, virtual try-on, AR mirrors - what's coming next for fashion tech.",
+    image: `${BLOG_IMAGE_BASE}/future-shopping-hero.png`,
+    href: "/future-online-shopping",
+    category: "Shopping Tech"
   }
 ];
 
