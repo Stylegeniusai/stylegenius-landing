@@ -130,11 +130,13 @@ const AIFashionShopping = () => {
 
           {/* Image: Body Type Match */}
           <div className="my-12">
-            <img
-              src={`${BLOG_IMAGE_BASE}/body-type-match-result.png`}
-              alt="AI body type matching showing personalized style recommendations"
-              className="w-full rounded-2xl shadow-lg"
-            />
+            <div className="rounded-xl shadow-2xl overflow-hidden border border-gray-200">
+              <img
+                src={`${BLOG_IMAGE_BASE}/style-match-result.png`}
+                alt="AI body type matching showing personalized style recommendations"
+                className="w-full"
+              />
+            </div>
             <p className="text-center text-gray-500 mt-3 text-sm">AI analyzing body type and showing which styles work best</p>
           </div>
 
@@ -200,11 +202,13 @@ const AIFashionShopping = () => {
 
           {/* Image: Skin Tone Match */}
           <div className="my-12">
-            <img
-              src={`${BLOG_IMAGE_BASE}/skintone-match-result.png`}
-              alt="AI skin tone matching showing color recommendations"
-              className="w-full rounded-2xl shadow-lg"
-            />
+            <div className="rounded-xl shadow-2xl overflow-hidden border border-gray-200">
+              <img
+                src={`${BLOG_IMAGE_BASE}/style-match-result.png`}
+                alt="AI skin tone matching showing color recommendations"
+                className="w-full"
+              />
+            </div>
             <p className="text-center text-gray-500 mt-3 text-sm">AI analyzing skin tone to recommend flattering colors</p>
           </div>
 
@@ -410,11 +414,13 @@ const AIFashionShopping = () => {
             </div>
 
             <div className="my-8">
-              <img
-                src={`${BLOG_IMAGE_BASE}/stylegenius-extension-demo.png`}
-                alt="StyleGenius extension showing AI style matching on a shopping site"
-                className="w-full rounded-2xl shadow-lg"
-              />
+              <div className="rounded-xl shadow-2xl overflow-hidden border border-gray-200">
+                <img
+                  src={`${BLOG_IMAGE_BASE}/stylegenius-extension-demo.png`}
+                  alt="StyleGenius extension showing AI style matching on a shopping site"
+                  className="w-full"
+                />
+              </div>
               <p className="text-center text-gray-500 mt-3 text-sm">StyleGenius analyzing an item for body type and skin tone match</p>
             </div>
           </section>

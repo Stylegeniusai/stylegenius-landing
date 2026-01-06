@@ -154,11 +154,13 @@ const OnlineDressingRoom = () => {
 
           {/* Image: VTO Demo */}
           <div className="my-12">
-            <img
-              src={`${BLOG_IMAGE_BASE}/vto-demo.png`}
-              alt="Virtual try-on demo showing clothes on a real person"
-              className="w-full rounded-2xl shadow-lg"
-            />
+            <div className="rounded-xl shadow-2xl overflow-hidden border border-gray-200">
+              <img
+                src={`${BLOG_IMAGE_BASE}/vto-demo.png`}
+                alt="Virtual try-on demo showing clothes on a real person"
+                className="w-full"
+              />
+            </div>
             <p className="text-center text-gray-500 mt-3 text-sm">Virtual try-on showing how a garment looks before purchasing</p>
           </div>
 
@@ -391,11 +393,13 @@ const OnlineDressingRoom = () => {
             </div>
 
             <div className="my-8">
-              <img
-                src={`${BLOG_IMAGE_BASE}/stylegenius-vto-demo.png`}
-                alt="StyleGenius virtual try-on showing clothes on user"
-                className="w-full rounded-2xl shadow-lg"
-              />
+              <div className="rounded-xl shadow-2xl overflow-hidden border border-gray-200">
+                <img
+                  src={`${BLOG_IMAGE_BASE}/stylegenius-vto-demo.png`}
+                  alt="StyleGenius virtual try-on showing clothes on user"
+                  className="w-full"
+                />
+              </div>
               <p className="text-center text-gray-500 mt-3 text-sm">StyleGenius virtual try-on – see it on yourself before buying</p>
             </div>
           </section>

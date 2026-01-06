@@ -59,12 +59,12 @@ const SmartShoppingTools = () => {
               Price tracking, universal wishlists, and sale alerts – the tools that make sure you get what you want at the best price.
             </p>
           </div>
-          <div className="max-w-3xl mx-auto mt-8">
-            <div className="p-1 rounded-2xl" style={{ background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)' }}>
+          <div className="max-w-5xl mx-auto mt-8">
+            <div className="rounded-xl shadow-2xl overflow-hidden border border-gray-200">
               <img
                 src={`${BLOG_IMAGE_BASE}/smart-shopping-hero.png`}
                 alt="Smart shopping tools - price tracking and wishlist"
-                className="w-full rounded-xl"
+                className="w-full"
               />
             </div>
           </div>
@@ -135,11 +135,13 @@ const SmartShoppingTools = () => {
 
             {/* Price Alert Screenshot */}
             <div className="my-8">
-              <img
-                src={`${BLOG_IMAGE_BASE}/price-alert-demo.png`}
-                alt="Price drop alert notification showing savings"
-                className="w-full rounded-2xl shadow-lg"
-              />
+              <div className="rounded-xl shadow-2xl overflow-hidden border border-gray-200">
+                <img
+                  src={`${BLOG_IMAGE_BASE}/price-alert-demo.png`}
+                  alt="Price drop alert notification showing savings"
+                  className="w-full"
+                />
+              </div>
               <p className="text-center text-gray-500 mt-3 text-sm">Price drop alert – never miss a sale again</p>
             </div>
 
@@ -222,11 +224,13 @@ const SmartShoppingTools = () => {
 
             {/* Wishlist Screenshot */}
             <div className="my-8">
-              <img
-                src={`${BLOG_IMAGE_BASE}/universal-wishlist-demo.png`}
-                alt="Universal wishlist showing items from multiple stores"
-                className="w-full rounded-2xl shadow-lg"
-              />
+              <div className="rounded-xl shadow-2xl overflow-hidden border border-gray-200">
+                <img
+                  src={`${BLOG_IMAGE_BASE}/universal-wishlist-demo.png`}
+                  alt="Universal wishlist showing items from multiple stores"
+                  className="w-full"
+                />
+              </div>
               <p className="text-center text-gray-500 mt-3 text-sm">One wishlist for all your favorite stores</p>
             </div>
 
@@ -361,11 +365,13 @@ const SmartShoppingTools = () => {
             </div>
 
             <div className="my-8">
-              <img
-                src={`${BLOG_IMAGE_BASE}/stylegenius-wishlist-demo.png`}
-                alt="StyleGenius universal wishlist with price tracking"
-                className="w-full rounded-2xl shadow-lg"
-              />
+              <div className="rounded-xl shadow-2xl overflow-hidden border border-gray-200">
+                <img
+                  src={`${BLOG_IMAGE_BASE}/stylegenius-wishlist-demo.png`}
+                  alt="StyleGenius universal wishlist with price tracking"
+                  className="w-full"
+                />
+              </div>
               <p className="text-center text-gray-500 mt-3 text-sm">StyleGenius wishlist – all your favorites from every store, with price alerts</p>
             </div>
           </section>

@@ -353,11 +353,13 @@ const FutureOnlineShopping = () => {
             </div>
 
             <div className="my-8">
-              <img
-                src={`${BLOG_IMAGE_BASE}/stylegenius-full-demo.png`}
-                alt="StyleGenius extension and app showing full feature set"
-                className="w-full rounded-2xl shadow-lg"
-              />
+              <div className="rounded-xl shadow-2xl overflow-hidden border border-gray-200">
+                <img
+                  src={`${BLOG_IMAGE_BASE}/stylegenius-full-demo.png`}
+                  alt="StyleGenius extension and app showing full feature set"
+                  className="w-full"
+                />
+              </div>
               <p className="text-center text-gray-500 mt-3 text-sm">StyleGenius – the future of fashion shopping, available now</p>
             </div>
           </section>

@@ -200,11 +200,13 @@ const DoesThisSuitMe = () => {
 
           {/* Body Type Match Image */}
           <div className="my-12">
-            <img
-              src={`${BLOG_IMAGE_BASE}/body-type-match-result.png`}
-              alt="AI body type matching results showing style recommendations"
-              className="w-full rounded-2xl shadow-lg"
-            />
+            <div className="rounded-xl shadow-2xl overflow-hidden border border-gray-200">
+              <img
+                src={`${BLOG_IMAGE_BASE}/style-match-result.png`}
+                alt="AI body type matching results showing style recommendations"
+                className="w-full"
+              />
+            </div>
             <p className="text-center text-gray-500 mt-3 text-sm">AI analyzing body type and showing personalized style match</p>
           </div>
 
@@ -280,11 +282,13 @@ const DoesThisSuitMe = () => {
 
           {/* Skin Tone Match Image */}
           <div className="my-12">
-            <img
-              src={`${BLOG_IMAGE_BASE}/skintone-match-result.png`}
-              alt="AI skin tone matching showing color recommendations"
-              className="w-full rounded-2xl shadow-lg"
-            />
+            <div className="rounded-xl shadow-2xl overflow-hidden border border-gray-200">
+              <img
+                src={`${BLOG_IMAGE_BASE}/style-match-result.png`}
+                alt="AI skin tone matching showing color recommendations"
+                className="w-full"
+              />
+            </div>
             <p className="text-center text-gray-500 mt-3 text-sm">AI analyzing skin tone for personalized color matching</p>
           </div>
 
@@ -371,11 +375,13 @@ const DoesThisSuitMe = () => {
             </div>
 
             <div className="my-8">
-              <img
-                src={`${BLOG_IMAGE_BASE}/stylegenius-match-analysis.png`}
-                alt="StyleGenius showing detailed style match analysis for an item"
-                className="w-full rounded-2xl shadow-lg"
-              />
+              <div className="rounded-xl shadow-2xl overflow-hidden border border-gray-200">
+                <img
+                  src={`${BLOG_IMAGE_BASE}/stylegenius-match-analysis.png`}
+                  alt="StyleGenius showing detailed style match analysis for an item"
+                  className="w-full"
+                />
+              </div>
               <p className="text-center text-gray-500 mt-3 text-sm">StyleGenius style match – skin tone, body type, and styling tips for every item</p>
             </div>
           </section>
