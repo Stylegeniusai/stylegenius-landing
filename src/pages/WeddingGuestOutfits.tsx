@@ -18,7 +18,7 @@ const WeddingGuestOutfits = () => {
         ogType="article"
         article={{
           publishedTime: "2024-11-20",
-          modifiedTime: "2025-01-01",
+          modifiedTime: "2026-01-06",
           section: "Style Guides",
           tags: ["wedding guest", "outfit ideas", "dress code", "formal wear"]
         }}
@@ -70,7 +70,7 @@ const WeddingGuestOutfits = () => {
           <div className="prose prose-lg max-w-none mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">The Ultimate Wedding Guest Outfit Guide for 2025</h2>
             <p className="text-xl text-gray-700 leading-relaxed mb-6">
-              Being invited to a wedding is an honor, and showing up in the right outfit is a sign of respect for the couple and their special day. But navigating wedding dress codes can feel overwhelming - what exactly does "cocktail attire" mean? Can you wear black to a wedding? What about a beach ceremony in December?
+              Being invited to a wedding is an honor, and showing up in the right outfit is a sign of respect for the couple and their special day. But navigating wedding dress codes can feel overwhelming - what exactly does "cocktail attire" mean? Can you wear black to a wedding? What about a beach ceremony in December? Understanding your <Link to="/find-your-personal-style" className="text-pink-600 hover:underline">personal style</Link> can help you choose the perfect outfit.
             </p>
             <p className="text-xl text-gray-700 leading-relaxed mb-6">
               This comprehensive guide will help you decode every wedding dress code, find the perfect outfit for any season, and avoid common fashion faux pas that could make you the subject of wedding gossip for all the wrong reasons. Whether you are attending your first wedding or your fiftieth, we will help you look and feel confident.
@@ -509,7 +509,7 @@ const WeddingGuestOutfits = () => {
           <div className="bg-green-50 rounded-2xl p-8 mb-8">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Spring Weddings (March - May)</h3>
             <p className="text-gray-700 mb-6">
-              Spring weddings call for fresh, romantic looks. Think soft pastels, floral prints, and lightweight fabrics. Be prepared for unpredictable weather with layers.
+              Spring weddings call for fresh, romantic looks. Think soft pastels, floral prints, and lightweight fabrics. The <Link to="/coquette-aesthetic" className="text-pink-600 hover:underline">coquette aesthetic</Link> with its feminine details works beautifully for romantic spring celebrations. Be prepared for unpredictable weather with layers.
             </p>
             <div className="grid md:grid-cols-2 gap-6">
               <div>
@@ -537,7 +537,7 @@ const WeddingGuestOutfits = () => {
           <div className="bg-yellow-50 rounded-2xl p-8 mb-8">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Summer Weddings (June - August)</h3>
             <p className="text-gray-700 mb-6">
-              Summer weddings are perfect for bright, bold colors and lightweight fabrics. Choose breathable materials and consider the venue - outdoor ceremonies can get hot.
+              Summer weddings are perfect for bright, bold colors and lightweight fabrics. The <Link to="/clean-girl-aesthetic" className="text-pink-600 hover:underline">clean girl aesthetic</Link> offers effortless elegance for daytime ceremonies. Choose breathable materials and consider the venue - outdoor ceremonies can get hot.
             </p>
             <div className="grid md:grid-cols-2 gap-6">
               <div>
@@ -593,7 +593,7 @@ const WeddingGuestOutfits = () => {
           <div className="bg-blue-50 rounded-2xl p-8">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Winter Weddings (December - February)</h3>
             <p className="text-gray-700 mb-6">
-              Winter weddings are glamorous affairs perfect for dramatic looks. Embrace rich velvets, sequins, and deep colors. Do not forget a stylish coat for outdoor photos.
+              Winter weddings are glamorous affairs perfect for dramatic looks. Embrace rich velvets, sequins, and deep colors. For formal winter weddings, the <Link to="/quiet-luxury-style" className="text-pink-600 hover:underline">quiet luxury aesthetic</Link> or <Link to="/old-money-aesthetic" className="text-pink-600 hover:underline">old money style</Link> offers timeless elegance. Do not forget a stylish coat for outdoor photos.
             </p>
             <div className="grid md:grid-cols-2 gap-6">
               <div>

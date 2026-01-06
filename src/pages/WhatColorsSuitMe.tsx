@@ -67,7 +67,7 @@ const WhatColorsSuitMe = () => {
         ogType="article"
         article={{
           publishedTime: "2024-10-08",
-          modifiedTime: "2025-01-01",
+          modifiedTime: "2026-01-06",
           section: "Color Analysis",
           tags: ["color analysis", "skin tone", "flattering colors", "personal styling"]
         }}

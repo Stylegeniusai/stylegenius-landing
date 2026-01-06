@@ -18,7 +18,7 @@ const WhatToWearJobInterview = () => {
         ogType="article"
         article={{
           publishedTime: "2024-11-25",
-          modifiedTime: "2025-01-01",
+          modifiedTime: "2026-01-06",
           section: "Style Guides",
           tags: ["job interview", "professional style", "career", "first impression"]
         }}
@@ -461,7 +461,7 @@ const WhatToWearJobInterview = () => {
           <section className="mb-16">
             <h2 className="text-3xl font-bold text-gray-900 mb-8">Interview Outfit Formulas for Women: Foolproof Combinations</h2>
             <p className="text-lg text-gray-700 leading-relaxed mb-8">
-              Not sure how to put together the perfect interview outfit? These tried-and-true formulas take the guesswork out of getting dressed. Each combination is designed to be professional, flattering, and appropriate across most industries. Simply swap colors and accessories to match your target company's culture. For more professional style inspiration, check out our guide to the <Link to="/blog/office-siren-aesthetic" className="text-blue-600 hover:underline">office siren aesthetic</Link> for mastering powerful workwear.
+              Not sure how to put together the perfect interview outfit? These tried-and-true formulas take the guesswork out of getting dressed. Each combination is designed to be professional, flattering, and appropriate across most industries. Simply swap colors and accessories to match your target company's culture. For more professional style inspiration, check out our guide to the <Link to="/office-siren-aesthetic" className="text-blue-600 hover:underline">office siren aesthetic</Link> for mastering powerful workwear.
             </p>
 
             <div className="grid md:grid-cols-2 gap-8 mb-12">
@@ -581,7 +581,7 @@ const WhatToWearJobInterview = () => {
             <div className="bg-blue-50 rounded-2xl p-8">
               <h3 className="text-xl font-bold text-gray-900 mb-4">Building Your Interview Capsule Wardrobe</h3>
               <p className="text-gray-700 mb-4">
-                If you are actively job searching across multiple industries, consider building a small <Link to="/blog/capsule-wardrobe" className="text-blue-600 hover:underline">capsule wardrobe</Link> specifically for interviews. With just a few versatile pieces, you can create multiple appropriate outfits for different company cultures.
+                If you are actively job searching across multiple industries, consider building a small <Link to="/capsule-wardrobe" className="text-blue-600 hover:underline">capsule wardrobe</Link> specifically for interviews. With just a few versatile pieces, you can create multiple appropriate outfits for different company cultures.
               </p>
               <div className="grid md:grid-cols-3 gap-4">
                 <div>
@@ -619,7 +619,7 @@ const WhatToWearJobInterview = () => {
           <section className="mb-16">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Interview Colors That Work: The Psychology of Professional Hues</h2>
             <p className="text-lg text-gray-700 leading-relaxed mb-8">
-              Color psychology plays a significant role in how others perceive us. The colors you choose for your interview outfit send subtle messages about your personality and capabilities. While personal coloring matters (warm vs. cool tones), certain colors universally convey professionalism and are safe choices for interviews.
+              Color psychology plays a significant role in how others perceive us. The colors you choose for your interview outfit send subtle messages about your personality and capabilities. While personal coloring matters (<Link to="/warm-vs-cool-undertones" className="text-blue-600 hover:underline">warm vs. cool tones</Link>), certain colors universally convey professionalism and are safe choices for interviews. Understanding <Link to="/what-colors-suit-me" className="text-blue-600 hover:underline">what colors suit you</Link> can help you make the best impression.
             </p>
 
             <div className="bg-white rounded-2xl p-8 shadow-lg mb-8">
@@ -1002,17 +1002,29 @@ const WhatToWearJobInterview = () => {
           <section className="mb-16">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Related Style Guides</h2>
             <div className="grid md:grid-cols-3 gap-6">
-              <Link to="/blog/office-siren-aesthetic" className="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
+              <Link to="/office-siren-aesthetic" className="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
                 <h4 className="font-bold text-gray-900 mb-2">Office Siren Aesthetic</h4>
                 <p className="text-gray-600 text-sm">Master the art of powerful professional dressing with sophisticated allure</p>
               </Link>
-              <Link to="/blog/capsule-wardrobe" className="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
+              <Link to="/capsule-wardrobe" className="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
                 <h4 className="font-bold text-gray-900 mb-2">Capsule Wardrobe Guide</h4>
                 <p className="text-gray-600 text-sm">Build a versatile wardrobe with pieces that work for interviews and beyond</p>
               </Link>
-              <Link to="/blog/quiet-luxury-style" className="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
+              <Link to="/quiet-luxury-style" className="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
                 <h4 className="font-bold text-gray-900 mb-2">Quiet Luxury Style</h4>
                 <p className="text-gray-600 text-sm">The art of understated elegance for professional settings</p>
+              </Link>
+              <Link to="/find-your-personal-style" className="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                <h4 className="font-bold text-gray-900 mb-2">Find Your Personal Style</h4>
+                <p className="text-gray-600 text-sm">Discover your unique fashion identity for confident dressing</p>
+              </Link>
+              <Link to="/what-colors-suit-me" className="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                <h4 className="font-bold text-gray-900 mb-2">What Colors Suit Me</h4>
+                <p className="text-gray-600 text-sm">Find the professional colors that flatter your skin tone</p>
+              </Link>
+              <Link to="/old-money-aesthetic" className="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                <h4 className="font-bold text-gray-900 mb-2">Old Money Aesthetic</h4>
+                <p className="text-gray-600 text-sm">Timeless, refined style perfect for corporate environments</p>
               </Link>
             </div>
           </section>

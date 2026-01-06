@@ -16,7 +16,7 @@ const BestJeansForBodyType = () => {
         ogType="article"
         article={{
           publishedTime: "2024-11-22",
-          modifiedTime: "2025-01-01",
+          modifiedTime: "2026-01-06",
           section: "Body Type",
           tags: ["jeans", "denim", "body type", "shopping guide"]
         }}

@@ -49,7 +49,7 @@ const DarkWinterColors = () => {
         ogType="article"
         article={{
           publishedTime: "2024-11-08",
-          modifiedTime: "2025-01-01",
+          modifiedTime: "2026-01-06",
           section: "Color Analysis",
           tags: ["dark winter", "color analysis", "seasonal colors", "cool colors"]
         }}
@@ -293,20 +293,44 @@ const DarkWinterColors = () => {
           <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Dark Winter vs. Similar Seasons</h2>
 
           <div className="space-y-6">
-            <div className="bg-white rounded-xl p-6 shadow-md">
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Dark Winter vs. True Winter</h3>
-              <p className="text-gray-700">True Winter is cooler and more icy. Dark Winter can handle slightly warmer shades and is deeper overall.</p>
-            </div>
+            <Link to="/deep-winter-colors" className="block bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Dark Winter vs. Deep Winter</h3>
+              <p className="text-gray-700">Deep Winter is similar but even more dramatic. Both can wear bold, high-contrast colors.</p>
+              <span className="text-purple-600 font-medium mt-2 inline-block">Read Deep Winter Guide →</span>
+            </Link>
 
-            <div className="bg-white rounded-xl p-6 shadow-md">
+            <Link to="/true-autumn-colors" className="block bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
               <h3 className="text-xl font-bold text-gray-900 mb-3">Dark Winter vs. Dark Autumn</h3>
               <p className="text-gray-700">Both are deep, but Dark Autumn is warmer. Dark Winter looks better in cool-based jewel tones, Dark Autumn in warm earth tones.</p>
-            </div>
+              <span className="text-purple-600 font-medium mt-2 inline-block">Read True Autumn Guide →</span>
+            </Link>
 
-            <div className="bg-white rounded-xl p-6 shadow-md">
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Dark Winter vs. Bright Winter</h3>
-              <p className="text-gray-700">Bright Winter is more vivid and saturated. Dark Winter is deeper and slightly more muted.</p>
-            </div>
+            <Link to="/what-season-am-i" className="block bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Not Sure If You're Dark Winter?</h3>
+              <p className="text-gray-700">Take our color season quiz to discover your perfect palette.</p>
+              <span className="text-purple-600 font-medium mt-2 inline-block">Find Your Color Season →</span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Related Articles */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Related Color Guides</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <Link to="/what-colors-suit-me" className="group bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all">
+              <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-purple-600">What Colors Suit Me?</h3>
+              <p className="text-gray-600 text-sm">Find your perfect color palette based on your skin tone.</p>
+            </Link>
+            <Link to="/warm-vs-cool-undertones" className="group bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all">
+              <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-purple-600">Warm vs Cool Undertones</h3>
+              <p className="text-gray-600 text-sm">Learn how to determine your undertone.</p>
+            </Link>
+            <Link to="/capsule-wardrobe" className="group bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all">
+              <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-purple-600">Build a Capsule Wardrobe</h3>
+              <p className="text-gray-600 text-sm">Create a versatile wardrobe with your Dark Winter colors.</p>
+            </Link>
           </div>
         </div>
       </section>

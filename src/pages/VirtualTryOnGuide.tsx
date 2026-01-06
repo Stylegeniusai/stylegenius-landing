@@ -18,7 +18,7 @@ const VirtualTryOnGuide = () => {
         ogType="article"
         article={{
           publishedTime: "2024-12-01",
-          modifiedTime: "2025-01-01",
+          modifiedTime: "2026-01-06",
           section: "Technology",
           tags: ["virtual try-on", "AI", "shopping technology", "fashion tech"]
         }}

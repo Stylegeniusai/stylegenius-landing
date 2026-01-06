@@ -18,7 +18,7 @@ const LightSummerColors = () => {
         ogType="article"
         article={{
           publishedTime: "2024-11-07",
-          modifiedTime: "2025-01-01",
+          modifiedTime: "2026-01-06",
           section: "Color Analysis",
           tags: ["light summer", "color analysis", "seasonal colors", "cool colors"]
         }}
@@ -175,6 +175,52 @@ const LightSummerColors = () => {
         </div>
       </article>
 
+      {/* Compare Seasons */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Light Summer vs. Similar Seasons</h2>
+          <div className="space-y-6">
+            <Link to="/soft-summer-colors" className="block bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Light Summer vs. Soft Summer</h3>
+              <p className="text-gray-700">Soft Summer is more muted and neutral. Light Summer is brighter with a lighter, airier quality.</p>
+              <span className="text-sky-600 font-medium mt-2 inline-block">Read Soft Summer Guide →</span>
+            </Link>
+            <Link to="/bright-spring-colors" className="block bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Light Summer vs. Light Spring</h3>
+              <p className="text-gray-700">Both are light, but Light Summer is cooler while Light Spring is warmer with golden undertones.</p>
+              <span className="text-sky-600 font-medium mt-2 inline-block">Read Bright Spring Guide →</span>
+            </Link>
+            <Link to="/what-season-am-i" className="block bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Not Sure If You're Light Summer?</h3>
+              <p className="text-gray-700">Take our color season quiz to discover your perfect palette.</p>
+              <span className="text-sky-600 font-medium mt-2 inline-block">Find Your Color Season →</span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Related Articles */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Related Color Guides</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <Link to="/what-colors-suit-me" className="group bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all">
+              <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-sky-600">What Colors Suit Me?</h3>
+              <p className="text-gray-600 text-sm">Find your perfect color palette based on your skin tone.</p>
+            </Link>
+            <Link to="/best-colors-for-pale-skin" className="group bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all">
+              <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-sky-600">Best Colors for Pale Skin</h3>
+              <p className="text-gray-600 text-sm">Perfect colors for fair and light skin tones.</p>
+            </Link>
+            <Link to="/capsule-wardrobe" className="group bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all">
+              <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-sky-600">Build a Capsule Wardrobe</h3>
+              <p className="text-gray-600 text-sm">Create a versatile wardrobe with your Light Summer colors.</p>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
       <section className="py-16 bg-gradient-to-br from-sky-100 to-rose-100">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">

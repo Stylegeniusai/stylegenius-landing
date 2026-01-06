@@ -136,7 +136,7 @@ const KibbeBodyTypes = () => {
         ogType="article"
         article={{
           publishedTime: "2024-10-10",
-          modifiedTime: "2025-01-01",
+          modifiedTime: "2026-01-06",
           section: "Body Type",
           tags: ["kibbe", "body types", "style analysis", "personal styling"]
         }}
@@ -294,6 +294,52 @@ const KibbeBodyTypes = () => {
               <h3 className="text-xl font-semibold text-gray-900 mb-3">4. Consider Your Overall Silhouette</h3>
               <p className="text-gray-700">Step back and look at your overall impression. Are you tall and narrow, short and compact, or balanced and moderate?</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Related Body Types */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Traditional Body Shape Guides</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <Link to="/hourglass-body-type" className="group bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all">
+              <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-pink-600">Hourglass Body Type</h3>
+              <p className="text-gray-600 text-sm">Balanced bust and hips with defined waist.</p>
+            </Link>
+            <Link to="/pear-body-shape" className="group bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all">
+              <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-pink-600">Pear Body Shape</h3>
+              <p className="text-gray-600 text-sm">Hips wider than shoulders - balance your silhouette.</p>
+            </Link>
+            <Link to="/apple-body-shape" className="group bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all">
+              <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-pink-600">Apple Body Shape</h3>
+              <p className="text-gray-600 text-sm">Fuller midsection with slimmer legs.</p>
+            </Link>
+            <Link to="/rectangle-body-type" className="group bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all">
+              <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-pink-600">Rectangle Body Type</h3>
+              <p className="text-gray-600 text-sm">Athletic and straight - create curves with clothing.</p>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Related Articles */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Related Style Guides</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <Link to="/find-your-personal-style" className="group bg-white rounded-2xl p-6 hover:shadow-lg transition-all">
+              <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-pink-600">Find Your Personal Style</h3>
+              <p className="text-gray-600 text-sm">Discover your unique style identity beyond body type.</p>
+            </Link>
+            <Link to="/capsule-wardrobe" className="group bg-white rounded-2xl p-6 hover:shadow-lg transition-all">
+              <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-pink-600">Build a Capsule Wardrobe</h3>
+              <p className="text-gray-600 text-sm">Create a versatile wardrobe that works for you.</p>
+            </Link>
+            <Link to="/what-colors-suit-me" className="group bg-white rounded-2xl p-6 hover:shadow-lg transition-all">
+              <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-pink-600">What Colors Suit Me?</h3>
+              <p className="text-gray-600 text-sm">Find your perfect color palette.</p>
+            </Link>
           </div>
         </div>
       </section>

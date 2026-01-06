@@ -18,7 +18,7 @@ const CoquetteAesthetic = () => {
         ogType="article"
         article={{
           publishedTime: "2024-11-01",
-          modifiedTime: "2025-01-01",
+          modifiedTime: "2026-01-06",
           section: "Fashion Aesthetics",
           tags: ["coquette", "aesthetic", "feminine fashion", "TikTok trends", "bows"]
         }}
@@ -642,7 +642,7 @@ const CoquetteAesthetic = () => {
                 <h4 className="font-bold text-gray-900 mb-2">Old Money Aesthetic</h4>
                 <p className="text-gray-600 text-sm">Timeless elegance</p>
               </Link>
-              <Link to="/blog/soft-summer-colors" className="bg-pink-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
+              <Link to="/soft-summer-colors" className="bg-pink-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
                 <h4 className="font-bold text-gray-900 mb-2">Soft Summer Colors</h4>
                 <p className="text-gray-600 text-sm">Perfect palette for pink lovers</p>
               </Link>
@@ -651,6 +651,31 @@ const CoquetteAesthetic = () => {
 
         </div>
       </article>
+
+      {/* Related Aesthetics */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Explore Similar Aesthetics</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <Link to="/clean-girl-aesthetic" className="group bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all">
+              <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-pink-600">Clean Girl Aesthetic</h3>
+              <p className="text-gray-600 text-sm">Minimalist beauty and effortless style.</p>
+            </Link>
+            <Link to="/quiet-luxury-style" className="group bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all">
+              <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-pink-600">Quiet Luxury Style</h3>
+              <p className="text-gray-600 text-sm">Understated elegance and stealth wealth fashion.</p>
+            </Link>
+            <Link to="/old-money-aesthetic" className="group bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all">
+              <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-pink-600">Old Money Aesthetic</h3>
+              <p className="text-gray-600 text-sm">Timeless elegance and classic sophistication.</p>
+            </Link>
+            <Link to="/office-siren-aesthetic" className="group bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all">
+              <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-pink-600">Office Siren Aesthetic</h3>
+              <p className="text-gray-600 text-sm">Powerful and polished workwear style.</p>
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* CTA Section */}
       <section className="py-16 bg-gradient-to-br from-pink-50 to-rose-100">

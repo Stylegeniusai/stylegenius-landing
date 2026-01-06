@@ -18,7 +18,7 @@ const CapsuleWardrobe = () => {
         ogType="article"
         article={{
           publishedTime: "2024-11-15",
-          modifiedTime: "2025-01-01",
+          modifiedTime: "2026-01-06",
           section: "Style Guides",
           tags: ["capsule wardrobe", "minimalist", "wardrobe basics", "style guide"]
         }}
@@ -290,6 +290,31 @@ const CapsuleWardrobe = () => {
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Step 5: Review Seasonally</h3>
               <p className="text-gray-700">Swap seasonal pieces and reassess what's working and what isn't every few months.</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Related Guides */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Related Style Guides</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <Link to="/find-your-personal-style" className="group bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all">
+              <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-purple-600">Find Your Personal Style</h3>
+              <p className="text-gray-600 text-sm">Discover your unique style identity and aesthetic.</p>
+            </Link>
+            <Link to="/what-colors-suit-me" className="group bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all">
+              <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-purple-600">What Colors Suit Me?</h3>
+              <p className="text-gray-600 text-sm">Find the perfect neutral base for your capsule.</p>
+            </Link>
+            <Link to="/quiet-luxury-style" className="group bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all">
+              <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-purple-600">Quiet Luxury Style</h3>
+              <p className="text-gray-600 text-sm">Minimalist luxury that's perfect for capsule wardrobes.</p>
+            </Link>
+            <Link to="/kibbe-body-types" className="group bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all">
+              <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-purple-600">Kibbe Body Types</h3>
+              <p className="text-gray-600 text-sm">Find silhouettes that flatter your body type.</p>
+            </Link>
           </div>
         </div>
       </section>

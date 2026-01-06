@@ -18,7 +18,7 @@ const QuietLuxuryStyle = () => {
         ogType="article"
         article={{
           publishedTime: "2024-10-20",
-          modifiedTime: "2025-01-01",
+          modifiedTime: "2026-01-06",
           section: "Fashion Aesthetics",
           tags: ["quiet luxury", "stealth wealth", "minimalist fashion", "timeless style"]
         }}
@@ -909,6 +909,31 @@ const QuietLuxuryStyle = () => {
             <Link to="/what-colors-suit-me" className="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
               <h4 className="font-bold text-gray-900 mb-2">Find Your Best Colors</h4>
               <p className="text-sm text-gray-600">Discover which neutral tones flatter your skin tone the most</p>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Related Aesthetics */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Explore Similar Aesthetics</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <Link to="/old-money-aesthetic" className="group bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all">
+              <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-stone-600">Old Money Aesthetic</h3>
+              <p className="text-gray-600 text-sm">Timeless elegance and classic sophistication.</p>
+            </Link>
+            <Link to="/clean-girl-aesthetic" className="group bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all">
+              <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-stone-600">Clean Girl Aesthetic</h3>
+              <p className="text-gray-600 text-sm">Minimalist beauty and effortless style.</p>
+            </Link>
+            <Link to="/office-siren-aesthetic" className="group bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all">
+              <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-stone-600">Office Siren Aesthetic</h3>
+              <p className="text-gray-600 text-sm">Powerful and polished workwear style.</p>
+            </Link>
+            <Link to="/coquette-aesthetic" className="group bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all">
+              <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-stone-600">Coquette Aesthetic</h3>
+              <p className="text-gray-600 text-sm">Feminine bows, lace, and romantic details.</p>
             </Link>
           </div>
         </div>

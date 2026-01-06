@@ -18,7 +18,7 @@ const OldMoneyAesthetic = () => {
         ogType="article"
         article={{
           publishedTime: "2024-10-25",
-          modifiedTime: "2025-01-01",
+          modifiedTime: "2026-01-06",
           section: "Fashion Aesthetics",
           tags: ["old money", "aesthetic", "timeless fashion", "classic style"]
         }}
@@ -290,6 +290,52 @@ const OldMoneyAesthetic = () => {
                 </li>
               </ul>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Related Aesthetics */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Explore Similar Aesthetics</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <Link to="/quiet-luxury-style" className="group bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all">
+              <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-stone-600">Quiet Luxury Style</h3>
+              <p className="text-gray-600 text-sm">Understated elegance and stealth wealth fashion.</p>
+            </Link>
+            <Link to="/clean-girl-aesthetic" className="group bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all">
+              <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-stone-600">Clean Girl Aesthetic</h3>
+              <p className="text-gray-600 text-sm">Minimalist beauty and effortless style.</p>
+            </Link>
+            <Link to="/office-siren-aesthetic" className="group bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all">
+              <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-stone-600">Office Siren Aesthetic</h3>
+              <p className="text-gray-600 text-sm">Powerful and polished workwear style.</p>
+            </Link>
+            <Link to="/coquette-aesthetic" className="group bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all">
+              <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-stone-600">Coquette Aesthetic</h3>
+              <p className="text-gray-600 text-sm">Feminine bows, lace, and romantic details.</p>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Related Articles */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Related Style Guides</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <Link to="/capsule-wardrobe" className="group bg-white rounded-2xl p-6 hover:shadow-lg transition-all">
+              <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-stone-600">Build a Capsule Wardrobe</h3>
+              <p className="text-gray-600 text-sm">Create a timeless wardrobe with quality pieces.</p>
+            </Link>
+            <Link to="/what-colors-suit-me" className="group bg-white rounded-2xl p-6 hover:shadow-lg transition-all">
+              <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-stone-600">What Colors Suit Me?</h3>
+              <p className="text-gray-600 text-sm">Find classic colors that complement your skin tone.</p>
+            </Link>
+            <Link to="/find-your-personal-style" className="group bg-white rounded-2xl p-6 hover:shadow-lg transition-all">
+              <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-stone-600">Find Your Personal Style</h3>
+              <p className="text-gray-600 text-sm">Discover your unique style identity.</p>
+            </Link>
           </div>
         </div>
       </section>

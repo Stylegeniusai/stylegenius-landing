@@ -49,7 +49,7 @@ const BrightSpringColors = () => {
         ogType="article"
         article={{
           publishedTime: "2024-11-04",
-          modifiedTime: "2025-01-01",
+          modifiedTime: "2026-01-06",
           section: "Color Analysis",
           tags: ["bright spring", "color analysis", "seasonal colors", "warm colors"]
         }}
@@ -181,6 +181,51 @@ const BrightSpringColors = () => {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Compare Seasons */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Bright Spring vs. Similar Seasons</h2>
+          <div className="space-y-6">
+            <Link to="/true-autumn-colors" className="block bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Bright Spring vs. True Autumn</h3>
+              <p className="text-gray-700">Both are warm, but True Autumn is deeper and more muted. Bright Spring is lighter and more vivid.</p>
+              <span className="text-orange-600 font-medium mt-2 inline-block">Read True Autumn Guide →</span>
+            </Link>
+            <Link to="/light-summer-colors" className="block bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Bright Spring vs. Light Summer</h3>
+              <p className="text-gray-700">Both are light and bright, but Light Summer is cooler while Bright Spring is warmer.</p>
+              <span className="text-orange-600 font-medium mt-2 inline-block">Read Light Summer Guide →</span>
+            </Link>
+            <Link to="/what-season-am-i" className="block bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Not Sure If You're Bright Spring?</h3>
+              <p className="text-gray-700">Take our color season quiz to discover your perfect palette.</p>
+              <span className="text-orange-600 font-medium mt-2 inline-block">Find Your Color Season →</span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Related Articles */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Related Color Guides</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <Link to="/what-colors-suit-me" className="group bg-white rounded-2xl p-6 hover:shadow-lg transition-all">
+              <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-orange-600">What Colors Suit Me?</h3>
+              <p className="text-gray-600 text-sm">Find your perfect color palette based on your skin tone.</p>
+            </Link>
+            <Link to="/warm-vs-cool-undertones" className="group bg-white rounded-2xl p-6 hover:shadow-lg transition-all">
+              <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-orange-600">Warm vs Cool Undertones</h3>
+              <p className="text-gray-600 text-sm">Learn how to determine your undertone.</p>
+            </Link>
+            <Link to="/capsule-wardrobe" className="group bg-white rounded-2xl p-6 hover:shadow-lg transition-all">
+              <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-orange-600">Build a Capsule Wardrobe</h3>
+              <p className="text-gray-600 text-sm">Create a versatile wardrobe with your Bright Spring colors.</p>
+            </Link>
           </div>
         </div>
       </section>

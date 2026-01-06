@@ -145,7 +145,7 @@ const FindYourPersonalStyle = () => {
         ogType="article"
         article={{
           publishedTime: "2024-10-18",
-          modifiedTime: "2025-01-01",
+          modifiedTime: "2026-01-06",
           section: "Style Guides",
           tags: ["personal style", "style guide", "fashion identity", "wardrobe tips"]
         }}
@@ -721,6 +721,31 @@ const FindYourPersonalStyle = () => {
             <Link to="/wedding-guest-outfits" className="bg-gradient-to-br from-rose-50 to-pink-50 rounded-xl p-6 hover:shadow-lg transition-shadow block">
               <h3 className="text-lg font-bold text-gray-900 mb-2">Wedding Guest Outfits</h3>
               <p className="text-gray-600 text-sm">Stylish outfit ideas for every type of wedding celebration</p>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Related Aesthetics */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Explore Fashion Aesthetics</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <Link to="/clean-girl-aesthetic" className="group bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all">
+              <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-purple-600">Clean Girl Aesthetic</h3>
+              <p className="text-gray-600 text-sm">Minimalist beauty and effortless style.</p>
+            </Link>
+            <Link to="/old-money-aesthetic" className="group bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all">
+              <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-purple-600">Old Money Aesthetic</h3>
+              <p className="text-gray-600 text-sm">Timeless elegance and classic sophistication.</p>
+            </Link>
+            <Link to="/coquette-aesthetic" className="group bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all">
+              <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-purple-600">Coquette Aesthetic</h3>
+              <p className="text-gray-600 text-sm">Feminine bows, lace, and romantic details.</p>
+            </Link>
+            <Link to="/office-siren-aesthetic" className="group bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all">
+              <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-purple-600">Office Siren Aesthetic</h3>
+              <p className="text-gray-600 text-sm">Powerful and polished workwear style.</p>
             </Link>
           </div>
         </div>

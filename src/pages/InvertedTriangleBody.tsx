@@ -19,7 +19,7 @@ const InvertedTriangleBody = () => {
         ogType="article"
         article={{
           publishedTime: "2024-11-17",
-          modifiedTime: "2025-01-01",
+          modifiedTime: "2026-01-06",
           section: "Body Type",
           tags: ["inverted triangle", "body type", "style guide", "fashion tips"]
         }}
@@ -149,6 +149,53 @@ const InvertedTriangleBody = () => {
         </div>
       </section>
 
+      {/* Related Body Types */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Explore Other Body Types</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <Link to="/hourglass-body-type" className="group bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all">
+              <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-pink-600">Hourglass Body Type</h3>
+              <p className="text-gray-600 text-sm">Balanced bust and hips with defined waist - style tips.</p>
+            </Link>
+            <Link to="/pear-body-shape" className="group bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all">
+              <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-pink-600">Pear Body Shape</h3>
+              <p className="text-gray-600 text-sm">Hips wider than shoulders - the opposite of inverted triangle.</p>
+            </Link>
+            <Link to="/rectangle-body-type" className="group bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all">
+              <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-pink-600">Rectangle Body Type</h3>
+              <p className="text-gray-600 text-sm">Athletic and straight - how to create curves with clothing.</p>
+            </Link>
+            <Link to="/kibbe-body-types" className="group bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all">
+              <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-pink-600">Kibbe Body Types</h3>
+              <p className="text-gray-600 text-sm">Discover your Kibbe type for a more detailed style analysis.</p>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Related Articles */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Related Style Guides</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <Link to="/best-jeans-for-body-type" className="group bg-white rounded-2xl p-6 hover:shadow-lg transition-all">
+              <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-pink-600">Best Jeans for Your Body</h3>
+              <p className="text-gray-600 text-sm">Find the perfect denim style for your shape.</p>
+            </Link>
+            <Link to="/capsule-wardrobe" className="group bg-white rounded-2xl p-6 hover:shadow-lg transition-all">
+              <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-pink-600">Build a Capsule Wardrobe</h3>
+              <p className="text-gray-600 text-sm">Create a versatile wardrobe that flatters your shape.</p>
+            </Link>
+            <Link to="/what-colors-suit-me" className="group bg-white rounded-2xl p-6 hover:shadow-lg transition-all">
+              <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-pink-600">What Colors Suit Me?</h3>
+              <p className="text-gray-600 text-sm">Find your perfect color palette to complement your style.</p>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
       <section className="py-16 bg-gradient-to-br from-pink-50 to-purple-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">

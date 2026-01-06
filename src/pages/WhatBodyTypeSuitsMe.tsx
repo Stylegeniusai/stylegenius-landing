@@ -93,7 +93,7 @@ const WhatBodyTypeSuitsMe = () => {
         ogType="article"
         article={{
           publishedTime: "2024-10-05",
-          modifiedTime: "2025-01-01",
+          modifiedTime: "2026-01-06",
           section: "Body Type",
           tags: ["body type", "fashion guide", "style tips", "body shape"]
         }}

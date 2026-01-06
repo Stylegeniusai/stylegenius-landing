@@ -18,7 +18,7 @@ const Spring2025FashionTrends = () => {
         ogType="article"
         article={{
           publishedTime: "2024-12-15",
-          modifiedTime: "2025-01-01",
+          modifiedTime: "2026-01-06",
           section: "Fashion Trends",
           tags: ["spring 2025", "fashion trends", "seasonal style", "runway"]
         }}

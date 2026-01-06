@@ -18,7 +18,7 @@ const BestColorsForOliveSkin = () => {
         ogType="article"
         article={{
           publishedTime: "2024-11-19",
-          modifiedTime: "2025-01-01",
+          modifiedTime: "2026-01-06",
           section: "Color Analysis",
           tags: ["olive skin", "Mediterranean", "color guide", "skin tone"]
         }}

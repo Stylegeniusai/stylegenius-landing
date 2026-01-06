@@ -49,7 +49,7 @@ const SoftAutumnColors = () => {
         ogType="article"
         article={{
           publishedTime: "2024-11-05",
-          modifiedTime: "2025-01-01",
+          modifiedTime: "2026-01-06",
           section: "Color Analysis",
           tags: ["soft autumn", "color analysis", "seasonal colors", "warm colors"]
         }}
@@ -293,20 +293,44 @@ const SoftAutumnColors = () => {
           <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Soft Autumn vs. Similar Seasons</h2>
 
           <div className="space-y-6">
-            <div className="bg-white rounded-xl p-6 shadow-md">
+            <Link to="/soft-summer-colors" className="block bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
               <h3 className="text-xl font-bold text-gray-900 mb-3">Soft Autumn vs. Soft Summer</h3>
               <p className="text-gray-700">Both are muted and soft, but Soft Autumn is warmer while Soft Summer is cooler. Soft Autumn looks better in gold, Soft Summer in silver.</p>
-            </div>
+              <span className="text-amber-600 font-medium mt-2 inline-block">Read Soft Summer Guide →</span>
+            </Link>
 
-            <div className="bg-white rounded-xl p-6 shadow-md">
+            <Link to="/true-autumn-colors" className="block bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
               <h3 className="text-xl font-bold text-gray-900 mb-3">Soft Autumn vs. True Autumn</h3>
               <p className="text-gray-700">True Autumn is richer and more saturated. Soft Autumn needs more muted, dusty versions of autumn colors.</p>
-            </div>
+              <span className="text-amber-600 font-medium mt-2 inline-block">Read True Autumn Guide →</span>
+            </Link>
 
-            <div className="bg-white rounded-xl p-6 shadow-md">
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Soft Autumn vs. Dark Autumn</h3>
-              <p className="text-gray-700">Dark Autumn has more depth and can handle darker, richer colors. Soft Autumn needs lighter, more muted tones.</p>
-            </div>
+            <Link to="/what-season-am-i" className="block bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Not Sure If You're Soft Autumn?</h3>
+              <p className="text-gray-700">Take our color season quiz to find out if you're a Soft Autumn, True Autumn, or another season entirely.</p>
+              <span className="text-amber-600 font-medium mt-2 inline-block">Find Your Color Season →</span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Related Articles */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Related Color Guides</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <Link to="/what-colors-suit-me" className="group bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all">
+              <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-amber-600">What Colors Suit Me?</h3>
+              <p className="text-gray-600 text-sm">Find your perfect color palette based on your skin tone and undertones.</p>
+            </Link>
+            <Link to="/warm-vs-cool-undertones" className="group bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all">
+              <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-amber-600">Warm vs Cool Undertones</h3>
+              <p className="text-gray-600 text-sm">Learn how to determine your undertone and why it matters for choosing colors.</p>
+            </Link>
+            <Link to="/capsule-wardrobe" className="group bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all">
+              <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-amber-600">Build a Capsule Wardrobe</h3>
+              <p className="text-gray-600 text-sm">Create a versatile wardrobe with your Soft Autumn colors.</p>
+            </Link>
           </div>
         </div>
       </section>
