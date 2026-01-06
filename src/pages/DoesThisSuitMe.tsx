@@ -96,27 +96,27 @@ const DoesThisSuitMe = () => {
             </p>
 
             <div className="grid md:grid-cols-2 gap-6 mb-8">
-              <div className="rounded-2xl" style={{ background: 'rgba(255,112,217,0.1)' }} p-6">
+              <div className="rounded-2xl p-6" style={{ background: 'rgba(255,112,217,0.1)' }}>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">🎨 Color Harmony</h3>
                 <p className="text-gray-700 mb-3">
                   Colors interact with your skin tone. The right colors make your skin look radiant and healthy. The wrong ones can make you look tired, washed out, or sallow.
                 </p>
                 <p className="text-gray-600 text-sm">
-                  This is why <Link to="/what-season-am-i" className="hover:underline" style={{ color: '#FF70D9' }}">knowing your color season</Link> matters so much.
+                  This is why <Link to="/what-season-am-i" className="hover:underline" style={{ color: '#FF70D9' }}>knowing your color season</Link> matters so much.
                 </p>
               </div>
 
-              <div className="rounded-2xl" style={{ background: 'rgba(110,193,228,0.1)' }} p-6">
+              <div className="rounded-2xl p-6" style={{ background: 'rgba(110,193,228,0.1)' }}>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">📐 Proportion Balance</h3>
                 <p className="text-gray-700 mb-3">
                   Different cuts and silhouettes emphasize different parts of your body. The right proportions create visual harmony; the wrong ones can throw your whole look off.
                 </p>
                 <p className="text-gray-600 text-sm">
-                  This is the core of <Link to="/kibbe-body-types" className="hover:underline" style={{ color: '#FF70D9' }}">body type styling</Link>.
+                  This is the core of <Link to="/kibbe-body-types" className="hover:underline" style={{ color: '#FF70D9' }}>body type styling</Link>.
                 </p>
               </div>
 
-              <div className="rounded-2xl" style={{ background: 'rgba(255,112,217,0.1)' }} p-6">
+              <div className="rounded-2xl p-6" style={{ background: 'rgba(255,112,217,0.1)' }}>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">✂️ Cut & Fit</h3>
                 <p className="text-gray-700 mb-3">
                   Where a garment hits your body matters – where the hem falls, where the waist sits, how the shoulders align. These small details make huge differences.
@@ -126,7 +126,7 @@ const DoesThisSuitMe = () => {
                 </p>
               </div>
 
-              <div className="rounded-2xl" style={{ background: 'rgba(110,193,228,0.1)' }} p-6">
+              <div className="rounded-2xl p-6" style={{ background: 'rgba(110,193,228,0.1)' }}>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">🔲 Pattern & Scale</h3>
                 <p className="text-gray-700 mb-3">
                   Pattern sizes should relate to your body size. Large prints on small frames can overwhelm; tiny prints on larger frames can look busy.
@@ -221,29 +221,29 @@ const DoesThisSuitMe = () => {
                 <div className="grid md:grid-cols-2 gap-4">
                   <ul className="text-gray-700 space-y-2">
                     <li className="flex items-start">
-                      <span className="mr-2 mt-1" style={{ color: '#FF70D9' }}">•</span>
+                      <span className="mr-2 mt-1" style={{ color: '#FF70D9' }}>•</span>
                       <span>Shoulder to hip ratio</span>
                     </li>
                     <li className="flex items-start">
-                      <span className="mr-2 mt-1" style={{ color: '#FF70D9' }}">•</span>
+                      <span className="mr-2 mt-1" style={{ color: '#FF70D9' }}>•</span>
                       <span>Waist definition</span>
                     </li>
                     <li className="flex items-start">
-                      <span className="mr-2 mt-1" style={{ color: '#FF70D9' }}">•</span>
+                      <span className="mr-2 mt-1" style={{ color: '#FF70D9' }}>•</span>
                       <span>Torso to leg proportion</span>
                     </li>
                   </ul>
                   <ul className="text-gray-700 space-y-2">
                     <li className="flex items-start">
-                      <span className="mr-2 mt-1" style={{ color: '#FF70D9' }}">•</span>
+                      <span className="mr-2 mt-1" style={{ color: '#FF70D9' }}>•</span>
                       <span>Bust to hip balance</span>
                     </li>
                     <li className="flex items-start">
-                      <span className="mr-2 mt-1" style={{ color: '#FF70D9' }}">•</span>
+                      <span className="mr-2 mt-1" style={{ color: '#FF70D9' }}>•</span>
                       <span>Overall vertical line</span>
                     </li>
                     <li className="flex items-start">
-                      <span className="mr-2 mt-1" style={{ color: '#FF70D9' }}">•</span>
+                      <span className="mr-2 mt-1" style={{ color: '#FF70D9' }}>•</span>
                       <span>Body frame (bone structure)</span>
                     </li>
                   </ul>
@@ -274,7 +274,7 @@ const DoesThisSuitMe = () => {
             </div>
 
             <p className="text-lg text-gray-700">
-              Want to know your body type? Check out our <Link to="/kibbe-body-types" className="hover:underline" style={{ color: '#FF70D9' }}">complete Kibbe body types guide</Link> or body-specific guides for <Link to="/hourglass-body-type" className="hover:underline" style={{ color: '#FF70D9' }}">hourglass</Link>, <Link to="/pear-body-shape" className="hover:underline" style={{ color: '#FF70D9' }}">pear</Link>, <Link to="/rectangle-body-type" className="hover:underline" style={{ color: '#FF70D9' }}">rectangle</Link>, and <Link to="/inverted-triangle-body" className="hover:underline" style={{ color: '#FF70D9' }}">inverted triangle</Link> shapes.
+              Want to know your body type? Check out our <Link to="/kibbe-body-types" className="hover:underline" style={{ color: '#FF70D9' }}>complete Kibbe body types guide</Link> or body-specific guides for <Link to="/hourglass-body-type" className="hover:underline" style={{ color: '#FF70D9' }}>hourglass</Link>, <Link to="/pear-body-shape" className="hover:underline" style={{ color: '#FF70D9' }}>pear</Link>, <Link to="/rectangle-body-type" className="hover:underline" style={{ color: '#FF70D9' }}>rectangle</Link>, and <Link to="/inverted-triangle-body" className="hover:underline" style={{ color: '#FF70D9' }}>inverted triangle</Link> shapes.
             </p>
           </section>
 
@@ -330,7 +330,7 @@ const DoesThisSuitMe = () => {
             </div>
 
             <p className="text-lg text-gray-700">
-              Curious about your color season? Start with our <Link to="/what-season-am-i" className="hover:underline" style={{ color: '#FF70D9' }}">color season guide</Link> or explore specific palettes like <Link to="/soft-autumn-colors" className="hover:underline" style={{ color: '#FF70D9' }}">Soft Autumn</Link>, <Link to="/dark-winter-colors" className="hover:underline" style={{ color: '#FF70D9' }}">Dark Winter</Link>, or <Link to="/bright-spring-colors" className="hover:underline" style={{ color: '#FF70D9' }}">Bright Spring</Link>.
+              Curious about your color season? Start with our <Link to="/what-season-am-i" className="hover:underline" style={{ color: '#FF70D9' }}>color season guide</Link> or explore specific palettes like <Link to="/soft-autumn-colors" className="hover:underline" style={{ color: '#FF70D9' }}>Soft Autumn</Link>, <Link to="/dark-winter-colors" className="hover:underline" style={{ color: '#FF70D9' }}>Dark Winter</Link>, or <Link to="/bright-spring-colors" className="hover:underline" style={{ color: '#FF70D9' }}>Bright Spring</Link>.
             </p>
           </section>
 
@@ -389,7 +389,7 @@ const DoesThisSuitMe = () => {
 
             <div className="space-y-4 mb-8">
               <div className="flex items-start gap-4 bg-gray-50 rounded-xl p-4">
-                <span className="w-8 h-8 text-white" style={{ background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)' }} rounded-full flex items-center justify-center font-bold flex-shrink-0">1</span>
+                <span className="w-8 h-8 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0" style={{ background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)' }}>1</span>
                 <div>
                   <h4 className="font-semibold text-gray-900">You browse normally</h4>
                   <p className="text-gray-600">Shop any online store like you usually would</p>
@@ -397,7 +397,7 @@ const DoesThisSuitMe = () => {
               </div>
 
               <div className="flex items-start gap-4 bg-gray-50 rounded-xl p-4">
-                <span className="w-8 h-8 text-white" style={{ background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)' }} rounded-full flex items-center justify-center font-bold flex-shrink-0">2</span>
+                <span className="w-8 h-8 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0" style={{ background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)' }}>2</span>
                 <div>
                   <h4 className="font-semibold text-gray-900">AI analyzes each item</h4>
                   <p className="text-gray-600">The tool checks if the piece suits your profile as you look at it</p>
@@ -405,7 +405,7 @@ const DoesThisSuitMe = () => {
               </div>
 
               <div className="flex items-start gap-4 bg-gray-50 rounded-xl p-4">
-                <span className="w-8 h-8 text-white" style={{ background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)' }} rounded-full flex items-center justify-center font-bold flex-shrink-0">3</span>
+                <span className="w-8 h-8 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0" style={{ background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)' }}>3</span>
                 <div>
                   <h4 className="font-semibold text-gray-900">You see a match score</h4>
                   <p className="text-gray-600">"Great for your body type" or "This color might wash you out"</p>
@@ -413,15 +413,15 @@ const DoesThisSuitMe = () => {
               </div>
 
               <div className="flex items-start gap-4 bg-gray-50 rounded-xl p-4">
-                <span className="w-8 h-8 text-white" style={{ background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)' }} rounded-full flex items-center justify-center font-bold flex-shrink-0">4</span>
+                <span className="w-8 h-8 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0" style={{ background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)' }}>4</span>
                 <div>
                   <h4 className="font-semibold text-gray-900">Combine with virtual try-on</h4>
-                  <p className="text-gray-600">If it's a good match, <Link to="/online-dressing-room" className="hover:underline" style={{ color: '#FF70D9' }}">see it on yourself</Link> to confirm</p>
+                  <p className="text-gray-600">If it's a good match, <Link to="/online-dressing-room" className="hover:underline" style={{ color: '#FF70D9' }}>see it on yourself</Link> to confirm</p>
                 </div>
               </div>
 
               <div className="flex items-start gap-4 bg-gray-50 rounded-xl p-4">
-                <span className="w-8 h-8 text-white" style={{ background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)' }} rounded-full flex items-center justify-center font-bold flex-shrink-0">5</span>
+                <span className="w-8 h-8 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0" style={{ background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)' }}>5</span>
                 <div>
                   <h4 className="font-semibold text-gray-900">Buy with confidence</h4>
                   <p className="text-gray-600">No more hoping – you know it'll work for you</p>

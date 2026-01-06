@@ -174,15 +174,15 @@ const SmartShoppingTools = () => {
                 <div className="space-y-2">
                   <div className="flex justify-between items-center">
                     <span className="text-gray-600">Fashion items</span>
-                    <span className="font-bold" style={{ color: '#FF70D9' }}">15-40% off</span>
+                    <span className="font-bold" style={{ color: '#FF70D9' }}>15-40% off</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-gray-600">Designer pieces</span>
-                    <span className="font-bold" style={{ color: '#FF70D9' }}">20-50% off</span>
+                    <span className="font-bold" style={{ color: '#FF70D9' }}>20-50% off</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-gray-600">End of season</span>
-                    <span className="font-bold" style={{ color: '#FF70D9' }}">Up to 70% off</span>
+                    <span className="font-bold" style={{ color: '#FF70D9' }}>Up to 70% off</span>
                   </div>
                 </div>
               </div>
@@ -273,7 +273,7 @@ const SmartShoppingTools = () => {
             </p>
 
             <div className="space-y-6">
-              <div className="rounded-2xl" style={{ background: 'linear-gradient(135deg, rgba(255,112,217,0.08) 0%, rgba(110,193,228,0.08) 100%)' }} rounded-2xl p-6">
+              <div className="rounded-2xl p-6" style={{ background: 'linear-gradient(135deg, rgba(255,112,217,0.08) 0%, rgba(110,193,228,0.08) 100%)' }}>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">🎯 The "Wait and See" Strategy</h3>
                 <p className="text-gray-700 mb-3">
                   When you find something you like, don't buy immediately. Add it to your wishlist with price tracking. Wait 2-4 weeks. Fashion retail runs on cycles – most items will go on sale eventually.
@@ -283,7 +283,7 @@ const SmartShoppingTools = () => {
                 </p>
               </div>
 
-              <div className="rounded-2xl" style={{ background: 'linear-gradient(135deg, rgba(110,193,228,0.08) 0%, rgba(255,112,217,0.08) 100%)' }} rounded-2xl p-6">
+              <div className="rounded-2xl p-6" style={{ background: 'linear-gradient(135deg, rgba(110,193,228,0.08) 0%, rgba(255,112,217,0.08) 100%)' }}>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">📅 Know the Sale Calendar</h3>
                 <p className="text-gray-700 mb-3">
                   Big sales happen predictably. Track items before these dates:
@@ -308,14 +308,14 @@ const SmartShoppingTools = () => {
                 </div>
               </div>
 
-              <div className="rounded-2xl" style={{ background: 'linear-gradient(135deg, rgba(255,112,217,0.08) 0%, rgba(110,193,228,0.08) 100%)' }} rounded-2xl p-6">
+              <div className="rounded-2xl p-6" style={{ background: 'linear-gradient(135deg, rgba(255,112,217,0.08) 0%, rgba(110,193,228,0.08) 100%)' }}>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">💡 The "Similar Item" Hack</h3>
                 <p className="text-gray-700 mb-3">
                   Found a €200 dress you love? Search for similar styles across other stores and add them all to your wishlist. You might find nearly identical pieces for half the price – or catch one on sale first.
                 </p>
               </div>
 
-              <div className="rounded-2xl" style={{ background: 'linear-gradient(135deg, rgba(110,193,228,0.08) 0%, rgba(255,112,217,0.08) 100%)' }} rounded-2xl p-6">
+              <div className="rounded-2xl p-6" style={{ background: 'linear-gradient(135deg, rgba(110,193,228,0.08) 0%, rgba(255,112,217,0.08) 100%)' }}>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">🧹 Monthly Wishlist Cleanup</h3>
                 <p className="text-gray-700 mb-3">
                   Once a month, review your wishlist. Remove things you no longer want (tastes change!). This keeps your list focused and your alerts relevant. No point tracking prices on items you've lost interest in.
@@ -381,35 +381,35 @@ const SmartShoppingTools = () => {
               <h3 className="text-xl font-bold text-gray-900 mb-4">The Smart Shopping Stack:</h3>
               <div className="space-y-4">
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 text-white rounded-full" style={{ background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)' }} flex items-center justify-center font-bold flex-shrink-0">1</div>
+                  <div className="w-10 h-10 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0" style={{ background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)' }}>1</div>
                   <div>
                     <h4 className="font-semibold text-gray-900">Find items you like</h4>
                     <p className="text-gray-600">Browse normally, save anything that catches your eye</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 text-white rounded-full" style={{ background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)' }} flex items-center justify-center font-bold flex-shrink-0">2</div>
+                  <div className="w-10 h-10 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0" style={{ background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)' }}>2</div>
                   <div>
                     <h4 className="font-semibold text-gray-900">AI checks if it suits you</h4>
                     <p className="text-gray-600"><Link to="/does-this-suit-me" className="hover:underline" style={{ color: '#FF70D9' }}>Style matching</Link> tells you if it flatters your body type and coloring</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 text-white rounded-full" style={{ background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)' }} flex items-center justify-center font-bold flex-shrink-0">3</div>
+                  <div className="w-10 h-10 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0" style={{ background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)' }}>3</div>
                   <div>
                     <h4 className="font-semibold text-gray-900">Virtual try-on shows you</h4>
                     <p className="text-gray-600"><Link to="/online-dressing-room" className="hover:underline" style={{ color: '#FF70D9' }}>See it on yourself</Link> before committing</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 text-white rounded-full" style={{ background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)' }} flex items-center justify-center font-bold flex-shrink-0">4</div>
+                  <div className="w-10 h-10 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0" style={{ background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)' }}>4</div>
                   <div>
                     <h4 className="font-semibold text-gray-900">Price tracking waits for the deal</h4>
                     <p className="text-gray-600">Now you know you want it – tracking gets you the best price</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 text-white rounded-full" style={{ background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)' }} flex items-center justify-center font-bold flex-shrink-0">5</div>
+                  <div className="w-10 h-10 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0" style={{ background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)' }}>5</div>
                   <div>
                     <h4 className="font-semibold text-gray-900">Buy with total confidence</h4>
                     <p className="text-gray-600">Right item, right price, no returns, no regrets</p>
@@ -433,7 +433,7 @@ const SmartShoppingTools = () => {
                 <p className="text-gray-700 mb-2">
                   If everything is on your wishlist, nothing is special. You'll get alert fatigue and miss the ones that matter.
                 </p>
-                <p className="font-medium" style={{ color: '#FF70D9' }}">
+                <p className="font-medium" style={{ color: '#FF70D9' }}>
                   ✅ Fix: Be selective. If you wouldn't buy it at 20% off, don't track it.
                 </p>
               </div>
@@ -443,7 +443,7 @@ const SmartShoppingTools = () => {
                 <p className="text-gray-700 mb-2">
                   Yes, prices drop. But popular items in popular sizes also sell out. If something is already on sale and your size is limited, don't wait for another 5%.
                 </p>
-                <p className="font-medium" style={{ color: '#FF70D9' }}">
+                <p className="font-medium" style={{ color: '#FF70D9' }}>
                   ✅ Fix: Know when "good enough" is good enough. A 30% discount on something perfect beats 50% off something that's sold out.
                 </p>
               </div>
@@ -453,7 +453,7 @@ const SmartShoppingTools = () => {
                 <p className="text-gray-700 mb-2">
                   Getting alerts is great, but buying things just because they're on sale is still wasteful. A deal on something you don't need isn't saving money – it's spending money.
                 </p>
-                <p className="font-medium" style={{ color: '#FF70D9' }}">
+                <p className="font-medium" style={{ color: '#FF70D9' }}>
                   ✅ Fix: Before adding to wishlist, ask "Would I buy this at full price if money was no object?" If no, don't track it.
                 </p>
               </div>
