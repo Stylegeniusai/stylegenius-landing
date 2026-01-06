@@ -3,6 +3,7 @@ import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 
 const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog";
+const BODYTYPE_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/bodytype";
 
 const blogPosts = [
   // Color Analysis
@@ -108,35 +109,35 @@ const blogPosts = [
   {
     title: "Hourglass Body Type Guide",
     description: "How to dress the hourglass figure - styles that celebrate your balanced proportions.",
-    image: `${BLOG_IMAGE_BASE}/hourglass-hero.png`,
+    image: `${BODYTYPE_IMAGE_BASE}/hourglass/wrap-dresses.png`,
     href: "/hourglass-body-type",
     category: "Body Type"
   },
   {
     title: "Pear Body Shape Guide",
     description: "The best styles, cuts, and silhouettes for pear-shaped bodies.",
-    image: `${BLOG_IMAGE_BASE}/pear-hero.png`,
+    image: `${BODYTYPE_IMAGE_BASE}/triangle/a-line-skirts.png`,
     href: "/pear-body-shape",
     category: "Body Type"
   },
   {
     title: "Apple Body Shape Guide",
     description: "Flattering styles and tips for dressing the apple body shape.",
-    image: `${BLOG_IMAGE_BASE}/apple-hero.png`,
+    image: `${BODYTYPE_IMAGE_BASE}/round/empire-waist-dresses.png`,
     href: "/apple-body-shape",
     category: "Body Type"
   },
   {
     title: "Rectangle Body Type Guide",
     description: "Create curves and dimension with the right styles for rectangular body shapes.",
-    image: `${BLOG_IMAGE_BASE}/rectangle-hero.png`,
+    image: `${BODYTYPE_IMAGE_BASE}/rectangle/belted-dresses.png`,
     href: "/rectangle-body-type",
     category: "Body Type"
   },
   {
     title: "Inverted Triangle Body Type",
     description: "Balance broad shoulders with the right silhouettes for inverted triangle shapes.",
-    image: `${BLOG_IMAGE_BASE}/inverted-triangle-hero.png`,
+    image: `${BODYTYPE_IMAGE_BASE}/invertedtriangle/a-line-skirts.png`,
     href: "/inverted-triangle-body",
     category: "Body Type"
   },
@@ -150,7 +151,7 @@ const blogPosts = [
   {
     title: "Body Type Style Guide",
     description: "Discover the most flattering outfits and styling tips for your unique body shape.",
-    image: `${BLOG_IMAGE_BASE}/hourglass-hero.png`,
+    image: `${BODYTYPE_IMAGE_BASE}/hourglass/wrap-dresses.png`,
     href: "/what-body-type-suits-me",
     category: "Body Type"
   },

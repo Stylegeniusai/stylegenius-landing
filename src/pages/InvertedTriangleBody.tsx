@@ -49,7 +49,7 @@ const InvertedTriangleBody = () => {
           {/* Hero Image */}
           <div className="max-w-2xl mx-auto mt-8">
             <img
-              src={`${BLOG_IMAGE_BASE}/inverted-triangle-hero.png`}
+              src={`${BODYTYPE_IMAGE_BASE}/invertedtriangle/a-line-skirts.png`}
               alt="Inverted triangle body type fashion guide"
               className="w-full rounded-2xl shadow-xl"
             />

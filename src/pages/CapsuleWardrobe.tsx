@@ -53,7 +53,7 @@ const CapsuleWardrobe = () => {
           </div>
           <div className="max-w-2xl mx-auto mt-8">
             <img
-              src={`${BLOG_IMAGE_BASE}/capsule-wardrobe-hero.png`}
+              src={`${BLOG_IMAGE_BASE}/capsule-hero.png`}
               alt="Capsule wardrobe guide"
               className="w-full rounded-2xl shadow-xl"
             />

@@ -58,7 +58,7 @@ const HourglassBodyType = () => {
           {/* Hero Image */}
           <div className="max-w-2xl mx-auto mt-8">
             <img
-              src={`${BLOG_IMAGE_BASE}/hourglass-hero.png`}
+              src={`${BODYTYPE_IMAGE_BASE}/hourglass/wrap-dresses.png`}
               alt="Hourglass body type fashion guide"
               className="w-full rounded-2xl shadow-xl"
             />

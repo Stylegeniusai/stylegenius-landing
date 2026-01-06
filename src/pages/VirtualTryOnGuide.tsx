@@ -46,7 +46,7 @@ const VirtualTryOnGuide = () => {
           </div>
           <div className="max-w-2xl mx-auto mt-8">
             <img
-              src={`${BLOG_IMAGE_BASE}/virtual-try-on-hero.png`}
+              src={`${BLOG_IMAGE_BASE}/virtual-tryon-hero.png`}
               alt="Virtual try-on technology guide"
               className="w-full rounded-2xl shadow-xl"
             />

@@ -63,7 +63,7 @@ const WhatColorsSuitMe = () => {
         description="Discover which colors flatter your skin tone. Our comprehensive guide helps you find the perfect colors for your complexion - from fair to deep skin tones."
         keywords="what colors suit me, colors for my skin tone, best colors for complexion, color analysis, skin tone colors, flattering colors"
         canonicalUrl="/what-colors-suit-me"
-        ogImage="/what-colors-suit-me-hero.png"
+        ogImage="/undertones-hero.png"
         ogType="article"
         article={{
           publishedTime: "2024-10-08",
@@ -103,7 +103,7 @@ const WhatColorsSuitMe = () => {
             </div>
             <div className="relative">
               <img
-                src={`${BLOG_IMAGE_BASE}/what-colors-suit-me-hero.png`}
+                src={`${BLOG_IMAGE_BASE}/undertones-hero.png`}
                 alt="What colors suit me - diverse women in complementary colors"
                 className="w-full h-auto rounded-2xl shadow-2xl"
               />

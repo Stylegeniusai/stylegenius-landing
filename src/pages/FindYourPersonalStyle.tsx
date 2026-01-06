@@ -181,7 +181,7 @@ const FindYourPersonalStyle = () => {
           </div>
           <div className="max-w-2xl mx-auto mt-8">
             <img
-              src={`${BLOG_IMAGE_BASE}/personal-style-hero.png`}
+              src={`${BLOG_IMAGE_BASE}/personal-style-moodboard.png`}
               alt="Find your personal style guide - woman discovering her unique fashion identity"
               className="w-full rounded-2xl shadow-xl"
             />

@@ -58,7 +58,7 @@ const PearBodyShape = () => {
           {/* Hero Image */}
           <div className="max-w-2xl mx-auto mt-8">
             <img
-              src={`${BLOG_IMAGE_BASE}/pear-hero.png`}
+              src={`${BODYTYPE_IMAGE_BASE}/triangle/a-line-skirts.png`}
               alt="Pear body shape fashion guide"
               className="w-full rounded-2xl shadow-xl"
             />

@@ -58,7 +58,7 @@ const AppleBodyShape = () => {
           {/* Hero Image */}
           <div className="max-w-2xl mx-auto mt-8">
             <img
-              src={`${BLOG_IMAGE_BASE}/apple-hero.png`}
+              src={`${BODYTYPE_IMAGE_BASE}/round/empire-waist-dresses.png`}
               alt="Apple body shape fashion guide"
               className="w-full rounded-2xl shadow-xl"
             />

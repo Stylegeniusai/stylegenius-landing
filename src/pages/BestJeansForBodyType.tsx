@@ -4,6 +4,8 @@ import Footer from "../components/Footer";
 import SEO from "../components/SEO";
 import { Link } from "react-router-dom";
 
+const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog";
+
 const BestJeansForBodyType = () => {
   return (
     <div className="min-h-screen bg-gray-50">
@@ -41,6 +43,13 @@ const BestJeansForBodyType = () => {
             <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed">
               Find the perfect jeans for your body shape - from high-rise to bootcut, we'll help you find your most flattering fit.
             </p>
+          </div>
+          <div className="max-w-2xl mx-auto mt-8">
+            <img
+              src={`${BLOG_IMAGE_BASE}/jeans-hero.png`}
+              alt="Best jeans for every body type guide"
+              className="w-full rounded-2xl shadow-xl"
+            />
           </div>
         </div>
       </section>

@@ -58,7 +58,7 @@ const RectangleBodyType = () => {
           {/* Hero Image */}
           <div className="max-w-2xl mx-auto mt-8">
             <img
-              src={`${BLOG_IMAGE_BASE}/rectangle-hero.png`}
+              src={`${BODYTYPE_IMAGE_BASE}/rectangle/belted-dresses.png`}
               alt="Rectangle body type fashion guide"
               className="w-full rounded-2xl shadow-xl"
             />

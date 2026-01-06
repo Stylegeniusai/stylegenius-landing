@@ -118,7 +118,7 @@ const WhatSeasonAmI = () => {
           </div>
           <div className="max-w-2xl mx-auto mt-8">
             <img
-              src={`${BLOG_IMAGE_BASE}/what-season-am-i-hero.png`}
+              src={`${BLOG_IMAGE_BASE}/what-season-hero.png`}
               alt="Seasonal color analysis guide"
               className="w-full rounded-2xl shadow-xl"
             />

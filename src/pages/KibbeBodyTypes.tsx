@@ -4,6 +4,8 @@ import Footer from "../components/Footer";
 import SEO from "../components/SEO";
 import { Link } from "react-router-dom";
 
+const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog";
+
 const KibbeBodyTypes = () => {
   const kibbeTypes = [
     {
@@ -173,6 +175,13 @@ const KibbeBodyTypes = () => {
             <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed">
               Discover your Kibbe body type and learn how to dress for your unique bone structure, flesh, and facial features. The TikTok-viral system explained.
             </p>
+          </div>
+          <div className="max-w-2xl mx-auto mt-8">
+            <img
+              src={`${BLOG_IMAGE_BASE}/kibbe-hero.png`}
+              alt="Kibbe body types guide"
+              className="w-full rounded-2xl shadow-xl"
+            />
           </div>
         </div>
       </section>

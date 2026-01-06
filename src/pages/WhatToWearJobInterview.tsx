@@ -47,7 +47,7 @@ const WhatToWearJobInterview = () => {
           </div>
           <div className="max-w-2xl mx-auto mt-8">
             <img
-              src={`${BLOG_IMAGE_BASE}/job-interview-hero.png`}
+              src={`${BLOG_IMAGE_BASE}/interview-hero.png`}
               alt="Professional woman dressed for job interview in tailored blazer and dress pants"
               className="w-full rounded-2xl shadow-xl"
             />
