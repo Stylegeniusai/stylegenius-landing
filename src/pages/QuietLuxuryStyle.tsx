@@ -10,7 +10,7 @@ const QuietLuxuryStyle = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEO
-        title="Quiet Luxury Style Guide: Stealth Wealth Fashion 2025"
+        title="Quiet Luxury Style Guide: Stealth Wealth Fashion 2026"
         description="Master quiet luxury fashion with our complete guide. Learn the art of understated elegance, stealth wealth dressing, and how to build a timeless wardrobe."
         keywords="quiet luxury, stealth wealth, old money style, understated fashion, minimalist luxury, quiet luxury brands, capsule wardrobe, timeless style"
         canonicalUrl="/quiet-luxury-style"
@@ -51,7 +51,7 @@ const QuietLuxuryStyle = () => {
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed">
-              The complete guide to quiet luxury fashion - understated elegance that whispers wealth rather than shouts it. Master the art of stealth wealth dressing in 2025.
+              The complete guide to quiet luxury fashion - understated elegance that whispers wealth rather than shouts it. Master the art of stealth wealth dressing in 2026.
             </p>
           </div>
           <div className="max-w-2xl mx-auto mt-8">

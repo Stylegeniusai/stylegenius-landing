@@ -85,7 +85,7 @@ const WhatBodyTypeSuitsMe = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEO
-        title="What Clothes Suit My Body Type? Complete Guide 2025"
+        title="What Clothes Suit My Body Type? Complete Guide 2026"
         description="Find out which clothes flatter your body type. Our comprehensive guide helps you dress for pear, apple, hourglass, rectangle, and inverted triangle shapes."
         keywords="what clothes suit my body, body type fashion, dress for your body shape, pear body clothes, hourglass outfits, body shape guide"
         canonicalUrl="/what-body-type-suits-me"

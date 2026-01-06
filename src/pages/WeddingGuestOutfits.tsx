@@ -10,7 +10,7 @@ const WeddingGuestOutfits = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEO
-        title="Wedding Guest Outfits: Complete Guide for Every Dress Code 2025"
+        title="Wedding Guest Outfits: Complete Guide for Every Dress Code 2026"
         description="Find the perfect wedding guest outfit with our complete guide. Learn what to wear for every dress code, season, and venue - from black tie to casual."
         keywords="wedding guest outfit, wedding guest dress, what to wear to wedding, wedding dress code, cocktail attire, black tie optional, semi formal wedding"
         canonicalUrl="/wedding-guest-outfits"
@@ -68,7 +68,7 @@ const WeddingGuestOutfits = () => {
       <article className="py-16 bg-white">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="prose prose-lg max-w-none mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">The Ultimate Wedding Guest Outfit Guide for 2025</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">The Ultimate Wedding Guest Outfit Guide for 2026</h2>
             <p className="text-xl text-gray-700 leading-relaxed mb-6">
               Being invited to a wedding is an honor, and showing up in the right outfit is a sign of respect for the couple and their special day. But navigating wedding dress codes can feel overwhelming - what exactly does "cocktail attire" mean? Can you wear black to a wedding? What about a beach ceremony in December? Understanding your <Link to="/find-your-personal-style" className="text-pink-600 hover:underline">personal style</Link> can help you choose the perfect outfit.
             </p>

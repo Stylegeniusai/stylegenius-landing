@@ -10,7 +10,7 @@ const CoquetteAesthetic = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEO
-        title="Coquette Aesthetic: The Complete Style Guide 2025"
+        title="Coquette Aesthetic: The Complete Style Guide 2026"
         description="Master the coquette aesthetic with our complete guide. Learn about bows, lace, ballet-inspired pieces, and how to style this viral TikTok trend for any occasion."
         keywords="coquette aesthetic, coquette style, coquette fashion, bow aesthetic, feminine style, ballet core, romantic fashion, pink aesthetic, lace fashion"
         canonicalUrl="/coquette-aesthetic"

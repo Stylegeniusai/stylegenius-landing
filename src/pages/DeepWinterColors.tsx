@@ -10,7 +10,7 @@ const DeepWinterColors = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEO
-        title="Deep Winter Colors: Complete Palette Guide 2025"
+        title="Deep Winter Colors: Complete Palette Guide 2026"
         description="Discover the perfect deep winter color palette. Learn which rich, cool colors flatter deep winter skin tones and how to build a striking wardrobe."
         keywords="deep winter colors, deep winter palette, winter color analysis, cool deep colors, deep winter celebrities, deep winter wardrobe"
         canonicalUrl="/deep-winter-colors"

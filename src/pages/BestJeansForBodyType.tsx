@@ -10,7 +10,7 @@ const BestJeansForBodyType = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEO
-        title="Best Jeans for Your Body Type: Complete Guide 2025"
+        title="Best Jeans for Your Body Type: Complete Guide 2026"
         description="Find the perfect jeans for your body shape. Our guide covers the best denim styles for pear, apple, hourglass, rectangle, and inverted triangle figures."
         keywords="best jeans for body type, jeans for pear shape, jeans for hourglass, high waisted jeans, bootcut jeans, skinny jeans body type"
         canonicalUrl="/best-jeans-for-body-type"

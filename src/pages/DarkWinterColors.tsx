@@ -41,7 +41,7 @@ const DarkWinterColors = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEO
-        title="Dark Winter Colors: Complete Palette Guide 2025"
+        title="Dark Winter Colors: Complete Palette Guide 2026"
         description="Discover the perfect dark winter color palette. Learn which bold, cool colors flatter dark winter skin tones and how to build a stunning wardrobe."
         keywords="dark winter colors, dark winter palette, winter color analysis, cool deep colors, dark winter celebrities, dark winter wardrobe"
         canonicalUrl="/dark-winter-colors"

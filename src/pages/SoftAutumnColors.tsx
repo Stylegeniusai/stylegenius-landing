@@ -41,7 +41,7 @@ const SoftAutumnColors = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEO
-        title="Soft Autumn Colors: Complete Palette Guide 2025"
+        title="Soft Autumn Colors: Complete Palette Guide 2026"
         description="Discover the perfect soft autumn color palette. Learn which muted, warm colors flatter soft autumn skin tones and how to build a cohesive wardrobe."
         keywords="soft autumn colors, soft autumn palette, autumn color analysis, muted autumn colors, warm muted colors, soft autumn celebrity, soft autumn wardrobe"
         canonicalUrl="/soft-autumn-colors"

@@ -11,7 +11,7 @@ const AppleBodyShape = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEO
-        title="Apple Body Shape: Complete Style Guide 2025"
+        title="Apple Body Shape: Complete Style Guide 2026"
         description="Discover how to dress your apple body shape. Learn the best clothing styles, fits, and fashion tips to flatter your figure and feel confident."
         keywords="apple body shape, apple body type, how to dress apple shape, round body type, apple figure fashion, apple body style tips"
         canonicalUrl="/apple-body-shape"

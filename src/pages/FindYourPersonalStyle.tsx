@@ -137,7 +137,7 @@ const FindYourPersonalStyle = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEO
-        title="How to Find Your Personal Style: Complete Guide 2025"
+        title="How to Find Your Personal Style: Complete Guide 2026"
         description="Discover your unique personal style with our comprehensive guide. Learn about style archetypes, common mistakes, and how to build a wardrobe you love."
         keywords="find your personal style, personal style quiz, style archetypes, fashion identity, wardrobe personality, style guide, fashion tips"
         canonicalUrl="/find-your-personal-style"

@@ -11,7 +11,7 @@ const InvertedTriangleBody = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEO
-        title="Inverted Triangle Body: Complete Style Guide 2025"
+        title="Inverted Triangle Body: Complete Style Guide 2026"
         description="Discover how to dress your inverted triangle body shape. Learn the best clothing styles, fits, and fashion tips to balance your proportions."
         keywords="inverted triangle body, inverted triangle shape, broad shoulders, how to dress inverted triangle, V-shape body, top heavy body type"
         canonicalUrl="/inverted-triangle-body"

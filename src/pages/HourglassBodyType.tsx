@@ -11,7 +11,7 @@ const HourglassBodyType = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEO
-        title="Hourglass Body Type: Complete Style Guide 2025"
+        title="Hourglass Body Type: Complete Style Guide 2026"
         description="Discover how to dress your hourglass figure. Learn the best clothing styles, fits, and fashion tips to flatter your balanced proportions and defined waist."
         keywords="hourglass body type, hourglass figure, how to dress hourglass, hourglass body shape, curvy fashion, waist emphasis, hourglass style tips"
         canonicalUrl="/hourglass-body-type"

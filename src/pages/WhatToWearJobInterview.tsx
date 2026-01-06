@@ -10,7 +10,7 @@ const WhatToWearJobInterview = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEO
-        title="What to Wear to a Job Interview: Complete Guide 2025"
+        title="What to Wear to a Job Interview: Complete Guide 2026"
         description="Nail your job interview outfit with our complete guide. Learn what to wear for corporate, creative, and casual interviews to make the best first impression."
         keywords="what to wear job interview, interview outfit, professional interview attire, job interview dress code, interview clothing, first impression outfit"
         canonicalUrl="/what-to-wear-job-interview"
@@ -42,7 +42,7 @@ const WhatToWearJobInterview = () => {
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed">
-              The complete guide to interview outfits that make lasting impressions. From corporate finance to creative startups, learn exactly what to wear to land your dream job in 2025.
+              The complete guide to interview outfits that make lasting impressions. From corporate finance to creative startups, learn exactly what to wear to land your dream job in 2026.
             </p>
           </div>
           <div className="max-w-2xl mx-auto mt-8">

@@ -10,7 +10,7 @@ const BestColorsForPaleSkin = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEO
-        title="Best Colors for Pale Skin: Complete Guide 2025"
+        title="Best Colors for Pale Skin: Complete Guide 2026"
         description="Discover the most flattering colors for pale skin. Learn which shades make fair skin glow and which colors to avoid for your best look."
         keywords="best colors for pale skin, colors for fair skin, pale skin fashion, light skin tone colors, fair complexion colors, what colors suit pale skin"
         canonicalUrl="/best-colors-for-pale-skin"

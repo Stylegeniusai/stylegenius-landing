@@ -41,7 +41,7 @@ const SoftSummerColors = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEO
-        title="Soft Summer Colors: Complete Palette Guide 2025"
+        title="Soft Summer Colors: Complete Palette Guide 2026"
         description="Discover the perfect soft summer color palette. Learn which muted, cool colors flatter soft summer skin tones and how to build a cohesive wardrobe."
         keywords="soft summer colors, soft summer palette, summer color analysis, muted cool colors, soft summer celebrity, soft summer wardrobe"
         canonicalUrl="/soft-summer-colors"

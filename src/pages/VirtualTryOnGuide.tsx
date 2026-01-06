@@ -10,7 +10,7 @@ const VirtualTryOnGuide = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEO
-        title="Virtual Try-On Guide: How AI is Changing Online Shopping 2025"
+        title="Virtual Try-On Guide: How AI is Changing Online Shopping 2026"
         description="Discover how virtual try-on technology works and how it can transform your online shopping experience. Learn about AI-powered fitting rooms and AR fashion."
         keywords="virtual try-on, AI fashion, online shopping technology, AR clothing, virtual fitting room, try before you buy, digital fashion"
         canonicalUrl="/virtual-try-on-guide"
@@ -37,7 +37,7 @@ const VirtualTryOnGuide = () => {
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
               Virtual Try-On{" "}
               <span className="bg-clip-text text-transparent" style={{ background: 'linear-gradient(45deg, #9B59B6, #E91E63)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-                Guide 2025
+                Guide 2026
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed">

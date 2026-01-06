@@ -10,7 +10,7 @@ const BestColorsForDarkSkin = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEO
-        title="Best Colors for Dark Skin: Complete Guide 2025"
+        title="Best Colors for Dark Skin: Complete Guide 2026"
         description="Discover the most flattering colors for dark skin. Learn which bold and vibrant shades make deep skin tones look absolutely stunning."
         keywords="best colors for dark skin, colors for deep skin tone, dark skin fashion, melanin rich skin colors, what colors suit dark skin"
         canonicalUrl="/best-colors-for-dark-skin"

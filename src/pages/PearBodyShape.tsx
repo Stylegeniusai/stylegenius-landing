@@ -11,7 +11,7 @@ const PearBodyShape = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEO
-        title="Pear Body Shape: Complete Style Guide 2025"
+        title="Pear Body Shape: Complete Style Guide 2026"
         description="Discover how to dress your pear body shape. Learn the best clothing styles, fits, and fashion tips to balance your proportions and flatter your figure."
         keywords="pear body shape, pear shaped body, how to dress pear shape, pear figure fashion, bottom heavy body type, pear body style tips"
         canonicalUrl="/pear-body-shape"

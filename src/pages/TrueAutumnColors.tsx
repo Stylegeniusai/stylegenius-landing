@@ -41,7 +41,7 @@ const TrueAutumnColors = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEO
-        title="True Autumn Colors: Complete Palette Guide 2025"
+        title="True Autumn Colors: Complete Palette Guide 2026"
         description="Discover the perfect true autumn color palette. Learn which rich, warm colors flatter true autumn skin tones and how to build a gorgeous wardrobe."
         keywords="true autumn colors, true autumn palette, autumn color analysis, warm rich colors, true autumn celebrity, true autumn wardrobe"
         canonicalUrl="/true-autumn-colors"

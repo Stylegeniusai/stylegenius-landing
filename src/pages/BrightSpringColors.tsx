@@ -41,7 +41,7 @@ const BrightSpringColors = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEO
-        title="Bright Spring Colors: Complete Palette Guide 2025"
+        title="Bright Spring Colors: Complete Palette Guide 2026"
         description="Discover the perfect bright spring color palette. Learn which vibrant, warm colors flatter bright spring skin tones and build a stunning wardrobe."
         keywords="bright spring colors, bright spring palette, spring color analysis, vibrant warm colors, bright spring celebrity, bright spring wardrobe"
         canonicalUrl="/bright-spring-colors"

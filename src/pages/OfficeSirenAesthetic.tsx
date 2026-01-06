@@ -10,7 +10,7 @@ const OfficeSirenAesthetic = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEO
-        title="Office Siren Aesthetic: Complete Style Guide 2025"
+        title="Office Siren Aesthetic: Complete Style Guide 2026"
         description="Master the office siren aesthetic with our complete guide. Learn how to dress powerful and seductive for the workplace with this viral TikTok trend."
         keywords="office siren aesthetic, office siren style, corporate fashion, power dressing, workwear aesthetic, sexy office wear, professional style"
         canonicalUrl="/office-siren-aesthetic"

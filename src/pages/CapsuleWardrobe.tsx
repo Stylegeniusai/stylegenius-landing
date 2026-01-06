@@ -10,7 +10,7 @@ const CapsuleWardrobe = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEO
-        title="How to Build a Capsule Wardrobe: Complete Guide 2025"
+        title="How to Build a Capsule Wardrobe: Complete Guide 2026"
         description="Learn how to create a minimalist capsule wardrobe with versatile pieces you love. Our guide covers essential items, color coordination, and styling tips."
         keywords="capsule wardrobe, minimalist wardrobe, wardrobe essentials, capsule closet, minimalist fashion, wardrobe basics, mix and match outfits"
         canonicalUrl="/capsule-wardrobe"

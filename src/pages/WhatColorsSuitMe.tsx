@@ -59,7 +59,7 @@ const WhatColorsSuitMe = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEO
-        title="What Colors Suit Me? Find Your Perfect Palette 2025"
+        title="What Colors Suit Me? Find Your Perfect Palette 2026"
         description="Discover which colors flatter your skin tone. Our comprehensive guide helps you find the perfect colors for your complexion - from fair to deep skin tones."
         keywords="what colors suit me, colors for my skin tone, best colors for complexion, color analysis, skin tone colors, flattering colors"
         canonicalUrl="/what-colors-suit-me"

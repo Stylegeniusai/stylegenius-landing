@@ -130,7 +130,7 @@ const KibbeBodyTypes = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEO
-        title="Kibbe Body Types: Complete Guide to All 13 Types 2025"
+        title="Kibbe Body Types: Complete Guide to All 13 Types 2026"
         description="Discover your Kibbe body type with our comprehensive guide. Learn about all 13 Kibbe types, from Dramatic to Romantic, and find your most flattering styles."
         keywords="kibbe body types, kibbe quiz, kibbe dramatic, kibbe romantic, kibbe natural, kibbe gamine, kibbe classic, body type analysis, david kibbe"
         canonicalUrl="/kibbe-body-types"

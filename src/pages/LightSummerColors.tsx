@@ -10,7 +10,7 @@ const LightSummerColors = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEO
-        title="Light Summer Colors: Complete Palette Guide 2025"
+        title="Light Summer Colors: Complete Palette Guide 2026"
         description="Discover the perfect light summer color palette. Learn which soft, cool colors flatter light summer skin tones and how to build a beautiful wardrobe."
         keywords="light summer colors, light summer palette, summer color analysis, soft cool colors, light summer celebrity, light summer wardrobe"
         canonicalUrl="/light-summer-colors"

@@ -11,7 +11,7 @@ const RectangleBodyType = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEO
-        title="Rectangle Body Type: Complete Style Guide 2025"
+        title="Rectangle Body Type: Complete Style Guide 2026"
         description="Discover how to dress your rectangle body shape. Learn the best clothing styles, fits, and fashion tips to create curves and flatter your athletic figure."
         keywords="rectangle body type, rectangle body shape, how to dress rectangle shape, athletic body type, straight body shape, rectangle figure fashion"
         canonicalUrl="/rectangle-body-type"

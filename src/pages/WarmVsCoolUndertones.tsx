@@ -8,7 +8,7 @@ const WarmVsCoolUndertones = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEO
-        title="Warm vs Cool Undertones: How to Find Yours 2025"
+        title="Warm vs Cool Undertones: How to Find Yours 2026"
         description="Learn how to determine if you have warm or cool undertones. Our complete guide helps you identify your skin's undertone for better color choices in fashion and makeup."
         keywords="warm vs cool undertones, skin undertone test, how to find undertone, warm undertone, cool undertone, neutral undertone, vein test"
         canonicalUrl="/warm-vs-cool-undertones"

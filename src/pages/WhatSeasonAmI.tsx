@@ -69,7 +69,7 @@ const WhatSeasonAmI = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEO
-        title="What Season Am I? Complete Color Analysis Guide 2025"
+        title="What Season Am I? Complete Color Analysis Guide 2026"
         description="Discover your seasonal color palette with our comprehensive guide. Learn if you're Spring, Summer, Autumn, or Winter and find the colors that make you glow."
         keywords="what season am i, color analysis, seasonal color analysis, spring summer autumn winter colors, skin undertone, color palette, personal color analysis"
         canonicalUrl="/what-season-am-i"
