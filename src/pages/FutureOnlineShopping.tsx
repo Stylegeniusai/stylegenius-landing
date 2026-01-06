@@ -309,6 +309,52 @@ const FutureOnlineShopping = () => {
             </div>
           </section>
 
+          {/* StyleGenius - The Future is Already Here */}
+          <section className="mb-16">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">StyleGenius: The Future is Already Here</h2>
+            <p className="text-lg text-gray-700 leading-relaxed mb-6">
+              A lot of the "future" technology we talked about? StyleGenius already does it. Here's what you can use right now:
+            </p>
+
+            <div className="bg-gradient-to-r from-indigo-100 to-pink-100 rounded-2xl p-8 mb-8">
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">🪞 Virtual Try-On on Any Store</h3>
+                  <p className="text-gray-700 text-sm">
+                    See clothes on YOUR body across any shopping site. Run multiple try-ons simultaneously and keep browsing while they process.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">🎯 AI Style Matching</h3>
+                  <p className="text-gray-700 text-sm">
+                    Every item analyzed for your skin tone and body type. Match scores, styling tips, and outfit ideas – personalized to YOU.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">💰 Smart Price Tracking</h3>
+                  <p className="text-gray-700 text-sm">
+                    Universal wishlist across all stores, price drop alerts, and price history. Never overpay again.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">📱 App + Extension That Sync</h3>
+                  <p className="text-gray-700 text-sm">
+                    Build outfits in the app, shop with the extension, everything syncs. Your complete style toolkit, everywhere.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="my-8">
+              <img
+                src={`${BLOG_IMAGE_BASE}/stylegenius-full-demo.png`}
+                alt="StyleGenius extension and app showing full feature set"
+                className="w-full rounded-2xl shadow-lg"
+              />
+              <p className="text-center text-gray-500 mt-3 text-sm">StyleGenius – the future of fashion shopping, available now</p>
+            </div>
+          </section>
+
           {/* How to Stay Ahead */}
           <section className="mb-16">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">How to Shop Smart NOW (While the Future Arrives)</h2>

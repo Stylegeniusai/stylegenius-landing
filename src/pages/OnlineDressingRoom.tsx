@@ -347,6 +347,52 @@ const OnlineDressingRoom = () => {
             </div>
           </section>
 
+          {/* How StyleGenius Does Virtual Try-On */}
+          <section className="mb-16">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">How StyleGenius Virtual Try-On Works</h2>
+            <p className="text-lg text-gray-700 leading-relaxed mb-6">
+              Most virtual try-on tools only work on one store. StyleGenius brings virtual fitting rooms to EVERY online store. Here's what makes it different:
+            </p>
+
+            <div className="bg-gradient-to-r from-rose-100 to-orange-100 rounded-2xl p-8 mb-8">
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">🚀 Multi-Tasking Try-On</h3>
+                  <p className="text-gray-700">
+                    Start a virtual try-on and keep shopping. Queue up multiple items at once. No waiting around staring at loading screens – browse while StyleGenius processes in the background.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">🎯 Not Just "How It Looks" – But "Will It Suit Me?"</h3>
+                  <p className="text-gray-700">
+                    Unlike basic try-on tools, StyleGenius also analyzes if the item matches your skin tone and body type. You see HOW it looks AND get advice on whether the style actually flatters you.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">👗 Outfit Suggestions Included</h3>
+                  <p className="text-gray-700">
+                    Every analysis comes with styling tips and outfit ideas. See how to wear the piece, what to pair it with, and how to make it work for YOUR style.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">📱 Build Full Looks in the App</h3>
+                  <p className="text-gray-700">
+                    Want to test complete outfits? The StyleGenius app lets you build looks from scratch, mix pieces from different stores, and try them on together. See the full vision before you buy.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="my-8">
+              <img
+                src={`${BLOG_IMAGE_BASE}/stylegenius-vto-demo.png`}
+                alt="StyleGenius virtual try-on showing clothes on user"
+                className="w-full rounded-2xl shadow-lg"
+              />
+              <p className="text-center text-gray-500 mt-3 text-sm">StyleGenius virtual try-on – see it on yourself before buying</p>
+            </div>
+          </section>
+
           {/* The Future */}
           <section className="mb-16">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Where Is This Technology Going?</h2>

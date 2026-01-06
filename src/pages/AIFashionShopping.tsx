@@ -358,6 +358,52 @@ const AIFashionShopping = () => {
             </div>
           </section>
 
+          {/* How StyleGenius Does This */}
+          <section className="mb-16">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">How StyleGenius Brings This to Every Store</h2>
+            <p className="text-lg text-gray-700 leading-relaxed mb-6">
+              All this AI fashion tech sounds great, but most tools only work on specific stores or require clunky apps. StyleGenius is different – it's a Chrome extension that works on ANY online store. Here's what you get:
+            </p>
+
+            <div className="bg-gradient-to-r from-violet-100 to-fuchsia-100 rounded-2xl p-8 mb-8">
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">🪞 Virtual Try-On Anywhere</h3>
+                  <p className="text-gray-700 mb-2">
+                    See clothes on YOUR body on any shopping site. Run multiple try-ons at once and keep browsing while they process – no waiting around.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">🎯 Instant Style Matching</h3>
+                  <p className="text-gray-700 mb-2">
+                    Every item gets analyzed for your skin tone and body type. Get a match score plus tips on how to style it – and outfit ideas that work with the piece.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">💰 Universal Wishlist & Price Tracking</h3>
+                  <p className="text-gray-700 mb-2">
+                    Save items from Zara, H&M, ASOS, anywhere – all in one place. Track prices and get alerts when something drops. Never miss a sale.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">📱 App That Syncs</h3>
+                  <p className="text-gray-700 mb-2">
+                    Build your own outfits in the app, test looks with virtual try-on, and everything syncs with your extension. Your style tools, everywhere.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="my-8">
+              <img
+                src={`${BLOG_IMAGE_BASE}/stylegenius-extension-demo.png`}
+                alt="StyleGenius extension showing AI style matching on a shopping site"
+                className="w-full rounded-2xl shadow-lg"
+              />
+              <p className="text-center text-gray-500 mt-3 text-sm">StyleGenius analyzing an item for body type and skin tone match</p>
+            </div>
+          </section>
+
           {/* How to Get Started */}
           <section className="mb-16">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">How to Start Using AI Fashion Today</h2>

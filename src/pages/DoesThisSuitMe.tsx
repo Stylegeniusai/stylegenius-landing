@@ -327,6 +327,52 @@ const DoesThisSuitMe = () => {
             </p>
           </section>
 
+          {/* How StyleGenius Style Matching Works */}
+          <section className="mb-16">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">How StyleGenius Answers "Does This Suit Me?"</h2>
+            <p className="text-lg text-gray-700 leading-relaxed mb-6">
+              StyleGenius doesn't just give you a generic "yes" or "no" – it gives you detailed, personalized analysis for every single item you look at. Here's what you get:
+            </p>
+
+            <div className="bg-gradient-to-r from-amber-100 to-rose-100 rounded-2xl p-8 mb-8">
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">🎨 Skin Tone Match</h3>
+                  <p className="text-gray-700">
+                    StyleGenius analyzes the color against YOUR skin tone. Not generic advice – actual analysis of whether THIS shade will make you look radiant or washed out. You'll see exactly how well the color complements your complexion.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">📐 Body Type Match</h3>
+                  <p className="text-gray-700">
+                    The cut, silhouette, and proportions get analyzed against YOUR body type. Will this neckline flatter you? Does this waist placement work for your proportions? StyleGenius tells you.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">💡 Styling Tips</h3>
+                  <p className="text-gray-700">
+                    It's not just "this works" – you get tips on HOW to wear it. Tuck or untuck? What shoes work best? How to make it flatter your shape even more.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">👗 Outfit Ideas</h3>
+                  <p className="text-gray-700">
+                    Every analysis includes outfit suggestions. See how to style the piece, what to pair it with, complete look ideas that work for YOUR coloring and shape.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="my-8">
+              <img
+                src={`${BLOG_IMAGE_BASE}/stylegenius-match-analysis.png`}
+                alt="StyleGenius showing detailed style match analysis for an item"
+                className="w-full rounded-2xl shadow-lg"
+              />
+              <p className="text-center text-gray-500 mt-3 text-sm">StyleGenius style match – skin tone, body type, and styling tips for every item</p>
+            </div>
+          </section>
+
           {/* Real World Application */}
           <section className="mb-16">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Using Style Matching While You Shop</h2>

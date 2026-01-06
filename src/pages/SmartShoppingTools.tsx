@@ -317,6 +317,52 @@ const SmartShoppingTools = () => {
             </div>
           </section>
 
+          {/* StyleGenius Smart Shopping */}
+          <section className="mb-16">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">StyleGenius: All Your Smart Shopping Tools in One Place</h2>
+            <p className="text-lg text-gray-700 leading-relaxed mb-6">
+              Most price trackers are just... price trackers. StyleGenius combines smart shopping tools with AI styling, so you save money AND buy things that actually suit you.
+            </p>
+
+            <div className="bg-gradient-to-r from-emerald-100 to-teal-100 rounded-2xl p-8 mb-8">
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">📋 Universal Wishlist Across ALL Stores</h3>
+                  <p className="text-gray-700">
+                    Zara, H&M, ASOS, Net-a-Porter, that random boutique you found on Instagram – save them all to ONE wishlist. No more scattered favorites across 20 different accounts.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">🔔 Price Drop Alerts That Actually Work</h3>
+                  <p className="text-gray-700">
+                    Get notified the moment something on your wishlist goes on sale. Not daily digest emails you ignore – instant alerts when prices drop so you can grab it before your size sells out.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">📊 Price History</h3>
+                  <p className="text-gray-700">
+                    See if that "sale" is actually a deal or if the item was cheaper last month. Make informed decisions based on actual price trends.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">📱 Extension + App Sync</h3>
+                  <p className="text-gray-700">
+                    Save items from your laptop, check your wishlist on your phone. Everything syncs automatically. Your shopping list is always with you.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="my-8">
+              <img
+                src={`${BLOG_IMAGE_BASE}/stylegenius-wishlist-demo.png`}
+                alt="StyleGenius universal wishlist with price tracking"
+                className="w-full rounded-2xl shadow-lg"
+              />
+              <p className="text-center text-gray-500 mt-3 text-sm">StyleGenius wishlist – all your favorites from every store, with price alerts</p>
+            </div>
+          </section>
+
           {/* Combining with AI Tools */}
           <section className="mb-16">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">The Power Move: Combine with AI Style Matching</h2>
