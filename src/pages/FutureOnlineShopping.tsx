@@ -417,7 +417,7 @@ const FutureOnlineShopping = () => {
           {/* Related Articles */}
           <section className="mb-12">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">Explore More</h2>
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               <Link to="/ai-fashion-shopping" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-lg transition-shadow">
                 <h3 className="font-semibold text-gray-900 mb-2">AI Fashion Shopping</h3>
                 <p className="text-gray-600 text-sm">How AI is changing fashion right now.</p>
@@ -425,6 +425,14 @@ const FutureOnlineShopping = () => {
               <Link to="/online-dressing-room" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-lg transition-shadow">
                 <h3 className="font-semibold text-gray-900 mb-2">Online Dressing Room</h3>
                 <p className="text-gray-600 text-sm">Virtual try-on technology explained.</p>
+              </Link>
+              <Link to="/does-this-suit-me" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-lg transition-shadow">
+                <h3 className="font-semibold text-gray-900 mb-2">Does This Suit Me?</h3>
+                <p className="text-gray-600 text-sm">AI style matching for body type and skin tone.</p>
+              </Link>
+              <Link to="/smart-shopping-tools" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-lg transition-shadow">
+                <h3 className="font-semibold text-gray-900 mb-2">Smart Shopping Tools</h3>
+                <p className="text-gray-600 text-sm">Price tracking, wishlists, and sale alerts.</p>
               </Link>
               <Link to="/virtual-try-on-guide" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-lg transition-shadow">
                 <h3 className="font-semibold text-gray-900 mb-2">Virtual Try-On Guide</h3>

@@ -469,18 +469,26 @@ const SmartShoppingTools = () => {
           {/* Related Articles */}
           <section className="mb-12">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">More Smart Shopping Guides</h2>
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               <Link to="/ai-fashion-shopping" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-lg transition-shadow">
                 <h3 className="font-semibold text-gray-900 mb-2">AI Fashion Shopping</h3>
                 <p className="text-gray-600 text-sm">How AI is transforming the way we shop for clothes.</p>
               </Link>
-              <Link to="/capsule-wardrobe" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-lg transition-shadow">
-                <h3 className="font-semibold text-gray-900 mb-2">Capsule Wardrobe Guide</h3>
-                <p className="text-gray-600 text-sm">Build a wardrobe of pieces you actually wear.</p>
+              <Link to="/online-dressing-room" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-lg transition-shadow">
+                <h3 className="font-semibold text-gray-900 mb-2">Online Dressing Room</h3>
+                <p className="text-gray-600 text-sm">Virtual try-on technology - see clothes on yourself.</p>
+              </Link>
+              <Link to="/does-this-suit-me" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-lg transition-shadow">
+                <h3 className="font-semibold text-gray-900 mb-2">Does This Suit Me?</h3>
+                <p className="text-gray-600 text-sm">AI style matching for your body type and skin tone.</p>
               </Link>
               <Link to="/future-online-shopping" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-lg transition-shadow">
                 <h3 className="font-semibold text-gray-900 mb-2">Future of Online Shopping</h3>
                 <p className="text-gray-600 text-sm">What's next for fashion technology and e-commerce.</p>
+              </Link>
+              <Link to="/capsule-wardrobe" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-lg transition-shadow">
+                <h3 className="font-semibold text-gray-900 mb-2">Capsule Wardrobe Guide</h3>
+                <p className="text-gray-600 text-sm">Build a wardrobe of pieces you actually wear.</p>
               </Link>
             </div>
           </section>

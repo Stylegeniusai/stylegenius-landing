@@ -502,7 +502,23 @@ const DoesThisSuitMe = () => {
           {/* Related Articles */}
           <section className="mb-12">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">Dive Deeper</h2>
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <Link to="/ai-fashion-shopping" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-lg transition-shadow">
+                <h3 className="font-semibold text-gray-900 mb-2">AI Fashion Shopping</h3>
+                <p className="text-gray-600 text-sm">The bigger picture of how AI is changing fashion.</p>
+              </Link>
+              <Link to="/online-dressing-room" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-lg transition-shadow">
+                <h3 className="font-semibold text-gray-900 mb-2">Online Dressing Room</h3>
+                <p className="text-gray-600 text-sm">Virtual try-on - see clothes on yourself before buying.</p>
+              </Link>
+              <Link to="/smart-shopping-tools" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-lg transition-shadow">
+                <h3 className="font-semibold text-gray-900 mb-2">Smart Shopping Tools</h3>
+                <p className="text-gray-600 text-sm">Price tracking, wishlists, and sale alerts.</p>
+              </Link>
+              <Link to="/future-online-shopping" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-lg transition-shadow">
+                <h3 className="font-semibold text-gray-900 mb-2">Future of Online Shopping</h3>
+                <p className="text-gray-600 text-sm">What's coming next in fashion technology.</p>
+              </Link>
               <Link to="/what-season-am-i" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-lg transition-shadow">
                 <h3 className="font-semibold text-gray-900 mb-2">What Season Am I?</h3>
                 <p className="text-gray-600 text-sm">Find your color season for perfect color matching.</p>
@@ -510,10 +526,6 @@ const DoesThisSuitMe = () => {
               <Link to="/kibbe-body-types" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-lg transition-shadow">
                 <h3 className="font-semibold text-gray-900 mb-2">Kibbe Body Types</h3>
                 <p className="text-gray-600 text-sm">The complete guide to body type styling.</p>
-              </Link>
-              <Link to="/ai-fashion-shopping" className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-lg transition-shadow">
-                <h3 className="font-semibold text-gray-900 mb-2">AI Fashion Shopping</h3>
-                <p className="text-gray-600 text-sm">The bigger picture of how AI is changing fashion.</p>
               </Link>
             </div>
           </section>
