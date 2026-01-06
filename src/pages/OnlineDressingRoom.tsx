@@ -40,13 +40,18 @@ const OnlineDressingRoom = () => {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="py-16 lg:py-24 bg-gradient-to-br from-rose-100 via-pink-50 to-orange-50">
-        <div className="container mx-auto px-4">
+      <section className="py-16 lg:py-24 relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #fff 0%, #f9fafb 100%)' }}>
+        {/* Floating gradient blobs */}
+        <div className="absolute top-[-100px] right-[5%] w-[400px] h-[400px] rounded-full pointer-events-none z-0" style={{ background: 'rgba(255,112,217,0.2)', filter: 'blur(60px)' }} />
+        <div className="absolute bottom-[-50px] left-[10%] w-[300px] h-[300px] rounded-full pointer-events-none z-0" style={{ background: 'rgba(110,193,228,0.2)', filter: 'blur(60px)' }} />
+        <div className="absolute top-[40%] left-[30%] w-[200px] h-[200px] rounded-full pointer-events-none z-0" style={{ background: 'rgba(255,112,217,0.12)', filter: 'blur(60px)' }} />
+
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <span className="inline-block px-4 py-2 bg-rose-200 text-rose-800 rounded-full text-sm font-medium mb-6">Virtual Try-On Technology</span>
+            <span className="inline-block px-4 py-2 rounded-full text-sm font-medium mb-6" style={{ background: 'rgba(255,112,217,0.15)', color: '#FF70D9' }}>Virtual Try-On Technology</span>
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
               Online Dressing Room:{" "}
-              <span className="bg-clip-text text-transparent" style={{ background: 'linear-gradient(45deg, #F43F5E, #F97316)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+              <span className="bg-clip-text text-transparent" style={{ background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
                 Try It On From Home
               </span>
             </h1>
@@ -55,11 +60,13 @@ const OnlineDressingRoom = () => {
             </p>
           </div>
           <div className="max-w-3xl mx-auto mt-8">
-            <img
-              src={`${BLOG_IMAGE_BASE}/dressing-room-hero.png`}
-              alt="Online dressing room - virtual fitting room technology"
-              className="w-full rounded-2xl shadow-xl"
-            />
+            <div className="p-1 rounded-2xl" style={{ background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)' }}>
+              <img
+                src={`${BLOG_IMAGE_BASE}/dressing-room-hero.png`}
+                alt="Online dressing room - virtual fitting room technology"
+                className="w-full rounded-xl"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -85,7 +92,7 @@ const OnlineDressingRoom = () => {
               An online dressing room (or virtual fitting room) is technology that lets you see how clothes look on YOU without physically trying them on. Instead of imagining how that cute top might fit based on a photo of a model, you can actually see it on your body – or at least a digital version of your body.
             </p>
 
-            <div className="bg-rose-50 rounded-2xl p-8 mb-8">
+            <div className="rounded-2xl p-8 mb-8" style={{ background: 'linear-gradient(135deg, rgba(255,112,217,0.1) 0%, rgba(110,193,228,0.1) 100%)' }}>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">It's Like Having a Fitting Room in Your Pocket</h3>
               <p className="text-gray-700 mb-4">
                 Think about what makes in-store shopping feel "safer" – you can try things on. You can see how the fabric falls, how the color looks against your skin, how the cut flatters (or doesn't flatter) your shape. Online dressing rooms bring that same confidence to online shopping.
@@ -106,7 +113,7 @@ const OnlineDressingRoom = () => {
             <div className="space-y-8 mb-8">
               <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{ background: 'rgba(255,112,217,0.15)' }}>
                     <span className="text-xl">📸</span>
                   </div>
                   <h3 className="text-xl font-bold text-gray-900">Photo-Based Try-On</h3>
@@ -119,7 +126,7 @@ const OnlineDressingRoom = () => {
 
               <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{ background: 'rgba(110,193,228,0.15)' }}>
                     <span className="text-xl">🎥</span>
                   </div>
                   <h3 className="text-xl font-bold text-gray-900">Real-Time AR Try-On</h3>
@@ -132,7 +139,7 @@ const OnlineDressingRoom = () => {
 
               <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{ background: 'rgba(255,112,217,0.15)' }}>
                     <span className="text-xl">👤</span>
                   </div>
                   <h3 className="text-xl font-bold text-gray-900">3D Avatar Try-On</h3>
@@ -268,7 +275,7 @@ const OnlineDressingRoom = () => {
 
             <div className="space-y-6">
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-rose-500 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">1</div>
+                <div className="w-10 h-10 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0" style={{ background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)' }}>1</div>
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">Good Lighting is Everything</h3>
                   <p className="text-gray-700">Take photos in natural, even light. Harsh shadows confuse the AI and mess with body detection. Face a window during the day for best results.</p>
@@ -276,7 +283,7 @@ const OnlineDressingRoom = () => {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-rose-500 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">2</div>
+                <div className="w-10 h-10 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0" style={{ background: 'linear-gradient(45deg, #6EC1E4, #FF70D9)' }}>2</div>
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">Wear Fitted Clothes for Photos</h3>
                   <p className="text-gray-700">Baggy clothes hide your actual shape. Wear something fitted so the AI can accurately map your body proportions. Leggings and a tank top work great.</p>
@@ -284,7 +291,7 @@ const OnlineDressingRoom = () => {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-rose-500 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">3</div>
+                <div className="w-10 h-10 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0" style={{ background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)' }}>3</div>
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">Plain Background Helps</h3>
                   <p className="text-gray-700">Busy backgrounds can confuse the technology. Stand against a plain wall – the AI needs to clearly distinguish you from your surroundings.</p>
@@ -292,7 +299,7 @@ const OnlineDressingRoom = () => {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-rose-500 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">4</div>
+                <div className="w-10 h-10 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0" style={{ background: 'linear-gradient(45deg, #6EC1E4, #FF70D9)' }}>4</div>
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">Try Different Poses</h3>
                   <p className="text-gray-700">Don't just try one angle. See how clothes look when you're standing straight vs more natural poses. This shows how pieces move and fall.</p>
@@ -300,10 +307,10 @@ const OnlineDressingRoom = () => {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-rose-500 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">5</div>
+                <div className="w-10 h-10 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0" style={{ background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)' }}>5</div>
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">Combine with Style Analysis</h3>
-                  <p className="text-gray-700">Virtual try-on shows you how things look, but <Link to="/does-this-suit-me" className="text-rose-600 hover:underline">style matching</Link> tells you if they'll actually suit your body type and coloring. Use both!</p>
+                  <p className="text-gray-700">Virtual try-on shows you how things look, but <Link to="/does-this-suit-me" className="hover:underline" style={{ color: '#FF70D9' }}>style matching</Link> tells you if they'll actually suit your body type and coloring. Use both!</p>
                 </div>
               </div>
             </div>
@@ -313,7 +320,7 @@ const OnlineDressingRoom = () => {
           <section className="mb-16">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Beyond Just "Trying On" – The Full Smart Shopping Stack</h2>
             <p className="text-lg text-gray-700 leading-relaxed mb-6">
-              Virtual try-on is awesome, but it's even more powerful when combined with other <Link to="/ai-fashion-shopping" className="text-rose-600 hover:underline">AI fashion shopping</Link> tools:
+              Virtual try-on is awesome, but it's even more powerful when combined with other <Link to="/ai-fashion-shopping" className="hover:underline" style={{ color: '#FF70D9' }}>AI fashion shopping</Link> tools:
             </p>
 
             <div className="grid md:grid-cols-2 gap-6">
@@ -354,7 +361,7 @@ const OnlineDressingRoom = () => {
               Most virtual try-on tools only work on one store. StyleGenius brings virtual fitting rooms to EVERY online store. Here's what makes it different:
             </p>
 
-            <div className="bg-gradient-to-r from-rose-100 to-orange-100 rounded-2xl p-8 mb-8">
+            <div className="rounded-2xl p-8 mb-8" style={{ background: 'linear-gradient(135deg, rgba(255,112,217,0.1) 0%, rgba(110,193,228,0.1) 100%)' }}>
               <div className="space-y-6">
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">🚀 Multi-Tasking Try-On</h3>
@@ -397,29 +404,29 @@ const OnlineDressingRoom = () => {
           <section className="mb-16">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Where Is This Technology Going?</h2>
             <p className="text-lg text-gray-700 leading-relaxed mb-6">
-              Virtual fitting rooms are evolving fast. Here's what's coming in the <Link to="/future-online-shopping" className="text-rose-600 hover:underline">future of online shopping</Link>:
+              Virtual fitting rooms are evolving fast. Here's what's coming in the <Link to="/future-online-shopping" className="hover:underline" style={{ color: '#FF70D9' }}>future of online shopping</Link>:
             </p>
 
-            <div className="bg-gradient-to-r from-rose-100 to-orange-100 rounded-2xl p-8">
+            <div className="rounded-2xl p-8" style={{ background: 'linear-gradient(135deg, rgba(255,112,217,0.1) 0%, rgba(110,193,228,0.1) 100%)' }}>
               <ul className="space-y-4 text-gray-700">
                 <li className="flex items-start">
-                  <span className="text-rose-600 mr-3 mt-1">→</span>
+                  <span className="mr-3 mt-1" style={{ color: '#FF70D9' }}>→</span>
                   <span><strong>Fabric simulation:</strong> Feel (virtually) how materials drape and move</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-rose-600 mr-3 mt-1">→</span>
+                  <span className="mr-3 mt-1" style={{ color: '#FF70D9' }}>→</span>
                   <span><strong>Social try-on:</strong> Try clothes with friends in real-time, share instantly</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-rose-600 mr-3 mt-1">→</span>
+                  <span className="mr-3 mt-1" style={{ color: '#FF70D9' }}>→</span>
                   <span><strong>AR mirrors in homes:</strong> Smart mirrors that let you try entire wardrobes</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-rose-600 mr-3 mt-1">→</span>
+                  <span className="mr-3 mt-1" style={{ color: '#FF70D9' }}>→</span>
                   <span><strong>Instant styling:</strong> AI that styles complete outfits and lets you try them all</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-rose-600 mr-3 mt-1">→</span>
+                  <span className="mr-3 mt-1" style={{ color: '#FF70D9' }}>→</span>
                   <span><strong>Fit prediction:</strong> Exact size recommendations based on the specific garment, not just general sizing</span>
                 </li>
               </ul>
@@ -449,8 +456,12 @@ const OnlineDressingRoom = () => {
       </article>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-br from-rose-100 via-pink-50 to-orange-50">
-        <div className="container mx-auto px-4">
+      <section className="py-16 relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #fff 0%, #f9fafb 100%)' }}>
+        {/* Floating gradient blobs */}
+        <div className="absolute top-[-50px] right-[10%] w-[300px] h-[300px] rounded-full pointer-events-none z-0" style={{ background: 'rgba(255,112,217,0.15)', filter: 'blur(60px)' }} />
+        <div className="absolute bottom-[-50px] left-[15%] w-[250px] h-[250px] rounded-full pointer-events-none z-0" style={{ background: 'rgba(110,193,228,0.15)', filter: 'blur(60px)' }} />
+
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Try Virtual Try-On Yourself</h2>
             <p className="text-xl text-gray-600 mb-8">
@@ -458,12 +469,12 @@ const OnlineDressingRoom = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="https://chromewebstore.google.com/detail/stylegenius-%E2%80%93-your-person/bggndhefooccenjglglakcfgifgdpbmn" target="_blank" rel="noopener noreferrer">
-                <button className="px-8 py-4 text-white font-semibold text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105" style={{ background: 'linear-gradient(45deg, #F43F5E, #F97316)' }}>
+                <button className="px-8 py-4 text-white font-semibold text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105" style={{ background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)', boxShadow: '0 4px 20px rgba(255, 112, 217, 0.3)' }}>
                   Add to Chrome - It's Free
                 </button>
               </a>
               <a href={appStoreUrl} target="_blank" rel="noopener noreferrer">
-                <button className="px-8 py-4 bg-white text-gray-900 font-semibold text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-gray-200">
+                <button className="px-8 py-4 font-semibold text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105" style={{ background: '#6EC1E4', color: 'white', boxShadow: '0 4px 20px rgba(110, 193, 228, 0.3)' }}>
                   {buttonText}
                 </button>
               </a>

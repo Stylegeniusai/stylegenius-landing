@@ -40,13 +40,18 @@ const FutureOnlineShopping = () => {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="py-16 lg:py-24 bg-gradient-to-br from-indigo-100 via-purple-50 to-pink-100">
-        <div className="container mx-auto px-4">
+      <section className="py-16 lg:py-24 relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #fff 0%, #f9fafb 100%)' }}>
+        {/* Floating gradient blobs */}
+        <div className="absolute top-[-100px] right-[5%] w-[400px] h-[400px] rounded-full pointer-events-none z-0" style={{ background: 'rgba(255,112,217,0.2)', filter: 'blur(60px)' }} />
+        <div className="absolute bottom-[-50px] left-[10%] w-[300px] h-[300px] rounded-full pointer-events-none z-0" style={{ background: 'rgba(110,193,228,0.2)', filter: 'blur(60px)' }} />
+        <div className="absolute top-[40%] left-[30%] w-[200px] h-[200px] rounded-full pointer-events-none z-0" style={{ background: 'rgba(255,112,217,0.12)', filter: 'blur(60px)' }} />
+
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <span className="inline-block px-4 py-2 bg-indigo-200 text-indigo-800 rounded-full text-sm font-medium mb-6">Fashion Technology</span>
+            <span className="inline-block px-4 py-2 rounded-full text-sm font-medium mb-6" style={{ background: 'rgba(255,112,217,0.15)', color: '#FF70D9' }}>Fashion Technology</span>
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
               The Future of{" "}
-              <span className="bg-clip-text text-transparent" style={{ background: 'linear-gradient(45deg, #6366F1, #EC4899)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+              <span className="bg-clip-text text-transparent" style={{ background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
                 Online Shopping
               </span>
             </h1>
@@ -55,11 +60,13 @@ const FutureOnlineShopping = () => {
             </p>
           </div>
           <div className="max-w-3xl mx-auto mt-8">
-            <img
-              src={`${BLOG_IMAGE_BASE}/future-shopping-hero.png`}
-              alt="Future of online shopping - AI and fashion technology"
-              className="w-full rounded-2xl shadow-xl"
-            />
+            <div className="p-1 rounded-2xl" style={{ background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)' }}>
+              <img
+                src={`${BLOG_IMAGE_BASE}/future-shopping-hero.png`}
+                alt="Future of online shopping - AI and fashion technology"
+                className="w-full rounded-xl"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -74,7 +81,7 @@ const FutureOnlineShopping = () => {
               Remember when online shopping meant scrolling through static photos and hoping for the best? Those days are rapidly becoming ancient history. We're living through the biggest transformation in retail since... well, since online shopping itself became a thing.
             </p>
             <p className="text-xl text-gray-700 leading-relaxed mb-6">
-              <Link to="/ai-fashion-shopping" className="text-indigo-600 hover:underline">AI fashion technology</Link>, <Link to="/online-dressing-room" className="text-indigo-600 hover:underline">virtual try-on</Link>, and <Link to="/smart-shopping-tools" className="text-indigo-600 hover:underline">smart shopping tools</Link> are already changing how we buy clothes. But this is just the beginning. Let's look at where fashion e-commerce is headed – and some of it might blow your mind.
+              <Link to="/ai-fashion-shopping" className="hover:underline" style={{ color: '#FF70D9' }}>AI fashion technology</Link>, <Link to="/online-dressing-room" className="hover:underline" style={{ color: '#FF70D9' }}>virtual try-on</Link>, and <Link to="/smart-shopping-tools" className="hover:underline" style={{ color: '#FF70D9' }}>smart shopping tools</Link> are already changing how we buy clothes. But this is just the beginning. Let's look at where fashion e-commerce is headed – and some of it might blow your mind.
             </p>
           </div>
 
@@ -86,40 +93,40 @@ const FutureOnlineShopping = () => {
             </p>
 
             <div className="grid md:grid-cols-2 gap-6 mb-8">
-              <div className="bg-gradient-to-br from-violet-50 to-purple-50 rounded-2xl p-6">
+              <div className="rounded-2xl p-6" style={{ background: 'rgba(255,112,217,0.1)' }}>
                 <div className="text-3xl mb-3">🪞</div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Virtual Try-On</h3>
                 <p className="text-gray-700 mb-3">
                   See clothes on your actual body using your phone camera or uploaded photos. Not perfect yet, but getting really good at showing fit and style.
                 </p>
-                <Link to="/virtual-try-on-guide" className="text-violet-600 hover:underline text-sm font-medium">Learn more →</Link>
+                <Link to="/virtual-try-on-guide" className="text-sm font-medium hover:underline" style={{ color: '#FF70D9' }}>Learn more →</Link>
               </div>
 
-              <div className="bg-gradient-to-br from-pink-50 to-rose-50 rounded-2xl p-6">
+              <div className="rounded-2xl p-6" style={{ background: 'rgba(110,193,228,0.1)' }}>
                 <div className="text-3xl mb-3">🎯</div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">AI Style Matching</h3>
                 <p className="text-gray-700 mb-3">
                   AI that analyzes your body type and skin tone, then tells you if specific items will flatter you. Like having a stylist evaluate every purchase.
                 </p>
-                <Link to="/does-this-suit-me" className="text-rose-600 hover:underline text-sm font-medium">Learn more →</Link>
+                <Link to="/does-this-suit-me" className="text-sm font-medium hover:underline" style={{ color: '#FF70D9' }}>Learn more →</Link>
               </div>
 
-              <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-6">
+              <div className="rounded-2xl p-6" style={{ background: 'rgba(255,112,217,0.1)' }}>
                 <div className="text-3xl mb-3">📊</div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Smart Price Tracking</h3>
                 <p className="text-gray-700 mb-3">
                   Track prices across all stores, get alerts when items drop, save everything to one universal wishlist. Never overpay again.
                 </p>
-                <Link to="/smart-shopping-tools" className="text-teal-600 hover:underline text-sm font-medium">Learn more →</Link>
+                <Link to="/smart-shopping-tools" className="text-sm font-medium hover:underline" style={{ color: '#6EC1E4' }}>Learn more →</Link>
               </div>
 
-              <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-6">
+              <div className="rounded-2xl p-6" style={{ background: 'rgba(110,193,228,0.1)' }}>
                 <div className="text-3xl mb-3">🎨</div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">AI Color Analysis</h3>
                 <p className="text-gray-700 mb-3">
                   Upload a photo and AI determines your color season and undertone, recommending which colors will make you look radiant vs washed out.
                 </p>
-                <Link to="/what-season-am-i" className="text-orange-600 hover:underline text-sm font-medium">Learn more →</Link>
+                <Link to="/what-season-am-i" className="text-sm font-medium hover:underline" style={{ color: '#FF70D9' }}>Learn more →</Link>
               </div>
             </div>
           </section>
@@ -134,7 +141,7 @@ const FutureOnlineShopping = () => {
             <div className="space-y-8">
               <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
                 <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 bg-indigo-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <div className="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(255,112,217,0.15)' }}>
                     <span className="text-2xl">🧠</span>
                   </div>
                   <div>
@@ -151,7 +158,7 @@ const FutureOnlineShopping = () => {
 
               <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
                 <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 bg-pink-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <div className="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(110,193,228,0.15)' }}>
                     <span className="text-2xl">👗</span>
                   </div>
                   <div>
@@ -168,7 +175,7 @@ const FutureOnlineShopping = () => {
 
               <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
                 <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <div className="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(255,112,217,0.15)' }}>
                     <span className="text-2xl">👯</span>
                   </div>
                   <div>
@@ -185,7 +192,7 @@ const FutureOnlineShopping = () => {
 
               <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
                 <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 bg-cyan-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <div className="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(110,193,228,0.15)' }}>
                     <span className="text-2xl">📐</span>
                   </div>
                   <div>
@@ -287,22 +294,22 @@ const FutureOnlineShopping = () => {
               For all this technology talk, some things will remain fundamentally human:
             </p>
 
-            <div className="bg-gradient-to-r from-rose-50 to-orange-50 rounded-2xl p-8">
+            <div className="rounded-2xl p-8" style={{ background: 'linear-gradient(135deg, rgba(255,112,217,0.1) 0%, rgba(110,193,228,0.1) 100%)' }}>
               <ul className="space-y-4 text-gray-700">
                 <li className="flex items-start">
-                  <span className="text-rose-600 mr-3 mt-1">♥</span>
+                  <span className="mr-3 mt-1" style={{ color: '#FF70D9' }}>♥</span>
                   <span><strong>Emotional connection to clothes</strong> – Fashion is about identity, expression, and feeling. AI can optimize, but it can't replace the joy of finding something that makes you feel amazing.</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-rose-600 mr-3 mt-1">♥</span>
+                  <span className="mr-3 mt-1" style={{ color: '#FF70D9' }}>♥</span>
                   <span><strong>Personal style is personal</strong> – Technology can guide, but you still get to decide who you want to be. The best tools enhance your choices, not make them for you.</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-rose-600 mr-3 mt-1">♥</span>
+                  <span className="mr-3 mt-1" style={{ color: '#FF70D9' }}>♥</span>
                   <span><strong>Social shopping</strong> – Even with all the tech, we'll still want to share the experience with others. Getting a friend's opinion matters. That human connection isn't going anywhere.</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-rose-600 mr-3 mt-1">♥</span>
+                  <span className="mr-3 mt-1" style={{ color: '#FF70D9' }}>♥</span>
                   <span><strong>The thrill of discovery</strong> – Finding something unexpected that you love. Serendipity. Technology should enhance this, not eliminate it with over-optimization.</span>
                 </li>
               </ul>
@@ -316,7 +323,7 @@ const FutureOnlineShopping = () => {
               A lot of the "future" technology we talked about? StyleGenius already does it. Here's what you can use right now:
             </p>
 
-            <div className="bg-gradient-to-r from-indigo-100 to-pink-100 rounded-2xl p-8 mb-8">
+            <div className="rounded-2xl p-8 mb-8" style={{ background: 'linear-gradient(135deg, rgba(255,112,217,0.15) 0%, rgba(110,193,228,0.15) 100%)' }}>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">🪞 Virtual Try-On on Any Store</h3>
@@ -363,43 +370,43 @@ const FutureOnlineShopping = () => {
             </p>
 
             <div className="space-y-4">
-              <div className="flex items-start gap-4 bg-indigo-50 rounded-xl p-4">
-                <span className="w-8 h-8 bg-indigo-500 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">1</span>
+              <div className="flex items-start gap-4 rounded-xl p-4" style={{ background: 'rgba(255,112,217,0.08)' }}>
+                <span className="w-8 h-8 rounded-full flex items-center justify-center font-bold flex-shrink-0 text-white" style={{ background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)' }}>1</span>
                 <div>
                   <h4 className="font-semibold text-gray-900">Know Your Colors & Body Type</h4>
-                  <p className="text-gray-600">The foundation of smart shopping. Take our <Link to="/what-season-am-i" className="text-indigo-600 hover:underline">color analysis</Link> and check out <Link to="/kibbe-body-types" className="text-indigo-600 hover:underline">body type guides</Link>.</p>
+                  <p className="text-gray-600">The foundation of smart shopping. Take our <Link to="/what-season-am-i" className="hover:underline" style={{ color: '#FF70D9' }}>color analysis</Link> and check out <Link to="/kibbe-body-types" className="hover:underline" style={{ color: '#FF70D9' }}>body type guides</Link>.</p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 bg-indigo-50 rounded-xl p-4">
-                <span className="w-8 h-8 bg-indigo-500 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">2</span>
+              <div className="flex items-start gap-4 rounded-xl p-4" style={{ background: 'rgba(255,112,217,0.08)' }}>
+                <span className="w-8 h-8 rounded-full flex items-center justify-center font-bold flex-shrink-0 text-white" style={{ background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)' }}>2</span>
                 <div>
                   <h4 className="font-semibold text-gray-900">Use AI Style Matching Tools</h4>
-                  <p className="text-gray-600">Get apps or extensions that <Link to="/does-this-suit-me" className="text-indigo-600 hover:underline">analyze whether clothes suit you</Link> as you browse.</p>
+                  <p className="text-gray-600">Get apps or extensions that <Link to="/does-this-suit-me" className="hover:underline" style={{ color: '#FF70D9' }}>analyze whether clothes suit you</Link> as you browse.</p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 bg-indigo-50 rounded-xl p-4">
-                <span className="w-8 h-8 bg-indigo-500 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">3</span>
+              <div className="flex items-start gap-4 rounded-xl p-4" style={{ background: 'rgba(255,112,217,0.08)' }}>
+                <span className="w-8 h-8 rounded-full flex items-center justify-center font-bold flex-shrink-0 text-white" style={{ background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)' }}>3</span>
                 <div>
                   <h4 className="font-semibold text-gray-900">Try Virtual Try-On</h4>
-                  <p className="text-gray-600">Test out <Link to="/online-dressing-room" className="text-indigo-600 hover:underline">virtual fitting rooms</Link> – even imperfect tech beats blind guessing.</p>
+                  <p className="text-gray-600">Test out <Link to="/online-dressing-room" className="hover:underline" style={{ color: '#FF70D9' }}>virtual fitting rooms</Link> – even imperfect tech beats blind guessing.</p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 bg-indigo-50 rounded-xl p-4">
-                <span className="w-8 h-8 bg-indigo-500 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">4</span>
+              <div className="flex items-start gap-4 rounded-xl p-4" style={{ background: 'rgba(255,112,217,0.08)' }}>
+                <span className="w-8 h-8 rounded-full flex items-center justify-center font-bold flex-shrink-0 text-white" style={{ background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)' }}>4</span>
                 <div>
                   <h4 className="font-semibold text-gray-900">Set Up Price Tracking</h4>
-                  <p className="text-gray-600">Use <Link to="/smart-shopping-tools" className="text-indigo-600 hover:underline">smart shopping tools</Link> to track prices and save to wishlists across all stores.</p>
+                  <p className="text-gray-600">Use <Link to="/smart-shopping-tools" className="hover:underline" style={{ color: '#FF70D9' }}>smart shopping tools</Link> to track prices and save to wishlists across all stores.</p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 bg-indigo-50 rounded-xl p-4">
-                <span className="w-8 h-8 bg-indigo-500 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">5</span>
+              <div className="flex items-start gap-4 rounded-xl p-4" style={{ background: 'rgba(255,112,217,0.08)' }}>
+                <span className="w-8 h-8 rounded-full flex items-center justify-center font-bold flex-shrink-0 text-white" style={{ background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)' }}>5</span>
                 <div>
                   <h4 className="font-semibold text-gray-900">Build a Curated Wardrobe</h4>
-                  <p className="text-gray-600">Quality over quantity. Check out our <Link to="/capsule-wardrobe" className="text-indigo-600 hover:underline">capsule wardrobe guide</Link> to make every piece count.</p>
+                  <p className="text-gray-600">Quality over quantity. Check out our <Link to="/capsule-wardrobe" className="hover:underline" style={{ color: '#FF70D9' }}>capsule wardrobe guide</Link> to make every piece count.</p>
                 </div>
               </div>
             </div>
@@ -428,8 +435,12 @@ const FutureOnlineShopping = () => {
       </article>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-br from-indigo-100 via-purple-50 to-pink-100">
-        <div className="container mx-auto px-4">
+      <section className="py-16 relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #fff 0%, #f9fafb 100%)' }}>
+        {/* Floating gradient blobs */}
+        <div className="absolute top-[-50px] right-[10%] w-[300px] h-[300px] rounded-full pointer-events-none z-0" style={{ background: 'rgba(255,112,217,0.15)', filter: 'blur(60px)' }} />
+        <div className="absolute bottom-[-50px] left-[15%] w-[250px] h-[250px] rounded-full pointer-events-none z-0" style={{ background: 'rgba(110,193,228,0.15)', filter: 'blur(60px)' }} />
+
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Experience the Future Today</h2>
             <p className="text-xl text-gray-600 mb-8">
@@ -437,12 +448,12 @@ const FutureOnlineShopping = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="https://chromewebstore.google.com/detail/stylegenius-%E2%80%93-your-person/bggndhefooccenjglglakcfgifgdpbmn" target="_blank" rel="noopener noreferrer">
-                <button className="px-8 py-4 text-white font-semibold text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105" style={{ background: 'linear-gradient(45deg, #6366F1, #EC4899)' }}>
+                <button className="px-8 py-4 text-white font-semibold text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105" style={{ background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)', boxShadow: '0 4px 20px rgba(255, 112, 217, 0.3)' }}>
                   Add to Chrome - It's Free
                 </button>
               </a>
               <a href={appStoreUrl} target="_blank" rel="noopener noreferrer">
-                <button className="px-8 py-4 bg-white text-gray-900 font-semibold text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-gray-200">
+                <button className="px-8 py-4 font-semibold text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105" style={{ background: '#6EC1E4', color: 'white', boxShadow: '0 4px 20px rgba(110, 193, 228, 0.3)' }}>
                   {buttonText}
                 </button>
               </a>

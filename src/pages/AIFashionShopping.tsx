@@ -40,13 +40,18 @@ const AIFashionShopping = () => {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="py-16 lg:py-24 bg-gradient-to-br from-violet-100 via-purple-50 to-fuchsia-100">
-        <div className="container mx-auto px-4">
+      <section className="py-16 lg:py-24 relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #fff 0%, #f9fafb 100%)' }}>
+        {/* Floating gradient blobs */}
+        <div className="absolute top-[-100px] right-[5%] w-[400px] h-[400px] rounded-full pointer-events-none z-0" style={{ background: 'rgba(255,112,217,0.2)', filter: 'blur(60px)' }} />
+        <div className="absolute bottom-[-50px] left-[10%] w-[300px] h-[300px] rounded-full pointer-events-none z-0" style={{ background: 'rgba(110,193,228,0.2)', filter: 'blur(60px)' }} />
+        <div className="absolute top-[40%] left-[30%] w-[200px] h-[200px] rounded-full pointer-events-none z-0" style={{ background: 'rgba(255,112,217,0.12)', filter: 'blur(60px)' }} />
+
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <span className="inline-block px-4 py-2 bg-violet-200 text-violet-800 rounded-full text-sm font-medium mb-6">Fashion Technology</span>
+            <span className="inline-block px-4 py-2 rounded-full text-sm font-medium mb-6" style={{ background: 'rgba(255,112,217,0.15)', color: '#FF70D9' }}>Fashion Technology</span>
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
               AI Fashion Shopping:{" "}
-              <span className="bg-clip-text text-transparent" style={{ background: 'linear-gradient(45deg, #8B5CF6, #EC4899)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+              <span className="bg-clip-text text-transparent" style={{ background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
                 The Future is Here
               </span>
             </h1>
@@ -55,11 +60,13 @@ const AIFashionShopping = () => {
             </p>
           </div>
           <div className="max-w-3xl mx-auto mt-8">
-            <img
-              src={`${BLOG_IMAGE_BASE}/ai-fashion-hero.png`}
-              alt="AI Fashion Shopping - Smart technology transforming how we shop for clothes"
-              className="w-full rounded-2xl shadow-xl"
-            />
+            <div className="p-1 rounded-2xl" style={{ background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)' }}>
+              <img
+                src={`${BLOG_IMAGE_BASE}/ai-fashion-hero.png`}
+                alt="AI Fashion Shopping - Smart technology transforming how we shop for clothes"
+                className="w-full rounded-xl"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -86,29 +93,37 @@ const AIFashionShopping = () => {
             </p>
 
             <div className="grid md:grid-cols-2 gap-6 mb-8">
-              <div className="bg-violet-50 rounded-2xl p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Analyze Your Body Type</h3>
-                <p className="text-gray-700">
-                  AI can look at your proportions and tell you which cuts and silhouettes will actually flatter your shape. No more "this looked great on the model" disappointments.
-                </p>
+              <div className="p-[3px] rounded-2xl" style={{ background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)' }}>
+                <div className="bg-gradient-to-b from-pink-50 to-pink-100/50 rounded-[13px] p-6 h-full">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">Analyze Your Body Type</h3>
+                  <p className="text-gray-700">
+                    AI can look at your proportions and tell you which cuts and silhouettes will actually flatter your shape. No more "this looked great on the model" disappointments.
+                  </p>
+                </div>
               </div>
-              <div className="bg-fuchsia-50 rounded-2xl p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Match Your Skin Tone</h3>
-                <p className="text-gray-700">
-                  Ever bought a color that looked amazing online but washed you out completely? AI color matching ensures the shades you pick actually complement your complexion.
-                </p>
+              <div className="p-[3px] rounded-2xl" style={{ background: 'linear-gradient(45deg, #6EC1E4, #FF70D9)' }}>
+                <div className="bg-gradient-to-b from-blue-50 to-blue-100/50 rounded-[13px] p-6 h-full">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">Match Your Skin Tone</h3>
+                  <p className="text-gray-700">
+                    Ever bought a color that looked amazing online but washed you out completely? AI color matching ensures the shades you pick actually complement your complexion.
+                  </p>
+                </div>
               </div>
-              <div className="bg-purple-50 rounded-2xl p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Virtual Try-On</h3>
-                <p className="text-gray-700">
-                  See clothes on YOUR body before buying. Not a model, not an avatar – you. This is the <Link to="/online-dressing-room" className="text-purple-600 hover:underline">online dressing room</Link> revolution.
-                </p>
+              <div className="p-[3px] rounded-2xl" style={{ background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)' }}>
+                <div className="bg-gradient-to-b from-pink-50 to-pink-100/50 rounded-[13px] p-6 h-full">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">Virtual Try-On</h3>
+                  <p className="text-gray-700">
+                    See clothes on YOUR body before buying. Not a model, not an avatar – you. This is the <Link to="/online-dressing-room" className="hover:underline" style={{ color: '#FF70D9' }}>online dressing room</Link> revolution.
+                  </p>
+                </div>
               </div>
-              <div className="bg-pink-50 rounded-2xl p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Personalized Recommendations</h3>
-                <p className="text-gray-700">
-                  AI learns your style preferences over time and suggests pieces you'll actually love – not just what's trending or what they want to sell you.
-                </p>
+              <div className="p-[3px] rounded-2xl" style={{ background: 'linear-gradient(45deg, #6EC1E4, #FF70D9)' }}>
+                <div className="bg-gradient-to-b from-blue-50 to-blue-100/50 rounded-[13px] p-6 h-full">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">Personalized Recommendations</h3>
+                  <p className="text-gray-700">
+                    AI learns your style preferences over time and suggests pieces you'll actually love – not just what's trending or what they want to sell you.
+                  </p>
+                </div>
               </div>
             </div>
           </section>
@@ -161,7 +176,7 @@ const AIFashionShopping = () => {
               <ul className="space-y-3 text-gray-700">
                 <li className="flex items-start">
                   <span className="text-green-500 mr-3 mt-1">✓</span>
-                  <span>See clothes on YOUR body with <Link to="/virtual-try-on-guide" className="text-green-600 hover:underline">virtual try-on</Link></span>
+                  <span>See clothes on YOUR body with <Link to="/virtual-try-on-guide" className="hover:underline" style={{ color: '#FF70D9' }}>virtual try-on</Link></span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-green-500 mr-3 mt-1">✓</span>
@@ -173,7 +188,7 @@ const AIFashionShopping = () => {
                 </li>
                 <li className="flex items-start">
                   <span className="text-green-500 mr-3 mt-1">✓</span>
-                  <span><Link to="/does-this-suit-me" className="text-green-600 hover:underline">Body type analysis</Link> tells you if a silhouette will flatter you</span>
+                  <span><Link to="/does-this-suit-me" className="hover:underline" style={{ color: '#FF70D9' }}>Body type analysis</Link> tells you if a silhouette will flatter you</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-green-500 mr-3 mt-1">✓</span>
@@ -202,8 +217,8 @@ const AIFashionShopping = () => {
 
             <div className="space-y-8">
               <div className="flex items-start gap-6">
-                <div className="w-16 h-16 bg-violet-200 rounded-full flex items-center justify-center flex-shrink-0">
-                  <span className="text-2xl font-bold text-violet-800">1</span>
+                <div className="w-16 h-16 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)' }}>
+                  <span className="text-2xl font-bold text-white">1</span>
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">Computer Vision Analyzes Your Photo</h3>
@@ -214,8 +229,8 @@ const AIFashionShopping = () => {
               </div>
 
               <div className="flex items-start gap-6">
-                <div className="w-16 h-16 bg-fuchsia-200 rounded-full flex items-center justify-center flex-shrink-0">
-                  <span className="text-2xl font-bold text-fuchsia-800">2</span>
+                <div className="w-16 h-16 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: 'linear-gradient(45deg, #6EC1E4, #FF70D9)' }}>
+                  <span className="text-2xl font-bold text-white">2</span>
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">Machine Learning Matches You to Data</h3>
@@ -226,8 +241,8 @@ const AIFashionShopping = () => {
               </div>
 
               <div className="flex items-start gap-6">
-                <div className="w-16 h-16 bg-purple-200 rounded-full flex items-center justify-center flex-shrink-0">
-                  <span className="text-2xl font-bold text-purple-800">3</span>
+                <div className="w-16 h-16 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)' }}>
+                  <span className="text-2xl font-bold text-white">3</span>
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">Personalized Recommendations Generated</h3>
@@ -238,13 +253,13 @@ const AIFashionShopping = () => {
               </div>
 
               <div className="flex items-start gap-6">
-                <div className="w-16 h-16 bg-pink-200 rounded-full flex items-center justify-center flex-shrink-0">
-                  <span className="text-2xl font-bold text-pink-800">4</span>
+                <div className="w-16 h-16 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: 'linear-gradient(45deg, #6EC1E4, #FF70D9)' }}>
+                  <span className="text-2xl font-bold text-white">4</span>
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">Virtual Try-On Shows Results</h3>
                   <p className="text-gray-700">
-                    The best part? You can actually SEE how items look on you before buying. <Link to="/online-dressing-room" className="text-pink-600 hover:underline">Virtual dressing rooms</Link> render clothing onto your body so you know exactly what you're getting.
+                    The best part? You can actually SEE how items look on you before buying. <Link to="/online-dressing-room" className="hover:underline" style={{ color: '#FF70D9' }}>Virtual dressing rooms</Link> render clothing onto your body so you know exactly what you're getting.
                   </p>
                 </div>
               </div>
@@ -259,7 +274,7 @@ const AIFashionShopping = () => {
               <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Virtual Try-On Technology</h3>
                 <p className="text-gray-700 mb-3">
-                  This is the big one. Virtual try-on lets you see clothes on your actual body using AR (augmented reality) or AI image generation. Some work through your phone camera in real-time, others use a photo you upload. Read our full <Link to="/virtual-try-on-guide" className="text-violet-600 hover:underline">Virtual Try-On Guide</Link> to learn more.
+                  This is the big one. Virtual try-on lets you see clothes on your actual body using AR (augmented reality) or AI image generation. Some work through your phone camera in real-time, others use a photo you upload. Read our full <Link to="/virtual-try-on-guide" className="hover:underline" style={{ color: '#FF70D9' }}>Virtual Try-On Guide</Link> to learn more.
                 </p>
                 <p className="text-sm text-gray-500">Best for: Seeing how clothes actually look on YOU before buying</p>
               </div>
@@ -267,7 +282,7 @@ const AIFashionShopping = () => {
               <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Body Type Analysis Tools</h3>
                 <p className="text-gray-700 mb-3">
-                  These analyze your proportions and tell you your body shape (hourglass, pear, rectangle, etc.) plus which styles will flatter you most. Way more accurate than trying to figure it out yourself with a tape measure and a confusing blog post. Check out our <Link to="/kibbe-body-types" className="text-violet-600 hover:underline">Kibbe Body Types guide</Link> for the deep dive.
+                  These analyze your proportions and tell you your body shape (hourglass, pear, rectangle, etc.) plus which styles will flatter you most. Way more accurate than trying to figure it out yourself with a tape measure and a confusing blog post. Check out our <Link to="/kibbe-body-types" className="hover:underline" style={{ color: '#FF70D9' }}>Kibbe Body Types guide</Link> for the deep dive.
                 </p>
                 <p className="text-sm text-gray-500">Best for: Understanding which silhouettes and cuts work for your shape</p>
               </div>
@@ -275,7 +290,7 @@ const AIFashionShopping = () => {
               <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Color Analysis AI</h3>
                 <p className="text-gray-700 mb-3">
-                  Upload a photo and AI determines your skin's undertone (warm, cool, neutral) and your <Link to="/what-season-am-i" className="text-violet-600 hover:underline">color season</Link>. Then it tells you exactly which colors will make you look radiant vs which ones will wash you out. Game changer if you've ever bought a "nude" that was anything but.
+                  Upload a photo and AI determines your skin's undertone (warm, cool, neutral) and your <Link to="/what-season-am-i" className="hover:underline" style={{ color: '#FF70D9' }}>color season</Link>. Then it tells you exactly which colors will make you look radiant vs which ones will wash you out. Game changer if you've ever bought a "nude" that was anything but.
                 </p>
                 <p className="text-sm text-gray-500">Best for: Finding your most flattering colors for clothes and makeup</p>
               </div>
@@ -283,7 +298,7 @@ const AIFashionShopping = () => {
               <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Smart Shopping Assistants</h3>
                 <p className="text-gray-700 mb-3">
-                  Browser extensions and apps that work while you shop, telling you if items match your profile. Think of it as having a personal stylist looking over your shoulder saying "yes girl, that's perfect for you" or "hmm, maybe skip that one." Plus features like <Link to="/smart-shopping-tools" className="text-violet-600 hover:underline">price tracking and wishlists</Link>.
+                  Browser extensions and apps that work while you shop, telling you if items match your profile. Think of it as having a personal stylist looking over your shoulder saying "yes girl, that's perfect for you" or "hmm, maybe skip that one." Plus features like <Link to="/smart-shopping-tools" className="hover:underline" style={{ color: '#FF70D9' }}>price tracking and wishlists</Link>.
                 </p>
                 <p className="text-sm text-gray-500">Best for: Real-time guidance while browsing any online store</p>
               </div>
@@ -333,25 +348,25 @@ const AIFashionShopping = () => {
           <section className="mb-16">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">What's Next for AI Fashion?</h2>
             <p className="text-lg text-gray-700 leading-relaxed mb-6">
-              We're just getting started. Here's what's coming in the <Link to="/future-online-shopping" className="text-violet-600 hover:underline">future of online shopping</Link>:
+              We're just getting started. Here's what's coming in the <Link to="/future-online-shopping" className="hover:underline" style={{ color: '#FF70D9' }}>future of online shopping</Link>:
             </p>
 
-            <div className="bg-gradient-to-r from-violet-100 to-fuchsia-100 rounded-2xl p-8">
+            <div className="rounded-2xl p-8" style={{ background: 'linear-gradient(135deg, rgba(255,112,217,0.1) 0%, rgba(110,193,228,0.1) 100%)' }}>
               <ul className="space-y-4 text-gray-700">
                 <li className="flex items-start">
-                  <span className="text-violet-600 mr-3 mt-1">→</span>
+                  <span className="mr-3 mt-1" style={{ color: '#FF70D9' }}>→</span>
                   <span><strong>AI-designed clothes:</strong> Custom pieces designed specifically for your body and style preferences</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-violet-600 mr-3 mt-1">→</span>
+                  <span className="mr-3 mt-1" style={{ color: '#FF70D9' }}>→</span>
                   <span><strong>Predictive shopping:</strong> AI that knows what you need before you do (new season coming? Here are pieces that match your existing wardrobe)</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-violet-600 mr-3 mt-1">→</span>
+                  <span className="mr-3 mt-1" style={{ color: '#FF70D9' }}>→</span>
                   <span><strong>Real-time virtual styling:</strong> AI stylists that can create complete looks for any occasion, instantly</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-violet-600 mr-3 mt-1">→</span>
+                  <span className="mr-3 mt-1" style={{ color: '#FF70D9' }}>→</span>
                   <span><strong>Social shopping:</strong> Share virtual try-ons with friends and get AI-powered group recommendations</span>
                 </li>
               </ul>
@@ -365,7 +380,7 @@ const AIFashionShopping = () => {
               All this AI fashion tech sounds great, but most tools only work on specific stores or require clunky apps. StyleGenius is different – it's a Chrome extension that works on ANY online store. Here's what you get:
             </p>
 
-            <div className="bg-gradient-to-r from-violet-100 to-fuchsia-100 rounded-2xl p-8 mb-8">
+            <div className="rounded-2xl p-8 mb-8" style={{ background: 'linear-gradient(135deg, rgba(255,112,217,0.1) 0%, rgba(110,193,228,0.1) 100%)' }}>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">🪞 Virtual Try-On Anywhere</h3>
@@ -413,23 +428,23 @@ const AIFashionShopping = () => {
 
             <div className="space-y-4">
               <div className="flex items-start gap-4 bg-gray-50 rounded-xl p-4">
-                <span className="w-8 h-8 bg-violet-500 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">1</span>
+                <span className="w-8 h-8 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0" style={{ background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)' }}>1</span>
                 <div>
                   <h4 className="font-semibold text-gray-900">Find Your Color Season</h4>
-                  <p className="text-gray-600">Start with our <Link to="/what-season-am-i" className="text-violet-600 hover:underline">color analysis guide</Link> to discover which colors make you glow.</p>
+                  <p className="text-gray-600">Start with our <Link to="/what-season-am-i" className="hover:underline" style={{ color: '#FF70D9' }}>color analysis guide</Link> to discover which colors make you glow.</p>
                 </div>
               </div>
 
               <div className="flex items-start gap-4 bg-gray-50 rounded-xl p-4">
-                <span className="w-8 h-8 bg-violet-500 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">2</span>
+                <span className="w-8 h-8 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0" style={{ background: 'linear-gradient(45deg, #6EC1E4, #FF70D9)' }}>2</span>
                 <div>
                   <h4 className="font-semibold text-gray-900">Know Your Body Type</h4>
-                  <p className="text-gray-600">Check out our <Link to="/kibbe-body-types" className="text-violet-600 hover:underline">body type guides</Link> to understand which silhouettes flatter your shape.</p>
+                  <p className="text-gray-600">Check out our <Link to="/kibbe-body-types" className="hover:underline" style={{ color: '#FF70D9' }}>body type guides</Link> to understand which silhouettes flatter your shape.</p>
                 </div>
               </div>
 
               <div className="flex items-start gap-4 bg-gray-50 rounded-xl p-4">
-                <span className="w-8 h-8 bg-violet-500 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">3</span>
+                <span className="w-8 h-8 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0" style={{ background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)' }}>3</span>
                 <div>
                   <h4 className="font-semibold text-gray-900">Get a Smart Shopping Tool</h4>
                   <p className="text-gray-600">Install a browser extension that analyzes items as you shop and tells you if they suit you.</p>
@@ -437,10 +452,10 @@ const AIFashionShopping = () => {
               </div>
 
               <div className="flex items-start gap-4 bg-gray-50 rounded-xl p-4">
-                <span className="w-8 h-8 bg-violet-500 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">4</span>
+                <span className="w-8 h-8 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0" style={{ background: 'linear-gradient(45deg, #6EC1E4, #FF70D9)' }}>4</span>
                 <div>
                   <h4 className="font-semibold text-gray-900">Try Virtual Try-On</h4>
-                  <p className="text-gray-600">Test out <Link to="/online-dressing-room" className="text-violet-600 hover:underline">virtual dressing rooms</Link> to see clothes on you before buying.</p>
+                  <p className="text-gray-600">Test out <Link to="/online-dressing-room" className="hover:underline" style={{ color: '#FF70D9' }}>virtual dressing rooms</Link> to see clothes on you before buying.</p>
                 </div>
               </div>
             </div>
@@ -469,8 +484,12 @@ const AIFashionShopping = () => {
       </article>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-br from-violet-100 via-purple-50 to-fuchsia-100">
-        <div className="container mx-auto px-4">
+      <section className="py-16 relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #fff 0%, #f9fafb 100%)' }}>
+        {/* Floating gradient blobs */}
+        <div className="absolute top-[-50px] right-[10%] w-[300px] h-[300px] rounded-full pointer-events-none z-0" style={{ background: 'rgba(255,112,217,0.15)', filter: 'blur(60px)' }} />
+        <div className="absolute bottom-[-50px] left-[15%] w-[250px] h-[250px] rounded-full pointer-events-none z-0" style={{ background: 'rgba(110,193,228,0.15)', filter: 'blur(60px)' }} />
+
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Ready to Shop Smarter?</h2>
             <p className="text-xl text-gray-600 mb-8">
@@ -478,12 +497,12 @@ const AIFashionShopping = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="https://chromewebstore.google.com/detail/stylegenius-%E2%80%93-your-person/bggndhefooccenjglglakcfgifgdpbmn" target="_blank" rel="noopener noreferrer">
-                <button className="px-8 py-4 text-white font-semibold text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105" style={{ background: 'linear-gradient(45deg, #8B5CF6, #EC4899)' }}>
+                <button className="px-8 py-4 text-white font-semibold text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105" style={{ background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)', boxShadow: '0 4px 20px rgba(255, 112, 217, 0.3)' }}>
                   Add to Chrome - It's Free
                 </button>
               </a>
               <a href={appStoreUrl} target="_blank" rel="noopener noreferrer">
-                <button className="px-8 py-4 bg-white text-gray-900 font-semibold text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-gray-200">
+                <button className="px-8 py-4 font-semibold text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105" style={{ background: '#6EC1E4', color: 'white', boxShadow: '0 4px 20px rgba(110, 193, 228, 0.3)' }}>
                   {buttonText}
                 </button>
               </a>
