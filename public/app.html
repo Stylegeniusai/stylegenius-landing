@@ -497,7 +497,7 @@
       background: var(--gradient);
       color: white;
       padding: 16px 32px;
-      border-radius: 16px;
+      border-radius: 50px;
       text-decoration: none;
       font-weight: 600;
       font-size: 1.1rem;
@@ -724,7 +724,14 @@
       flex-shrink: 0;
     }
 
-    /* Badge List - stacked vertically beside phone */
+    /* Badge List - stacked vertically beside phone, centered */
+    .phone-feature-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+    }
+
     .badge-list {
       display: flex;
       flex-direction: column;
@@ -780,31 +787,44 @@
 
     .mobile-badge {
       background: white;
-      padding: 10px 16px;
-      border-radius: 12px;
+      padding: 8px 12px;
+      border-radius: 20px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      font-size: 0.9rem;
+      font-size: 0.75rem;
       font-weight: 600;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
     }
 
     @media (max-width: 968px) {
       .feature-grid {
         grid-template-columns: 1fr;
-        gap: 48px;
+        gap: 32px;
         text-align: center;
       }
       .feature-grid.reverse {
         direction: ltr;
       }
       .feature-title {
-        font-size: 2.25rem;
+        font-size: 1.75rem;
+      }
+      .feature-description {
+        font-size: 1rem;
       }
       .feature-list {
         display: inline-block;
         text-align: left;
+      }
+      .feature-list li {
+        font-size: 0.95rem;
+      }
+      .phone-feature-container {
+        flex-direction: column;
+        gap: 20px;
+      }
+      .badge-list {
+        display: none;
       }
       .floating-badge {
         display: none;
@@ -1301,7 +1321,6 @@
 
       <div class="cta-cards">
         <div class="cta-card">
-          <div class="cta-card-icon"></div>
           <h3>iPhone & iPad</h3>
           <p>Get StyleGenius on iOS with full feature access</p>
           <a href="https://apps.apple.com/app/id6747178892" class="download-btn">
@@ -1310,7 +1329,6 @@
         </div>
 
         <div class="cta-card">
-          <div class="cta-card-icon">▶</div>
           <h3>Android</h3>
           <p>Get StyleGenius on Google Play</p>
           <a href="https://play.google.com/store/apps/details?id=app.stylegenius&pcampaignid=web_share" class="download-btn secondary">
