@@ -51,6 +51,8 @@
   <meta name="keywords" content="stylegenius extension, virtual try on extension, price tracker extension, chrome extension fashion, browser extension shopping">
   <link rel="canonical" href="https://stylegenius.app/extension">
   <link rel="icon" type="image/png" href="/mainavatar.png">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/mainavatar.png">
 
   <!-- Open Graph -->
   <meta property="og:title" content="StyleGenius Browser Extension | Free Download">
@@ -1419,9 +1421,45 @@
   </style>
 </head>
 <body>
+  <!-- Browser Detection Script -->
+  <script>
+    const CHROME_URL = 'https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn';
+    const SAFARI_URL = 'macappstore://apps.apple.com/app/id6757370492';
+    const SAFARI_URL_FALLBACK = 'https://apps.apple.com/app/id6757370492?mt=12';
+
+    function isSafari() {
+      return /^((?!chrome|android).)*safari/i.test(navigator.userAgent) && /Apple/.test(navigator.vendor);
+    }
+
+    function isChrome() {
+      return /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+    }
+
+    function getExtensionUrl() {
+      if (isSafari()) return SAFARI_URL;
+      return CHROME_URL;
+    }
+
+    function getBrowserName() {
+      if (isSafari()) return 'Safari';
+      return 'Chrome';
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const url = getExtensionUrl();
+      const browserName = getBrowserName();
+
+      // Update all extension CTA links
+      document.querySelectorAll('.extension-cta').forEach(function(el) {
+        el.href = url;
+        el.innerHTML = 'Start Shopping Smarter — It\'s Free';
+      });
+    });
+  </script>
+
   <!-- Floating CTA -->
-  <a href="https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn" class="floating-cta" target="_blank" onclick="trackExtensionCTA('floating'); rdt('track', 'Lead');">
-    Add to Chrome — It's Free
+  <a href="https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn" class="floating-cta extension-cta" target="_blank" onclick="trackExtensionCTA('floating'); rdt('track', 'Lead');">
+    Start Shopping Smarter — It's Free
   </a>
 
   <!-- Header -->
@@ -1435,8 +1473,8 @@
           <span class="stars">★★★★★</span>
           <span>4.9 on Chrome Store</span>
         </div>
-        <a href="https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn" class="header-cta" target="_blank" onclick="trackExtensionCTA('header'); rdt('track', 'Lead');">
-          Add to Chrome — It's Free
+        <a href="https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn" class="header-cta extension-cta" target="_blank" onclick="trackExtensionCTA('header'); rdt('track', 'Lead');">
+          Start Shopping Smarter — It's Free
         </a>
       </div>
     </div>
@@ -1606,8 +1644,8 @@
 
       <!-- CTA -->
       <div class="hero-cta-section">
-        <a href="https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn" class="hero-cta" target="_blank" onclick="trackExtensionCTA('hero'); rdt('track', 'Lead');">
-          Add to Chrome — It's Free
+        <a href="https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn" class="hero-cta extension-cta" target="_blank" onclick="trackExtensionCTA('hero'); rdt('track', 'Lead');">
+          Start Shopping Smarter — It's Free
         </a>
         <p class="cta-note">Install once. Works everywhere you shop.</p>
       </div>
@@ -1678,8 +1716,8 @@
   <!-- Final CTA -->
   <section class="final-cta">
     <div class="container">
-      <a href="https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn" class="hero-cta" target="_blank" onclick="trackExtensionCTA('bottom'); rdt('track', 'Lead');">
-        Add to Chrome — It's Free
+      <a href="https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn" class="hero-cta extension-cta" target="_blank" onclick="trackExtensionCTA('bottom'); rdt('track', 'Lead');">
+        Start Shopping Smarter — It's Free
       </a>
       <div class="trust-signals">
         <div class="trust-item"><span class="check">✓</span> Free to start</div>

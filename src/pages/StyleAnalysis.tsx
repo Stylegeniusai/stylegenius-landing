@@ -126,9 +126,7 @@ const StyleAnalysis = () => {
             <img src="/mainavatar.png" alt="StyleGenius" />
             <span>StyleGenius</span>
           </a>
-          <a href="https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn" className="header-cta" target="_blank" rel="noopener noreferrer">
-            Add to Chrome - Free
-          </a>
+          <ExtensionCTA className="header-cta" />
         </div>
       </header>
 
@@ -243,9 +241,7 @@ const StyleAnalysis = () => {
           </div>
 
           <div className="hero-cta-section">
-            <a href="https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn" className="hero-cta" target="_blank" rel="noopener noreferrer">
-              Discover My Colors - Free
-            </a>
+            <ExtensionCTA className="hero-cta" />
             <p className="cta-note">Find out which colors look best on you.</p>
           </div>
         </div>

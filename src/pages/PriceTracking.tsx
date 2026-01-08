@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const CHROME_EXTENSION_URL = "https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn";
+// Extension URL handled by getExtensionUrl()
 
 const PriceTracking = () => {
   useEffect(() => {
@@ -517,7 +517,7 @@ const PriceTracking = () => {
               <img src="/mainavatar.png" alt="StyleGenius" />
               <span>StyleGenius</span>
             </a>
-            <a href={CHROME_EXTENSION_URL} className="pt-header-cta" target="_blank" rel="noopener noreferrer">
+            <a href={getExtensionUrl()} className="pt-header-cta" target="_blank" rel="noopener noreferrer">
               Add to Chrome - Free
             </a>
           </div>
@@ -534,7 +534,7 @@ const PriceTracking = () => {
             <p className="pt-hero-subtitle">
               Track prices on any clothing item across 1000+ stores. Get instant alerts when prices drop. Save hundreds on your favorite fashion pieces.
             </p>
-            <a href={CHROME_EXTENSION_URL} className="pt-cta" target="_blank" rel="noopener noreferrer">
+            <a href={getExtensionUrl()} className="pt-cta" target="_blank" rel="noopener noreferrer">
               Start Tracking Prices Free
             </a>
             <div className="pt-hero-trust">
@@ -684,7 +684,7 @@ const PriceTracking = () => {
           <div className="pt-container">
             <h2>Start Saving on Fashion Today</h2>
             <p>Join smart shoppers who never pay full price</p>
-            <a href={CHROME_EXTENSION_URL} className="pt-cta" target="_blank" rel="noopener noreferrer">
+            <a href={getExtensionUrl()} className="pt-cta" target="_blank" rel="noopener noreferrer">
               Add to Chrome - Free
             </a>
             <div className="pt-hero-trust" style={{ marginTop: '24px' }}>

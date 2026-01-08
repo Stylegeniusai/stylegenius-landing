@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import ExtensionCTA from "../components/ExtensionCTA";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import SEO from "../components/SEO";
@@ -983,18 +984,7 @@ const QuietLuxuryStyle = () => {
               </div>
             </div>
 
-            <a
-              href="https://chromewebstore.google.com/detail/stylegenius-%E2%80%93-your-person/bggndhefooccenjglglakcfgifgdpbmn"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <button
-                className="px-8 py-4 text-white font-semibold text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-                style={{ background: 'linear-gradient(45deg, #8B7355, #2F4F4F)' }}
-              >
-                Add to Chrome - It is Free
-              </button>
-            </a>
+            <ExtensionCTA />
             <p className="text-sm text-gray-500 mt-4">Works on Zara, H&M, ASOS, COS, Massimo Dutti, and 1000+ more stores</p>
           </div>
         </div>

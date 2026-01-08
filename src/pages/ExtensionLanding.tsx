@@ -28,7 +28,7 @@ const trackExtensionCTA = (location: string) => {
   }
 };
 
-const CHROME_EXTENSION_URL = "https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn";
+// Extension URL handled by getExtensionUrl()
 
 const ExtensionLanding = () => {
   useEffect(() => {
@@ -37,7 +37,7 @@ const ExtensionLanding = () => {
 
   const handleCTAClick = (location: string) => {
     trackExtensionCTA(location);
-    window.open(CHROME_EXTENSION_URL, '_blank');
+    window.open(getExtensionUrl(), '_blank');
   };
 
   const features = [

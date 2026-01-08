@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const CHROME_EXTENSION_URL = "https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn";
+// Extension URL handled by getExtensionUrl()
 
 const VirtualTryOn = () => {
   useEffect(() => {
@@ -429,7 +429,7 @@ const VirtualTryOn = () => {
               <img src="/mainavatar.png" alt="StyleGenius" />
               <span>StyleGenius</span>
             </a>
-            <a href={CHROME_EXTENSION_URL} className="vto-header-cta" target="_blank" rel="noopener noreferrer">
+            <a href={getExtensionUrl()} className="vto-header-cta" target="_blank" rel="noopener noreferrer">
               Add to Chrome - Free
             </a>
           </div>
@@ -446,7 +446,7 @@ const VirtualTryOn = () => {
             <p className="vto-hero-subtitle">
               Try on any clothing item virtually while shopping online. No more guessing, no more returns. Works on H&M, Zara, ASOS and 1000+ stores.
             </p>
-            <a href={CHROME_EXTENSION_URL} className="vto-cta" target="_blank" rel="noopener noreferrer">
+            <a href={getExtensionUrl()} className="vto-cta" target="_blank" rel="noopener noreferrer">
               Try Virtual Try-On Free
             </a>
             <div className="vto-hero-trust">
@@ -569,7 +569,7 @@ const VirtualTryOn = () => {
           <div className="vto-container">
             <h2>Ready to Try Clothes Virtually?</h2>
             <p>Join thousands of smart shoppers who never buy the wrong clothes again</p>
-            <a href={CHROME_EXTENSION_URL} className="vto-cta" target="_blank" rel="noopener noreferrer">
+            <a href={getExtensionUrl()} className="vto-cta" target="_blank" rel="noopener noreferrer">
               Add to Chrome - Free
             </a>
             <div className="vto-hero-trust" style={{ marginTop: '24px' }}>

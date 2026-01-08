@@ -997,6 +997,21 @@
   </style>
 </head>
 <body>
+  <!-- Browser Detection Script -->
+  <script>
+    const CHROME_URL = 'https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn';
+    const SAFARI_URL = 'macappstore://apps.apple.com/app/id6757370492';
+    function isSafari() { return /^((?!chrome|android).)*safari/i.test(navigator.userAgent) && /Apple/.test(navigator.vendor); }
+    function getExtensionUrl() { return isSafari() ? SAFARI_URL : CHROME_URL; }
+    document.addEventListener('DOMContentLoaded', function() {
+      const url = getExtensionUrl();
+      document.querySelectorAll('.extension-cta').forEach(function(el) {
+        el.href = url;
+        el.innerHTML = 'Start Shopping Smarter — It\'s Free';
+      });
+    });
+  </script>
+
   <!-- Header -->
   <header>
     <div class="container header-inner">
@@ -1010,8 +1025,8 @@
         <a href="/style-analysis.html" class="active">Style Analysis</a>
         <a href="/app.html">App</a>
       </nav>
-      <a href="https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn" class="header-cta" target="_blank">
-        Add to Chrome - Free
+      <a href="https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn" class="header-cta extension-cta" target="_blank">
+        Start Shopping Smarter — It's Free
       </a>
       <div class="hamburger" onclick="toggleMenu()">
         <span></span>
@@ -1029,8 +1044,8 @@
     <a href="/price-tracking.html">Price Tracking</a>
     <a href="/style-analysis.html" class="active">Style Analysis</a>
     <a href="/app.html">App</a>
-    <a href="https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn" class="nav-cta" target="_blank">
-      Add to Chrome - Free
+    <a href="https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn" class="nav-cta extension-cta" target="_blank">
+      Start Shopping Smarter — It's Free
     </a>
   </nav>
 
@@ -1186,7 +1201,7 @@
 
       <!-- CTA -->
       <div class="hero-cta-section">
-        <a href="https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn" class="hero-cta" target="_blank">
+        <a href="https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn" class="hero-cta extension-cta" target="_blank">
           Discover My Colors - Free
         </a>
         <p class="cta-note">Find out which colors look best on you.</p>
@@ -1247,7 +1262,7 @@
     <div class="container">
       <h2>Find Your Perfect Style Today</h2>
       <p>Stop guessing. Start knowing what looks great on you.</p>
-      <a href="https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn" class="hero-cta" target="_blank">
+      <a href="https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn" class="hero-cta extension-cta" target="_blank">
         Add to Chrome - Free
       </a>
     </div>

@@ -3,6 +3,7 @@ import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import SEO from "../components/SEO";
 import { Link } from "react-router-dom";
+import ExtensionCTA from "../components/ExtensionCTA";
 
 const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog";
 
@@ -163,11 +164,7 @@ const Spring2025FashionTrends = () => {
             <p className="text-xl text-gray-600 mb-8">
               StyleGenius helps you find trend pieces that match your coloring and body type - so every trend looks amazing on YOU!
             </p>
-            <a href="https://chromewebstore.google.com/detail/stylegenius-%E2%80%93-your-person/bggndhefooccenjglglakcfgifgdpbmn" target="_blank" rel="noopener noreferrer">
-              <button className="px-8 py-4 text-white font-semibold text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105" style={{ background: 'linear-gradient(45deg, #2ECC71, #F1C40F)' }}>
-                Add to Chrome - It's Free
-              </button>
-            </a>
+            <ExtensionCTA />
           </div>
         </div>
       </section>

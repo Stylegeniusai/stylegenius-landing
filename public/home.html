@@ -24,6 +24,8 @@
   <meta name="keywords" content="virtual try on, price tracker, online shopping assistant, try clothes online, fashion AI, style analysis, color analysis">
   <link rel="canonical" href="https://stylegenius.app/">
   <link rel="icon" type="image/png" href="/mainavatar.png">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/mainavatar.png">
 
   <!-- Open Graph -->
   <meta property="og:title" content="StyleGenius - Virtual Try-On & Price Tracking">
@@ -1554,6 +1556,29 @@
   </style>
 </head>
 <body>
+  <!-- Browser Detection Script -->
+  <script>
+    const CHROME_URL = 'https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn';
+    const SAFARI_URL = 'macappstore://apps.apple.com/app/id6757370492';
+
+    function isSafari() {
+      return /^((?!chrome|android).)*safari/i.test(navigator.userAgent) && /Apple/.test(navigator.vendor);
+    }
+
+    function getExtensionUrl() {
+      if (isSafari()) return SAFARI_URL;
+      return CHROME_URL;
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const url = getExtensionUrl();
+      document.querySelectorAll('.extension-cta').forEach(function(el) {
+        el.href = url;
+        el.innerHTML = 'Start Shopping Smarter — It\'s Free';
+      });
+    });
+  </script>
+
   <!-- Header -->
   <header>
     <div class="container header-inner">
@@ -1567,8 +1592,8 @@
         <a href="/style-analysis.html">Style Analysis</a>
         <a href="/app.html">App</a>
       </nav>
-      <a href="https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn" class="header-cta" target="_blank">
-        Add to Chrome - Free
+      <a href="https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn" class="header-cta extension-cta" target="_blank">
+        Start Shopping Smarter — It's Free
       </a>
       <div class="hamburger" onclick="toggleMenu()">
         <span></span>
@@ -1586,8 +1611,8 @@
     <a href="/price-tracking.html">Price Tracking</a>
     <a href="/style-analysis.html">Style Analysis</a>
     <a href="/app.html">App</a>
-    <a href="https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn" class="nav-cta" target="_blank">
-      Add to Chrome - Free
+    <a href="https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn" class="nav-cta extension-cta" target="_blank">
+      Start Shopping Smarter — It's Free
     </a>
   </nav>
 
@@ -1793,8 +1818,8 @@
 
       <!-- CTA -->
       <div class="hero-cta-section">
-        <a href="https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn" class="hero-cta" target="_blank">
-          Add to Chrome - Free
+        <a href="https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn" class="hero-cta extension-cta" target="_blank">
+          Start Shopping Smarter — It's Free
         </a>
               </div>
     </div>

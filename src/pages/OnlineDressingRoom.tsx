@@ -3,6 +3,7 @@ import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import SEO from "../components/SEO";
 import { Link } from "react-router-dom";
+import ExtensionCTA from "../components/ExtensionCTA";
 import { getAppStoreUrl, getDownloadButtonText } from "../utils/deviceDetection";
 
 const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog";
@@ -472,11 +473,7 @@ const OnlineDressingRoom = () => {
               StyleGenius brings virtual fitting rooms to every online store. See how clothes look on you, check if they suit your style, and shop with confidence.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="https://chromewebstore.google.com/detail/stylegenius-%E2%80%93-your-person/bggndhefooccenjglglakcfgifgdpbmn" target="_blank" rel="noopener noreferrer">
-                <button className="px-8 py-4 text-white font-semibold text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105" style={{ background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)', boxShadow: '0 4px 20px rgba(255, 112, 217, 0.3)' }}>
-                  Add to Chrome - It's Free
-                </button>
-              </a>
+              <ExtensionCTA />
               <a href={appStoreUrl} target="_blank" rel="noopener noreferrer">
                 <button className="px-8 py-4 font-semibold text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105" style={{ background: '#6EC1E4', color: 'white', boxShadow: '0 4px 20px rgba(110, 193, 228, 0.3)' }}>
                   {buttonText}

@@ -5,6 +5,7 @@ import SEO from "../components/SEO";
 import { Button } from "../components/ui/button";
 import { getAppStoreUrl, getDownloadButtonText } from "../utils/deviceDetection";
 import { Link } from "react-router-dom";
+import ExtensionCTA from "../components/ExtensionCTA";
 
 const WhatBodyTypeSuitsMe = () => {
   const [appStoreUrl, setAppStoreUrl] = useState('');
@@ -394,16 +395,7 @@ const WhatBodyTypeSuitsMe = () => {
                     {buttonText}
                   </button>
                 </a>
-                <a href="https://chromewebstore.google.com/detail/stylegenius-%E2%80%93-your-person/bggndhefooccenjglglakcfgifgdpbmn" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
-                  <button 
-                    className="w-full sm:w-auto px-8 py-4 text-white font-semibold text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-                    style={{
-                      background: '#6EC1E4'
-                    }}
-                  >
-                    💻 For Computer
-                  </button>
-                </a>
+                <ExtensionCTA />
               </div>
             </div>
           </div>

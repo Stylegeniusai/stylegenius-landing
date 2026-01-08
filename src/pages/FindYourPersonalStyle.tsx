@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import ExtensionCTA from "../components/ExtensionCTA";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import SEO from "../components/SEO";
@@ -795,18 +796,7 @@ const FindYourPersonalStyle = () => {
               </div>
             </div>
 
-            <a
-              href="https://chromewebstore.google.com/detail/stylegenius-%E2%80%93-your-person/bggndhefooccenjglglakcfgifgdpbmn"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <button
-                className="px-8 py-4 text-white font-semibold text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-                style={{ background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)' }}
-              >
-                Add to Chrome - It's Free
-              </button>
-            </a>
+            <ExtensionCTA />
             <p className="text-sm text-gray-500 mt-4">Works on Zara, H&M, ASOS, Nordstrom, and 1000+ more stores</p>
           </div>
         </div>
