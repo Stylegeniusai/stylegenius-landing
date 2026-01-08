@@ -885,6 +885,108 @@
       }
     }
 
+    /* How It Works */
+    .how-it-works {
+      padding: 80px 0;
+      background: var(--gray-50);
+      border-top: 1px solid var(--gray-200);
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .how-it-works h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+      color: #561269;
+    }
+
+    .how-it-works h2 .gradient {
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .how-it-works .ai-text {
+      text-align: center;
+      color: var(--gray-600);
+      max-width: 600px;
+      margin: 0 auto 48px;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .how-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+
+    .how-step {
+      text-align: center;
+    }
+
+    .how-step-number {
+      width: 48px;
+      height: 48px;
+      background: var(--gradient);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: white;
+      margin: 0 auto 20px;
+    }
+
+    .how-step-image {
+      width: 100%;
+      max-width: 200px;
+      height: 180px;
+      background: white;
+      border-radius: 16px;
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      overflow: hidden;
+    }
+
+    .how-step-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .how-step h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--gray-900);
+    }
+
+    .how-step p {
+      font-size: 0.9rem;
+      color: var(--gray-600);
+    }
+
+    @media (max-width: 768px) {
+      .how-steps {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .how-it-works h2 {
+        font-size: 1.75rem;
+      }
+
+      .how-it-works {
+        padding: 60px 0;
+      }
+    }
+
     /* Footer */
     footer {
       padding: 60px 0 30px;
@@ -1205,6 +1307,34 @@
           Discover My Colors - Free
         </a>
         <p class="cta-note">Find out which colors look best on you.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="how-it-works">
+    <div class="container">
+      <h2>How <span class="gradient">It Works</span></h2>
+      <p class="ai-text">Our AI analyzes garment colors and styles against your skin tone and body type to give you personalized match ratings instantly.</p>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-number">1</div>
+          <div class="how-step-image"><img src="/style-step-1.png" alt="Set Your Profile"></div>
+          <h3>Set Your Profile</h3>
+          <p>Select your skin tone and body type once. We'll remember your preferences.</p>
+        </div>
+        <div class="how-step">
+          <div class="how-step-number">2</div>
+          <div class="how-step-image"><img src="/style-step-2.png" alt="Browse Any Store"></div>
+          <h3>Browse Any Store</h3>
+          <p>Shop on any of 1500+ stores. Our AI analyzes every item you view.</p>
+        </div>
+        <div class="how-step">
+          <div class="how-step-number">3</div>
+          <div class="how-step-image"><img src="/style-step-3.png" alt="See Your Match"></div>
+          <h3>See Your Match</h3>
+          <p>Get instant ratings on how colors and styles match you personally.</p>
+        </div>
       </div>
     </div>
   </section>

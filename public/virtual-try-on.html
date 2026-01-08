@@ -1248,8 +1248,14 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 4rem;
       box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      overflow: hidden;
+    }
+
+    .how-step-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .how-step h3 {
@@ -1559,19 +1565,19 @@
       <div class="how-steps">
         <div class="how-step">
           <div class="how-step-number">1</div>
-          <div class="how-step-image">📸</div>
+          <div class="how-step-image"><img src="/vto-step-1.png" alt="Upload Your Photo"></div>
           <h3>Upload Your Photo</h3>
           <p>Take a full-body photo or use one from your gallery. Your photos stay private and secure.</p>
         </div>
         <div class="how-step">
           <div class="how-step-number">2</div>
-          <div class="how-step-image">🛒</div>
+          <div class="how-step-image"><img src="/vto-step-2.png" alt="Browse Any Store"></div>
           <h3>Browse Any Store</h3>
           <p>Shop on any of our 1500+ supported stores. Click the StyleGenius icon when you find something you like.</p>
         </div>
         <div class="how-step">
           <div class="how-step-number">3</div>
-          <div class="how-step-image">✨</div>
+          <div class="how-step-image"><img src="/vto-step-3.png" alt="See Yourself Wearing It"></div>
           <h3>See Yourself Wearing It</h3>
           <p>Our AI generates a realistic preview of you wearing the item. Decide with confidence.</p>
         </div>
