@@ -66,6 +66,7 @@ import OnlineDressingRoom from "./pages/OnlineDressingRoom";
 import SmartShoppingTools from "./pages/SmartShoppingTools";
 import DoesThisSuitMe from "./pages/DoesThisSuitMe";
 import FutureOnlineShopping from "./pages/FutureOnlineShopping";
+import TryOnClothesOnline from "./pages/TryOnClothesOnline";
 
 const queryClient = new QueryClient();
 
@@ -131,6 +132,7 @@ const App = () => (
           <Route path="/smart-shopping-tools" element={<SmartShoppingTools />} />
           <Route path="/does-this-suit-me" element={<DoesThisSuitMe />} />
           <Route path="/future-online-shopping" element={<FutureOnlineShopping />} />
+          <Route path="/try-on-clothes-online" element={<TryOnClothesOnline />} />
 
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />

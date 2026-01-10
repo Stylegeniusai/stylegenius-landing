@@ -222,6 +222,13 @@ const blogPosts = [
   },
   // Technology & Trends
   {
+    title: "Can You Try On Clothes Online?",
+    description: "The honest truth about virtual try-on. It's not perfect, but it helps you see how outfits look on you before buying.",
+    image: `${BLOG_IMAGE_BASE}/virtual-tryon-hero.png`,
+    href: "/try-on-clothes-online",
+    category: "Shopping Tech"
+  },
+  {
     title: "Virtual Try-On Guide 2026",
     description: "Everything you need to know about virtual try-on technology and how to shop online confidently.",
     image: `${BLOG_IMAGE_BASE}/virtual-tryon-hero.png`,
