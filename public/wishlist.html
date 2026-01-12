@@ -88,6 +88,50 @@
       font-size: 1.25rem;
     }
 
+    .logo-i {
+      position: relative;
+      display: inline-block;
+    }
+
+    .logo-icon {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      position: absolute;
+      top: 2px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .header-nav a {
+      color: var(--gray-600);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+
+    .header-nav a:hover {
+      color: var(--gray-900);
+    }
+
+    .header-nav a.active {
+      color: var(--pink);
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      .header-nav {
+        display: none;
+      }
+    }
+
     .header-cta {
       background: var(--gradient);
       color: white;
@@ -106,9 +150,9 @@
 
     /* Hero */
     .hero {
-      padding: 80px 0 60px;
+      padding: 100px 0 80px;
       text-align: center;
-      background: linear-gradient(180deg, white 0%, var(--gray-50) 100%);
+      background: linear-gradient(180deg, white 0%, #fefcfd 100%);
       position: relative;
       overflow: hidden;
     }
@@ -165,13 +209,14 @@
 
     .hero-tag {
       display: inline-block;
-      padding: 8px 20px;
+      padding: 8px 18px;
       border-radius: 50px;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       font-weight: 600;
-      margin-bottom: 24px;
-      background: rgba(255, 112, 217, 0.15);
-      color: var(--pink);
+      margin-bottom: 20px;
+      background: rgba(255, 112, 217, 0.1);
+      color: #561269;
+      letter-spacing: 0.3px;
     }
 
     .hero h1 {
@@ -179,7 +224,7 @@
       font-weight: 800;
       line-height: 1.1;
       margin-bottom: 20px;
-      color: var(--gray-900);
+      color: #561269;
     }
 
     .hero h1 .gradient {
@@ -189,10 +234,11 @@
     }
 
     .hero-subtitle {
-      font-size: 1.35rem;
-      color: var(--gray-600);
-      max-width: 600px;
-      margin: 0 auto 40px;
+      font-size: 1.25rem;
+      color: var(--gray-500);
+      max-width: 550px;
+      margin: 0 auto 48px;
+      font-weight: 400;
     }
 
     @media (max-width: 768px) {
@@ -269,9 +315,10 @@
       overflow: hidden;
     }
 
-    /* VIEW 1: Save View - Product Page */
+    /* VIEW 1: Save View - Store Grid */
     .save-view {
       display: flex;
+      flex-direction: column;
       height: 100%;
       position: absolute;
       top: 0;
@@ -279,6 +326,7 @@
       right: 0;
       bottom: 0;
       transition: opacity 0.5s ease, transform 0.5s ease;
+      background: white;
     }
 
     .save-view.hidden {
@@ -287,26 +335,123 @@
       pointer-events: none;
     }
 
-    .product-image-side {
-      width: 50%;
-      background: var(--gray-50);
+    /* Store Header */
+    .store-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 20px;
+      border-bottom: 1px solid #eee;
+      background: white;
+    }
+
+    .store-logo {
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: #222;
+    }
+
+    .store-nav {
+      display: flex;
+      gap: 20px;
+      font-size: 0.75rem;
+      color: #666;
+    }
+
+    .store-nav span {
+      cursor: pointer;
+    }
+
+    .store-nav span:hover {
+      color: #222;
+    }
+
+    /* Product Grid */
+    .store-product-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      padding: 16px;
+      flex: 1;
+      overflow: hidden;
+    }
+
+    .store-product {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-image-wrap {
+      position: relative;
+      background: #f8f8f8;
+      aspect-ratio: 3/4;
       display: flex;
       align-items: center;
       justify-content: center;
-      position: relative;
+      overflow: hidden;
     }
 
-    .product-image-side img {
-      max-width: 70%;
-      max-height: 85%;
+    .product-image-wrap img {
+      max-width: 90%;
+      max-height: 90%;
       object-fit: contain;
-      border-radius: 8px;
-      display: none;
     }
 
-    .product-image-side img.active {
-      display: block;
-      animation: fadeIn 0.4s ease;
+    .product-save-btn {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      cursor: pointer;
+      opacity: 0;
+      transition: opacity 0.2s, transform 0.2s;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .store-product:hover .product-save-btn {
+      opacity: 1;
+    }
+
+    .product-save-btn:hover {
+      transform: scale(1.05);
+    }
+
+    .product-save-btn .save-icon {
+      color: #FF70D9;
+    }
+
+    .product-save-btn.saved {
+      background: #561269;
+      color: white;
+    }
+
+    .product-save-btn.saved .save-icon {
+      color: white;
+    }
+
+    .product-info {
+      padding: 8px 4px;
+    }
+
+    .product-title {
+      font-size: 0.7rem;
+      color: #333;
+      margin-bottom: 2px;
+    }
+
+    .product-price {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #222;
     }
 
     @keyframes fadeIn {
@@ -314,128 +459,173 @@
       to { opacity: 1; transform: scale(1); }
     }
 
-    .store-badge {
+    /* Action Buttons Popup */
+    .action-buttons-popup {
       position: absolute;
-      top: 16px;
-      left: 16px;
-      background: linear-gradient(135deg, rgba(255,255,255,0.98) 0%, rgba(253,248,252,0.95) 100%);
-      padding: 10px 18px;
-      border-radius: 25px;
-      font-weight: 800;
-      font-size: 0.85rem;
-      color: #561269;
-      box-shadow: 0 4px 15px rgba(86, 18, 105, 0.1);
-      border: 1px solid rgba(255, 112, 217, 0.2);
-      opacity: 0;
-      transform: translateY(-10px);
-      transition: all 0.3s ease;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .store-badge.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .product-info-side {
-      width: 50%;
-      padding: 40px;
-      display: flex;
+      display: none;
       flex-direction: column;
-      justify-content: center;
-      background: linear-gradient(180deg, white 0%, #fefcfd 100%);
+      gap: 8px;
+      z-index: 20;
+      padding: 12px;
     }
 
-    .product-store {
-      font-size: 0.8rem;
-      font-weight: 700;
-      color: #FF70D9;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      margin-bottom: 10px;
-      opacity: 0;
-      transition: opacity 0.3s ease;
+    .action-buttons-popup.show {
+      display: flex;
+      animation: fadeIn 0.3s ease;
     }
 
-    .product-store.active {
-      opacity: 1;
+    .popup-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      margin-bottom: 4px;
+      box-shadow: 0 2px 8px rgba(86, 18, 105, 0.2);
     }
 
-    .product-name {
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: #561269;
-      margin-bottom: 8px;
-      opacity: 0;
-      transition: opacity 0.3s ease 0.1s;
-    }
-
-    .product-name.active {
-      opacity: 1;
-    }
-
-    .product-price {
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: var(--gray-700);
-      margin-bottom: 28px;
-      opacity: 0;
-      transition: opacity 0.3s ease 0.15s;
-    }
-
-    .product-price.active {
-      opacity: 1;
-    }
-
-    .save-button {
+    .action-btn {
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 12px;
-      background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(250,248,252,0.9) 100%);
-      background-image: url('/marble-texture.png'), linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(250,248,252,0.9) 100%);
+      gap: 10px;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #561269;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(253,248,252,0.95) 100%);
+      background-image: url('/marble-texture.png'), linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(253,248,252,0.95) 100%);
       background-size: cover;
       background-blend-mode: overlay;
-      color: #561269;
-      border: 2px solid transparent;
-      background-clip: padding-box;
-      padding: 16px 32px;
-      border-radius: 50px;
-      font-size: 1.05rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      width: fit-content;
       position: relative;
-      box-shadow: 0 4px 15px rgba(86, 18, 105, 0.1);
+      box-shadow: 0 4px 12px rgba(86, 18, 105, 0.1);
     }
 
-    .save-button::before {
+    .action-btn::before {
       content: '';
       position: absolute;
       inset: -2px;
-      border-radius: 52px;
+      border-radius: 32px;
       background: linear-gradient(135deg, #FF70D9, #6EC1E4);
       z-index: -1;
     }
 
-    .save-button:hover {
+    .action-btn:hover {
       transform: scale(1.03);
-      box-shadow: 0 8px 25px rgba(255, 112, 217, 0.25);
+      box-shadow: 0 6px 20px rgba(255, 112, 217, 0.25);
     }
 
-    .save-button .icon {
-      font-size: 1.4rem;
+    .action-btn .action-icon {
+      font-size: 1.1rem;
       color: #FF70D9;
     }
 
-    .save-button.saved {
+    .action-btn.highlighted {
       background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%);
     }
 
-    .save-button.saved .icon {
-      color: #ec4899;
+    /* Collections View */
+    .collections-view {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: white;
+      display: flex;
+      flex-direction: column;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+    }
+
+    .collections-view.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .collections-header {
+      padding: 14px 20px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .collections-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #561269;
+    }
+
+    .collections-grid {
+      flex: 1;
+      padding: 16px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      overflow-y: auto;
+      align-content: start;
+    }
+
+    .collection-card {
+      background: white;
+      border-radius: 10px;
+      padding: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: 1px solid #eee;
+    }
+
+    .collection-card:hover {
+      border-color: rgba(255, 112, 217, 0.4);
+      box-shadow: 0 4px 12px rgba(255, 112, 217, 0.1);
+    }
+
+    .collection-thumb {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 2px;
+      height: 70px;
+      margin-bottom: 8px;
+      border-radius: 6px;
+      overflow: hidden;
+      background: #f5f5f5;
+    }
+
+    .collection-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .collection-name {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #561269;
+      margin-bottom: 1px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .collection-count {
+      font-size: 0.6rem;
+      color: #999;
+    }
+
+    .collection-card.new-collection {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border: 1px dashed rgba(255, 112, 217, 0.4);
+      background: #fefcfd;
+    }
+
+    .new-collection-icon {
+      font-size: 1.3rem;
+      color: #FF70D9;
+      margin-bottom: 4px;
     }
 
     .saved-popup {
@@ -538,19 +728,13 @@
     }
 
     .saved-item {
-      background: white;
-      border-radius: 12px;
-      padding: 8px;
       cursor: grab;
-      transition: transform 0.2s, box-shadow 0.2s;
-      border: 1px solid rgba(255, 112, 217, 0.12);
-      box-shadow: 0 2px 8px rgba(86, 18, 105, 0.04);
+      transition: transform 0.2s ease;
+      text-align: center;
     }
 
     .saved-item:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(255, 112, 217, 0.15);
-      border-color: rgba(255, 112, 217, 0.25);
+      transform: scale(1.05);
     }
 
     .saved-item.dragging {
@@ -560,8 +744,8 @@
     .saved-item img {
       width: 100%;
       height: 70px;
-      object-fit: cover;
-      border-radius: 8px;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 10px rgba(86, 18, 105, 0.12));
     }
 
     .saved-item-store {
@@ -650,6 +834,28 @@
       box-shadow: 0 4px 15px rgba(255, 112, 217, 0.2);
     }
 
+    .lookboard-header-btns {
+      display: flex;
+      gap: 8px;
+    }
+
+    .lookboard-btn {
+      background: transparent;
+      color: #561269;
+      border: 1px solid rgba(255, 112, 217, 0.3);
+      padding: 8px 14px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .lookboard-btn:hover {
+      background: rgba(255, 112, 217, 0.1);
+      border-color: rgba(255, 112, 217, 0.5);
+    }
+
     .collage-builder-canvas {
       flex: 1;
       position: relative;
@@ -701,7 +907,7 @@
 
     /* Lookboard Section */
     .lookboard-section {
-      padding: 80px 0;
+      padding: 100px 0;
       background: linear-gradient(180deg, #fefcfd 0%, #fdf2f8 50%, #f8f4ff 100%);
       position: relative;
     }
@@ -802,26 +1008,19 @@
     }
 
     .lookboard-drag-item {
-      background: white;
-      border-radius: 10px;
-      padding: 6px;
-      border: 1px solid rgba(255, 112, 217, 0.1);
-      box-shadow: 0 2px 8px rgba(86, 18, 105, 0.04);
       cursor: grab;
-      transition: all 0.2s ease;
+      transition: transform 0.2s ease;
     }
 
     .lookboard-drag-item:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(255, 112, 217, 0.15);
-      border-color: rgba(255, 112, 217, 0.3);
+      transform: scale(1.05);
     }
 
     .lookboard-drag-item img {
       width: 100%;
       height: 70px;
       object-fit: contain;
-      border-radius: 6px;
+      filter: drop-shadow(0 4px 10px rgba(86, 18, 105, 0.12));
     }
 
     .lookboard-canvas-area {
@@ -1012,7 +1211,7 @@
 
     /* Features Grid */
     .features {
-      padding: 80px 0;
+      padding: 100px 0 80px;
       background: white;
     }
 
@@ -1031,15 +1230,11 @@
 
     .feature-card {
       text-align: center;
-      padding: 32px;
-      background: var(--gray-50);
-      border-radius: 20px;
-      transition: transform 0.3s, box-shadow 0.3s;
+      padding: 32px 24px;
     }
 
-    .feature-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+    .feature-card:hover .feature-icon {
+      transform: scale(1.05);
     }
 
     .feature-icon {
@@ -1052,12 +1247,13 @@
       justify-content: center;
       font-size: 1.8rem;
       margin: 0 auto 20px;
+      transition: transform 0.3s ease;
     }
 
     .feature-card h3 {
       font-size: 1.25rem;
       font-weight: 700;
-      color: var(--gray-900);
+      color: #561269;
       margin-bottom: 12px;
     }
 
@@ -1069,17 +1265,17 @@
 
     /* Section */
     .section {
-      padding: 80px 0;
+      padding: 100px 0;
     }
 
     .section.alt {
-      background: var(--gray-50);
+      background: linear-gradient(180deg, #fefcfd 0%, #fdf8fc 100%);
     }
 
     .section-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 60px;
+      gap: 80px;
       align-items: center;
     }
 
@@ -1107,9 +1303,10 @@
       border-radius: 20px;
       font-size: 0.8rem;
       font-weight: 600;
-      background: rgba(255, 112, 217, 0.15);
-      color: var(--pink);
+      background: rgba(255, 112, 217, 0.1);
+      color: #561269;
       margin-bottom: 16px;
+      letter-spacing: 0.3px;
     }
 
     .section-content h2 {
@@ -1117,7 +1314,7 @@
       font-weight: 800;
       line-height: 1.2;
       margin-bottom: 20px;
-      color: var(--gray-900);
+      color: #561269;
     }
 
     .section-content h2 .gradient {
@@ -1154,32 +1351,32 @@
 
     .section-visual img {
       width: 100%;
-      border-radius: 16px;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      filter: drop-shadow(0 15px 35px rgba(86, 18, 105, 0.12));
     }
 
     /* Collage Preview */
     .collage-preview {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      padding: 20px;
-      background: white;
-      border-radius: 16px;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+      gap: 16px;
+      padding: 10px;
     }
 
     .collage-item {
       aspect-ratio: 3/4;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     }
 
     .collage-item img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
+      filter: drop-shadow(0 8px 20px rgba(86, 18, 105, 0.15));
+      transition: transform 0.3s ease;
+    }
+
+    .collage-item img:hover {
+      transform: scale(1.03);
     }
 
     /* Share Section */
@@ -1191,11 +1388,8 @@
     }
 
     .share-card {
-      background: white;
-      padding: 24px 32px;
-      border-radius: 16px;
+      padding: 24px 20px;
       text-align: center;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
       flex: 1;
       min-width: 200px;
       max-width: 280px;
@@ -1209,7 +1403,7 @@
     .share-card h4 {
       font-size: 1.1rem;
       font-weight: 700;
-      color: var(--gray-900);
+      color: #561269;
       margin-bottom: 8px;
     }
 
@@ -1220,8 +1414,8 @@
 
     /* CTA Section */
     .cta-section {
-      padding: 80px 0;
-      background: var(--gray-900);
+      padding: 100px 0;
+      background: linear-gradient(135deg, #561269 0%, #7c2d8c 100%);
       text-align: center;
     }
 
@@ -1233,20 +1427,26 @@
     }
 
     .cta-section p {
-      font-size: 1.2rem;
-      color: var(--gray-400);
-      margin-bottom: 32px;
-      max-width: 500px;
+      font-size: 1.15rem;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 36px;
+      max-width: 450px;
       margin-left: auto;
       margin-right: auto;
     }
 
     .cta-section .hero-cta {
       margin-bottom: 16px;
+      background: white;
+      color: #561269;
+    }
+
+    .cta-section .hero-cta:hover {
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
     }
 
     .cta-section .hero-note {
-      color: var(--gray-500);
+      color: rgba(255,255,255,0.5);
     }
 
     /* Footer */
@@ -1272,7 +1472,7 @@
     }
 
     .footer-links a:hover {
-      color: var(--pink);
+      color: #561269;
     }
 
     .footer-copy {
@@ -1284,15 +1484,19 @@
 <body>
   <!-- Header -->
   <header>
-    <div class="container">
-      <div class="header-inner">
-        <a href="/" class="logo">
-          <span class="logo-text">StyleGenius</span>
-        </a>
-        <a href="https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn" class="header-cta" target="_blank">
-          Get Started Free
-        </a>
-      </div>
+    <div class="container header-inner">
+      <a href="/" class="logo">
+        <span class="logo-text">StyleGen<span class="logo-i"><img src="/mainavatar.png" alt="" class="logo-icon">ı</span>us</span>
+      </a>
+      <nav class="header-nav">
+        <a href="/">Home</a>
+        <a href="/virtual-try-on">Virtual Try-On</a>
+        <a href="/wishlist" class="active">Wishlist</a>
+        <a href="/price-tracking">Price Tracking</a>
+      </nav>
+      <a href="https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn" class="header-cta" target="_blank">
+        Get Started Free
+      </a>
     </div>
   </header>
 
@@ -1321,31 +1525,46 @@
           <img src="/mainavatar.png" alt="StyleGenius" class="browser-extension-icon">
         </div>
         <div class="browser-content">
-          <!-- VIEW 1: SAVE VIEW - Product page -->
+          <!-- VIEW 1: SAVE VIEW - Store product grid -->
           <div class="save-view" id="save-view">
-            <div class="product-image-side">
-              <img src="/wishlist/beigetrenchcoat.png" alt="" class="active" data-store="ZARA" data-url="zara.com" data-name="Trench Coat" data-price="$129.00">
-              <img src="/wishlist/knittedbeigecardigan.png" alt="" data-store="H&M" data-url="hm.com" data-name="Knit Cardigan" data-price="$49.99">
-              <img src="/wishlist/burgundypants.png" alt="" data-store="Mango" data-url="mango.com" data-name="Wide Leg Pants" data-price="$59.99">
-              <img src="/wishlist/blackheels.png" alt="" data-store="ASOS" data-url="asos.com" data-name="Pointed Heels" data-price="$85.00">
-              <img src="/wishlist/goldearrings.png" alt="" data-store="NA-KD" data-url="na-kd.com" data-name="Gold Hoops" data-price="$24.00">
-              <div class="store-badge" id="store-badge">ZARA</div>
-            </div>
-            <div class="product-info-side">
-              <div class="product-store" id="product-store">ZARA</div>
-              <div class="product-name" id="product-name">Trench Coat</div>
-              <div class="product-price" id="product-price">$129.00</div>
-              <button class="save-button" id="save-button">
-                <span class="icon">♡</span>
-                <span class="save-text" id="save-text">Save & track price</span>
-              </button>
-              <div class="saved-popup" id="saved-popup">
-                <span class="check-icon">✓</span> Added to wishlist!
+            <!-- Store Header -->
+            <div class="store-header">
+              <div class="store-logo" id="store-logo">ZARA</div>
+              <div class="store-nav">
+                <span>New In</span>
+                <span>Clothing</span>
+                <span>Shoes</span>
+                <span>Accessories</span>
               </div>
+            </div>
+            <!-- Product Grid -->
+            <div class="store-product-grid" id="product-grid">
+              <!-- Products will be injected by JS based on current store -->
+            </div>
+
+            <!-- Action buttons popup (appears on hover) -->
+            <div class="action-buttons-popup" id="action-popup">
+              <img src="/mainavatar.png" alt="" class="popup-icon">
+              <button class="action-btn" data-action="save">
+                <span class="action-icon">♡</span>
+                <span>Save</span>
+              </button>
+              <button class="action-btn" data-action="lookbook">
+                <span class="action-icon">+</span>
+                <span>Lookboard</span>
+              </button>
+              <button class="action-btn" data-action="collection">
+                <span class="action-icon">◫</span>
+                <span>Collections</span>
+              </button>
+            </div>
+            <!-- Saved popup -->
+            <div class="saved-popup" id="saved-popup">
+              <span class="check-icon">✓</span> Added to wishlist!
             </div>
           </div>
 
-          <!-- VIEW 2: COLLAGE VIEW - Split screen -->
+          <!-- VIEW 2: LOOKBOARD VIEW - Split screen -->
           <div class="collage-view" id="collage-view">
             <!-- LEFT: Saved Items -->
             <div class="saved-items-side">
@@ -1381,13 +1600,79 @@
             <div class="collage-builder-side">
               <div class="collage-builder-header">
                 <span class="collage-builder-title">Autumn Lookboard</span>
-                <button class="share-btn">Share with friends</button>
+                <div class="lookboard-header-btns">
+                  <button class="lookboard-btn">+ Create new look</button>
+                  <button class="share-btn">Share</button>
+                </div>
               </div>
               <div class="collage-builder-canvas outfit-collage">
                 <img src="/wishlist/collage-autumn.png" alt="Autumn Outfit" class="collage-image active">
                 <img src="/wishlist/collage-street.png" alt="Street Style" class="collage-image">
                 <img src="/wishlist/collage-spring.png" alt="Spring Outfit" class="collage-image">
                 <img src="/wishlist/collage-winter.png" alt="Winter Outfit" class="collage-image">
+              </div>
+            </div>
+          </div>
+
+          <!-- VIEW 3: COLLECTIONS VIEW -->
+          <div class="collections-view" id="collections-view">
+            <div class="collections-header">
+              <span class="collections-title">Save to Collection</span>
+            </div>
+            <div class="collections-grid">
+              <div class="collection-card">
+                <div class="collection-thumb">
+                  <img src="/wishlist/beigetrenchcoat.png" alt="">
+                  <img src="/wishlist/blackheels.png" alt="">
+                  <img src="/wishlist/goldearrings.png" alt="">
+                  <img src="/wishlist/burgundypants.png" alt="">
+                </div>
+                <div class="collection-name">Hanna's Birthday</div>
+                <div class="collection-count">12 items</div>
+              </div>
+              <div class="collection-card">
+                <div class="collection-thumb">
+                  <img src="/wishlist/pinkskirt.png" alt="">
+                  <img src="/wishlist/colorfulsneakers.png" alt="">
+                  <img src="/wishlist/catsunglasses.png" alt="">
+                  <img src="/wishlist/denimjacket.png" alt="">
+                </div>
+                <div class="collection-name">Summer Vacation</div>
+                <div class="collection-count">8 items</div>
+              </div>
+              <div class="collection-card">
+                <div class="collection-thumb">
+                  <img src="/wishlist/whiteblazer.png" alt="">
+                  <img src="/wishlist/brownpants.png" alt="">
+                  <img src="/wishlist/blackheels.png" alt="">
+                  <img src="/wishlist/knittedbeigecardigan.png" alt="">
+                </div>
+                <div class="collection-name">Work Outfits</div>
+                <div class="collection-count">15 items</div>
+              </div>
+              <div class="collection-card">
+                <div class="collection-thumb">
+                  <img src="/wishlist/denimjacket.png" alt="">
+                  <img src="/wishlist/colorfulsneakers.png" alt="">
+                  <img src="/wishlist/pinkskirt.png" alt="">
+                  <img src="/wishlist/catsunglasses.png" alt="">
+                </div>
+                <div class="collection-name">Weekend Casual</div>
+                <div class="collection-count">6 items</div>
+              </div>
+              <div class="collection-card">
+                <div class="collection-thumb">
+                  <img src="/wishlist/beigetrenchcoat.png" alt="">
+                  <img src="/wishlist/burgundypants.png" alt="">
+                  <img src="/wishlist/goldearrings.png" alt="">
+                  <img src="/wishlist/blackheels.png" alt="">
+                </div>
+                <div class="collection-name">Date Night</div>
+                <div class="collection-count">9 items</div>
+              </div>
+              <div class="collection-card new-collection">
+                <div class="new-collection-icon">+</div>
+                <div class="collection-name">New Collection</div>
               </div>
             </div>
           </div>
@@ -1496,7 +1781,7 @@
     <div class="container">
       <div style="text-align: center; margin-bottom: 48px;">
         <span class="section-badge">Share & Collaborate</span>
-        <h2 style="font-size: 2.5rem; font-weight: 800; color: var(--gray-900);">Share Your <span class="gradient">Wishlist</span></h2>
+        <h2 style="font-size: 2.5rem; font-weight: 800; color: #561269;">Share Your <span class="gradient">Wishlist</span></h2>
         <p style="font-size: 1.1rem; color: var(--gray-600); max-width: 500px; margin: 16px auto 0;">Perfect for birthdays, holidays, or just getting opinions from friends.</p>
       </div>
       <div class="share-cards">
@@ -1638,132 +1923,175 @@
       });
     }
 
-    // Alternating Save & Collage Demo
-    const products = document.querySelectorAll('.product-image-side img[data-store]');
+    // Store & Actions Demo
     const browserUrl = document.querySelector('.browser-url');
-    const storeBadge = document.getElementById('store-badge');
-    const productStore = document.getElementById('product-store');
-    const productName = document.getElementById('product-name');
-    const productPrice = document.getElementById('product-price');
-    const saveButton = document.getElementById('save-button');
-    const saveText = document.getElementById('save-text');
-    const savedPopup = document.getElementById('saved-popup');
+    const storeLogo = document.getElementById('store-logo');
+    const productGrid = document.getElementById('product-grid');
+    const actionPopup = document.getElementById('action-popup');
     const saveView = document.getElementById('save-view');
     const collageView = document.getElementById('collage-view');
+    const collectionsView = document.getElementById('collections-view');
+    const savedPopup = document.getElementById('saved-popup');
 
-    let currentProductIndex = 0;
+    // Store data with different products
+    const stores = [
+      {
+        name: 'ZARA',
+        url: 'zara.com',
+        products: [
+          { img: '/wishlist/beigetrenchcoat.png', name: 'Trench Coat', price: '$129.00' },
+          { img: '/wishlist/knittedbeigecardigan.png', name: 'Knit Cardigan', price: '$49.99' },
+          { img: '/wishlist/burgundypants.png', name: 'Wide Pants', price: '$59.99' },
+          { img: '/wishlist/blackheels.png', name: 'Heels', price: '$85.00' }
+        ],
+        action: 'save' // Slide 1: Save action
+      },
+      {
+        name: 'H&M',
+        url: 'hm.com',
+        products: [
+          { img: '/wishlist/denimjacket.png', name: 'Denim Jacket', price: '$45.00' },
+          { img: '/wishlist/pinkskirt.png', name: 'Pink Skirt', price: '$29.99' },
+          { img: '/wishlist/whiteblazer.png', name: 'White Blazer', price: '$79.00' },
+          { img: '/wishlist/colorfulsneakers.png', name: 'Sneakers', price: '$55.00' }
+        ],
+        action: 'lookbook' // Slide 2: Lookbook action
+      },
+      {
+        name: 'ASOS',
+        url: 'asos.com',
+        products: [
+          { img: '/wishlist/brownpants.png', name: 'Brown Pants', price: '$65.00' },
+          { img: '/wishlist/catsunglasses.png', name: 'Sunglasses', price: '$28.00' },
+          { img: '/wishlist/goldearrings.png', name: 'Gold Earrings', price: '$24.00' },
+          { img: '/wishlist/beigetrenchcoat.png', name: 'Trench', price: '$110.00' }
+        ],
+        action: 'collection' // Slide 3: Collection action
+      }
+    ];
+
+    let currentStoreIndex = 0;
     let isAnimating = false;
-
-    function updateProduct(index) {
-      // Hide all products
-      products.forEach(img => img.classList.remove('active'));
-      storeBadge.classList.remove('active');
-      productStore.classList.remove('active');
-      productName.classList.remove('active');
-      productPrice.classList.remove('active');
-
-      const product = products[index];
-      product.classList.add('active');
-
-      // Update URL bar
-      browserUrl.innerHTML = '<span class="store-name">' + product.dataset.url + '</span> / product';
-
-      // Update info
-      storeBadge.textContent = product.dataset.store;
-      productStore.textContent = product.dataset.store;
-      productName.textContent = product.dataset.name;
-      productPrice.textContent = product.dataset.price;
-
-      setTimeout(() => {
-        storeBadge.classList.add('active');
-        productStore.classList.add('active');
-        productName.classList.add('active');
-        productPrice.classList.add('active');
-      }, 100);
-
-      // Reset save button
-      saveButton.classList.remove('saved');
-      saveText.textContent = 'Save & track price';
-      saveButton.querySelector('.icon').textContent = '♡';
-    }
-
-    function showSaveView() {
-      saveView.classList.remove('hidden');
-      collageView.classList.remove('active');
-      const product = products[currentProductIndex];
-      browserUrl.innerHTML = '<span class="store-name">' + product.dataset.url + '</span> / product';
-    }
-
-    // Collage rotation
-    const heroCollages = document.querySelectorAll('.collage-builder-canvas .collage-image');
-    const lookboardCollages = document.querySelectorAll('.lookboard-canvas-content .collage-image');
-    const collageNames = ['Autumn Lookboard', 'Street Style', 'Spring Vibes', 'Winter Cozy'];
-    const collageTitle = document.querySelector('.collage-builder-title');
     let currentCollageIndex = 0;
 
-    function rotateHeroCollage() {
+    const heroCollages = document.querySelectorAll('.collage-builder-canvas .collage-image');
+    const collageTitle = document.querySelector('.collage-builder-title');
+    const collageNames = ['Autumn Lookboard', 'Street Style', 'Spring Vibes', 'Winter Cozy'];
+
+    function renderProducts(store) {
+      productGrid.innerHTML = store.products.map((p, i) => `
+        <div class="store-product" data-index="${i}">
+          <div class="product-image-wrap">
+            <img src="${p.img}" alt="${p.name}">
+          </div>
+          <div class="product-info">
+            <div class="product-title">${p.name}</div>
+            <div class="product-price">${p.price}</div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function showStore(index) {
+      const store = stores[index];
+      storeLogo.textContent = store.name;
+      browserUrl.innerHTML = '<span class="store-name">' + store.url + '</span> / women / clothing';
+      renderProducts(store);
+
+      // Hide all views, show save view
+      saveView.classList.remove('hidden');
+      collageView.classList.remove('active');
+      collectionsView.classList.remove('active');
+      actionPopup.classList.remove('show');
+    }
+
+    function showActionPopup(productEl) {
+      const rect = productEl.getBoundingClientRect();
+      const parentRect = saveView.getBoundingClientRect();
+      actionPopup.style.left = (rect.left - parentRect.left + rect.width/2 - 80) + 'px';
+      actionPopup.style.top = (rect.top - parentRect.top + 20) + 'px';
+      actionPopup.classList.add('show');
+    }
+
+    function hideActionPopup() {
+      actionPopup.classList.remove('show');
+    }
+
+    function showLookboardView() {
+      saveView.classList.add('hidden');
+      collageView.classList.add('active');
+      collectionsView.classList.remove('active');
+      browserUrl.innerHTML = '<span class="store-name">stylegenius.app</span> / lookboard';
+
       heroCollages.forEach(img => img.classList.remove('active'));
       currentCollageIndex = (currentCollageIndex + 1) % heroCollages.length;
       heroCollages[currentCollageIndex].classList.add('active');
-      if (collageTitle) {
-        collageTitle.textContent = collageNames[currentCollageIndex];
-      }
+      if (collageTitle) collageTitle.textContent = collageNames[currentCollageIndex];
     }
 
-    function showCollageView() {
+    function showCollectionsView() {
       saveView.classList.add('hidden');
-      collageView.classList.add('active');
-      browserUrl.innerHTML = '<span class="store-name">stylegenius.app</span> / my-collage';
-      rotateHeroCollage();
+      collageView.classList.remove('active');
+      collectionsView.classList.add('active');
+      browserUrl.innerHTML = '<span class="store-name">stylegenius.app</span> / collections';
     }
 
-    function runSaveAnimation() {
+    function runDemoAnimation() {
       if (isAnimating) return;
       isAnimating = true;
 
-      // Animate save button
-      saveButton.classList.add('saved');
-      saveText.textContent = 'Saved!';
-      saveButton.querySelector('.icon').textContent = '♥';
-      savedPopup.classList.add('show');
+      const store = stores[currentStoreIndex];
+      const products = productGrid.querySelectorAll('.store-product');
+      const targetProduct = products[Math.floor(Math.random() * products.length)];
 
-      // After save animation, switch to collage view
+      // Show action popup on product (faster)
       setTimeout(() => {
-        savedPopup.classList.remove('show');
+        showActionPopup(targetProduct);
 
+        // Highlight the action button for this store's action
         setTimeout(() => {
-          showCollageView();
+          const actionBtn = actionPopup.querySelector(`[data-action="${store.action}"]`);
+          if (actionBtn) actionBtn.classList.add('highlighted');
 
-          // After showing collage, go back to save view with next product
+          // Execute the action
           setTimeout(() => {
-            currentProductIndex = (currentProductIndex + 1) % products.length;
-            showSaveView();
-            updateProduct(currentProductIndex);
-            isAnimating = false;
-          }, 2500);
-        }, 400);
-      }, 1000);
+            hideActionPopup();
+            if (actionBtn) actionBtn.classList.remove('highlighted');
+
+            if (store.action === 'save') {
+              savedPopup.classList.add('show');
+              setTimeout(() => {
+                savedPopup.classList.remove('show');
+                nextSlide();
+              }, 800);
+            } else if (store.action === 'lookbook') {
+              showLookboardView();
+              setTimeout(nextSlide, 1500);
+            } else if (store.action === 'collection') {
+              showCollectionsView();
+              setTimeout(nextSlide, 1500);
+            }
+          }, 400);
+        }, 500);
+      }, 300);
+    }
+
+    function nextSlide() {
+      currentStoreIndex = (currentStoreIndex + 1) % stores.length;
+      showStore(currentStoreIndex);
+      isAnimating = false;
     }
 
     // Initialize
-    updateProduct(0);
+    showStore(0);
 
     // Start demo loop
     setTimeout(() => {
-      runSaveAnimation();
+      runDemoAnimation();
       setInterval(() => {
-        if (!isAnimating) {
-          runSaveAnimation();
-        }
-      }, 5000);
-    }, 2000);
-
-    // Manual click
-    saveButton.addEventListener('click', () => {
-      if (!isAnimating && !saveButton.classList.contains('saved')) {
-        runSaveAnimation();
-      }
-    });
+        if (!isAnimating) runDemoAnimation();
+      }, 4500);
+    }, 1700);
 
     // Lookboard collage rotation
     let currentLookboardIndex = 0;
