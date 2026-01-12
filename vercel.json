@@ -21,6 +21,7 @@
     { "src": "/app", "dest": "/app.html" },
     { "src": "/signup.html", "dest": "/signup.html" },
     { "src": "/signup", "dest": "/signup.html" },
+    { "src": "/auth-callback", "dest": "/auth-callback.html" },
     { "src": "/share/(.*)", "dest": "/share.html" },
     { "handle": "filesystem" },
     { "src": "/(.*)", "dest": "/index.html" }
