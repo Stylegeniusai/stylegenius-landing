@@ -12,17 +12,18 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pinterest for Your Wishlist | Save from Any Store | StyleGenius</title>
-  <meta name="description" content="Save items from any store to one wishlist. Build outfit collages. Get price drop alerts. Your universal fashion wishlist that works everywhere.">
+  <title>Like Pinterest for Your Fashion Wishlist | Save from Any Store | StyleGenius</title>
+  <meta name="description" content="Save fashion items from any store to one wishlist. Build outfit looks, organize collections, and share with friends. Get price drop alerts. Works on 1500+ fashion stores.">
   <meta name="keywords" content="fashion wishlist, save from any store, price tracker, outfit collage, wishlist app, universal wishlist, price alerts, gift wishlist">
   <link rel="canonical" href="https://stylegenius.app/wishlist">
   <link rel="icon" type="image/png" href="/mainavatar.png">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Pinterest for Your Wishlist | StyleGenius">
-  <meta property="og:description" content="Save items from any store. Build looks. Get price alerts. Your universal fashion wishlist.">
+  <meta property="og:title" content="Like Pinterest for Your Fashion Wishlist | StyleGenius">
+  <meta property="og:description" content="Save fashion items from any store. Build looks, organize collections, share with friends. Get price alerts.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="/hero-virtualtryon.png">
+  <meta property="og:url" content="https://stylegenius.app/wishlist">
+  <meta property="og:image" content="/mainavatar.png">
 
   <style>
     * {
@@ -174,37 +175,45 @@
       z-index: 1;
     }
 
-    /* Gradient blobs */
+    /* Gradient blobs - soft pastel circles */
     .hero-blob {
       position: absolute;
       border-radius: 50%;
       pointer-events: none;
       z-index: 0;
-      filter: blur(60px);
+      opacity: 0.35;
     }
 
     .hero-blob-1 {
-      width: 300px;
-      height: 300px;
-      background: rgba(255, 112, 217, 0.2);
-      top: -100px;
-      right: 5%;
+      width: 120px;
+      height: 120px;
+      background: linear-gradient(180deg, #F0B4E4 0%, #A8D4F0 100%);
+      top: 5%;
+      left: 3%;
     }
 
     .hero-blob-2 {
-      width: 250px;
-      height: 250px;
-      background: rgba(110, 193, 228, 0.2);
-      bottom: -50px;
-      left: 10%;
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(180deg, #A8D4F0 0%, #F0B4E4 100%);
+      top: 8%;
+      right: 5%;
     }
 
     .hero-blob-3 {
-      width: 150px;
-      height: 150px;
-      background: rgba(255, 112, 217, 0.12);
-      top: 40%;
-      left: 30%;
+      width: 100px;
+      height: 100px;
+      background: linear-gradient(180deg, #F0B4E4 0%, #A8D4F0 100%);
+      bottom: 20%;
+      left: 2%;
+    }
+
+    .hero-blob-4 {
+      width: 90px;
+      height: 90px;
+      background: linear-gradient(180deg, #A8D4F0 0%, #F0B4E4 100%);
+      bottom: 10%;
+      right: 3%;
     }
 
     .hero-tag {
@@ -626,6 +635,239 @@
       font-size: 1.3rem;
       color: #FF70D9;
       margin-bottom: 4px;
+    }
+
+    /* Notifications Panel */
+    .notifications-panel {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 10px 40px rgba(86, 18, 105, 0.1);
+      overflow: hidden;
+      max-width: 360px;
+      margin-left: auto;
+    }
+
+    .notifications-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 16px;
+      border-bottom: 1px solid #f0f0f0;
+      background: #fefefe;
+    }
+
+    .notifications-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #561269;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .notifications-title::before {
+      content: '🔔';
+      font-size: 0.85rem;
+    }
+
+    .notifications-badge {
+      font-size: 0.65rem;
+      font-weight: 600;
+      color: white;
+      background: linear-gradient(135deg, #FF70D9, #6EC1E4);
+      padding: 4px 10px;
+      border-radius: 12px;
+    }
+
+    .notifications-list {
+      padding: 8px;
+    }
+
+    .notification-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      background: #fafafa;
+      margin-bottom: 6px;
+    }
+
+    .notification-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .notification-item.featured {
+      background: linear-gradient(135deg, rgba(255, 112, 217, 0.08) 0%, rgba(110, 193, 228, 0.08) 100%);
+      border: 1px solid rgba(255, 112, 217, 0.15);
+    }
+
+    .notification-img {
+      width: 44px;
+      height: 54px;
+      object-fit: contain;
+      border-radius: 6px;
+      background: white;
+      flex-shrink: 0;
+    }
+
+    .notification-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .notification-name {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #561269;
+      margin-bottom: 3px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .notification-meta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+
+    .notification-store {
+      font-size: 0.6rem;
+      font-weight: 700;
+      color: white;
+      background: #FF70D9;
+      padding: 2px 6px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+
+    .notification-time {
+      font-size: 0.6rem;
+      color: #999;
+    }
+
+    .notification-prices {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .notif-old {
+      font-size: 0.75rem;
+      color: #aaa;
+      text-decoration: line-through;
+    }
+
+    .notif-new {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #10b981;
+    }
+
+    .notification-tag {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: #10b981;
+      background: rgba(16, 185, 129, 0.12);
+      padding: 6px 10px;
+      border-radius: 8px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* Rolling Stores */
+    .hero-stores {
+      margin-top: 48px;
+      text-align: center;
+    }
+
+    .stores-label {
+      font-size: 0.875rem;
+      color: var(--gray-500);
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+
+    .hero-store-marquee {
+      width: 100%;
+      overflow: hidden;
+      mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    }
+
+    .hero-store-track {
+      display: flex;
+      gap: 40px;
+      animation: heroMarquee 25s linear infinite;
+      width: max-content;
+    }
+
+    @keyframes heroMarquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .hero-store-logo {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--gray-400);
+      white-space: nowrap;
+    }
+
+    /* Testimonial */
+    .testimonial {
+      padding: 60px 0;
+      background: white;
+    }
+
+    .testimonial-inner {
+      max-width: 700px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .review-pic {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      box-shadow: 0 8px 30px rgba(86, 18, 105, 0.15);
+    }
+
+    .review-content {
+      flex: 1;
+    }
+
+    .testimonial .stars {
+      color: #eab308;
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+    }
+
+    .testimonial p {
+      font-size: 1.25rem;
+      color: var(--gray-700);
+      font-style: italic;
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
+
+    .testimonial .author {
+      font-size: 0.9rem;
+      color: var(--gray-500);
+      font-weight: 600;
+    }
+
+    @media (max-width: 600px) {
+      .testimonial-inner {
+        flex-direction: column;
+        text-align: center;
+      }
     }
 
     .saved-popup {
@@ -1349,10 +1591,23 @@
       font-weight: bold;
     }
 
-    .section-visual img {
+    .section-visual > img {
       width: 100%;
       border-radius: 12px;
       filter: drop-shadow(0 15px 35px rgba(86, 18, 105, 0.12));
+    }
+
+    /* Price alerts section specific */
+    .price-alerts-section .section-visual {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .notifications-panel .notification-img {
+      width: 44px !important;
+      height: 54px !important;
+      flex-shrink: 0;
     }
 
     /* Collage Preview */
@@ -1505,11 +1760,11 @@
     <div class="hero-blob hero-blob-1"></div>
     <div class="hero-blob hero-blob-2"></div>
     <div class="hero-blob hero-blob-3"></div>
+    <div class="hero-blob hero-blob-4"></div>
 
     <div class="container">
-      <span class="hero-tag">Universal Wishlist</span>
-      <h1>Pinterest for Your <span class="gradient">Wishlist</span></h1>
-      <p class="hero-subtitle">Save from any store. Build looks. Get price alerts.</p>
+      <h1>Like Pinterest for Your <span class="gradient">Fashion Wishlist</span></h1>
+      <p class="hero-subtitle">Save fashion items from any store. Build looks, organize collections, and share with friends. Get alerts when prices drop.</p>
 
       <!-- Browser Mockup with product carousel -->
       <div class="browser-mockup">
@@ -1679,126 +1934,152 @@
         </div>
       </div>
 
+      <!-- Rolling stores -->
+      <div class="hero-stores">
+        <p class="stores-label">Works on 1500+ fashion stores</p>
+        <div class="hero-store-marquee">
+          <div class="hero-store-track">
+            <span class="hero-store-logo">H&M</span>
+            <span class="hero-store-logo">ZARA</span>
+            <span class="hero-store-logo">ASOS</span>
+            <span class="hero-store-logo">Zalando</span>
+            <span class="hero-store-logo">Mango</span>
+            <span class="hero-store-logo">& Other Stories</span>
+            <span class="hero-store-logo">NA-KD</span>
+            <span class="hero-store-logo">Boozt</span>
+            <span class="hero-store-logo">About You</span>
+            <span class="hero-store-logo">Massimo Dutti</span>
+            <span class="hero-store-logo">COS</span>
+            <span class="hero-store-logo">Arket</span>
+            <span class="hero-store-logo">H&M</span>
+            <span class="hero-store-logo">ZARA</span>
+            <span class="hero-store-logo">ASOS</span>
+            <span class="hero-store-logo">Zalando</span>
+            <span class="hero-store-logo">Mango</span>
+            <span class="hero-store-logo">& Other Stories</span>
+            <span class="hero-store-logo">NA-KD</span>
+            <span class="hero-store-logo">Boozt</span>
+            <span class="hero-store-logo">About You</span>
+            <span class="hero-store-logo">Massimo Dutti</span>
+            <span class="hero-store-logo">COS</span>
+            <span class="hero-store-logo">Arket</span>
+          </div>
+        </div>
+      </div>
+
       <a href="https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn" class="hero-cta" target="_blank" id="hero-cta">
         Start Saving — It's Free
       </a>
-      <p class="hero-note">Free Chrome & Safari extension. No account needed.</p>
+      <p class="hero-note">Free Chrome & Safari extension</p>
     </div>
   </section>
 
-  <!-- Features Grid -->
-  <section class="features">
+  <!-- Jessika Review -->
+  <section class="testimonial">
     <div class="container">
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">+</div>
-          <h3>Save from Anywhere</h3>
-          <p>One click to save any item from any store. No more 10 different wishlists across different sites.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🔔</div>
-          <h3>Price Drop Alerts</h3>
-          <p>Get notified when prices drop on your saved items. Never miss a sale again.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🎨</div>
-          <h3>Build Outfits</h3>
-          <p>Drag and drop items to create outfit collages. See how pieces work together.</p>
+      <div class="testimonial-inner">
+        <img src="/review-pic.jpg" alt="Jessika" class="review-pic">
+        <div class="review-content">
+          <div class="stars">★★★★★</div>
+          <p>"Tried shopping without StyleGenius. It just wasn't the same."</p>
+          <span class="author">— Jessika</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Price Tracking Section -->
-  <section class="section alt">
+  <!-- Price Alerts Section -->
+  <section class="section price-alerts-section">
     <div class="container">
       <div class="section-grid">
         <div class="section-content">
-          <span class="section-badge">Price Tracking</span>
-          <h2>Never Miss a <span class="gradient">Price Drop</span></h2>
-          <p>We track prices on all your saved items automatically. When something drops, you'll know instantly. Save money without the effort.</p>
+          <h2>Get Notified When <span class="gradient">Prices Drop</span></h2>
+          <p>We monitor prices on all your saved items 24/7. The moment something goes on sale, you'll know. Organize items into collections for birthdays, trips, or any occasion.</p>
           <div class="section-features">
             <div class="section-feature">
               <span class="check">✓</span>
-              Automatic price monitoring
+              Automatic price tracking on 1500+ stores
             </div>
             <div class="section-feature">
               <span class="check">✓</span>
-              Instant notifications
+              Instant notifications when prices drop
             </div>
             <div class="section-feature">
               <span class="check">✓</span>
-              Price history charts
+              Organize into collections for any occasion
             </div>
           </div>
         </div>
         <div class="section-visual">
-          <img src="/hero-pricetracking.png" alt="Price tracking showing price drops">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Collage Builder Section -->
-  <section class="section">
-    <div class="container">
-      <div class="section-grid reverse">
-        <div class="section-content">
-          <span class="section-badge">Outfit Collages</span>
-          <h2>Build Your <span class="gradient">Perfect Looks</span></h2>
-          <p>Mix and match items from different stores to create outfit collages. See how everything works together before you buy anything.</p>
-          <div class="section-features">
-            <div class="section-feature">
-              <span class="check">✓</span>
-              Drag & drop interface
+          <!-- Notifications panel mockup -->
+          <div class="notifications-panel">
+            <div class="notifications-header">
+              <span class="notifications-title">Price Alerts</span>
+              <span class="notifications-badge">3 new</span>
             </div>
-            <div class="section-feature">
-              <span class="check">✓</span>
-              Mix items from any store
-            </div>
-            <div class="section-feature">
-              <span class="check">✓</span>
-              Save & share your looks
+            <div class="notifications-list">
+              <div class="notification-item featured">
+                <img src="/wishlist/beigetrenchcoat.png" alt="" class="notification-img">
+                <div class="notification-info">
+                  <div class="notification-name">Trench Coat</div>
+                  <div class="notification-meta">
+                    <span class="notification-store">ZARA</span>
+                    <span class="notification-time">2h ago</span>
+                  </div>
+                  <div class="notification-prices">
+                    <span class="notif-old">$129</span>
+                    <span class="notif-new">$89</span>
+                  </div>
+                </div>
+                <div class="notification-tag">-31%</div>
+              </div>
+              <div class="notification-item">
+                <img src="/wishlist/blackheels.png" alt="" class="notification-img">
+                <div class="notification-info">
+                  <div class="notification-name">Pointed Heels</div>
+                  <div class="notification-meta">
+                    <span class="notification-store">ASOS</span>
+                    <span class="notification-time">5h ago</span>
+                  </div>
+                  <div class="notification-prices">
+                    <span class="notif-old">$85</span>
+                    <span class="notif-new">$59</span>
+                  </div>
+                </div>
+                <div class="notification-tag">-30%</div>
+              </div>
+              <div class="notification-item">
+                <img src="/wishlist/pinkskirt.png" alt="" class="notification-img">
+                <div class="notification-info">
+                  <div class="notification-name">Pleated Skirt</div>
+                  <div class="notification-meta">
+                    <span class="notification-store">H&M</span>
+                    <span class="notification-time">1d ago</span>
+                  </div>
+                  <div class="notification-prices">
+                    <span class="notif-old">$35</span>
+                    <span class="notif-new">$19</span>
+                  </div>
+                </div>
+                <div class="notification-tag">-46%</div>
+              </div>
+              <div class="notification-item">
+                <img src="/wishlist/denimjacket.png" alt="" class="notification-img">
+                <div class="notification-info">
+                  <div class="notification-name">Denim Jacket</div>
+                  <div class="notification-meta">
+                    <span class="notification-store">Mango</span>
+                    <span class="notification-time">2d ago</span>
+                  </div>
+                  <div class="notification-prices">
+                    <span class="notif-old">$79</span>
+                    <span class="notif-new">$59</span>
+                  </div>
+                </div>
+                <div class="notification-tag">-25%</div>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="section-visual">
-          <div class="collage-preview">
-            <div class="collage-item"><img src="/wishlist/denimjacket.png" alt=""></div>
-            <div class="collage-item"><img src="/wishlist/pinkskirt.png" alt=""></div>
-            <div class="collage-item"><img src="/wishlist/colorfulsneakers.png" alt=""></div>
-            <div class="collage-item"><img src="/wishlist/whiteblazer.png" alt=""></div>
-            <div class="collage-item"><img src="/wishlist/brownpants.png" alt=""></div>
-            <div class="collage-item"><img src="/wishlist/catsunglasses.png" alt=""></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Share Section -->
-  <section class="section alt">
-    <div class="container">
-      <div style="text-align: center; margin-bottom: 48px;">
-        <span class="section-badge">Share & Collaborate</span>
-        <h2 style="font-size: 2.5rem; font-weight: 800; color: #561269;">Share Your <span class="gradient">Wishlist</span></h2>
-        <p style="font-size: 1.1rem; color: var(--gray-600); max-width: 500px; margin: 16px auto 0;">Perfect for birthdays, holidays, or just getting opinions from friends.</p>
-      </div>
-      <div class="share-cards">
-        <div class="share-card">
-          <div class="share-card-icon">🎁</div>
-          <h4>Gift Wishlist</h4>
-          <p>Share with family so they know exactly what you want.</p>
-        </div>
-        <div class="share-card">
-          <div class="share-card-icon">👯</div>
-          <h4>Get Opinions</h4>
-          <p>Send to friends and ask "which one should I get?"</p>
-        </div>
-        <div class="share-card">
-          <div class="share-card-icon">💕</div>
-          <h4>Shared Collections</h4>
-          <p>Create lists together. Plan matching outfits or trips.</p>
         </div>
       </div>
     </div>
@@ -1807,10 +2088,9 @@
   <!-- Lookboard Section -->
   <section class="lookboard-section">
     <div class="container">
-      <div style="text-align: center; margin-bottom: 48px;">
-        <span class="section-badge">Lookboard</span>
-        <h2 style="font-size: 2.5rem; font-weight: 800; color: #561269;">Build Your <span class="gradient">Dream Outfits</span></h2>
-        <p style="font-size: 1.1rem; color: var(--gray-600); max-width: 550px; margin: 16px auto 0;">Drag and drop items from your wishlist to create Pinterest-worthy outfit collages. Save your looks and share with friends.</p>
+      <div style="text-align: center; margin-bottom: 40px;">
+        <h2 style="font-size: 2.5rem; font-weight: 800; color: #561269;">Build & Share <span class="gradient">Outfit Looks</span></h2>
+        <p style="font-size: 1.05rem; color: var(--gray-500); max-width: 480px; margin: 14px auto 0;">Drag items from your wishlist to create looks. Share with friends or save for later.</p>
       </div>
 
       <!-- Browser Mockup for Lookboard -->
@@ -1874,18 +2154,13 @@
         </div>
       </div>
 
-      <div style="text-align: center; margin-top: 48px;">
-        <a href="https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn" class="hero-cta" target="_blank">
-          Start Building Looks
-        </a>
-      </div>
     </div>
   </section>
 
   <!-- CTA Section -->
   <section class="cta-section">
     <div class="container">
-      <h2>Start Your Universal Wishlist</h2>
+      <h2>Start Your Fashion Wishlist</h2>
       <p>Save from any store. Track prices. Build looks. All free.</p>
       <a href="https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn" class="hero-cta" target="_blank" id="cta-bottom">
         Get Started Free
@@ -2044,11 +2319,11 @@
       const products = productGrid.querySelectorAll('.store-product');
       const targetProduct = products[Math.floor(Math.random() * products.length)];
 
-      // Show action popup on product (faster)
+      // Show action popup quickly
       setTimeout(() => {
         showActionPopup(targetProduct);
 
-        // Highlight the action button for this store's action
+        // Highlight the action button
         setTimeout(() => {
           const actionBtn = actionPopup.querySelector(`[data-action="${store.action}"]`);
           if (actionBtn) actionBtn.classList.add('highlighted');
@@ -2062,41 +2337,39 @@
               savedPopup.classList.add('show');
               setTimeout(() => {
                 savedPopup.classList.remove('show');
-                nextSlide();
-              }, 800);
+                goToNextSlide();
+              }, 1200);
             } else if (store.action === 'lookbook') {
               showLookboardView();
-              setTimeout(nextSlide, 1500);
+              setTimeout(goToNextSlide, 3500);
             } else if (store.action === 'collection') {
               showCollectionsView();
-              setTimeout(nextSlide, 1500);
+              setTimeout(goToNextSlide, 3500);
             }
-          }, 400);
-        }, 500);
-      }, 300);
+          }, 300);
+        }, 400);
+      }, 200);
     }
 
-    function nextSlide() {
+    function goToNextSlide() {
       currentStoreIndex = (currentStoreIndex + 1) % stores.length;
       showStore(currentStoreIndex);
       isAnimating = false;
+      // Start next animation after short pause on store view
+      setTimeout(runDemoAnimation, 1500);
     }
 
     // Initialize
     showStore(0);
 
-    // Start demo loop
-    setTimeout(() => {
-      runDemoAnimation();
-      setInterval(() => {
-        if (!isAnimating) runDemoAnimation();
-      }, 4500);
-    }, 1700);
+    // Start first animation
+    setTimeout(runDemoAnimation, 1500);
 
-    // Lookboard collage rotation
-    let currentLookboardIndex = 0;
+    // Lookboard collage rotation (bottom section)
+    const lookboardCollages = document.querySelectorAll('.lookboard-canvas-content .collage-image');
     const lookboardTitle = document.querySelector('.lookboard-canvas-title');
     const lookboardNames = ['Spring Vibes', 'Winter Cozy', 'Autumn Lookboard', 'Street Style'];
+    let currentLookboardIndex = 0;
 
     function rotateLookboardCollage() {
       lookboardCollages.forEach(img => img.classList.remove('active'));
@@ -2107,8 +2380,8 @@
       }
     }
 
-    // Rotate lookboard every 4 seconds
-    setInterval(rotateLookboardCollage, 4000);
+    // Rotate lookboard every 3.5 seconds
+    setInterval(rotateLookboardCollage, 3500);
   </script>
 </body>
 </html>
