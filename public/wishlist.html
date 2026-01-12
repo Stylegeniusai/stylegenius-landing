@@ -151,11 +151,44 @@
 
     /* Hero */
     .hero {
-      padding: 100px 0 80px;
-      text-align: center;
+      padding: 80px 0 60px;
       background: linear-gradient(180deg, white 0%, #fefcfd 100%);
       position: relative;
       overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: stretch;
+      margin-bottom: 40px;
+    }
+
+    .hero-content {
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .hero-mockup {
+      margin-right: -60px;
+      min-height: 460px;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .hero-content {
+        text-align: center;
+        order: 1;
+      }
+      .hero-mockup {
+        order: 2;
+      }
     }
 
     .hero::before {
@@ -229,10 +262,10 @@
     }
 
     .hero h1 {
-      font-size: 3.5rem;
+      font-size: 3rem;
       font-weight: 800;
-      line-height: 1.1;
-      margin-bottom: 20px;
+      line-height: 1.15;
+      margin-bottom: 28px;
       color: #561269;
     }
 
@@ -243,30 +276,51 @@
     }
 
     .hero-subtitle {
-      font-size: 1.25rem;
+      font-size: 1.1rem;
       color: var(--gray-500);
-      max-width: 550px;
-      margin: 0 auto 48px;
+      margin-bottom: 36px;
       font-weight: 400;
+      line-height: 1.6;
     }
 
-    @media (max-width: 768px) {
+    .hero-content .hero-cta {
+      display: inline-block;
+    }
+
+    .hero-cta-wrapper {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .hero-content .hero-note {
+      font-size: 0.85rem;
+      color: var(--gray-400);
+      margin-top: 14px;
+    }
+
+    @media (max-width: 900px) {
       .hero h1 {
         font-size: 2rem;
       }
       .hero-subtitle {
-        font-size: 1.1rem;
+        font-size: 1rem;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 500px;
       }
     }
 
     /* Browser Mockup */
     .browser-mockup {
-      max-width: 800px;
-      margin: 0 auto 40px;
       background: white;
       border-radius: 12px;
-      box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.12);
       overflow: hidden;
+    }
+
+    .hero-mockup .browser-mockup {
+      max-width: 100%;
     }
 
     .browser-toolbar {
@@ -318,6 +372,7 @@
 
     /* Browser Content - holds both views */
     .browser-content {
+      min-height: 400px;
       height: 400px;
       background: white;
       position: relative;
@@ -938,11 +993,12 @@
 
     .saved-title {
       font-weight: 700;
-      font-size: 0.95rem;
+      font-size: 0.85rem;
       color: #561269;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
+      white-space: nowrap;
     }
 
     .saved-title::before {
@@ -951,13 +1007,14 @@
     }
 
     .saved-count {
-      font-size: 0.7rem;
+      font-size: 0.6rem;
       font-weight: 600;
       color: #FF70D9;
       background: linear-gradient(135deg, rgba(255,112,217,0.1) 0%, rgba(110,193,228,0.1) 100%);
-      padding: 5px 12px;
-      border-radius: 20px;
+      padding: 3px 8px;
+      border-radius: 12px;
       border: 1px solid rgba(255, 112, 217, 0.2);
+      white-space: nowrap;
     }
 
     .saved-items-list {
@@ -1033,11 +1090,12 @@
 
     .collage-builder-title {
       font-weight: 700;
-      font-size: 1rem;
+      font-size: 0.9rem;
       color: #561269;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
+      white-space: nowrap;
     }
 
     .collage-builder-title::before {
@@ -1763,11 +1821,22 @@
     <div class="hero-blob hero-blob-4"></div>
 
     <div class="container">
-      <h1>Like Pinterest for Your <span class="gradient">Fashion Wishlist</span></h1>
-      <p class="hero-subtitle">Save fashion items from any store. Build looks, organize collections, and share with friends. Get alerts when prices drop.</p>
+      <div class="hero-grid">
+        <!-- Left: Text content -->
+        <div class="hero-content">
+          <h1>Like Pinterest for Your <span class="gradient">Fashion Wishlist</span></h1>
+          <p class="hero-subtitle">Save fashion items from any store.<br>Build looks, organize collections, and share with friends.<br>Get alerts when prices drop.</p>
+          <div class="hero-cta-wrapper">
+            <a href="https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn" class="hero-cta" target="_blank">
+              Start Saving — It's Free
+            </a>
+            <p class="hero-note">Free Chrome & Safari extension</p>
+          </div>
+        </div>
 
-      <!-- Browser Mockup with product carousel -->
-      <div class="browser-mockup">
+        <!-- Right: Browser Mockup -->
+        <div class="hero-mockup">
+          <div class="browser-mockup">
         <div class="browser-toolbar">
           <div class="browser-dots">
             <span></span>
@@ -1825,7 +1894,6 @@
             <div class="saved-items-side">
               <div class="saved-items-header">
                 <span class="saved-title">My Saved Items</span>
-                <span class="saved-count" id="saved-count">5 items</span>
               </div>
               <div class="saved-items-list" id="saved-items-list">
                 <div class="saved-item">
@@ -1855,10 +1923,7 @@
             <div class="collage-builder-side">
               <div class="collage-builder-header">
                 <span class="collage-builder-title">Autumn Lookboard</span>
-                <div class="lookboard-header-btns">
-                  <button class="lookboard-btn">+ Create new look</button>
-                  <button class="share-btn">Share</button>
-                </div>
+                <button class="share-btn">Share with friend</button>
               </div>
               <div class="collage-builder-canvas outfit-collage">
                 <img src="/wishlist/collage-autumn.png" alt="Autumn Outfit" class="collage-image active">
@@ -1933,6 +1998,8 @@
           </div>
         </div>
       </div>
+      </div>
+      </div>
 
       <!-- Rolling stores -->
       <div class="hero-stores">
@@ -1966,11 +2033,6 @@
           </div>
         </div>
       </div>
-
-      <a href="https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn" class="hero-cta" target="_blank" id="hero-cta">
-        Start Saving — It's Free
-      </a>
-      <p class="hero-note">Free Chrome & Safari extension</p>
     </div>
   </section>
 

@@ -19,6 +19,7 @@
     { "src": "/price-tracking", "dest": "/price-tracking.html" },
     { "src": "/style-analysis", "dest": "/style-analysis.html" },
     { "src": "/app", "dest": "/app.html" },
+    { "src": "/share/(.*)", "dest": "/share.html" },
     { "handle": "filesystem" },
     { "src": "/(.*)", "dest": "/index.html" }
   ]

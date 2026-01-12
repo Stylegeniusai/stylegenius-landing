@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T3CWCMVP4T"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-T3CWCMVP4T');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shared Wishlist | StyleGenius</title>
+  <meta name="description" content="View this shared fashion wishlist on StyleGenius. Save items from any store, track prices, and build outfit looks.">
+  <link rel="icon" type="image/png" href="/mainavatar.png">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Shared Wishlist | StyleGenius">
+  <meta property="og:description" content="Check out this fashion wishlist! Save items from any store with StyleGenius.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/mainavatar.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      background: #f9fafb;
+      color: #111827;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    :root {
+      --pink: #FF70D9;
+      --blue: #6EC1E4;
+      --gradient: linear-gradient(135deg, #FF70D9, #6EC1E4);
+      --green: #10b981;
+      --gray-50: #f9fafb;
+      --gray-100: #f3f4f6;
+      --gray-200: #e5e7eb;
+      --gray-300: #d1d5db;
+      --gray-400: #9ca3af;
+      --gray-500: #6b7280;
+      --gray-600: #4b5563;
+      --gray-700: #374151;
+      --gray-900: #111827;
+      --purple: #561269;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header */
+    header {
+      background: white;
+      border-bottom: 1px solid var(--gray-200);
+      padding: 16px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: var(--purple);
+    }
+
+    .logo-text {
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
+
+    .logo-i {
+      position: relative;
+      display: inline-block;
+    }
+
+    .logo-icon {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      position: absolute;
+      top: 2px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .header-cta {
+      background: var(--gradient);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .header-cta:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 20px rgba(255, 112, 217, 0.3);
+    }
+
+    /* Main Content */
+    .share-page {
+      padding: 40px 0 80px;
+      min-height: calc(100vh - 200px);
+    }
+
+    /* Loading State */
+    .loading-state {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 100px 20px;
+      text-align: center;
+    }
+
+    .loading-spinner {
+      width: 48px;
+      height: 48px;
+      border: 3px solid var(--gray-200);
+      border-top-color: var(--pink);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin-bottom: 20px;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .loading-text {
+      color: var(--gray-500);
+      font-size: 1rem;
+    }
+
+    /* Error State */
+    .error-state {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .error-icon {
+      width: 80px;
+      height: 80px;
+      background: var(--gradient);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      margin-bottom: 24px;
+      opacity: 0.8;
+    }
+
+    .error-title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--purple);
+      margin-bottom: 12px;
+    }
+
+    .error-text {
+      color: var(--gray-500);
+      font-size: 1rem;
+      margin-bottom: 32px;
+      max-width: 400px;
+    }
+
+    .error-cta {
+      display: inline-block;
+      background: var(--gradient);
+      color: white;
+      padding: 14px 28px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .error-cta:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 30px rgba(255, 112, 217, 0.4);
+    }
+
+    /* Collection Content */
+    .collection-content {
+      display: none;
+    }
+
+    /* Collection Header */
+    .collection-header {
+      text-align: center;
+      margin-bottom: 40px;
+      padding: 40px 20px;
+      background: linear-gradient(180deg, white 0%, #fefcfd 100%);
+      border-radius: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .collection-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('/marble-texture.png') center/cover;
+      opacity: 0.2;
+      pointer-events: none;
+    }
+
+    .collection-header > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .collection-color-bar {
+      width: 60px;
+      height: 6px;
+      border-radius: 3px;
+      margin: 0 auto 20px;
+    }
+
+    .collection-owner {
+      font-size: 0.9rem;
+      color: var(--gray-500);
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .collection-title {
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: var(--purple);
+      margin-bottom: 8px;
+    }
+
+    .collection-count {
+      font-size: 0.95rem;
+      color: var(--gray-400);
+    }
+
+    /* Items Grid */
+    .items-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-bottom: 60px;
+    }
+
+    @media (max-width: 900px) {
+      .items-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .items-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+
+      .collection-title {
+        font-size: 1.75rem;
+      }
+    }
+
+    .item-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(86, 18, 105, 0.06);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .item-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(86, 18, 105, 0.12);
+    }
+
+    .item-image-wrap {
+      aspect-ratio: 3/4;
+      background: var(--gray-100);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .item-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+
+    .item-card:hover .item-image-wrap img {
+      transform: scale(1.05);
+    }
+
+    .item-info {
+      padding: 16px;
+    }
+
+    .item-store {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--pink);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+    }
+
+    .item-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--gray-900);
+      margin-bottom: 8px;
+      line-height: 1.4;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .item-price {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--purple);
+      margin-bottom: 12px;
+    }
+
+    .item-visit-btn {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background: var(--gray-100);
+      color: var(--gray-700);
+      text-decoration: none;
+      text-align: center;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .item-visit-btn:hover {
+      background: var(--gradient);
+      color: white;
+    }
+
+    /* Bottom CTA */
+    .bottom-cta {
+      background: linear-gradient(135deg, var(--purple) 0%, #7c2d8c 100%);
+      border-radius: 20px;
+      padding: 50px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .bottom-cta::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(255,112,217,0.2) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .bottom-cta > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .bottom-cta h3 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 12px;
+    }
+
+    .bottom-cta p {
+      color: rgba(255,255,255,0.7);
+      font-size: 1rem;
+      margin-bottom: 24px;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 24px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .cta-btn.primary {
+      background: white;
+      color: var(--purple);
+    }
+
+    .cta-btn.secondary {
+      background: rgba(255,255,255,0.15);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+
+    .cta-btn:hover {
+      transform: scale(1.05);
+    }
+
+    .cta-btn.primary:hover {
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .cta-icon {
+      font-size: 1.1rem;
+    }
+
+    /* Footer */
+    footer {
+      background: white;
+      border-top: 1px solid var(--gray-200);
+      padding: 30px 0;
+      text-align: center;
+    }
+
+    .footer-copy {
+      font-size: 0.85rem;
+      color: var(--gray-500);
+    }
+
+    .footer-copy a {
+      color: var(--pink);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container header-inner">
+      <a href="/" class="logo">
+        <span class="logo-text">StyleGen<span class="logo-i"><img src="/mainavatar.png" alt="" class="logo-icon">i</span>us</span>
+      </a>
+      <a href="https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn" class="header-cta" target="_blank" id="header-cta">
+        Create Your Own
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="share-page">
+    <div class="container">
+      <!-- Loading State -->
+      <div class="loading-state" id="loading-state">
+        <div class="loading-spinner"></div>
+        <p class="loading-text">Loading wishlist...</p>
+      </div>
+
+      <!-- Error State -->
+      <div class="error-state" id="error-state">
+        <div class="error-icon">?</div>
+        <h1 class="error-title">Collection Not Found</h1>
+        <p class="error-text">This wishlist might have been removed or the link is incorrect. Create your own wishlist to save and share fashion items!</p>
+        <a href="https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn" class="error-cta" target="_blank" id="error-cta">
+          Create Your Wishlist
+        </a>
+      </div>
+
+      <!-- Collection Content -->
+      <div class="collection-content" id="collection-content">
+        <!-- Collection Header -->
+        <div class="collection-header">
+          <div class="collection-color-bar" id="collection-color"></div>
+          <p class="collection-owner" id="collection-owner"></p>
+          <h1 class="collection-title" id="collection-title"></h1>
+          <p class="collection-count" id="collection-count"></p>
+        </div>
+
+        <!-- Items Grid -->
+        <div class="items-grid" id="items-grid">
+          <!-- Items will be injected here -->
+        </div>
+
+        <!-- Bottom CTA -->
+        <div class="bottom-cta">
+          <h3>Create Your Own Wishlist</h3>
+          <p>Save fashion items from any store, track prices, and share with friends.</p>
+          <div class="cta-buttons">
+            <a href="https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn" class="cta-btn primary" target="_blank" id="cta-chrome">
+              <span class="cta-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                  <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/>
+                </svg>
+              </span>
+              Chrome Extension
+            </a>
+            <a href="macappstore://apps.apple.com/app/id6757370492" class="cta-btn secondary" id="cta-safari">
+              <span class="cta-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                  <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </span>
+              Safari Extension
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p class="footer-copy">&copy; 2026 <a href="/">StyleGenius</a>. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Get collection ID from URL
+    function getCollectionId() {
+      const path = window.location.pathname;
+      const match = path.match(/\/share\/([^\/]+)/);
+      if (match) return match[1];
+
+      // Fallback: check query params
+      const params = new URLSearchParams(window.location.search);
+      return params.get('id');
+    }
+
+    // Format price
+    function formatPrice(price, currency) {
+      if (!price) return '';
+      const currencySymbols = {
+        'SEK': 'kr',
+        'USD': '$',
+        'EUR': '\u20AC',
+        'GBP': '\u00A3',
+        'NOK': 'kr',
+        'DKK': 'kr'
+      };
+      const symbol = currencySymbols[currency] || currency || '';
+
+      if (currency === 'SEK' || currency === 'NOK' || currency === 'DKK') {
+        return `${price} ${symbol}`;
+      }
+      return `${symbol}${price}`;
+    }
+
+    // Extract store name from URL
+    function getStoreName(url) {
+      if (!url) return '';
+      try {
+        const hostname = new URL(url).hostname;
+        return hostname.replace('www.', '').split('.')[0];
+      } catch {
+        return '';
+      }
+    }
+
+    // Render items
+    function renderItems(items) {
+      const grid = document.getElementById('items-grid');
+
+      if (!items || items.length === 0) {
+        grid.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: var(--gray-500);">No items in this collection yet.</p>';
+        return;
+      }
+
+      grid.innerHTML = items.map(item => `
+        <div class="item-card">
+          <div class="item-image-wrap">
+            <img src="${item.image || '/mainavatar.png'}" alt="${item.title || 'Item'}" onerror="this.src='/mainavatar.png'">
+          </div>
+          <div class="item-info">
+            <p class="item-store">${item.store || getStoreName(item.url) || 'Store'}</p>
+            <h3 class="item-title">${item.title || 'Fashion Item'}</h3>
+            <p class="item-price">${formatPrice(item.price, item.currency)}</p>
+            ${item.url ? `<a href="${item.url}" class="item-visit-btn" target="_blank" rel="noopener noreferrer">Visit Store</a>` : ''}
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // Show error state
+    function showError() {
+      document.getElementById('loading-state').style.display = 'none';
+      document.getElementById('error-state').style.display = 'flex';
+      document.getElementById('collection-content').style.display = 'none';
+    }
+
+    // Show collection
+    function showCollection(collection) {
+      document.getElementById('loading-state').style.display = 'none';
+      document.getElementById('error-state').style.display = 'none';
+      document.getElementById('collection-content').style.display = 'block';
+
+      // Set collection header
+      const colorBar = document.getElementById('collection-color');
+      colorBar.style.background = collection.color || 'var(--gradient)';
+
+      const ownerEl = document.getElementById('collection-owner');
+      ownerEl.textContent = collection.ownerName ? `${collection.ownerName}'s` : '';
+
+      const titleEl = document.getElementById('collection-title');
+      titleEl.textContent = collection.name || 'Wishlist';
+
+      const countEl = document.getElementById('collection-count');
+      const itemCount = collection.itemCount || (collection.items ? collection.items.length : 0);
+      countEl.textContent = `${itemCount} ${itemCount === 1 ? 'item' : 'items'}`;
+
+      // Update page title
+      const pageTitle = collection.ownerName
+        ? `${collection.ownerName}'s ${collection.name} | StyleGenius`
+        : `${collection.name} | StyleGenius`;
+      document.title = pageTitle;
+
+      // Render items
+      renderItems(collection.items);
+    }
+
+    // Fetch collection data
+    async function fetchCollection(id) {
+      try {
+        const response = await fetch(`https://imkvzudhshjgqkoywosw.supabase.co/functions/v1/get-shared-collection?id=${encodeURIComponent(id)}`);
+        const data = await response.json();
+
+        if (data.success && data.collection) {
+          showCollection(data.collection);
+        } else {
+          showError();
+        }
+      } catch (error) {
+        console.error('Failed to fetch collection:', error);
+        showError();
+      }
+    }
+
+    // Safari Detection for CTA links
+    function isSafari() {
+      return /^((?!chrome|android).)*safari/i.test(navigator.userAgent) && /Apple/.test(navigator.vendor);
+    }
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+      // Update links for Safari users
+      if (isSafari()) {
+        const safariUrl = 'macappstore://apps.apple.com/app/id6757370492';
+        document.getElementById('header-cta').href = safariUrl;
+        document.getElementById('error-cta').href = safariUrl;
+        document.getElementById('cta-chrome').href = safariUrl;
+        document.getElementById('cta-chrome').innerHTML = '<span class="cta-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>Safari Extension';
+      }
+
+      // Get collection ID and fetch data
+      const collectionId = getCollectionId();
+
+      if (!collectionId) {
+        showError();
+        return;
+      }
+
+      fetchCollection(collectionId);
+    });
+  </script>
+</body>
+</html>
