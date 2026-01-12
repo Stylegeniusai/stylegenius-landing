@@ -1,0 +1,109 @@
+const SUPABASE_URL = 'https://imkvzudhshjgqkoywosw.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imlta3Z6dWRoc2hqZ3Frb3l3b3N3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQ0MDc4NjMsImV4cCI6MjA1OTk4Mzg2M30.6reENx-5l7cRKCsYzh1fqkBIer8FT0SJPPyfevQixMs';
+
+const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+// Browser detection
+function detectBrowser() {
+  const ua = navigator.userAgent;
+
+  // Mobile detection
+  if (/iPhone|iPad|iPod/i.test(ua)) {
+    return { type: 'ios', name: 'iOS', store: 'https://apps.apple.com/app/id6747178892' };
+  }
+  if (/Android/i.test(ua)) {
+    return { type: 'android', name: 'Android', store: 'https://play.google.com/store/apps/details?id=com.stylegenius.app' };
+  }
+
+  // Desktop browsers
+  if (/Safari/i.test(ua) && !/Chrome/i.test(ua)) {
+    return { type: 'safari', name: 'Safari', store: 'https://apps.apple.com/app/id6747178892' };
+  }
+  if (/Chrome/i.test(ua)) {
+    return { type: 'chrome', name: 'Chrome', store: 'https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn' };
+  }
+  if (/Firefox/i.test(ua)) {
+    return { type: 'firefox', name: 'Firefox', store: 'https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn' };
+  }
+
+  // Default to Chrome
+  return { type: 'chrome', name: 'Chrome', store: 'https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn' };
+}
+
+// Browser icons
+const browserIcons = {
+  chrome: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C8.21 0 4.831 1.757 2.632 4.501l3.953 6.848A5.454 5.454 0 0 1 12 6.545h10.691A12 12 0 0 0 12 0zM1.931 5.47A11.943 11.943 0 0 0 0 12c0 6.012 4.42 10.991 10.189 11.864l3.953-6.847a5.45 5.45 0 0 1-6.865-2.29zm13.342 2.166a5.446 5.446 0 0 1 1.45 7.09l.002.001h-.002l-3.952 6.848a12.014 12.014 0 0 0 9.229-9.525zM12 16.364a4.364 4.364 0 1 1 0-8.728 4.364 4.364 0 0 1 0 8.728z"/></svg>',
+  safari: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 24C5.373 24 0 18.627 0 12S5.373 0 12 0s12 5.373 12 12-5.373 12-12 12zm0-2c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zm-1.5-4.5l7-10.5-10.5 7 3.5 3.5zm.5-4a1 1 0 1 1 2 0 1 1 0 0 1-2 0z"/></svg>',
+  ios: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>',
+  android: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.523 15.341c-.5 0-.91.41-.91.91s.41.91.91.91.91-.41.91-.91-.41-.91-.91-.91zm-11.046 0c-.5 0-.91.41-.91.91s.41.91.91.91.91-.41.91-.91-.41-.91-.91-.91zm11.4-6.7l1.97-3.41c.11-.19.05-.43-.14-.54-.19-.11-.43-.05-.54.14l-2 3.46C15.35 7.5 13.22 7 11 7s-4.35.5-6.16 1.32l-2-3.46c-.11-.19-.35-.25-.54-.14-.19.11-.25.35-.14.54l1.97 3.41C1.69 10.58 0 13.5 0 17h22c0-3.5-1.69-6.42-4.12-8.36z"/></svg>',
+  firefox: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0z"/></svg>'
+};
+
+// CTA text
+const ctaTexts = {
+  chrome: 'Add to Chrome',
+  safari: 'Add to Safari',
+  ios: 'Download iOS App',
+  android: 'Download Android App',
+  firefox: 'Add to Firefox'
+};
+
+async function handleCallback() {
+  const loadingState = document.getElementById('loadingState');
+  const successState = document.getElementById('successState');
+  const errorState = document.getElementById('errorState');
+
+  try {
+    // Get session from URL (Supabase puts tokens in hash)
+    const { data, error } = await supabaseClient.auth.getSession();
+
+    if (error) throw error;
+
+    if (data.session) {
+      // Success! Track with GA4
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'sign_up', {
+          method: data.session.user.app_metadata.provider || 'email'
+        });
+      }
+
+      // Setup browser-specific CTA
+      const browser = detectBrowser();
+      document.getElementById('ctaBtn').href = browser.store;
+      document.getElementById('ctaText').textContent = ctaTexts[browser.type];
+      document.getElementById('browserIcon').innerHTML = browserIcons[browser.type];
+
+      // Track which browser
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'signup_browser_detected', {
+          browser: browser.type
+        });
+      }
+
+      // Show success
+      loadingState.classList.add('hidden');
+      successState.classList.remove('hidden');
+
+      // Track CTA click
+      document.getElementById('ctaBtn').addEventListener('click', function() {
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'add_to_browser_clicked', {
+            browser: browser.type,
+            store_url: browser.store
+          });
+        }
+      });
+    } else {
+      // No session - show error
+      loadingState.classList.add('hidden');
+      errorState.classList.remove('hidden');
+    }
+  } catch (err) {
+    console.error('Callback error:', err);
+    loadingState.classList.add('hidden');
+    errorState.classList.remove('hidden');
+  }
+}
+
+// Run on page load
+handleCallback();
