@@ -293,10 +293,35 @@
       align-items: center;
     }
 
-    .hero-content .hero-note {
+    .hero-cta strong {
+      font-weight: 700;
+    }
+
+    .cta-trust {
+      margin-top: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .cta-browsers, .cta-rating {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
       font-size: 0.85rem;
-      color: var(--gray-400);
-      margin-top: 14px;
+      color: var(--gray-500);
+    }
+
+    .browser-icon {
+      width: 18px;
+      height: 18px;
+    }
+
+    .cta-rating .stars {
+      color: #eab308;
+      font-size: 0.9rem;
     }
 
     @media (max-width: 900px) {
@@ -1828,9 +1853,19 @@
           <p class="hero-subtitle">Save fashion items from any store.<br>Build looks, organize collections, and share with friends.<br>Get alerts when prices drop.</p>
           <div class="hero-cta-wrapper">
             <a href="https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn" class="hero-cta" target="_blank">
-              Start Saving — It's Free
+              <strong>Get started</strong> — it's free
             </a>
-            <p class="hero-note">Free Chrome & Safari extension</p>
+            <div class="cta-trust">
+              <div class="cta-browsers">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Google_Chrome_icon_%28February_2022%29.svg" alt="Chrome" class="browser-icon">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/52/Safari_browser_logo.svg" alt="Safari" class="browser-icon">
+                <span>Works on Chrome & Safari</span>
+              </div>
+              <div class="cta-rating">
+                <span class="stars">★★★★★</span>
+                <span>4.9 average rating</span>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -2225,9 +2260,19 @@
       <h2>Start Your Fashion Wishlist</h2>
       <p>Save from any store. Track prices. Build looks. All free.</p>
       <a href="https://chromewebstore.google.com/detail/stylegenius-virtual-try-o/bggndhefooccenjglglakcfgifgdpbmn" class="hero-cta" target="_blank" id="cta-bottom">
-        Get Started Free
+        <strong>Get started</strong> — it's free
       </a>
-      <p class="hero-note">Free Chrome & Safari extension</p>
+      <div class="cta-trust" style="margin-top: 16px;">
+        <div class="cta-browsers">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Google_Chrome_icon_%28February_2022%29.svg" alt="Chrome" class="browser-icon">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/52/Safari_browser_logo.svg" alt="Safari" class="browser-icon">
+          <span>Works on Chrome & Safari</span>
+        </div>
+        <div class="cta-rating">
+          <span class="stars">★★★★★</span>
+          <span>4.9 average rating</span>
+        </div>
+      </div>
     </div>
   </section>
 
