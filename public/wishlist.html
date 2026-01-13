@@ -270,17 +270,24 @@
     }
 
     .hero h1 .gradient {
-      background: var(--gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: #561269;
     }
 
     .hero-subtitle {
       font-size: 1.1rem;
-      color: var(--gray-500);
+      color: var(--gray-600);
       margin-bottom: 36px;
       font-weight: 400;
       line-height: 1.6;
+    }
+
+    .hero-subtitle strong {
+      font-weight: 600;
+      color: var(--gray-700);
+    }
+
+    .hero-subtitle .highlight {
+      color: var(--pink);
     }
 
     .hero-content .hero-cta {
@@ -328,6 +335,11 @@
     .cta-rating .stars {
       color: #eab308;
       font-size: 0.9rem;
+    }
+
+    .cta-section .cta-browsers,
+    .cta-section .cta-rating {
+      color: rgba(255, 255, 255, 0.8);
     }
 
     @media (max-width: 900px) {
@@ -1856,7 +1868,7 @@
         <!-- Left: Text content -->
         <div class="hero-content">
           <h1>Like Pinterest for Your <span class="gradient">Fashion Wishlist</span></h1>
-          <p class="hero-subtitle">Save fashion items from any store.<br>Build looks, organize collections, and share with friends.<br>Get alerts when prices drop.</p>
+          <p class="hero-subtitle">Save fashion items from <strong>any store</strong>.<br>Build looks, organize collections, and <strong>share with friends</strong>.<br>Get alerts when <strong class="highlight">prices drop</strong>.</p>
           <div class="hero-cta-wrapper">
             <a href="/signup" class="hero-cta" target="_blank">
               <strong>Get started</strong> — it's free
@@ -2361,14 +2373,6 @@
     let currentStoreIndex = 0;
     let isAnimating = false;
     let currentCollageIndex = 0;
-    let isPaused = false;
-
-    // Hover pause on browser mockup
-    const heroBrowserMockup = document.querySelector('.hero-mockup .browser-mockup');
-    if (heroBrowserMockup) {
-      heroBrowserMockup.addEventListener('mouseenter', () => { isPaused = true; });
-      heroBrowserMockup.addEventListener('mouseleave', () => { isPaused = false; });
-    }
 
     const heroCollages = document.querySelectorAll('.collage-builder-canvas .collage-image');
     const collageTitle = document.querySelector('.collage-builder-title');
@@ -2433,10 +2437,7 @@
     }
 
     function runDemoAnimation() {
-      if (isAnimating || isPaused) {
-        if (isPaused) setTimeout(runDemoAnimation, 500);
-        return;
-      }
+      if (isAnimating) return;
       isAnimating = true;
 
       const store = stores[currentStoreIndex];
