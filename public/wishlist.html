@@ -2361,6 +2361,14 @@
     let currentStoreIndex = 0;
     let isAnimating = false;
     let currentCollageIndex = 0;
+    let isPaused = false;
+
+    // Hover pause on browser mockup
+    const heroBrowserMockup = document.querySelector('.hero-mockup .browser-mockup');
+    if (heroBrowserMockup) {
+      heroBrowserMockup.addEventListener('mouseenter', () => { isPaused = true; });
+      heroBrowserMockup.addEventListener('mouseleave', () => { isPaused = false; });
+    }
 
     const heroCollages = document.querySelectorAll('.collage-builder-canvas .collage-image');
     const collageTitle = document.querySelector('.collage-builder-title');
@@ -2425,7 +2433,10 @@
     }
 
     function runDemoAnimation() {
-      if (isAnimating) return;
+      if (isAnimating || isPaused) {
+        if (isPaused) setTimeout(runDemoAnimation, 500);
+        return;
+      }
       isAnimating = true;
 
       const store = stores[currentStoreIndex];
