@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO: Update these -->
+  <title>[Primary Keyword] – [Secondary Phrase] | Wontsy</title>
+  <meta name="description" content="[150-160 character description with primary keyword]">
+  <meta name="keywords" content="[primary keyword], [secondary], [related terms]">
+  <link rel="icon" type="image/png" href="/icon.png">
+  <link rel="canonical" href="https://wontsy.com/blog/[slug]">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="[Title without | Wontsy]">
+  <meta property="og:description" content="[Same as meta description]">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://wontsy.com/blog/[slug]">
+  <meta property="og:image" content="https://wontsy.com/blog/images/[slug]-hero.png">
+
+  <!-- Article Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "[Full Title]",
+    "description": "[Meta description]",
+    "image": "https://wontsy.com/blog/images/[slug]-hero.png",
+    "author": {"@type": "Organization", "name": "Wontsy"},
+    "publisher": {
+      "@type": "Organization",
+      "name": "Wontsy",
+      "logo": {"@type": "ImageObject", "url": "https://wontsy.com/mainavatar.png"}
+    },
+    "datePublished": "[YYYY-MM-DD]",
+    "dateModified": "[YYYY-MM-DD]"
+  }
+  </script>
+
+  <!-- FAQ Schema: Update questions -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "[Question 1]?",
+        "acceptedAnswer": {"@type": "Answer", "text": "[Answer 1]"}
+      },
+      {
+        "@type": "Question",
+        "name": "[Question 2]?",
+        "acceptedAnswer": {"@type": "Answer", "text": "[Answer 2]"}
+      },
+      {
+        "@type": "Question",
+        "name": "[Question 3]?",
+        "acceptedAnswer": {"@type": "Answer", "text": "[Answer 3]"}
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ========================================
+       BASE STYLES
+       ======================================== */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --pink: #FF70D9;
+      --blue: #6EC1E4;
+      --gradient: linear-gradient(135deg, #FF70D9, #6EC1E4);
+      --purple: #561269;
+      --gray-50: #f9fafb;
+      --gray-100: #f3f4f6;
+      --gray-200: #e5e7eb;
+      --gray-300: #d1d5db;
+      --gray-400: #9ca3af;
+      --gray-500: #6b7280;
+      --gray-600: #4b5563;
+      --gray-700: #374151;
+      --gray-800: #1f2937;
+      --gray-900: #111827;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--gray-50);
+      color: var(--gray-700);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    /* ========================================
+       HEADER
+       ======================================== */
+    header {
+      background: white;
+      border-bottom: 1px solid var(--gray-200);
+      padding: 16px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: var(--purple);
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
+
+    .logo img {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      margin-left: -4px;
+      margin-right: -2px;
+      margin-top: -8px;
+    }
+
+    .header-cta {
+      background: var(--gradient);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .header-cta:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 20px rgba(255, 112, 217, 0.3);
+    }
+
+    /* ========================================
+       ARTICLE CONTAINER
+       ======================================== */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .article-content {
+      background: white;
+      border-radius: 20px;
+      padding: 50px;
+      margin-bottom: 40px;
+      box-shadow: 0 4px 20px rgba(86, 18, 105, 0.06);
+    }
+
+    @media (max-width: 600px) {
+      .article-content {
+        padding: 30px 20px;
+        border-radius: 16px;
+      }
+    }
+
+    /* ========================================
+       ARTICLE HEADER
+       ======================================== */
+    .article-header {
+      padding: 50px 0 30px;
+    }
+
+    .article-tag {
+      display: inline-block;
+      background: rgba(255, 112, 217, 0.1);
+      color: var(--pink);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .article-header h1 {
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: var(--purple);
+      line-height: 1.25;
+      margin-bottom: 16px;
+    }
+
+    .article-meta {
+      color: var(--gray-500);
+      font-size: 0.9rem;
+      margin-bottom: 24px;
+    }
+
+    @media (max-width: 600px) {
+      .article-header h1 {
+        font-size: 1.6rem;
+      }
+    }
+
+    /* ========================================
+       HERO IMAGE
+       ======================================== */
+    .hero-image {
+      width: 100%;
+      border-radius: 16px;
+      margin-bottom: 8px;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: auto;
+      border-radius: 16px;
+      display: block;
+    }
+
+    .image-caption {
+      font-size: 0.8rem;
+      color: var(--gray-400);
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    /* ========================================
+       IMAGE PLACEHOLDER
+       ======================================== */
+    .image-placeholder {
+      background: linear-gradient(135deg, var(--gray-100) 0%, var(--gray-50) 100%);
+      border: 2px dashed var(--gray-300);
+      border-radius: 16px;
+      padding: 60px 30px;
+      text-align: center;
+      margin: 24px 0;
+    }
+
+    .image-placeholder .placeholder-icon {
+      font-size: 2.5rem;
+      display: block;
+      margin-bottom: 12px;
+      opacity: 0.6;
+    }
+
+    .image-placeholder .placeholder-text {
+      color: var(--gray-500);
+      font-size: 0.9rem;
+    }
+
+    /* ========================================
+       QUICK ANSWER BOX (Top of article)
+       ======================================== */
+    .quick-answer {
+      background: linear-gradient(135deg, rgba(255,112,217,0.05) 0%, rgba(110,193,228,0.05) 100%);
+      border: 1px solid rgba(255,112,217,0.2);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 32px;
+    }
+
+    .quick-answer-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+      font-weight: 700;
+      color: var(--purple);
+      font-size: 0.9rem;
+    }
+
+    .quick-answer p {
+      margin: 0 0 16px 0;
+      color: var(--gray-700);
+    }
+
+    .quick-answer-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .quick-answer-list li {
+      background: white;
+      border: 1px solid var(--gray-200);
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+    }
+
+    .quick-answer-list li strong {
+      color: var(--purple);
+    }
+
+    /* ========================================
+       TABLE OF CONTENTS
+       ======================================== */
+    .toc {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 32px;
+    }
+
+    .toc-header {
+      font-size: 0.8rem;
+      color: var(--gray-500);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .toc ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px 20px;
+    }
+
+    .toc li a {
+      color: var(--gray-700);
+      text-decoration: none;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .toc li a:hover {
+      color: var(--pink);
+    }
+
+    .toc li a::before {
+      content: '→';
+      color: var(--pink);
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 500px) {
+      .toc ul {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ========================================
+       TYPOGRAPHY
+       ======================================== */
+    .article-content h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--purple);
+      margin: 48px 0 20px;
+      padding-top: 8px;
+    }
+
+    .article-content h2:first-of-type {
+      margin-top: 0;
+    }
+
+    .article-content h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--gray-900);
+      margin: 32px 0 12px;
+    }
+
+    .article-content p {
+      margin-bottom: 18px;
+      color: var(--gray-700);
+    }
+
+    .article-content a {
+      color: var(--pink);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .article-content a:hover {
+      text-decoration: underline;
+    }
+
+    .article-content strong {
+      color: var(--gray-900);
+      font-weight: 600;
+    }
+
+    .article-content ul,
+    .article-content ol {
+      margin: 0 0 20px 0;
+      padding-left: 24px;
+    }
+
+    .article-content li {
+      margin-bottom: 10px;
+    }
+
+    /* ========================================
+       HIGHLIGHT BOX
+       ======================================== */
+    .highlight-box {
+      background: linear-gradient(135deg, rgba(255,112,217,0.08) 0%, rgba(110,193,228,0.08) 100%);
+      border-left: 4px solid var(--pink);
+      padding: 20px 24px;
+      border-radius: 0 12px 12px 0;
+      margin: 28px 0;
+    }
+
+    .highlight-box p {
+      margin: 0;
+      font-weight: 500;
+      color: var(--gray-800);
+    }
+
+    /* ========================================
+       COMPARISON TABLE
+       ======================================== */
+    .comparison-table-wrapper {
+      overflow-x: auto;
+      margin: 28px 0;
+      border-radius: 12px;
+      border: 1px solid var(--gray-200);
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      min-width: 500px;
+    }
+
+    .comparison-table thead {
+      background: var(--gray-50);
+    }
+
+    .comparison-table th {
+      padding: 14px 16px;
+      text-align: left;
+      font-weight: 600;
+      color: var(--purple);
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .comparison-table th:first-child {
+      border-radius: 12px 0 0 0;
+    }
+
+    .comparison-table th:last-child {
+      border-radius: 0 12px 0 0;
+    }
+
+    .comparison-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--gray-100);
+      vertical-align: middle;
+    }
+
+    .comparison-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .comparison-table tr:hover {
+      background: var(--gray-50);
+    }
+
+    .comparison-table .check {
+      color: #10b981;
+      font-weight: bold;
+    }
+
+    .comparison-table .cross {
+      color: var(--gray-400);
+    }
+
+    .comparison-table .highlight-col {
+      background: rgba(255,112,217,0.05);
+    }
+
+    /* ========================================
+       APP CARDS
+       ======================================== */
+    .app-card {
+      background: white;
+      border: 1px solid var(--gray-200);
+      border-radius: 16px;
+      padding: 28px;
+      margin: 28px 0;
+      transition: border-color 0.2s;
+    }
+
+    .app-card:hover {
+      border-color: var(--gray-300);
+    }
+
+    .app-card-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .app-card-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 12px;
+      background: var(--gray-100);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .app-card-icon img {
+      width: 100%;
+      height: 100%;
+      border-radius: 12px;
+      object-fit: cover;
+    }
+
+    .app-card-title {
+      flex: 1;
+    }
+
+    .app-card-title h3 {
+      margin: 0 0 4px 0;
+      font-size: 1.2rem;
+      color: var(--purple);
+    }
+
+    .app-card-meta {
+      font-size: 0.85rem;
+      color: var(--gray-500);
+    }
+
+    .app-card-meta a {
+      color: var(--gray-500);
+      text-decoration: none;
+    }
+
+    .app-card-meta a:hover {
+      color: var(--pink);
+    }
+
+    .app-card-badge {
+      background: rgba(255,112,217,0.1);
+      color: var(--pink);
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    .app-card-image {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid var(--gray-200);
+      margin: 16px 0;
+    }
+
+    .app-card-description {
+      color: var(--gray-700);
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+
+    .app-card-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .feature-tag {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      color: var(--gray-600);
+    }
+
+    .feature-tag.highlight {
+      background: rgba(255,112,217,0.1);
+      border-color: rgba(255,112,217,0.2);
+      color: var(--pink);
+      font-weight: 500;
+    }
+
+    .feature-tag.negative {
+      background: #fef2f2;
+      border-color: #fecaca;
+      color: #dc2626;
+    }
+
+    /* ========================================
+       WONTSY CARD (Featured/Our pick)
+       ======================================== */
+    .app-card.featured {
+      border: 2px solid transparent;
+      background: linear-gradient(white, white) padding-box,
+                  var(--gradient) border-box;
+      position: relative;
+    }
+
+    .app-card.featured::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--gradient);
+      border-radius: 14px 14px 0 0;
+    }
+
+    /* ========================================
+       STEP LIST
+       ======================================== */
+    .step-list {
+      counter-reset: step;
+      list-style: none;
+      padding: 0;
+      margin: 24px 0;
+    }
+
+    .step-list li {
+      counter-increment: step;
+      display: flex;
+      gap: 16px;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--gray-100);
+    }
+
+    .step-list li:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .step-list li::before {
+      content: counter(step);
+      width: 32px;
+      height: 32px;
+      background: var(--gradient);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+
+    .step-list .step-content h4 {
+      margin: 0 0 4px 0;
+      font-size: 1rem;
+      color: var(--gray-900);
+    }
+
+    .step-list .step-content p {
+      margin: 0;
+      color: var(--gray-600);
+      font-size: 0.95rem;
+    }
+
+    /* ========================================
+       CTA SECTION
+       ======================================== */
+    .cta-section {
+      text-align: center;
+      margin: 48px 0;
+      padding: 32px;
+      background: linear-gradient(135deg, rgba(255,112,217,0.06) 0%, rgba(110,193,228,0.06) 100%);
+      border-radius: 16px;
+    }
+
+    .cta-section p {
+      color: var(--gray-600);
+      margin-bottom: 20px;
+      font-size: 1.05rem;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background: var(--gradient);
+      color: white;
+      padding: 16px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .cta-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 30px rgba(255, 112, 217, 0.4);
+      text-decoration: none;
+      color: white;
+    }
+
+    /* ========================================
+       FAQ SECTION
+       ======================================== */
+    .faq-section {
+      margin-top: 48px;
+      padding-top: 40px;
+      border-top: 1px solid var(--gray-200);
+    }
+
+    .faq-section h2 {
+      margin-bottom: 24px;
+    }
+
+    .faq-item {
+      margin-bottom: 24px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--gray-100);
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+
+    .faq-item h3 {
+      font-size: 1.05rem;
+      color: var(--gray-900);
+      margin: 0 0 8px 0;
+      font-weight: 600;
+    }
+
+    .faq-item p {
+      margin: 0;
+      color: var(--gray-600);
+    }
+
+    /* ========================================
+       RELATED POSTS
+       ======================================== */
+    .related-posts {
+      margin-top: 48px;
+      padding-top: 40px;
+      border-top: 1px solid var(--gray-200);
+    }
+
+    .related-posts h2 {
+      text-align: center;
+      margin-bottom: 24px;
+      font-size: 1.25rem;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    @media (max-width: 500px) {
+      .related-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .related-card {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: 12px;
+      padding: 20px;
+      text-decoration: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .related-card:hover {
+      border-color: var(--pink);
+      box-shadow: 0 4px 12px rgba(255, 112, 217, 0.1);
+      text-decoration: none;
+    }
+
+    .related-card h3 {
+      font-size: 1rem;
+      color: var(--purple);
+      margin: 0 0 6px;
+      font-weight: 600;
+    }
+
+    .related-card p {
+      font-size: 0.85rem;
+      color: var(--gray-500);
+      margin: 0;
+    }
+
+    /* ========================================
+       FOOTER
+       ======================================== */
+    footer {
+      background: white;
+      border-top: 1px solid var(--gray-200);
+      padding: 30px 0;
+      text-align: center;
+    }
+
+    .footer-copy {
+      font-size: 0.85rem;
+      color: var(--gray-500);
+    }
+
+    .footer-copy a {
+      color: var(--pink);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- ========================================
+       HEADER
+       ======================================== -->
+  <header>
+    <div class="header-inner">
+      <a href="/" class="logo">
+        Wonts<img src="/mainavatar.png" alt="">y
+      </a>
+      <a href="/signup" class="header-cta">Get Started Free</a>
+    </div>
+  </header>
+
+  <div class="container">
+    <article>
+      <!-- ========================================
+           ARTICLE HEADER
+           ======================================== -->
+      <div class="article-header">
+        <span class="article-tag">[Category]</span>
+        <h1>[Article Title Goes Here – Keep Under 60 Characters]</h1>
+        <p class="article-meta">Updated [Month Year] · [X] min read</p>
+
+        <!-- Hero Image -->
+        <div class="hero-image">
+          <!-- Replace with actual image or use placeholder -->
+          <div class="image-placeholder">
+            <span class="placeholder-icon">📸</span>
+            <span class="placeholder-text">Hero image: [description of what image should show]</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="article-content">
+        <!-- ========================================
+             QUICK ANSWER BOX (Optional - for "best of" posts)
+             ======================================== -->
+        <div class="quick-answer">
+          <div class="quick-answer-header">
+            ⚡ Quick Answer
+          </div>
+          <p>[2-3 sentence summary answering the main question the article addresses]</p>
+          <ul class="quick-answer-list">
+            <li><strong>For [use case]:</strong> [App name]</li>
+            <li><strong>For [use case]:</strong> [App name]</li>
+            <li><strong>For fashion:</strong> Wontsy</li>
+          </ul>
+        </div>
+
+        <!-- ========================================
+             TABLE OF CONTENTS
+             ======================================== -->
+        <nav class="toc">
+          <div class="toc-header">In this article</div>
+          <ul>
+            <li><a href="#section-1">[Section 1 title]</a></li>
+            <li><a href="#section-2">[Section 2 title]</a></li>
+            <li><a href="#section-3">[Section 3 title]</a></li>
+            <li><a href="#section-4">[Section 4 title]</a></li>
+            <li><a href="#section-5">[Section 5 title]</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </nav>
+
+        <!-- ========================================
+             INTRODUCTION
+             ======================================== -->
+        <p><strong>[Opening hook – address the reader's problem or question directly.]</strong> [Continue with 1-2 more sentences setting up the article.]</p>
+
+        <p>[Second paragraph – what they'll learn in this article. Keep it brief.]</p>
+
+        <!-- ========================================
+             SECTION 1
+             ======================================== -->
+        <h2 id="section-1">[Section 1 Title]</h2>
+
+        <p>[Content for section 1...]</p>
+
+        <!-- Image after section intro -->
+        <div class="image-placeholder">
+          <span class="placeholder-icon">📊</span>
+          <span class="placeholder-text">Image: [description]</span>
+        </div>
+
+        <p>[More content...]</p>
+
+        <!-- Use highlight box for key points -->
+        <div class="highlight-box">
+          <p>[Key takeaway or important note that readers shouldn't miss]</p>
+        </div>
+
+        <!-- ========================================
+             SECTION 2 - COMPARISON TABLE EXAMPLE
+             ======================================== -->
+        <h2 id="section-2">[Section 2 Title – Comparison]</h2>
+
+        <p>[Intro to comparison...]</p>
+
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>App A</th>
+                <th>App B</th>
+                <th class="highlight-col">Wontsy</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Universal saving</td>
+                <td class="check">✓</td>
+                <td class="check">✓</td>
+                <td class="highlight-col check">✓</td>
+              </tr>
+              <tr>
+                <td>Outfit builder</td>
+                <td class="cross">–</td>
+                <td class="cross">–</td>
+                <td class="highlight-col check">✓</td>
+              </tr>
+              <tr>
+                <td>Price tracking</td>
+                <td class="check">✓</td>
+                <td class="cross">–</td>
+                <td class="highlight-col check">✓</td>
+              </tr>
+              <tr>
+                <td>Pinterest sharing</td>
+                <td class="cross">–</td>
+                <td class="cross">–</td>
+                <td class="highlight-col check">✓</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- ========================================
+             SECTION 3 - APP CARDS EXAMPLE
+             ======================================== -->
+        <h2 id="section-3">[Section 3 Title – Individual Reviews]</h2>
+
+        <!-- Regular app card -->
+        <div class="app-card">
+          <div class="app-card-header">
+            <div class="app-card-icon">🌙</div>
+            <div class="app-card-title">
+              <h3>[App Name]</h3>
+              <p class="app-card-meta">4.9/5 · <a href="https://example.com" target="_blank" rel="noopener">website.com</a></p>
+            </div>
+          </div>
+
+          <!-- App screenshot placeholder -->
+          <div class="image-placeholder" style="padding: 40px 20px;">
+            <span class="placeholder-icon">🖼️</span>
+            <span class="placeholder-text">Screenshot: [App name] interface</span>
+          </div>
+
+          <p class="app-card-description">[2-3 sentence description of the app. What it does, who it's for, what makes it notable.]</p>
+
+          <div class="app-card-features">
+            <span class="feature-tag">Feature 1</span>
+            <span class="feature-tag">Feature 2</span>
+            <span class="feature-tag">Feature 3</span>
+          </div>
+        </div>
+
+        <!-- Featured app card (Wontsy) -->
+        <div class="app-card featured">
+          <div class="app-card-header">
+            <div class="app-card-icon">
+              <img src="/mainavatar.png" alt="Wontsy">
+            </div>
+            <div class="app-card-title">
+              <h3>Wontsy</h3>
+              <p class="app-card-meta">Chrome, Safari, iOS, Android · <a href="/">wontsy.com</a></p>
+            </div>
+            <span class="app-card-badge">Fashion-focused</span>
+          </div>
+
+          <div class="image-placeholder" style="padding: 40px 20px;">
+            <span class="placeholder-icon">👗</span>
+            <span class="placeholder-text">Screenshot: Wontsy outfit builder feature</span>
+          </div>
+
+          <p class="app-card-description">Full disclosure: this is us. [Honest explanation of what makes Wontsy different – focus on outfit builder and fashion use case. Don't oversell.]</p>
+
+          <div class="app-card-features">
+            <span class="feature-tag highlight">Outfit builder</span>
+            <span class="feature-tag highlight">Fashion-focused</span>
+            <span class="feature-tag">Pinterest sharing</span>
+            <span class="feature-tag">Price alerts</span>
+            <span class="feature-tag">Universal saving</span>
+            <span class="feature-tag">Free</span>
+          </div>
+        </div>
+
+        <!-- ========================================
+             SECTION 4 - STEP LIST EXAMPLE
+             ======================================== -->
+        <h2 id="section-4">[Section 4 Title – How To]</h2>
+
+        <p>[Intro to steps...]</p>
+
+        <ol class="step-list">
+          <li>
+            <div class="step-content">
+              <h4>[Step 1 title]</h4>
+              <p>[Step 1 description]</p>
+            </div>
+          </li>
+          <li>
+            <div class="step-content">
+              <h4>[Step 2 title]</h4>
+              <p>[Step 2 description]</p>
+            </div>
+          </li>
+          <li>
+            <div class="step-content">
+              <h4>[Step 3 title]</h4>
+              <p>[Step 3 description]</p>
+            </div>
+          </li>
+        </ol>
+
+        <!-- ========================================
+             SECTION 5 - WRAP UP
+             ======================================== -->
+        <h2 id="section-5">[Section 5 Title – Summary/How to Choose]</h2>
+
+        <p>[Summarize the key points. Help reader decide based on their needs.]</p>
+
+        <ul>
+          <li><strong>For [use case A]:</strong> [Recommendation]</li>
+          <li><strong>For [use case B]:</strong> [Recommendation]</li>
+          <li><strong>For fashion and outfit planning:</strong> Wontsy lets you build looks from items across different stores before buying.</li>
+        </ul>
+
+        <!-- ========================================
+             CTA SECTION
+             ======================================== -->
+        <div class="cta-section">
+          <p>Shopping for fashion? Try the wishlist with outfit planning built in.</p>
+          <a href="/signup" class="cta-btn">Try Wontsy Free</a>
+        </div>
+
+        <!-- ========================================
+             FAQ SECTION
+             ======================================== -->
+        <div class="faq-section" id="faq">
+          <h2>Frequently Asked Questions</h2>
+
+          <div class="faq-item">
+            <h3>[Question 1]?</h3>
+            <p>[Answer 1 – keep it concise, 2-3 sentences max]</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>[Question 2]?</h3>
+            <p>[Answer 2]</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>[Question 3]?</h3>
+            <p>[Answer 3. Include internal link if relevant: <a href="/blog/related-post">related article</a>.]</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>[Question 4]?</h3>
+            <p>[Answer 4]</p>
+          </div>
+        </div>
+
+        <!-- ========================================
+             RELATED POSTS
+             ======================================== -->
+        <div class="related-posts">
+          <h2>Related Articles</h2>
+          <div class="related-grid">
+            <a href="/blog/[slug-1]" class="related-card">
+              <h3>[Related Article 1 Title]</h3>
+              <p>[Short description]</p>
+            </a>
+            <a href="/blog/[slug-2]" class="related-card">
+              <h3>[Related Article 2 Title]</h3>
+              <p>[Short description]</p>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </article>
+  </div>
+
+  <!-- ========================================
+       FOOTER
+       ======================================== -->
+  <footer>
+    <div class="container">
+      <p class="footer-copy">&copy; 2026 <a href="/">Wontsy</a>. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

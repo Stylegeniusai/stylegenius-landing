@@ -207,6 +207,13 @@ const blogPosts = [
     category: "Style Guide"
   },
   {
+    title: "What is the 3-3-3 Rule for Fashion?",
+    description: "How to create 27 outfits from just 9 pieces. The minimalist wardrobe formula explained.",
+    image: `${BLOG_IMAGE_BASE}/333-rule-hero.png`,
+    href: "/333-rule-fashion",
+    category: "Style Guide"
+  },
+  {
     title: "What to Wear to a Job Interview",
     description: "Professional outfit ideas for every industry and interview type.",
     image: `${BLOG_IMAGE_BASE}/interview-hero.png`,
@@ -261,6 +268,20 @@ const blogPosts = [
     description: "Master price tracking, sale alerts, and universal wishlists. Save money and never miss a deal.",
     image: `${BLOG_IMAGE_BASE}/smart-shopping-hero.png`,
     href: "/smart-shopping-tools",
+    category: "Shopping Tech"
+  },
+  {
+    title: "Carted Alternative – Best Apps After Carted Shutdown",
+    description: "Looking for a Carted alternative? Compare the best wishlist apps that replace Carted's features for saving clothes and tracking prices.",
+    image: `${BLOG_IMAGE_BASE}/carted-alternative-hero.png`,
+    href: "/carted-alternative",
+    category: "Shopping Tech"
+  },
+  {
+    title: "Best Wishlist Apps in 2026 – Find the Right One",
+    description: "Compare the best wishlist apps from universal wishlists to fashion-focused options with outfit building and price tracking.",
+    image: `${BLOG_IMAGE_BASE}/best-wishlist-apps-hero.png`,
+    href: "/best-wishlist-apps",
     category: "Shopping Tech"
   },
   {

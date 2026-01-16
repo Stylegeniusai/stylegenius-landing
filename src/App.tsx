@@ -67,6 +67,9 @@ import SmartShoppingTools from "./pages/SmartShoppingTools";
 import DoesThisSuitMe from "./pages/DoesThisSuitMe";
 import FutureOnlineShopping from "./pages/FutureOnlineShopping";
 import TryOnClothesOnline from "./pages/TryOnClothesOnline";
+import CartedAlternative from "./pages/CartedAlternative";
+import BestWishlistApps from "./pages/BestWishlistApps";
+import ThreeThreeThreeRuleFashion from "./pages/333RuleFashion";
 
 const queryClient = new QueryClient();
 
@@ -133,6 +136,9 @@ const App = () => (
           <Route path="/does-this-suit-me" element={<DoesThisSuitMe />} />
           <Route path="/future-online-shopping" element={<FutureOnlineShopping />} />
           <Route path="/try-on-clothes-online" element={<TryOnClothesOnline />} />
+          <Route path="/carted-alternative" element={<CartedAlternative />} />
+          <Route path="/best-wishlist-apps" element={<BestWishlistApps />} />
+          <Route path="/333-rule-fashion" element={<ThreeThreeThreeRuleFashion />} />
 
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
