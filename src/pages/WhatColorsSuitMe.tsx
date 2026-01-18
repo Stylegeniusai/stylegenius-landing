@@ -1,22 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import SEO from "../components/SEO";
-import { Button } from "../components/ui/button";
-import { getAppStoreUrl, getDownloadButtonText } from "../utils/deviceDetection";
 import { Link } from "react-router-dom";
-import ExtensionCTA from "../components/ExtensionCTA";
 
 const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog";
 
 const WhatColorsSuitMe = () => {
-  const [appStoreUrl, setAppStoreUrl] = useState('');
-  const [buttonText, setButtonText] = useState('📱 Download App');
-
-  useEffect(() => {
-    setAppStoreUrl(getAppStoreUrl());
-    setButtonText(getDownloadButtonText());
-  }, []);
   const skinToneGuides = [
     {
       name: "Fair & Porcelain Skin",
@@ -412,26 +402,24 @@ const WhatColorsSuitMe = () => {
               </div>
             </div>
 
-            {/* Final CTA */}
+            {/* Related Guides */}
             <div className="bg-white rounded-2xl p-8 shadow-xl">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Ready to Unlock Your Perfect Style?
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                Explore More Color Guides
               </h3>
-              <p className="text-lg text-gray-600 mb-6">
-                Get personalized color analysis, outfit suggestions, and smart shopping tips with StyleGenius!
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href={appStoreUrl} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
-                  <button 
-                    className="w-full sm:w-auto px-8 py-4 text-white font-semibold text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-                    style={{
-                      background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)'
-                    }}
-                  >
-                    {buttonText}
-                  </button>
-                </a>
-                <ExtensionCTA />
+              <div className="grid md:grid-cols-3 gap-4">
+                <Link to="/what-season-am-i" className="p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors">
+                  <h4 className="font-semibold text-gray-900 mb-1">What Season Am I?</h4>
+                  <p className="text-sm text-gray-600">Find your seasonal color palette</p>
+                </Link>
+                <Link to="/warm-vs-cool-undertones" className="p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors">
+                  <h4 className="font-semibold text-gray-900 mb-1">Warm vs Cool Undertones</h4>
+                  <p className="text-sm text-gray-600">Master the undertone basics</p>
+                </Link>
+                <Link to="/best-colors-for-pale-skin" className="p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors">
+                  <h4 className="font-semibold text-gray-900 mb-1">Colors for Pale Skin</h4>
+                  <p className="text-sm text-gray-600">The complete pale skin guide</p>
+                </Link>
               </div>
             </div>
           </div>

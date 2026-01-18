@@ -3,7 +3,6 @@ import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import SEO from "../components/SEO";
 import { Link } from "react-router-dom";
-import ExtensionCTA from "../components/ExtensionCTA";
 
 const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog";
 
@@ -320,45 +319,34 @@ const CapsuleWardrobe = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Tools Section */}
       <section className="py-16 bg-gradient-to-br from-purple-50 to-pink-50">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Build Your Perfect Capsule Wardrobe
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">
+              Apps to Help Build Your Capsule Wardrobe
             </h2>
-            <p className="text-xl text-gray-600 mb-8">
-              StyleGenius helps you find pieces that work for your body type and skin tone - so every purchase is a smart investment.
+            <p className="text-gray-600 text-center mb-8">
+              These tools make it easier to plan outfits, track what you want, and build a wardrobe you love.
             </p>
 
-            <div className="bg-white rounded-2xl p-8 shadow-xl mb-8">
-              <div className="grid md:grid-cols-3 gap-6 text-left">
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-pink-100 to-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl">🎨</span>
-                  </div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Color Match</h4>
-                  <p className="text-sm text-gray-600">Find colors that work with your palette</p>
-                </div>
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-pink-100 to-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl">👗</span>
-                  </div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Virtual Try-On</h4>
-                  <p className="text-sm text-gray-600">Try before you buy</p>
-                </div>
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-pink-100 to-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl">💰</span>
-                  </div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Price Tracking</h4>
-                  <p className="text-sm text-gray-600">Get alerts when capsule essentials go on sale</p>
-                </div>
-              </div>
+            <div className="grid md:grid-cols-3 gap-6">
+              <a href="https://wontsy.com" target="_blank" rel="noopener noreferrer" className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                <h3 className="font-bold text-gray-900 mb-2">Wontsy</h3>
+                <p className="text-sm text-gray-600 mb-3">Save items from any store, build outfit looks, and track prices. Great for planning capsule purchases across different shops.</p>
+                <span className="text-pink-500 text-sm font-medium">Free · iOS, Android, Chrome, Safari</span>
+              </a>
+              <a href="https://www.cladwell.com" target="_blank" rel="noopener noreferrer" className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                <h3 className="font-bold text-gray-900 mb-2">Cladwell</h3>
+                <p className="text-sm text-gray-600 mb-3">Daily outfit suggestions based on your existing wardrobe. Helps you see what you already have and what gaps to fill.</p>
+                <span className="text-pink-500 text-sm font-medium">Free + Premium · iOS, Android</span>
+              </a>
+              <a href="https://whering.co.uk" target="_blank" rel="noopener noreferrer" className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                <h3 className="font-bold text-gray-900 mb-2">Whering</h3>
+                <p className="text-sm text-gray-600 mb-3">Digital wardrobe app that helps you catalog what you own and create outfit combinations from your closet.</p>
+                <span className="text-pink-500 text-sm font-medium">Free · iOS, Android</span>
+              </a>
             </div>
-
-            <ExtensionCTA />
-            <p className="text-sm text-gray-500 mt-4">Works on Zara, H&M, ASOS, and 1000+ more stores</p>
           </div>
         </div>
       </section>

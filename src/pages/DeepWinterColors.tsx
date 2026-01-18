@@ -3,7 +3,6 @@ import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import SEO from "../components/SEO";
 import { Link } from "react-router-dom";
-import ExtensionCTA from "../components/ExtensionCTA";
 
 const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog";
 
@@ -217,19 +216,6 @@ const DeepWinterColors = () => {
               <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-indigo-600">Build a Capsule Wardrobe</h3>
               <p className="text-gray-600 text-sm">Create a versatile wardrobe with your Deep Winter colors.</p>
             </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-br from-indigo-900 to-purple-900">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Shop Your Deep Winter Colors</h2>
-            <p className="text-xl text-gray-200 mb-8">
-              StyleGenius shows you which clothes match your Deep Winter coloring as you shop online!
-            </p>
-            <ExtensionCTA />
           </div>
         </div>
       </section>

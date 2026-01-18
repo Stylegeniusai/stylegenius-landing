@@ -3,7 +3,6 @@ import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import SEO from "../components/SEO";
 import { Link } from "react-router-dom";
-import ExtensionCTA from "../components/ExtensionCTA";
 
 const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog";
 
@@ -341,45 +340,34 @@ const OldMoneyAesthetic = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Tools Section */}
       <section className="py-16 bg-gradient-to-br from-stone-100 to-neutral-100">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Build Your Old Money Wardrobe
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">
+              Tools for Building an Old Money Wardrobe
             </h2>
-            <p className="text-xl text-gray-600 mb-8">
-              StyleGenius helps you find timeless pieces that match the old money aesthetic - quality basics that suit your body type and skin tone.
+            <p className="text-gray-600 text-center mb-8">
+              Curate timeless pieces, track investment buys, and build a wardrobe that whispers quiet wealth.
             </p>
 
-            <div className="bg-white rounded-2xl p-8 shadow-xl mb-8">
-              <div className="grid md:grid-cols-3 gap-6 text-left">
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-stone-100 to-neutral-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl">🎨</span>
-                  </div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Color Match</h4>
-                  <p className="text-sm text-gray-600">Find neutral tones that flatter you</p>
-                </div>
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-stone-100 to-neutral-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl">👗</span>
-                  </div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Virtual Try-On</h4>
-                  <p className="text-sm text-gray-600">Try classic pieces before investing</p>
-                </div>
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-stone-100 to-neutral-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl">💰</span>
-                  </div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Price Tracking</h4>
-                  <p className="text-sm text-gray-600">Get alerts when quality pieces go on sale</p>
-                </div>
-              </div>
+            <div className="grid md:grid-cols-3 gap-6">
+              <a href="https://wontsy.com" target="_blank" rel="noopener noreferrer" className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                <h3 className="font-bold text-gray-900 mb-2">Wontsy</h3>
+                <p className="text-sm text-gray-600 mb-3">Save classic pieces from any store. Build sophisticated outfit combinations and track prices on quality investment pieces.</p>
+                <span className="text-stone-500 text-sm font-medium">Free · iOS, Android, Chrome, Safari</span>
+              </a>
+              <a href="https://www.therealreal.com" target="_blank" rel="noopener noreferrer" className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                <h3 className="font-bold text-gray-900 mb-2">The RealReal</h3>
+                <p className="text-sm text-gray-600 mb-3">Authenticated luxury consignment. Find timeless designer pieces at better prices - the old money way to shop quality.</p>
+                <span className="text-stone-500 text-sm font-medium">Consignment · iOS, Android, Web</span>
+              </a>
+              <a href="https://www.cladwell.com" target="_blank" rel="noopener noreferrer" className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                <h3 className="font-bold text-gray-900 mb-2">Cladwell</h3>
+                <p className="text-sm text-gray-600 mb-3">Daily outfit suggestions from your wardrobe. Helps maximize your classic pieces and identify what's missing.</p>
+                <span className="text-stone-500 text-sm font-medium">Free + Premium · iOS, Android</span>
+              </a>
             </div>
-
-            <ExtensionCTA />
-            <p className="text-sm text-gray-500 mt-4">Works on Zara, H&M, ASOS, and 1000+ more stores</p>
           </div>
         </div>
       </section>

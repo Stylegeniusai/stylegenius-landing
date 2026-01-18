@@ -3,7 +3,6 @@ import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import SEO from "../components/SEO";
 import { Link } from "react-router-dom";
-import ExtensionCTA from "../components/ExtensionCTA";
 
 const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog";
 
@@ -678,45 +677,34 @@ const CoquetteAesthetic = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Tools Section */}
       <section className="py-16 bg-gradient-to-br from-pink-50 to-rose-100">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Shop the Coquette Aesthetic
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">
+              Tools for Shopping the Coquette Aesthetic
             </h2>
-            <p className="text-xl text-gray-600 mb-8">
-              StyleGenius helps you find pieces that match the coquette vibe and flatter your unique body type and skin tone!
+            <p className="text-gray-600 text-center mb-8">
+              Save your favorite feminine pieces, create outfit mood boards, and track prices on those dreamy coquette finds.
             </p>
 
-            <div className="bg-white rounded-2xl p-8 shadow-xl mb-8">
-              <div className="grid md:grid-cols-3 gap-6">
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-pink-100 to-rose-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl">🎨</span>
-                  </div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Color Match</h4>
-                  <p className="text-sm text-gray-600">Find the perfect shades of pink for you</p>
-                </div>
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-pink-100 to-rose-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl">👗</span>
-                  </div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Virtual Try-On</h4>
-                  <p className="text-sm text-gray-600">See how coquette pieces look on you</p>
-                </div>
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-pink-100 to-rose-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl">💰</span>
-                  </div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Price Tracking</h4>
-                  <p className="text-sm text-gray-600">Get alerts when pretty pieces go on sale</p>
-                </div>
-              </div>
+            <div className="grid md:grid-cols-3 gap-6">
+              <a href="https://wontsy.com" target="_blank" rel="noopener noreferrer" className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                <h3 className="font-bold text-gray-900 mb-2">Wontsy</h3>
+                <p className="text-sm text-gray-600 mb-3">Save coquette pieces from any store. Build romantic outfit looks and get alerts when prices drop on those ribbon tops and ballet flats.</p>
+                <span className="text-pink-500 text-sm font-medium">Free · iOS, Android, Chrome, Safari</span>
+              </a>
+              <a href="https://www.pinterest.com" target="_blank" rel="noopener noreferrer" className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                <h3 className="font-bold text-gray-900 mb-2">Pinterest</h3>
+                <p className="text-sm text-gray-600 mb-3">The ultimate coquette inspo source. Create boards for bows, lace, and all things feminine and romantic.</p>
+                <span className="text-pink-500 text-sm font-medium">Free · iOS, Android, Web</span>
+              </a>
+              <a href="https://www.shoplook.io" target="_blank" rel="noopener noreferrer" className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                <h3 className="font-bold text-gray-900 mb-2">ShopLook</h3>
+                <p className="text-sm text-gray-600 mb-3">Create coquette outfit collages mixing pieces from different stores. Perfect for visualizing your aesthetic.</p>
+                <span className="text-pink-500 text-sm font-medium">Free · Web</span>
+              </a>
             </div>
-
-            <ExtensionCTA />
-            <p className="text-sm text-gray-500 mt-4">Works on Shein, H&M, ASOS, Urban Outfitters, and 1000+ more stores</p>
           </div>
         </div>
       </section>

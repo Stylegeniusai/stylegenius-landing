@@ -3,7 +3,6 @@ import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import SEO from "../components/SEO";
 import { Link } from "react-router-dom";
-import ExtensionCTA from "../components/ExtensionCTA";
 
 const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog";
 
@@ -332,49 +331,6 @@ const DarkWinterColors = () => {
               <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-purple-600">Build a Capsule Wardrobe</h3>
               <p className="text-gray-600 text-sm">Create a versatile wardrobe with your Dark Winter colors.</p>
             </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-br from-purple-900 to-blue-900">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Shop Your Dark Winter Colors Effortlessly
-            </h2>
-            <p className="text-xl text-gray-200 mb-8">
-              StyleGenius shows you instantly if a color matches your Dark Winter palette while you browse any online store!
-            </p>
-
-            <div className="bg-white rounded-2xl p-8 shadow-xl mb-8">
-              <div className="grid md:grid-cols-3 gap-6 text-left">
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-purple-100 to-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl">🎨</span>
-                  </div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Color Match</h4>
-                  <p className="text-sm text-gray-600">Instantly see if colors suit your Dark Winter palette</p>
-                </div>
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-purple-100 to-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl">👗</span>
-                  </div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Virtual Try-On</h4>
-                  <p className="text-sm text-gray-600">Try clothes virtually and share with friends</p>
-                </div>
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-purple-100 to-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl">💰</span>
-                  </div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Price Tracking</h4>
-                  <p className="text-sm text-gray-600">Save to wishlist and track price drops</p>
-                </div>
-              </div>
-            </div>
-
-            <ExtensionCTA />
-            <p className="text-sm text-gray-300 mt-4">Works on Zara, H&M, ASOS, and 1000+ more stores</p>
           </div>
         </div>
       </section>

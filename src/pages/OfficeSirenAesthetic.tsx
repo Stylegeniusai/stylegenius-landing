@@ -3,7 +3,6 @@ import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import SEO from "../components/SEO";
 import { Link } from "react-router-dom";
-import ExtensionCTA from "../components/ExtensionCTA";
 
 const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog";
 
@@ -605,48 +604,34 @@ const OfficeSirenAesthetic = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Tools Section */}
       <section className="py-16 bg-gradient-to-br from-gray-100 to-stone-100">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Build Your Office Siren Wardrobe
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">
+              Tools for Building Your Office Siren Wardrobe
             </h2>
-            <p className="text-xl text-gray-600 mb-8">
-              StyleGenius helps you find perfectly fitted pieces that flatter your body type and match your skin tone - essential for nailing the office siren look.
+            <p className="text-gray-600 text-center mb-8">
+              Curate powerful workwear pieces, plan your office outfits, and track prices on those perfect blazers and pencil skirts.
             </p>
 
-            <div className="bg-white rounded-2xl p-8 shadow-xl mb-8">
-              <div className="grid md:grid-cols-3 gap-6">
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-gray-100 to-stone-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl">🎨</span>
-                  </div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Color Analysis</h4>
-                  <p className="text-sm text-gray-600">Find your perfect neutral shades</p>
-                </div>
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-gray-100 to-stone-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl">👗</span>
-                  </div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Virtual Try-On</h4>
-                  <p className="text-sm text-gray-600">See how pieces fit before buying</p>
-                </div>
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-gray-100 to-stone-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl">💰</span>
-                  </div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Price Tracking</h4>
-                  <p className="text-sm text-gray-600">Get alerts when blazers go on sale</p>
-                </div>
-              </div>
+            <div className="grid md:grid-cols-3 gap-6">
+              <a href="https://wontsy.com" target="_blank" rel="noopener noreferrer" className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                <h3 className="font-bold text-gray-900 mb-2">Wontsy</h3>
+                <p className="text-sm text-gray-600 mb-3">Save office siren pieces from any store. Build powerful outfit combinations and track prices on blazers, heels, and tailored pieces.</p>
+                <span className="text-gray-500 text-sm font-medium">Free · iOS, Android, Chrome, Safari</span>
+              </a>
+              <a href="https://www.reiss.com" target="_blank" rel="noopener noreferrer" className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                <h3 className="font-bold text-gray-900 mb-2">Reiss</h3>
+                <p className="text-sm text-gray-600 mb-3">Premium workwear brand perfect for the office siren aesthetic. Sharp tailoring and sophisticated silhouettes.</p>
+                <span className="text-gray-500 text-sm font-medium">Premium · Womenswear</span>
+              </a>
+              <a href="https://www.massimodutti.com" target="_blank" rel="noopener noreferrer" className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                <h3 className="font-bold text-gray-900 mb-2">Massimo Dutti</h3>
+                <p className="text-sm text-gray-600 mb-3">Timeless professional pieces with excellent quality. Great for building a polished office wardrobe that commands attention.</p>
+                <span className="text-gray-500 text-sm font-medium">Mid-range · Womenswear</span>
+              </a>
             </div>
-
-            <ExtensionCTA
-              className="px-8 py-4 text-white font-semibold text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-              style={{ background: 'linear-gradient(45deg, #4A5568, #1A202C)' }}
-            />
-            <p className="text-sm text-gray-500 mt-4">Works on Zara, H&M, ASOS, Reiss, and 1000+ more stores</p>
           </div>
         </div>
       </section>

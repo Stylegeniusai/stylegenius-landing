@@ -126,7 +126,6 @@ const StyleAnalysis = () => {
             <img src="/mainavatar.png" alt="StyleGenius" />
             <span>StyleGenius</span>
           </a>
-          <ExtensionCTA className="header-cta" />
         </div>
       </header>
 
@@ -240,10 +239,6 @@ const StyleAnalysis = () => {
             </div>
           </div>
 
-          <div className="hero-cta-section">
-            <ExtensionCTA className="hero-cta" />
-            <p className="cta-note">Find out which colors look best on you.</p>
-          </div>
         </div>
       </section>
 

@@ -1,25 +1,33 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import Logo from "./Logo";
+import { Link, useLocation } from "react-router-dom";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
   const menuItems = [
-    { name: "Home", href: "/" },
-    { name: "Blog", href: "/blog" },
-    { name: "Browser Extension", href: "/extension" },
-    { name: "Download App", href: "https://apps.apple.com/app/id6747178892", external: true }
+    { name: "Color", href: "/color" },
+    { name: "Body", href: "/body" },
+    { name: "Style", href: "/style" },
+    { name: "Shopping", href: "/shopping" },
+    { name: "About", href: "/about" }
   ];
+
+  const isActive = (href: string) => {
+    if (href === "/") return location.pathname === "/";
+    return location.pathname.startsWith(href);
+  };
 
   return (
     <>
       {/* Navigation Bar */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
@@ -28,15 +36,17 @@ const Navigation = () => {
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center space-x-8">
               {menuItems.map((item) => (
-                <a
+                <Link
                   key={item.name}
-                  href={item.href}
-                  target={item.external ? "_blank" : undefined}
-                  rel={item.external ? "noopener noreferrer" : undefined}
-                  className="text-gray-700 hover:text-pink-600 font-medium transition-colors duration-200"
+                  to={item.href}
+                  className={`text-sm uppercase tracking-wider transition-colors duration-200 ${
+                    isActive(item.href)
+                      ? "text-black"
+                      : "text-gray-500 hover:text-black"
+                  }`}
                 >
                   {item.name}
-                </a>
+                </Link>
               ))}
             </div>
 
@@ -55,25 +65,27 @@ const Navigation = () => {
       {isOpen && (
         <div className="fixed inset-0 z-40 md:hidden">
           {/* Backdrop */}
-          <div 
-            className="fixed inset-0 bg-black/50 backdrop-blur-sm"
+          <div
+            className="fixed inset-0 bg-black/30"
             onClick={toggleMenu}
           />
-          
+
           {/* Menu Panel */}
           <div className="fixed top-16 left-0 right-0 bg-white border-b border-gray-200 shadow-lg">
-            <div className="px-4 py-6 space-y-4">
+            <div className="px-4 py-6 space-y-1">
               {menuItems.map((item) => (
-                <a
+                <Link
                   key={item.name}
-                  href={item.href}
-                  target={item.external ? "_blank" : undefined}
-                  rel={item.external ? "noopener noreferrer" : undefined}
-                  className="block py-3 px-4 text-lg font-medium text-gray-700 hover:bg-pink-50 hover:text-pink-600 rounded-lg transition-colors duration-200"
+                  to={item.href}
+                  className={`block py-3 px-4 text-sm uppercase tracking-wider transition-colors duration-200 ${
+                    isActive(item.href)
+                      ? "text-black"
+                      : "text-gray-500 hover:text-black"
+                  }`}
                   onClick={toggleMenu}
                 >
                   {item.name}
-                </a>
+                </Link>
               ))}
             </div>
           </div>

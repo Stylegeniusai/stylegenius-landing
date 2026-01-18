@@ -3,7 +3,6 @@ import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import SEO from "../components/SEO";
 import { Link } from "react-router-dom";
-import ExtensionCTA from "../components/ExtensionCTA";
 
 const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog";
 
@@ -301,46 +300,27 @@ const WhatSeasonAmI = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Related Guides */}
       <section className="py-16 bg-gradient-to-br from-purple-50 to-pink-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              See Your Best Colors While You Shop
+            <h2 className="text-3xl font-bold text-gray-900 mb-8">
+              Continue Your Color Journey
             </h2>
-            <p className="text-xl text-gray-600 mb-8">
-              Stop guessing if colors suit you. StyleGenius analyzes colors in real-time while you browse your favorite stores and tells you instantly if they match your skin tone.
-            </p>
-
-            <div className="bg-white rounded-2xl p-8 shadow-xl mb-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">How StyleGenius Helps You Shop Smarter</h3>
-              <div className="grid md:grid-cols-3 gap-6 text-left">
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-pink-100 to-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl">🎨</span>
-                  </div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Skin Tone Match</h4>
-                  <p className="text-sm text-gray-600">Instantly see if a color flatters your unique skin tone while browsing any online store</p>
-                </div>
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-pink-100 to-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl">👗</span>
-                  </div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Virtual Try-On</h4>
-                  <p className="text-sm text-gray-600">Try clothes on virtually before buying - like having a fitting room in your browser</p>
-                </div>
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-pink-100 to-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl">💰</span>
-                  </div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Universal Wishlist</h4>
-                  <p className="text-sm text-gray-600">Save items from ANY store in one place and get alerts when prices drop</p>
-                </div>
-              </div>
+            <div className="grid md:grid-cols-3 gap-6">
+              <Link to="/warm-vs-cool-undertones" className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+                <h3 className="font-semibold text-gray-900 mb-2">Warm vs Cool Undertones</h3>
+                <p className="text-sm text-gray-600">Learn how to identify your undertone with simple tests</p>
+              </Link>
+              <Link to="/soft-summer-colors" className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+                <h3 className="font-semibold text-gray-900 mb-2">Soft Summer Colors</h3>
+                <p className="text-sm text-gray-600">The complete palette guide for Soft Summers</p>
+              </Link>
+              <Link to="/true-autumn-colors" className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+                <h3 className="font-semibold text-gray-900 mb-2">True Autumn Colors</h3>
+                <p className="text-sm text-gray-600">Discover the rich, warm palette for Autumns</p>
+              </Link>
             </div>
-
-            <ExtensionCTA />
-            <p className="text-sm text-gray-500 mt-4">Works on all your favorite shopping sites</p>
           </div>
         </div>
       </section>

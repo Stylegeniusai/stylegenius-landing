@@ -3,7 +3,6 @@ import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import SEO from "../components/SEO";
 import { Link } from "react-router-dom";
-import ExtensionCTA from "../components/ExtensionCTA";
 
 const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog";
 
@@ -804,22 +803,6 @@ const BestColorsForDarkSkin = () => {
                 <h3 className="font-bold text-gray-900 mb-3">Consider the Occasion</h3>
                 <p className="text-gray-600">Use harmony colors for everyday elegance. Save contrasting colors for when you want to make a statement.</p>
               </div>
-            </div>
-          </section>
-
-          {/* CTA Section */}
-          <section className="mb-16">
-            <div className="bg-gray-900 rounded-2xl p-8 text-center">
-              <h2 className="text-3xl font-bold text-white mb-4">Find Your Perfect Colors Instantly</h2>
-              <p className="text-xl text-gray-300 mb-8">
-                StyleGenius analyzes your skin tone and tells you if colors suit you - while you shop. No guessing, no bad buys.
-              </p>
-              <ExtensionCTA
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-pink-500 to-purple-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-xl transition-all"
-              />
-              <p className="text-gray-500 text-sm mt-4">
-                Free Chrome & Safari extension. Works on 1500+ stores.
-              </p>
             </div>
           </section>
 

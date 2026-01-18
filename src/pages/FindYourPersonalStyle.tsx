@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import ExtensionCTA from "../components/ExtensionCTA";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import SEO from "../components/SEO";
@@ -752,52 +751,33 @@ const FindYourPersonalStyle = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Tools Section */}
       <section className="py-16 bg-gradient-to-br from-purple-50 to-pink-50">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Ready to Shop Your Personal Style?
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">
+              Helpful Shopping Tools
             </h2>
-            <p className="text-xl text-gray-600 mb-8">
-              StyleGenius helps you find pieces that match your body type, coloring, and personal aesthetic. Get personalized recommendations while you shop online.
+            <p className="text-gray-600 text-center mb-8">
+              Apps to help you discover and shop your personal style.
             </p>
-
-            <div className="bg-white rounded-2xl p-8 shadow-xl mb-8">
-              <div className="grid md:grid-cols-3 gap-6 text-left">
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-pink-100 to-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-pink-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                  </div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Style Analysis</h4>
-                  <p className="text-sm text-gray-600">Get personalized style recommendations based on your preferences</p>
-                </div>
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-pink-100 to-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-pink-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
-                    </svg>
-                  </div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Color Matching</h4>
-                  <p className="text-sm text-gray-600">Find colors that complement your skin tone and undertone</p>
-                </div>
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-pink-100 to-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-pink-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                    </svg>
-                  </div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Virtual Try-On</h4>
-                  <p className="text-sm text-gray-600">See how clothes look on you before you buy</p>
-                </div>
-              </div>
+            <div className="grid md:grid-cols-3 gap-6">
+              <a href="https://wontsy.com" target="_blank" rel="noopener noreferrer" className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                <h3 className="font-bold text-gray-900 mb-2">Wontsy</h3>
+                <p className="text-sm text-gray-600 mb-3">Save items from any store, build outfit mood boards, and track prices on pieces that match your style.</p>
+                <span className="text-pink-500 text-sm font-medium">Free · iOS, Android, Chrome, Safari</span>
+              </a>
+              <a href="https://www.pinterest.com" target="_blank" rel="noopener noreferrer" className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                <h3 className="font-bold text-gray-900 mb-2">Pinterest</h3>
+                <p className="text-sm text-gray-600 mb-3">Create style mood boards and discover outfit inspiration. Perfect for defining your personal aesthetic.</p>
+                <span className="text-pink-500 text-sm font-medium">Free · iOS, Android, Web</span>
+              </a>
+              <a href="https://www.shoplook.io" target="_blank" rel="noopener noreferrer" className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                <h3 className="font-bold text-gray-900 mb-2">ShopLook</h3>
+                <p className="text-sm text-gray-600 mb-3">Create outfit collages with pieces from different stores. Great for visualizing your style vision.</p>
+                <span className="text-pink-500 text-sm font-medium">Free · Web</span>
+              </a>
             </div>
-
-            <ExtensionCTA />
-            <p className="text-sm text-gray-500 mt-4">Works on Zara, H&M, ASOS, Nordstrom, and 1000+ more stores</p>
           </div>
         </div>
       </section>

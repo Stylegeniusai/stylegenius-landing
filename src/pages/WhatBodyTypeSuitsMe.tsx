@@ -1,20 +1,8 @@
-import React, { useState, useEffect } from "react";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import SEO from "../components/SEO";
-import { Button } from "../components/ui/button";
-import { getAppStoreUrl, getDownloadButtonText } from "../utils/deviceDetection";
-import { Link } from "react-router-dom";
-import ExtensionCTA from "../components/ExtensionCTA";
 
 const WhatBodyTypeSuitsMe = () => {
-  const [appStoreUrl, setAppStoreUrl] = useState('');
-  const [buttonText, setButtonText] = useState('📱 Download App');
-
-  useEffect(() => {
-    setAppStoreUrl(getAppStoreUrl());
-    setButtonText(getDownloadButtonText());
-  }, []);
   const bodyTypeGuides = [
     {
       name: "Pear Shape (A-Shape)",
@@ -376,26 +364,30 @@ const WhatBodyTypeSuitsMe = () => {
               </div>
             </div>
 
-            {/* Final CTA */}
+            {/* Tools Section */}
             <div className="bg-white rounded-2xl p-8 shadow-xl">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Ready to Find Your Perfect Style?
+                Helpful Shopping Tools
               </h3>
               <p className="text-lg text-gray-600 mb-6">
-                Get personalized outfit suggestions, body type analysis, and smart shopping tips with StyleGenius!
+                Apps to help you find clothes that flatter your body type.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href={appStoreUrl} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
-                  <button 
-                    className="w-full sm:w-auto px-8 py-4 text-white font-semibold text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-                    style={{
-                      background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)'
-                    }}
-                  >
-                    {buttonText}
-                  </button>
+              <div className="grid md:grid-cols-3 gap-6 text-left">
+                <a href="https://wontsy.com" target="_blank" rel="noopener noreferrer" className="bg-gray-50 rounded-xl p-4 hover:shadow-md transition-shadow">
+                  <h4 className="font-bold text-gray-900 mb-2">Wontsy</h4>
+                  <p className="text-sm text-gray-600 mb-2">Save flattering pieces from any store, build outfit looks, and track prices.</p>
+                  <span className="text-pink-500 text-sm font-medium">Free · iOS, Android, Chrome, Safari</span>
                 </a>
-                <ExtensionCTA />
+                <a href="https://www.pinterest.com" target="_blank" rel="noopener noreferrer" className="bg-gray-50 rounded-xl p-4 hover:shadow-md transition-shadow">
+                  <h4 className="font-bold text-gray-900 mb-2">Pinterest</h4>
+                  <p className="text-sm text-gray-600 mb-2">Find outfit inspiration for your body type. Create style boards.</p>
+                  <span className="text-pink-500 text-sm font-medium">Free · iOS, Android, Web</span>
+                </a>
+                <a href="https://www.cladwell.com" target="_blank" rel="noopener noreferrer" className="bg-gray-50 rounded-xl p-4 hover:shadow-md transition-shadow">
+                  <h4 className="font-bold text-gray-900 mb-2">Cladwell</h4>
+                  <p className="text-sm text-gray-600 mb-2">Get daily outfit suggestions from your existing wardrobe.</p>
+                  <span className="text-pink-500 text-sm font-medium">Subscription · iOS, Android</span>
+                </a>
               </div>
             </div>
           </div>

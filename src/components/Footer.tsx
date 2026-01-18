@@ -1,47 +1,60 @@
-import React from "react";
-import Logo from "./Logo";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-12">
+    <footer className="bg-white border-t border-gray-200 py-16">
       <div className="container mx-auto px-4">
-        <div className="text-center">
-          <h3 className="text-2xl font-bold mb-4">
-            <Logo variant="footer" />
-          </h3>
-          <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
-            Your personal styling and shopping assistant that elevates your style, confidence and life.
-          </p>
-          
-          <div className="flex flex-wrap justify-center gap-4 sm:gap-6 mb-8">
-            <a href="/blog" className="text-gray-400 hover:text-pink-400 transition-colors">
-              Blog
-            </a>
-            <a href="/privacy" className="text-gray-400 hover:text-white transition-colors">
-              Privacy Policy
-            </a>
-            <a href="/terms" className="text-gray-400 hover:text-white transition-colors">
-              Terms of Service
-            </a>
-            <a href="/cookies" className="text-gray-400 hover:text-white transition-colors">
-              Cookie Policy
-            </a>
-            <a href="/data-deletion" className="text-gray-400 hover:text-white transition-colors">
-              Data Deletion
-            </a>
-            <a href="/support" className="text-gray-400 hover:text-white transition-colors">
-              Support
-            </a>
-            <a href="mailto:ai@stylegenius.app" className="text-gray-400 hover:text-white transition-colors">
-              Contact Us
-            </a>
-          </div>
-          
-          <div className="border-t border-gray-800 pt-8">
-            <p className="text-gray-500">
-              © 2026 GoMotion AB. All rights reserved.
+        <div className="max-w-4xl mx-auto">
+          {/* Logo */}
+          <div className="text-center mb-12">
+            <Link
+              to="/"
+              className="text-2xl font-semibold text-gray-900"
+              style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+            >
+              StyleGenius
+            </Link>
+            <p className="text-gray-500 mt-3 text-sm">
+              Your complete guide to color, body type, and personal style.
             </p>
           </div>
+
+          {/* Links */}
+          <div className="flex flex-wrap justify-center gap-8 mb-12 text-sm">
+            <Link to="/color" className="text-gray-500 hover:text-black transition-colors">
+              Color Analysis
+            </Link>
+            <Link to="/body" className="text-gray-500 hover:text-black transition-colors">
+              Body Types
+            </Link>
+            <Link to="/style" className="text-gray-500 hover:text-black transition-colors">
+              Style & Aesthetics
+            </Link>
+            <Link to="/shopping" className="text-gray-500 hover:text-black transition-colors">
+              Smart Shopping
+            </Link>
+            <Link to="/about" className="text-gray-500 hover:text-black transition-colors">
+              About
+            </Link>
+          </div>
+
+          {/* Legal */}
+          <div className="flex flex-wrap justify-center gap-6 mb-8 text-xs text-gray-400">
+            <Link to="/privacy" className="hover:text-gray-600 transition-colors">
+              Privacy
+            </Link>
+            <Link to="/terms" className="hover:text-gray-600 transition-colors">
+              Terms
+            </Link>
+            <a href="mailto:ai@stylegenius.app" className="hover:text-gray-600 transition-colors">
+              Contact
+            </a>
+          </div>
+
+          {/* Copyright */}
+          <p className="text-center text-xs text-gray-400">
+            © 2026 GoMotion AB
+          </p>
         </div>
       </div>
     </footer>

@@ -4,7 +4,6 @@ import { TooltipProvider } from "./components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
-import ExtensionLanding from "./pages/ExtensionLanding";
 import VirtualTryOn from "./pages/VirtualTryOn";
 import PriceTracking from "./pages/PriceTracking";
 import StyleAnalysis from "./pages/StyleAnalysis";
@@ -21,6 +20,13 @@ import WhatColorsSuitMe from "./pages/WhatColorsSuitMe";
 import WhatBodyTypeSuitsMe from "./pages/WhatBodyTypeSuitsMe";
 import Blog from "./pages/Blog";
 import Download from "./pages/Download";
+
+// Category pages
+import ColorCategory from "./pages/ColorCategory";
+import BodyCategory from "./pages/BodyCategory";
+import StyleCategory from "./pages/StyleCategory";
+import ShoppingCategory from "./pages/ShoppingCategory";
+import About from "./pages/About";
 
 // Blog posts - Color Analysis
 import WhatSeasonAmI from "./pages/WhatSeasonAmI";
@@ -81,13 +87,21 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+
+          {/* Main category pages */}
+          <Route path="/color" element={<ColorCategory />} />
+          <Route path="/body" element={<BodyCategory />} />
+          <Route path="/style" element={<StyleCategory />} />
+          <Route path="/shopping" element={<ShoppingCategory />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/blog" element={<Blog />} />
+
+          {/* Legacy routes - kept for backwards compatibility */}
           <Route path="/download" element={<Download />} />
-          <Route path="/extension" element={<ExtensionLanding />} />
           <Route path="/virtual-try-on" element={<VirtualTryOn />} />
           <Route path="/price-tracking" element={<PriceTracking />} />
           <Route path="/style-analysis" element={<StyleAnalysis />} />
           <Route path="/app" element={<MobileApp />} />
-          <Route path="/blog" element={<Blog />} />
           <Route path="/what-colors-suit-me" element={<WhatColorsSuitMe />} />
           <Route path="/what-body-type-suits-me" element={<WhatBodyTypeSuitsMe />} />
 

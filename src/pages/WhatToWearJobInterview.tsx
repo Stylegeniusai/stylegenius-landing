@@ -3,7 +3,6 @@ import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import SEO from "../components/SEO";
 import { Link } from "react-router-dom";
-import ExtensionCTA from "../components/ExtensionCTA";
 
 const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog";
 
@@ -1033,45 +1032,33 @@ const WhatToWearJobInterview = () => {
         </div>
       </article>
 
-      {/* CTA Section */}
+      {/* Tools Section */}
       <section className="py-16 bg-gradient-to-br from-blue-50 to-gray-50">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Find Your Perfect Interview Outfit
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">
+              Helpful Shopping Tools
             </h2>
-            <p className="text-xl text-gray-600 mb-8">
-              StyleGenius helps you shop smarter by showing which colors suit your skin tone and how clothes will look on your body type. Never second-guess an interview outfit purchase again.
+            <p className="text-gray-600 text-center mb-8">
+              Apps to help you find and organize the perfect interview wardrobe.
             </p>
-
-            <div className="bg-white rounded-2xl p-8 shadow-xl mb-8">
-              <div className="grid md:grid-cols-3 gap-6">
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl">*</span>
-                  </div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Color Analysis</h4>
-                  <p className="text-sm text-gray-600">See which professional colors flatter your skin tone</p>
-                </div>
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl">+</span>
-                  </div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Virtual Try-On</h4>
-                  <p className="text-sm text-gray-600">Preview how interview pieces will fit before buying</p>
-                </div>
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl">$</span>
-                  </div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Price Tracking</h4>
-                  <p className="text-sm text-gray-600">Get alerts when professional pieces go on sale</p>
-                </div>
-              </div>
+            <div className="grid md:grid-cols-3 gap-6">
+              <a href="https://wontsy.com" target="_blank" rel="noopener noreferrer" className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                <h3 className="font-bold text-gray-900 mb-2">Wontsy</h3>
+                <p className="text-sm text-gray-600 mb-3">Save professional pieces from any store, build interview outfits, and track prices on blazers and workwear.</p>
+                <span className="text-blue-500 text-sm font-medium">Free · iOS, Android, Chrome, Safari</span>
+              </a>
+              <a href="https://www.massimodutti.com" target="_blank" rel="noopener noreferrer" className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                <h3 className="font-bold text-gray-900 mb-2">Massimo Dutti</h3>
+                <p className="text-sm text-gray-600 mb-3">Quality professional basics and tailored pieces. Great for building a polished interview wardrobe.</p>
+                <span className="text-blue-500 text-sm font-medium">Mid-range · Womenswear</span>
+              </a>
+              <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                <h3 className="font-bold text-gray-900 mb-2">LinkedIn</h3>
+                <p className="text-sm text-gray-600 mb-3">Research company culture and see what employees wear. Great for understanding workplace dress codes.</p>
+                <span className="text-blue-500 text-sm font-medium">Free · iOS, Android, Web</span>
+              </a>
             </div>
-
-            <ExtensionCTA />
-            <p className="text-sm text-gray-500 mt-4">Works on Zara, H&M, ASOS, Mango, Nordstrom, and 1000+ more stores</p>
           </div>
         </div>
       </section>

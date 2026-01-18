@@ -3,7 +3,6 @@ import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import SEO from "../components/SEO";
 import { Link } from "react-router-dom";
-import ExtensionCTA from "../components/ExtensionCTA";
 
 const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog";
 
@@ -323,45 +322,34 @@ const CleanGirlAesthetic = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Tools Section */}
       <section className="py-16 bg-gradient-to-br from-stone-100 to-neutral-100">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Shop the Clean Girl Aesthetic
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">
+              Tools for Shopping the Clean Girl Aesthetic
             </h2>
-            <p className="text-xl text-gray-600 mb-8">
-              StyleGenius helps you find pieces that match the clean girl vibe - neutral basics that fit your body type and skin tone perfectly.
+            <p className="text-gray-600 text-center mb-8">
+              Save your favorite minimal pieces, plan outfits, and find the best deals on clean girl staples.
             </p>
 
-            <div className="bg-white rounded-2xl p-8 shadow-xl mb-8">
-              <div className="grid md:grid-cols-3 gap-6 text-left">
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-stone-100 to-neutral-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl">🎨</span>
-                  </div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Color Match</h4>
-                  <p className="text-sm text-gray-600">Find the perfect neutral tones for your skin</p>
-                </div>
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-stone-100 to-neutral-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl">👗</span>
-                  </div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Virtual Try-On</h4>
-                  <p className="text-sm text-gray-600">Try clean girl staples before buying</p>
-                </div>
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-stone-100 to-neutral-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl">💝</span>
-                  </div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Universal Wishlist</h4>
-                  <p className="text-sm text-gray-600">Save pieces from any store</p>
-                </div>
-              </div>
+            <div className="grid md:grid-cols-3 gap-6">
+              <a href="https://wontsy.com" target="_blank" rel="noopener noreferrer" className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                <h3 className="font-bold text-gray-900 mb-2">Wontsy</h3>
+                <p className="text-sm text-gray-600 mb-3">Save clean girl pieces from any store. Build outfit mood boards and get price drop alerts on those perfect neutral basics.</p>
+                <span className="text-stone-500 text-sm font-medium">Free · iOS, Android, Chrome, Safari</span>
+              </a>
+              <a href="https://www.pinterest.com" target="_blank" rel="noopener noreferrer" className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                <h3 className="font-bold text-gray-900 mb-2">Pinterest</h3>
+                <p className="text-sm text-gray-600 mb-3">Create aesthetic boards for clean girl inspiration. Great for visualizing the vibe before you shop.</p>
+                <span className="text-stone-500 text-sm font-medium">Free · iOS, Android, Web</span>
+              </a>
+              <a href="https://www.shoplook.io" target="_blank" rel="noopener noreferrer" className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                <h3 className="font-bold text-gray-900 mb-2">ShopLook</h3>
+                <p className="text-sm text-gray-600 mb-3">Create outfit collages with items from different stores. Perfect for planning clean girl looks.</p>
+                <span className="text-stone-500 text-sm font-medium">Free · Web</span>
+              </a>
             </div>
-
-            <ExtensionCTA />
-            <p className="text-sm text-gray-500 mt-4">Works on Zara, H&M, ASOS, and 1000+ more stores</p>
           </div>
         </div>
       </section>

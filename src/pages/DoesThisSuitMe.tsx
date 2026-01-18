@@ -1,21 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import SEO from "../components/SEO";
 import { Link } from "react-router-dom";
-import ExtensionCTA from "../components/ExtensionCTA";
-import { getAppStoreUrl, getDownloadButtonText } from "../utils/deviceDetection";
 
 const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog";
 
 const DoesThisSuitMe = () => {
-  const [appStoreUrl, setAppStoreUrl] = useState('');
-  const [buttonText, setButtonText] = useState('Download App');
-
-  useEffect(() => {
-    setAppStoreUrl(getAppStoreUrl());
-    setButtonText(getDownloadButtonText());
-  }, []);
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -533,30 +524,6 @@ const DoesThisSuitMe = () => {
 
         </div>
       </article>
-
-      {/* CTA Section */}
-      <section className="py-16 relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #fff 0%, #f9fafb 100%)' }}>
-        {/* Floating gradient blobs */}
-        <div className="absolute top-[-50px] right-[10%] w-[300px] h-[300px] rounded-full pointer-events-none z-0" style={{ background: 'rgba(255,112,217,0.15)', filter: 'blur(60px)' }} />
-        <div className="absolute bottom-[-50px] left-[15%] w-[250px] h-[250px] rounded-full pointer-events-none z-0" style={{ background: 'rgba(110,193,228,0.15)', filter: 'blur(60px)' }} />
-
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Find Out What Suits YOU</h2>
-            <p className="text-xl text-gray-600 mb-8">
-              StyleGenius analyzes your body type and skin tone, then tells you if clothes will flatter you as you shop. No more guessing.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <ExtensionCTA />
-              <a href={appStoreUrl} target="_blank" rel="noopener noreferrer">
-                <button className="px-8 py-4 font-semibold text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105" style={{ background: '#6EC1E4', color: 'white', boxShadow: '0 4px 20px rgba(110, 193, 228, 0.3)' }}>
-                  {buttonText}
-                </button>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
 
       <Footer />
     </div>

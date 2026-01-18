@@ -1,22 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import SEO from "../components/SEO";
 import { Link } from "react-router-dom";
-import ExtensionCTA from "../components/ExtensionCTA";
-import { getAppStoreUrl, getDownloadButtonText } from "../utils/deviceDetection";
 
 const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog";
 
 const SmartShoppingTools = () => {
-  const [appStoreUrl, setAppStoreUrl] = useState('');
-  const [buttonText, setButtonText] = useState('Download App');
-
-  useEffect(() => {
-    setAppStoreUrl(getAppStoreUrl());
-    setButtonText(getDownloadButtonText());
-  }, []);
-
   return (
     <div className="min-h-screen bg-gray-50">
       <SEO
@@ -497,24 +487,31 @@ const SmartShoppingTools = () => {
         </div>
       </article>
 
-      {/* CTA Section */}
-      <section className="py-16 relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #fff 0%, #f9fafb 100%)' }}>
-        {/* Floating gradient blobs */}
-        <div className="absolute top-[-50px] right-[10%] w-[300px] h-[300px] rounded-full pointer-events-none z-0" style={{ background: 'rgba(255,112,217,0.15)', filter: 'blur(60px)' }} />
-        <div className="absolute bottom-[-50px] left-[15%] w-[250px] h-[250px] rounded-full pointer-events-none z-0" style={{ background: 'rgba(110,193,228,0.15)', filter: 'blur(60px)' }} />
-
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Start Shopping Smarter Today</h2>
-            <p className="text-xl text-gray-600 mb-8">
-              StyleGenius includes price tracking, universal wishlist, AND AI style matching. Save money and buy clothes that actually suit you.
+      {/* Tools Section */}
+      <section className="py-16 bg-gradient-to-br from-purple-50 to-pink-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">
+              Smart Shopping Tools
+            </h2>
+            <p className="text-gray-600 text-center mb-8">
+              Apps to help you shop smarter and save money.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <ExtensionCTA />
-              <a href={appStoreUrl} target="_blank" rel="noopener noreferrer">
-                <button className="px-8 py-4 font-semibold text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105" style={{ background: '#6EC1E4', color: 'white', boxShadow: '0 4px 20px rgba(110, 193, 228, 0.3)' }}>
-                  {buttonText}
-                </button>
+            <div className="grid md:grid-cols-3 gap-6">
+              <a href="https://wontsy.com" target="_blank" rel="noopener noreferrer" className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                <h3 className="font-bold text-gray-900 mb-2">Wontsy</h3>
+                <p className="text-sm text-gray-600 mb-3">Universal wishlist for any store. Save items, build outfits, track prices.</p>
+                <span className="text-pink-500 text-sm font-medium">Free · iOS, Android, Chrome, Safari</span>
+              </a>
+              <a href="https://www.honey.com" target="_blank" rel="noopener noreferrer" className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                <h3 className="font-bold text-gray-900 mb-2">Honey</h3>
+                <p className="text-sm text-gray-600 mb-3">Automatic coupon finder. Applies discount codes at checkout.</p>
+                <span className="text-pink-500 text-sm font-medium">Free · Chrome, Safari, Firefox</span>
+              </a>
+              <a href="https://camelcamelcamel.com" target="_blank" rel="noopener noreferrer" className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                <h3 className="font-bold text-gray-900 mb-2">CamelCamelCamel</h3>
+                <p className="text-sm text-gray-600 mb-3">Amazon price history tracker. See if you're getting a good deal.</p>
+                <span className="text-pink-500 text-sm font-medium">Free · Web, Browser Extension</span>
               </a>
             </div>
           </div>

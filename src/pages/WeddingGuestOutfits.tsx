@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import ExtensionCTA from "../components/ExtensionCTA";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import SEO from "../components/SEO";
@@ -1036,45 +1035,33 @@ const WeddingGuestOutfits = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Tools Section */}
       <section className="py-16 bg-gradient-to-br from-pink-50 to-rose-50">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Find Your Perfect Wedding Guest Outfit
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">
+              Helpful Shopping Tools
             </h2>
-            <p className="text-xl text-gray-600 mb-8">
-              StyleGenius helps you find dresses and outfits that flatter your body type and complement your skin tone - so you look and feel amazing at every wedding.
+            <p className="text-gray-600 text-center mb-8">
+              Apps to help you shop smarter and find the perfect wedding guest outfit.
             </p>
-
-            <div className="bg-white rounded-2xl p-8 shadow-xl mb-8">
-              <div className="grid md:grid-cols-3 gap-6 text-left">
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-pink-100 to-rose-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl">🎨</span>
-                  </div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Color Match</h4>
-                  <p className="text-sm text-gray-600">See if dress colors complement your skin tone while browsing</p>
-                </div>
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-pink-100 to-rose-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl">👗</span>
-                  </div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Virtual Try-On</h4>
-                  <p className="text-sm text-gray-600">See how dresses look on you before you buy</p>
-                </div>
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-pink-100 to-rose-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl">💰</span>
-                  </div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Price Tracking</h4>
-                  <p className="text-sm text-gray-600">Save wedding guest dresses and get alerts when prices drop</p>
-                </div>
-              </div>
+            <div className="grid md:grid-cols-3 gap-6">
+              <a href="https://wontsy.com" target="_blank" rel="noopener noreferrer" className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                <h3 className="font-bold text-gray-900 mb-2">Wontsy</h3>
+                <p className="text-sm text-gray-600 mb-3">Save wedding guest dresses from any store, build outfit looks, and track prices for the perfect dress.</p>
+                <span className="text-pink-500 text-sm font-medium">Free · iOS, Android, Chrome, Safari</span>
+              </a>
+              <a href="https://www.renttherunway.com" target="_blank" rel="noopener noreferrer" className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                <h3 className="font-bold text-gray-900 mb-2">Rent the Runway</h3>
+                <p className="text-sm text-gray-600 mb-3">Rent designer dresses for weddings instead of buying. Great for one-time occasions and trying new styles.</p>
+                <span className="text-pink-500 text-sm font-medium">Subscription · iOS, Android, Web</span>
+              </a>
+              <a href="https://www.pinterest.com" target="_blank" rel="noopener noreferrer" className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                <h3 className="font-bold text-gray-900 mb-2">Pinterest</h3>
+                <p className="text-sm text-gray-600 mb-3">Find wedding guest outfit inspiration and create mood boards for different dress codes and seasons.</p>
+                <span className="text-pink-500 text-sm font-medium">Free · iOS, Android, Web</span>
+              </a>
             </div>
-
-            <ExtensionCTA />
-            <p className="text-sm text-gray-500 mt-4">Works on Zara, H&M, ASOS, Nordstrom, and 1000+ more stores</p>
           </div>
         </div>
       </section>

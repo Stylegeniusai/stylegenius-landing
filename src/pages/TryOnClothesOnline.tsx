@@ -3,7 +3,6 @@ import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import SEO from "../components/SEO";
 import { Link } from "react-router-dom";
-import ExtensionCTA from "../components/ExtensionCTA";
 
 const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog";
 
@@ -422,20 +421,6 @@ const TryOnClothesOnline = () => {
               </ul>
               <p className="text-lg text-gray-700 leading-relaxed">
                 And honestly? Seeing yourself in that dress you've been eyeing - even virtually - is pretty satisfying. It makes online shopping feel personal again, not like a gamble.
-              </p>
-            </div>
-          </section>
-
-          {/* CTA Section */}
-          <section className="mb-16">
-            <div className="bg-gray-900 rounded-2xl p-8 text-center">
-              <h2 className="text-3xl font-bold text-white mb-4">Ready to Try It?</h2>
-              <p className="text-xl text-gray-300 mb-8">
-                StyleGenius lets you try on clothes from 1500+ stores while you shop. See how things look on you, check if colors suit your skin tone, make smarter purchases.
-              </p>
-              <ExtensionCTA />
-              <p className="text-gray-500 text-sm mt-4">
-                Free Chrome & Safari extension. Works right in your browser.
               </p>
             </div>
           </section>
