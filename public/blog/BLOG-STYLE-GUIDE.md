@@ -73,7 +73,7 @@ background: linear-gradient(135deg, #FF70D9, #6EC1E4);
 | Type | Size | Aspect Ratio |
 |------|------|--------------|
 | Hero/Featured | 1200 x 630px | 1.9:1 |
-| In-post images | 800 x 500px | 16:10 |
+| In-post images | 1024 x 1024px | 1:1 (AI-generated) |
 | App screenshots | 800 x auto | Varies |
 | Thumbnails | 400 x 250px | 16:10 |
 
