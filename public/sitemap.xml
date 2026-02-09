@@ -230,6 +230,13 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Blog Posts - Shopping -->
+  <url>
+    <loc>https://stylegenius.app/blog/what-is-social-shopping</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- Blog Posts - Technology & Trends -->
   <url>
     <loc>https://stylegenius.app/virtual-try-on-guide</loc>
