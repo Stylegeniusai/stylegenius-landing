@@ -246,7 +246,7 @@ Every post needs:
 ### Internal Linking
 - **2-5 internal links** per 1000 words
 - Link to related blog posts
-- Link to /signup for CTAs
+- Link to relevant products/apps in article (with nofollow for external)
 - Descriptive anchor text (not "click here")
 
 ---
