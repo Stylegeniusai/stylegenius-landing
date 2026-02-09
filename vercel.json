@@ -12,7 +12,7 @@
     { "src": "/style-analysis.html", "dest": "/style-analysis.html" },
     { "src": "/app.html", "dest": "/app.html" },
     { "src": "/wishlist.html", "dest": "/wishlist.html" },
-    { "src": "/", "dest": "/home.html" },
+    { "src": "/", "dest": "/index.html" },
     { "src": "/wishlist", "dest": "/wishlist.html" },
     { "src": "/extension", "dest": "/extension.html" },
     { "src": "/virtual-try-on", "dest": "/virtual-try-on.html" },
