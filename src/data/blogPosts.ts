@@ -240,7 +240,7 @@ export const blogPosts: BlogPost[] = [
   {
     title: "What is Social Shopping? The Complete Guide",
     description: "Social shopping combines online shopping with social interaction. Learn what it means, how it works, and why it's changing fashion discovery.",
-    image: `${BLOG_IMAGE_BASE}/social-shopping-hero.png`,
+    image: "/blog/social-shopping-hero.png",
     href: "/blog/what-is-social-shopping.html",
     category: "Shopping Tech",
     featured: true
