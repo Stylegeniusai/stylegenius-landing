@@ -57,6 +57,10 @@ import OldMoneyAesthetic from "./pages/OldMoneyAesthetic";
 import QuietLuxuryStyle from "./pages/QuietLuxuryStyle";
 import OfficeSirenAesthetic from "./pages/OfficeSirenAesthetic";
 import CoquetteAesthetic from "./pages/CoquetteAesthetic";
+import IndieSleazeAesthetic from "./pages/IndieSleazeAesthetic";
+
+// Blog posts - Color Trends
+import Spring2026ColorTrends from "./pages/Spring2026ColorTrends";
 
 // Blog posts - Style Guides
 import FindYourPersonalStyle from "./pages/FindYourPersonalStyle";
@@ -134,6 +138,10 @@ const App = () => (
           <Route path="/quiet-luxury-style" element={<QuietLuxuryStyle />} />
           <Route path="/office-siren-aesthetic" element={<OfficeSirenAesthetic />} />
           <Route path="/coquette-aesthetic" element={<CoquetteAesthetic />} />
+          <Route path="/indie-sleaze-aesthetic" element={<IndieSleazeAesthetic />} />
+
+          {/* Blog posts - Color Trends */}
+          <Route path="/spring-2026-color-trends" element={<Spring2026ColorTrends />} />
 
           {/* Blog posts - Style Guides */}
           <Route path="/find-your-personal-style" element={<FindYourPersonalStyle />} />

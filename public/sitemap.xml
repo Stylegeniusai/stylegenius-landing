@@ -207,6 +207,18 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://stylegenius.app/indie-sleaze-aesthetic</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog Posts - Color Trends -->
+  <url>
+    <loc>https://stylegenius.app/spring-2026-color-trends</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 
   <!-- Blog Posts - Style Guides -->
   <url>
