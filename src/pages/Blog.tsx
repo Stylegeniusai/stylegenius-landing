@@ -198,13 +198,12 @@ const blogPosts = [
     href: "/indie-sleaze-aesthetic",
     category: "Fashion Aesthetic"
   },
-  // Color Trends
   {
     title: "Spring 2026 Color Trends",
     description: "The colors to wear this season: Pantone's Cloud Dancer, Chartreuse, Burnished Lilac and more.",
     image: `${BLOG_IMAGE_BASE}/spring-2026-colors-hero.png`,
     href: "/spring-2026-color-trends",
-    category: "Color Trends"
+    category: "Color Analysis"
   },
   // Style Guides
   {

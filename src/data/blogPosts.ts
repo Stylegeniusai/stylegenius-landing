@@ -199,6 +199,13 @@ export const blogPosts: BlogPost[] = [
     href: "/coquette-aesthetic",
     category: "Fashion Aesthetic"
   },
+  {
+    title: "Indie Sleaze Aesthetic",
+    description: "The chaotic 2000s revival: skinny jeans, band tees, leather jackets, and messy bedhead energy.",
+    image: `${BLOG_IMAGE_BASE}/indie-sleaze-hero.png`,
+    href: "/indie-sleaze-aesthetic",
+    category: "Fashion Aesthetic"
+  },
   // Style Guides
   {
     title: "How to Find Your Personal Style",
@@ -316,6 +323,13 @@ export const blogPosts: BlogPost[] = [
     image: `${BLOG_IMAGE_BASE}/spring-2025-hero.png`,
     href: "/spring-2025-fashion-trends",
     category: "Fashion Trends"
+  },
+  {
+    title: "Spring 2026 Color Trends",
+    description: "The colors to wear this season: Pantone's Cloud Dancer, Chartreuse, Burnished Lilac and more.",
+    image: `${BLOG_IMAGE_BASE}/spring-2026-colors-hero.png`,
+    href: "/spring-2026-color-trends",
+    category: "Color Analysis"
   }
 ];
 
