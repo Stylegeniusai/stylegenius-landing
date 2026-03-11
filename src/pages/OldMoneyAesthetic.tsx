@@ -10,9 +10,9 @@ const OldMoneyAesthetic = () => {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Old Money Aesthetic: The Complete Guide to Timeless Elegance (2026)"
-        description="Master the old money aesthetic with our complete guide. Learn about timeless elegance, classic wardrobe pieces, the old money color palette, and how to dress with quiet sophistication."
-        keywords="old money aesthetic, old money style, timeless elegance, classic fashion, preppy style, quiet luxury, inheritance style, wealthy aesthetic, old money wardrobe, old money colors"
+        title="Old Money Aesthetic: Wardrobe, Colors & How to Dress (2026)"
+        description="How to get the old money look: capsule wardrobe essentials, color palette, brands to shop & styling rules. Timeless elegance without the trust fund."
+        keywords="old money aesthetic, old money style, old money outfits, old money wardrobe, old money colors, how to dress old money, quiet luxury, preppy style, timeless fashion"
         canonicalUrl="/old-money-aesthetic"
         ogImage="/old-money-hero.png"
         ogType="article"

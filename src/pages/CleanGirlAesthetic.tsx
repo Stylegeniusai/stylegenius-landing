@@ -10,9 +10,9 @@ const CleanGirlAesthetic = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEO
-        title="Clean Girl Aesthetic: Complete Style & Beauty Guide 2026"
-        description="Master the clean girl aesthetic with our complete guide. Learn the minimalist approach to beauty, skincare, and fashion that's taken over TikTok and Instagram."
-        keywords="clean girl aesthetic, clean girl makeup, minimalist style, no makeup makeup, slick back bun, gold hoops, natural beauty, effortless style"
+        title="Clean Girl Aesthetic: Makeup, Outfits & Hair Ideas (2026)"
+        description="Get the clean girl look: slicked bun, dewy skin, gold hoops & neutral outfits. Step-by-step makeup tutorial, wardrobe essentials & styling tips."
+        keywords="clean girl aesthetic, clean girl makeup, clean girl outfits, clean girl hair, slick back bun, no makeup makeup, minimalist style, clean girl 2026"
         canonicalUrl="/clean-girl-aesthetic"
         ogImage="/clean-girl-hero.png"
         ogType="article"

@@ -9,9 +9,9 @@ const BestColorsForPaleSkin = () => {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Best Colors for Pale Skin: The Complete Guide (2026)"
-        description="Discover which colors make pale skin glow and which to avoid. Expert tips for cool, warm, and neutral undertones - from jewel tones to the perfect red."
-        keywords="best colors for pale skin, colors for fair skin, pale skin fashion, what colors suit pale skin, fair complexion colors, colors to avoid pale skin, jewel tones pale skin"
+        title="Best Colors for Pale Skin: What to Wear & Avoid by Undertone (2026)"
+        description="Find your most flattering colors for pale skin. Cool, warm, or neutral undertone? See exactly which shades make you glow and which wash you out - with photo examples."
+        keywords="best colors for pale skin, colors for fair skin, what colors look good on pale skin, colors that suit pale skin, colors to avoid pale skin, jewel tones pale skin, cool undertone colors, warm undertone colors"
         canonicalUrl="/best-colors-for-pale-skin"
         ogImage="/pale-skin-hero.png"
         ogType="article"
