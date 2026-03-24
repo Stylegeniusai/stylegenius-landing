@@ -24,10 +24,27 @@ const Navigation = () => {
     return location.pathname.startsWith(href);
   };
 
+  const isAnalysisPage = location.pathname === "/personal-analysis";
+
   return (
     <>
+      {/* Promo Banner */}
+      {!isAnalysisPage && (
+        <div className="fixed top-0 left-0 right-0 z-50 bg-gray-900 text-white">
+          <Link
+            to="/personal-analysis"
+            className="block px-4 py-2 text-center text-sm hover:bg-gray-800 transition-colors"
+          >
+            <span className="hidden sm:inline">Get your personal color & style analysis — </span>
+            <span className="sm:hidden">Personal style analysis — </span>
+            <span className="font-semibold underline underline-offset-2">$49</span>
+            <span className="ml-1.5 text-rose-300">→</span>
+          </Link>
+        </div>
+      )}
+
       {/* Navigation Bar */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200">
+      <nav className={`fixed left-0 right-0 z-50 bg-white border-b border-gray-200 ${isAnalysisPage ? 'top-0' : 'top-[36px]'}`}>
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
@@ -71,7 +88,7 @@ const Navigation = () => {
           />
 
           {/* Menu Panel */}
-          <div className="fixed top-16 left-0 right-0 bg-white border-b border-gray-200 shadow-lg">
+          <div className={`fixed left-0 right-0 bg-white border-b border-gray-200 shadow-lg ${isAnalysisPage ? 'top-16' : 'top-[100px]'}`}>
             <div className="px-4 py-6 space-y-1">
               {menuItems.map((item) => (
                 <Link
@@ -92,8 +109,8 @@ const Navigation = () => {
         </div>
       )}
 
-      {/* Spacer for fixed nav */}
-      <div className="h-16"></div>
+      {/* Spacer for fixed nav + banner */}
+      <div className={isAnalysisPage ? 'h-16' : 'h-[100px]'}></div>
     </>
   );
 };

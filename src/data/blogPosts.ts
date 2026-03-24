@@ -13,6 +13,13 @@ export interface BlogPost {
 export const blogPosts: BlogPost[] = [
   // Color Analysis
   {
+    title: "Spring 2026 Color Trends",
+    description: "The colors to wear this season: Pantone's Cloud Dancer, Chartreuse, Burnished Lilac and more.",
+    image: `${BLOG_IMAGE_BASE}/spring-2026-colors-hero.png`,
+    href: "/spring-2026-color-trends",
+    category: "Color Analysis"
+  },
+  {
     title: "What Season Am I? Color Analysis Guide",
     description: "Discover your color season with our complete guide to seasonal color analysis - find out if you're a Spring, Summer, Autumn, or Winter.",
     image: `${BLOG_IMAGE_BASE}/what-season-hero.png`,
@@ -164,6 +171,13 @@ export const blogPosts: BlogPost[] = [
   },
   // Fashion Aesthetics
   {
+    title: "Indie Sleaze Aesthetic",
+    description: "The chaotic 2000s revival: skinny jeans, band tees, leather jackets, and messy bedhead energy.",
+    image: `${BLOG_IMAGE_BASE}/indie-sleaze-hero.png`,
+    href: "/indie-sleaze-aesthetic",
+    category: "Fashion Aesthetic"
+  },
+  {
     title: "Clean Girl Aesthetic",
     description: "Master the effortless, minimal, and polished Clean Girl look that's taking over social media.",
     image: `${BLOG_IMAGE_BASE}/clean-girl-hero.png`,
@@ -197,13 +211,6 @@ export const blogPosts: BlogPost[] = [
     description: "Feminine, flirty, and romantic style inspired by bows, lace, and all things girly.",
     image: `${BLOG_IMAGE_BASE}/coquette-hero.png`,
     href: "/coquette-aesthetic",
-    category: "Fashion Aesthetic"
-  },
-  {
-    title: "Indie Sleaze Aesthetic",
-    description: "The chaotic 2000s revival: skinny jeans, band tees, leather jackets, and messy bedhead energy.",
-    image: `${BLOG_IMAGE_BASE}/indie-sleaze-hero.png`,
-    href: "/indie-sleaze-aesthetic",
     category: "Fashion Aesthetic"
   },
   // Style Guides
@@ -323,13 +330,6 @@ export const blogPosts: BlogPost[] = [
     image: `${BLOG_IMAGE_BASE}/spring-2025-hero.png`,
     href: "/spring-2025-fashion-trends",
     category: "Fashion Trends"
-  },
-  {
-    title: "Spring 2026 Color Trends",
-    description: "The colors to wear this season: Pantone's Cloud Dancer, Chartreuse, Burnished Lilac and more.",
-    image: `${BLOG_IMAGE_BASE}/spring-2026-colors-hero.png`,
-    href: "/spring-2026-color-trends",
-    category: "Color Analysis"
   }
 ];
 
