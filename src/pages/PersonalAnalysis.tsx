@@ -6,82 +6,81 @@ import { Check, Sparkles, Upload, FileText, ArrowRight, ShieldCheck } from "luci
 
 const STRIPE_PAYMENT_LINK = import.meta.env.VITE_STRIPE_PAYMENT_LINK || '#';
 
-/* ── CSS-only PDF mockup ── */
-const PdfMockup = () => {
-  const palettes = {
-    cool: ["#7B8794", "#A2B5BB", "#D4C2FC", "#F2E9E4", "#C9ADA7"],
-    best: ["#B56576", "#E56B6F", "#EAAC8B", "#355070", "#6D597A"],
-  };
+/* ── CSS-only PDF mockup — stacked cards ── */
+const PdfMockup = () => (
+  <div className="relative w-full max-w-sm mx-auto pt-10 pb-4 pr-2">
+    {/* Card 3 — back */}
+    <div className="absolute -top-4 left-10 -right-4 bottom-8 bg-white rounded-2xl shadow-md border border-gray-100 rotate-[4deg]" />
+    {/* Card 2 — middle */}
+    <div className="absolute -top-2 left-5 -right-2 bottom-4 bg-white rounded-2xl shadow-lg border border-gray-100 rotate-[2deg] p-6">
+      <p className="text-[10px] uppercase tracking-wider text-gray-300 mb-3">Body Type Guide</p>
+      <div className="flex justify-center gap-4 mt-4">
+        <div className="w-10 h-16 bg-rose-100 rounded-lg" />
+        <div className="w-10 h-16 bg-rose-200 rounded-lg" />
+        <div className="w-10 h-16 bg-rose-100 rounded-lg" />
+      </div>
+      <div className="mt-4 space-y-2">
+        <div className="h-2 w-full bg-gray-50 rounded" />
+        <div className="h-2 w-3/4 bg-gray-50 rounded" />
+        <div className="h-2 w-5/6 bg-gray-50 rounded" />
+      </div>
+    </div>
+    {/* Card 1 — front (color analysis) */}
+    <div className="relative bg-white rounded-2xl shadow-xl border border-gray-100 p-7">
+      <div className="flex items-center gap-2 mb-1">
+        <div className="w-5 h-5 rounded-full bg-gradient-to-br from-rose-400 to-pink-500" />
+        <span className="text-[10px] font-medium text-gray-400 uppercase tracking-wider">StyleGenius</span>
+      </div>
+      <p className="text-[10px] text-gray-300 mb-5">Personal Color & Style Analysis</p>
 
-  return (
-    <div className="relative w-full max-w-md mx-auto">
-      <div className="absolute top-4 left-4 right-0 bg-white rounded-xl shadow-lg border border-gray-100 p-6 h-[340px] rotate-2" />
-      <div className="absolute top-2 left-2 right-2 bg-white rounded-xl shadow-lg border border-gray-100 p-6 h-[340px] -rotate-1">
-        <div className="space-y-4">
-          <div className="h-3 w-32 bg-gray-100 rounded" />
-          <div className="grid grid-cols-5 gap-2">
-            {palettes.cool.map((c, i) => (
-              <div key={i} className="aspect-square rounded-lg" style={{ backgroundColor: c }} />
-            ))}
-          </div>
-          <div className="space-y-2">
-            <div className="h-2 w-full bg-gray-50 rounded" />
-            <div className="h-2 w-3/4 bg-gray-50 rounded" />
-            <div className="h-2 w-5/6 bg-gray-50 rounded" />
-          </div>
+      <div className="mb-5">
+        <p className="text-[9px] uppercase tracking-wider text-gray-400 mb-1.5">Your Color Season</p>
+        <p className="text-base font-semibold text-gray-800 mb-1" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Soft Summer</p>
+        <p className="text-[10px] text-gray-400 leading-relaxed">Muted, cool-toned colors with low contrast.</p>
+      </div>
+
+      <div className="mb-5">
+        <p className="text-[9px] uppercase tracking-wider text-gray-400 mb-2">Your Best Colors</p>
+        <div className="grid grid-cols-5 gap-2">
+          {["#B56576", "#E56B6F", "#EAAC8B", "#355070", "#6D597A",
+            "#C9ADA7", "#D4C2FC", "#A2B5BB", "#F2E9E4", "#7B8794"].map((c, i) => (
+            <div key={i} className="aspect-square rounded-lg shadow-sm" style={{ backgroundColor: c }} />
+          ))}
         </div>
       </div>
-      <div className="relative bg-white rounded-xl shadow-xl border border-gray-100 p-6 h-[340px]">
-        <div className="flex items-center gap-2 mb-1">
-          <div className="w-5 h-5 rounded-full bg-gradient-to-br from-rose-400 to-pink-500" />
-          <span className="text-[10px] font-medium text-gray-400 uppercase tracking-wider">StyleGenius</span>
+
+      <div className="mb-5">
+        <p className="text-[9px] uppercase tracking-wider text-gray-400 mb-2">Makeup Palette</p>
+        <div className="flex gap-4">
+          {[
+            { color: "#B56576", label: "Lip" },
+            { color: "#E8A87C", label: "Blush" },
+            { color: "#6D597A", label: "Shadow" },
+            { color: "#FAEDCD", label: "Base" },
+          ].map((m, i) => (
+            <div key={i} className="text-center">
+              <div className="w-7 h-7 rounded-full mx-auto mb-0.5 shadow-sm" style={{ backgroundColor: m.color }} />
+              <span className="text-[8px] text-gray-400">{m.label}</span>
+            </div>
+          ))}
         </div>
-        <p className="text-xs text-gray-300 mb-4">Personal Color & Style Analysis</p>
-        <div className="mb-4">
-          <p className="text-[10px] uppercase tracking-wider text-gray-400 mb-2">Your Color Season</p>
-          <p className="text-sm font-semibold text-gray-800 mb-1" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Soft Summer</p>
-          <p className="text-[10px] text-gray-400 leading-relaxed">Muted, cool-toned colors with low contrast. Your palette is gentle, elegant, and sophisticated.</p>
-        </div>
-        <div className="mb-4">
-          <p className="text-[10px] uppercase tracking-wider text-gray-400 mb-2">Your Best Colors</p>
-          <div className="grid grid-cols-5 gap-1.5">
-            {palettes.best.map((c, i) => (
-              <div key={i} className="aspect-square rounded-md shadow-sm" style={{ backgroundColor: c }} />
-            ))}
-          </div>
-        </div>
-        <div className="mb-4">
-          <p className="text-[10px] uppercase tracking-wider text-gray-400 mb-2">Makeup Palette</p>
-          <div className="flex gap-3">
-            {[
-              { color: "#B56576", label: "Lip" },
-              { color: "#E8A87C", label: "Blush" },
-              { color: "#6D597A", label: "Shadow" },
-              { color: "#FAEDCD", label: "Base" },
-            ].map((m, i) => (
-              <div key={i} className="text-center">
-                <div className="w-6 h-6 rounded-full mx-auto mb-0.5 shadow-sm" style={{ backgroundColor: m.color }} />
-                <span className="text-[8px] text-gray-400">{m.label}</span>
+      </div>
+
+      <div>
+        <p className="text-[9px] uppercase tracking-wider text-gray-400 mb-2">Avoid These</p>
+        <div className="flex gap-2">
+          {["#FF6B00", "#FFD700", "#00FF00", "#000000"].map((c, i) => (
+            <div key={i} className="w-7 h-7 rounded-lg relative" style={{ backgroundColor: c }}>
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-5 h-[1.5px] bg-white/80 rotate-45 rounded" />
               </div>
-            ))}
-          </div>
-        </div>
-        <div>
-          <p className="text-[10px] uppercase tracking-wider text-gray-400 mb-1">Avoid These</p>
-          <div className="flex gap-1.5">
-            {["#FF6B00", "#FFD700", "#00FF00"].map((c, i) => (
-              <div key={i} className="w-5 h-5 rounded-md relative" style={{ backgroundColor: c }}>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-4 h-[1.5px] bg-white/80 rotate-45 rounded" />
-                </div>
-              </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
-  );
-};
+  </div>
+);
 
 const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog";
 
@@ -124,9 +123,9 @@ const PersonalAnalysis = () => {
       <Navigation />
 
       {/* ════════ HERO ════════ */}
-      <section className="pt-8 pb-20 lg:pt-16 lg:pb-28 bg-gradient-to-b from-rose-50 via-pink-50/30 to-white">
+      <section className="pt-12 pb-24 lg:pt-20 lg:pb-32 bg-gradient-to-b from-rose-50 via-pink-50/30 to-white">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center max-w-6xl mx-auto">
             <div className="text-center lg:text-left">
               <span className="inline-block px-4 py-1.5 bg-rose-100/80 text-rose-700 rounded-full text-sm font-medium mb-6 tracking-wide">
                 Personal Analysis by StyleGenius
@@ -427,22 +426,62 @@ const PersonalAnalysis = () => {
               How it works
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
-              {[
-                { icon: <Sparkles className="w-6 h-6" />, step: "1", title: "Place your order", desc: "Click the button and check out securely. It's a one-time purchase — no subscription, no hidden fees." },
-                { icon: <Upload className="w-6 h-6" />, step: "2", title: "Tell us about you", desc: "After checkout, you'll answer a few quick questions about your coloring, body type, and upload a selfie in natural light." },
-                { icon: <FileText className="w-6 h-6" />, step: "3", title: "Get your guide", desc: "Your personalized analysis lands in your inbox within 48 hours — ready to save, screenshot, and take shopping." },
-              ].map((item, i) => (
-                <div key={i} className="text-center">
-                  <div className="w-16 h-16 rounded-2xl bg-rose-50 flex items-center justify-center mx-auto mb-5 text-rose-600">
-                    {item.icon}
-                  </div>
-                  <div className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-gray-900 text-white text-sm font-medium mb-3">
-                    {item.step}
-                  </div>
-                  <h3 className="font-semibold text-gray-900 text-lg mb-2">{item.title}</h3>
-                  <p className="text-gray-500">{item.desc}</p>
+              {/* Step 1 */}
+              <div className="text-center">
+                <div className="w-16 h-16 rounded-2xl bg-rose-50 flex items-center justify-center mx-auto mb-5 text-rose-600">
+                  <Sparkles className="w-6 h-6" />
                 </div>
-              ))}
+                <div className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-gray-900 text-white text-sm font-medium mb-3">1</div>
+                <h3 className="font-semibold text-gray-900 text-lg mb-2">Place your order</h3>
+                <p className="text-gray-500">Click the button and check out securely. One-time purchase — no subscription, no hidden fees.</p>
+              </div>
+
+              {/* Step 2 — with form previews */}
+              <div className="text-center">
+                <div className="w-16 h-16 rounded-2xl bg-rose-50 flex items-center justify-center mx-auto mb-5 text-rose-600">
+                  <Upload className="w-6 h-6" />
+                </div>
+                <div className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-gray-900 text-white text-sm font-medium mb-3">2</div>
+                <h3 className="font-semibold text-gray-900 text-lg mb-2">Tell us about you</h3>
+                <p className="text-gray-500 mb-4">Pick your skin tone, body type, hair & eye color — then snap a selfie. Takes 2 minutes.</p>
+                <div className="flex justify-center gap-3 mt-2">
+                  {["form-1", "form-2", "form-3"].map((f, i) => (
+                    <img
+                      key={i}
+                      src={`${BLOG_IMAGE_BASE}/${f}.png`}
+                      alt="Form preview"
+                      className="w-28 md:w-32 h-auto rounded-xl shadow-md border border-gray-100"
+                      loading="lazy"
+                    />
+                  ))}
+                </div>
+              </div>
+
+              {/* Step 3 */}
+              <div className="text-center">
+                <div className="w-16 h-16 rounded-2xl bg-rose-50 flex items-center justify-center mx-auto mb-5 text-rose-600">
+                  <FileText className="w-6 h-6" />
+                </div>
+                <div className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-gray-900 text-white text-sm font-medium mb-3">3</div>
+                <h3 className="font-semibold text-gray-900 text-lg mb-2">Get your guide</h3>
+                <p className="text-gray-500 mb-4">Your personalized analysis lands in your inbox within 48 hours — ready to save, screenshot, and take shopping.</p>
+                <img
+                  src={`${BLOG_IMAGE_BASE}/style-analysis-preview.png`}
+                  alt="Style analysis preview"
+                  className="w-32 md:w-36 h-auto mx-auto rounded-xl shadow-md"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+            <div className="text-center mt-12">
+              <button
+                onClick={handleCheckout}
+                className="inline-flex items-center gap-2 px-8 py-4 bg-gray-900 text-white rounded-full text-lg font-medium hover:bg-gray-800 transition-all hover:scale-105 shadow-lg shadow-gray-900/20"
+              >
+                Get my personal style guide — $49
+                <ArrowRight className="w-5 h-5" />
+              </button>
+              <TrustBar />
             </div>
           </div>
         </div>
@@ -526,7 +565,7 @@ const PersonalAnalysis = () => {
                 { q: "How long does delivery take?", a: "Your guide will be in your inbox within 48 hours on working days (Monday–Friday). Orders placed on weekends are delivered by Tuesday." },
                 { q: "Can you really determine my colors from a selfie?", a: "Yes — combined with the details you provide about your hair, eyes, and skin tone, a natural-light selfie gives us what we need to identify your color season accurately. It's the same information a stylist uses in person." },
                 { q: "What if I'm not happy with my analysis?", a: "We offer a full refund within 7 days of delivery. No questions asked. Just email us and we'll process it immediately." },
-                { q: "Do I need to upload a selfie?", a: "It's optional but highly recommended. A photo in natural light helps us determine your color season much more accurately. Without it, we rely on your form answers alone." },
+                { q: "Why do I need to upload a selfie?", a: "A photo in natural light lets us see your true coloring and determine your color season accurately. It's required — but it only takes a second. Just face a window, no makeup or filters, and snap a pic." },
                 { q: "Is this a subscription?", a: "No — it's a one-time purchase of $49. You get your personal guide and that's it. No recurring charges, ever." },
               ].map((item, i) => (
                 <details key={i} className="group">

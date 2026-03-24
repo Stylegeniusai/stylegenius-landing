@@ -66,7 +66,6 @@ const AnalysisForm = () => {
       }
 
       const { error: dbError } = await supabase.from("analysis_orders").insert({
-        name: form.name,
         email: form.email,
         hair_color: form.hairColor,
         eye_color: form.eyeColor,
@@ -86,7 +85,7 @@ const AnalysisForm = () => {
     }
   };
 
-  const isFormValid = form.name && form.email && form.hairColor && form.eyeColor && form.bodyType && form.height;
+  const isFormValid = form.email && form.hairColor && form.eyeColor && form.bodyType && form.height && selfie;
 
   if (submitted) {
     return (
@@ -144,51 +143,180 @@ const AnalysisForm = () => {
 
             <form onSubmit={handleSubmit} className="space-y-5">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1.5">Name</label>
-                <input id="name" name="name" type="text" required value={form.name} onChange={handleChange} placeholder="Your name" className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-rose-200 focus:border-rose-300 transition-colors bg-white" />
-              </div>
-
-              <div>
                 <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1.5">Email <span className="text-gray-400 font-normal">(where we'll send your PDF)</span></label>
                 <input id="email" name="email" type="email" required value={form.email} onChange={handleChange} placeholder="your@email.com" className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-rose-200 focus:border-rose-300 transition-colors bg-white" />
               </div>
 
               <div>
-                <label htmlFor="hairColor" className="block text-sm font-medium text-gray-700 mb-1.5">Hair color</label>
-                <input id="hairColor" name="hairColor" type="text" required value={form.hairColor} onChange={handleChange} placeholder="e.g. Dark brown, blonde, red..." className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-rose-200 focus:border-rose-300 transition-colors bg-white" />
-              </div>
-
-              <div>
-                <label htmlFor="eyeColor" className="block text-sm font-medium text-gray-700 mb-1.5">Eye color</label>
-                <input id="eyeColor" name="eyeColor" type="text" required value={form.eyeColor} onChange={handleChange} placeholder="e.g. Blue, green, brown, hazel..." className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-rose-200 focus:border-rose-300 transition-colors bg-white" />
-              </div>
-
-              <div>
-                <label htmlFor="skinTone" className="block text-sm font-medium text-gray-700 mb-1.5">Skin tone <span className="text-gray-400 font-normal">(optional if uploading a selfie)</span></label>
-                <select id="skinTone" name="skinTone" value={form.skinTone} onChange={handleChange} className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-rose-200 focus:border-rose-300 transition-colors bg-white appearance-none">
-                  <option value="">Select your skin tone</option>
-                  <option value="very-fair">Very fair / Porcelain</option>
-                  <option value="fair">Fair</option>
-                  <option value="light">Light</option>
-                  <option value="medium">Medium</option>
-                  <option value="olive">Olive</option>
-                  <option value="tan">Tan</option>
-                  <option value="dark">Dark</option>
-                  <option value="deep">Deep / Rich</option>
+                <label className="block text-sm font-medium text-gray-700 mb-1.5">Hair color</label>
+                <img
+                  src="https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog/hair-color-chart.jpg"
+                  alt="Hair color reference chart"
+                  className="w-full rounded-xl mb-3"
+                  loading="lazy"
+                />
+                <select id="hairColor" name="hairColor" required value={form.hairColor} onChange={handleChange} className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-rose-200 focus:border-rose-300 transition-colors bg-white appearance-none">
+                  <option value="">Select your hair color</option>
+                  <optgroup label="Blonde">
+                    <option value="sunflower-blonde">Sunflower Blonde</option>
+                    <option value="pure-diamond">Pure Diamond</option>
+                    <option value="light-ash-blonde">Light Ash Blonde</option>
+                    <option value="light-blonde">Light Blonde</option>
+                    <option value="reddish-blonde">Reddish Blonde</option>
+                    <option value="medium-champagne">Medium Champagne</option>
+                  </optgroup>
+                  <optgroup label="Brown">
+                    <option value="caramel">Caramel</option>
+                    <option value="beeline-honey">Beeline Honey</option>
+                    <option value="light-cool-brown">Light Cool Brown</option>
+                    <option value="light-brown">Light Brown</option>
+                    <option value="havana-brown">Havana Brown</option>
+                    <option value="chocolate-brown">Chocolate Brown</option>
+                    <option value="dark-golden-brown">Dark Golden Brown</option>
+                    <option value="hot-toffee">Hot Toffee</option>
+                    <option value="espresso">Espresso</option>
+                    <option value="french-roast">French Roast</option>
+                  </optgroup>
+                  <optgroup label="Red / Auburn">
+                    <option value="sparkling-amber">Sparkling Amber</option>
+                    <option value="copper-shimmer">Copper Shimmer</option>
+                    <option value="light-auburn">Light Auburn</option>
+                    <option value="ruby-fusion">Ruby Fusion</option>
+                    <option value="crushed-garnet">Crushed Garnet</option>
+                  </optgroup>
+                  <optgroup label="Dark / Black">
+                    <option value="blowout-burgundy">Blowout Burgundy</option>
+                    <option value="chocolate-cherry">Chocolate Cherry</option>
+                    <option value="midnight-ruby">Midnight Ruby</option>
+                    <option value="leather-black">Leather Black</option>
+                  </optgroup>
+                  <optgroup label="Other">
+                    <option value="gray-silver">Gray / Silver</option>
+                    <option value="dyed-other">Dyed / Other</option>
+                  </optgroup>
                 </select>
               </div>
 
               <div>
-                <label htmlFor="bodyType" className="block text-sm font-medium text-gray-700 mb-1.5">Body type</label>
-                <select id="bodyType" name="bodyType" required value={form.bodyType} onChange={handleChange} className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-rose-200 focus:border-rose-300 transition-colors bg-white appearance-none">
-                  <option value="">Select your body type</option>
-                  <option value="hourglass">Hourglass</option>
-                  <option value="pear">Pear</option>
-                  <option value="apple">Apple</option>
-                  <option value="rectangle">Rectangle</option>
-                  <option value="inverted-triangle">Inverted triangle</option>
-                  <option value="not-sure">Not sure</option>
+                <label className="block text-sm font-medium text-gray-700 mb-1.5">Eye color</label>
+                <img
+                  src="https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog/eye-color-chart.jpg"
+                  alt="Eye color reference chart"
+                  className="w-full rounded-xl mb-3"
+                  loading="lazy"
+                />
+                <select id="eyeColor" name="eyeColor" required value={form.eyeColor} onChange={handleChange} className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-rose-200 focus:border-rose-300 transition-colors bg-white appearance-none">
+                  <option value="">Select your eye color</option>
+                  <optgroup label="Blue">
+                    <option value="agate">Agate</option>
+                    <option value="baby-blue">Baby Blue</option>
+                    <option value="old-world-blue">Old World Blue</option>
+                    <option value="blue-star">Blue Star</option>
+                    <option value="nordic">Nordic</option>
+                    <option value="cobalt">Cobalt</option>
+                    <option value="azure">Azure</option>
+                    <option value="lapis">Lapis</option>
+                  </optgroup>
+                  <optgroup label="Green / Teal">
+                    <option value="dream">Dream</option>
+                    <option value="serene">Serene</option>
+                    <option value="liz">Liz</option>
+                    <option value="creole-iris">Creole Iris</option>
+                    <option value="forest">Forest</option>
+                    <option value="vale">Vale</option>
+                  </optgroup>
+                  <optgroup label="Hazel / Gray">
+                    <option value="gbv-hazel">G, B & V Hazel</option>
+                    <option value="rain-cloud">Rain Cloud</option>
+                    <option value="winter-gray">Winter Gray</option>
+                    <option value="chuck-hazel">Chuck Hazel</option>
+                    <option value="nomad">Nomad</option>
+                    <option value="frisco">Frisco</option>
+                  </optgroup>
+                  <optgroup label="Brown / Dark">
+                    <option value="toasty-topaz">Toasty Topaz</option>
+                    <option value="teak-wood">Teak Wood</option>
+                    <option value="sable">Sable</option>
+                    <option value="paris-brun">Paris Brun</option>
+                    <option value="ebony">Ebony</option>
+                  </optgroup>
                 </select>
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1.5">Skin tone <span className="text-gray-400 font-normal">(optional)</span></label>
+                <p className="text-xs text-gray-400 mb-3">Tap the one closest to you</p>
+                <div className="grid grid-cols-4 gap-2">
+                  {[
+                    { value: "very-pale-porcelain", label: "Porcelain", img: "u1745554767_very_pale_porcelain_skin_tone_woman_almost_white__9baa4ae4-eff1-4252-9f61-baa33b82c5de_0.png" },
+                    { value: "fair-ivory", label: "Fair Ivory", img: "u1745554767_fair_ivory_skin_tone_woman_peachy_pale_complexion_27e20e2b-37a6-46c9-8311-717ba99f8eda_3.png" },
+                    { value: "light-cool-pink", label: "Light Cool", img: "u1745554767_light_skin_tone_woman_with_cool_pink_undertones_r_1063f6c5-b69e-4ca0-993b-0fe2762b5e48_2.png" },
+                    { value: "light-golden-beige", label: "Light Golden", img: "u1745554767_light_golden_beige_skin_tone_woman_warm_undertone_9997be2e-7a22-4453-a39a-9eaf97e1637f_0.png" },
+                    { value: "light-olive", label: "Light Olive", img: "u1745554767_light_olive_skin_tone_woman_subtle_green_underton_552b7929-9d82-4ba1-896b-df9dcb7f7063_1.png" },
+                    { value: "medium-light-peachy", label: "Medium Light", img: "u1745554767_medium_light_skin_tone_woman_peachy_golden_comple_d181c468-83ec-48be-b301-92a268589cca_1.png" },
+                    { value: "medium-warm-golden", label: "Medium Warm", img: "u1745554767_medium_skin_tone_woman_with_warm_golden_undertone_5de2c384-404d-4096-9b89-a2e42bf02002_2.png" },
+                    { value: "medium-yellow", label: "Medium Yellow", img: "u1745554767_medium_skin_tone_woman_with_yellow_undertones_gol_aad212c7-9868-4217-a962-6f6b8692bc53_3.png" },
+                    { value: "medium-red", label: "Medium Red", img: "u1745554767_medium_skin_tone_woman_with_red_undertones_warm_r_1b8e51d4-a203-4428-bec7-bfd59d8515f2_1.png" },
+                    { value: "medium-olive", label: "Medium Olive", img: "u1745554767_medium_olive_skin_tone_woman_green_undertones_neu_9fd5a54c-2276-4894-9b4b-a9999b3f3531_2.png" },
+                    { value: "medium-tan-golden", label: "Tan Golden", img: "u1745554767_medium_tan_skin_tone_woman_golden_brown_complexio_33f0b714-01c6-43a8-aeb2-a58b1baa4f5d_0.png" },
+                    { value: "caramel-brown", label: "Caramel", img: "u1745554767_caramel_brown_skin_tone_woman_rich_medium_dark_co_9131d80d-6aff-4cd4-93f8-ba79410ab85f_1.png" },
+                    { value: "dark-olive", label: "Dark Olive", img: "u1745554767_dark_olive_skin_tone_woman_deep_green_undertones__befc8b6e-aa8f-4c3e-b8ea-6a746374a934_3.png" },
+                    { value: "light-dark-brown", label: "Dark Brown", img: "u1745554767_light_dark_brown_skin_tone_woman_milk_chocolate_c_b6b03f4d-5909-471b-84d7-b5c47dc2d534_0.png" },
+                    { value: "deep-chocolate", label: "Deep", img: "u1745554767_deep_chocolate_brown_skin_tone_woman_dark_rich_co_281cbac2-7af4-4b0c-9899-fc1d0a0d5190_3.png" },
+                    { value: "very-dark-ebony", label: "Ebony", img: "u1745554767_very_dark_ebony_skin_tone_woman_deepest_brown_com_46a0163d-20d4-4c1f-9f87-8db6b6acf8c2_3.png" },
+                  ].map((st) => (
+                    <button
+                      key={st.value}
+                      type="button"
+                      onClick={() => setForm({ ...form, skinTone: st.value })}
+                      className={`flex flex-col items-center p-1.5 rounded-xl border-2 transition-all ${
+                        form.skinTone === st.value
+                          ? "border-rose-400 bg-rose-50"
+                          : "border-transparent hover:border-gray-200"
+                      }`}
+                    >
+                      <img
+                        src={`https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog/${st.img}`}
+                        alt={st.label}
+                        className="w-full aspect-square rounded-lg object-cover mb-1"
+                        loading="lazy"
+                      />
+                      <span className="text-[10px] text-gray-500 leading-tight text-center">{st.label}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-3">Body type</label>
+                <div className="grid grid-cols-3 gap-3">
+                  {[
+                    { value: "fullhourglass", label: "Full Hourglass", img: "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/bodytype/fullhourglass.png" },
+                    { value: "hourglass", label: "Hourglass", img: "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/bodytype/hourglass.png" },
+                    { value: "invertedtriangle", label: "Inverted Triangle", img: "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/bodytype/invertedtriangle.png" },
+                    { value: "rectangle", label: "Rectangle", img: "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/bodytype/rectangle.png" },
+                    { value: "round", label: "Round", img: "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/bodytype/round.png" },
+                    { value: "triangle", label: "Triangle", img: "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/bodytype/triangle.png" },
+                  ].map((bt) => (
+                    <button
+                      key={bt.value}
+                      type="button"
+                      onClick={() => setForm({ ...form, bodyType: bt.value })}
+                      className={`flex flex-col items-center p-3 rounded-xl border-2 transition-all ${
+                        form.bodyType === bt.value
+                          ? "border-rose-400 bg-rose-50"
+                          : "border-gray-100 bg-gray-50 hover:border-gray-200"
+                      }`}
+                    >
+                      {bt.img ? (
+                        <img src={bt.img} alt={bt.label} className="w-10 h-16 object-contain mb-1.5" loading="lazy" />
+                      ) : (
+                        <div className="w-10 h-16 flex items-center justify-center text-gray-300 text-2xl mb-1.5">?</div>
+                      )}
+                      <span className="text-xs text-gray-600">{bt.label}</span>
+                    </button>
+                  ))}
+                </div>
               </div>
 
               <div>
@@ -198,18 +326,44 @@ const AnalysisForm = () => {
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1.5">
-                  Selfie <span className="text-gray-400 font-normal">(optional but recommended)</span>
+                  Photo <span className="text-gray-400 font-normal">(required)</span>
                 </label>
-                <p className="text-sm text-gray-400 mb-2">Natural lighting, no filters. Helps us determine your color season accurately.</p>
-                <label htmlFor="selfie" className="flex flex-col items-center justify-center w-full p-6 border-2 border-dashed border-gray-200 rounded-xl cursor-pointer hover:border-rose-300 hover:bg-rose-50/30 transition-colors">
+
+                {/* How to take a good photo */}
+                <div className="bg-gray-50 rounded-xl p-4 mb-3">
+                  <p className="text-sm font-medium text-gray-700 mb-2">How to take a good photo:</p>
+                  <div className="grid grid-cols-2 gap-3 text-xs text-gray-500">
+                    <div className="flex items-start gap-2">
+                      <Check className="w-3.5 h-3.5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <span>Face a window for natural light</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-red-400 mt-0.5 flex-shrink-0 text-sm leading-none">✕</span>
+                      <span>No makeup or minimal makeup</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <Check className="w-3.5 h-3.5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <span>Show face, neck & shoulders</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-red-400 mt-0.5 flex-shrink-0 text-sm leading-none">✕</span>
+                      <span>No filters or flash</span>
+                    </div>
+                  </div>
+                </div>
+
+                <label htmlFor="selfie" className="flex flex-col items-center justify-center w-full p-8 border-2 border-dashed border-gray-200 rounded-xl cursor-pointer hover:border-rose-300 hover:bg-rose-50/30 transition-colors">
                   {selfiePreview ? (
-                    <img src={selfiePreview} alt="Preview" className="w-24 h-24 rounded-xl object-cover mb-2" />
+                    <img src={selfiePreview} alt="Preview" className="w-32 h-32 rounded-xl object-cover mb-3" />
                   ) : (
-                    <Upload className="w-8 h-8 text-gray-300 mb-2" />
+                    <>
+                      <Upload className="w-10 h-10 text-gray-300 mb-3" />
+                      <span className="text-sm font-medium text-gray-600 mb-1">Tap to take or upload a photo</span>
+                    </>
                   )}
-                  <span className="text-sm text-gray-500">{selfie ? selfie.name : "Click to upload a photo"}</span>
+                  <span className="text-xs text-gray-400">{selfie ? selfie.name : "JPG, PNG — max 10MB"}</span>
                 </label>
-                <input id="selfie" type="file" accept="image/*" onChange={handleFileChange} className="hidden" />
+                <input id="selfie" type="file" accept="image/*" capture="user" onChange={handleFileChange} className="hidden" />
               </div>
 
               {error && (
