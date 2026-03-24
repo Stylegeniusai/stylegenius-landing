@@ -12,6 +12,7 @@ interface FormData {
   eyeColor: string;
   skinTone: string;
   bodyType: string;
+  height: string;
 }
 
 const AnalysisForm = () => {
@@ -22,6 +23,7 @@ const AnalysisForm = () => {
     eyeColor: "",
     skinTone: "",
     bodyType: "",
+    height: "",
   });
   const [selfie, setSelfie] = useState<File | null>(null);
   const [selfiePreview, setSelfiePreview] = useState<string | null>(null);
@@ -68,8 +70,9 @@ const AnalysisForm = () => {
         email: form.email,
         hair_color: form.hairColor,
         eye_color: form.eyeColor,
-        skin_tone: form.skinTone,
+        skin_tone: form.skinTone || null,
         body_type: form.bodyType,
+        height: form.height,
         selfie_url: selfieUrl,
         status: "paid",
       });
@@ -83,7 +86,7 @@ const AnalysisForm = () => {
     }
   };
 
-  const isFormValid = form.name && form.email && form.hairColor && form.eyeColor && form.skinTone && form.bodyType;
+  const isFormValid = form.name && form.email && form.hairColor && form.eyeColor && form.bodyType && form.height;
 
   if (submitted) {
     return (
@@ -161,8 +164,8 @@ const AnalysisForm = () => {
               </div>
 
               <div>
-                <label htmlFor="skinTone" className="block text-sm font-medium text-gray-700 mb-1.5">Skin tone</label>
-                <select id="skinTone" name="skinTone" required value={form.skinTone} onChange={handleChange} className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-rose-200 focus:border-rose-300 transition-colors bg-white appearance-none">
+                <label htmlFor="skinTone" className="block text-sm font-medium text-gray-700 mb-1.5">Skin tone <span className="text-gray-400 font-normal">(optional if uploading a selfie)</span></label>
+                <select id="skinTone" name="skinTone" value={form.skinTone} onChange={handleChange} className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-rose-200 focus:border-rose-300 transition-colors bg-white appearance-none">
                   <option value="">Select your skin tone</option>
                   <option value="very-fair">Very fair / Porcelain</option>
                   <option value="fair">Fair</option>
@@ -186,6 +189,11 @@ const AnalysisForm = () => {
                   <option value="inverted-triangle">Inverted triangle</option>
                   <option value="not-sure">Not sure</option>
                 </select>
+              </div>
+
+              <div>
+                <label htmlFor="height" className="block text-sm font-medium text-gray-700 mb-1.5">Height</label>
+                <input id="height" name="height" type="text" required value={form.height} onChange={handleChange} placeholder="e.g. 165 cm or 5'5&quot;" className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-rose-200 focus:border-rose-300 transition-colors bg-white" />
               </div>
 
               <div>

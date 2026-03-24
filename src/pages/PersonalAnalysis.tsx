@@ -103,7 +103,7 @@ const TrustBar = () => (
     <span className="w-1 h-1 rounded-full bg-gray-300 hidden sm:block" />
     <span>Secure payment via Stripe</span>
     <span className="w-1 h-1 rounded-full bg-gray-300 hidden sm:block" />
-    <span>PDF delivered within 48h</span>
+    <span>Delivered within 48h</span>
   </div>
 );
 
@@ -116,7 +116,7 @@ const PersonalAnalysis = () => {
     <div className="min-h-screen bg-white">
       <SEO
         title="Personal Color & Style Analysis — Discover Your Best Colors"
-        description="Get a personalized color and style analysis PDF. Discover your best colors, makeup shades, outfits for your body type, and what to avoid. Delivered within 48 hours."
+        description="Discover your best colors, makeup shades, and outfits for your body type with a personalized style analysis. Delivered to your inbox within 48 hours."
         keywords="personal color analysis, style analysis, color season, best colors for me, personal styling, body type analysis, color consultation"
         canonicalUrl="/personal-analysis"
         ogType="website"
@@ -141,7 +141,7 @@ const PersonalAnalysis = () => {
                 </span>
               </h1>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed max-w-xl mx-auto lg:mx-0">
-                Stop guessing. Get a personalized PDF with your best colors, makeup shades, outfit ideas for your body type — and what to avoid. Delivered to your inbox within 48 hours.
+                Stop guessing what works. Get a personalized guide with your best colors, makeup shades, outfit ideas for your body type — and what to avoid. Straight to your inbox within 48 hours.
               </p>
               <button
                 onClick={handleCheckout}
@@ -189,6 +189,152 @@ const PersonalAnalysis = () => {
         </div>
       </section>
 
+      {/* ════════ WHAT'S INSIDE ════════ */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <h2
+              className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center"
+              style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+            >
+              What you'll discover
+            </h2>
+            <p className="text-gray-500 text-center mb-12 text-lg">
+              Everything personalized to your unique coloring and body type.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              {/* Color season & palette */}
+              <div className="p-6 rounded-2xl bg-gray-50 flex flex-col">
+                <h3 className="font-semibold text-gray-900 text-lg mb-3">Your color season & best palette</h3>
+                <div className="h-24 flex items-center mb-3">
+                  <div className="grid grid-cols-5 gap-1.5 w-full">
+                    {["#B56576", "#E56B6F", "#355070", "#6D597A", "#EAAC8B", "#C9ADA7", "#D4C2FC", "#A2B5BB", "#F2E9E4", "#7B8794"].map((c, i) => (
+                      <div key={i} className="aspect-square rounded-lg" style={{ backgroundColor: c }} />
+                    ))}
+                  </div>
+                </div>
+                <p className="text-gray-500 text-sm mt-auto">We analyze your skin tone, hair, and eyes to find the exact shades that make you glow.</p>
+              </div>
+
+              {/* Makeup */}
+              <div className="p-6 rounded-2xl bg-gray-50 flex flex-col">
+                <h3 className="font-semibold text-gray-900 text-lg mb-3">Makeup colors that complement you</h3>
+                <div className="h-24 flex items-center">
+                  <div className="flex gap-4">
+                    {[
+                      { color: "#B56576", label: "Lip" },
+                      { color: "#E8A87C", label: "Blush" },
+                      { color: "#6D597A", label: "Shadow" },
+                      { color: "#FAEDCD", label: "Base" },
+                    ].map((m, i) => (
+                      <div key={i} className="text-center">
+                        <div className="w-10 h-10 rounded-full shadow-sm mx-auto" style={{ backgroundColor: m.color }} />
+                        <span className="text-xs text-gray-400 mt-1 block">{m.label}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <p className="text-gray-500 text-sm mt-auto">Lip, blush, eyeshadow, and foundation recommendations based on your coloring.</p>
+              </div>
+
+              {/* Colors to avoid */}
+              <div className="p-6 rounded-2xl bg-gray-50 flex flex-col">
+                <h3 className="font-semibold text-gray-900 text-lg mb-3">Colors & patterns to avoid</h3>
+                <div className="h-24 flex items-center">
+                  <div className="flex gap-2">
+                    {["#FF6B00", "#FFD700", "#00FF00", "#000000"].map((c, i) => (
+                      <div key={i} className="w-10 h-10 rounded-lg relative" style={{ backgroundColor: c }}>
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <div className="w-7 h-[2px] bg-white/80 rotate-45 rounded" />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <p className="text-gray-500 text-sm mt-auto">Learn which shades wash you out — so you stop wasting money on pieces that don't work.</p>
+              </div>
+
+              {/* Outfit ideas */}
+              <div className="p-6 rounded-2xl bg-gray-50 flex flex-col">
+                <h3 className="font-semibold text-gray-900 text-lg mb-3">Outfit ideas for your body type</h3>
+                <div className="h-24 flex items-center justify-center">
+                  <div className="flex gap-2">
+                    {[
+                      "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/bodytype/round/structured-jackets.png",
+                      "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/bodytype/invertedtriangle/v-neck-tops.png",
+                      "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/bodytype/fullhourglass/strategic-color-placement.png",
+                    ].map((src, i) => (
+                      <img key={i} src={src} alt="Body type outfit example" className="h-24 w-auto object-contain" loading="lazy" />
+                    ))}
+                  </div>
+                </div>
+                <p className="text-gray-500 text-sm mt-auto">Silhouettes, cuts, and styling tricks tailored to your proportions — plus real shopping links.</p>
+              </div>
+
+              {/* Capsule wardrobe */}
+              <div className="p-6 rounded-2xl bg-gray-50 flex flex-col">
+                <h3 className="font-semibold text-gray-900 text-lg mb-3">A capsule wardrobe starting point</h3>
+                <div className="flex items-center">
+                  <img
+                    src="https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog/333-closet-before-after.png"
+                    alt="Capsule wardrobe example"
+                    className="w-full h-auto object-contain rounded-lg"
+                    loading="lazy"
+                  />
+                </div>
+                <p className="text-gray-500 text-sm mt-auto">Key pieces in your ideal colors to build a versatile, flattering wardrobe.</p>
+              </div>
+
+              {/* Saveable swatch — phone mockup */}
+              <div className="p-6 rounded-2xl bg-gray-50 flex flex-col items-center">
+                <h3 className="font-semibold text-gray-900 text-lg mb-4">Your colors, always with you</h3>
+                <div className="relative w-[180px] mb-4">
+                  <div className="bg-gray-900 rounded-[2rem] p-2.5 shadow-2xl">
+                    <div className="bg-white rounded-[1.5rem] overflow-hidden">
+                      <div className="flex justify-between items-center px-4 pt-2.5 pb-1">
+                        <span className="text-[8px] text-gray-400">9:41</span>
+                        <div className="w-12 h-3 bg-gray-900 rounded-full" />
+                        <div className="w-2.5 h-1.5 bg-gray-400 rounded-sm" />
+                      </div>
+                      <div className="px-4 pt-3 pb-5">
+                        <p className="text-[8px] uppercase tracking-wider text-gray-400 mb-1">Your palette</p>
+                        <p className="text-xs font-semibold text-gray-900 mb-2" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Light Summer</p>
+                        <div className="grid grid-cols-5 gap-1 mb-3">
+                          {["#B0C4DE", "#D4C2FC", "#C9ADA7", "#B56576", "#6D597A",
+                            "#A2B5BB", "#E8A87C", "#F2E9E4", "#355070", "#EAAC8B",
+                            "#7B8794", "#CCD5AE", "#FAEDCD", "#E56B6F", "#D4A373"].map((c, i) => (
+                            <div key={i} className="aspect-square rounded-sm shadow-sm" style={{ backgroundColor: c }} />
+                          ))}
+                        </div>
+                        <p className="text-[8px] uppercase tracking-wider text-gray-400 mb-1">Makeup</p>
+                        <div className="flex gap-1.5">
+                          {[{ color: "#B56576", label: "Lip" }, { color: "#E8A87C", label: "Blush" }, { color: "#6D597A", label: "Eye" }].map((m, i) => (
+                            <div key={i}>
+                              <div className="w-4 h-4 rounded-full shadow-sm" style={{ backgroundColor: m.color }} />
+                              <span className="text-[6px] text-gray-400">{m.label}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <p className="text-gray-500 text-sm text-center max-w-sm mt-auto">Save your personal palette to your phone and take it shopping. No more guessing in the fitting room.</p>
+              </div>
+            </div>
+            <div className="text-center mt-12">
+              <button
+                onClick={handleCheckout}
+                className="inline-flex items-center gap-2 px-7 py-3.5 bg-gray-900 text-white rounded-full font-medium hover:bg-gray-800 transition-all hover:scale-105"
+              >
+                Get my personal style guide — $49
+                <ArrowRight className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ════════ BEFORE / AFTER ════════ */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
@@ -212,51 +358,6 @@ const PersonalAnalysis = () => {
                   loading="lazy"
                 />
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ════════ WHAT'S INSIDE ════════ */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
-            <h2
-              className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center"
-              style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
-            >
-              What you'll discover
-            </h2>
-            <p className="text-gray-500 text-center mb-12 text-lg">
-              15–20 beautifully designed pages, personalized to your unique coloring and body type.
-            </p>
-            <div className="space-y-5">
-              {[
-                { title: "Your color season & best color palette", desc: "We analyze your skin tone, hair, and eyes to find the exact shades that make you glow." },
-                { title: "Makeup colors that complement you", desc: "Lip, blush, eyeshadow, and foundation recommendations based on your coloring." },
-                { title: "Colors & patterns to avoid", desc: "Learn which shades wash you out — so you stop wasting money on pieces that don't work." },
-                { title: "Outfit ideas for your body type", desc: "Silhouettes, cuts, and styling tricks tailored to your proportions." },
-                { title: "A capsule wardrobe starting point", desc: "Key pieces in your ideal colors to build a versatile, flattering wardrobe." },
-              ].map((item, i) => (
-                <div key={i} className="flex gap-4 p-5 rounded-2xl bg-gray-50 hover:bg-rose-50/50 transition-colors">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-rose-100 flex items-center justify-center mt-0.5">
-                    <Check className="w-5 h-5 text-rose-600" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 text-lg">{item.title}</h3>
-                    <p className="text-gray-500 mt-1">{item.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className="text-center mt-12">
-              <button
-                onClick={handleCheckout}
-                className="inline-flex items-center gap-2 px-7 py-3.5 bg-gray-900 text-white rounded-full font-medium hover:bg-gray-800 transition-all hover:scale-105"
-              >
-                Discover my perfect colors — $49
-                <ArrowRight className="w-4 h-4" />
-              </button>
             </div>
           </div>
         </div>
@@ -327,9 +428,9 @@ const PersonalAnalysis = () => {
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
               {[
-                { icon: <Sparkles className="w-6 h-6" />, step: "1", title: "Pay $49", desc: "Click the button below — you'll be taken to our secure Stripe checkout. One-time payment, no subscription." },
-                { icon: <Upload className="w-6 h-6" />, step: "2", title: "Fill in your details", desc: "After payment, you'll fill in a short form with your coloring, body type, and upload a selfie in natural light." },
-                { icon: <FileText className="w-6 h-6" />, step: "3", title: "Get your PDF in 48h", desc: "We create your personalized analysis and send it straight to your inbox within 48 hours." },
+                { icon: <Sparkles className="w-6 h-6" />, step: "1", title: "Place your order", desc: "Click the button and check out securely. It's a one-time purchase — no subscription, no hidden fees." },
+                { icon: <Upload className="w-6 h-6" />, step: "2", title: "Tell us about you", desc: "After checkout, you'll answer a few quick questions about your coloring, body type, and upload a selfie in natural light." },
+                { icon: <FileText className="w-6 h-6" />, step: "3", title: "Get your guide", desc: "Your personalized analysis lands in your inbox within 48 hours — ready to save, screenshot, and take shopping." },
               ].map((item, i) => (
                 <div key={i} className="text-center">
                   <div className="w-16 h-16 rounded-2xl bg-rose-50 flex items-center justify-center mx-auto mb-5 text-rose-600">
@@ -401,7 +502,7 @@ const PersonalAnalysis = () => {
               onClick={handleCheckout}
               className="inline-flex items-center gap-2 px-8 py-4 bg-gray-900 text-white rounded-full text-lg font-medium hover:bg-gray-800 transition-all hover:scale-105 shadow-lg shadow-gray-900/20"
             >
-              Discover my perfect colors — $49
+              Start my style transformation — $49
               <ArrowRight className="w-5 h-5" />
             </button>
             <TrustBar />
@@ -421,12 +522,12 @@ const PersonalAnalysis = () => {
             </h2>
             <div className="space-y-6">
               {[
-                { q: "What exactly do I receive?", a: "A beautifully designed PDF (15–20 pages) with your personal color season, best colors, makeup recommendations, outfit ideas for your body type, and a capsule wardrobe starting point." },
-                { q: "How long does delivery take?", a: "You'll receive your PDF via email within 48 hours on working days (Monday–Friday). Orders placed on weekends are delivered by Tuesday." },
+                { q: "What exactly do I receive?", a: "A beautifully designed personal guide with your color season, best colors, a saveable palette for your phone, makeup recommendations, outfit ideas for your body type, shopping links, and a capsule wardrobe starting point." },
+                { q: "How long does delivery take?", a: "Your guide will be in your inbox within 48 hours on working days (Monday–Friday). Orders placed on weekends are delivered by Tuesday." },
                 { q: "Can you really determine my colors from a selfie?", a: "Yes — combined with the details you provide about your hair, eyes, and skin tone, a natural-light selfie gives us what we need to identify your color season accurately. It's the same information a stylist uses in person." },
                 { q: "What if I'm not happy with my analysis?", a: "We offer a full refund within 7 days of delivery. No questions asked. Just email us and we'll process it immediately." },
                 { q: "Do I need to upload a selfie?", a: "It's optional but highly recommended. A photo in natural light helps us determine your color season much more accurately. Without it, we rely on your form answers alone." },
-                { q: "Is this a subscription?", a: "No. It's a one-time payment of $49. You receive your PDF and that's it — no recurring charges." },
+                { q: "Is this a subscription?", a: "No — it's a one-time purchase of $49. You get your personal guide and that's it. No recurring charges, ever." },
               ].map((item, i) => (
                 <details key={i} className="group">
                   <summary className="flex justify-between items-center cursor-pointer py-4 px-5 rounded-xl hover:bg-gray-50 transition-colors font-medium text-gray-900">
