@@ -114,11 +114,18 @@ const PersonalAnalysis = () => {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Personal Color & Style Analysis — Discover Your Best Colors"
-        description="Discover your best colors, makeup shades, and outfits for your body type with a personalized style analysis. Delivered to your inbox within 48 hours."
-        keywords="personal color analysis, style analysis, color season, best colors for me, personal styling, body type analysis, color consultation"
+        title="Personal Color & Style Analysis Online — Find Your Best Colors, Season & Outfits"
+        description="Get your colors done online. Upload a selfie and receive a personalized color season analysis, makeup palette, body type guide, and capsule wardrobe — delivered in 48 hours. $49 with 7-day money-back guarantee."
+        keywords="personal color analysis online, get my colors done online, what colors suit me, find my color season, seasonal color analysis, am I cool or warm toned, color analysis with selfie, style analysis, body type analysis, what season am I, color consultation online, personal style guide"
         canonicalUrl="/personal-analysis"
         ogType="website"
+        faq={[
+          { question: "How much does it cost to get your colors analyzed?", answer: "Our personal color & style analysis costs $49 — a one-time payment with no subscription. You receive a full personalized guide with your color season, best colors, makeup palette, body type outfits, and a saveable phone swatch within 48 hours." },
+          { question: "Can I do a color analysis online with a selfie?", answer: "Yes. You upload a selfie in natural light along with details about your hair, eyes, and skin tone. Our stylists use this to determine your exact color season and create your personalized guide." },
+          { question: "What is included in a personal color analysis?", answer: "Your color season, a palette of your 15 best colors, colors to avoid, makeup recommendations (lip, blush, eyeshadow, foundation), outfit ideas for your body type, a saveable phone swatch, and a capsule wardrobe starting point." },
+          { question: "How long does an online color analysis take?", answer: "After you complete checkout and submit your details, your personalized guide is delivered to your email within 48 hours on working days. Orders placed on weekends are delivered by Tuesday." },
+          { question: "Is an online color analysis accurate?", answer: "Yes — combined with your selfie in natural light and the details you provide about your hair, eyes, and skin tone, we can accurately determine your color season. It's the same information a stylist uses in person." },
+        ]}
       />
       <Navigation />
 

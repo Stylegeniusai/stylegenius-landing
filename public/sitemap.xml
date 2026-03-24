@@ -32,6 +32,11 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://stylegenius.app/personal-analysis</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://stylegenius.app/blog</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

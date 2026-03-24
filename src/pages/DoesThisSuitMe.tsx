@@ -1,6 +1,7 @@
 import React from "react";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
+import AnalysisCTA from "../components/AnalysisCTA";
 import SEO from "../components/SEO";
 import { Link } from "react-router-dom";
 
@@ -525,6 +526,9 @@ const DoesThisSuitMe = () => {
         </div>
       </article>
 
+      <div className="container mx-auto px-4 max-w-4xl">
+        <AnalysisCTA />
+      </div>
       <Footer />
     </div>
   );

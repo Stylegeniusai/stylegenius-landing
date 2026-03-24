@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
+import AnalysisCTA from "../components/AnalysisCTA";
 import SEO from "../components/SEO";
 
 const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog";
@@ -971,6 +972,9 @@ const QuietLuxuryStyle = () => {
         </div>
       </section>
 
+      <div className="container mx-auto px-4 max-w-4xl">
+        <AnalysisCTA />
+      </div>
       <Footer />
     </div>
   );
