@@ -380,23 +380,23 @@ const PersonalAnalysis = () => {
             <div className="grid md:grid-cols-3 gap-6">
               {[
                 {
-                  quote: "I've always felt unsure shopping for clothes. After getting my analysis, I finally understand why some colors look amazing on me and others don't. It completely changed how I shop.",
+                  quote: "Really liked the combo of body type tips and all the colors. Dressing is more fun now!",
                   name: "Sofia M.",
-                  detail: "Soft Summer — Stockholm",
+                  detail: "Soft Summer",
                   initial: "S",
                   gradient: "from-rose-200 to-pink-300",
                 },
                 {
-                  quote: "I used to buy so much black because it felt 'safe'. Turns out I'm a Warm Autumn and now I wear rust, olive and terracotta. I get compliments constantly. Best $49 I've spent.",
+                  quote: "Its great! The makeup changed my look completely and most of the colors really suit me",
                   name: "Emma L.",
-                  detail: "Warm Autumn — Malmö",
+                  detail: "Warm Autumn",
                   initial: "E",
                   gradient: "from-amber-200 to-orange-300",
                 },
                 {
-                  quote: "The body type section alone was worth it. I never knew why certain jeans looked weird on me — now I know exactly what cuts to look for. So much time saved.",
+                  quote: "Great content and did a good job explaining why certain colors and styles suit me better",
                   name: "Olivia K.",
-                  detail: "Pear Shape — Göteborg",
+                  detail: "Pear Shape",
                   initial: "O",
                   gradient: "from-violet-200 to-purple-300",
                 },
@@ -522,7 +522,7 @@ const PersonalAnalysis = () => {
             <div className="mb-10 p-6 bg-white rounded-2xl shadow-sm border border-gray-100 inline-block">
               <Stars />
               <p className="text-gray-600 mt-3 mb-4 italic text-sm max-w-md">
-                &ldquo;I was skeptical but this was genuinely one of the best purchases I've made for myself. I wear color now and I actually love getting dressed in the morning.&rdquo;
+                &ldquo;Super helpful! I finally know what works for me and shopping feels way easier now&rdquo;
               </p>
               <div className="flex items-center justify-center gap-2">
                 <div className="w-8 h-8 rounded-full bg-gradient-to-br from-teal-200 to-cyan-300 flex items-center justify-center text-white text-xs font-semibold" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
