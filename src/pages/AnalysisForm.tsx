@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import SEO from "../components/SEO";
@@ -16,6 +17,16 @@ interface FormData {
 }
 
 const AnalysisForm = () => {
+  const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
+  const sessionId = searchParams.get("session_id");
+
+  useEffect(() => {
+    if (!sessionId) {
+      navigate("/personal-analysis", { replace: true });
+    }
+  }, [sessionId, navigate]);
+
   const [form, setForm] = useState<FormData>({
     name: "",
     email: "",
@@ -35,16 +46,35 @@ const AnalysisForm = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
+  const processFile = (file: File) => {
+    if (!file.type.startsWith("image/")) {
+      setError("Please upload an image file.");
+      return;
+    }
+    if (file.size > 10 * 1024 * 1024) {
+      setError("File too large. Max 10MB.");
+      return;
+    }
+    setSelfie(file);
+    setSelfiePreview(URL.createObjectURL(file));
+    setError(null);
+  };
+
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
-    if (file) {
-      if (file.size > 10 * 1024 * 1024) {
-        setError("File too large. Max 10MB.");
-        return;
-      }
-      setSelfie(file);
-      setSelfiePreview(URL.createObjectURL(file));
-    }
+    if (file) processFile(file);
+  };
+
+  const handleDrop = (e: React.DragEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    const file = e.dataTransfer.files?.[0];
+    if (file) processFile(file);
+  };
+
+  const handleDragOver = (e: React.DragEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -56,16 +86,17 @@ const AnalysisForm = () => {
       let selfieUrl: string | null = null;
       if (selfie) {
         const ext = selfie.name.split(".").pop();
-        const fileName = `analysis/${Date.now()}-${Math.random().toString(36).slice(2)}.${ext}`;
+        const fileName = `${Date.now()}-${Math.random().toString(36).slice(2)}.${ext}`;
         const { error: uploadError } = await supabase.storage
-          .from("uploads")
+          .from("styleanalys")
           .upload(fileName, selfie);
-        if (uploadError) throw new Error("Failed to upload photo. Please try again.");
-        const { data: urlData } = supabase.storage.from("uploads").getPublicUrl(fileName);
+        if (uploadError) { console.error("Upload error:", uploadError); throw new Error("Failed to upload photo. Please try again."); }
+        const { data: urlData } = supabase.storage.from("styleanalys").getPublicUrl(fileName);
         selfieUrl = urlData.publicUrl;
       }
 
       const { error: dbError } = await supabase.from("analysis_orders").insert({
+        stripe_session_id: sessionId,
         email: form.email,
         hair_color: form.hairColor,
         eye_color: form.eyeColor,
@@ -76,6 +107,20 @@ const AnalysisForm = () => {
         status: "paid",
       });
       if (dbError) throw new Error("Failed to save your details. Please try again.");
+
+      // Discord notification
+      try {
+        await fetch("https://discord.com/api/webhooks/1438963591486242836/TlmrgRcrRbaOy2DcuG-0GFQBWbmjpLm4PseyWlbt2SAoAi35r0EL87cxTEwLDchRpf_7", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            content: `**New Style Analysis Order!**\n📧 **Email:** ${form.email}\n💇 **Hair:** ${form.hairColor}\n👁️ **Eyes:** ${form.eyeColor}\n🎨 **Skin tone:** ${form.skinTone || "Not selected"}\n👗 **Body type:** ${form.bodyType}\n📏 **Height:** ${form.height}\n📸 **Selfie:** ${selfieUrl ? "Yes" : "No"}\n💳 **Stripe:** ${sessionId}\n🕐 **Time:** ${new Date().toISOString()}`,
+            username: "StyleGenius Orders",
+          }),
+        });
+      } catch (e) {
+        // Don't block submission if Discord fails
+      }
 
       setSubmitted(true);
     } catch (err: any) {
@@ -352,18 +397,19 @@ const AnalysisForm = () => {
                   </div>
                 </div>
 
-                <label htmlFor="selfie" className="flex flex-col items-center justify-center w-full p-8 border-2 border-dashed border-gray-200 rounded-xl cursor-pointer hover:border-rose-300 hover:bg-rose-50/30 transition-colors">
+                <label htmlFor="selfie" onDrop={handleDrop} onDragOver={handleDragOver} className="flex flex-col items-center justify-center w-full p-8 border-2 border-dashed border-gray-200 rounded-xl cursor-pointer hover:border-rose-300 hover:bg-rose-50/30 transition-colors">
                   {selfiePreview ? (
                     <img src={selfiePreview} alt="Preview" className="w-32 h-32 rounded-xl object-cover mb-3" />
                   ) : (
                     <>
                       <Upload className="w-10 h-10 text-gray-300 mb-3" />
-                      <span className="text-sm font-medium text-gray-600 mb-1">Tap to take or upload a photo</span>
+                      <span className="text-sm font-medium text-gray-600 mb-1">Tap to upload or drag a photo here</span>
                     </>
                   )}
                   <span className="text-xs text-gray-400">{selfie ? selfie.name : "JPG, PNG — max 10MB"}</span>
+                  {!selfie && <span className="text-xs text-gray-300 mt-2">On Mac? Drag your photo from the Photos app directly here.</span>}
                 </label>
-                <input id="selfie" type="file" accept="image/*" capture="user" onChange={handleFileChange} className="hidden" />
+                <input id="selfie" type="file" accept="image/*" onChange={handleFileChange} className="hidden" />
               </div>
 
               {error && (
