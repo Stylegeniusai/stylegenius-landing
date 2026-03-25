@@ -110,7 +110,7 @@ const AnalysisForm = () => {
 
       // Discord notification
       try {
-        await fetch("https://discord.com/api/webhooks/1438963591486242836/TlmrgRcrRbaOy2DcuG-0GFQBWbmjpLm4PseyWlbt2SAoAi35r0EL87cxTEwLDchRpf_7", {
+        await fetch(import.meta.env.VITE_DISCORD_WEBHOOK || "", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
