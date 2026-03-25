@@ -504,7 +504,7 @@ const PersonalAnalysis = () => {
             <div>
               <h3 className="font-semibold text-gray-900 text-lg mb-1">7-day money-back guarantee</h3>
               <p className="text-gray-500 text-sm leading-relaxed">
-                If you're not happy with your analysis, email us within 7 days of delivery for a full refund. No questions asked.*
+                If you're not happy with your analysis, email us at ai@stylegenius.app within 7 days of delivery for a full refund. No questions asked.*
               </p>
               <p className="text-gray-400 text-xs mt-1">
                 *Refund applies to first-time purchases. One refund per customer.
@@ -571,7 +571,7 @@ const PersonalAnalysis = () => {
                 { q: "What exactly do I receive?", a: "A beautifully designed personal guide with your color season, best colors, a saveable palette for your phone, makeup recommendations, outfit ideas for your body type, shopping links, and a capsule wardrobe starting point." },
                 { q: "How long does delivery take?", a: "Your guide will be in your inbox within 48 hours on working days (Monday–Friday). Orders placed on weekends are delivered by Tuesday." },
                 { q: "Can you really determine my colors from a selfie?", a: "Yes — combined with the details you provide about your hair, eyes, and skin tone, a natural-light selfie gives us what we need to identify your color season accurately. It's the same information a stylist uses in person." },
-                { q: "What if I'm not happy with my analysis?", a: "We offer a full refund within 7 days of delivery. No questions asked. Just email us and we'll process it immediately." },
+                { q: "What if I'm not happy with my analysis?", a: "We offer a full refund within 7 days of delivery. No questions asked. Just email ai@stylegenius.app and we'll process it immediately." },
                 { q: "Why do I need to upload a selfie?", a: "A photo in natural light lets us see your true coloring and determine your color season accurately. It's required — but it only takes a second. Just face a window, no makeup or filters, and snap a pic." },
                 { q: "Is this a subscription?", a: "No — it's a one-time purchase of $49. You get your personal guide and that's it. No recurring charges, ever." },
               ].map((item, i) => (
