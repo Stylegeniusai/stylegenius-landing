@@ -341,34 +341,6 @@ const PersonalAnalysis = () => {
         </div>
       </section>
 
-      {/* ════════ BEFORE / AFTER ════════ */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-              <div className="text-center">
-                <p className="text-sm uppercase tracking-wider text-gray-400 mb-3" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Before</p>
-                <img
-                  src={`${BLOG_IMAGE_BASE}/analysis-before.png`}
-                  alt="Before — wearing colors that don't match your complexion"
-                  className="w-full max-w-xs mx-auto md:max-w-none h-auto rounded-xl"
-                  loading="lazy"
-                />
-              </div>
-              <div className="text-center">
-                <p className="text-sm uppercase tracking-wider text-gray-900 mb-3" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>After</p>
-                <img
-                  src={`${BLOG_IMAGE_BASE}/analysis-after.png`}
-                  alt="After — wearing your perfect color palette"
-                  className="w-full max-w-xs mx-auto md:max-w-none h-auto rounded-xl"
-                  loading="lazy"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ════════ SOCIAL PROOF ════════ */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
