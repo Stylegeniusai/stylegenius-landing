@@ -41,11 +41,11 @@ const FutureOnlineShopping = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <span className="inline-block px-4 py-2 rounded-full text-sm font-medium mb-6" style={{ background: 'rgba(255,112,217,0.15)', color: '#FF70D9' }}>Fashion Technology</span>
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6"
+              style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+            >
               The Future of{" "}
-              <span className="bg-clip-text text-transparent" style={{ background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-                Online Shopping
-              </span>
+              Online Shopping
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed">
               AI stylists, virtual dressing rooms, smart mirrors, and personalized fashion. Here's what's coming – and what's already here.

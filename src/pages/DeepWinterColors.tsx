@@ -35,11 +35,11 @@ const DeepWinterColors = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <span className="inline-block px-4 py-2 bg-white/20 text-white rounded-full text-sm font-medium mb-6">Color Analysis</span>
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6"
+              style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+            >
               Deep Winter{" "}
-              <span className="bg-clip-text text-transparent" style={{ background: 'linear-gradient(45deg, #E6E6FA, #00CED1)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-                Color Palette
-              </span>
+              Color Palette
             </h1>
             <p className="text-xl md:text-2xl text-gray-200 mb-8 leading-relaxed">
               The complete guide to Deep Winter colors - dramatic, bold, and high-contrast shades for striking cool-toned beauty.
@@ -113,33 +113,35 @@ const DeepWinterColors = () => {
                 </div>
               ))}
             </div>
+            <p className="text-sm text-gray-400 mb-8">These are general guidelines — <Link to="/personal-analysis" className="text-rose-400 hover:text-rose-500 transition-colors">get colors picked specifically for you</Link></p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div className="bg-green-50 rounded-2xl p-6">
               <h3 className="text-xl font-bold text-gray-900 mb-4">Colors to Embrace</h3>
               <ul className="text-gray-700 space-y-2">
-                <li><span className="text-green-600 mr-2">✓</span> True black and pure white</li>
-                <li><span className="text-green-600 mr-2">✓</span> Deep, saturated jewel tones</li>
+                <li><span className="text-green-600 mr-2">✓</span><span className="inline-block w-3 h-3 rounded-full mr-1 border border-gray-300 align-middle" style={{ backgroundColor: "#000000" }} /><span className="inline-block w-3 h-3 rounded-full mr-1 border border-gray-300 align-middle" style={{ backgroundColor: "#FFFFFF" }} /> True black and pure white</li>
+                <li><span className="text-green-600 mr-2">✓</span><span className="inline-block w-3 h-3 rounded-full mr-1 border border-gray-300 align-middle" style={{ backgroundColor: "#046307" }} /><span className="inline-block w-3 h-3 rounded-full mr-1 border border-gray-300 align-middle" style={{ backgroundColor: "#4169E1" }} /><span className="inline-block w-3 h-3 rounded-full mr-1 border border-gray-300 align-middle" style={{ backgroundColor: "#800020" }} /> Deep, saturated jewel tones</li>
                 <li><span className="text-green-600 mr-2">✓</span> Bold, high-contrast combinations</li>
-                <li><span className="text-green-600 mr-2">✓</span> Icy pastels as accents</li>
-                <li><span className="text-green-600 mr-2">✓</span> Cool-based reds and pinks</li>
-                <li><span className="text-green-600 mr-2">✓</span> Silver metallics</li>
+                <li><span className="text-green-600 mr-2">✓</span><span className="inline-block w-3 h-3 rounded-full mr-1 border border-gray-300 align-middle" style={{ backgroundColor: "#F8E8EE" }} /><span className="inline-block w-3 h-3 rounded-full mr-1 border border-gray-300 align-middle" style={{ backgroundColor: "#E0FFFF" }} /> Icy pastels as accents</li>
+                <li><span className="text-green-600 mr-2">✓</span><span className="inline-block w-3 h-3 rounded-full mr-1 border border-gray-300 align-middle" style={{ backgroundColor: "#BF0A30" }} /><span className="inline-block w-3 h-3 rounded-full mr-1 border border-gray-300 align-middle" style={{ backgroundColor: "#FF0090" }} /> Cool-based reds and pinks</li>
+                <li><span className="text-green-600 mr-2">✓</span><span className="inline-block w-3 h-3 rounded-full mr-1 border border-gray-300 align-middle" style={{ backgroundColor: "#C0C0C0" }} /> Silver metallics</li>
               </ul>
             </div>
 
             <div className="bg-red-50 rounded-2xl p-6">
               <h3 className="text-xl font-bold text-gray-900 mb-4">Colors to Avoid</h3>
               <ul className="text-gray-700 space-y-2">
-                <li><span className="text-red-500 mr-2">✕</span> Warm oranges and yellows</li>
-                <li><span className="text-red-500 mr-2">✕</span> Muted, dusty colors</li>
-                <li><span className="text-red-500 mr-2">✕</span> Warm browns and camel</li>
-                <li><span className="text-red-500 mr-2">✕</span> Soft, powdery pastels</li>
-                <li><span className="text-red-500 mr-2">✕</span> Gold jewelry</li>
-                <li><span className="text-red-500 mr-2">✕</span> Earth tones</li>
+                <li><span className="text-red-500 mr-2">✕</span><span className="inline-block w-3 h-3 rounded-full mr-1 border border-gray-300 align-middle" style={{ backgroundColor: "#FF8C00" }} /><span className="inline-block w-3 h-3 rounded-full mr-1 border border-gray-300 align-middle" style={{ backgroundColor: "#FFD700" }} /> Warm oranges and yellows</li>
+                <li><span className="text-red-500 mr-2">✕</span><span className="inline-block w-3 h-3 rounded-full mr-1 border border-gray-300 align-middle" style={{ backgroundColor: "#C4A882" }} /><span className="inline-block w-3 h-3 rounded-full mr-1 border border-gray-300 align-middle" style={{ backgroundColor: "#B5A89A" }} /> Muted, dusty colors</li>
+                <li><span className="text-red-500 mr-2">✕</span><span className="inline-block w-3 h-3 rounded-full mr-1 border border-gray-300 align-middle" style={{ backgroundColor: "#8B4513" }} /><span className="inline-block w-3 h-3 rounded-full mr-1 border border-gray-300 align-middle" style={{ backgroundColor: "#C19A6B" }} /> Warm browns and camel</li>
+                <li><span className="text-red-500 mr-2">✕</span><span className="inline-block w-3 h-3 rounded-full mr-1 border border-gray-300 align-middle" style={{ backgroundColor: "#FFD1DC" }} /><span className="inline-block w-3 h-3 rounded-full mr-1 border border-gray-300 align-middle" style={{ backgroundColor: "#E6E6FA" }} /> Soft, powdery pastels</li>
+                <li><span className="text-red-500 mr-2">✕</span><span className="inline-block w-3 h-3 rounded-full mr-1 border border-gray-300 align-middle" style={{ backgroundColor: "#FFD700" }} /> Gold jewelry</li>
+                <li><span className="text-red-500 mr-2">✕</span><span className="inline-block w-3 h-3 rounded-full mr-1 border border-gray-300 align-middle" style={{ backgroundColor: "#8B7355" }} /><span className="inline-block w-3 h-3 rounded-full mr-1 border border-gray-300 align-middle" style={{ backgroundColor: "#556B2F" }} /> Earth tones</li>
               </ul>
             </div>
           </div>
+          <p className="text-sm text-gray-400 mb-8">These are general guidelines — <Link to="/personal-analysis" className="text-rose-400 hover:text-rose-500 transition-colors">get colors picked specifically for you</Link></p>
 
           <div className="bg-gray-50 rounded-2xl p-8 mb-12">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Deep Winter Celebrities</h3>
@@ -150,29 +152,157 @@ const DeepWinterColors = () => {
             </div>
           </div>
 
+          <AnalysisCTA />
+
           <div className="bg-purple-50 rounded-2xl p-8 mb-12">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Makeup Tips for Deep Winter</h3>
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <h4 className="font-semibold text-gray-900 mb-2">Best Lip Colors</h4>
                 <ul className="text-gray-700 space-y-1">
-                  <li>• True red (blue-based)</li>
-                  <li>• Deep berry and plum</li>
-                  <li>• Fuchsia and magenta</li>
-                  <li>• Burgundy and wine</li>
+                  <li>• <span className="inline-block w-3 h-3 rounded-full mr-1 border border-gray-300 align-middle" style={{ backgroundColor: "#BF0A30" }} /> True red (blue-based)</li>
+                  <li>• <span className="inline-block w-3 h-3 rounded-full mr-1 border border-gray-300 align-middle" style={{ backgroundColor: "#8E4585" }} /><span className="inline-block w-3 h-3 rounded-full mr-1 border border-gray-300 align-middle" style={{ backgroundColor: "#614051" }} /> Deep berry and plum</li>
+                  <li>• <span className="inline-block w-3 h-3 rounded-full mr-1 border border-gray-300 align-middle" style={{ backgroundColor: "#FF00FF" }} /><span className="inline-block w-3 h-3 rounded-full mr-1 border border-gray-300 align-middle" style={{ backgroundColor: "#FF0090" }} /> Fuchsia and magenta</li>
+                  <li>• <span className="inline-block w-3 h-3 rounded-full mr-1 border border-gray-300 align-middle" style={{ backgroundColor: "#800020" }} /><span className="inline-block w-3 h-3 rounded-full mr-1 border border-gray-300 align-middle" style={{ backgroundColor: "#722F37" }} /> Burgundy and wine</li>
                 </ul>
               </div>
               <div>
                 <h4 className="font-semibold text-gray-900 mb-2">Eye Makeup</h4>
                 <ul className="text-gray-700 space-y-1">
-                  <li>• Smoky grays and blacks</li>
-                  <li>• Deep purple and plum</li>
-                  <li>• Navy and sapphire</li>
-                  <li>• Silver and icy shimmer</li>
+                  <li>• <span className="inline-block w-3 h-3 rounded-full mr-1 border border-gray-300 align-middle" style={{ backgroundColor: "#808080" }} /><span className="inline-block w-3 h-3 rounded-full mr-1 border border-gray-300 align-middle" style={{ backgroundColor: "#000000" }} /> Smoky grays and blacks</li>
+                  <li>• <span className="inline-block w-3 h-3 rounded-full mr-1 border border-gray-300 align-middle" style={{ backgroundColor: "#4B0082" }} /><span className="inline-block w-3 h-3 rounded-full mr-1 border border-gray-300 align-middle" style={{ backgroundColor: "#614051" }} /> Deep purple and plum</li>
+                  <li>• <span className="inline-block w-3 h-3 rounded-full mr-1 border border-gray-300 align-middle" style={{ backgroundColor: "#000080" }} /><span className="inline-block w-3 h-3 rounded-full mr-1 border border-gray-300 align-middle" style={{ backgroundColor: "#0F52BA" }} /> Navy and sapphire</li>
+                  <li>• <span className="inline-block w-3 h-3 rounded-full mr-1 border border-gray-300 align-middle" style={{ backgroundColor: "#C0C0C0" }} /><span className="inline-block w-3 h-3 rounded-full mr-1 border border-gray-300 align-middle" style={{ backgroundColor: "#E0FFFF" }} /> Silver and icy shimmer</li>
                 </ul>
               </div>
             </div>
           </div>
+          <p className="text-sm text-gray-400 mb-8">These are general guidelines — <Link to="/personal-analysis" className="text-rose-400 hover:text-rose-500 transition-colors">get colors picked specifically for you</Link></p>
+
+          {/* FAQ Section */}
+          <div className="mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">Frequently Asked Questions About Deep Winter Colors</h2>
+            <div className="space-y-4">
+              <details className="bg-gray-50 rounded-xl p-6 group">
+                <summary className="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                  How do I know if I'm a Deep Winter?
+                  <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <p className="text-gray-700 mt-3">Deep Winters typically have dark hair (black or deep brown), dark eyes, and cool or neutral-cool undertones. The key indicator is high contrast between your skin, hair, and eyes. You look best in bold, saturated colors rather than muted or warm tones. Silver jewelry flatters you more than gold, and you can wear true black and pure white effortlessly.</p>
+              </details>
+
+              <details className="bg-gray-50 rounded-xl p-6 group">
+                <summary className="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                  What is the difference between Deep Winter and Dark Winter?
+                  <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <p className="text-gray-700 mt-3">Deep Winter and Dark Winter are often used interchangeably, but in some color analysis systems, Dark Winter leans slightly more neutral (bridging Winter and Autumn), while Deep Winter is purely cool-toned. Deep Winter's best colors are all cool-based, whereas Dark Winter can sometimes borrow slightly warmer shades like dark olive or warm burgundy.</p>
+              </details>
+
+              <details className="bg-gray-50 rounded-xl p-6 group">
+                <summary className="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                  Can Deep Winters wear pastels?
+                  <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <p className="text-gray-700 mt-3">Deep Winters can wear icy pastels — specifically icy pink, icy blue, and icy lavender. These are very light, cool-toned shades with a frosty quality. Avoid warm or soft pastels like peach, butter yellow, or dusty rose, as these will wash out your natural contrast and make you look dull.</p>
+              </details>
+
+              <details className="bg-gray-50 rounded-xl p-6 group">
+                <summary className="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                  What metals and jewelry suit Deep Winter best?
+                  <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <p className="text-gray-700 mt-3">Silver, platinum, and white gold are the most flattering metals for Deep Winters. These cool-toned metals complement your natural coloring beautifully. Avoid yellow gold, rose gold, and copper tones. If you prefer a warmer look, opt for gunmetal or oxidized silver instead.</p>
+              </details>
+
+              <details className="bg-gray-50 rounded-xl p-6 group">
+                <summary className="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                  What hair colors work for Deep Winters?
+                  <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <p className="text-gray-700 mt-3">Deep Winters look stunning with their natural dark hair. If you want to color your hair, stick with cool-toned shades: blue-black, espresso brown, deep burgundy, or cool dark chocolate. Avoid warm highlights like caramel, honey, or golden brown, as these clash with your cool undertones.</p>
+              </details>
+
+              <details className="bg-gray-50 rounded-xl p-6 group">
+                <summary className="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                  How do I build a Deep Winter capsule wardrobe?
+                  <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <p className="text-gray-700 mt-3">Start with a base of black, charcoal, and navy for core pieces like trousers, blazers, and coats. Add jewel-tone blouses and knitwear in emerald, burgundy, royal blue, and plum. Use icy pastels and bright white for lighter accents. Finish with silver accessories. This creates a cohesive wardrobe where everything mixes and matches effortlessly.</p>
+              </details>
+
+              <details className="bg-gray-50 rounded-xl p-6 group">
+                <summary className="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                  Can Deep Winters wear brown or beige?
+                  <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <p className="text-gray-700 mt-3">Warm browns, beige, and camel are generally not flattering for Deep Winters as they are warm-toned earth colors. However, you can wear very cool-toned dark browns like espresso or cocoa if they lean more toward gray-brown (taupe). For neutrals, stick to black, charcoal, navy, and cool gray instead.</p>
+              </details>
+            </div>
+          </div>
+
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How do I know if I'm a Deep Winter?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Deep Winters typically have dark hair (black or deep brown), dark eyes, and cool or neutral-cool undertones. The key indicator is high contrast between your skin, hair, and eyes. You look best in bold, saturated colors rather than muted or warm tones. Silver jewelry flatters you more than gold, and you can wear true black and pure white effortlessly."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is the difference between Deep Winter and Dark Winter?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Deep Winter and Dark Winter are often used interchangeably, but in some color analysis systems, Dark Winter leans slightly more neutral (bridging Winter and Autumn), while Deep Winter is purely cool-toned. Deep Winter's best colors are all cool-based, whereas Dark Winter can sometimes borrow slightly warmer shades like dark olive or warm burgundy."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can Deep Winters wear pastels?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Deep Winters can wear icy pastels — specifically icy pink, icy blue, and icy lavender. These are very light, cool-toned shades with a frosty quality. Avoid warm or soft pastels like peach, butter yellow, or dusty rose, as these will wash out your natural contrast and make you look dull."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What metals and jewelry suit Deep Winter best?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Silver, platinum, and white gold are the most flattering metals for Deep Winters. These cool-toned metals complement your natural coloring beautifully. Avoid yellow gold, rose gold, and copper tones. If you prefer a warmer look, opt for gunmetal or oxidized silver instead."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What hair colors work for Deep Winters?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Deep Winters look stunning with their natural dark hair. If you want to color your hair, stick with cool-toned shades: blue-black, espresso brown, deep burgundy, or cool dark chocolate. Avoid warm highlights like caramel, honey, or golden brown, as these clash with your cool undertones."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How do I build a Deep Winter capsule wardrobe?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Start with a base of black, charcoal, and navy for core pieces like trousers, blazers, and coats. Add jewel-tone blouses and knitwear in emerald, burgundy, royal blue, and plum. Use icy pastels and bright white for lighter accents. Finish with silver accessories. This creates a cohesive wardrobe where everything mixes and matches effortlessly."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can Deep Winters wear brown or beige?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Warm browns, beige, and camel are generally not flattering for Deep Winters as they are warm-toned earth colors. However, you can wear very cool-toned dark browns like espresso or cocoa if they lean more toward gray-brown (taupe). For neutrals, stick to black, charcoal, navy, and cool gray instead."
+                }
+              }
+            ]
+          })}} />
         </div>
       </article>
 

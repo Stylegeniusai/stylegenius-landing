@@ -322,18 +322,11 @@ const Blog = () => {
       {/* Hero Section */}
       <section className="py-16 lg:py-24 bg-gradient-to-br from-pink-50 to-purple-50">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-            StyleGenius{" "}
-            <span
-              className="bg-clip-text text-transparent"
-              style={{
-                background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent'
-              }}
+          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6"
+              style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
             >
-              Blog
-            </span>
+            StyleGenius{" "}
+            Blog
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Expert style guides, tips, and insights to help you look and feel your best.

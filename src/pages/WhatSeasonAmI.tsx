@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import AnalysisCTA from "../components/AnalysisCTA";
@@ -6,6 +6,199 @@ import SEO from "../components/SEO";
 import { Link } from "react-router-dom";
 
 const BLOG_IMAGE_BASE = "https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog";
+
+const colorHexMap: Record<string, string> = {
+  // Spring best
+  "Coral": "#FF7F50",
+  "Peach": "#FFCBA4",
+  "Warm pink": "#FF69B4",
+  "Golden yellow": "#FFD700",
+  "Turquoise": "#40E0D0",
+  "Warm green": "#7BA05B",
+  "Ivory": "#FFFFF0",
+  // Summer best
+  "Dusty rose": "#DCAE96",
+  "Soft blue": "#7EC8E3",
+  "Lavender": "#C4A1D0",
+  "Mauve": "#B47EB3",
+  "Sage green": "#B2AC88",
+  "Powder pink": "#F4C2C2",
+  "Soft white": "#F5F5F0",
+  // Autumn best
+  "Burnt orange": "#CC5500",
+  "Mustard": "#E1AD01",
+  "Olive green": "#808000",
+  "Rust": "#B7410E",
+  "Chocolate brown": "#7B3F00",
+  "Teal": "#008080",
+  "Warm red": "#CD4A3F",
+  // Winter best
+  "True red": "#E10000",
+  "Emerald": "#50C878",
+  "Royal blue": "#4169E1",
+  "Hot pink": "#FF69B4",
+  "Pure white": "#FFFFFF",
+  "Black": "#000000",
+  "Icy purple": "#C8A2C8",
+  // Avoid colors
+  "Dark navy": "#000080",
+  "Burgundy": "#800020",
+  "Cool gray": "#8C92AC",
+  "Orange": "#FF8C00",
+  "Bright yellow": "#FFEF00",
+  "Warm brown": "#964B00",
+  "Bright pink": "#FF007F",
+  "Cool purple": "#7B68EE",
+  "Icy blue": "#A5F2F3",
+  "Silver": "#C0C0C0",
+  "Muted earth tones": "#9B7653",
+  "Warm beige": "#D2B48C",
+};
+
+const seasonQuizQuestions = [
+  {
+    question: "What's your natural hair color?",
+    options: [
+      { label: "Golden blonde, strawberry blonde, or light brown with warm highlights", scores: { spring: 2, autumn: 1 } },
+      { label: "Ash blonde, ash brown, or soft brown without warm tones", scores: { summer: 2 } },
+      { label: "Auburn, chestnut, copper, or dark golden brown", scores: { autumn: 2, spring: 1 } },
+      { label: "Dark brown, black, or platinum — high contrast with my skin", scores: { winter: 2 } },
+    ],
+  },
+  {
+    question: "What color are your eyes?",
+    options: [
+      { label: "Light blue, green, or light hazel with golden flecks", scores: { spring: 2 } },
+      { label: "Soft blue, gray, gray-green, or muted hazel", scores: { summer: 2 } },
+      { label: "Warm brown, hazel, green, or amber", scores: { autumn: 2 } },
+      { label: "Dark brown, black, or striking bright blue/green", scores: { winter: 2 } },
+    ],
+  },
+  {
+    question: "Look at the veins on your wrist. What color are they?",
+    options: [
+      { label: "Green or olive", scores: { spring: 1, autumn: 2 } },
+      { label: "Blue or purple", scores: { summer: 1, winter: 2 } },
+      { label: "A mix of blue and green", scores: { summer: 1, autumn: 1 } },
+    ],
+  },
+  {
+    question: "Which jewelry looks better on you?",
+    options: [
+      { label: "Gold — it makes my skin glow", scores: { spring: 1, autumn: 2 } },
+      { label: "Silver — it looks cleaner and brighter on me", scores: { summer: 1, winter: 2 } },
+      { label: "Both work equally well", scores: { summer: 1, autumn: 1 } },
+    ],
+  },
+  {
+    question: "How would you describe the contrast between your hair, skin, and eyes?",
+    options: [
+      { label: "Light and fresh — everything is fairly light and warm", scores: { spring: 2 } },
+      { label: "Soft and muted — low contrast, nothing stands out dramatically", scores: { summer: 2 } },
+      { label: "Rich and warm — medium contrast with earthy warmth", scores: { autumn: 2 } },
+      { label: "High contrast — my hair and eyes are much darker than my skin", scores: { winter: 2 } },
+    ],
+  },
+];
+
+const seasonResults: Record<string, { title: string; description: string; colors: string[]; link: string }> = {
+  spring: {
+    title: "Spring",
+    description: "Your coloring is warm, light, and fresh. You look best in warm, clear, and bright colors like coral, peach, turquoise, and golden yellow.",
+    colors: ["#FF7F50", "#FFCBA4", "#FFD700", "#40E0D0", "#7BA05B"],
+    link: "/bright-spring-colors",
+  },
+  summer: {
+    title: "Summer",
+    description: "Your coloring is cool, soft, and muted. You look best in dusty, cool-toned colors like lavender, soft blue, mauve, sage green, and dusty rose.",
+    colors: ["#C4A1D0", "#7EC8E3", "#B47EB3", "#B2AC88", "#DCAE96"],
+    link: "/soft-summer-colors",
+  },
+  autumn: {
+    title: "Autumn",
+    description: "Your coloring is warm, rich, and earthy. You look best in warm, muted colors like burnt orange, mustard, olive green, rust, and teal.",
+    colors: ["#CC5500", "#E1AD01", "#808000", "#B7410E", "#008080"],
+    link: "/soft-autumn-colors",
+  },
+  winter: {
+    title: "Winter",
+    description: "Your coloring is cool, clear, and high-contrast. You look best in bold, vivid colors like true red, emerald, royal blue, black, and pure white.",
+    colors: ["#E10000", "#50C878", "#4169E1", "#000000", "#FFFFFF"],
+    link: "/dark-winter-colors",
+  },
+};
+
+const SeasonQuiz = () => {
+  const [answers, setAnswers] = useState<Record<string, number>[]>([]);
+  const [result, setResult] = useState<string | null>(null);
+
+  const handleAnswer = (scores: Record<string, number>) => {
+    const newAnswers = [...answers, scores];
+    setAnswers(newAnswers);
+
+    if (newAnswers.length === seasonQuizQuestions.length) {
+      const totals: Record<string, number> = { spring: 0, summer: 0, autumn: 0, winter: 0 };
+      newAnswers.forEach((s) => {
+        Object.entries(s).forEach(([key, val]) => {
+          totals[key] = (totals[key] || 0) + val;
+        });
+      });
+      const winner = Object.entries(totals).sort((a, b) => b[1] - a[1])[0][0];
+      setResult(winner);
+    }
+  };
+
+  const reset = () => {
+    setAnswers([]);
+    setResult(null);
+  };
+
+  if (result) {
+    const r = seasonResults[result];
+    return (
+      <div className="my-12 rounded-xl p-[2px] bg-gradient-to-br from-rose-300 via-purple-300 to-amber-200">
+        <div className="bg-white rounded-[10px] p-6 md:p-8">
+          <p className="text-xs uppercase tracking-wider text-gray-400 mb-2">Your result</p>
+          <p className="font-bold text-gray-900 text-2xl mb-2">You're most likely a {r.title}</p>
+          <div className="flex gap-2 my-4">
+            {r.colors.map((hex) => (
+              <div key={hex} className="w-8 h-8 rounded-full border border-gray-100 shadow-sm" style={{ backgroundColor: hex }} />
+            ))}
+          </div>
+          <p className="text-gray-700 mb-5">{r.description}</p>
+          <div className="flex flex-wrap gap-3 items-center">
+            <Link to={r.link} className="text-sm font-medium text-gray-900 underline hover:no-underline">Read your full {r.title} guide</Link>
+            <span className="text-gray-300">|</span>
+            <Link to="/personal-analysis" className="text-sm text-rose-500 hover:text-rose-600 transition-colors">Want to know for sure? Get your personal analysis</Link>
+            <span className="text-gray-300">|</span>
+            <button onClick={reset} className="text-sm text-gray-500 underline hover:no-underline">Retake quiz</button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  const currentQ = seasonQuizQuestions[answers.length];
+  return (
+    <div className="my-12 rounded-xl p-[2px] bg-gradient-to-br from-rose-300 via-purple-300 to-amber-200">
+      <div className="bg-white rounded-[10px] p-6 md:p-8">
+        <p className="text-xs uppercase tracking-wider text-gray-400 mb-2">Question {answers.length + 1} of {seasonQuizQuestions.length}</p>
+        <p className="font-semibold text-gray-900 text-lg mb-4">{currentQ.question}</p>
+        <div className="space-y-2">
+          {currentQ.options.map((opt, i) => (
+            <button
+              key={i}
+              onClick={() => handleAnswer(opt.scores)}
+              className="block w-full text-left px-4 py-3 bg-white border border-gray-200 rounded-lg hover:border-rose-200 hover:bg-rose-50/30 transition-colors text-gray-700"
+            >
+              {opt.label}
+            </button>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const WhatSeasonAmI = () => {
   const seasons = [
@@ -100,18 +293,11 @@ const WhatSeasonAmI = () => {
       <section className="py-16 lg:py-24 bg-gradient-to-br from-pink-50 to-purple-50 relative overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6"
+              style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+            >
               What Season{" "}
-              <span
-                className="bg-clip-text text-transparent"
-                style={{
-                  background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent'
-                }}
-              >
-                Am I?
-              </span>
+              Am I?
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed">
               Discover your seasonal color palette and unlock the colors that make you glow. The complete guide to Spring, Summer, Autumn, and Winter color analysis.
@@ -184,6 +370,13 @@ const WhatSeasonAmI = () => {
               </p>
             </div>
           </section>
+
+          {/* Season Quiz */}
+          <h2 className="text-3xl font-bold text-gray-900 mb-4 mt-16">Take the Quiz: What Season Am I?</h2>
+          <p className="text-lg text-gray-600 mb-2">Answer 5 quick questions to find your most likely color season.</p>
+          <SeasonQuiz />
+
+          <AnalysisCTA />
         </div>
       </article>
 
@@ -230,22 +423,36 @@ const WhatSeasonAmI = () => {
                       <h4 className="font-semibold text-gray-900 mb-3">Best Colors for {season.name}:</h4>
                       <div className="flex flex-wrap gap-2">
                         {season.bestColors.map((color, i) => (
-                          <span key={i} className="px-3 py-1 bg-white rounded-full text-sm text-gray-700 border border-green-200">
+                          <span key={i} className="px-3 py-1 bg-white rounded-full text-sm text-gray-700 border border-green-200 flex items-center gap-1.5">
+                            {colorHexMap[color] && (
+                              <span
+                                className="inline-block w-3.5 h-3.5 rounded-full flex-shrink-0"
+                                style={{ backgroundColor: colorHexMap[color], border: colorHexMap[color] === '#FFFFFF' || colorHexMap[color] === '#FFFFF0' || colorHexMap[color] === '#F5F5F0' ? '1px solid #d1d5db' : 'none' }}
+                              />
+                            )}
                             {color}
                           </span>
                         ))}
                       </div>
+                      <p className="text-sm text-gray-400 mt-3">These are general guidelines — <Link to="/personal-analysis" className="text-rose-400 hover:text-rose-500 transition-colors">get colors picked specifically for you</Link></p>
                     </div>
 
                     <div className="bg-red-50 rounded-xl p-6">
                       <h4 className="font-semibold text-gray-900 mb-3">Colors to Avoid:</h4>
                       <div className="flex flex-wrap gap-2">
                         {season.avoidColors.map((color, i) => (
-                          <span key={i} className="px-3 py-1 bg-white rounded-full text-sm text-gray-700 border border-red-200">
+                          <span key={i} className="px-3 py-1 bg-white rounded-full text-sm text-gray-700 border border-red-200 flex items-center gap-1.5">
+                            {colorHexMap[color] && (
+                              <span
+                                className="inline-block w-3.5 h-3.5 rounded-full flex-shrink-0"
+                                style={{ backgroundColor: colorHexMap[color], border: colorHexMap[color] === '#FFFFFF' ? '1px solid #d1d5db' : 'none' }}
+                              />
+                            )}
                             {color}
                           </span>
                         ))}
                       </div>
+                      <p className="text-sm text-gray-400 mt-3">These are general guidelines — <Link to="/personal-analysis" className="text-rose-400 hover:text-rose-500 transition-colors">get colors picked specifically for you</Link></p>
                     </div>
                   </div>
                 </div>
@@ -329,6 +536,133 @@ const WhatSeasonAmI = () => {
       <div className="container mx-auto px-4 max-w-4xl">
         <AnalysisCTA />
       </div>
+
+      {/* FAQ Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Frequently Asked Questions</h2>
+          <div className="space-y-4">
+            <details className="bg-gray-50 rounded-xl p-6 group">
+              <summary className="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                How do I know what color season I am?
+                <span className="ml-2 text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="mt-4 text-gray-600 leading-relaxed">Start by determining your undertone — check if your veins appear blue/purple (cool) or green (warm). Then assess your contrast level between hair, skin, and eyes. Warm + light/bright = Spring, Cool + soft/muted = Summer, Warm + deep/rich = Autumn, Cool + high contrast = Winter. For the most accurate result, a professional or AI-powered color analysis can evaluate your specific combination of features.</p>
+            </details>
+
+            <details className="bg-gray-50 rounded-xl p-6 group">
+              <summary className="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                Can my color season change over time?
+                <span className="ml-2 text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="mt-4 text-gray-600 leading-relaxed">Your underlying undertone doesn't change, but factors like hair color changes (natural graying or dyeing), tanning, and aging can shift your best sub-season. For example, someone who was a Bright Spring in their youth might shift toward a Light Spring as their hair lightens with age. It's worth re-evaluating every few years.</p>
+            </details>
+
+            <details className="bg-gray-50 rounded-xl p-6 group">
+              <summary className="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                What's the difference between the 4-season and 12-season system?
+                <span className="ml-2 text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="mt-4 text-gray-600 leading-relaxed">The 4-season system categorizes you into Spring, Summer, Autumn, or Winter based on undertone and contrast. The 12-season system further divides each season into three sub-types (e.g., Light Summer, True Summer, Soft Summer) for more precision. The 12-season approach accounts for people who fall between two seasons and gives more tailored color recommendations.</p>
+            </details>
+
+            <details className="bg-gray-50 rounded-xl p-6 group">
+              <summary className="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                What if I don't fit neatly into one season?
+                <span className="ml-2 text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="mt-4 text-gray-600 leading-relaxed">Many people fall between seasons, which is exactly why the 12-season system exists. "Cusp" sub-seasons like Soft Summer (between Summer and Autumn) or Bright Spring (between Spring and Winter) help bridge the gap. If you're unsure, a professional analysis can identify your exact sub-season and which colors from neighboring palettes also work for you.</p>
+            </details>
+
+            <details className="bg-gray-50 rounded-xl p-6 group">
+              <summary className="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                Does skin tone determine my color season?
+                <span className="ml-2 text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="mt-4 text-gray-600 leading-relaxed">Skin tone (how light or dark your skin is) is different from undertone (whether your skin has warm or cool pigments beneath the surface). People of any skin tone can be any season. A person with deep skin can be a Spring, and a person with fair skin can be a Winter. It's your undertone, contrast, and overall coloring that determine your season — not how light or dark you are.</p>
+            </details>
+
+            <details className="bg-gray-50 rounded-xl p-6 group">
+              <summary className="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                How accurate is online color analysis compared to in-person?
+                <span className="ml-2 text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="mt-4 text-gray-600 leading-relaxed">Traditional in-person analysis uses fabric draping under controlled lighting, which is very accurate but expensive and hard to access. Modern AI-powered analysis has become remarkably accurate by evaluating multiple features from photos. While lighting conditions in photos can affect results, AI tools analyze undertone, contrast, and feature combinations in ways that are often more consistent than self-assessment quizzes.</p>
+            </details>
+
+            <details className="bg-gray-50 rounded-xl p-6 group">
+              <summary className="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                Can I wear colors outside my season?
+                <span className="ml-2 text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="mt-4 text-gray-600 leading-relaxed">Absolutely! Color analysis is a guide, not a rule. Knowing your season helps you understand which colors naturally enhance your appearance, but fashion is also about self-expression. A helpful trick is to keep "off-season" colors further from your face — for example, wear them as pants, skirts, or accessories while keeping your best colors near your face in tops and scarves.</p>
+            </details>
+          </div>
+        </div>
+
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How do I know what color season I am?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Start by determining your undertone — check if your veins appear blue/purple (cool) or green (warm). Then assess your contrast level between hair, skin, and eyes. Warm + light/bright = Spring, Cool + soft/muted = Summer, Warm + deep/rich = Autumn, Cool + high contrast = Winter. For the most accurate result, a professional or AI-powered color analysis can evaluate your specific combination of features."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can my color season change over time?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Your underlying undertone doesn't change, but factors like hair color changes (natural graying or dyeing), tanning, and aging can shift your best sub-season. For example, someone who was a Bright Spring in their youth might shift toward a Light Spring as their hair lightens with age. It's worth re-evaluating every few years."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What's the difference between the 4-season and 12-season system?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The 4-season system categorizes you into Spring, Summer, Autumn, or Winter based on undertone and contrast. The 12-season system further divides each season into three sub-types (e.g., Light Summer, True Summer, Soft Summer) for more precision. The 12-season approach accounts for people who fall between two seasons and gives more tailored color recommendations."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What if I don't fit neatly into one season?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Many people fall between seasons, which is exactly why the 12-season system exists. 'Cusp' sub-seasons like Soft Summer (between Summer and Autumn) or Bright Spring (between Spring and Winter) help bridge the gap. If you're unsure, a professional analysis can identify your exact sub-season and which colors from neighboring palettes also work for you."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does skin tone determine my color season?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Skin tone (how light or dark your skin is) is different from undertone (whether your skin has warm or cool pigments beneath the surface). People of any skin tone can be any season. A person with deep skin can be a Spring, and a person with fair skin can be a Winter. It's your undertone, contrast, and overall coloring that determine your season — not how light or dark you are."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How accurate is online color analysis compared to in-person?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Traditional in-person analysis uses fabric draping under controlled lighting, which is very accurate but expensive and hard to access. Modern AI-powered analysis has become remarkably accurate by evaluating multiple features from photos. While lighting conditions in photos can affect results, AI tools analyze undertone, contrast, and feature combinations in ways that are often more consistent than self-assessment quizzes."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I wear colors outside my season?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Absolutely! Color analysis is a guide, not a rule. Knowing your season helps you understand which colors naturally enhance your appearance, but fashion is also about self-expression. A helpful trick is to keep 'off-season' colors further from your face — for example, wear them as pants, skirts, or accessories while keeping your best colors near your face in tops and scarves."
+              }
+            }
+          ]
+        })}} />
+      </section>
 
       <Footer />
     </div>

@@ -36,11 +36,11 @@ const BestColorsForOliveSkin = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <span className="inline-block px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-medium mb-6">Color Guide</span>
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6"
+              style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+            >
               Best Colors for{" "}
-              <span className="bg-clip-text text-transparent" style={{ background: 'linear-gradient(45deg, #808000, #8B7355)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-                Olive Skin
-              </span>
+              Olive Skin
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed">
               The complete guide to colors that make olive skin tones glow. Discover how to enhance your unique green-yellow undertones with the perfect palette.
@@ -134,10 +134,25 @@ const BestColorsForOliveSkin = () => {
                   ))}
                 </div>
                 <div className="flex flex-wrap gap-2">
-                  {["Burnt orange", "Terracotta", "Mustard", "Olive green", "Coral", "Camel", "Turquoise", "Rust", "Warm brown", "Teal"].map((item) => (
-                    <span key={item} className="px-3 py-1 bg-white rounded-full text-sm text-gray-700">{item}</span>
+                  {[
+                    { name: "Burnt orange", hex: "#CC5500" },
+                    { name: "Terracotta", hex: "#E2725B" },
+                    { name: "Mustard", hex: "#FFDB58" },
+                    { name: "Olive green", hex: "#556B2F" },
+                    { name: "Coral", hex: "#FF7F50" },
+                    { name: "Camel", hex: "#C19A6B" },
+                    { name: "Turquoise", hex: "#40E0D0" },
+                    { name: "Rust", hex: "#B7410E" },
+                    { name: "Warm brown", hex: "#8B4513" },
+                    { name: "Teal", hex: "#008080" }
+                  ].map((item) => (
+                    <span key={item.name} className="px-3 py-1 bg-white rounded-full text-sm text-gray-700 flex items-center gap-1.5">
+                      <span className="w-3 h-3 rounded-full inline-block flex-shrink-0 border border-gray-200" style={{ backgroundColor: item.hex }} />
+                      {item.name}
+                    </span>
                   ))}
                 </div>
+                <p className="text-sm text-gray-400 mb-8 mt-4">These are general guidelines — <Link to="/personal-analysis" className="text-rose-400 hover:text-rose-500 transition-colors">get colors picked specifically for you</Link></p>
               </div>
 
               <div className="bg-purple-50 rounded-2xl p-8">
@@ -165,10 +180,25 @@ const BestColorsForOliveSkin = () => {
                   ))}
                 </div>
                 <div className="flex flex-wrap gap-2">
-                  {["Emerald", "Sapphire blue", "Plum", "Burgundy", "Teal", "Forest green", "Berry", "Cool gray", "Navy", "Deep purple"].map((item) => (
-                    <span key={item} className="px-3 py-1 bg-white rounded-full text-sm text-gray-700">{item}</span>
+                  {[
+                    { name: "Emerald", hex: "#50C878" },
+                    { name: "Sapphire blue", hex: "#0F52BA" },
+                    { name: "Plum", hex: "#8E4585" },
+                    { name: "Burgundy", hex: "#800020" },
+                    { name: "Teal", hex: "#008080" },
+                    { name: "Forest green", hex: "#228B22" },
+                    { name: "Berry", hex: "#8E4585" },
+                    { name: "Cool gray", hex: "#708090" },
+                    { name: "Navy", hex: "#000080" },
+                    { name: "Deep purple", hex: "#673AB7" }
+                  ].map((item) => (
+                    <span key={item.name} className="px-3 py-1 bg-white rounded-full text-sm text-gray-700 flex items-center gap-1.5">
+                      <span className="w-3 h-3 rounded-full inline-block flex-shrink-0 border border-gray-200" style={{ backgroundColor: item.hex }} />
+                      {item.name}
+                    </span>
                   ))}
                 </div>
+                <p className="text-sm text-gray-400 mb-8 mt-4">These are general guidelines — <Link to="/personal-analysis" className="text-rose-400 hover:text-rose-500 transition-colors">get colors picked specifically for you</Link></p>
               </div>
             </div>
           </section>
@@ -187,11 +217,11 @@ const BestColorsForOliveSkin = () => {
                   Earth tones are olive skin's best friends. They complement your natural coloring beautifully.
                 </p>
                 <ul className="text-gray-700 space-y-2">
-                  <li><span className="text-green-600 mr-2">✓</span> Olive green (your namesake!)</li>
-                  <li><span className="text-green-600 mr-2">✓</span> Khaki and tan</li>
-                  <li><span className="text-green-600 mr-2">✓</span> Rich chocolate brown</li>
-                  <li><span className="text-green-600 mr-2">✓</span> Terracotta and rust</li>
-                  <li><span className="text-green-600 mr-2">✓</span> Mossy greens</li>
+                  <li className="flex items-center"><span className="text-green-600 mr-2">✓</span><span className="w-3 h-3 rounded-full inline-block mr-2 flex-shrink-0 border border-gray-200" style={{ backgroundColor: "#556B2F" }} /> Olive green (your namesake!)</li>
+                  <li className="flex items-center"><span className="text-green-600 mr-2">✓</span><span className="w-3 h-3 rounded-full inline-block mr-2 flex-shrink-0 border border-gray-200" style={{ backgroundColor: "#C3B091" }} /> Khaki and tan</li>
+                  <li className="flex items-center"><span className="text-green-600 mr-2">✓</span><span className="w-3 h-3 rounded-full inline-block mr-2 flex-shrink-0 border border-gray-200" style={{ backgroundColor: "#3B1E08" }} /> Rich chocolate brown</li>
+                  <li className="flex items-center"><span className="text-green-600 mr-2">✓</span><span className="w-3 h-3 rounded-full inline-block mr-2 flex-shrink-0 border border-gray-200" style={{ backgroundColor: "#E2725B" }} /> Terracotta and rust</li>
+                  <li className="flex items-center"><span className="text-green-600 mr-2">✓</span><span className="w-3 h-3 rounded-full inline-block mr-2 flex-shrink-0 border border-gray-200" style={{ backgroundColor: "#8A9A5B" }} /> Mossy greens</li>
                 </ul>
               </div>
 
@@ -201,11 +231,11 @@ const BestColorsForOliveSkin = () => {
                   Deep, saturated jewel tones create stunning contrast with olive skin.
                 </p>
                 <ul className="text-gray-700 space-y-2">
-                  <li><span className="text-purple-600 mr-2">✓</span> Emerald green</li>
-                  <li><span className="text-purple-600 mr-2">✓</span> Sapphire blue</li>
-                  <li><span className="text-purple-600 mr-2">✓</span> Ruby red</li>
-                  <li><span className="text-purple-600 mr-2">✓</span> Amethyst purple</li>
-                  <li><span className="text-purple-600 mr-2">✓</span> Topaz orange</li>
+                  <li className="flex items-center"><span className="text-purple-600 mr-2">✓</span><span className="w-3 h-3 rounded-full inline-block mr-2 flex-shrink-0 border border-gray-200" style={{ backgroundColor: "#50C878" }} /> Emerald green</li>
+                  <li className="flex items-center"><span className="text-purple-600 mr-2">✓</span><span className="w-3 h-3 rounded-full inline-block mr-2 flex-shrink-0 border border-gray-200" style={{ backgroundColor: "#0F52BA" }} /> Sapphire blue</li>
+                  <li className="flex items-center"><span className="text-purple-600 mr-2">✓</span><span className="w-3 h-3 rounded-full inline-block mr-2 flex-shrink-0 border border-gray-200" style={{ backgroundColor: "#E0115F" }} /> Ruby red</li>
+                  <li className="flex items-center"><span className="text-purple-600 mr-2">✓</span><span className="w-3 h-3 rounded-full inline-block mr-2 flex-shrink-0 border border-gray-200" style={{ backgroundColor: "#9966CC" }} /> Amethyst purple</li>
+                  <li className="flex items-center"><span className="text-purple-600 mr-2">✓</span><span className="w-3 h-3 rounded-full inline-block mr-2 flex-shrink-0 border border-gray-200" style={{ backgroundColor: "#FFC87C" }} /> Topaz orange</li>
                 </ul>
               </div>
             </div>
@@ -231,6 +261,7 @@ const BestColorsForOliveSkin = () => {
                 ))}
               </div>
             </div>
+            <p className="text-sm text-gray-400 mb-8 mt-4">These are general guidelines — <Link to="/personal-analysis" className="text-rose-400 hover:text-rose-500 transition-colors">get colors picked specifically for you</Link></p>
           </section>
 
           {/* Colors to Avoid */}
@@ -294,7 +325,13 @@ const BestColorsForOliveSkin = () => {
                 </div>
               </div>
             </div>
+            <p className="text-sm text-gray-400 mb-8 mt-4">These are general guidelines — <Link to="/personal-analysis" className="text-rose-400 hover:text-rose-500 transition-colors">get colors picked specifically for you</Link></p>
           </section>
+
+          {/* Mid-Article CTA */}
+          <div className="mb-16">
+            <AnalysisCTA />
+          </div>
 
           {/* Neutrals for Olive Skin */}
           <section className="mb-16">
@@ -307,34 +344,35 @@ const BestColorsForOliveSkin = () => {
               <div className="bg-green-50 rounded-xl p-6">
                 <h4 className="font-bold text-gray-900 mb-3">Green-Based Neutrals</h4>
                 <ul className="text-gray-700 space-y-2 text-sm">
-                  <li>• Olive green</li>
-                  <li>• Khaki</li>
-                  <li>• Moss green</li>
-                  <li>• Army green</li>
-                  <li>• Sage (darker shades)</li>
+                  <li className="flex items-center">• <span className="w-2.5 h-2.5 rounded-full inline-block mx-1.5 flex-shrink-0 border border-gray-200" style={{ backgroundColor: "#556B2F" }} /> Olive green</li>
+                  <li className="flex items-center">• <span className="w-2.5 h-2.5 rounded-full inline-block mx-1.5 flex-shrink-0 border border-gray-200" style={{ backgroundColor: "#C3B091" }} /> Khaki</li>
+                  <li className="flex items-center">• <span className="w-2.5 h-2.5 rounded-full inline-block mx-1.5 flex-shrink-0 border border-gray-200" style={{ backgroundColor: "#8A9A5B" }} /> Moss green</li>
+                  <li className="flex items-center">• <span className="w-2.5 h-2.5 rounded-full inline-block mx-1.5 flex-shrink-0 border border-gray-200" style={{ backgroundColor: "#4B5320" }} /> Army green</li>
+                  <li className="flex items-center">• <span className="w-2.5 h-2.5 rounded-full inline-block mx-1.5 flex-shrink-0 border border-gray-200" style={{ backgroundColor: "#87AE73" }} /> Sage (darker shades)</li>
                 </ul>
               </div>
               <div className="bg-amber-50 rounded-xl p-6">
                 <h4 className="font-bold text-gray-900 mb-3">Warm Neutrals</h4>
                 <ul className="text-gray-700 space-y-2 text-sm">
-                  <li>• Camel</li>
-                  <li>• Rich chocolate</li>
-                  <li>• Cognac</li>
-                  <li>• Warm gray</li>
-                  <li>• Cream (not pure white)</li>
+                  <li className="flex items-center">• <span className="w-2.5 h-2.5 rounded-full inline-block mx-1.5 flex-shrink-0 border border-gray-200" style={{ backgroundColor: "#C19A6B" }} /> Camel</li>
+                  <li className="flex items-center">• <span className="w-2.5 h-2.5 rounded-full inline-block mx-1.5 flex-shrink-0 border border-gray-200" style={{ backgroundColor: "#3B1E08" }} /> Rich chocolate</li>
+                  <li className="flex items-center">• <span className="w-2.5 h-2.5 rounded-full inline-block mx-1.5 flex-shrink-0 border border-gray-200" style={{ backgroundColor: "#9F381D" }} /> Cognac</li>
+                  <li className="flex items-center">• <span className="w-2.5 h-2.5 rounded-full inline-block mx-1.5 flex-shrink-0 border border-gray-200" style={{ backgroundColor: "#A8A8A8" }} /> Warm gray</li>
+                  <li className="flex items-center">• <span className="w-2.5 h-2.5 rounded-full inline-block mx-1.5 flex-shrink-0 border border-gray-200" style={{ backgroundColor: "#FFFDD0" }} /> Cream (not pure white)</li>
                 </ul>
               </div>
               <div className="bg-gray-100 rounded-xl p-6">
                 <h4 className="font-bold text-gray-900 mb-3">Cool Neutrals</h4>
                 <ul className="text-gray-700 space-y-2 text-sm">
-                  <li>• Charcoal</li>
-                  <li>• Navy</li>
-                  <li>• Slate gray</li>
-                  <li>• Deep taupe</li>
-                  <li>• Black (always works!)</li>
+                  <li className="flex items-center">• <span className="w-2.5 h-2.5 rounded-full inline-block mx-1.5 flex-shrink-0 border border-gray-200" style={{ backgroundColor: "#36454F" }} /> Charcoal</li>
+                  <li className="flex items-center">• <span className="w-2.5 h-2.5 rounded-full inline-block mx-1.5 flex-shrink-0 border border-gray-200" style={{ backgroundColor: "#000080" }} /> Navy</li>
+                  <li className="flex items-center">• <span className="w-2.5 h-2.5 rounded-full inline-block mx-1.5 flex-shrink-0 border border-gray-200" style={{ backgroundColor: "#708090" }} /> Slate gray</li>
+                  <li className="flex items-center">• <span className="w-2.5 h-2.5 rounded-full inline-block mx-1.5 flex-shrink-0 border border-gray-200" style={{ backgroundColor: "#483C32" }} /> Deep taupe</li>
+                  <li className="flex items-center">• <span className="w-2.5 h-2.5 rounded-full inline-block mx-1.5 flex-shrink-0 border border-gray-200" style={{ backgroundColor: "#000000" }} /> Black (always works!)</li>
                 </ul>
               </div>
             </div>
+            <p className="text-sm text-gray-400 mb-8 mt-4">These are general guidelines — <Link to="/personal-analysis" className="text-rose-400 hover:text-rose-500 transition-colors">get colors picked specifically for you</Link></p>
           </section>
 
           {/* Styling by Occasion */}
@@ -494,6 +532,151 @@ const BestColorsForOliveSkin = () => {
               </Link>
             </div>
           </section>
+
+          {/* FAQ Schema Section */}
+          <section className="mb-16">
+            <h2 className="text-3xl font-bold text-gray-900 mb-8">Olive Skin Color FAQ</h2>
+            <div className="space-y-4">
+              <details className="bg-white border border-gray-200 rounded-xl p-6 group">
+                <summary className="font-bold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                  What makes olive skin different from warm or neutral skin tones?
+                  <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <p className="text-gray-700 mt-4">
+                  Olive skin has a distinctive green or gray-green undertone that sets it apart from standard warm or neutral classifications. While warm skin has yellow or golden undertones and cool skin has pink or blue, olive skin has an additional green pigment (caused by a mix of increased melanin and hemoglobin). This means olive skin reacts differently to colors - certain shades that flatter warm or cool tones can make olive skin appear sallow or dull.
+                </p>
+              </details>
+
+              <details className="bg-white border border-gray-200 rounded-xl p-6 group">
+                <summary className="font-bold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                  Can olive skin wear black and white?
+                  <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <p className="text-gray-700 mt-4">
+                  Black is universally flattering on olive skin - it creates beautiful contrast and makes your skin look radiant. Pure bright white can be trickier, as it sometimes looks too stark against olive undertones. Instead, opt for off-white, cream, or ivory tones which are softer and more harmonious with olive skin. If you love crisp white, wearing it as a bottom or pairing it with a colorful accessory near your face can help.
+                </p>
+              </details>
+
+              <details className="bg-white border border-gray-200 rounded-xl p-6 group">
+                <summary className="font-bold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                  What is the best hair color for olive skin?
+                  <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <p className="text-gray-700 mt-4">
+                  Olive skin pairs beautifully with rich, warm hair colors like dark chocolate brown, chestnut, warm auburn, and espresso. Cool olives can also rock ashy browns and cool dark tones. Highlights in caramel, honey, or copper tones add warmth and dimension. Avoid overly ashy or icy blonde shades if you have warm olive skin, as they can make you look washed out. Deep, saturated reds (like burgundy or mahogany) also look gorgeous on olive complexions.
+                </p>
+              </details>
+
+              <details className="bg-white border border-gray-200 rounded-xl p-6 group">
+                <summary className="font-bold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                  Why do I look sallow in certain colors with olive skin?
+                  <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <p className="text-gray-700 mt-4">
+                  Sallowness happens when a color amplifies the green undertone in your skin in an unflattering way. Colors that are too muted, too close to your skin tone, or have a strong yellow base can bring out the green-gray cast in olive skin. Pale pastels, washed-out yellows, and certain beige or tan shades are common culprits. To counteract this, choose colors with more saturation and contrast - jewel tones, rich earth tones, and vibrant hues work with your undertone rather than against it.
+                </p>
+              </details>
+
+              <details className="bg-white border border-gray-200 rounded-xl p-6 group">
+                <summary className="font-bold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                  Do warm olive and cool olive skin need different colors?
+                  <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <p className="text-gray-700 mt-4">
+                  Yes, while both warm and cool olive share the green undertone, they respond differently to colors. Warm olive skin (golden-green undertones) looks best in earthy warm shades like terracotta, mustard, coral, and warm browns. Cool olive skin (gray-green or blue-green undertones) is flattered by jewel tones like emerald, sapphire, plum, and burgundy. However, both types share some universal winners: teal, turquoise, and rich chocolate brown look stunning on all olive skin.
+                </p>
+              </details>
+
+              <details className="bg-white border border-gray-200 rounded-xl p-6 group">
+                <summary className="font-bold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                  What colors should olive skin wear in summer vs winter?
+                  <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <p className="text-gray-700 mt-4">
+                  In summer, olive skin glows in turquoise, coral, tropical greens, and cream-based whites - especially as your skin deepens with a tan. These bright, warm shades complement sun-kissed olive skin beautifully. In winter, shift to richer, deeper tones: burgundy, emerald, deep teal, chocolate brown, and navy. These jewel and earth tones create a gorgeous contrast against olive skin during the cooler months and pair well with layered winter outfits.
+                </p>
+              </details>
+
+              <details className="bg-white border border-gray-200 rounded-xl p-6 group">
+                <summary className="font-bold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                  How do I find out if I have olive skin or just a tan?
+                  <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <p className="text-gray-700 mt-4">
+                  True olive skin has a consistent green or gray-green undertone year-round, while a tan will fade. Check the inside of your wrist where skin rarely tans - if you see a greenish or gray cast, you likely have olive undertones. Other signs include: your veins appear green or blue-green, both gold and silver jewelry look decent on you, you tan easily and rarely burn, and some colors make you look sallow regardless of the season. A tan person without olive undertones won't have that persistent green cast.
+                </p>
+              </details>
+            </div>
+          </section>
+
+          {/* FAQ Schema JSON-LD */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": [
+                  {
+                    "@type": "Question",
+                    "name": "What makes olive skin different from warm or neutral skin tones?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Olive skin has a distinctive green or gray-green undertone that sets it apart from standard warm or neutral classifications. While warm skin has yellow or golden undertones and cool skin has pink or blue, olive skin has an additional green pigment (caused by a mix of increased melanin and hemoglobin). This means olive skin reacts differently to colors - certain shades that flatter warm or cool tones can make olive skin appear sallow or dull."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Can olive skin wear black and white?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Black is universally flattering on olive skin - it creates beautiful contrast and makes your skin look radiant. Pure bright white can be trickier, as it sometimes looks too stark against olive undertones. Instead, opt for off-white, cream, or ivory tones which are softer and more harmonious with olive skin."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "What is the best hair color for olive skin?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Olive skin pairs beautifully with rich, warm hair colors like dark chocolate brown, chestnut, warm auburn, and espresso. Cool olives can also rock ashy browns and cool dark tones. Highlights in caramel, honey, or copper tones add warmth and dimension. Deep, saturated reds like burgundy or mahogany also look gorgeous on olive complexions."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Why do I look sallow in certain colors with olive skin?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Sallowness happens when a color amplifies the green undertone in your skin in an unflattering way. Colors that are too muted, too close to your skin tone, or have a strong yellow base can bring out the green-gray cast in olive skin. To counteract this, choose colors with more saturation and contrast."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Do warm olive and cool olive skin need different colors?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Yes, while both warm and cool olive share the green undertone, they respond differently to colors. Warm olive skin looks best in earthy warm shades like terracotta, mustard, coral, and warm browns. Cool olive skin is flattered by jewel tones like emerald, sapphire, plum, and burgundy. However, both types share some universal winners: teal, turquoise, and rich chocolate brown look stunning on all olive skin."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "What colors should olive skin wear in summer vs winter?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "In summer, olive skin glows in turquoise, coral, tropical greens, and cream-based whites. In winter, shift to richer, deeper tones: burgundy, emerald, deep teal, chocolate brown, and navy. These jewel and earth tones create a gorgeous contrast against olive skin during the cooler months."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "How do I find out if I have olive skin or just a tan?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "True olive skin has a consistent green or gray-green undertone year-round, while a tan will fade. Check the inside of your wrist where skin rarely tans - if you see a greenish or gray cast, you likely have olive undertones. Other signs include: your veins appear green or blue-green, both gold and silver jewelry look decent on you, you tan easily and rarely burn, and some colors make you look sallow regardless of the season."
+                    }
+                  }
+                ]
+              })
+            }}
+          />
 
         </div>
       </article>

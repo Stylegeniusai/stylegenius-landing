@@ -188,11 +188,11 @@ const BestColorsForDarkSkin = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <span className="inline-block px-4 py-2 bg-amber-100 text-amber-800 rounded-full text-sm font-medium mb-6">Complete Color Guide</span>
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6"
+              style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+            >
               Best Colors for{" "}
-              <span className="bg-clip-text text-transparent" style={{ background: 'linear-gradient(45deg, #8B4513, #FFD700)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-                Dark Skin
-              </span>
+              Dark Skin
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed">
               The ultimate guide to colors that make dark skin tones absolutely radiate. From caramel to espresso - find your perfect palette.
@@ -397,6 +397,7 @@ const BestColorsForDarkSkin = () => {
                 ))}
               </div>
             </div>
+            <p className="text-sm text-gray-400 mb-8 mt-6">These are general guidelines — <Link to="/personal-analysis" className="text-rose-400 hover:text-rose-500 transition-colors">get colors picked specifically for you</Link></p>
           </section>
 
           {/* Bronze Skin Section */}
@@ -480,7 +481,11 @@ const BestColorsForDarkSkin = () => {
                 ))}
               </div>
             </div>
+            <p className="text-sm text-gray-400 mb-8 mt-6">These are general guidelines — <Link to="/personal-analysis" className="text-rose-400 hover:text-rose-500 transition-colors">get colors picked specifically for you</Link></p>
           </section>
+
+          {/* Mid-Article CTA */}
+          <AnalysisCTA />
 
           {/* Espresso Skin Section */}
           <section className="mb-20" id="espresso">
@@ -563,6 +568,7 @@ const BestColorsForDarkSkin = () => {
                 ))}
               </div>
             </div>
+            <p className="text-sm text-gray-400 mb-8 mt-6">These are general guidelines — <Link to="/personal-analysis" className="text-rose-400 hover:text-rose-500 transition-colors">get colors picked specifically for you</Link></p>
           </section>
 
           {/* Deep Chocolate / Rich Bronze Section */}
@@ -646,6 +652,7 @@ const BestColorsForDarkSkin = () => {
                 ))}
               </div>
             </div>
+            <p className="text-sm text-gray-400 mb-8 mt-6">These are general guidelines — <Link to="/personal-analysis" className="text-rose-400 hover:text-rose-500 transition-colors">get colors picked specifically for you</Link></p>
           </section>
 
           {/* Universal Colors */}
@@ -782,6 +789,7 @@ const BestColorsForDarkSkin = () => {
                 </div>
               </div>
             </div>
+            <p className="text-sm text-gray-400 mb-8 mt-6">These are general guidelines — <Link to="/personal-analysis" className="text-rose-400 hover:text-rose-500 transition-colors">get colors picked specifically for you</Link></p>
           </section>
 
           {/* Pro Tips */}
@@ -824,6 +832,132 @@ const BestColorsForDarkSkin = () => {
                 <p className="text-gray-600 text-sm">Learn how to determine your undertone.</p>
               </Link>
             </div>
+          </section>
+
+          {/* FAQ Section */}
+          <section className="mb-16" id="faq">
+            <h2 className="text-3xl font-bold text-gray-900 mb-8">Frequently Asked Questions</h2>
+            <div className="space-y-4">
+              <details className="bg-gray-50 rounded-xl p-6 group">
+                <summary className="font-bold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                  What are the most universally flattering colors for dark skin?
+                  <span className="text-gray-400 group-open:rotate-180 transition-transform">&#9660;</span>
+                </summary>
+                <p className="text-gray-700 mt-4 leading-relaxed">Jewel tones like emerald green, sapphire blue, ruby red, and amethyst purple are universally flattering on dark skin. Pure white also creates a stunning contrast. Gold and warm metallics complement the natural richness of dark complexions beautifully.</p>
+              </details>
+
+              <details className="bg-gray-50 rounded-xl p-6 group">
+                <summary className="font-bold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                  Can people with dark skin wear pastels?
+                  <span className="text-gray-400 group-open:rotate-180 transition-transform">&#9660;</span>
+                </summary>
+                <p className="text-gray-700 mt-4 leading-relaxed">Yes, but choose saturated pastels rather than washed-out ones. Bright lavender, vivid mint, and rich blush pink work well on dark skin. Avoid very pale, muted pastels like powder blue or light peach, as they can lack contrast and appear flat against deeper complexions.</p>
+              </details>
+
+              <details className="bg-gray-50 rounded-xl p-6 group">
+                <summary className="font-bold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                  Should dark-skinned people avoid wearing black?
+                  <span className="text-gray-400 group-open:rotate-180 transition-transform">&#9660;</span>
+                </summary>
+                <p className="text-gray-700 mt-4 leading-relaxed">For very deep espresso or ebony skin tones, all-black outfits can sometimes blend into the skin and lack definition. Instead, try pairing black with a bold accent color like gold, emerald, or white. For lighter dark skin tones like caramel or bronze, black works well as a neutral.</p>
+              </details>
+
+              <details className="bg-gray-50 rounded-xl p-6 group">
+                <summary className="font-bold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                  How do I determine my undertone if I have dark skin?
+                  <span className="text-gray-400 group-open:rotate-180 transition-transform">&#9660;</span>
+                </summary>
+                <p className="text-gray-700 mt-4 leading-relaxed">Check the veins on your inner wrist in natural light. Green veins suggest warm undertones, blue or purple veins indicate cool undertones, and a mix means neutral. You can also test whether gold or silver jewelry flatters you more - gold suits warm undertones while silver complements cool undertones.</p>
+              </details>
+
+              <details className="bg-gray-50 rounded-xl p-6 group">
+                <summary className="font-bold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                  What colors should dark skin tones avoid in makeup?
+                  <span className="text-gray-400 group-open:rotate-180 transition-transform">&#9660;</span>
+                </summary>
+                <p className="text-gray-700 mt-4 leading-relaxed">Avoid foundation and concealer shades with ashy or grayish tones, as they can make dark skin look dull. For lip colors, very pale nudes may wash you out - opt for deeper nudes, berry tones, or bold reds instead. For eyeshadow, skip colors that exactly match your skin tone without shimmer, as they won't show up.</p>
+              </details>
+
+              <details className="bg-gray-50 rounded-xl p-6 group">
+                <summary className="font-bold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                  Does the best color for dark skin change by season?
+                  <span className="text-gray-400 group-open:rotate-180 transition-transform">&#9660;</span>
+                </summary>
+                <p className="text-gray-700 mt-4 leading-relaxed">Your best colors stay consistent since your undertone doesn't change, but seasonal trends can inspire new combinations. In summer, bright whites, yellows, and corals are popular. In autumn, rich burgundies, rusts, and forest greens complement dark skin beautifully. Winter calls for jewel tones and metallics, while spring is great for bold florals and fresh greens.</p>
+              </details>
+
+              <details className="bg-gray-50 rounded-xl p-6 group">
+                <summary className="font-bold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                  What is the difference between colors for caramel vs. espresso skin?
+                  <span className="text-gray-400 group-open:rotate-180 transition-transform">&#9660;</span>
+                </summary>
+                <p className="text-gray-700 mt-4 leading-relaxed">Caramel skin (medium-dark with golden undertones) looks best in warm earth tones and mid-range jewel tones. Espresso skin (very deep brown) can handle the boldest, most vibrant colors - bright yellows, hot pinks, and electric blues create stunning contrast. Espresso skin should avoid very dark browns and blacks that blend in, while caramel skin should avoid washed-out beiges.</p>
+              </details>
+            </div>
+
+            {/* FAQ Schema Markup */}
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "What are the most universally flattering colors for dark skin?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Jewel tones like emerald green, sapphire blue, ruby red, and amethyst purple are universally flattering on dark skin. Pure white also creates a stunning contrast. Gold and warm metallics complement the natural richness of dark complexions beautifully."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Can people with dark skin wear pastels?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, but choose saturated pastels rather than washed-out ones. Bright lavender, vivid mint, and rich blush pink work well on dark skin. Avoid very pale, muted pastels like powder blue or light peach, as they can lack contrast and appear flat against deeper complexions."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Should dark-skinned people avoid wearing black?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "For very deep espresso or ebony skin tones, all-black outfits can sometimes blend into the skin and lack definition. Instead, try pairing black with a bold accent color like gold, emerald, or white. For lighter dark skin tones like caramel or bronze, black works well as a neutral."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How do I determine my undertone if I have dark skin?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Check the veins on your inner wrist in natural light. Green veins suggest warm undertones, blue or purple veins indicate cool undertones, and a mix means neutral. You can also test whether gold or silver jewelry flatters you more - gold suits warm undertones while silver complements cool undertones."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What colors should dark skin tones avoid in makeup?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Avoid foundation and concealer shades with ashy or grayish tones, as they can make dark skin look dull. For lip colors, very pale nudes may wash you out - opt for deeper nudes, berry tones, or bold reds instead. For eyeshadow, skip colors that exactly match your skin tone without shimmer, as they won't show up."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Does the best color for dark skin change by season?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Your best colors stay consistent since your undertone doesn't change, but seasonal trends can inspire new combinations. In summer, bright whites, yellows, and corals are popular. In autumn, rich burgundies, rusts, and forest greens complement dark skin beautifully. Winter calls for jewel tones and metallics, while spring is great for bold florals and fresh greens."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What is the difference between colors for caramel vs. espresso skin?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Caramel skin (medium-dark with golden undertones) looks best in warm earth tones and mid-range jewel tones. Espresso skin (very deep brown) can handle the boldest, most vibrant colors - bright yellows, hot pinks, and electric blues create stunning contrast. Espresso skin should avoid very dark browns and blacks that blend in, while caramel skin should avoid washed-out beiges."
+                  }
+                }
+              ]
+            })}} />
           </section>
 
         </div>

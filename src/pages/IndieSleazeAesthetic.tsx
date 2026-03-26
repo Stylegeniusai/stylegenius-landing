@@ -38,18 +38,11 @@ const IndieSleazeAesthetic = () => {
             <span className="inline-block px-4 py-2 bg-zinc-800 text-white rounded-full text-sm font-medium mb-6">
               Fashion Aesthetic
             </span>
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6"
+              style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+            >
               Indie Sleaze{" "}
-              <span
-                className="bg-clip-text text-transparent"
-                style={{
-                  background: 'linear-gradient(45deg, #1a1a1a, #6b6b6b)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent'
-                }}
-              >
-                Aesthetic
-              </span>
+              Aesthetic
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed">
               The chaotic, rebellious 2000s style is back. Skinny jeans, band tees, smudged eyeliner, and "I just rolled out of bed" energy.

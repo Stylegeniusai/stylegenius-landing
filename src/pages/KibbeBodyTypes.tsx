@@ -160,18 +160,11 @@ const KibbeBodyTypes = () => {
       <section className="py-16 lg:py-24 bg-gradient-to-br from-pink-50 to-purple-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6"
+              style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+            >
               Kibbe Body Types:{" "}
-              <span
-                className="bg-clip-text text-transparent"
-                style={{
-                  background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent'
-                }}
-              >
-                Complete Guide
-              </span>
+              Complete Guide
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed">
               Discover your Kibbe body type and learn how to dress for your unique bone structure, flesh, and facial features. The TikTok-viral system explained.
@@ -229,6 +222,9 @@ const KibbeBodyTypes = () => {
               </div>
             </div>
           </section>
+
+          <AnalysisCTA />
+
         </div>
       </article>
 
@@ -305,6 +301,8 @@ const KibbeBodyTypes = () => {
               <p className="text-gray-700">Step back and look at your overall impression. Are you tall and narrow, short and compact, or balanced and moderate?</p>
             </div>
           </div>
+
+          <p className="text-sm text-gray-400 mb-8">These are general tips — <Link to="/personal-analysis" className="text-rose-400 hover:text-rose-500 transition-colors">get a guide made for your body type</Link></p>
         </div>
       </section>
 
@@ -383,6 +381,138 @@ const KibbeBodyTypes = () => {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Frequently Asked Questions About Kibbe Body Types</h2>
+          <div className="space-y-4">
+            <details className="bg-gray-50 rounded-xl p-6 group">
+              <summary className="text-lg font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                What are the 13 Kibbe body types?
+                <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="text-gray-700 mt-4 leading-relaxed">The 13 Kibbe body types are: Dramatic, Soft Dramatic, Flamboyant Natural, Natural, Soft Natural, Dramatic Classic, Classic, Soft Classic, Flamboyant Gamine, Gamine, Soft Gamine, Theatrical Romantic, and Romantic. Each type sits on a spectrum from pure Yang (Dramatic) to pure Yin (Romantic), with the others representing various combinations of yin and yang characteristics.</p>
+            </details>
+
+            <details className="bg-gray-50 rounded-xl p-6 group">
+              <summary className="text-lg font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                Can my Kibbe body type change over time?
+                <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="text-gray-700 mt-4 leading-relaxed">Your Kibbe body type is primarily determined by your bone structure, which does not change. However, weight gain or loss can shift how your flesh sits on your frame, which may make certain yin or yang characteristics more or less prominent. Your fundamental type remains the same, but your accommodation needs may evolve slightly with age and body changes.</p>
+            </details>
+
+            <details className="bg-gray-50 rounded-xl p-6 group">
+              <summary className="text-lg font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                Does height matter in the Kibbe system?
+                <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="text-gray-700 mt-4 leading-relaxed">Yes, height plays a role in determining your Kibbe type. David Kibbe considers vertical line (how tall you appear) as a key factor. Generally, women over 5'7" are unlikely to be Gamine or Romantic types, and women under 5'4" are unlikely to be Dramatic or Natural types. However, height alone does not determine your type — it is one factor among bone structure, flesh, and facial features.</p>
+            </details>
+
+            <details className="bg-gray-50 rounded-xl p-6 group">
+              <summary className="text-lg font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                What is the difference between Kibbe body types and traditional body shapes?
+                <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="text-gray-700 mt-4 leading-relaxed">Traditional body shapes (apple, pear, hourglass, rectangle) focus primarily on proportions and measurements — where you carry weight relative to your bust, waist, and hips. The Kibbe system goes deeper, looking at your overall essence including bone structure angularity, flesh quality, and facial features. Two people with the same traditional body shape could have very different Kibbe types based on their bone structure and overall impression.</p>
+            </details>
+
+            <details className="bg-gray-50 rounded-xl p-6 group">
+              <summary className="text-lg font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                Why do online Kibbe quizzes give different results?
+                <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="text-gray-700 mt-4 leading-relaxed">Online Kibbe quizzes can give inconsistent results because the system was designed for in-person assessment, not self-typing. Many people struggle to objectively evaluate their own bone structure and features. Additionally, some quizzes oversimplify the system or use outdated criteria. David Kibbe himself has moved away from the quiz format and recommends studying the system holistically rather than relying on point-based tests.</p>
+            </details>
+
+            <details className="bg-gray-50 rounded-xl p-6 group">
+              <summary className="text-lg font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                Can I be a mix of two Kibbe body types?
+                <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="text-gray-700 mt-4 leading-relaxed">In the Kibbe system, you are one type — not a blend of two. However, the 13 types already represent blends of yin and yang. For example, a Soft Dramatic is a blend of Dramatic yang structure with Romantic yin flesh. If you feel torn between two types, it usually means one of them is your correct type and you are seeing secondary characteristics. Studying both types closely and trying their recommended clothing lines can help you determine which one truly honors your natural silhouette.</p>
+            </details>
+
+            <details className="bg-gray-50 rounded-xl p-6 group">
+              <summary className="text-lg font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                What should I wear for my Kibbe body type?
+                <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="text-gray-700 mt-4 leading-relaxed">Each Kibbe type has specific clothing recommendations that honor your natural lines. Yang-dominant types (Dramatic, Natural) look best in structured, bold, or relaxed pieces. Yin-dominant types (Romantic, Gamine) thrive in softer, more detailed, or playful clothing. Classic types shine in balanced, tailored pieces. The key principle is to echo your body's natural geometry in your clothing rather than trying to create an illusion or counterbalance your features.</p>
+            </details>
+          </div>
+        </div>
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "What are the 13 Kibbe body types?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The 13 Kibbe body types are: Dramatic, Soft Dramatic, Flamboyant Natural, Natural, Soft Natural, Dramatic Classic, Classic, Soft Classic, Flamboyant Gamine, Gamine, Soft Gamine, Theatrical Romantic, and Romantic. Each type sits on a spectrum from pure Yang (Dramatic) to pure Yin (Romantic), with the others representing various combinations of yin and yang characteristics."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Can my Kibbe body type change over time?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Your Kibbe body type is primarily determined by your bone structure, which does not change. However, weight gain or loss can shift how your flesh sits on your frame, which may make certain yin or yang characteristics more or less prominent. Your fundamental type remains the same, but your accommodation needs may evolve slightly with age and body changes."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Does height matter in the Kibbe system?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, height plays a role in determining your Kibbe type. David Kibbe considers vertical line (how tall you appear) as a key factor. Generally, women over 5'7\" are unlikely to be Gamine or Romantic types, and women under 5'4\" are unlikely to be Dramatic or Natural types. However, height alone does not determine your type."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What is the difference between Kibbe body types and traditional body shapes?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Traditional body shapes (apple, pear, hourglass, rectangle) focus primarily on proportions and measurements. The Kibbe system goes deeper, looking at your overall essence including bone structure angularity, flesh quality, and facial features. Two people with the same traditional body shape could have very different Kibbe types."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Why do online Kibbe quizzes give different results?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Online Kibbe quizzes can give inconsistent results because the system was designed for in-person assessment, not self-typing. Many people struggle to objectively evaluate their own bone structure and features. David Kibbe himself has moved away from the quiz format and recommends studying the system holistically."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Can I be a mix of two Kibbe body types?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "In the Kibbe system, you are one type — not a blend of two. However, the 13 types already represent blends of yin and yang. If you feel torn between two types, studying both types closely and trying their recommended clothing lines can help you determine which one truly honors your natural silhouette."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What should I wear for my Kibbe body type?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Each Kibbe type has specific clothing recommendations that honor your natural lines. Yang-dominant types look best in structured, bold, or relaxed pieces. Yin-dominant types thrive in softer, more detailed, or playful clothing. Classic types shine in balanced, tailored pieces. The key principle is to echo your body's natural geometry in your clothing."
+                  }
+                }
+              ]
+            })
+          }}
+        />
       </section>
 
       <div className="container mx-auto px-4 max-w-4xl">

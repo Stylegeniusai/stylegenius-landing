@@ -100,18 +100,11 @@ const WhatBodyTypeSuitsMe = () => {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
             <div className="text-center lg:text-left">
-              <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+              <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6"
+              style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+            >
                 What Clothes{" "}
-                <span 
-                  className="bg-clip-text text-transparent"
-                  style={{
-                    background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent'
-                  }}
-                >
-                  Suit My Body?
-                </span>
+                Suit My Body?
               </h1>
               <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed">
                 The complete guide to dressing for your body type and feeling confident in every outfit ✨

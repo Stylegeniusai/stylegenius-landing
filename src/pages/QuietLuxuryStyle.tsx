@@ -38,18 +38,11 @@ const QuietLuxuryStyle = () => {
             <span className="inline-block px-4 py-2 bg-stone-200 text-stone-800 rounded-full text-sm font-medium mb-6">
               Fashion Aesthetic
             </span>
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6"
+              style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+            >
               Quiet Luxury{" "}
-              <span
-                className="bg-clip-text text-transparent"
-                style={{
-                  background: 'linear-gradient(45deg, #8B7355, #2F4F4F)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent'
-                }}
-              >
-                Style Guide
-              </span>
+              Style Guide
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed">
               The complete guide to quiet luxury fashion - understated elegance that whispers wealth rather than shouts it. Master the art of stealth wealth dressing in 2026.

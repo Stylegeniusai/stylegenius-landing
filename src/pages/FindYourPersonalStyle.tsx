@@ -163,18 +163,11 @@ const FindYourPersonalStyle = () => {
       <section className="py-16 lg:py-24 bg-gradient-to-br from-pink-50 to-purple-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6"
+              style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+            >
               How to Find Your{" "}
-              <span
-                className="bg-clip-text text-transparent"
-                style={{
-                  background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent'
-                }}
-              >
-                Personal Style
-              </span>
+              Personal Style
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed">
               The ultimate guide to discovering your unique fashion identity, understanding different style aesthetics, and building a wardrobe that truly reflects who you are.

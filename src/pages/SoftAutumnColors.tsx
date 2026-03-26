@@ -69,18 +69,11 @@ const SoftAutumnColors = () => {
             <span className="inline-block px-4 py-2 bg-amber-100 text-amber-800 rounded-full text-sm font-medium mb-6">
               Color Analysis
             </span>
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6"
+              style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+            >
               Soft Autumn{" "}
-              <span
-                className="bg-clip-text text-transparent"
-                style={{
-                  background: 'linear-gradient(45deg, #C19A6B, #808000)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent'
-                }}
-              >
-                Color Palette
-              </span>
+              Color Palette
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed">
               The complete guide to Soft Autumn colors - the muted, warm, and earthy palette that creates a naturally elegant look.
@@ -181,10 +174,14 @@ const SoftAutumnColors = () => {
                     className="w-full aspect-square rounded-xl shadow-md mb-2"
                     style={{ backgroundColor: color.hex }}
                   />
-                  <span className="text-sm text-gray-600">{color.name}</span>
+                  <span className="text-sm text-gray-600 flex items-center justify-center gap-1.5">
+                    <span className="inline-block w-3 h-3 rounded-full border border-gray-200 flex-shrink-0" style={{ backgroundColor: color.hex }} />
+                    {color.name}
+                  </span>
                 </div>
               ))}
             </div>
+            <p className="text-sm text-gray-400 mb-8 mt-4">These are general guidelines — <Link to="/personal-analysis" className="text-rose-400 hover:text-rose-500 transition-colors">get colors picked specifically for you</Link></p>
           </div>
 
           {/* Neutrals */}
@@ -198,10 +195,14 @@ const SoftAutumnColors = () => {
                     className="w-full aspect-square rounded-xl shadow-md mb-2 border border-gray-200"
                     style={{ backgroundColor: color.hex }}
                   />
-                  <span className="text-sm text-gray-600">{color.name}</span>
+                  <span className="text-sm text-gray-600 flex items-center justify-center gap-1.5">
+                    <span className="inline-block w-3 h-3 rounded-full border border-gray-200 flex-shrink-0" style={{ backgroundColor: color.hex }} />
+                    {color.name}
+                  </span>
                 </div>
               ))}
             </div>
+            <p className="text-sm text-gray-400 mb-8 mt-4">These are general guidelines — <Link to="/personal-analysis" className="text-rose-400 hover:text-rose-500 transition-colors">get colors picked specifically for you</Link></p>
           </div>
 
           {/* Colors to Avoid */}
@@ -219,13 +220,22 @@ const SoftAutumnColors = () => {
                       <span className="text-2xl">✕</span>
                     </div>
                   </div>
-                  <span className="text-sm text-gray-600">{color.name}</span>
+                  <span className="text-sm text-gray-600 flex items-center justify-center gap-1.5">
+                    <span className="inline-block w-3 h-3 rounded-full border border-gray-200 flex-shrink-0" style={{ backgroundColor: color.hex }} />
+                    {color.name}
+                  </span>
                 </div>
               ))}
             </div>
+            <p className="text-sm text-gray-400 mb-8 mt-4">These are general guidelines — <Link to="/personal-analysis" className="text-rose-400 hover:text-rose-500 transition-colors">get colors picked specifically for you</Link></p>
           </div>
         </div>
       </section>
+
+      {/* Mid-Article CTA */}
+      <div className="container mx-auto px-4 max-w-4xl py-8">
+        <AnalysisCTA />
+      </div>
 
       {/* Styling Tips */}
       <section className="py-16 bg-white">
@@ -334,6 +344,134 @@ const SoftAutumnColors = () => {
             </Link>
           </div>
         </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Frequently Asked Questions About Soft Autumn</h2>
+          <div className="space-y-4">
+            <details className="bg-white rounded-xl p-6 shadow-sm group">
+              <summary className="text-lg font-semibold text-gray-900 cursor-pointer list-none flex items-center justify-between">
+                How do I know if I'm a Soft Autumn or a Soft Summer?
+                <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="text-gray-700 mt-4 leading-relaxed">The key difference is warmth. Soft Autumn has warm undertones and looks better in gold jewelry, olive greens, and earthy tones. Soft Summer has cool undertones and is flattered by silver jewelry, soft blues, and lavender. If you look better in peach than pink, and gold than silver, you're likely a Soft Autumn.</p>
+            </details>
+
+            <details className="bg-white rounded-xl p-6 shadow-sm group">
+              <summary className="text-lg font-semibold text-gray-900 cursor-pointer list-none flex items-center justify-between">
+                Can Soft Autumns wear black?
+                <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="text-gray-700 mt-4 leading-relaxed">Jet black is generally too harsh for Soft Autumns. Instead, opt for charcoal brown, dark olive, or deep taupe as your dark neutral. If you must wear black, keep it away from your face — for example, black trousers with a soft warm top. A dark chocolate brown is the best Soft Autumn alternative to black.</p>
+            </details>
+
+            <details className="bg-white rounded-xl p-6 shadow-sm group">
+              <summary className="text-lg font-semibold text-gray-900 cursor-pointer list-none flex items-center justify-between">
+                What makeup colors look best on Soft Autumns?
+                <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="text-gray-700 mt-4 leading-relaxed">Soft Autumns look beautiful in muted, warm makeup shades. For lips, try dusty rose, soft coral, or warm nude tones. For eyes, warm browns, soft olive, muted peach, and taupe eyeshadows work well. Avoid bright or cool-toned makeup. For blush, choose soft peach or warm terracotta rather than pink or berry shades.</p>
+            </details>
+
+            <details className="bg-white rounded-xl p-6 shadow-sm group">
+              <summary className="text-lg font-semibold text-gray-900 cursor-pointer list-none flex items-center justify-between">
+                What hair colors suit Soft Autumns best?
+                <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="text-gray-700 mt-4 leading-relaxed">Soft Autumns look best with warm, muted hair colors. Think caramel, honey blonde, warm light brown, or soft auburn. Avoid high-contrast highlights, ashy blonde, or jet black hair. If you color your hair, stay within two shades of your natural color and keep it warm-toned for the most harmonious look.</p>
+            </details>
+
+            <details className="bg-white rounded-xl p-6 shadow-sm group">
+              <summary className="text-lg font-semibold text-gray-900 cursor-pointer list-none flex items-center justify-between">
+                What metals and jewelry work for Soft Autumn?
+                <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="text-gray-700 mt-4 leading-relaxed">Gold is the best metal for Soft Autumns, especially matte or brushed finishes rather than high-shine. Rose gold also works beautifully. Avoid bright silver or platinum near your face. For gemstones, warm-toned stones like amber, citrine, smoky quartz, and jade complement the Soft Autumn palette perfectly.</p>
+            </details>
+
+            <details className="bg-white rounded-xl p-6 shadow-sm group">
+              <summary className="text-lg font-semibold text-gray-900 cursor-pointer list-none flex items-center justify-between">
+                How do I build a capsule wardrobe as a Soft Autumn?
+                <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="text-gray-700 mt-4 leading-relaxed">Start with your best neutrals — warm beige, taupe, soft brown, and charcoal brown — as wardrobe basics. Add accent pieces in your most flattering colors like sage, dusty rose, soft teal, and terracotta. Aim for low-contrast combinations that flow together. A Soft Autumn capsule wardrobe mixes effortlessly because all the colors share the same muted, warm quality.</p>
+            </details>
+
+            <details className="bg-white rounded-xl p-6 shadow-sm group">
+              <summary className="text-lg font-semibold text-gray-900 cursor-pointer list-none flex items-center justify-between">
+                Can my color season change over time?
+                <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="text-gray-700 mt-4 leading-relaxed">Your underlying color season is determined by your natural pigmentation and generally stays the same. However, factors like tanning, hair color changes, or aging can slightly shift which colors look best on you within your seasonal family. A Soft Autumn might lean more toward True Autumn in summer with a tan, or closer to Soft Summer in winter. A professional color analysis considers your natural, unaltered coloring.</p>
+            </details>
+          </div>
+        </div>
+
+        {/* FAQ Schema Markup */}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How do I know if I'm a Soft Autumn or a Soft Summer?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The key difference is warmth. Soft Autumn has warm undertones and looks better in gold jewelry, olive greens, and earthy tones. Soft Summer has cool undertones and is flattered by silver jewelry, soft blues, and lavender. If you look better in peach than pink, and gold than silver, you're likely a Soft Autumn."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can Soft Autumns wear black?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Jet black is generally too harsh for Soft Autumns. Instead, opt for charcoal brown, dark olive, or deep taupe as your dark neutral. If you must wear black, keep it away from your face. A dark chocolate brown is the best Soft Autumn alternative to black."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What makeup colors look best on Soft Autumns?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Soft Autumns look beautiful in muted, warm makeup shades. For lips, try dusty rose, soft coral, or warm nude tones. For eyes, warm browns, soft olive, muted peach, and taupe eyeshadows work well. For blush, choose soft peach or warm terracotta rather than pink or berry shades."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What hair colors suit Soft Autumns best?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Soft Autumns look best with warm, muted hair colors like caramel, honey blonde, warm light brown, or soft auburn. Avoid high-contrast highlights, ashy blonde, or jet black hair. Stay within two shades of your natural color and keep it warm-toned."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What metals and jewelry work for Soft Autumn?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Gold is the best metal for Soft Autumns, especially matte or brushed finishes. Rose gold also works beautifully. Avoid bright silver or platinum near your face. For gemstones, warm-toned stones like amber, citrine, smoky quartz, and jade complement the Soft Autumn palette perfectly."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do I build a capsule wardrobe as a Soft Autumn?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Start with your best neutrals — warm beige, taupe, soft brown, and charcoal brown — as wardrobe basics. Add accent pieces in sage, dusty rose, soft teal, and terracotta. Aim for low-contrast combinations that flow together."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can my color season change over time?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Your underlying color season is determined by your natural pigmentation and generally stays the same. However, factors like tanning, hair color changes, or aging can slightly shift which colors look best on you within your seasonal family. A professional color analysis considers your natural, unaltered coloring."
+              }
+            }
+          ]
+        })}} />
       </section>
 
       <div className="container mx-auto px-4 max-w-4xl">

@@ -142,9 +142,7 @@ const PersonalAnalysis = () => {
                 style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
               >
                 Discover the colors & styles{" "}
-                <span className="bg-clip-text text-transparent" style={{ background: "linear-gradient(135deg, #e11d48, #f472b6, #c084fc)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
-                  made for you
-                </span>
+                made for you
               </h1>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed max-w-xl mx-auto lg:mx-0">
                 Stop guessing what works. Get a personalized guide with your best colors, makeup shades, outfit ideas for your body type — and what to avoid. Straight to your inbox within 48 hours.

@@ -39,18 +39,11 @@ const HourglassBodyType = () => {
             <span className="inline-block px-4 py-2 bg-pink-100 text-pink-800 rounded-full text-sm font-medium mb-6">
               Body Type Guide
             </span>
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6"
+              style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+            >
               Hourglass Body Type:{" "}
-              <span
-                className="bg-clip-text text-transparent"
-                style={{
-                  background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent'
-                }}
-              >
-                Style Guide
-              </span>
+              Style Guide
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed">
               The complete guide to dressing your hourglass figure - learn what silhouettes, cuts, and styles will flatter your curves.
@@ -245,6 +238,9 @@ const HourglassBodyType = () => {
               </ul>
             </div>
           </div>
+          <p className="text-sm text-gray-400 mb-8">These are general tips — <Link to="/personal-analysis" className="text-rose-400 hover:text-rose-500 transition-colors">get a guide made for your body type</Link></p>
+
+          <AnalysisCTA />
 
           {/* What to Avoid */}
           <div className="bg-red-50 rounded-2xl p-8">
@@ -280,6 +276,7 @@ const HourglassBodyType = () => {
               </ul>
             </div>
           </div>
+          <p className="text-sm text-gray-400 mt-6 mb-8">These are general tips — <Link to="/personal-analysis" className="text-rose-400 hover:text-rose-500 transition-colors">get a guide made for your body type</Link></p>
         </div>
       </section>
 
@@ -400,6 +397,154 @@ const HourglassBodyType = () => {
       <div className="container mx-auto px-4 max-w-4xl">
         <AnalysisCTA />
       </div>
+
+      {/* FAQ Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Frequently Asked Questions</h2>
+          <div className="space-y-4">
+            <details className="bg-gray-50 rounded-2xl p-6 group">
+              <summary className="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                How do I know if I have an hourglass body type?
+                <span className="ml-2 text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="mt-4 text-gray-700 leading-relaxed">
+                You likely have an hourglass body type if your bust and hip measurements are roughly equal (within 1-2 inches of each other) and your waist is significantly narrower — typically 8 to 10 inches smaller than your hips. Your weight tends to distribute evenly between your upper and lower body, and you have a naturally defined waist.
+              </p>
+            </details>
+
+            <details className="bg-gray-50 rounded-2xl p-6 group">
+              <summary className="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                What are the best jeans for an hourglass figure?
+                <span className="ml-2 text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="mt-4 text-gray-700 leading-relaxed">
+                High-waisted jeans are the best choice for hourglass figures because they sit at your natural waist and prevent gapping at the back. Bootcut and flared styles balance out your hips, while straight-leg jeans offer a classic look. Look for jeans with some stretch to accommodate the difference between your waist and hips.
+              </p>
+            </details>
+
+            <details className="bg-gray-50 rounded-2xl p-6 group">
+              <summary className="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                Can hourglass body types wear oversized clothing?
+                <span className="ml-2 text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="mt-4 text-gray-700 leading-relaxed">
+                Yes, but the key is to balance it. If you wear an oversized top, pair it with fitted bottoms and tuck or belt the top to define your waist. An oversized blazer works great when cinched with a belt. The goal is to avoid hiding your waist completely, as that is your most flattering feature.
+              </p>
+            </details>
+
+            <details className="bg-gray-50 rounded-2xl p-6 group">
+              <summary className="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                What necklines are most flattering for hourglass shapes?
+                <span className="ml-2 text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="mt-4 text-gray-700 leading-relaxed">
+                V-necks, scoop necks, sweetheart necklines, and wrap-style necklines are the most flattering for hourglass figures. These necklines elongate your torso and complement your bust without adding bulk. Avoid high crew necks and turtlenecks that can make your upper body look heavier.
+              </p>
+            </details>
+
+            <details className="bg-gray-50 rounded-2xl p-6 group">
+              <summary className="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                What is the difference between hourglass and pear body shapes?
+                <span className="ml-2 text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="mt-4 text-gray-700 leading-relaxed">
+                The main difference is in the upper body. Hourglass figures have a bust that is roughly the same width as their hips, while pear shapes have a narrower bust and shoulders compared to their hips. Both share a defined waist, but hourglass bodies are more symmetrical between the upper and lower halves.
+              </p>
+            </details>
+
+            <details className="bg-gray-50 rounded-2xl p-6 group">
+              <summary className="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                How should I dress my hourglass body for the office?
+                <span className="ml-2 text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="mt-4 text-gray-700 leading-relaxed">
+                For professional settings, opt for tailored blazers that nip in at the waist, pencil skirts, wrap dresses, and high-waisted trousers with a tucked-in blouse. Structured fabrics in classic colors create a polished look. A belted coat or trench is perfect for outerwear. Avoid anything too boxy or too tight — aim for a fitted but not clingy silhouette.
+              </p>
+            </details>
+
+            <details className="bg-gray-50 rounded-2xl p-6 group">
+              <summary className="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                What swimsuits look best on an hourglass figure?
+                <span className="ml-2 text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="mt-4 text-gray-700 leading-relaxed">
+                High-waisted bikinis, one-piece swimsuits with ruching at the waist, and wrap-style swimsuits all look fantastic on hourglass figures. Look for supportive tops with underwire or thicker straps for the bust. Styles with a defined waist or cut-outs at the midsection emphasize your shape beautifully.
+              </p>
+            </details>
+          </div>
+        </div>
+
+        {/* FAQ Schema Markup */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "How do I know if I have an hourglass body type?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "You likely have an hourglass body type if your bust and hip measurements are roughly equal (within 1-2 inches of each other) and your waist is significantly narrower — typically 8 to 10 inches smaller than your hips. Your weight tends to distribute evenly between your upper and lower body, and you have a naturally defined waist."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What are the best jeans for an hourglass figure?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "High-waisted jeans are the best choice for hourglass figures because they sit at your natural waist and prevent gapping at the back. Bootcut and flared styles balance out your hips, while straight-leg jeans offer a classic look. Look for jeans with some stretch to accommodate the difference between your waist and hips."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Can hourglass body types wear oversized clothing?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, but the key is to balance it. If you wear an oversized top, pair it with fitted bottoms and tuck or belt the top to define your waist. An oversized blazer works great when cinched with a belt. The goal is to avoid hiding your waist completely, as that is your most flattering feature."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What necklines are most flattering for hourglass shapes?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "V-necks, scoop necks, sweetheart necklines, and wrap-style necklines are the most flattering for hourglass figures. These necklines elongate your torso and complement your bust without adding bulk. Avoid high crew necks and turtlenecks that can make your upper body look heavier."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What is the difference between hourglass and pear body shapes?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The main difference is in the upper body. Hourglass figures have a bust that is roughly the same width as their hips, while pear shapes have a narrower bust and shoulders compared to their hips. Both share a defined waist, but hourglass bodies are more symmetrical between the upper and lower halves."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How should I dress my hourglass body for the office?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "For professional settings, opt for tailored blazers that nip in at the waist, pencil skirts, wrap dresses, and high-waisted trousers with a tucked-in blouse. Structured fabrics in classic colors create a polished look. A belted coat or trench is perfect for outerwear. Avoid anything too boxy or too tight — aim for a fitted but not clingy silhouette."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What swimsuits look best on an hourglass figure?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "High-waisted bikinis, one-piece swimsuits with ruching at the waist, and wrap-style swimsuits all look fantastic on hourglass figures. Look for supportive tops with underwire or thicker straps for the bust. Styles with a defined waist or cut-outs at the midsection emphasize your shape beautifully."
+                  }
+                }
+              ]
+            })
+          }}
+        />
+      </section>
+
       <Footer />
     </div>
   );

@@ -39,18 +39,11 @@ const AppleBodyShape = () => {
             <span className="inline-block px-4 py-2 bg-pink-100 text-pink-800 rounded-full text-sm font-medium mb-6">
               Body Type Guide
             </span>
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6"
+              style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+            >
               Apple Body Shape:{" "}
-              <span
-                className="bg-clip-text text-transparent"
-                style={{
-                  background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent'
-                }}
-              >
-                Style Guide
-              </span>
+              Style Guide
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed">
               The complete guide to dressing your apple shape - learn how to highlight your assets and create a balanced silhouette.
@@ -106,6 +99,9 @@ const AppleBodyShape = () => {
               ))}
             </div>
           </div>
+
+          <AnalysisCTA />
+
         </div>
       </article>
 
@@ -139,6 +135,7 @@ const AppleBodyShape = () => {
               </div>
             ))}
           </div>
+          <p className="text-sm text-gray-400 mb-8">These are general tips — <Link to="/personal-analysis" className="text-rose-400 hover:text-rose-500 transition-colors">get a guide made for your body type</Link></p>
 
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div className="bg-white rounded-2xl p-6 shadow-lg">
@@ -245,6 +242,7 @@ const AppleBodyShape = () => {
               </ul>
             </div>
           </div>
+          <p className="text-sm text-gray-400 mb-8">These are general tips — <Link to="/personal-analysis" className="text-rose-400 hover:text-rose-500 transition-colors">get a guide made for your body type</Link></p>
 
           {/* What to Avoid */}
           <div className="bg-red-50 rounded-2xl p-8">
@@ -280,6 +278,7 @@ const AppleBodyShape = () => {
               </ul>
             </div>
           </div>
+          <p className="text-sm text-gray-400 mt-6">These are general tips — <Link to="/personal-analysis" className="text-rose-400 hover:text-rose-500 transition-colors">get a guide made for your body type</Link></p>
         </div>
       </section>
 
@@ -400,6 +399,154 @@ const AppleBodyShape = () => {
       <div className="container mx-auto px-4 max-w-4xl">
         <AnalysisCTA />
       </div>
+
+      {/* FAQ Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Frequently Asked Questions</h2>
+          <div className="space-y-4">
+            <details className="bg-gray-50 rounded-2xl p-6 group">
+              <summary className="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                What is an apple body shape?
+                <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="text-gray-700 mt-4 leading-relaxed">
+                An apple body shape (also called round or oval) is characterized by carrying weight primarily around the midsection. People with this body type typically have a fuller bust, broader shoulders, a less defined waist, and slimmer legs and arms. The widest part of the body is usually around the torso.
+              </p>
+            </details>
+
+            <details className="bg-gray-50 rounded-2xl p-6 group">
+              <summary className="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                What are the best dresses for an apple body shape?
+                <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="text-gray-700 mt-4 leading-relaxed">
+                The best dresses for apple shapes are empire waist dresses, A-line dresses, wrap dresses, and fit-and-flare styles. These silhouettes cinch above the midsection and flow outward, creating a flattering and balanced look. V-neck and sweetheart necklines work especially well to elongate the torso.
+              </p>
+            </details>
+
+            <details className="bg-gray-50 rounded-2xl p-6 group">
+              <summary className="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                What jeans are most flattering for an apple shape?
+                <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="text-gray-700 mt-4 leading-relaxed">
+                Bootcut and straight-leg jeans are the most flattering for apple body shapes. Mid-rise waistbands sit comfortably without digging in, and wide-leg trousers also work beautifully. Avoid skinny jeans that can emphasize the midsection — instead opt for styles that balance your proportions.
+              </p>
+            </details>
+
+            <details className="bg-gray-50 rounded-2xl p-6 group">
+              <summary className="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                How do I create a waistline with an apple shape?
+                <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="text-gray-700 mt-4 leading-relaxed">
+                To create the illusion of a waistline, use empire-waist garments that cinch just below the bust, wear structured jackets that nip in slightly, and try layering with open cardigans or long vests that create vertical lines. A thin belt worn at the highest point of your waist (under the bust) can also help define your shape.
+              </p>
+            </details>
+
+            <details className="bg-gray-50 rounded-2xl p-6 group">
+              <summary className="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                What should an apple body shape avoid wearing?
+                <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="text-gray-700 mt-4 leading-relaxed">
+                Apple shapes should generally be careful with clingy, tight fabrics around the midsection, wide belts at the natural waist, cropped tops, boxy and shapeless clothing, and double-breasted jackets. High-waisted pants with tucked-in tops can also draw attention to the midsection. Instead, choose fabrics that skim the body and create a smooth silhouette.
+              </p>
+            </details>
+
+            <details className="bg-gray-50 rounded-2xl p-6 group">
+              <summary className="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                How can I look slimmer with an apple body shape?
+                <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="text-gray-700 mt-4 leading-relaxed">
+                Create vertical lines with long necklaces, open jackets, and vertical details to elongate your torso. Draw attention upward with statement necklaces and interesting necklines. Show off your legs — they are often the best asset for apple shapes. Choose structured fabrics that drape well without clinging, and use monochromatic outfits to create an unbroken line.
+              </p>
+            </details>
+
+            <details className="bg-gray-50 rounded-2xl p-6 group">
+              <summary className="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                Which celebrities have an apple body shape?
+                <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="text-gray-700 mt-4 leading-relaxed">
+                Famous celebrities with apple body shapes include Oprah Winfrey, Rebel Wilson, Melissa McCarthy, Amy Schumer, Adele, Queen Latifah, Kate Winslet, and Drew Barrymore. These women demonstrate that the apple shape can look stunning with the right styling choices.
+              </p>
+            </details>
+          </div>
+        </div>
+
+        {/* FAQ Schema Markup */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "What is an apple body shape?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "An apple body shape (also called round or oval) is characterized by carrying weight primarily around the midsection. People with this body type typically have a fuller bust, broader shoulders, a less defined waist, and slimmer legs and arms. The widest part of the body is usually around the torso."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What are the best dresses for an apple body shape?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The best dresses for apple shapes are empire waist dresses, A-line dresses, wrap dresses, and fit-and-flare styles. These silhouettes cinch above the midsection and flow outward, creating a flattering and balanced look. V-neck and sweetheart necklines work especially well to elongate the torso."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What jeans are most flattering for an apple shape?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Bootcut and straight-leg jeans are the most flattering for apple body shapes. Mid-rise waistbands sit comfortably without digging in, and wide-leg trousers also work beautifully. Avoid skinny jeans that can emphasize the midsection — instead opt for styles that balance your proportions."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How do I create a waistline with an apple shape?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "To create the illusion of a waistline, use empire-waist garments that cinch just below the bust, wear structured jackets that nip in slightly, and try layering with open cardigans or long vests that create vertical lines. A thin belt worn at the highest point of your waist (under the bust) can also help define your shape."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What should an apple body shape avoid wearing?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Apple shapes should generally be careful with clingy, tight fabrics around the midsection, wide belts at the natural waist, cropped tops, boxy and shapeless clothing, and double-breasted jackets. High-waisted pants with tucked-in tops can also draw attention to the midsection."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How can I look slimmer with an apple body shape?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Create vertical lines with long necklaces, open jackets, and vertical details to elongate your torso. Draw attention upward with statement necklaces and interesting necklines. Show off your legs — they are often the best asset for apple shapes. Choose structured fabrics that drape well without clinging, and use monochromatic outfits to create an unbroken line."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Which celebrities have an apple body shape?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Famous celebrities with apple body shapes include Oprah Winfrey, Rebel Wilson, Melissa McCarthy, Amy Schumer, Adele, Queen Latifah, Kate Winslet, and Drew Barrymore. These women demonstrate that the apple shape can look stunning with the right styling choices."
+                  }
+                }
+              ]
+            })
+          }}
+        />
+      </section>
+
       <Footer />
     </div>
   );

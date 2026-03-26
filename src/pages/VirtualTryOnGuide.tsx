@@ -35,11 +35,11 @@ const VirtualTryOnGuide = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <span className="inline-block px-4 py-2 bg-purple-200 text-purple-800 rounded-full text-sm font-medium mb-6">Shopping Technology</span>
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6"
+              style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+            >
               Virtual Try-On{" "}
-              <span className="bg-clip-text text-transparent" style={{ background: 'linear-gradient(45deg, #9B59B6, #E91E63)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-                Guide 2026
-              </span>
+              Guide 2026
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed">
               Everything you need to know about virtual try-on technology and how to shop online like you're in the fitting room.

@@ -35,11 +35,11 @@ const Spring2025FashionTrends = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <span className="inline-block px-4 py-2 bg-green-200 text-green-800 rounded-full text-sm font-medium mb-6">Fashion Trends</span>
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6"
+              style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+            >
               Spring 2025{" "}
-              <span className="bg-clip-text text-transparent" style={{ background: 'linear-gradient(45deg, #2ECC71, #F1C40F)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-                Fashion Trends
-              </span>
+              Fashion Trends
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed">
               The biggest fashion trends for Spring 2025 - from runway to real life, here's what to wear this season.

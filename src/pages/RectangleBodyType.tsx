@@ -39,18 +39,11 @@ const RectangleBodyType = () => {
             <span className="inline-block px-4 py-2 bg-pink-100 text-pink-800 rounded-full text-sm font-medium mb-6">
               Body Type Guide
             </span>
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6"
+              style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+            >
               Rectangle Body Type:{" "}
-              <span
-                className="bg-clip-text text-transparent"
-                style={{
-                  background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent'
-                }}
-              >
-                Style Guide
-              </span>
+              Style Guide
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed">
               The complete guide to dressing your rectangle shape - learn how to create curves and define your waist.
@@ -109,6 +102,11 @@ const RectangleBodyType = () => {
         </div>
       </article>
 
+      {/* Mid-Article CTA */}
+      <div className="container mx-auto px-4 max-w-4xl">
+        <AnalysisCTA />
+      </div>
+
       {/* What to Wear - with Images */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4 max-w-4xl">
@@ -139,6 +137,7 @@ const RectangleBodyType = () => {
               </div>
             ))}
           </div>
+          <p className="text-sm text-gray-400 mb-8">These are general tips — <Link to="/personal-analysis" className="text-rose-400 hover:text-rose-500 transition-colors">get a guide made for your body type</Link></p>
 
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div className="bg-white rounded-2xl p-6 shadow-lg">
@@ -245,6 +244,7 @@ const RectangleBodyType = () => {
               </ul>
             </div>
           </div>
+          <p className="text-sm text-gray-400 mb-8">These are general tips — <Link to="/personal-analysis" className="text-rose-400 hover:text-rose-500 transition-colors">get a guide made for your body type</Link></p>
 
           {/* What to Avoid */}
           <div className="bg-red-50 rounded-2xl p-8">
@@ -280,6 +280,7 @@ const RectangleBodyType = () => {
               </ul>
             </div>
           </div>
+          <p className="text-sm text-gray-400 mt-6 mb-8">These are general tips — <Link to="/personal-analysis" className="text-rose-400 hover:text-rose-500 transition-colors">get a guide made for your body type</Link></p>
         </div>
       </section>
 
@@ -400,6 +401,154 @@ const RectangleBodyType = () => {
       <div className="container mx-auto px-4 max-w-4xl">
         <AnalysisCTA />
       </div>
+
+      {/* FAQ Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Frequently Asked Questions</h2>
+          <div className="space-y-4">
+            <details className="bg-gray-50 rounded-2xl p-6 group">
+              <summary className="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                What is a rectangle body type?
+                <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="text-gray-700 mt-4 leading-relaxed">
+                A rectangle body type (also called straight, athletic, or banana shape) is characterized by shoulders, waist, and hips that are approximately the same width. There is minimal waist definition, creating a straight silhouette. People with this body type often have a lean, athletic build with evenly distributed weight.
+              </p>
+            </details>
+
+            <details className="bg-gray-50 rounded-2xl p-6 group">
+              <summary className="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                How do I know if I have a rectangle body shape?
+                <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="text-gray-700 mt-4 leading-relaxed">
+                You likely have a rectangle body shape if your bust, waist, and hip measurements are within a few inches of each other. Your waist is not significantly narrower than your shoulders or hips, and you may have a straight, athletic appearance without pronounced curves.
+              </p>
+            </details>
+
+            <details className="bg-gray-50 rounded-2xl p-6 group">
+              <summary className="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                What are the best dresses for a rectangle body type?
+                <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="text-gray-700 mt-4 leading-relaxed">
+                The best dresses for a rectangle body type are fit-and-flare dresses, wrap dresses, belted shirt dresses, A-line dresses with a defined waist, and peplum dresses. These styles create the illusion of curves and add definition to the waistline, giving a more hourglass-like silhouette.
+              </p>
+            </details>
+
+            <details className="bg-gray-50 rounded-2xl p-6 group">
+              <summary className="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                Should rectangle body types avoid straight-cut clothing?
+                <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="text-gray-700 mt-4 leading-relaxed">
+                Straight-cut and boxy clothing can emphasize the already straight silhouette of a rectangle body shape. Instead, opt for clothing that adds dimension — pieces with ruching, belts, peplum details, or asymmetrical hemlines that create visual curves. That said, personal style matters most, and these are guidelines rather than rules.
+              </p>
+            </details>
+
+            <details className="bg-gray-50 rounded-2xl p-6 group">
+              <summary className="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                What jeans look best on a rectangle body type?
+                <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="text-gray-700 mt-4 leading-relaxed">
+                Rectangle body types look great in low-rise or mid-rise jeans, wide-leg pants, bootcut jeans, and jeans with pocket embellishments or whiskering details at the hips. Cargo pants and jeans with flap pockets can also add volume to the hip area, creating the appearance of curves.
+              </p>
+            </details>
+
+            <details className="bg-gray-50 rounded-2xl p-6 group">
+              <summary className="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                How can I create the illusion of curves with a rectangle shape?
+                <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="text-gray-700 mt-4 leading-relaxed">
+                You can create the illusion of curves by using belts to cinch your waist, wearing peplum tops and ruffled blouses to add volume at the bust and hips, trying color blocking to visually break up the silhouette, and choosing structured clothing with seaming or draping that draws the eye inward at the waist.
+              </p>
+            </details>
+
+            <details className="bg-gray-50 rounded-2xl p-6 group">
+              <summary className="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                Is rectangle the same as athletic body type?
+                <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="text-gray-700 mt-4 leading-relaxed">
+                The terms rectangle and athletic body type are often used interchangeably, though they are not exactly the same. An athletic body type can have more muscular definition while still having a straight silhouette. The rectangle classification focuses on proportions — similar-width shoulders, waist, and hips — regardless of muscle tone or fitness level.
+              </p>
+            </details>
+          </div>
+        </div>
+
+        {/* FAQ Schema Markup */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "What is a rectangle body type?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A rectangle body type (also called straight, athletic, or banana shape) is characterized by shoulders, waist, and hips that are approximately the same width. There is minimal waist definition, creating a straight silhouette. People with this body type often have a lean, athletic build with evenly distributed weight."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How do I know if I have a rectangle body shape?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "You likely have a rectangle body shape if your bust, waist, and hip measurements are within a few inches of each other. Your waist is not significantly narrower than your shoulders or hips, and you may have a straight, athletic appearance without pronounced curves."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What are the best dresses for a rectangle body type?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The best dresses for a rectangle body type are fit-and-flare dresses, wrap dresses, belted shirt dresses, A-line dresses with a defined waist, and peplum dresses. These styles create the illusion of curves and add definition to the waistline, giving a more hourglass-like silhouette."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Should rectangle body types avoid straight-cut clothing?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Straight-cut and boxy clothing can emphasize the already straight silhouette of a rectangle body shape. Instead, opt for clothing that adds dimension — pieces with ruching, belts, peplum details, or asymmetrical hemlines that create visual curves. That said, personal style matters most, and these are guidelines rather than rules."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What jeans look best on a rectangle body type?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Rectangle body types look great in low-rise or mid-rise jeans, wide-leg pants, bootcut jeans, and jeans with pocket embellishments or whiskering details at the hips. Cargo pants and jeans with flap pockets can also add volume to the hip area, creating the appearance of curves."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How can I create the illusion of curves with a rectangle shape?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "You can create the illusion of curves by using belts to cinch your waist, wearing peplum tops and ruffled blouses to add volume at the bust and hips, trying color blocking to visually break up the silhouette, and choosing structured clothing with seaming or draping that draws the eye inward at the waist."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Is rectangle the same as athletic body type?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The terms rectangle and athletic body type are often used interchangeably, though they are not exactly the same. An athletic body type can have more muscular definition while still having a straight silhouette. The rectangle classification focuses on proportions — similar-width shoulders, waist, and hips — regardless of muscle tone or fitness level."
+                  }
+                }
+              ]
+            })
+          }}
+        />
+      </section>
+
       <Footer />
     </div>
   );

@@ -37,11 +37,11 @@ const InvertedTriangleBody = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <span className="inline-block px-4 py-2 bg-pink-100 text-pink-800 rounded-full text-sm font-medium mb-6">Body Type Guide</span>
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6"
+              style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+            >
               Inverted Triangle{" "}
-              <span className="bg-clip-text text-transparent" style={{ background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-                Body Type
-              </span>
+              Body Type
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed">
               The complete guide to dressing the inverted triangle shape - balance broad shoulders with the right silhouettes.
@@ -92,6 +92,8 @@ const InvertedTriangleBody = () => {
             </div>
           </div>
 
+          <AnalysisCTA />
+
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div className="bg-green-50 rounded-2xl p-6">
               <h3 className="text-xl font-bold text-gray-900 mb-4">Best Styles</h3>
@@ -102,6 +104,7 @@ const InvertedTriangleBody = () => {
                 <li><span className="text-green-600 mr-2">✓</span> Details on lower half (pockets, patterns)</li>
                 <li><span className="text-green-600 mr-2">✓</span> Wrap tops and dresses</li>
               </ul>
+              <p className="text-sm text-gray-400 mb-8 mt-4">These are general tips — <Link to="/personal-analysis" className="text-rose-400 hover:text-rose-500 transition-colors">get a guide made for your body type</Link></p>
             </div>
 
             <div className="bg-red-50 rounded-2xl p-6">
@@ -113,6 +116,7 @@ const InvertedTriangleBody = () => {
                 <li><span className="text-red-500 mr-2">✕</span> Skinny jeans alone</li>
                 <li><span className="text-red-500 mr-2">✕</span> Halter tops</li>
               </ul>
+              <p className="text-sm text-gray-400 mb-8 mt-4">These are general tips — <Link to="/personal-analysis" className="text-rose-400 hover:text-rose-500 transition-colors">get a guide made for your body type</Link></p>
             </div>
           </div>
         </div>
@@ -147,6 +151,7 @@ const InvertedTriangleBody = () => {
               </div>
             ))}
           </div>
+          <p className="text-sm text-gray-400 mb-8 text-center">These are general tips — <Link to="/personal-analysis" className="text-rose-400 hover:text-rose-500 transition-colors">get a guide made for your body type</Link></p>
         </div>
       </section>
 
@@ -230,6 +235,134 @@ const InvertedTriangleBody = () => {
       <div className="container mx-auto px-4 max-w-4xl">
         <AnalysisCTA />
       </div>
+
+      {/* FAQ Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Frequently Asked Questions</h2>
+          <div className="space-y-4">
+            <details className="bg-gray-50 rounded-xl p-6 group">
+              <summary className="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                How do I know if I have an inverted triangle body shape?
+                <span className="text-pink-500 group-open:rotate-45 transition-transform text-xl">+</span>
+              </summary>
+              <p className="text-gray-700 mt-4 leading-relaxed">You likely have an inverted triangle body shape if your shoulders are noticeably wider than your hips, you have a fuller bust or broad back, and your lower body is comparatively narrow. A quick test: stand in front of a mirror and compare the width of your shoulders to your hips. If your shoulders extend well beyond your hip line, you have an inverted triangle shape.</p>
+            </details>
+
+            <details className="bg-gray-50 rounded-xl p-6 group">
+              <summary className="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                What jeans are best for an inverted triangle body?
+                <span className="text-pink-500 group-open:rotate-45 transition-transform text-xl">+</span>
+              </summary>
+              <p className="text-gray-700 mt-4 leading-relaxed">Bootcut, wide-leg, and flared jeans are ideal for inverted triangle shapes because they add volume to the lower half, creating a more balanced silhouette. Avoid very skinny jeans on their own as they can emphasize the difference between your broader upper body and narrow hips. If you prefer a slimmer fit, pair straight-leg jeans with a V-neck or darker top.</p>
+            </details>
+
+            <details className="bg-gray-50 rounded-xl p-6 group">
+              <summary className="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                What necklines are most flattering for broad shoulders?
+                <span className="text-pink-500 group-open:rotate-45 transition-transform text-xl">+</span>
+              </summary>
+              <p className="text-gray-700 mt-4 leading-relaxed">V-necks, scoop necks, and deep U-necklines are the most flattering for broad shoulders. These necklines draw the eye downward and inward, visually narrowing the shoulder line. Wrap tops also work beautifully. Avoid boat necks, off-the-shoulder tops, and wide square necklines as they emphasize horizontal width across the shoulders.</p>
+            </details>
+
+            <details className="bg-gray-50 rounded-xl p-6 group">
+              <summary className="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                Can I wear sleeveless tops with an inverted triangle shape?
+                <span className="text-pink-500 group-open:rotate-45 transition-transform text-xl">+</span>
+              </summary>
+              <p className="text-gray-700 mt-4 leading-relaxed">Yes, but choose your sleeveless styles carefully. Racerback and narrow-strap tank tops work well because they make the shoulder line appear narrower. Avoid cap sleeves and wide-set straps that sit on the outer edge of your shoulders, as these add visual width. If you want to show your arms, opt for tops with a V-neckline and narrower straps set slightly inward.</p>
+            </details>
+
+            <details className="bg-gray-50 rounded-xl p-6 group">
+              <summary className="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                What dresses suit an inverted triangle body type?
+                <span className="text-pink-500 group-open:rotate-45 transition-transform text-xl">+</span>
+              </summary>
+              <p className="text-gray-700 mt-4 leading-relaxed">A-line dresses, wrap dresses, and fit-and-flare silhouettes are ideal for inverted triangle shapes. These styles cinch at the waist and flare out at the hips, creating the illusion of a more balanced figure. Look for dresses with details like ruffles, pockets, or patterns on the skirt portion to draw attention to the lower half. Darker colors on top with lighter or patterned skirts also help balance proportions.</p>
+            </details>
+
+            <details className="bg-gray-50 rounded-xl p-6 group">
+              <summary className="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                How is inverted triangle different from a rectangle body shape?
+                <span className="text-pink-500 group-open:rotate-45 transition-transform text-xl">+</span>
+              </summary>
+              <p className="text-gray-700 mt-4 leading-relaxed">The key difference is in shoulder-to-hip ratio. An inverted triangle has shoulders significantly wider than the hips, while a rectangle body type has shoulders and hips that are roughly the same width with little waist definition. Both shapes can be athletic, but the inverted triangle tends to carry more width in the upper body. Styling approaches differ: inverted triangles focus on balancing the lower half, while rectangles focus on creating curves.</p>
+            </details>
+
+            <details className="bg-gray-50 rounded-xl p-6 group">
+              <summary className="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                What swimwear is best for an inverted triangle body?
+                <span className="text-pink-500 group-open:rotate-45 transition-transform text-xl">+</span>
+              </summary>
+              <p className="text-gray-700 mt-4 leading-relaxed">Look for swimwear that adds volume to the hips and minimizes the shoulders. High-waisted bikini bottoms with ruffles or bold prints work well for the lower half. For tops, choose halter-neck or V-neck styles in solid, darker colors to visually narrow the upper body. One-piece swimsuits with color blocking — dark on top and bright or patterned on the bottom — are also very flattering for inverted triangle shapes.</p>
+            </details>
+          </div>
+        </div>
+
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How do I know if I have an inverted triangle body shape?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "You likely have an inverted triangle body shape if your shoulders are noticeably wider than your hips, you have a fuller bust or broad back, and your lower body is comparatively narrow. A quick test: stand in front of a mirror and compare the width of your shoulders to your hips. If your shoulders extend well beyond your hip line, you have an inverted triangle shape."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What jeans are best for an inverted triangle body?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Bootcut, wide-leg, and flared jeans are ideal for inverted triangle shapes because they add volume to the lower half, creating a more balanced silhouette. Avoid very skinny jeans on their own as they can emphasize the difference between your broader upper body and narrow hips."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What necklines are most flattering for broad shoulders?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "V-necks, scoop necks, and deep U-necklines are the most flattering for broad shoulders. These necklines draw the eye downward and inward, visually narrowing the shoulder line. Wrap tops also work beautifully. Avoid boat necks, off-the-shoulder tops, and wide square necklines."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I wear sleeveless tops with an inverted triangle shape?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, but choose your sleeveless styles carefully. Racerback and narrow-strap tank tops work well because they make the shoulder line appear narrower. Avoid cap sleeves and wide-set straps that sit on the outer edge of your shoulders."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What dresses suit an inverted triangle body type?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A-line dresses, wrap dresses, and fit-and-flare silhouettes are ideal for inverted triangle shapes. These styles cinch at the waist and flare out at the hips, creating the illusion of a more balanced figure."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How is inverted triangle different from a rectangle body shape?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The key difference is in shoulder-to-hip ratio. An inverted triangle has shoulders significantly wider than the hips, while a rectangle body type has shoulders and hips that are roughly the same width with little waist definition."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What swimwear is best for an inverted triangle body?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Look for swimwear that adds volume to the hips and minimizes the shoulders. High-waisted bikini bottoms with ruffles or bold prints work well for the lower half. For tops, choose halter-neck or V-neck styles in solid, darker colors to visually narrow the upper body."
+              }
+            }
+          ]
+        }) }} />
+      </section>
+
       <Footer />
     </div>
   );

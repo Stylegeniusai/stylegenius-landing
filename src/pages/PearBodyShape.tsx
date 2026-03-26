@@ -39,18 +39,11 @@ const PearBodyShape = () => {
             <span className="inline-block px-4 py-2 bg-pink-100 text-pink-800 rounded-full text-sm font-medium mb-6">
               Body Type Guide
             </span>
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6"
+              style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+            >
               Pear Body Shape:{" "}
-              <span
-                className="bg-clip-text text-transparent"
-                style={{
-                  background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent'
-                }}
-              >
-                Style Guide
-              </span>
+              Style Guide
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed">
               The complete guide to dressing your pear shape - learn how to balance your silhouette and highlight your best features.
@@ -109,6 +102,11 @@ const PearBodyShape = () => {
         </div>
       </article>
 
+      {/* Mid-Article CTA */}
+      <div className="container mx-auto px-4 max-w-4xl py-8">
+        <AnalysisCTA />
+      </div>
+
       {/* What to Wear - with Images */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4 max-w-4xl">
@@ -139,6 +137,7 @@ const PearBodyShape = () => {
               </div>
             ))}
           </div>
+          <p className="text-sm text-gray-400 mb-8">These are general tips — <Link to="/personal-analysis" className="text-rose-400 hover:text-rose-500 transition-colors">get a guide made for your body type</Link></p>
 
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div className="bg-white rounded-2xl p-6 shadow-lg">
@@ -245,6 +244,7 @@ const PearBodyShape = () => {
               </ul>
             </div>
           </div>
+          <p className="text-sm text-gray-400 mb-8">These are general tips — <Link to="/personal-analysis" className="text-rose-400 hover:text-rose-500 transition-colors">get a guide made for your body type</Link></p>
 
           {/* What to Avoid */}
           <div className="bg-red-50 rounded-2xl p-8">
@@ -280,6 +280,7 @@ const PearBodyShape = () => {
               </ul>
             </div>
           </div>
+          <p className="text-sm text-gray-400 mb-8 mt-6">These are general tips — <Link to="/personal-analysis" className="text-rose-400 hover:text-rose-500 transition-colors">get a guide made for your body type</Link></p>
         </div>
       </section>
 
@@ -400,6 +401,154 @@ const PearBodyShape = () => {
       <div className="container mx-auto px-4 max-w-4xl">
         <AnalysisCTA />
       </div>
+
+      {/* FAQ Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Frequently Asked Questions</h2>
+          <div className="space-y-4">
+            <details className="bg-gray-50 rounded-2xl p-6 group">
+              <summary className="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                What is a pear body shape?
+                <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="text-gray-700 mt-4 leading-relaxed">
+                A pear body shape, also known as a triangle shape, is characterized by hips and thighs that are wider than the shoulders and bust. Women with this shape typically have a defined waist, a slimmer upper body, and carry most of their weight in their lower body. It is one of the most common body shapes.
+              </p>
+            </details>
+
+            <details className="bg-gray-50 rounded-2xl p-6 group">
+              <summary className="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                What jeans are best for a pear body shape?
+                <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="text-gray-700 mt-4 leading-relaxed">
+                Bootcut and flare jeans are the most flattering for pear shapes because they balance wider hips by adding volume at the hem. High-waisted styles are also great as they define the waist and elongate the legs. Dark washes create a slimming effect on the lower body. Avoid skinny jeans that taper at the ankle, as they can emphasize the width of the hips.
+              </p>
+            </details>
+
+            <details className="bg-gray-50 rounded-2xl p-6 group">
+              <summary className="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                How can I balance my pear-shaped figure?
+                <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="text-gray-700 mt-4 leading-relaxed">
+                The key to balancing a pear shape is adding visual volume to your upper body while streamlining the lower half. Wear bright colors, bold prints, and statement details on top. Choose structured shoulders, boat necklines, and off-shoulder tops. For your lower half, stick to darker colors, A-line silhouettes, and avoid bulky details around the hips.
+              </p>
+            </details>
+
+            <details className="bg-gray-50 rounded-2xl p-6 group">
+              <summary className="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                What dresses look best on a pear body shape?
+                <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="text-gray-700 mt-4 leading-relaxed">
+                A-line dresses, fit-and-flare dresses, and wrap dresses are the most flattering options for pear shapes. These styles cinch at the waist and flare out over the hips, creating a balanced silhouette. Empire waist dresses also work well as they draw attention to the bust and skim over the lower body. Look for dresses with interesting necklines or sleeve details to draw the eye upward.
+              </p>
+            </details>
+
+            <details className="bg-gray-50 rounded-2xl p-6 group">
+              <summary className="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                Should pear shapes avoid skinny jeans?
+                <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="text-gray-700 mt-4 leading-relaxed">
+                Skinny jeans can make the hips appear wider by contrast with the narrow ankle. However, you can still wear them if you pair them with longer tops, tunics, or jackets that cover the hip area. If you prefer a slimmer jean, straight-leg styles are a better alternative as they create a more balanced line from hip to ankle.
+              </p>
+            </details>
+
+            <details className="bg-gray-50 rounded-2xl p-6 group">
+              <summary className="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                What tops are most flattering for a pear shape?
+                <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="text-gray-700 mt-4 leading-relaxed">
+                The most flattering tops for pear shapes are those that add volume and interest to the upper body. Boat neck tops, off-shoulder styles, puff sleeves, and structured blazers all help balance wider hips. Bright colors, horizontal stripes (on top only), and bold prints draw the eye upward. Peplum tops are also a great choice as they define the waist while skimming over the hips.
+              </p>
+            </details>
+
+            <details className="bg-gray-50 rounded-2xl p-6 group">
+              <summary className="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                How do I know if I have a pear body shape?
+                <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="text-gray-700 mt-4 leading-relaxed">
+                You likely have a pear body shape if your hip measurement is noticeably larger than your bust measurement, your shoulders are narrower than your hips, you have a well-defined waist, and you tend to gain weight in your hips, thighs, and buttocks first. Taking your measurements at the bust, waist, and hips can help confirm your body shape.
+              </p>
+            </details>
+          </div>
+        </div>
+
+        {/* FAQ Schema Markup */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "What is a pear body shape?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A pear body shape, also known as a triangle shape, is characterized by hips and thighs that are wider than the shoulders and bust. Women with this shape typically have a defined waist, a slimmer upper body, and carry most of their weight in their lower body. It is one of the most common body shapes."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What jeans are best for a pear body shape?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Bootcut and flare jeans are the most flattering for pear shapes because they balance wider hips by adding volume at the hem. High-waisted styles are also great as they define the waist and elongate the legs. Dark washes create a slimming effect on the lower body. Avoid skinny jeans that taper at the ankle, as they can emphasize the width of the hips."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How can I balance my pear-shaped figure?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The key to balancing a pear shape is adding visual volume to your upper body while streamlining the lower half. Wear bright colors, bold prints, and statement details on top. Choose structured shoulders, boat necklines, and off-shoulder tops. For your lower half, stick to darker colors, A-line silhouettes, and avoid bulky details around the hips."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What dresses look best on a pear body shape?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A-line dresses, fit-and-flare dresses, and wrap dresses are the most flattering options for pear shapes. These styles cinch at the waist and flare out over the hips, creating a balanced silhouette. Empire waist dresses also work well as they draw attention to the bust and skim over the lower body."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Should pear shapes avoid skinny jeans?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Skinny jeans can make the hips appear wider by contrast with the narrow ankle. However, you can still wear them if you pair them with longer tops, tunics, or jackets that cover the hip area. Straight-leg styles are a better alternative as they create a more balanced line from hip to ankle."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What tops are most flattering for a pear shape?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The most flattering tops for pear shapes are those that add volume and interest to the upper body. Boat neck tops, off-shoulder styles, puff sleeves, and structured blazers all help balance wider hips. Bright colors, horizontal stripes (on top only), and bold prints draw the eye upward. Peplum tops are also a great choice."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How do I know if I have a pear body shape?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "You likely have a pear body shape if your hip measurement is noticeably larger than your bust measurement, your shoulders are narrower than your hips, you have a well-defined waist, and you tend to gain weight in your hips, thighs, and buttocks first."
+                  }
+                }
+              ]
+            })
+          }}
+        />
+      </section>
+
       <Footer />
     </div>
   );

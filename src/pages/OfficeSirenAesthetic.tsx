@@ -36,11 +36,11 @@ const OfficeSirenAesthetic = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <span className="inline-block px-4 py-2 bg-gray-200 text-gray-800 rounded-full text-sm font-medium mb-6">Fashion Aesthetic</span>
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6"
+              style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+            >
               Office Siren{" "}
-              <span className="bg-clip-text text-transparent" style={{ background: 'linear-gradient(45deg, #4A5568, #1A202C)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-                Aesthetic
-              </span>
+              Aesthetic
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed">
               The complete guide to the office siren aesthetic - the viral TikTok trend that combines corporate power dressing with seductive elegance. Learn how to master this sophisticated look.

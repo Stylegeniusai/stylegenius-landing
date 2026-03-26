@@ -69,18 +69,11 @@ const SoftSummerColors = () => {
             <span className="inline-block px-4 py-2 bg-purple-100 text-purple-800 rounded-full text-sm font-medium mb-6">
               Color Analysis
             </span>
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6"
+              style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+            >
               Soft Summer{" "}
-              <span
-                className="bg-clip-text text-transparent"
-                style={{
-                  background: 'linear-gradient(45deg, #B4A7D6, #D4A5A5)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent'
-                }}
-              >
-                Color Palette
-              </span>
+              Color Palette
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed">
               The complete guide to Soft Summer colors - muted, cool, and elegant hues that create a sophisticated, harmonious look.
@@ -154,6 +147,7 @@ const SoftSummerColors = () => {
                 </div>
               ))}
             </div>
+            <p className="text-sm text-gray-400 mb-8 mt-6">These are general guidelines — <Link to="/personal-analysis" className="text-rose-400 hover:text-rose-500 transition-colors">get colors picked specifically for you</Link></p>
           </div>
 
           <div className="bg-white rounded-2xl p-8 shadow-lg mb-8">
@@ -166,6 +160,7 @@ const SoftSummerColors = () => {
                 </div>
               ))}
             </div>
+            <p className="text-sm text-gray-400 mb-8 mt-6">These are general guidelines — <Link to="/personal-analysis" className="text-rose-400 hover:text-rose-500 transition-colors">get colors picked specifically for you</Link></p>
           </div>
 
           <div className="bg-white rounded-2xl p-8 shadow-lg">
@@ -182,9 +177,15 @@ const SoftSummerColors = () => {
                 </div>
               ))}
             </div>
+            <p className="text-sm text-gray-400 mb-8 mt-6">These are general guidelines — <Link to="/personal-analysis" className="text-rose-400 hover:text-rose-500 transition-colors">get colors picked specifically for you</Link></p>
           </div>
         </div>
       </section>
+
+      {/* Mid-Article CTA */}
+      <div className="container mx-auto px-4 max-w-4xl py-8">
+        <AnalysisCTA />
+      </div>
 
       {/* Compare Seasons */}
       <section className="py-16 bg-white">
@@ -230,6 +231,47 @@ const SoftSummerColors = () => {
           </div>
         </div>
       </section>
+
+      {/* FAQ Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8">Frequently Asked Questions About Soft Summer Colors</h2>
+          <div className="divide-y divide-gray-200">
+            {[
+              { q: "How do I know if I'm a Soft Summer?", a: "Soft Summers typically have neutral-cool undertones, muted coloring with low contrast between skin, hair, and eyes. Your skin may have a rosy or pinkish quality, your hair is often ash blonde to medium brown, and your eyes are soft blue, gray, green, or hazel. If bright colors overwhelm you and muted tones make you look radiant, you're likely a Soft Summer." },
+              { q: "Can Soft Summers wear black?", a: "Jet black is generally too harsh for Soft Summers and creates too much contrast against their naturally muted coloring. Instead, opt for charcoal, dark taupe, or slate blue as your dark neutrals. These provide depth without overwhelming your soft features." },
+              { q: "What is the difference between Soft Summer and Soft Autumn?", a: "Both seasons are muted and soft, but the key difference is temperature. Soft Summer leans cool with ashy, blue-based undertones, while Soft Autumn leans warm with golden, earthy undertones. A simple test: if silver jewelry looks better on you, you're likely Soft Summer. If gold looks better, you may be Soft Autumn." },
+              { q: "What makeup colors work best for Soft Summer?", a: "Stick to muted, cool-toned makeup. Dusty rose and mauve lipsticks, soft plum or taupe eyeshadows, and cool pink or peach blushes work beautifully. Avoid bright or neon makeup colors, and choose soft brown or gray mascara over jet black for a more harmonious look." },
+              { q: "Can Soft Summers wear warm colors at all?", a: "Soft Summers can wear some warm-leaning colors as long as they are muted and softened. For example, a dusty rose (which has some warmth) or a muted sage green works well. The key is to avoid bright, saturated warm tones like orange, bright yellow, or tomato red." },
+              { q: "What metals and jewelry suit Soft Summer best?", a: "Silver, white gold, and platinum are the most flattering metals for Soft Summers. Rose gold can also work due to its muted pink tone. Avoid bright yellow gold, which can clash with your cool undertones. For gemstones, look for muted stones like moonstone, rose quartz, amethyst, and aquamarine." },
+              { q: "How do I build a Soft Summer capsule wardrobe?", a: "Start with muted neutrals like taupe, soft white, charcoal, and rose beige as your base. Add in your best accent colors like dusty rose, lavender, sage green, and powder blue. Keep all pieces in the same soft, muted tone family so everything mixes and matches effortlessly. Avoid high-contrast combinations." }
+            ].map((item, i) => (
+              <details key={i} className="group border-b border-gray-200">
+                <summary className="flex justify-between items-center cursor-pointer py-4 font-medium text-gray-900 hover:text-gray-600 transition-colors">
+                  {item.q}
+                  <span className="text-gray-400 group-open:rotate-45 transition-transform text-xl ml-4 flex-shrink-0">+</span>
+                </summary>
+                <p className="text-gray-700 pb-4 leading-relaxed">{item.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Schema Markup */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "How do I know if I'm a Soft Summer?", "acceptedAnswer": { "@type": "Answer", "text": "Soft Summers typically have neutral-cool undertones, muted coloring with low contrast between skin, hair, and eyes. Your skin may have a rosy or pinkish quality, your hair is often ash blonde to medium brown, and your eyes are soft blue, gray, green, or hazel. If bright colors overwhelm you and muted tones make you look radiant, you're likely a Soft Summer." }},
+          { "@type": "Question", "name": "Can Soft Summers wear black?", "acceptedAnswer": { "@type": "Answer", "text": "Jet black is generally too harsh for Soft Summers and creates too much contrast against their naturally muted coloring. Instead, opt for charcoal, dark taupe, or slate blue as your dark neutrals. These provide depth without overwhelming your soft features." }},
+          { "@type": "Question", "name": "What is the difference between Soft Summer and Soft Autumn?", "acceptedAnswer": { "@type": "Answer", "text": "Both seasons are muted and soft, but the key difference is temperature. Soft Summer leans cool with ashy, blue-based undertones, while Soft Autumn leans warm with golden, earthy undertones. A simple test: if silver jewelry looks better on you, you're likely Soft Summer. If gold looks better, you may be Soft Autumn." }},
+          { "@type": "Question", "name": "What makeup colors work best for Soft Summer?", "acceptedAnswer": { "@type": "Answer", "text": "Stick to muted, cool-toned makeup. Dusty rose and mauve lipsticks, soft plum or taupe eyeshadows, and cool pink or peach blushes work beautifully. Avoid bright or neon makeup colors, and choose soft brown or gray mascara over jet black for a more harmonious look." }},
+          { "@type": "Question", "name": "Can Soft Summers wear warm colors at all?", "acceptedAnswer": { "@type": "Answer", "text": "Soft Summers can wear some warm-leaning colors as long as they are muted and softened. For example, a dusty rose (which has some warmth) or a muted sage green works well. The key is to avoid bright, saturated warm tones like orange, bright yellow, or tomato red." }},
+          { "@type": "Question", "name": "What metals and jewelry suit Soft Summer best?", "acceptedAnswer": { "@type": "Answer", "text": "Silver, white gold, and platinum are the most flattering metals for Soft Summers. Rose gold can also work due to its muted pink tone. Avoid bright yellow gold, which can clash with your cool undertones. For gemstones, look for muted stones like moonstone, rose quartz, amethyst, and aquamarine." }},
+          { "@type": "Question", "name": "How do I build a Soft Summer capsule wardrobe?", "acceptedAnswer": { "@type": "Answer", "text": "Start with muted neutrals like taupe, soft white, charcoal, and rose beige as your base. Add in your best accent colors like dusty rose, lavender, sage green, and powder blue. Keep all pieces in the same soft, muted tone family so everything mixes and matches effortlessly. Avoid high-contrast combinations." }}
+        ]
+      })}} />
 
       <div className="container mx-auto px-4 max-w-4xl">
         <AnalysisCTA />

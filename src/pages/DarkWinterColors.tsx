@@ -69,18 +69,11 @@ const DarkWinterColors = () => {
             <span className="inline-block px-4 py-2 bg-white/20 text-white rounded-full text-sm font-medium mb-6">
               Color Analysis
             </span>
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6"
+              style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+            >
               Dark Winter{" "}
-              <span
-                className="bg-clip-text text-transparent"
-                style={{
-                  background: 'linear-gradient(45deg, #C41E3A, #7851A9)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent'
-                }}
-              >
-                Color Palette
-              </span>
+              Color Palette
             </h1>
             <p className="text-xl md:text-2xl text-gray-200 mb-8 leading-relaxed">
               The complete guide to Dark Winter colors - rich, deep, and dramatic hues for high-contrast, cool-neutral coloring.
@@ -185,6 +178,7 @@ const DarkWinterColors = () => {
                 </div>
               ))}
             </div>
+            <p className="text-sm text-gray-400 mb-8">These are general guidelines — <Link to="/personal-analysis" className="text-rose-400 hover:text-rose-500 transition-colors">get colors picked specifically for you</Link></p>
           </div>
 
           {/* Neutrals */}
@@ -202,6 +196,7 @@ const DarkWinterColors = () => {
                 </div>
               ))}
             </div>
+            <p className="text-sm text-gray-400 mb-8">These are general guidelines — <Link to="/personal-analysis" className="text-rose-400 hover:text-rose-500 transition-colors">get colors picked specifically for you</Link></p>
           </div>
 
           {/* Colors to Avoid */}
@@ -223,9 +218,15 @@ const DarkWinterColors = () => {
                 </div>
               ))}
             </div>
+            <p className="text-sm text-gray-400 mb-8">These are general guidelines — <Link to="/personal-analysis" className="text-rose-400 hover:text-rose-500 transition-colors">get colors picked specifically for you</Link></p>
           </div>
         </div>
       </section>
+
+      {/* Mid-Article CTA */}
+      <div className="container mx-auto px-4 max-w-4xl py-8">
+        <AnalysisCTA />
+      </div>
 
       {/* Styling Tips */}
       <section className="py-16 bg-white">
@@ -339,6 +340,111 @@ const DarkWinterColors = () => {
       <div className="container mx-auto px-4 max-w-4xl">
         <AnalysisCTA />
       </div>
+
+      {/* FAQ Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Frequently Asked Questions About Dark Winter Colors</h2>
+          <div className="space-y-4">
+            <details className="bg-white rounded-xl p-6 shadow-sm group">
+              <summary className="font-semibold text-gray-900 cursor-pointer text-lg group-open:mb-3">How do I know if I'm a Dark Winter or a Dark Autumn?</summary>
+              <p className="text-gray-700 leading-relaxed">The key difference is undertone. Dark Winter has cool-to-neutral undertones, while Dark Autumn has warm undertones. Try draping a cool fuchsia and a warm terracotta near your face — if the fuchsia brightens your complexion, you're likely Dark Winter. Dark Winters also tend to look better in silver jewelry, while Dark Autumns suit gold.</p>
+            </details>
+            <details className="bg-white rounded-xl p-6 shadow-sm group">
+              <summary className="font-semibold text-gray-900 cursor-pointer text-lg group-open:mb-3">Can Dark Winters wear black?</summary>
+              <p className="text-gray-700 leading-relaxed">Yes! Black is one of the best colors for Dark Winters. Your high-contrast coloring means you can carry off pure black beautifully without it overwhelming your features. Pair it with bold jewel tones or pure white for a striking look.</p>
+            </details>
+            <details className="bg-white rounded-xl p-6 shadow-sm group">
+              <summary className="font-semibold text-gray-900 cursor-pointer text-lg group-open:mb-3">What hair colors work best for Dark Winters?</summary>
+              <p className="text-gray-700 leading-relaxed">Dark Winters look best with deep, rich hair colors. Natural dark brown to black hair is ideal. If you want to color your hair, stick with cool-toned shades like espresso brown, blue-black, deep burgundy, or dark cherry. Avoid warm highlights like golden blonde or caramel — they can clash with your cool undertones.</p>
+            </details>
+            <details className="bg-white rounded-xl p-6 shadow-sm group">
+              <summary className="font-semibold text-gray-900 cursor-pointer text-lg group-open:mb-3">What makeup colors suit a Dark Winter?</summary>
+              <p className="text-gray-700 leading-relaxed">Dark Winters can go bold with makeup. For lips, deep reds, burgundy, plum, and berry shades are stunning. Eye shadows in cool taupes, charcoal, navy, deep plum, and emerald work beautifully. For blush, choose cool pinks and berry tones. Avoid warm peach and coral shades which can look out of harmony with your coloring.</p>
+            </details>
+            <details className="bg-white rounded-xl p-6 shadow-sm group">
+              <summary className="font-semibold text-gray-900 cursor-pointer text-lg group-open:mb-3">Can Dark Winters wear pastels?</summary>
+              <p className="text-gray-700 leading-relaxed">Pastels are generally not the best choice for Dark Winters because they lack the depth and intensity that matches your coloring. Light, muted colors can wash you out. However, icy versions of colors (icy pink, icy blue) can work in small amounts as accents since they maintain the cool undertone even if they lack depth.</p>
+            </details>
+            <details className="bg-white rounded-xl p-6 shadow-sm group">
+              <summary className="font-semibold text-gray-900 cursor-pointer text-lg group-open:mb-3">What metals and jewelry work for Dark Winter?</summary>
+              <p className="text-gray-700 leading-relaxed">Silver, platinum, and white gold are your best metals. They complement your cool undertones perfectly. Pewter and gunmetal also work well. Gemstones in deep jewel tones — rubies, sapphires, emeralds, and amethysts — are ideal. Avoid yellow gold near your face, though it can work in small amounts away from the face like on a belt or handbag.</p>
+            </details>
+            <details className="bg-white rounded-xl p-6 shadow-sm group">
+              <summary className="font-semibold text-gray-900 cursor-pointer text-lg group-open:mb-3">How do I build a Dark Winter capsule wardrobe?</summary>
+              <p className="text-gray-700 leading-relaxed">Start with a base of black, charcoal, and navy for your core pieces (coats, trousers, skirts). Add pure white shirts and blouses. Build in jewel-tone accent pieces — a burgundy blazer, emerald knit, royal purple dress. Keep your accessories in silver-toned metals. This creates a versatile wardrobe where everything mixes and matches within your best color palette.</p>
+            </details>
+          </div>
+        </div>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "How do I know if I'm a Dark Winter or a Dark Autumn?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The key difference is undertone. Dark Winter has cool-to-neutral undertones, while Dark Autumn has warm undertones. Try draping a cool fuchsia and a warm terracotta near your face — if the fuchsia brightens your complexion, you're likely Dark Winter. Dark Winters also tend to look better in silver jewelry, while Dark Autumns suit gold."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Can Dark Winters wear black?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes! Black is one of the best colors for Dark Winters. Your high-contrast coloring means you can carry off pure black beautifully without it overwhelming your features. Pair it with bold jewel tones or pure white for a striking look."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What hair colors work best for Dark Winters?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Dark Winters look best with deep, rich hair colors. Natural dark brown to black hair is ideal. If you want to color your hair, stick with cool-toned shades like espresso brown, blue-black, deep burgundy, or dark cherry. Avoid warm highlights like golden blonde or caramel."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What makeup colors suit a Dark Winter?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Dark Winters can go bold with makeup. For lips, deep reds, burgundy, plum, and berry shades are stunning. Eye shadows in cool taupes, charcoal, navy, deep plum, and emerald work beautifully. For blush, choose cool pinks and berry tones. Avoid warm peach and coral shades."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Can Dark Winters wear pastels?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Pastels are generally not the best choice for Dark Winters because they lack the depth and intensity that matches your coloring. However, icy versions of colors (icy pink, icy blue) can work in small amounts as accents since they maintain the cool undertone."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What metals and jewelry work for Dark Winter?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Silver, platinum, and white gold are your best metals. They complement your cool undertones perfectly. Pewter and gunmetal also work well. Gemstones in deep jewel tones — rubies, sapphires, emeralds, and amethysts — are ideal."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How do I build a Dark Winter capsule wardrobe?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Start with a base of black, charcoal, and navy for your core pieces. Add pure white shirts and blouses. Build in jewel-tone accent pieces — a burgundy blazer, emerald knit, royal purple dress. Keep your accessories in silver-toned metals."
+                  }
+                }
+              ]
+            })
+          }}
+        />
+      </section>
+
       <Footer />
     </div>
   );

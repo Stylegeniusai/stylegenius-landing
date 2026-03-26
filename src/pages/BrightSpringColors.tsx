@@ -69,18 +69,11 @@ const BrightSpringColors = () => {
             <span className="inline-block px-4 py-2 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium mb-6">
               Color Analysis
             </span>
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6"
+              style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+            >
               Bright Spring{" "}
-              <span
-                className="bg-clip-text text-transparent"
-                style={{
-                  background: 'linear-gradient(45deg, #FF6F61, #40E0D0)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent'
-                }}
-              >
-                Color Palette
-              </span>
+              Color Palette
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed">
               The complete guide to Bright Spring colors - vivid, warm, and clear hues that make you radiate energy and vitality.
@@ -154,6 +147,7 @@ const BrightSpringColors = () => {
                 </div>
               ))}
             </div>
+            <p className="text-sm text-gray-400 mb-8">These are general guidelines — <Link to="/personal-analysis" className="text-rose-400 hover:text-rose-500 transition-colors">get colors picked specifically for you</Link></p>
           </div>
 
           <div className="bg-white rounded-2xl p-8 shadow-lg mb-8">
@@ -166,6 +160,7 @@ const BrightSpringColors = () => {
                 </div>
               ))}
             </div>
+            <p className="text-sm text-gray-400 mb-8">These are general guidelines — <Link to="/personal-analysis" className="text-rose-400 hover:text-rose-500 transition-colors">get colors picked specifically for you</Link></p>
           </div>
 
           <div className="bg-white rounded-2xl p-8 shadow-lg">
@@ -182,6 +177,11 @@ const BrightSpringColors = () => {
                 </div>
               ))}
             </div>
+            <p className="text-sm text-gray-400 mb-8">These are general guidelines — <Link to="/personal-analysis" className="text-rose-400 hover:text-rose-500 transition-colors">get colors picked specifically for you</Link></p>
+          </div>
+
+          <div className="container mx-auto px-4 max-w-4xl mt-12">
+            <AnalysisCTA />
           </div>
         </div>
       </section>
@@ -229,6 +229,133 @@ const BrightSpringColors = () => {
             </Link>
           </div>
         </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Frequently Asked Questions About Bright Spring</h2>
+          <div className="space-y-4">
+            <details className="bg-gray-50 rounded-xl p-6 group">
+              <summary className="text-lg font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                How do I know if I'm a Bright Spring?
+                <span className="text-gray-400 group-open:rotate-45 transition-transform text-2xl">+</span>
+              </summary>
+              <p className="text-gray-700 mt-4 leading-relaxed">Bright Springs typically have warm, clear undertones with high contrast between their skin, hair, and eyes. Your skin may be porcelain or golden, your hair ranges from golden blonde to dark brown with warm highlights, and your eyes are usually bright blue, green, or hazel with a sparkling, clear quality. If vivid, saturated colors make you look more alive while muted or dusty tones wash you out, you're likely a Bright Spring.</p>
+            </details>
+
+            <details className="bg-gray-50 rounded-xl p-6 group">
+              <summary className="text-lg font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                What is the difference between Bright Spring and True Spring?
+                <span className="text-gray-400 group-open:rotate-45 transition-transform text-2xl">+</span>
+              </summary>
+              <p className="text-gray-700 mt-4 leading-relaxed">While both are warm seasons, Bright Spring leans toward Winter with higher contrast and more vivid coloring. True Spring is purely warm and medium in contrast. Bright Springs can wear bolder, more saturated colors like electric blue and hot pink, while True Springs look best in warm but slightly softer hues like peach and warm green.</p>
+            </details>
+
+            <details className="bg-gray-50 rounded-xl p-6 group">
+              <summary className="text-lg font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                Can Bright Springs wear black?
+                <span className="text-gray-400 group-open:rotate-45 transition-transform text-2xl">+</span>
+              </summary>
+              <p className="text-gray-700 mt-4 leading-relaxed">Pure black is generally too harsh for Bright Springs and can create an imbalance with your warm, clear coloring. Instead, opt for light navy or charcoal as dark neutrals. If you want to wear black, keep it away from your face — for example, black pants with a bright coral or turquoise top works well.</p>
+            </details>
+
+            <details className="bg-gray-50 rounded-xl p-6 group">
+              <summary className="text-lg font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                What are the best makeup colors for Bright Spring?
+                <span className="text-gray-400 group-open:rotate-45 transition-transform text-2xl">+</span>
+              </summary>
+              <p className="text-gray-700 mt-4 leading-relaxed">Bright Springs look stunning in warm, vivid makeup shades. For lips, try coral, warm pink, or tangerine. For eyes, golden bronzes, warm greens, and turquoise shades enhance your natural coloring. Blush in peach or warm pink tones works beautifully. Avoid cool-toned mauves, dusty roses, or ashy shades that can make your complexion look dull.</p>
+            </details>
+
+            <details className="bg-gray-50 rounded-xl p-6 group">
+              <summary className="text-lg font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                What metals and jewelry suit Bright Spring?
+                <span className="text-gray-400 group-open:rotate-45 transition-transform text-2xl">+</span>
+              </summary>
+              <p className="text-gray-700 mt-4 leading-relaxed">Gold is the most flattering metal for Bright Springs, especially bright or polished gold rather than antique or matte finishes. Rose gold also works well. For gemstones, look for vibrant options like turquoise, coral, aquamarine, peridot, and citrine. Avoid heavily oxidized or tarnished-looking metals.</p>
+            </details>
+
+            <details className="bg-gray-50 rounded-xl p-6 group">
+              <summary className="text-lg font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                What hair colors work best for Bright Spring?
+                <span className="text-gray-400 group-open:rotate-45 transition-transform text-2xl">+</span>
+              </summary>
+              <p className="text-gray-700 mt-4 leading-relaxed">Bright Springs look best with warm, clear hair tones. Golden blonde, honey highlights, warm auburn, and rich warm brown all complement your coloring. Avoid ashy tones, cool platinum, or dull, muddy browns. If you color your hair, ask your stylist for warm, golden undertones to keep your overall look harmonious.</p>
+            </details>
+
+            <details className="bg-gray-50 rounded-xl p-6 group">
+              <summary className="text-lg font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                How do I build a Bright Spring capsule wardrobe?
+                <span className="text-gray-400 group-open:rotate-45 transition-transform text-2xl">+</span>
+              </summary>
+              <p className="text-gray-700 mt-4 leading-relaxed">Start with warm neutrals like light camel, warm white, and light navy as your base. Add statement pieces in your best vivid colors — coral, turquoise, and hot pink are great options. Aim for 70% neutrals and 30% accent colors. Choose prints that combine your best colors, and ensure all pieces can mix and match for maximum versatility.</p>
+            </details>
+          </div>
+        </div>
+
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How do I know if I'm a Bright Spring?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Bright Springs typically have warm, clear undertones with high contrast between their skin, hair, and eyes. Your skin may be porcelain or golden, your hair ranges from golden blonde to dark brown with warm highlights, and your eyes are usually bright blue, green, or hazel with a sparkling, clear quality. If vivid, saturated colors make you look more alive while muted or dusty tones wash you out, you're likely a Bright Spring."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is the difference between Bright Spring and True Spring?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "While both are warm seasons, Bright Spring leans toward Winter with higher contrast and more vivid coloring. True Spring is purely warm and medium in contrast. Bright Springs can wear bolder, more saturated colors like electric blue and hot pink, while True Springs look best in warm but slightly softer hues like peach and warm green."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can Bright Springs wear black?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Pure black is generally too harsh for Bright Springs and can create an imbalance with your warm, clear coloring. Instead, opt for light navy or charcoal as dark neutrals. If you want to wear black, keep it away from your face — for example, black pants with a bright coral or turquoise top works well."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What are the best makeup colors for Bright Spring?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Bright Springs look stunning in warm, vivid makeup shades. For lips, try coral, warm pink, or tangerine. For eyes, golden bronzes, warm greens, and turquoise shades enhance your natural coloring. Blush in peach or warm pink tones works beautifully. Avoid cool-toned mauves, dusty roses, or ashy shades that can make your complexion look dull."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What metals and jewelry suit Bright Spring?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Gold is the most flattering metal for Bright Springs, especially bright or polished gold rather than antique or matte finishes. Rose gold also works well. For gemstones, look for vibrant options like turquoise, coral, aquamarine, peridot, and citrine. Avoid heavily oxidized or tarnished-looking metals."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What hair colors work best for Bright Spring?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Bright Springs look best with warm, clear hair tones. Golden blonde, honey highlights, warm auburn, and rich warm brown all complement your coloring. Avoid ashy tones, cool platinum, or dull, muddy browns. If you color your hair, ask your stylist for warm, golden undertones to keep your overall look harmonious."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do I build a Bright Spring capsule wardrobe?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Start with warm neutrals like light camel, warm white, and light navy as your base. Add statement pieces in your best vivid colors — coral, turquoise, and hot pink are great options. Aim for 70% neutrals and 30% accent colors. Choose prints that combine your best colors, and ensure all pieces can mix and match for maximum versatility."
+              }
+            }
+          ]
+        }) }} />
       </section>
 
       <div className="container mx-auto px-4 max-w-4xl">

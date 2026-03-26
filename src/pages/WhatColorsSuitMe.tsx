@@ -76,18 +76,11 @@ const WhatColorsSuitMe = () => {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
             <div className="text-center lg:text-left">
-              <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+              <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6"
+              style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+            >
                 What Colors{" "}
-                <span 
-                  className="bg-clip-text text-transparent"
-                  style={{
-                    background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent'
-                  }}
-                >
-                  Suit Me?
-                </span>
+                Suit Me?
               </h1>
               <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed">
                 The complete guide to finding your perfect color palette and understanding what makes you glow ✨
@@ -139,9 +132,16 @@ const WhatColorsSuitMe = () => {
               <div className="bg-white border border-pink-200 rounded-xl p-6 shadow-sm">
                 <h4 className="text-xl font-semibold text-gray-900 mb-3">🌸 Cool Undertones</h4>
                 <p className="text-gray-600 mb-4">
-                  If you have cool undertones, your skin has hints of pink, red, or blue. You likely look best in silver jewelry 
+                  If you have cool undertones, your skin has hints of pink, red, or blue. You likely look best in silver jewelry
                   and your veins appear blue or purple.
                 </p>
+                <div className="flex flex-wrap gap-2 mb-3">
+                  <span className="inline-flex items-center gap-1.5 text-sm text-gray-600"><span className="w-4 h-4 rounded-full inline-block border border-gray-200" style={{ backgroundColor: '#4169E1' }}></span>Royal Blue</span>
+                  <span className="inline-flex items-center gap-1.5 text-sm text-gray-600"><span className="w-4 h-4 rounded-full inline-block border border-gray-200" style={{ backgroundColor: '#8B5CF6' }}></span>Purple</span>
+                  <span className="inline-flex items-center gap-1.5 text-sm text-gray-600"><span className="w-4 h-4 rounded-full inline-block border border-gray-200" style={{ backgroundColor: '#F9A8D4' }}></span>Soft Pink</span>
+                  <span className="inline-flex items-center gap-1.5 text-sm text-gray-600"><span className="w-4 h-4 rounded-full inline-block border border-gray-200" style={{ backgroundColor: '#DB2777' }}></span>Berry</span>
+                  <span className="inline-flex items-center gap-1.5 text-sm text-gray-600"><span className="w-4 h-4 rounded-full inline-block border border-gray-200" style={{ backgroundColor: '#C0C0C0' }}></span>Silver</span>
+                </div>
                 <p className="text-sm text-gray-500">
                   Think: Winter mornings, fresh snow, cool breeze
                 </p>
@@ -150,9 +150,16 @@ const WhatColorsSuitMe = () => {
               <div className="bg-white border border-orange-200 rounded-xl p-6 shadow-sm">
                 <h4 className="text-xl font-semibold text-gray-900 mb-3">🌅 Warm Undertones</h4>
                 <p className="text-gray-600 mb-4">
-                  Warm undertones have hints of yellow, peach, or golden hues. Gold jewelry typically flatters you more, 
+                  Warm undertones have hints of yellow, peach, or golden hues. Gold jewelry typically flatters you more,
                   and your veins appear green or olive.
                 </p>
+                <div className="flex flex-wrap gap-2 mb-3">
+                  <span className="inline-flex items-center gap-1.5 text-sm text-gray-600"><span className="w-4 h-4 rounded-full inline-block border border-gray-200" style={{ backgroundColor: '#F59E0B' }}></span>Golden Yellow</span>
+                  <span className="inline-flex items-center gap-1.5 text-sm text-gray-600"><span className="w-4 h-4 rounded-full inline-block border border-gray-200" style={{ backgroundColor: '#F97316' }}></span>Warm Orange</span>
+                  <span className="inline-flex items-center gap-1.5 text-sm text-gray-600"><span className="w-4 h-4 rounded-full inline-block border border-gray-200" style={{ backgroundColor: '#FBBF24' }}></span>Peach</span>
+                  <span className="inline-flex items-center gap-1.5 text-sm text-gray-600"><span className="w-4 h-4 rounded-full inline-block border border-gray-200" style={{ backgroundColor: '#DC2626' }}></span>Warm Red</span>
+                  <span className="inline-flex items-center gap-1.5 text-sm text-gray-600"><span className="w-4 h-4 rounded-full inline-block border border-gray-200" style={{ backgroundColor: '#D4A017' }}></span>Gold</span>
+                </div>
                 <p className="text-sm text-gray-500">
                   Think: Golden hour sunlight, autumn leaves, warm sand
                 </p>
@@ -161,15 +168,26 @@ const WhatColorsSuitMe = () => {
               <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
                 <h4 className="text-xl font-semibold text-gray-900 mb-3">⚖️ Neutral Undertones</h4>
                 <p className="text-gray-600 mb-4">
-                  Lucky you! Neutral undertones are a mix of warm and cool, meaning you can wear a wider range of colors. 
+                  Lucky you! Neutral undertones are a mix of warm and cool, meaning you can wear a wider range of colors.
                   Both gold and silver jewelry look good on you.
                 </p>
+                <div className="flex flex-wrap gap-2 mb-3">
+                  <span className="inline-flex items-center gap-1.5 text-sm text-gray-600"><span className="w-4 h-4 rounded-full inline-block border border-gray-200" style={{ backgroundColor: '#059669' }}></span>Jade Green</span>
+                  <span className="inline-flex items-center gap-1.5 text-sm text-gray-600"><span className="w-4 h-4 rounded-full inline-block border border-gray-200" style={{ backgroundColor: '#7C3AED' }}></span>Soft Lavender</span>
+                  <span className="inline-flex items-center gap-1.5 text-sm text-gray-600"><span className="w-4 h-4 rounded-full inline-block border border-gray-200" style={{ backgroundColor: '#0EA5E9' }}></span>Teal Blue</span>
+                  <span className="inline-flex items-center gap-1.5 text-sm text-gray-600"><span className="w-4 h-4 rounded-full inline-block border border-gray-200" style={{ backgroundColor: '#E11D48' }}></span>Dusty Rose</span>
+                  <span className="inline-flex items-center gap-1.5 text-sm text-gray-600"><span className="w-4 h-4 rounded-full inline-block border border-gray-200" style={{ backgroundColor: '#D4A76A' }}></span>Soft Taupe</span>
+                </div>
                 <p className="text-sm text-gray-500">
                   Think: Perfect balance, versatile, adaptable
                 </p>
               </div>
             </div>
+            <p className="text-sm text-gray-400 mb-8">These are general guidelines — <Link to="/personal-analysis" className="text-rose-400 hover:text-rose-500 transition-colors">get colors picked specifically for you</Link></p>
           </section>
+
+          {/* Mid-Article CTA */}
+          <AnalysisCTA />
 
           {/* Color Theory Section */}
           <section className="mb-16">
@@ -298,6 +316,7 @@ const WhatColorsSuitMe = () => {
               </div>
             ))}
           </div>
+          <p className="text-sm text-gray-400 mt-8">These are general guidelines — <Link to="/personal-analysis" className="text-rose-400 hover:text-rose-500 transition-colors">get colors picked specifically for you</Link></p>
         </div>
       </section>
 
@@ -372,6 +391,7 @@ const WhatColorsSuitMe = () => {
               </div>
             </div>
           </div>
+          <p className="text-sm text-gray-400 mb-8">These are general guidelines — <Link to="/personal-analysis" className="text-rose-400 hover:text-rose-500 transition-colors">get colors picked specifically for you</Link></p>
         </div>
       </section>
 
@@ -430,6 +450,149 @@ const WhatColorsSuitMe = () => {
       <div className="container mx-auto px-4 max-w-4xl">
         <AnalysisCTA />
       </div>
+
+      {/* FAQ Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Frequently Asked Questions</h2>
+          <div className="space-y-4">
+            <details className="bg-gray-50 rounded-xl p-6 group">
+              <summary className="text-lg font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                How do I find out what colors suit me?
+                <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="text-gray-700 mt-4 leading-relaxed">
+                The best way to find your ideal colors is to determine your skin's undertone. Check the veins on your wrist in natural light: blue or purple veins suggest cool undertones, green veins suggest warm undertones, and a mix suggests neutral undertones. Then choose colors that match your undertone temperature. For a more precise analysis, consider a professional color analysis or an AI-powered tool that examines your skin, hair, and eye color together.
+              </p>
+            </details>
+
+            <details className="bg-gray-50 rounded-xl p-6 group">
+              <summary className="text-lg font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                Can I wear colors that don't match my undertone?
+                <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="text-gray-700 mt-4 leading-relaxed">
+                Absolutely! Color guidelines are starting points, not strict rules. You can wear any color you love by choosing the right shade within that color family. For example, if you have warm undertones but love blue, opt for a warm-toned blue like teal or turquoise instead of an icy blue. You can also wear less flattering colors further from your face, such as in pants or skirts.
+              </p>
+            </details>
+
+            <details className="bg-gray-50 rounded-xl p-6 group">
+              <summary className="text-lg font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                Does my hair color affect which colors suit me?
+                <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="text-gray-700 mt-4 leading-relaxed">
+                Yes, your hair color plays a significant role in your overall color palette. Hair color contributes to the contrast level between your features. People with dark hair and light skin (high contrast) look great in bold, saturated colors, while those with low contrast between hair and skin suit softer, more muted tones. If you dye your hair, your best clothing colors may shift as well.
+              </p>
+            </details>
+
+            <details className="bg-gray-50 rounded-xl p-6 group">
+              <summary className="text-lg font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                What is seasonal color analysis?
+                <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="text-gray-700 mt-4 leading-relaxed">
+                Seasonal color analysis is a system that categorizes people into one of four seasonal palettes — Spring, Summer, Autumn, or Winter — based on their skin tone, hair color, and eye color. Each season has a specific set of colors that harmonize with that person's natural coloring. Modern approaches often break these into 12 or 16 sub-seasons for even more precision. It's one of the most popular frameworks for finding flattering colors.
+              </p>
+            </details>
+
+            <details className="bg-gray-50 rounded-xl p-6 group">
+              <summary className="text-lg font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                Do the colors that suit me change as I age?
+                <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="text-gray-700 mt-4 leading-relaxed">
+                Your undertone stays the same throughout your life, but your best colors can shift subtly as your hair grays, your skin tone changes, or your contrast level evolves. Many people find that softer, less saturated versions of their best colors become more flattering over time. It's worth reassessing your palette every few years, especially after significant changes like going gray.
+              </p>
+            </details>
+
+            <details className="bg-gray-50 rounded-xl p-6 group">
+              <summary className="text-lg font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                What colors are universally flattering?
+                <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="text-gray-700 mt-4 leading-relaxed">
+                While no color is truly universal, some shades tend to flatter most people. Teal (a blue-green that balances warm and cool), soft blush pink, true red (not too orange or too blue), and navy are often cited as widely flattering. The key is that these colors sit between warm and cool on the spectrum, making them versatile across different undertones.
+              </p>
+            </details>
+
+            <details className="bg-gray-50 rounded-xl p-6 group">
+              <summary className="text-lg font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                How can AI help me find my best colors?
+                <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p className="text-gray-700 mt-4 leading-relaxed">
+                AI-powered color analysis tools can examine a photo of your face to detect your skin undertone, contrast level, and overall coloring. They then match you to a seasonal palette and generate a personalized set of colors. This approach is more accessible and affordable than an in-person consultation, and modern AI tools are remarkably accurate. You can try our <Link to="/personal-analysis" className="text-rose-400 hover:text-rose-500 transition-colors">free AI color analysis</Link> to get started.
+              </p>
+            </details>
+          </div>
+        </div>
+
+        {/* FAQ Schema Markup */}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How do I find out what colors suit me?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The best way to find your ideal colors is to determine your skin's undertone. Check the veins on your wrist in natural light: blue or purple veins suggest cool undertones, green veins suggest warm undertones, and a mix suggests neutral undertones. Then choose colors that match your undertone temperature. For a more precise analysis, consider a professional color analysis or an AI-powered tool that examines your skin, hair, and eye color together."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I wear colors that don't match my undertone?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Absolutely! Color guidelines are starting points, not strict rules. You can wear any color you love by choosing the right shade within that color family. For example, if you have warm undertones but love blue, opt for a warm-toned blue like teal or turquoise instead of an icy blue. You can also wear less flattering colors further from your face, such as in pants or skirts."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does my hair color affect which colors suit me?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, your hair color plays a significant role in your overall color palette. Hair color contributes to the contrast level between your features. People with dark hair and light skin (high contrast) look great in bold, saturated colors, while those with low contrast between hair and skin suit softer, more muted tones. If you dye your hair, your best clothing colors may shift as well."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is seasonal color analysis?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Seasonal color analysis is a system that categorizes people into one of four seasonal palettes — Spring, Summer, Autumn, or Winter — based on their skin tone, hair color, and eye color. Each season has a specific set of colors that harmonize with that person's natural coloring. Modern approaches often break these into 12 or 16 sub-seasons for even more precision."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do the colors that suit me change as I age?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Your undertone stays the same throughout your life, but your best colors can shift subtly as your hair grays, your skin tone changes, or your contrast level evolves. Many people find that softer, less saturated versions of their best colors become more flattering over time."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What colors are universally flattering?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "While no color is truly universal, some shades tend to flatter most people. Teal (a blue-green that balances warm and cool), soft blush pink, true red (not too orange or too blue), and navy are often cited as widely flattering."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How can AI help me find my best colors?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "AI-powered color analysis tools can examine a photo of your face to detect your skin undertone, contrast level, and overall coloring. They then match you to a seasonal palette and generate a personalized set of colors. This approach is more accessible and affordable than an in-person consultation, and modern AI tools are remarkably accurate."
+              }
+            }
+          ]
+        })}} />
+      </section>
+
       <Footer />
     </div>
   );

@@ -91,16 +91,7 @@ const ExtensionLanding = () => {
       <section className="px-4 pt-8 pb-10 text-center">
         <h1 className="text-3xl lg:text-5xl font-bold text-gray-900 mb-8 mx-auto leading-tight">
           Stop guessing. Save money.<br />
-          <span
-            className="bg-clip-text text-transparent"
-            style={{
-              background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent'
-            }}
-          >
-            Look your best.
-          </span>
+          Look your best.
         </h1>
 
         <button

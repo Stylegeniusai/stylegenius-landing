@@ -69,18 +69,11 @@ const TrueAutumnColors = () => {
             <span className="inline-block px-4 py-2 bg-orange-100 text-orange-800 rounded-full text-sm font-medium mb-6">
               Color Analysis
             </span>
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6"
+              style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+            >
               True Autumn{" "}
-              <span
-                className="bg-clip-text text-transparent"
-                style={{
-                  background: 'linear-gradient(45deg, #CC5500, #228B22)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent'
-                }}
-              >
-                Color Palette
-              </span>
+              Color Palette
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed">
               The complete guide to True Autumn colors - warm, rich, and earthy tones inspired by fall foliage.
@@ -136,6 +129,8 @@ const TrueAutumnColors = () => {
               ))}
             </div>
           </div>
+
+          <AnalysisCTA />
         </div>
       </article>
 
@@ -154,6 +149,7 @@ const TrueAutumnColors = () => {
                 </div>
               ))}
             </div>
+            <p className="text-sm text-gray-400 mb-8">These are general guidelines — <Link to="/personal-analysis" className="text-rose-400 hover:text-rose-500 transition-colors">get colors picked specifically for you</Link></p>
           </div>
 
           <div className="bg-white rounded-2xl p-8 shadow-lg mb-8">
@@ -166,6 +162,7 @@ const TrueAutumnColors = () => {
                 </div>
               ))}
             </div>
+            <p className="text-sm text-gray-400 mb-8">These are general guidelines — <Link to="/personal-analysis" className="text-rose-400 hover:text-rose-500 transition-colors">get colors picked specifically for you</Link></p>
           </div>
 
           <div className="bg-white rounded-2xl p-8 shadow-lg">
@@ -182,6 +179,7 @@ const TrueAutumnColors = () => {
                 </div>
               ))}
             </div>
+            <p className="text-sm text-gray-400 mb-8">These are general guidelines — <Link to="/personal-analysis" className="text-rose-400 hover:text-rose-500 transition-colors">get colors picked specifically for you</Link></p>
           </div>
         </div>
       </section>
@@ -234,6 +232,106 @@ const TrueAutumnColors = () => {
       <div className="container mx-auto px-4 max-w-4xl">
         <AnalysisCTA />
       </div>
+
+      {/* FAQ Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Frequently Asked Questions About True Autumn</h2>
+          <div className="space-y-4">
+            <details className="bg-gray-50 rounded-xl p-6 group">
+              <summary className="font-semibold text-gray-900 cursor-pointer text-lg">What makes True Autumn different from Soft Autumn?</summary>
+              <p className="text-gray-700 mt-4 leading-relaxed">True Autumn has richer, more saturated warm tones compared to Soft Autumn. While Soft Autumn leans muted and dusty, True Autumn thrives in vibrant earthy colors like burnt orange, terracotta, and forest green. True Autumn's overall coloring is warmer and more intense.</p>
+            </details>
+            <details className="bg-gray-50 rounded-xl p-6 group">
+              <summary className="font-semibold text-gray-900 cursor-pointer text-lg">Can True Autumns wear black?</summary>
+              <p className="text-gray-700 mt-4 leading-relaxed">Pure black can be too harsh for True Autumns. Instead, opt for warm dark alternatives like chocolate brown, charcoal brown, or deep olive. If you must wear black, soften it by pairing with warm-toned accessories or wearing it further from your face.</p>
+            </details>
+            <details className="bg-gray-50 rounded-xl p-6 group">
+              <summary className="font-semibold text-gray-900 cursor-pointer text-lg">What metals look best on True Autumn?</summary>
+              <p className="text-gray-700 mt-4 leading-relaxed">Gold is the ideal metal for True Autumns. Warm-toned metals like brass, copper, and bronze also complement your coloring beautifully. Avoid silver and platinum, which are cool-toned and can clash with your warm undertones.</p>
+            </details>
+            <details className="bg-gray-50 rounded-xl p-6 group">
+              <summary className="font-semibold text-gray-900 cursor-pointer text-lg">What hair colors suit True Autumn?</summary>
+              <p className="text-gray-700 mt-4 leading-relaxed">True Autumns look their best with warm hair tones — auburn, copper, warm chestnut, and golden brown are all excellent choices. Avoid ashy or platinum tones. If you want highlights, choose warm caramel, honey, or copper shades.</p>
+            </details>
+            <details className="bg-gray-50 rounded-xl p-6 group">
+              <summary className="font-semibold text-gray-900 cursor-pointer text-lg">What makeup colors work for True Autumn?</summary>
+              <p className="text-gray-700 mt-4 leading-relaxed">Focus on warm-toned makeup: terracotta or peach blush, warm brown eyeshadows, and lip colors in warm red, brick, or warm nude shades. Bronzer looks particularly natural on True Autumns. Avoid cool pinks, mauves, and blue-based reds.</p>
+            </details>
+            <details className="bg-gray-50 rounded-xl p-6 group">
+              <summary className="font-semibold text-gray-900 cursor-pointer text-lg">How do I build a True Autumn capsule wardrobe?</summary>
+              <p className="text-gray-700 mt-4 leading-relaxed">Start with warm neutrals as your base — camel, cream, chocolate brown, and olive. Add statement pieces in burnt orange, teal, and rust. Ensure every item works with at least two others. A well-built True Autumn capsule of 30–35 pieces can create over 100 outfits.</p>
+            </details>
+            <details className="bg-gray-50 rounded-xl p-6 group">
+              <summary className="font-semibold text-gray-900 cursor-pointer text-lg">Is True Autumn the same as Warm Autumn?</summary>
+              <p className="text-gray-700 mt-4 leading-relaxed">Yes, True Autumn and Warm Autumn refer to the same seasonal color type. Different color analysis systems use different names, but they describe the same warm, rich, and earthy coloring. Both terms indicate that warmth is the dominant characteristic of your palette.</p>
+            </details>
+          </div>
+        </div>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What makes True Autumn different from Soft Autumn?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "True Autumn has richer, more saturated warm tones compared to Soft Autumn. While Soft Autumn leans muted and dusty, True Autumn thrives in vibrant earthy colors like burnt orange, terracotta, and forest green. True Autumn's overall coloring is warmer and more intense."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can True Autumns wear black?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Pure black can be too harsh for True Autumns. Instead, opt for warm dark alternatives like chocolate brown, charcoal brown, or deep olive. If you must wear black, soften it by pairing with warm-toned accessories or wearing it further from your face."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What metals look best on True Autumn?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Gold is the ideal metal for True Autumns. Warm-toned metals like brass, copper, and bronze also complement your coloring beautifully. Avoid silver and platinum, which are cool-toned and can clash with your warm undertones."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What hair colors suit True Autumn?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "True Autumns look their best with warm hair tones — auburn, copper, warm chestnut, and golden brown are all excellent choices. Avoid ashy or platinum tones. If you want highlights, choose warm caramel, honey, or copper shades."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What makeup colors work for True Autumn?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Focus on warm-toned makeup: terracotta or peach blush, warm brown eyeshadows, and lip colors in warm red, brick, or warm nude shades. Bronzer looks particularly natural on True Autumns. Avoid cool pinks, mauves, and blue-based reds."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do I build a True Autumn capsule wardrobe?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Start with warm neutrals as your base — camel, cream, chocolate brown, and olive. Add statement pieces in burnt orange, teal, and rust. Ensure every item works with at least two others. A well-built True Autumn capsule of 30–35 pieces can create over 100 outfits."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is True Autumn the same as Warm Autumn?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, True Autumn and Warm Autumn refer to the same seasonal color type. Different color analysis systems use different names, but they describe the same warm, rich, and earthy coloring. Both terms indicate that warmth is the dominant characteristic of your palette."
+              }
+            }
+          ]
+        })}} />
+      </section>
+
       <Footer />
     </div>
   );

@@ -35,11 +35,11 @@ const LightSummerColors = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <span className="inline-block px-4 py-2 bg-sky-200 text-sky-800 rounded-full text-sm font-medium mb-6">Color Analysis</span>
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6"
+              style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+            >
               Light Summer{" "}
-              <span className="bg-clip-text text-transparent" style={{ background: 'linear-gradient(45deg, #87CEEB, #DDA0DD)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-                Color Palette
-              </span>
+              Color Palette
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed">
               The complete guide to Light Summer colors - soft, delicate, and airy shades for naturally fair, cool-toned beauty.
@@ -113,35 +113,39 @@ const LightSummerColors = () => {
                 </div>
               ))}
             </div>
+            <p className="text-sm text-gray-400 mb-8">These are general guidelines — <Link to="/personal-analysis" className="text-rose-400 hover:text-rose-500 transition-colors">get colors picked specifically for you</Link></p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div className="bg-green-50 rounded-2xl p-6">
               <h3 className="text-xl font-bold text-gray-900 mb-4">Colors to Embrace</h3>
               <ul className="text-gray-700 space-y-2">
-                <li><span className="text-green-600 mr-2">✓</span> Soft, muted pastels</li>
-                <li><span className="text-green-600 mr-2">✓</span> Cool-toned neutrals</li>
-                <li><span className="text-green-600 mr-2">✓</span> Dusty rose and mauve</li>
-                <li><span className="text-green-600 mr-2">✓</span> Soft blues and periwinkle</li>
-                <li><span className="text-green-600 mr-2">✓</span> Light grayed colors</li>
-                <li><span className="text-green-600 mr-2">✓</span> Silver metallics</li>
+                <li><span className="text-green-600 mr-2">✓</span><span className="inline-block w-3 h-3 rounded-full mr-1 align-middle border border-gray-200" style={{ backgroundColor: "#E6D5E6" }} /> Soft, muted pastels</li>
+                <li><span className="text-green-600 mr-2">✓</span><span className="inline-block w-3 h-3 rounded-full mr-1 align-middle border border-gray-200" style={{ backgroundColor: "#708090" }} /> Cool-toned neutrals</li>
+                <li><span className="text-green-600 mr-2">✓</span><span className="inline-block w-3 h-3 rounded-full mr-1 align-middle border border-gray-200" style={{ backgroundColor: "#E8ADAA" }} /> Dusty rose and mauve</li>
+                <li><span className="text-green-600 mr-2">✓</span><span className="inline-block w-3 h-3 rounded-full mr-1 align-middle border border-gray-200" style={{ backgroundColor: "#CCCCFF" }} /> Soft blues and periwinkle</li>
+                <li><span className="text-green-600 mr-2">✓</span><span className="inline-block w-3 h-3 rounded-full mr-1 align-middle border border-gray-200" style={{ backgroundColor: "#C8C8D0" }} /> Light grayed colors</li>
+                <li><span className="text-green-600 mr-2">✓</span><span className="inline-block w-3 h-3 rounded-full mr-1 align-middle border border-gray-200" style={{ backgroundColor: "#C0C0C0" }} /> Silver metallics</li>
               </ul>
             </div>
 
             <div className="bg-red-50 rounded-2xl p-6">
               <h3 className="text-xl font-bold text-gray-900 mb-4">Colors to Avoid</h3>
               <ul className="text-gray-700 space-y-2">
-                <li><span className="text-red-500 mr-2">✕</span> Black and stark white</li>
-                <li><span className="text-red-500 mr-2">✕</span> Warm oranges and yellows</li>
-                <li><span className="text-red-500 mr-2">✕</span> Bold, saturated colors</li>
-                <li><span className="text-red-500 mr-2">✕</span> Warm earth tones</li>
-                <li><span className="text-red-500 mr-2">✕</span> Gold jewelry</li>
-                <li><span className="text-red-500 mr-2">✕</span> Neon and electric shades</li>
+                <li><span className="text-red-500 mr-2">✕</span><span className="inline-block w-3 h-3 rounded-full mr-1 align-middle border border-gray-200" style={{ backgroundColor: "#000000" }} /> Black and stark white</li>
+                <li><span className="text-red-500 mr-2">✕</span><span className="inline-block w-3 h-3 rounded-full mr-1 align-middle border border-gray-200" style={{ backgroundColor: "#FF8C00" }} /> Warm oranges and yellows</li>
+                <li><span className="text-red-500 mr-2">✕</span><span className="inline-block w-3 h-3 rounded-full mr-1 align-middle border border-gray-200" style={{ backgroundColor: "#FF0066" }} /> Bold, saturated colors</li>
+                <li><span className="text-red-500 mr-2">✕</span><span className="inline-block w-3 h-3 rounded-full mr-1 align-middle border border-gray-200" style={{ backgroundColor: "#8B6914" }} /> Warm earth tones</li>
+                <li><span className="text-red-500 mr-2">✕</span><span className="inline-block w-3 h-3 rounded-full mr-1 align-middle border border-gray-200" style={{ backgroundColor: "#FFD700" }} /> Gold jewelry</li>
+                <li><span className="text-red-500 mr-2">✕</span><span className="inline-block w-3 h-3 rounded-full mr-1 align-middle border border-gray-200" style={{ backgroundColor: "#39FF14" }} /> Neon and electric shades</li>
               </ul>
             </div>
           </div>
+          <p className="text-sm text-gray-400 mb-8">These are general guidelines — <Link to="/personal-analysis" className="text-rose-400 hover:text-rose-500 transition-colors">get colors picked specifically for you</Link></p>
 
-          <div className="bg-gray-50 rounded-2xl p-8 mb-12">
+          <AnalysisCTA />
+
+          <div className="bg-gray-50 rounded-2xl p-8 mb-12 mt-12">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Light Summer Celebrities</h3>
             <div className="flex flex-wrap gap-3">
               {["Elle Fanning", "Naomi Watts", "Cate Blanchett", "Kate Middleton", "Emily Blunt", "January Jones", "Ashlee Simpson", "Kristen Bell"].map((name) => (
@@ -156,23 +160,149 @@ const LightSummerColors = () => {
               <div>
                 <h4 className="font-semibold text-gray-900 mb-2">Best Lip Colors</h4>
                 <ul className="text-gray-700 space-y-1">
-                  <li>• Soft rose and pink</li>
-                  <li>• Mauve and dusty berry</li>
-                  <li>• Light plum</li>
-                  <li>• Cool nude shades</li>
+                  <li>• <span className="inline-block w-3 h-3 rounded-full mr-1 align-middle border border-gray-200" style={{ backgroundColor: "#E8ADAA" }} /> Soft rose and pink</li>
+                  <li>• <span className="inline-block w-3 h-3 rounded-full mr-1 align-middle border border-gray-200" style={{ backgroundColor: "#C87F89" }} /> Mauve and dusty berry</li>
+                  <li>• <span className="inline-block w-3 h-3 rounded-full mr-1 align-middle border border-gray-200" style={{ backgroundColor: "#9B6B8D" }} /> Light plum</li>
+                  <li>• <span className="inline-block w-3 h-3 rounded-full mr-1 align-middle border border-gray-200" style={{ backgroundColor: "#C8A89E" }} /> Cool nude shades</li>
                 </ul>
               </div>
               <div>
                 <h4 className="font-semibold text-gray-900 mb-2">Eye Makeup</h4>
                 <ul className="text-gray-700 space-y-1">
-                  <li>• Soft gray and taupe</li>
-                  <li>• Lavender and soft purple</li>
-                  <li>• Dusty rose and mauve</li>
-                  <li>• Silver shimmer</li>
+                  <li>• <span className="inline-block w-3 h-3 rounded-full mr-1 align-middle border border-gray-200" style={{ backgroundColor: "#A8A29E" }} /> Soft gray and taupe</li>
+                  <li>• <span className="inline-block w-3 h-3 rounded-full mr-1 align-middle border border-gray-200" style={{ backgroundColor: "#E6E6FA" }} /> Lavender and soft purple</li>
+                  <li>• <span className="inline-block w-3 h-3 rounded-full mr-1 align-middle border border-gray-200" style={{ backgroundColor: "#E0B0FF" }} /> Dusty rose and mauve</li>
+                  <li>• <span className="inline-block w-3 h-3 rounded-full mr-1 align-middle border border-gray-200" style={{ backgroundColor: "#D8D8E8" }} /> Silver shimmer</li>
                 </ul>
               </div>
             </div>
           </div>
+          <p className="text-sm text-gray-400 mb-8">These are general guidelines — <Link to="/personal-analysis" className="text-rose-400 hover:text-rose-500 transition-colors">get colors picked specifically for you</Link></p>
+
+          {/* FAQ Section */}
+          <div className="mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">Frequently Asked Questions About Light Summer</h2>
+            <div className="space-y-4">
+              <details className="bg-gray-50 rounded-xl p-6 group">
+                <summary className="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                  How do I know if I'm a Light Summer?
+                  <span className="ml-2 text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <p className="text-gray-700 mt-4 leading-relaxed">Light Summers typically have fair to light skin with cool pink undertones, light blonde to medium ash brown hair, and blue, gray-blue, or light green eyes. The key hallmark is low contrast between features and a soft, cool overall appearance. If you look best in muted pastels rather than bold or warm colors, you may be a Light Summer.</p>
+              </details>
+
+              <details className="bg-gray-50 rounded-xl p-6 group">
+                <summary className="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                  What is the difference between Light Summer and Light Spring?
+                  <span className="ml-2 text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <p className="text-gray-700 mt-4 leading-relaxed">Both seasons have light coloring, but the key difference is undertone. Light Summer has cool, pink-based undertones and looks best in cool pastels like powder blue, lavender, and soft rose. Light Spring has warm, golden undertones and is flattered by warm pastels like peach, light coral, and warm cream. If silver jewelry suits you better than gold, you're likely a Light Summer.</p>
+              </details>
+
+              <details className="bg-gray-50 rounded-xl p-6 group">
+                <summary className="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                  Can Light Summers wear black?
+                  <span className="ml-2 text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <p className="text-gray-700 mt-4 leading-relaxed">Pure black is generally too harsh for Light Summers and can wash out their delicate coloring. Instead, opt for soft navy, charcoal gray, or slate as dark neutrals. If you must wear black, keep it away from your face — for example, black pants with a soft blue or lavender top work much better than a black top.</p>
+              </details>
+
+              <details className="bg-gray-50 rounded-xl p-6 group">
+                <summary className="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                  What are the best neutrals for a Light Summer wardrobe?
+                  <span className="ml-2 text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <p className="text-gray-700 mt-4 leading-relaxed">The best neutrals for Light Summer are soft, cool-toned shades: dove gray, soft white (not stark white), taupe, slate blue, and soft cocoa. These create a gentle foundation for your wardrobe without overpowering your natural coloring. Silver is your best metallic for jewelry and accessories.</p>
+              </details>
+
+              <details className="bg-gray-50 rounded-xl p-6 group">
+                <summary className="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                  What hair colors work best for Light Summer?
+                  <span className="ml-2 text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <p className="text-gray-700 mt-4 leading-relaxed">Light Summers look best with cool-toned hair colors that keep the natural softness of their coloring. Ash blonde, light cool brown, and platinum highlights all work beautifully. Avoid warm golden blondes, copper, or warm auburn shades, as these clash with your cool undertones.</p>
+              </details>
+
+              <details className="bg-gray-50 rounded-xl p-6 group">
+                <summary className="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                  How do I build a capsule wardrobe as a Light Summer?
+                  <span className="ml-2 text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <p className="text-gray-700 mt-4 leading-relaxed">Start with cool neutrals as your base — soft white, dove gray, and slate. Add core colors like powder blue, dusty rose, and lavender for variety. Use accent pieces in periwinkle, soft teal, or mauve to add interest. Stick to silver accessories and cool-toned shoes. A well-curated Light Summer capsule wardrobe of 30-40 pieces can create dozens of elegant, harmonious outfits.</p>
+              </details>
+
+              <details className="bg-gray-50 rounded-xl p-6 group">
+                <summary className="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                  Can Light Summers wear bright colors?
+                  <span className="ml-2 text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <p className="text-gray-700 mt-4 leading-relaxed">Light Summers should generally avoid highly saturated, vivid colors as these can overwhelm their delicate coloring. However, you can wear brighter versions of your best shades — a clearer periwinkle or a slightly brighter rose — as long as they remain cool-toned. The key is to keep colors soft and avoid neon or electric shades entirely.</p>
+              </details>
+            </div>
+          </div>
+
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How do I know if I'm a Light Summer?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Light Summers typically have fair to light skin with cool pink undertones, light blonde to medium ash brown hair, and blue, gray-blue, or light green eyes. The key hallmark is low contrast between features and a soft, cool overall appearance. If you look best in muted pastels rather than bold or warm colors, you may be a Light Summer."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is the difference between Light Summer and Light Spring?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Both seasons have light coloring, but the key difference is undertone. Light Summer has cool, pink-based undertones and looks best in cool pastels like powder blue, lavender, and soft rose. Light Spring has warm, golden undertones and is flattered by warm pastels like peach, light coral, and warm cream. If silver jewelry suits you better than gold, you're likely a Light Summer."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can Light Summers wear black?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Pure black is generally too harsh for Light Summers and can wash out their delicate coloring. Instead, opt for soft navy, charcoal gray, or slate as dark neutrals. If you must wear black, keep it away from your face — for example, black pants with a soft blue or lavender top work much better than a black top."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What are the best neutrals for a Light Summer wardrobe?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The best neutrals for Light Summer are soft, cool-toned shades: dove gray, soft white (not stark white), taupe, slate blue, and soft cocoa. These create a gentle foundation for your wardrobe without overpowering your natural coloring. Silver is your best metallic for jewelry and accessories."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What hair colors work best for Light Summer?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Light Summers look best with cool-toned hair colors that keep the natural softness of their coloring. Ash blonde, light cool brown, and platinum highlights all work beautifully. Avoid warm golden blondes, copper, or warm auburn shades, as these clash with your cool undertones."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How do I build a capsule wardrobe as a Light Summer?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Start with cool neutrals as your base — soft white, dove gray, and slate. Add core colors like powder blue, dusty rose, and lavender for variety. Use accent pieces in periwinkle, soft teal, or mauve to add interest. Stick to silver accessories and cool-toned shoes. A well-curated Light Summer capsule wardrobe of 30-40 pieces can create dozens of elegant, harmonious outfits."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can Light Summers wear bright colors?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Light Summers should generally avoid highly saturated, vivid colors as these can overwhelm their delicate coloring. However, you can wear brighter versions of your best shades — a clearer periwinkle or a slightly brighter rose — as long as they remain cool-toned. The key is to keep colors soft and avoid neon or electric shades entirely."
+                }
+              }
+            ]
+          }) }} />
         </div>
       </article>
 

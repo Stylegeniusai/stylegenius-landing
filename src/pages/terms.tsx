@@ -5,17 +5,10 @@ const Terms = () => {
     <div className="min-h-screen bg-gray-50">
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8 text-center">
-            <span 
-              className="bg-clip-text text-transparent"
-              style={{
-                background: 'linear-gradient(45deg, #FF70D9, #6EC1E4)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent'
-              }}
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8 text-center"
+              style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
             >
-              StyleGenius
-            </span>{" "}
+            StyleGenius{" "}
             Terms of Service
           </h1>
           
