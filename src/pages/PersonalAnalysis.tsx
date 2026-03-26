@@ -183,6 +183,24 @@ const CheckoutModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => vo
             </div>
           </div>
 
+          {/* How it works */}
+          <div className="flex items-center gap-3 mb-6">
+            <div className="flex flex-col items-center text-center flex-1">
+              <div className="w-8 h-8 rounded-full bg-gray-900 text-white text-sm font-medium flex items-center justify-center mb-1.5">1</div>
+              <p className="text-xs text-gray-600 font-medium">Pay securely</p>
+            </div>
+            <div className="h-px bg-gray-200 flex-1 max-w-[40px]" />
+            <div className="flex flex-col items-center text-center flex-1">
+              <div className="w-8 h-8 rounded-full bg-gray-900 text-white text-sm font-medium flex items-center justify-center mb-1.5">2</div>
+              <p className="text-xs text-gray-600 font-medium">Fill in our form + selfie</p>
+            </div>
+            <div className="h-px bg-gray-200 flex-1 max-w-[40px]" />
+            <div className="flex flex-col items-center text-center flex-1">
+              <div className="w-8 h-8 rounded-full bg-gray-900 text-white text-sm font-medium flex items-center justify-center mb-1.5">3</div>
+              <p className="text-xs text-gray-600 font-medium">Get your guide in 48h</p>
+            </div>
+          </div>
+
           {/* CTA */}
           <a
             href={STRIPE_PAYMENT_LINK}
