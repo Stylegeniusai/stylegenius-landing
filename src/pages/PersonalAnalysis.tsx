@@ -345,10 +345,6 @@ const PersonalAnalysis = () => {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <Stars />
-              <p className="text-sm text-gray-500 mt-2">4.9/5 average rating</p>
-            </div>
             <div className="grid md:grid-cols-3 gap-6">
               {[
                 {
