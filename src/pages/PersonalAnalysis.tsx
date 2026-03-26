@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import SEO from "../components/SEO";
-import { Check, Sparkles, Upload, FileText, ArrowRight, ShieldCheck } from "lucide-react";
+import { Check, Sparkles, Upload, FileText, ArrowRight, ShieldCheck, X } from "lucide-react";
 
 const STRIPE_PAYMENT_LINK = import.meta.env.VITE_STRIPE_PAYMENT_LINK || '#';
 
@@ -106,9 +106,112 @@ const TrustBar = () => (
   </div>
 );
 
+const CheckoutModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4" onClick={onClose}>
+      <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
+      <div
+        className="relative bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <button onClick={onClose} className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 z-10">
+          <X className="w-5 h-5" />
+        </button>
+
+        <div className="p-6 md:p-8">
+          <h3
+            className="text-2xl font-bold text-gray-900 mb-1"
+            style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+          >
+            Your personal style guide
+          </h3>
+          <p className="text-gray-500 text-sm mb-4">Here's exactly what you'll get within 48 hours.</p>
+
+          {/* Social proof */}
+          <div className="flex gap-3 mb-6 text-xs">
+            <div className="flex-1 bg-gray-50 rounded-lg p-2.5">
+              <p className="text-gray-600 italic">"The makeup changed my look completely"</p>
+              <p className="text-gray-400 mt-1">— Emma L.</p>
+            </div>
+            <div className="flex-1 bg-gray-50 rounded-lg p-2.5">
+              <p className="text-gray-600 italic">"Body type tips and colors — dressing is more fun now!"</p>
+              <p className="text-gray-400 mt-1">— Sofia M.</p>
+            </div>
+          </div>
+
+          {/* Preview images */}
+          <div className="grid grid-cols-2 gap-3 mb-6">
+            <img
+              src={`${BLOG_IMAGE_BASE}/style-analysis-cover.png`}
+              alt="Report cover"
+              className="w-full rounded-lg shadow-md"
+            />
+            <img
+              src={`${BLOG_IMAGE_BASE}/style-analysis-colors.png`}
+              alt="Color season page"
+              className="w-full rounded-lg shadow-md"
+            />
+          </div>
+
+          {/* What's included */}
+          <div className="grid grid-cols-2 gap-3 mb-6 text-sm">
+            <div className="flex items-start gap-2">
+              <Check className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+              <span className="text-gray-700">Your color season & best colors</span>
+            </div>
+            <div className="flex items-start gap-2">
+              <Check className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+              <span className="text-gray-700">Makeup palette (lips, blush, eyes)</span>
+            </div>
+            <div className="flex items-start gap-2">
+              <Check className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+              <span className="text-gray-700">Colors & patterns to avoid</span>
+            </div>
+            <div className="flex items-start gap-2">
+              <Check className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+              <span className="text-gray-700">Body type guide & best styles</span>
+            </div>
+            <div className="flex items-start gap-2">
+              <Check className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+              <span className="text-gray-700">Capsule wardrobe starter</span>
+            </div>
+            <div className="flex items-start gap-2">
+              <Check className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+              <span className="text-gray-700">Saveable phone swatch</span>
+            </div>
+          </div>
+
+          {/* CTA */}
+          <a
+            href={STRIPE_PAYMENT_LINK}
+            className="flex items-center justify-center gap-2 w-full px-8 py-4 bg-gray-900 text-white rounded-full text-lg font-medium hover:bg-gray-800 transition-all hover:scale-[1.02] shadow-lg shadow-gray-900/20"
+          >
+            Continue to payment — $49
+            <ArrowRight className="w-5 h-5" />
+          </a>
+
+          {/* Trust */}
+          <div className="flex flex-wrap items-center justify-center gap-4 text-xs text-gray-400 mt-4">
+            <span className="flex items-center gap-1"><ShieldCheck className="w-3.5 h-3.5" /> 7-day money-back guarantee</span>
+            <span className="w-1 h-1 rounded-full bg-gray-300 hidden sm:block" />
+            <span>Secure payment via Stripe</span>
+            <span className="w-1 h-1 rounded-full bg-gray-300 hidden sm:block" />
+            <span>Delivered within 48h</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const PersonalAnalysis = () => {
+  const [showModal, setShowModal] = useState(false);
+
   const handleCheckout = () => {
-    window.location.href = STRIPE_PAYMENT_LINK;
+    setShowModal(true);
   };
 
   return (
@@ -127,6 +230,7 @@ const PersonalAnalysis = () => {
           { question: "Is an online color analysis accurate?", answer: "Yes — combined with your selfie in natural light and the details you provide about your hair, eyes, and skin tone, we can accurately determine your color season. It's the same information a stylist uses in person." },
         ]}
       />
+      <CheckoutModal isOpen={showModal} onClose={() => setShowModal(false)} />
       <Navigation />
 
       {/* ════════ HERO ════════ */}
