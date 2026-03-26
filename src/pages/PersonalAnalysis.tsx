@@ -195,6 +195,37 @@ const PersonalAnalysis = () => {
         </div>
       </section>
 
+      {/* ════════ REPORT PREVIEW ════════ */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <h2
+              className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center"
+              style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+            >
+              See what's inside your guide
+            </h2>
+            <p className="text-gray-500 text-center mb-12 text-lg">
+              A real preview from one of our personalized reports.
+            </p>
+            <div className="grid md:grid-cols-2 gap-6">
+              <img
+                src={`${BLOG_IMAGE_BASE}/style-analysis-cover.png`}
+                alt="Style analysis report cover — Unleash Your Style"
+                className="w-full rounded-xl shadow-lg"
+                loading="lazy"
+              />
+              <img
+                src={`${BLOG_IMAGE_BASE}/style-analysis-colors.png`}
+                alt="Style analysis color season page — Your best colors"
+                className="w-full rounded-xl shadow-lg"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ════════ WHAT'S INSIDE ════════ */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">

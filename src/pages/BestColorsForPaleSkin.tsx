@@ -91,8 +91,11 @@ const UndertoneQuiz = () => {
             ))}
           </div>
           <p className="text-gray-700 mb-4">{r.description}</p>
-          <div className="flex gap-3">
+          <div className="flex flex-wrap gap-3 items-center">
             <a href={r.scrollTo} className="text-sm font-medium text-gray-900 underline hover:no-underline">Jump to your colors</a>
+            <span className="text-gray-300">|</span>
+            <Link to="/personal-analysis" className="text-sm text-rose-500 hover:text-rose-600 transition-colors">Want your exact palette? Get your personal analysis</Link>
+            <span className="text-gray-300">|</span>
             <button onClick={reset} className="text-sm text-gray-500 underline hover:no-underline">Retake quiz</button>
           </div>
         </div>
@@ -279,9 +282,10 @@ const BestColorsForPaleSkin = () => {
               ))}
             </div>
           </div>
-          <p className="text-gray-600 mb-8">
+          <p className="text-gray-600 mb-4">
             <strong>Skip:</strong> Orange, mustard yellow, warm browns, coral, peach, and anything with golden undertones.
           </p>
+          <p className="text-sm text-gray-400 mb-8">These are general guidelines — <Link to="/personal-analysis" className="text-rose-400 hover:text-rose-500 transition-colors">get colors picked specifically for you</Link></p>
 
           {/* IMAGE: Cool undertone colors */}
           <div className="my-12">
@@ -320,9 +324,10 @@ const BestColorsForPaleSkin = () => {
               ))}
             </div>
           </div>
-          <p className="text-gray-600 mb-8">
+          <p className="text-gray-600 mb-4">
             <strong>Skip:</strong> Black (too harsh), icy pink, powder blue, cool gray, and silver-toned colors.
           </p>
+          <p className="text-sm text-gray-400 mb-8">These are general guidelines — <Link to="/personal-analysis" className="text-rose-400 hover:text-rose-500 transition-colors">get colors picked specifically for you</Link></p>
 
           {/* IMAGE: Warm undertone colors */}
           <div className="my-12">
@@ -361,9 +366,10 @@ const BestColorsForPaleSkin = () => {
               ))}
             </div>
           </div>
-          <p className="text-gray-600 mb-8">
+          <p className="text-gray-600 mb-4">
             <strong>Skip:</strong> Neon colors and very harsh contrasts. Stick to softer, muted versions of most colors.
           </p>
+          <p className="text-sm text-gray-400 mb-8">These are general guidelines — <Link to="/personal-analysis" className="text-rose-400 hover:text-rose-500 transition-colors">get colors picked specifically for you</Link></p>
 
           {/* Universal Best Colors */}
           <h2
