@@ -496,7 +496,7 @@ const BestColorsForPaleSkin = () => {
           <div id="makeup" className="scroll-mt-8" />
 
           <p className="text-lg text-gray-700 leading-relaxed mb-8">
-            The same undertone rules apply to makeup. Wearing the wrong shade of foundation, blush, or lipstick can undo a perfectly chosen outfit.
+            The same undertone rules apply to makeup. Wearing the wrong shade of foundation, blush, or lipstick can undo a perfectly chosen outfit. For the full breakdown, check out our complete <Link to="/makeup-for-pale-skin" className="text-black underline hover:no-underline">makeup guide for pale skin</Link>.
           </p>
 
           <div className="space-y-6 mb-8">
@@ -677,6 +677,10 @@ const BestColorsForPaleSkin = () => {
             <Link to="/light-summer-colors" className="block p-6 bg-gray-50 hover:bg-gray-100 transition-colors">
               <h4 className="font-semibold text-gray-900 mb-2">Light Summer Colors</h4>
               <p className="text-sm text-gray-600">Another common season for fair-skinned individuals.</p>
+            </Link>
+            <Link to="/makeup-for-pale-skin" className="block p-6 bg-gray-50 hover:bg-gray-100 transition-colors">
+              <h4 className="font-semibold text-gray-900 mb-2">Best Makeup for Pale Skin</h4>
+              <p className="text-sm text-gray-600">Foundation, blush, lipstick, and eyeshadow — all by undertone.</p>
             </Link>
           </div>
 

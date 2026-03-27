@@ -91,6 +91,13 @@ export const blogPosts: BlogPost[] = [
     category: "Color Analysis"
   },
   {
+    title: "Best Makeup for Pale Skin",
+    description: "The complete makeup guide for pale skin — foundation, blush, lipstick, and eyeshadow by undertone.",
+    image: `${BLOG_IMAGE_BASE}/makeup-pale-skin-hero.png`,
+    href: "/makeup-for-pale-skin",
+    category: "Color Analysis"
+  },
+  {
     title: "Best Colors for Olive Skin",
     description: "Discover which colors complement olive skin tones beautifully.",
     image: `${BLOG_IMAGE_BASE}/olive-skin-hero.png`,

@@ -44,6 +44,7 @@ import BrightSpringColors from "./pages/BrightSpringColors";
 import TrueAutumnColors from "./pages/TrueAutumnColors";
 import WarmVsCoolUndertones from "./pages/WarmVsCoolUndertones";
 import BestColorsForPaleSkin from "./pages/BestColorsForPaleSkin";
+import MakeupForPaleSkin from "./pages/MakeupForPaleSkin";
 import BestColorsForOliveSkin from "./pages/BestColorsForOliveSkin";
 import BestColorsForDarkSkin from "./pages/BestColorsForDarkSkin";
 
@@ -120,6 +121,7 @@ const App = () => (
           <Route path="/true-autumn-colors" element={<TrueAutumnColors />} />
           <Route path="/warm-vs-cool-undertones" element={<WarmVsCoolUndertones />} />
           <Route path="/best-colors-for-pale-skin" element={<BestColorsForPaleSkin />} />
+          <Route path="/makeup-for-pale-skin" element={<MakeupForPaleSkin />} />
           <Route path="/best-colors-for-olive-skin" element={<BestColorsForOliveSkin />} />
           <Route path="/best-colors-for-dark-skin" element={<BestColorsForDarkSkin />} />
 
