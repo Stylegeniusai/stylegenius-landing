@@ -142,7 +142,7 @@ const CheckoutModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => vo
           </div>
 
           {/* Preview images */}
-          <div className="grid grid-cols-2 gap-3 mb-6">
+          <div className="grid grid-cols-2 gap-3 mb-5 px-2 md:px-16">
             <img
               src={`${BLOG_IMAGE_BASE}/style-analysis-cover.png`}
               alt="Report cover"
@@ -155,8 +155,26 @@ const CheckoutModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => vo
             />
           </div>
 
+          {/* How it works */}
+          <div className="flex items-start gap-3 mb-5 bg-gray-50 rounded-xl p-4">
+            <div className="flex flex-col items-center text-center flex-1">
+              <div className="w-7 h-7 rounded-full bg-gray-900 text-white text-xs font-medium flex items-center justify-center mb-1.5">1</div>
+              <p className="text-xs text-gray-600 font-medium">You share your details & selfie</p>
+            </div>
+            <div className="h-px bg-gray-200 flex-1 max-w-[30px] mt-3.5" />
+            <div className="flex flex-col items-center text-center flex-1">
+              <div className="w-7 h-7 rounded-full bg-gray-900 text-white text-xs font-medium flex items-center justify-center mb-1.5">2</div>
+              <p className="text-xs text-gray-600 font-medium">Your style coach creates your guide</p>
+            </div>
+            <div className="h-px bg-gray-200 flex-1 max-w-[30px] mt-3.5" />
+            <div className="flex flex-col items-center text-center flex-1">
+              <div className="w-7 h-7 rounded-full bg-gray-900 text-white text-xs font-medium flex items-center justify-center mb-1.5">3</div>
+              <p className="text-xs text-gray-600 font-medium">Delivered to your inbox in 48h</p>
+            </div>
+          </div>
+
           {/* What's included */}
-          <div className="grid grid-cols-2 gap-3 mb-6 text-sm">
+          <div className="grid grid-cols-2 gap-2.5 mb-5 text-sm">
             <div className="flex items-start gap-2">
               <Check className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
               <span className="text-gray-700">Your color season & best colors</span>
@@ -183,30 +201,12 @@ const CheckoutModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => vo
             </div>
           </div>
 
-          {/* How it works */}
-          <div className="flex items-center gap-3 mb-6">
-            <div className="flex flex-col items-center text-center flex-1">
-              <div className="w-8 h-8 rounded-full bg-gray-900 text-white text-sm font-medium flex items-center justify-center mb-1.5">1</div>
-              <p className="text-xs text-gray-600 font-medium">Pay securely</p>
-            </div>
-            <div className="h-px bg-gray-200 flex-1 max-w-[40px]" />
-            <div className="flex flex-col items-center text-center flex-1">
-              <div className="w-8 h-8 rounded-full bg-gray-900 text-white text-sm font-medium flex items-center justify-center mb-1.5">2</div>
-              <p className="text-xs text-gray-600 font-medium">Fill in our form + selfie</p>
-            </div>
-            <div className="h-px bg-gray-200 flex-1 max-w-[40px]" />
-            <div className="flex flex-col items-center text-center flex-1">
-              <div className="w-8 h-8 rounded-full bg-gray-900 text-white text-sm font-medium flex items-center justify-center mb-1.5">3</div>
-              <p className="text-xs text-gray-600 font-medium">Get your guide in 48h</p>
-            </div>
-          </div>
-
           {/* CTA */}
           <a
             href={STRIPE_PAYMENT_LINK}
             className="flex items-center justify-center gap-2 w-full px-8 py-4 bg-gray-900 text-white rounded-full text-lg font-medium hover:bg-gray-800 transition-all hover:scale-[1.02] shadow-lg shadow-gray-900/20"
           >
-            Continue to payment — $49
+            Continue to payment — <span className="line-through text-gray-400 mr-1">$129</span>$89
             <ArrowRight className="w-5 h-5" />
           </a>
 
@@ -236,12 +236,12 @@ const PersonalAnalysis = () => {
     <div className="min-h-screen bg-white">
       <SEO
         title="Personal Color & Style Analysis Online — Find Your Best Colors, Season & Outfits"
-        description="Get your colors done online. Upload a selfie and receive a personalized color season analysis, makeup palette, body type guide, and capsule wardrobe — delivered in 48 hours. $49 with 7-day money-back guarantee."
+        description="Get your colors done online. Upload a selfie and receive a personalized color season analysis, makeup palette, body type guide, and capsule wardrobe — delivered in 48 hours. $89 with 7-day money-back guarantee."
         keywords="personal color analysis online, get my colors done online, what colors suit me, find my color season, seasonal color analysis, am I cool or warm toned, color analysis with selfie, style analysis, body type analysis, what season am I, color consultation online, personal style guide"
         canonicalUrl="/personal-analysis"
         ogType="website"
         faq={[
-          { question: "How much does it cost to get your colors analyzed?", answer: "Our personal color & style analysis costs $49 — a one-time payment with no subscription. You receive a full personalized guide with your color season, best colors, makeup palette, body type outfits, and a saveable phone swatch within 48 hours." },
+          { question: "How much does it cost to get your colors analyzed?", answer: "Our personal color & style analysis costs $89 (normally $129) — a one-time payment with no subscription. You receive a full personalized guide with your color season, best colors, makeup palette, body type outfits, and a saveable phone swatch within 48 hours." },
           { question: "Can I do a color analysis online with a selfie?", answer: "Yes. You upload a selfie in natural light along with details about your hair, eyes, and skin tone. Our stylists use this to determine your exact color season and create your personalized guide." },
           { question: "What is included in a personal color analysis?", answer: "Your color season, a palette of your 15 best colors, colors to avoid, makeup recommendations (lip, blush, eyeshadow, foundation), outfit ideas for your body type, a saveable phone swatch, and a capsule wardrobe starting point." },
           { question: "How long does an online color analysis take?", answer: "After you complete checkout and submit your details, your personalized guide is delivered to your email within 48 hours on working days. Orders placed on weekends are delivered by Tuesday." },
@@ -273,7 +273,7 @@ const PersonalAnalysis = () => {
                 onClick={handleCheckout}
                 className="inline-flex items-center gap-2 px-8 py-4 bg-gray-900 text-white rounded-full text-lg font-medium hover:bg-gray-800 transition-all hover:scale-105 shadow-lg shadow-gray-900/20"
               >
-                Discover my perfect colors — $49
+                Discover my perfect colors — <span className="line-through text-gray-400 mr-1">$129</span> $89
                 <ArrowRight className="w-5 h-5" />
               </button>
               <TrustBar />
@@ -311,6 +311,47 @@ const PersonalAnalysis = () => {
             <p className="mt-8 text-gray-500">
               You're not bad at fashion — you just don't have the right information yet.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ════════ HOW YOUR GUIDE IS MADE ════════ */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2
+              className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center"
+              style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+            >
+              How your guide is made
+            </h2>
+            <p className="text-gray-500 text-center mb-12 text-lg">
+              This isn't auto-generated. A real person creates your guide from scratch.
+            </p>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="text-center">
+                <div className="w-12 h-12 rounded-full bg-gray-900 text-white text-lg font-medium flex items-center justify-center mx-auto mb-4">1</div>
+                <h3 className="font-semibold text-gray-900 text-lg mb-2">You share your details</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">
+                  After checkout, you fill in a quick form — hair color, eye color, skin tone, body type, and a selfie in natural light. Takes about 2 minutes.
+                </p>
+              </div>
+              <div className="text-center">
+                <div className="w-12 h-12 rounded-full bg-gray-900 text-white text-lg font-medium flex items-center justify-center mx-auto mb-4">2</div>
+                <h3 className="font-semibold text-gray-900 text-lg mb-2">Your style coach analyzes everything</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">
+                  A trained style coach personally reviews your coloring, undertone, and proportions to determine your color season and most flattering styles. No templates, no AI guesswork.
+                </p>
+              </div>
+              <div className="text-center">
+                <div className="w-12 h-12 rounded-full bg-gray-900 text-white text-lg font-medium flex items-center justify-center mx-auto mb-4">3</div>
+                <h3 className="font-semibold text-gray-900 text-lg mb-2">Your personal guide arrives</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">
+                  A 12-page PDF with your colors, makeup palette, body type guide, capsule wardrobe, and outfit ideas — straight to your inbox within 48 hours.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -484,7 +525,7 @@ const PersonalAnalysis = () => {
                 onClick={handleCheckout}
                 className="inline-flex items-center gap-2 px-7 py-3.5 bg-gray-900 text-white rounded-full font-medium hover:bg-gray-800 transition-all hover:scale-105"
               >
-                Get my personal style guide — $49
+                Get my personal style guide — <span className="line-through text-gray-400 mr-1">$129</span> $89
                 <ArrowRight className="w-4 h-4" />
               </button>
             </div>
@@ -604,7 +645,7 @@ const PersonalAnalysis = () => {
                 onClick={handleCheckout}
                 className="inline-flex items-center gap-2 px-8 py-4 bg-gray-900 text-white rounded-full text-lg font-medium hover:bg-gray-800 transition-all hover:scale-105 shadow-lg shadow-gray-900/20"
               >
-                Get my personal style guide — $49
+                Get my personal style guide — <span className="line-through text-gray-400 mr-1">$129</span> $89
                 <ArrowRight className="w-5 h-5" />
               </button>
               <TrustBar />
@@ -667,7 +708,7 @@ const PersonalAnalysis = () => {
               onClick={handleCheckout}
               className="inline-flex items-center gap-2 px-8 py-4 bg-gray-900 text-white rounded-full text-lg font-medium hover:bg-gray-800 transition-all hover:scale-105 shadow-lg shadow-gray-900/20"
             >
-              Start my style transformation — $49
+              Start my style transformation — <span className="line-through text-gray-400 mr-1">$129</span> $89
               <ArrowRight className="w-5 h-5" />
             </button>
             <TrustBar />
@@ -692,7 +733,7 @@ const PersonalAnalysis = () => {
                 { q: "Can you really determine my colors from a selfie?", a: "Yes — combined with the details you provide about your hair, eyes, and skin tone, a natural-light selfie gives us what we need to identify your color season accurately. It's the same information a stylist uses in person." },
                 { q: "What if I'm not happy with my analysis?", a: "We offer a full refund within 7 days of delivery. No questions asked. Just email ai@stylegenius.app and we'll process it immediately." },
                 { q: "Why do I need to upload a selfie?", a: "A photo in natural light lets us see your true coloring and determine your color season accurately. It's required — but it only takes a second. Just face a window, no makeup or filters, and snap a pic." },
-                { q: "Is this a subscription?", a: "No — it's a one-time purchase of $49. You get your personal guide and that's it. No recurring charges, ever." },
+                { q: "Is this a subscription?", a: "No — it's a one-time purchase of $89 (normally $129). You get your personal guide and that's it. No recurring charges, ever." },
               ].map((item, i) => (
                 <details key={i} className="group">
                   <summary className="flex justify-between items-center cursor-pointer py-4 px-5 rounded-xl hover:bg-gray-50 transition-colors font-medium text-gray-900">

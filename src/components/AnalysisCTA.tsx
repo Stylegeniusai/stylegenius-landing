@@ -26,7 +26,7 @@ const AnalysisCTA = () => (
           to="/personal-analysis"
           className="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white rounded-full font-medium hover:bg-gray-800 transition-all hover:scale-105 text-sm"
         >
-          Discover my perfect colors — $49
+          Discover my perfect colors — <span className="line-through text-gray-400 mr-1">$129</span> $89
           <ArrowRight className="w-4 h-4" />
         </Link>
       </div>
