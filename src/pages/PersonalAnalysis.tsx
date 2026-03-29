@@ -278,8 +278,17 @@ const PersonalAnalysis = () => {
               </button>
               <TrustBar />
             </div>
-            <div className="flex justify-center">
-              <PdfMockup />
+            <div className="flex justify-center gap-4">
+              <img
+                src={`${BLOG_IMAGE_BASE}/style-analysis-cover.png`}
+                alt="Style analysis report cover — Unleash Your Style"
+                className="w-1/2 max-w-[220px] rounded-xl shadow-xl -rotate-2"
+              />
+              <img
+                src={`${BLOG_IMAGE_BASE}/style-analysis-colors.png`}
+                alt="Style analysis color season page — Your best colors"
+                className="w-1/2 max-w-[220px] rounded-xl shadow-xl rotate-2 mt-6"
+              />
             </div>
           </div>
         </div>
