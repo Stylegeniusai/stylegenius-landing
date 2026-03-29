@@ -24,8 +24,7 @@ export const blogPosts: BlogPost[] = [
     description: "Discover your color season with our complete guide to seasonal color analysis - find out if you're a Spring, Summer, Autumn, or Winter.",
     image: `${BLOG_IMAGE_BASE}/what-season-hero.png`,
     href: "/what-season-am-i",
-    category: "Color Analysis",
-    featured: true
+    category: "Color Analysis"
   },
   {
     title: "Soft Autumn Color Palette",
@@ -124,8 +123,7 @@ export const blogPosts: BlogPost[] = [
     description: "The complete guide to all 13 Kibbe body types - discover your unique body ID and how to dress for it.",
     image: `${BLOG_IMAGE_BASE}/kibbe-hero.png`,
     href: "/kibbe-body-types",
-    category: "Body Type",
-    featured: true
+    category: "Body Type"
   },
   {
     title: "Hourglass Body Type Guide",
@@ -189,8 +187,7 @@ export const blogPosts: BlogPost[] = [
     description: "Master the effortless, minimal, and polished Clean Girl look that's taking over social media.",
     image: `${BLOG_IMAGE_BASE}/clean-girl-hero.png`,
     href: "/clean-girl-aesthetic",
-    category: "Fashion Aesthetic",
-    featured: true
+    category: "Fashion Aesthetic"
   },
   {
     title: "Old Money Aesthetic",
@@ -234,8 +231,7 @@ export const blogPosts: BlogPost[] = [
     description: "A step-by-step guide to discovering your unique fashion identity.",
     image: `${BLOG_IMAGE_BASE}/personal-style-hero.png`,
     href: "/find-your-personal-style",
-    category: "Style Guide",
-    featured: true
+    category: "Style Guide"
   },
   {
     title: "How to Build a Capsule Wardrobe",
@@ -271,8 +267,7 @@ export const blogPosts: BlogPost[] = [
     description: "Social shopping combines online shopping with social interaction. Learn what it means, how it works, and why it's changing fashion discovery.",
     image: "/blog/social-shopping-hero.png",
     href: "/blog/what-is-social-shopping.html",
-    category: "Shopping Tech",
-    featured: true
+    category: "Shopping Tech"
   },
   {
     title: "Can You Try On Clothes Online?",
@@ -286,8 +281,7 @@ export const blogPosts: BlogPost[] = [
     description: "Everything you need to know about virtual try-on technology and how to shop online confidently.",
     image: `${BLOG_IMAGE_BASE}/virtual-tryon-hero.png`,
     href: "/virtual-try-on-guide",
-    category: "Shopping Tech",
-    featured: true
+    category: "Shopping Tech"
   },
   {
     title: "AI Fashion Shopping: How Smart Tech is Changing Everything",
