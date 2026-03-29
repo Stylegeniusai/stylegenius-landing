@@ -9,6 +9,10 @@ const ScrollToTop = () => {
   const { pathname } = useLocation();
   useEffect(() => {
     window.scrollTo(0, 0);
+    // Keep Clarity session alive across SPA route changes
+    if (typeof window !== 'undefined' && (window as any).clarity) {
+      (window as any).clarity('set', 'page', pathname);
+    }
   }, [pathname]);
   return null;
 };
