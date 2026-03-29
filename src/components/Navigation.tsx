@@ -35,8 +35,8 @@ const Navigation = () => {
             to="/personal-analysis"
             className="block px-4 py-2 text-center text-sm hover:bg-gray-800 transition-colors"
           >
-            <span className="hidden sm:inline">Discover your best colors & styles — </span>
-            <span className="sm:hidden">Find your best colors — </span>
+            <span className="hidden sm:inline">Get your personalized style guide — made for you · </span>
+            <span className="sm:hidden">Your personal style guide — </span>
             <span className="line-through text-gray-400 mr-1">$129</span><span className="font-semibold underline underline-offset-2">$89</span>
             <span className="ml-1.5 text-rose-300">→</span>
           </Link>
