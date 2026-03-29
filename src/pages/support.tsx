@@ -19,7 +19,7 @@ const Support = () => {
                 <p>Need help with StyleGenius? We're here to assist you!</p>
                 <div className="bg-gradient-to-r from-pink-50 to-blue-50 p-6 rounded-lg">
                   <ul className="list-none space-y-3">
-                    <li><strong>📧 Email:</strong> ai@stylegenius.app</li>
+                    <li><strong>📧 Email:</strong> anna@stylegenius.app</li>
                     <li><strong>⏰ Response time:</strong> Within 24 hours</li>
                     <li><strong>📱 In-app support:</strong> Available through StyleGenius app settings</li>
                     <li><strong>🌍 Languages:</strong> English, Swedish</li>
@@ -68,7 +68,7 @@ const Support = () => {
                   <li><strong>Photo upload issues:</strong> Ensure photos are under 10MB and in JPG/PNG format</li>
                   <li><strong>Login problems:</strong> Try resetting your password or using OAuth sign-in</li>
                   <li><strong>Browser extension:</strong> Disable and re-enable the StyleGenius extension</li>
-                  <li><strong>Still need help?</strong> Contact ai@stylegenius.app with your device model and iOS/Android version</li>
+                  <li><strong>Still need help?</strong> Contact anna@stylegenius.app with your device model and iOS/Android version</li>
                 </ul>
               </div>
             </section>
@@ -80,7 +80,7 @@ const Support = () => {
                 <ul className="list-disc pl-6 space-y-2">
                   <li><strong>Subscription management:</strong> Handle through App Store (iOS) or Google Play (Android)</li>
                   <li><strong>Refunds:</strong> Request through your app store within 14 days of purchase</li>
-                  <li><strong>Billing issues:</strong> Check your app store account or contact ai@stylegenius.app</li>
+                  <li><strong>Billing issues:</strong> Check your app store account or contact anna@stylegenius.app</li>
                   <li><strong>Cancel subscription:</strong> Turn off auto-renewal in your app store settings</li>
                   <li><strong>Restore purchases:</strong> Use "Restore Purchases" button in StyleGenius app settings</li>
                 </ul>

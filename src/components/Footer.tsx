@@ -46,7 +46,7 @@ const Footer = () => {
             <Link to="/terms" className="hover:text-gray-600 transition-colors">
               Terms
             </Link>
-            <a href="mailto:ai@stylegenius.app" className="hover:text-gray-600 transition-colors">
+            <a href="mailto:anna@stylegenius.app" className="hover:text-gray-600 transition-colors">
               Contact
             </a>
           </div>

@@ -673,7 +673,7 @@ const PersonalAnalysis = () => {
             <div>
               <h3 className="font-semibold text-gray-900 text-lg mb-1">7-day money-back guarantee</h3>
               <p className="text-gray-500 text-sm leading-relaxed">
-                If you're not happy with your analysis, email us at ai@stylegenius.app within 7 days of delivery for a full refund. No questions asked.*
+                If you're not happy with your analysis, email us at anna@stylegenius.app within 7 days of delivery for a full refund. No questions asked.*
               </p>
               <p className="text-gray-400 text-xs mt-1">
                 *Refund applies to first-time purchases. One refund per customer.
@@ -725,6 +725,47 @@ const PersonalAnalysis = () => {
         </div>
       </section>
 
+      {/* ════════ WHY WE BUILT THIS ════════ */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2
+              className="text-3xl md:text-4xl font-bold text-gray-900 mb-10"
+              style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+            >
+              Why we built StyleGenius
+            </h2>
+            <div className="flex justify-center gap-6 mb-8">
+              {/* IMAGE NEEDED: markus-profile.png + anna-profile.png — casual, friendly profile photos. Upload to Supabase blog/ bucket */}
+              <div className="text-center">
+                <img
+                  src={`${BLOG_IMAGE_BASE}/markus-profile.png`}
+                  alt="Markus — co-founder of StyleGenius"
+                  className="w-28 h-28 rounded-full object-cover mx-auto mb-2 shadow-md"
+                  loading="lazy"
+                />
+                <p className="text-sm font-medium text-gray-900">Markus</p>
+              </div>
+              <div className="text-center">
+                <img
+                  src={`${BLOG_IMAGE_BASE}/anna-profile.png`}
+                  alt="Anna — co-founder of StyleGenius"
+                  className="w-28 h-28 rounded-full object-cover mx-auto mb-2 shadow-md"
+                  loading="lazy"
+                />
+                <p className="text-sm font-medium text-gray-900">Anna</p>
+              </div>
+            </div>
+            <p className="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
+              We never felt confident walking into a store. Trends didn't work, colors felt random, and every shopping trip ended in frustration. So we built what we wished existed — a way to actually know what works for you, without spending hundreds on a stylist.
+            </p>
+            <p className="text-gray-500 mt-4">
+              StyleGenius has helped hundreds of women stop guessing and start dressing with confidence.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* ════════ FAQ ════════ */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
@@ -740,7 +781,7 @@ const PersonalAnalysis = () => {
                 { q: "What exactly do I receive?", a: "A beautifully designed personal guide with your color season, best colors, a saveable palette for your phone, makeup recommendations, outfit ideas for your body type, shopping links, and a capsule wardrobe starting point." },
                 { q: "How long does delivery take?", a: "Your guide will be in your inbox within 48 hours on working days (Monday–Friday). Orders placed on weekends are delivered by Tuesday." },
                 { q: "Can you really determine my colors from a selfie?", a: "Yes — combined with the details you provide about your hair, eyes, and skin tone, a natural-light selfie gives us what we need to identify your color season accurately. It's the same information a stylist uses in person." },
-                { q: "What if I'm not happy with my analysis?", a: "We offer a full refund within 7 days of delivery. No questions asked. Just email ai@stylegenius.app and we'll process it immediately." },
+                { q: "What if I'm not happy with my analysis?", a: "We offer a full refund within 7 days of delivery. No questions asked. Just email anna@stylegenius.app and we'll process it immediately." },
                 { q: "Why do I need to upload a selfie?", a: "A photo in natural light lets us see your true coloring and determine your color season accurately. It's required — but it only takes a second. Just face a window, no makeup or filters, and snap a pic." },
                 { q: "Is this a subscription?", a: "No — it's a one-time purchase of $89 (normally $129). You get your personal guide and that's it. No recurring charges, ever." },
               ].map((item, i) => (

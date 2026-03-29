@@ -93,7 +93,7 @@ const Terms = () => {
 
                 <h3 className="text-xl font-semibold text-gray-800 mb-2 mt-6">3.3 Refunds</h3>
                 <ul className="list-disc pl-6 space-y-2">
-                  <li><strong>Personal Style Analysis:</strong> We offer a 7-day money-back guarantee on personal style analysis purchases. To request a refund, reply to your delivery email or contact us at ai@stylegenius.app within 7 days of receiving your report. Please include a brief note on what didn't meet your expectations so we can improve. Refund applies to first-time purchases only, one refund per customer.</li>
+                  <li><strong>Personal Style Analysis:</strong> We offer a 7-day money-back guarantee on personal style analysis purchases. To request a refund, reply to your delivery email or contact us at anna@stylegenius.app within 7 days of receiving your report. Please include a brief note on what didn't meet your expectations so we can improve. Refund applies to first-time purchases only, one refund per customer.</li>
                   <li><strong>App Store Purchases:</strong> Refunds for iOS subscriptions are handled by Apple according to their refund policy</li>
                   <li><strong>Google Play Purchases:</strong> Refunds for Android subscriptions are handled by Google according to their refund policy</li>
                   <li><strong>No Partial Refunds:</strong> We generally do not provide partial refunds for unused portions of a subscription period</li>
@@ -331,7 +331,7 @@ const Terms = () => {
                 <p>For questions about these Terms of Service or our data practices, please contact us at:</p>
                 <ul className="list-none space-y-2">
                   <li><strong>Legal inquiries:</strong> legal@stylegenius.app</li>
-                  <li><strong>Technical support:</strong> ai@stylegenius.app</li>
+                  <li><strong>Technical support:</strong> anna@stylegenius.app</li>
                   <li><strong>Privacy matters:</strong> privacy@stylegenius.app</li>
                   <li><strong>Website:</strong> https://stylegenius.app/legal</li>
                   <li><strong>Response time:</strong> Legal inquiries answered within 5 business days</li>

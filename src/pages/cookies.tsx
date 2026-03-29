@@ -81,7 +81,7 @@ const Cookies = () => {
                   <li><strong>Browser settings:</strong> Block or delete cookies in your browser preferences</li>
                   <li><strong>Extension settings:</strong> Disable specific cookies in StyleGenius browser extension</li>
                   <li><strong>App preferences:</strong> Control data sharing and analytics in StyleGenius app</li>
-                  <li><strong>Opt-out:</strong> Contact ai@stylegenius.app to opt out of non-essential cookies</li>
+                  <li><strong>Opt-out:</strong> Contact anna@stylegenius.app to opt out of non-essential cookies</li>
                 </ul>
                 <div className="bg-yellow-50 p-4 rounded-lg mt-4">
                   <p className="text-yellow-800"><strong>Note:</strong> Disabling essential cookies may affect StyleGenius functionality, including login and browser extension features.</p>
@@ -119,7 +119,7 @@ const Cookies = () => {
               <div className="space-y-4 text-gray-600 leading-relaxed">
                 <p>Questions about our cookie usage?</p>
                 <ul className="list-none space-y-2">
-                  <li><strong>Email:</strong> ai@stylegenius.app</li>
+                  <li><strong>Email:</strong> anna@stylegenius.app</li>
                   <li><strong>Subject:</strong> "Cookie Policy Question"</li>
                 </ul>
               </div>

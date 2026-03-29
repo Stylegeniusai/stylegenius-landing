@@ -58,7 +58,7 @@ const DataDeletion = () => {
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">Method 2: Email Request</h3>
                   <div className="bg-blue-50 p-4 rounded-lg">
-                    <p className="text-blue-800 mb-2"><strong>Email:</strong> ai@stylegenius.app</p>
+                    <p className="text-blue-800 mb-2"><strong>Email:</strong> anna@stylegenius.app</p>
                     <p className="text-blue-800 mb-2"><strong>Subject:</strong> "Account Deletion Request"</p>
                     <p className="text-blue-800"><strong>Include:</strong> Your registered email address and confirmation that you want to delete all data</p>
                   </div>
@@ -120,7 +120,7 @@ const DataDeletion = () => {
                 <ul className="list-disc pl-6 space-y-2">
                   <li><strong>Delete individual photos:</strong> Swipe left on any wardrobe item</li>
                   <li><strong>Clear AI recommendations:</strong> Settings → Privacy → "Reset AI Learning"</li>
-                  <li><strong>Delete specific data types:</strong> Contact ai@stylegenius.app with specific requests</li>
+                  <li><strong>Delete specific data types:</strong> Contact anna@stylegenius.app with specific requests</li>
                 </ul>
               </div>
             </section>
@@ -130,7 +130,7 @@ const DataDeletion = () => {
               <div className="space-y-4 text-gray-600 leading-relaxed">
                 <p>Questions about data deletion?</p>
                 <ul className="list-none space-y-2">
-                  <li><strong>Email:</strong> ai@stylegenius.app</li>
+                  <li><strong>Email:</strong> anna@stylegenius.app</li>
                   <li><strong>Subject:</strong> "Data Deletion Question"</li>
                   <li><strong>Response time:</strong> Within 24 hours</li>
                 </ul>

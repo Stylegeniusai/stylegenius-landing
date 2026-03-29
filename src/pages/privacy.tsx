@@ -236,7 +236,7 @@ const Privacy = () => {
                 <p>For any privacy questions or data requests:</p>
                 <ul className="list-none space-y-2">
                   <li><strong>Data Protection Officer:</strong> privacy@stylegenius.app</li>
-                  <li><strong>General inquiries:</strong> ai@stylegenius.app</li>
+                  <li><strong>General inquiries:</strong> anna@stylegenius.app</li>
                   <li><strong>Subject line:</strong> "Privacy Request" or "Data Protection" or "GDPR Request"</li>
                   <li><strong>Response time:</strong> We respond within 48 hours</li>
                   <li><strong>Data requests:</strong> Processed within 30 days as required by GDPR Article 12</li>

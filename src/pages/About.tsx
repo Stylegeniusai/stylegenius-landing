@@ -35,56 +35,66 @@ const About = () => {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto">
-            <p className="text-lg text-gray-700 leading-relaxed mb-8">
-              We believe everyone deserves to feel confident in what they wear. That's why we created StyleGenius - a resource dedicated to helping you discover your best colors, understand your body type, and develop your personal style.
-            </p>
-
-            <h2
-              className="text-2xl font-semibold text-gray-900 mt-16 mb-6"
-              style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
-            >
-              What We Cover
-            </h2>
-
-            <div className="space-y-6 mb-16">
-              <div className="border-b border-gray-200 pb-6">
-                <h3 className="font-medium text-gray-900 mb-2">Color Analysis</h3>
-                <p className="text-gray-600">
-                  Discover your color season and find the shades that make you glow. From warm undertones to cool palettes, we break it all down.
-                </p>
+            {/* Founders */}
+            <div className="flex justify-center gap-8 mb-10">
+              <div className="text-center">
+                <img
+                  src="https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog/markus-profile.png"
+                  alt="Markus — co-founder of StyleGenius"
+                  className="w-24 h-24 rounded-full object-cover mx-auto mb-2 shadow-md"
+                  loading="lazy"
+                />
+                <p className="text-sm font-medium text-gray-900">Markus</p>
               </div>
-              <div className="border-b border-gray-200 pb-6">
-                <h3 className="font-medium text-gray-900 mb-2">Body Type Guides</h3>
-                <p className="text-gray-600">
-                  Learn how to dress for your unique shape. We cover everything from Kibbe types to practical styling tips for every body.
-                </p>
-              </div>
-              <div className="border-b border-gray-200 pb-6">
-                <h3 className="font-medium text-gray-900 mb-2">Style & Aesthetics</h3>
-                <p className="text-gray-600">
-                  Explore trending aesthetics and timeless style principles. Find your look and learn how to put outfits together.
-                </p>
-              </div>
-              <div className="border-b border-gray-200 pb-6">
-                <h3 className="font-medium text-gray-900 mb-2">Smart Shopping</h3>
-                <p className="text-gray-600">
-                  Stay ahead with the latest in fashion technology. From virtual try-on to AI styling, we cover how tech is changing how we shop.
-                </p>
+              <div className="text-center">
+                <img
+                  src="https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog/anna-profile.png"
+                  alt="Anna — co-founder of StyleGenius"
+                  className="w-24 h-24 rounded-full object-cover mx-auto mb-2 shadow-md"
+                  loading="lazy"
+                />
+                <p className="text-sm font-medium text-gray-900">Anna</p>
               </div>
             </div>
 
             <h2
+              className="text-2xl font-semibold text-gray-900 mb-6"
+              style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+            >
+              Why we built this
+            </h2>
+            <p className="text-lg text-gray-700 leading-relaxed mb-6">
+              We never felt confident walking into a store. Trends didn't work, colors felt random, and every shopping trip ended in frustration. We'd try on something that looked great on someone else and wonder why it looked completely wrong on us.
+            </p>
+            <p className="text-lg text-gray-700 leading-relaxed mb-6">
+              Turns out, the answer wasn't about trends or brands — it was about understanding your own coloring, body type, and what actually works for you specifically. Once we figured that out, everything changed. Shopping got easier, getting dressed got faster, and we actually felt good in what we wore.
+            </p>
+            <p className="text-lg text-gray-700 leading-relaxed mb-16">
+              So we built StyleGenius — to help other women skip the years of trial and error and just know what works. Whether it's through our free guides or a personal style analysis, the goal is always the same: help you feel confident in what you wear, without overthinking it.
+            </p>
+
+            <h2
               className="text-2xl font-semibold text-gray-900 mt-16 mb-6"
               style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
             >
-              Our Mission
+              What we do
             </h2>
-            <p className="text-gray-700 leading-relaxed mb-6">
-              Style shouldn't be complicated. Our mission is to make fashion accessible and practical for everyone. We cut through the noise and give you actionable advice you can actually use.
-            </p>
-            <p className="text-gray-700 leading-relaxed mb-16">
-              Every guide we write is researched, tested, and designed to help you make better style decisions - whether you're building a capsule wardrobe, figuring out your color season, or just trying to find jeans that actually fit.
-            </p>
+
+            <div className="space-y-6 mb-16">
+              <div className="border-b border-gray-200 pb-6">
+                <h3 className="font-medium text-gray-900 mb-2">Free Style Guides</h3>
+                <p className="text-gray-600">
+                  In-depth guides on color analysis, body types, aesthetics, and smart shopping — all free, no sign-up needed. Written to actually help, not just rank on Google.
+                </p>
+              </div>
+              <div className="border-b border-gray-200 pb-6">
+                <h3 className="font-medium text-gray-900 mb-2">Personal Style Analysis</h3>
+                <p className="text-gray-600">
+                  A 12-page personalized guide created by a style coach — covering your color season, best colors, makeup palette, body type guide, capsule wardrobe, and outfit ideas. Based on your unique features, delivered in 48 hours.{" "}
+                  <Link to="/personal-analysis" className="text-black underline hover:no-underline">Learn more</Link>
+                </p>
+              </div>
+            </div>
 
             <h2
               className="text-2xl font-semibold text-gray-900 mt-16 mb-6"
@@ -94,8 +104,8 @@ const About = () => {
             </h2>
             <p className="text-gray-700 leading-relaxed">
               Have questions or suggestions? We'd love to hear from you. Reach out at{" "}
-              <a href="mailto:ai@stylegenius.app" className="text-black underline hover:no-underline">
-                ai@stylegenius.app
+              <a href="mailto:anna@stylegenius.app" className="text-black underline hover:no-underline">
+                anna@stylegenius.app
               </a>
             </p>
           </div>
