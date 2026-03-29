@@ -81,6 +81,7 @@ import WeddingGuestOutfits from "./pages/WeddingGuestOutfits";
 // Blog posts - Technology & Trends
 import VirtualTryOnGuide from "./pages/VirtualTryOnGuide";
 import Spring2025FashionTrends from "./pages/Spring2025FashionTrends";
+import ColorCombinations2026 from "./pages/ColorCombinations2026";
 import AIFashionShopping from "./pages/AIFashionShopping";
 import OnlineDressingRoom from "./pages/OnlineDressingRoom";
 import SmartShoppingTools from "./pages/SmartShoppingTools";
@@ -158,6 +159,7 @@ const App = () => (
           {/* Blog posts - Technology & Trends */}
           <Route path="/virtual-try-on-guide" element={<VirtualTryOnGuide />} />
           <Route path="/spring-2025-fashion-trends" element={<Spring2025FashionTrends />} />
+          <Route path="/color-combinations-2026" element={<ColorCombinations2026 />} />
           <Route path="/ai-fashion-shopping" element={<AIFashionShopping />} />
           <Route path="/online-dressing-room" element={<OnlineDressingRoom />} />
           <Route path="/smart-shopping-tools" element={<SmartShoppingTools />} />

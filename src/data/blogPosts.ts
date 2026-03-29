@@ -222,6 +222,14 @@ export const blogPosts: BlogPost[] = [
   },
   // Style Guides
   {
+    title: "5 Color Combinations Trending in 2026",
+    description: "The biggest color pairings of 2026 straight from the runway — ballet pink + cherry red, cobalt + white, and more.",
+    image: `${BLOG_IMAGE_BASE}/color-combos-2026-hero.png`,
+    href: "/color-combinations-2026",
+    category: "Style Guide",
+    featured: true
+  },
+  {
     title: "How to Find Your Personal Style",
     description: "A step-by-step guide to discovering your unique fashion identity.",
     image: `${BLOG_IMAGE_BASE}/personal-style-hero.png`,
@@ -350,8 +358,8 @@ export const getFeaturedPosts = () =>
 export const getColorPosts = () => getPostsByCategory("Color Analysis");
 export const getBodyPosts = () => getPostsByCategory("Body Type");
 export const getStylePosts = () => [
-  ...getPostsByCategory("Fashion Aesthetic"),
-  ...getPostsByCategory("Style Guide")
+  ...getPostsByCategory("Style Guide"),
+  ...getPostsByCategory("Fashion Aesthetic")
 ];
 export const getShoppingPosts = () => [
   ...getPostsByCategory("Shopping Tech"),

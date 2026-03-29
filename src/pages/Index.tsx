@@ -5,7 +5,7 @@ import { blogPosts, getFeaturedPosts, getColorPosts, getBodyPosts, getStylePosts
 import { Link } from "react-router-dom";
 
 const Index = () => {
-  const featuredPosts = getFeaturedPosts();
+  const featuredPosts = getFeaturedPosts().reverse();
   const colorPosts = getColorPosts();
   const bodyPosts = getBodyPosts();
   const stylePosts = getStylePosts();
