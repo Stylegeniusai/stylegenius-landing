@@ -1,198 +1,255 @@
-# Wontsy Blog Style Guide
+# StyleGenius Blog Style Guide
 
 ## Target Audience
-- **Primary:** Women 18-35 interested in fashion/shopping
+- **Primary:** Women 15-30 interested in fashion, style, color analysis
 - **Behavior:** Browse on mobile (70%+), scan content, visual-first
-- **Goal:** Find useful info, discover products, plan outfits
+- **Goal:** Find useful style info, discover their colors/body type, get outfit ideas
 
 ---
 
 ## Typography
 
-### Font Sizes
-| Element | Mobile | Desktop |
-|---------|--------|---------|
-| H1 (title) | 1.6rem (26px) | 2.25rem (36px) |
-| H2 (sections) | 1.3rem (21px) | 1.5rem (24px) |
-| H3 (subsections) | 1.1rem (18px) | 1.2rem (19px) |
-| Body text | 1rem (16px) | 1rem (16px) |
-| Captions/meta | 0.85rem (14px) | 0.85rem (14px) |
-
-### Line Height
-- Body text: **1.7** (comfortable reading)
-- Headings: **1.3** (tighter for impact)
-- Line length: **50-75 characters** (max-width: 700px for text)
-
 ### Fonts
-- Primary: `-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif`
-- Keep it clean and readable - no decorative fonts in body
+- **Headings (H1, H2):** `'Playfair Display', Georgia, serif` — editorial, luxurious
+- **Body text:** System sans-serif (Tailwind default)
+- Keep it clean and readable
+
+### Font Sizes (Tailwind classes)
+| Element | Classes |
+|---------|---------|
+| H1 (title) | `text-4xl md:text-5xl lg:text-6xl font-semibold` |
+| H2 (sections) | `text-3xl font-semibold` |
+| H3 (subsections) | `text-2xl font-semibold` |
+| Body text | `text-lg text-gray-700 leading-relaxed` |
+| Captions | `text-sm text-gray-500` |
 
 ---
 
 ## Color Palette
 
-| Color | Hex | Usage |
-|-------|-----|-------|
-| Pink (primary) | `#FF70D9` | Links, highlights, accents |
-| Blue (secondary) | `#6EC1E4` | Gradients, secondary accents |
-| Purple (brand) | `#561269` | Headings, important text |
-| Gray 700 | `#374151` | Body text |
-| Gray 500 | `#6b7280` | Secondary text, captions |
-| Gray 200 | `#e5e7eb` | Borders, dividers |
-| Gray 50 | `#f9fafb` | Backgrounds, cards |
-
-### Gradient
-```css
-background: linear-gradient(135deg, #FF70D9, #6EC1E4);
-```
+| Color | Usage |
+|-------|-------|
+| `text-gray-900` | Headings |
+| `text-gray-700` | Body text |
+| `text-gray-600` | Secondary text |
+| `text-gray-400` | Nudge text, captions |
+| `bg-gray-50` | Content boxes, highlights |
+| `text-rose-400` | Nudge links to personal analysis |
+| `border-gray-200` | Borders, dividers |
+| `from-rose-50 to-pink-50` | CTA background gradient |
+| `from-rose-300 via-purple-300 to-amber-200` | Quiz gradient border |
 
 ---
 
 ## Layout
 
 ### Content Width
-- Max container: **800px**
-- Text column: **700px** (optimal reading)
-- Full-width images: **800px** (container width)
+- Max container: `max-w-3xl` (article content)
+- Hero section: `max-w-4xl` (images)
+- Full page: `max-w-6xl`
 
-### Spacing
-- Section margin: **40-50px**
-- Paragraph margin: **18px**
-- Between elements: **24px**
+### Structure (TSX)
+```
+<Navigation />
+<Hero Section> — title, subtitle, category link
+<Hero Image> — 16:9 aspect ratio
+<article>
+  <Intro paragraphs>
+  <Table of Contents>
+  <Content sections with H2/H3>
+  <Images between sections>
+  <Mid-article AnalysisCTA>
+  <More content sections>
+  <Related articles grid>
+  <FAQ section>
+</article>
+<FAQ Schema (JSON-LD)>
+<AnalysisCTA>
+<Footer />
+```
 
-### Mobile First
-- Single column always
-- Touch targets: min **44px**
-- Padding: **20px** on mobile, **50px** on desktop
+---
+
+## Required Elements (every blog post)
+
+### 1. SEO Component
+```tsx
+<SEO
+  title="Keyword-Rich Title (2026)"
+  description="150-160 chars with keyword"
+  keywords="primary, secondary, related"
+  canonicalUrl="/post-slug"
+  ogImage="/image-name.png"
+  ogType="article"
+  article={{
+    publishedTime: "2026-XX-XX",
+    modifiedTime: "2026-XX-XX",
+    section: "Color Analysis",
+    tags: ["tag1", "tag2"]
+  }}
+  breadcrumbs={[
+    { name: "Home", url: "/" },
+    { name: "Category", url: "/category" },
+    { name: "Post Title", url: "/post-slug" }
+  ]}
+/>
+```
+
+### 2. Hero Section
+- Category link (uppercase, tracking-wider)
+- H1 with Playfair Display
+- Subtitle paragraph
+- Separate hero image section (16:9)
+
+### 3. Table of Contents
+- Gray box (`bg-gray-50 p-6 md:p-8`)
+- Anchor links to each section
+- Include quiz, FAQ in TOC
+
+### 4. Interactive Quiz (where relevant)
+- Gradient border: `p-[2px] bg-gradient-to-br from-rose-300 via-purple-300 to-amber-200`
+- White inner container
+- Multi-step questions
+- Result shows color swatches + link to personal analysis + retake
+- Undertone quiz for color/skin posts
+- Season quiz for "What Season Am I?"
+
+### 5. Color Hex Swatches
+For any color list, show visual swatches:
+```tsx
+{[
+  { name: "Navy", hex: "#1B2951" },
+  { name: "Emerald", hex: "#046A38" },
+].map((c) => (
+  <div key={c.name} className="flex items-center gap-2 px-3 py-1.5 bg-white border border-gray-200 rounded text-sm text-gray-700">
+    <span className="w-4 h-4 rounded-full border border-gray-200 flex-shrink-0" style={{ backgroundColor: c.hex }} />
+    {c.name}
+  </div>
+))}
+```
+
+### 6. Mid-article AnalysisCTA
+- Import: `import AnalysisCTA from "../components/AnalysisCTA";`
+- Place after a natural section break (roughly middle of article)
+- Shows preview image, description, $89 price with $129 crossed out
+- Trust line: "7-day money-back guarantee · Created by a style coach · In your inbox within 48h"
+
+### 7. Nudge Links (after color/body sections)
+For color posts:
+```tsx
+<p className="text-sm text-gray-400 mb-8">These are general guidelines — <Link to="/personal-analysis" className="text-rose-400 hover:text-rose-500 transition-colors">get colors picked specifically for you</Link></p>
+```
+For body type posts:
+```tsx
+<p className="text-sm text-gray-400 mb-8">These are general tips — <Link to="/personal-analysis" className="text-rose-400 hover:text-rose-500 transition-colors">get a guide made for your body type</Link></p>
+```
+
+### 8. Related Articles
+- Grid of 4 links (`md:grid-cols-2 gap-4`)
+- Link to related posts within same topic area
+- Gray hover background
+
+### 9. FAQ Section
+- 6-7 questions relevant to the specific topic
+- Collapsible `<details>` elements with `+` icon that rotates
+- Include id="faq" anchor
+```tsx
+<details className="group border-b border-gray-200">
+  <summary className="flex justify-between items-center cursor-pointer py-4 font-medium text-gray-900 hover:text-gray-600 transition-colors">
+    {item.q}
+    <span className="text-gray-400 group-open:rotate-45 transition-transform text-xl ml-4 flex-shrink-0">+</span>
+  </summary>
+  <p className="text-gray-700 pb-4 leading-relaxed">{item.a}</p>
+</details>
+```
+
+### 10. FAQ Schema (JSON-LD)
+After `</article>`, add structured data:
+```tsx
+<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "...", "acceptedAnswer": { "@type": "Answer", "text": "..." }},
+  ]
+})}} />
+```
+
+### 11. Bottom AnalysisCTA + Footer
+```tsx
+<div className="container mx-auto px-4 max-w-4xl">
+  <AnalysisCTA />
+</div>
+<Footer />
+```
 
 ---
 
 ## Images
 
+### Storage
+All images in Supabase Storage: `https://imkvzudhshjgqkoywosw.supabase.co/storage/v1/object/public/blog/`
+No subfolders — flat structure with descriptive prefix names.
+
 ### Dimensions
-| Type | Size | Aspect Ratio |
-|------|------|--------------|
-| Hero/Featured | 1200 x 630px | 1.9:1 |
-| In-post images | 1024 x 1024px | 1:1 (AI-generated) |
-| App screenshots | 800 x auto | Varies |
-| Thumbnails | 400 x 250px | 16:10 |
+| Type | Aspect Ratio | Usage |
+|------|-------------|-------|
+| Hero | 16:9 | Top of post |
+| In-post | 1:1 (square) | Between sections |
 
-### Frequency
-- **1 image per 300 words** minimum
-- Hero image at top
-- Image after every 2-3 sections
-- Break up long text blocks
+### Naming Convention
+`[post-slug]-[description].png`
+Example: `pale-skin-cool-colors.png`, `color-combo-cobalt-white.png`
 
-### File Requirements
-- Format: **WebP** preferred, PNG/JPG fallback
-- Max file size: **150KB**
+### Requirements
 - Always include `alt` text
 - Use `loading="lazy"` for below-fold images
-
-### Placeholder Style
-When image not available, show styled placeholder:
-```html
-<div class="image-placeholder">
-  <span class="placeholder-icon">📸</span>
-  <span class="placeholder-text">Screenshot: [description]</span>
-</div>
-```
+- 1 image per 300 words minimum
 
 ---
 
-## Content Structure
+## Adding a New Blog Post
 
-### Ideal Length
-- **1500-2500 words** for SEO
-- ~6-10 minute read time
-- Break into **5-8 main sections**
+### Step 1: Create page
+`src/pages/YourPostName.tsx` — follow BestColorsForPaleSkin.tsx as template
 
-### Heading Hierarchy
-```
-H1: Article Title (only one)
-  H2: Main Section
-    H3: Subsection
-    H3: Subsection
-  H2: Main Section
-    H3: Subsection
-```
-
-### Required Elements
-1. **Hero area** - Title, tag, meta, featured image
-2. **Table of Contents** - For posts 1500+ words
-3. **Introduction** - Hook + what they'll learn (2-3 paragraphs)
-4. **Body sections** - H2 with supporting content
-5. **Visual breaks** - Images, tables, highlight boxes
-6. **CTA** - Soft sell, one per post
-7. **FAQ section** - 3-5 questions (schema markup)
-8. **Related posts** - 2 links to other articles
-
-### Paragraph Style
-- **2-3 sentences max** per paragraph
-- Use bullet points for lists (3+ items)
-- Bold **key phrases** for scanning
-- One idea per paragraph
-
----
-
-## Visual Components
-
-### App/Product Cards
-```
-┌─────────────────────────────────┐
-│  [Screenshot/Image]             │
-│                                 │
-│  AppName                        │
-│  ★ 4.9/5 · website.com         │
-│                                 │
-│  Description paragraph...       │
-│                                 │
-│  [tag] [tag] [tag]             │
-└─────────────────────────────────┘
+### Step 2: Register in blogPosts.ts
+```typescript
+{
+  title: "Post Title",
+  description: "Short SEO description",
+  image: `${BLOG_IMAGE_BASE}/your-image.png`,
+  href: "/post-slug",
+  category: "Color Analysis", // or Body Type, Fashion Aesthetic, Style Guide, Shopping Tech, Fashion Trends
+  featured: false
+}
 ```
 
-### Comparison Tables
-Use for 3+ items being compared:
-```
-┌──────────────┬─────────┬─────────┬─────────┐
-│ Feature      │ App A   │ App B   │ Wontsy  │
-├──────────────┼─────────┼─────────┼─────────┤
-│ Universal    │ ✓       │ ✓       │ ✓       │
-│ Outfit build │ ✗       │ ✗       │ ✓       │
-│ Price alerts │ ✓       │ ✗       │ ✓       │
-└──────────────┴─────────┴─────────┴─────────┘
+### Step 3: Add route in App.tsx
+```typescript
+import YourPostName from "./pages/YourPostName";
+// In Routes:
+<Route path="/post-slug" element={<YourPostName />} />
 ```
 
-### Highlight Boxes
-For key takeaways or tips:
-```css
-/* Gradient left border, soft background */
-background: linear-gradient(135deg, rgba(255,112,217,0.08), rgba(110,193,228,0.08));
-border-left: 4px solid #FF70D9;
+### Step 4: Add to sitemap.xml
+```xml
+<url>
+  <loc>https://stylegenius.app/post-slug</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
 ```
 
-### Quick Summary Box
-At top of article for scanners:
-```
-┌─────────────────────────────────┐
-│  ⚡ Quick Answer               │
-│                                 │
-│  [2-3 sentence summary]         │
-│                                 │
-│  Best for fashion: Wontsy       │
-│  Best for gifts: GiftList       │
-│  Best for price: Chestr         │
-└─────────────────────────────────┘
-```
-
-### CTA Button
-```css
-background: linear-gradient(135deg, #FF70D9, #6EC1E4);
-color: white;
-padding: 16px 32px;
-border-radius: 50px;
-font-weight: 600;
-```
+### Categories → Where they display
+| Category | Route | Helper |
+|----------|-------|--------|
+| Color Analysis | `/color` | `getColorPosts()` |
+| Body Type | `/body` | `getBodyPosts()` |
+| Fashion Aesthetic | `/style` | `getStylePosts()` |
+| Style Guide | `/style` | `getStylePosts()` |
+| Shopping Tech | `/shopping` | `getShoppingPosts()` |
+| Fashion Trends | `/shopping` | `getShoppingPosts()` |
 
 ---
 
@@ -201,90 +258,39 @@ font-weight: 600;
 ### Tone
 - Conversational, not corporate
 - Helpful friend giving advice
-- Honest about competitors
+- Honest and direct
 - No fake enthusiasm
 
 ### Do's
-- ✓ "Here's what to consider..."
-- ✓ "If you're looking for X, try..."
-- ✓ "Full disclosure: this is us, but..."
-- ✓ Use "you" and "your"
-- ✓ Short sentences
+- Use "you" and "your"
+- Short sentences, short paragraphs
+- Bold key phrases for scanning
+- Practical, actionable advice
 
 ### Don'ts
-- ✗ "BEST APP EVER!"
-- ✗ "We tested and ranked..."
-- ✗ "Our #1 pick is..."
-- ✗ Fake reviews/testimonials
-- ✗ Walls of text
-
-### Wontsy Positioning
-Never say "best overall" - instead:
-> "If you shop for fashion and want to plan outfits before buying, Wontsy is built for that."
-
-Show features → let reader decide:
-> "Here's what a good wishlist app should have: [list]. Wontsy does all of this, plus outfit building."
-
----
-
-## SEO Requirements
-
-### Meta Tags
-```html
-<title>Keyword-Rich Title | Wontsy</title>
-<meta name="description" content="150-160 chars with keyword">
-<meta name="keywords" content="primary, secondary, related">
-<link rel="canonical" href="https://wontsy.com/blog/slug">
-```
-
-### Schema Markup
-Every post needs:
-1. **Article schema** - headline, author, dates
-2. **FAQ schema** - for FAQ section
-3. **HowTo schema** - if step-by-step content
-
-### Internal Linking
-- **2-5 internal links** per 1000 words
-- Link to related blog posts
-- Link to relevant products/apps in article (with nofollow for external)
-- Descriptive anchor text (not "click here")
-
----
-
-## File Naming
-
-### Blog Posts
-`/blog/[keyword-slug].html`
-- Use hyphens, not underscores
-- Keep under 60 characters
-- Include primary keyword
-
-### Images
-`/blog/images/[post-slug]-[description].webp`
-- Example: `best-wishlist-apps-moonsift-screenshot.webp`
+- No walls of text
+- No "BEST EVER!" hype
+- No generic filler paragraphs
+- No emojis in content
 
 ---
 
 ## Checklist Before Publishing
 
-- [ ] Title includes primary keyword
-- [ ] Meta description 150-160 chars
-- [ ] H1 → H2 → H3 hierarchy correct
-- [ ] Table of contents (if 1500+ words)
-- [ ] 1 image per 300 words
-- [ ] All images have alt text
-- [ ] All images under 150KB
-- [ ] Internal links to 2+ other posts
-- [ ] FAQ section with 3-5 questions
-- [ ] Schema markup added
-- [ ] Mobile preview looks good
-- [ ] CTA button works
-- [ ] Related posts section
-- [ ] Canonical URL set
+- [ ] Page created in src/pages/
+- [ ] SEO component with title, description, keywords, article schema, breadcrumbs
+- [ ] H1 with Playfair Display
+- [ ] Table of Contents with anchor links
+- [ ] Hex color swatches (for color posts)
+- [ ] Interactive quiz (where relevant)
+- [ ] Mid-article AnalysisCTA
+- [ ] Nudge links after color/body sections
+- [ ] Images with alt text and lazy loading
+- [ ] Related articles grid (4 links)
+- [ ] FAQ section (6-7 questions) with details/summary
+- [ ] FAQ JSON-LD schema markup
+- [ ] Bottom AnalysisCTA before Footer
+- [ ] Registered in blogPosts.ts
+- [ ] Route added in App.tsx
 - [ ] Added to sitemap.xml
-
----
-
-## Template File
-
-See `/blog/blog-template.html` for starter HTML with all components.
+- [ ] Mobile preview looks good
