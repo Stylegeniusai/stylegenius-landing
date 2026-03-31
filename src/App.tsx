@@ -83,6 +83,8 @@ import VirtualTryOnGuide from "./pages/VirtualTryOnGuide";
 import Spring2025FashionTrends from "./pages/Spring2025FashionTrends";
 import ColorCombinations2026 from "./pages/ColorCombinations2026";
 import ExpensiveColorCombinations from "./pages/ExpensiveColorCombinations";
+import BestLipstickForSkinTone from "./pages/BestLipstickForSkinTone";
+import BestHairColorForSkinTone from "./pages/BestHairColorForSkinTone";
 import AIFashionShopping from "./pages/AIFashionShopping";
 import OnlineDressingRoom from "./pages/OnlineDressingRoom";
 import SmartShoppingTools from "./pages/SmartShoppingTools";
@@ -162,6 +164,8 @@ const App = () => (
           <Route path="/spring-2025-fashion-trends" element={<Spring2025FashionTrends />} />
           <Route path="/color-combinations-2026" element={<ColorCombinations2026 />} />
           <Route path="/color-combinations-that-look-expensive" element={<ExpensiveColorCombinations />} />
+          <Route path="/best-lipstick-for-skin-tone" element={<BestLipstickForSkinTone />} />
+          <Route path="/best-hair-color-for-skin-tone" element={<BestHairColorForSkinTone />} />
           <Route path="/ai-fashion-shopping" element={<AIFashionShopping />} />
           <Route path="/online-dressing-room" element={<OnlineDressingRoom />} />
           <Route path="/smart-shopping-tools" element={<SmartShoppingTools />} />

@@ -219,6 +219,20 @@ export const blogPosts: BlogPost[] = [
   },
   // Style Guides
   {
+    title: "Best Lipstick Color for Your Skin Tone",
+    description: "Find the most flattering lipstick shades for your undertone — cool, warm, or neutral. Everyday, bold, and nude picks.",
+    image: `${BLOG_IMAGE_BASE}/lipstick-skin-tone-hero.png`,
+    href: "/best-lipstick-for-skin-tone",
+    category: "Color Analysis"
+  },
+  {
+    title: "Best Hair Color for Your Skin Tone",
+    description: "The complete guide to finding a hair color that flatters your skin tone and undertone — plus 2026 trends.",
+    image: `${BLOG_IMAGE_BASE}/hair-color-skin-tone-hero.png`,
+    href: "/best-hair-color-for-skin-tone",
+    category: "Color Analysis"
+  },
+  {
     title: "5 Color Combinations That Always Look Expensive",
     description: "These timeless color pairings instantly make any outfit look more expensive — navy + cream, black + ivory, burgundy + grey, and more.",
     image: `${BLOG_IMAGE_BASE}/expensive-combos-hero.png`,
