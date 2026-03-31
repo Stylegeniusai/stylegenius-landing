@@ -1,7 +1,7 @@
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import SEO from "../components/SEO";
-import { blogPosts, getFeaturedPosts, getColorPosts, getBodyPosts, getStylePosts, getShoppingPosts } from "../data/blogPosts";
+import { blogPosts, getFeaturedPosts, getLatestPosts, getColorPosts, getBodyPosts, getStylePosts, getShoppingPosts } from "../data/blogPosts";
 import { Link } from "react-router-dom";
 
 const Index = () => {
@@ -78,6 +78,38 @@ const Index = () => {
                 <p className="text-gray-600 max-w-2xl mx-auto">{featuredPosts[0]?.description}</p>
               </div>
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Latest */}
+      <section className="py-12 border-b border-gray-200">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-between mb-8">
+            <h2
+              className="text-lg font-semibold text-gray-900 uppercase tracking-wider"
+            >
+              Latest
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-4 gap-6">
+            {getLatestPosts(4).map((post) => (
+              <a key={post.href} href={post.href} className="group flex gap-4 md:flex-col">
+                <div className="w-24 md:w-full aspect-square md:aspect-[4/3] overflow-hidden bg-gray-100 flex-shrink-0">
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div className="flex flex-col justify-center">
+                  <p className="text-xs uppercase tracking-wider text-gray-400 mb-1">{post.category}</p>
+                  <h3 className="text-sm font-medium text-gray-900 group-hover:text-gray-600 transition-colors leading-tight">
+                    {post.title}
+                  </h3>
+                </div>
+              </a>
+            ))}
           </div>
         </div>
       </section>
