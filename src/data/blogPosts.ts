@@ -219,6 +219,13 @@ export const blogPosts: BlogPost[] = [
   },
   // Style Guides
   {
+    title: "5 Color Combinations That Always Look Expensive",
+    description: "These timeless color pairings instantly make any outfit look more expensive — navy + cream, black + ivory, burgundy + grey, and more.",
+    image: `${BLOG_IMAGE_BASE}/expensive-combos-hero.png`,
+    href: "/color-combinations-that-look-expensive",
+    category: "Style Guide"
+  },
+  {
     title: "5 Color Combinations Trending in 2026",
     description: "The biggest color pairings of 2026 straight from the runway — ballet pink + cherry red, cobalt + white, and more.",
     image: `${BLOG_IMAGE_BASE}/color-combos-2026-hero.png`,
