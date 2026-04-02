@@ -206,7 +206,7 @@ const CheckoutModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => vo
             href={STRIPE_PAYMENT_LINK}
             className="flex items-center justify-center gap-2 w-full px-8 py-4 bg-gray-900 text-white rounded-full text-lg font-medium hover:bg-gray-800 transition-all hover:scale-[1.02] shadow-lg shadow-gray-900/20"
           >
-            Continue to payment — <span className="line-through text-gray-400 mr-1">$129</span>$89
+            Continue to payment — $39
             <ArrowRight className="w-5 h-5" />
           </a>
 
@@ -236,12 +236,12 @@ const PersonalAnalysis = () => {
     <div className="min-h-screen bg-white">
       <SEO
         title="Personal Color & Style Analysis Online — Find Your Best Colors, Season & Outfits"
-        description="Get your colors done online. Upload a selfie and receive a personalized color season analysis, makeup palette, body type guide, and capsule wardrobe — delivered in 48 hours. $89 with 7-day money-back guarantee."
+        description="Get your colors done online. Upload a selfie and receive a personalized color season analysis, makeup palette, body type guide, and capsule wardrobe — delivered in 48 hours. $39 with 7-day money-back guarantee."
         keywords="personal color analysis online, get my colors done online, what colors suit me, find my color season, seasonal color analysis, am I cool or warm toned, color analysis with selfie, style analysis, body type analysis, what season am I, color consultation online, personal style guide"
         canonicalUrl="/personal-analysis"
         ogType="website"
         faq={[
-          { question: "How much does it cost to get your colors analyzed?", answer: "Our personal color & style analysis costs $89 (normally $129) — a one-time payment with no subscription. You receive a full personalized guide with your color season, best colors, makeup palette, body type outfits, and a saveable phone swatch within 48 hours." },
+          { question: "How much does it cost to get your colors analyzed?", answer: "Our personal color & style analysis costs $39 — a one-time payment with no subscription. You receive a full personalized guide with your color season, best colors, makeup palette, body type outfits, and a saveable phone swatch within 48 hours." },
           { question: "Can I do a color analysis online with a selfie?", answer: "Yes. You upload a selfie in natural light along with details about your hair, eyes, and skin tone. Our stylists use this to determine your exact color season and create your personalized guide." },
           { question: "What is included in a personal color analysis?", answer: "Your color season, a palette of your 15 best colors, colors to avoid, makeup recommendations (lip, blush, eyeshadow, foundation), outfit ideas for your body type, a saveable phone swatch, and a capsule wardrobe starting point." },
           { question: "How long does an online color analysis take?", answer: "After you complete checkout and submit your details, your personalized guide is delivered to your email within 48 hours on working days. Orders placed on weekends are delivered by Tuesday." },
@@ -273,7 +273,7 @@ const PersonalAnalysis = () => {
                 onClick={handleCheckout}
                 className="inline-flex items-center gap-2 px-8 py-4 bg-gray-900 text-white rounded-full text-lg font-medium hover:bg-gray-800 transition-all hover:scale-105 shadow-lg shadow-gray-900/20"
               >
-                Discover my perfect colors — <span className="line-through text-gray-400 mr-1">$129</span> $89
+                Discover my perfect colors — $39
                 <ArrowRight className="w-5 h-5" />
               </button>
               <TrustBar />
@@ -534,7 +534,7 @@ const PersonalAnalysis = () => {
                 onClick={handleCheckout}
                 className="inline-flex items-center gap-2 px-7 py-3.5 bg-gray-900 text-white rounded-full font-medium hover:bg-gray-800 transition-all hover:scale-105"
               >
-                Get my personal style guide — <span className="line-through text-gray-400 mr-1">$129</span> $89
+                Get my personal style guide — $39
                 <ArrowRight className="w-4 h-4" />
               </button>
             </div>
@@ -654,7 +654,7 @@ const PersonalAnalysis = () => {
                 onClick={handleCheckout}
                 className="inline-flex items-center gap-2 px-8 py-4 bg-gray-900 text-white rounded-full text-lg font-medium hover:bg-gray-800 transition-all hover:scale-105 shadow-lg shadow-gray-900/20"
               >
-                Get my personal style guide — <span className="line-through text-gray-400 mr-1">$129</span> $89
+                Get my personal style guide — $39
                 <ArrowRight className="w-5 h-5" />
               </button>
               <TrustBar />
@@ -717,7 +717,7 @@ const PersonalAnalysis = () => {
               onClick={handleCheckout}
               className="inline-flex items-center gap-2 px-8 py-4 bg-gray-900 text-white rounded-full text-lg font-medium hover:bg-gray-800 transition-all hover:scale-105 shadow-lg shadow-gray-900/20"
             >
-              Start my style transformation — <span className="line-through text-gray-400 mr-1">$129</span> $89
+              Start my style transformation — $39
               <ArrowRight className="w-5 h-5" />
             </button>
             <TrustBar />
@@ -783,7 +783,7 @@ const PersonalAnalysis = () => {
                 { q: "Can you really determine my colors from a selfie?", a: "Yes — combined with the details you provide about your hair, eyes, and skin tone, a natural-light selfie gives us what we need to identify your color season accurately. It's the same information a stylist uses in person." },
                 { q: "What if I'm not happy with my analysis?", a: "We offer a full refund within 7 days of delivery. No questions asked. Just email anna@stylegenius.app and we'll process it immediately." },
                 { q: "Why do I need to upload a selfie?", a: "A photo in natural light lets us see your true coloring and determine your color season accurately. It's required — but it only takes a second. Just face a window, no makeup or filters, and snap a pic." },
-                { q: "Is this a subscription?", a: "No — it's a one-time purchase of $89 (normally $129). You get your personal guide and that's it. No recurring charges, ever." },
+                { q: "Is this a subscription?", a: "No — it's a one-time purchase of $39. You get your personal guide and that's it. No recurring charges, ever." },
               ].map((item, i) => (
                 <details key={i} className="group">
                   <summary className="flex justify-between items-center cursor-pointer py-4 px-5 rounded-xl hover:bg-gray-50 transition-colors font-medium text-gray-900">

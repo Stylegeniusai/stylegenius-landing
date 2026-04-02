@@ -94,7 +94,7 @@ const UndertoneQuiz = () => {
           <div className="flex flex-wrap gap-3 items-center">
             <a href={r.scrollTo} className="text-sm font-medium text-gray-900 underline hover:no-underline">Jump to your colors</a>
             <span className="text-gray-300">|</span>
-            <Link to="/personal-analysis" className="text-sm text-rose-500 hover:text-rose-600 transition-colors">Want your exact palette? Get your personal analysis</Link>
+            <Link to="/personal-analysis" className="text-sm text-rose-500 hover:text-rose-600 transition-colors">Stop guessing — get your colors picked by a stylist</Link>
             <span className="text-gray-300">|</span>
             <button onClick={reset} className="text-sm text-gray-500 underline hover:no-underline">Retake quiz</button>
           </div>

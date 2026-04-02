@@ -169,7 +169,7 @@ const SeasonQuiz = () => {
           <div className="flex flex-wrap gap-3 items-center">
             <Link to={r.link} className="text-sm font-medium text-gray-900 underline hover:no-underline">Read your full {r.title} guide</Link>
             <span className="text-gray-300">|</span>
-            <Link to="/personal-analysis" className="text-sm text-rose-500 hover:text-rose-600 transition-colors">Want to know for sure? Get your personal analysis</Link>
+            <Link to="/personal-analysis" className="text-sm text-rose-500 hover:text-rose-600 transition-colors">Stop guessing — get your exact season from a stylist</Link>
             <span className="text-gray-300">|</span>
             <button onClick={reset} className="text-sm text-gray-500 underline hover:no-underline">Retake quiz</button>
           </div>
